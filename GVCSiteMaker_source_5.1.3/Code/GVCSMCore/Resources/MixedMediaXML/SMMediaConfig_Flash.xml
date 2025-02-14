@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Flash Animation</title>
+    <usesIFrame>false</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>              
+    <parameterInstructions>The settings below apply to the Flash Animation, not to the pane containing it.</parameterInstructions>
+	<parameter>
+		<name>width</name>
+		<uiName>Width</uiName>
+		<type>integer</type>
+		<isRequired>true</isRequired>
+	</parameter>
+	<parameter>
+		<name>height</name>
+		<uiName>Height</uiName>
+		<type>integer</type>
+		<isRequired>true</isRequired>
+	</parameter>
+	<parameter>
+		<name>bgcolor</name>
+		<uiName>BGColor</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+	<parameter>
+		<name>play</name>
+		<uiName>Play</uiName>
+		<type>boolean</type>
+	</parameter>
+	<parameter>
+		<name>loop</name>
+		<uiName>Loop</uiName>
+		<type>boolean</type>
+	</parameter>
+	<parameter>
+		<name>menu</name>
+		<uiName>Menu</uiName>
+		<type>boolean</type>
+	</parameter>
+	<parameter>
+		<name>quality</name>
+		<uiName>Quality</uiName>
+		<type>valueList</type>
+		<paramValue value="Low"></paramValue>	
+		<paramValue>
+			<value>High</value>
+		</paramValue>	
+		<paramValue>
+			<value>AutoLow</value>
+		</paramValue>	
+		<paramValue>
+			<value>AutoHigh</value>
+		</paramValue>	
+		<paramValue>
+			<value>Best</value>
+		</paramValue>
+	</parameter>
+    <template><![CDATA[
+        <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+                WIDTH="<webobject name=width></webobject>" 
+                HEIGHT="<webobject name=height></webobject>">
+            <PARAM NAME=movie VALUE="<webobject name=SourceURL></webobject>">
+            <PARAM NAME=bgcolor VALUE="<webobject name=bgcolor></webobject>">            
+            <PARAM NAME=play VALUE="<webobject name=play></webobject>">
+            <PARAM NAME=loop VALUE="<webobject name=loop></webobject>">
+            <PARAM NAME=menu VALUE="<webobject name=menu></webobject>">
+            <PARAM NAME=quality VALUE="<webobject name=quality></webobject>">
+            <EMBED src="<webobject name=SourceURL></webobject>" 
+                   width="<webobject name=width></webobject>"  
+                   height="<webobject name=height></webobject>" 
+                   bgcolor="<webobject name=bgcolor></webobject>" 
+                   play="<webobject name=play></webobject>"
+                   loop="<webobject name=loop></webobject>"
+                   menu="<webobject name=menu></webobject>"
+                   quality="<webobject name=quality></webobject>" 
+                   TYPE="application/x-shockwave-flash"
+                   PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">
+            </EMBED>
+        </OBJECT>
+    ]]></template>	
+</mediaComponent>

@@ -1,0 +1,4 @@
+{
+	"RelationshipValidationTestEntity.requiredBareEntity.displayName"="mandatory unadorned entity";
+	// Don't define this RelationshipValidationTestEntity.optionalDecimalEntity.displayName            
+}

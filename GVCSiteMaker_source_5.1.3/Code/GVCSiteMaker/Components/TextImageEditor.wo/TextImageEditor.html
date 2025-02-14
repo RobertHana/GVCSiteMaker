@@ -1,0 +1,167 @@
+<webobject name = "PreviewJavaScript" />
+<webobject name = "Form">
+  <!-- The editors due to componitization will not look identical to every other page that doesn't use an editor, but it will be close. -->
+  <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+    <tr>
+      <td valign = "top" style = "padding-left: 2px;">
+        <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+        Back to Website Sections</webobject>
+      </td>
+      <td valign = "top" align = "right" style = "padding-right: 2px;">
+        <webobject name = "Reset" />
+        <webobject name = "UpdateAndPreview" />
+        <webobject name = "Update" />
+        <br />
+        <br />
+        <webobject name = "IsExistingVersionConditional">
+          <webobject name = "IsVersioningConditional">
+            <webobject name = "CanBeAlteredConditional">
+              <webobject name = "CanCreateVersionConditional">
+                <webobject name = "CanManuallyCreateVersion"><webobject name = "CreateNewVersionCheckBox" /> Save as new version</webobject>
+                <webobject name = "CanAutoCreateVersion">A new version will be automatically created when changes are saved.</webobject>
+                <div class = "microText">This <span style = "color: red;">
+                  <b>is <webobject name = "IsNotCurrentVersionConditional">not </webobject></b>
+                </span>the current version.</div>
+                <div class = "microText">See below for more info on versions.</div>
+              </webobject>
+            </webobject>
+            <webobject name = "AlteringConditional">
+              <div class = "microText">This version can&iacute;t be altered.<br />A new version will be created when saved.</div>
+            </webobject>
+          </webobject>
+        </webobject>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan = "2">
+        <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+          <tr>
+            <td><hr class = "primaryBarStyle" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+
+  <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+    <tr>
+      <td valign = "MIDDLE">
+        <span class = "boldText">Choose Mode:</span>
+      </td>
+      <td valign = "MIDDLE">
+        <webobject name = "IsRTEAvailableConditional">
+          <webobject name = "EditorModeRepetition">
+            <webobject name = "ModeRadioButton" />
+            <webobject name = "ModeString" />&nbsp;&nbsp;</webobject>
+        </webobject>
+        <span class = "microText">
+          <webobject name = "IsRTEDisabledConditional">The browser you are currently using is not rich text editor compliant. Only plain mode is available.</webobject>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+    </tr>
+
+    <webobject name = "HTMLDescriptionConditional">
+      <tr>
+        <td align = "LEFT" class = "sectionTitle" valign = "TOP">Enter Text:</td>
+        <td align = "LEFT" class = "rightContentColumn" valign = "TOP" />
+      </tr>
+      <tr>
+        <td class = "descriptiveText" colspan = "2">You may include HTML tags, if you wish. Some common examples are:<br />
+          <table cellspacing = "2" border = "0" cellpadding = "4">
+            <tr>
+              <td align = "left" class = "microText">
+                <span class = "coloredText">&lt;B&gt;</span>text<span class = "coloredText">&lt;/B&gt;</span>
+                makes bold text</td>
+              <td>&nbsp;&nbsp;</td>
+              <td align = "center" class = "microText">...text<span class = "coloredText">&lt;BR&gt;</span>
+                is a line break</td>
+              <td>&nbsp;&nbsp;</td>
+              <td align = "right" class = "microText">
+                <span class = "coloredText">&lt;A href=&quot;http://....&quot;&gt;</span>text<span class = "coloredText">&lt;/A&gt;</span>
+                is a link</td>
+            </tr>
+          </table>
+          <webobject name = "ConvertCRCheckBox" />
+          Display carriage returns as line breaks</td>
+      </tr>
+    </webobject>
+    <webobject name = "RTEInstuctionsConditional">
+      <tr>
+        <td colspan = "2">
+          <webobject name = "RTEEditorInsructions" />
+          If the image you want to use is not listed, add it by going to 
+          <webobject name = "UploadFilesSubmitButton" />
+        </td>
+      </tr>
+    </webobject>
+
+
+    <tr>
+      <td colspan = "2" align = "left"> <webobject name = "TextPrimitive" /> </td>
+    </tr>
+
+
+    <webobject name = "PlainTextConditional">
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td colspan = "2"> <webobject name = "ImagePrimitve" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <span class = "sectionTitle">Arrange Text/Image:</span>
+          <br />
+          <span class = "descriptiveText">Choose an arrangement for text and 
+            image. To display only text or only an image, only include the desired portion.</span>
+        </td>
+        <td align = "left">
+          <table border = "0" width = "540">
+            <tr>
+              <webobject name = "SectionTypeRep">
+                <td align = "CENTER">
+                  <webobject name = "SectionTypeImage" />
+                  <p>
+                    <webobject name = "SectionTypeRadioButton" />
+                    <span class = "microText"><webobject name = "SectionSubtype" /></span>
+                  </p>
+                </td>
+              </webobject>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </webobject>
+    <webobject name = "ShowVersionDetailsConditional">
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td valign = "MIDDLE" class = "boldText">Version Name:</td>
+        <td valign = "MIDDLE"> <webobject name = "VersionNameString" /></td>
+      </tr>
+      <tr>
+        <td valign = "MIDDLE" class = "boldText">Description:</td>
+        <td valign = "MIDDLE"> <webobject name = "DetailsString" /></td>
+      </tr>
+      <tr>
+        <td valign = "MIDDLE" class = "boldText">Last Modified:</td>
+        <td valign = "MIDDLE">
+          by <webobject name = "LastModifiedByString" /> on <webobject name = "LastModifiedDateString" />
+        </td>
+      </tr>
+      <webobject name = "ViewNonCurrentConditional">
+        <tr align = "left">
+          <td colspan = "2">
+            <br />Click <webobject name = "VersionsHyperlink">here</webobject> to edit a different version<br />
+            <webobject name = "PreviewMailToHyperlink">Send Email</webobject> with a link to preview this version.</td>
+        </tr>
+      </webobject>
+    </webobject>
+  </table>
+</webobject>

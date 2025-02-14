@@ -1,0 +1,310 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = cancelImport;
+    id = "BackHyperlink";
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteDataTablesImportPane";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ImportTableData";
+}
+
+CancelButton : AjaxSubmitButton {
+    action = cancelImport;
+    value = "Cancel";
+    updateContainerID = "ConfigureWebsiteDataTablesPane";
+}
+
+ColumnDescriptionString: WOString {
+	value = currentColumn.textDescription;
+}
+
+ColumnIncludedCheckBox: WOCheckBox {
+	checked = isColumnIncluded;
+}
+
+ColumnNameString: WOString {
+	value = currentColumn.name;
+}
+
+ColumnTypeString: WOString {
+	value = currentColumn.typeDescription;
+}
+
+CommaDelimiterRadioButton: WORadioButton {
+	selection = delimiter;
+	value = "comma";
+	name = "delimiter";
+}
+
+DatabaseTableNameString: WOString {
+	value = table.name;
+}
+
+DontRetainExistingDataRadioButton: WORadioButton {
+    name = "RetainData";
+    selection = retainExistingData;
+    value = false;
+}
+
+DontSkipFirstLineRadioButton: WORadioButton {
+    name = "HeaderLine";
+    selection = skipFirstLine;
+    value = false;
+}
+
+ExcludeAllFieldsButton: AjaxSubmitButton {
+	action = excludeAllFields;
+	value = "Exclude All fields";
+    updateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+ReorderFieldsDialogOpener: AjaxSubmitButton {
+    action = reorder;
+    value = "Reorder Fields";
+    updateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+ReorderFieldsDialog: AjaxModalDialog {
+    id = "ReorderFieldsDialog";
+    title = "Reorder Fields";
+    label = "Reorder Fields";
+    action = openReorderFieldsDialog;
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ReorderFieldsModalDialogDoneLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesImportPane";
+//    afterHide = "function() { UIUpdater1Update(); UIUpdater2Update(); }";
+}
+
+ReorderFieldsLink: ERXWOTemplate {
+    templateName = "link";
+}
+
+HasNoColumnsConditional: WOConditional {
+	condition = hasNoColumnsValidationError;
+}
+
+UploadFileModalDialogOpener: AjaxModalDialogOpener {
+    dialogId = "UploadFileModalDialog";
+}
+
+UploadedFileName: WOString {
+    value = uploadedFileName;
+}
+
+HasNoFileConditional: WOConditional {
+	condition = hasNoFileValidationError;
+}
+
+HasTextDescriptionConditional: WOConditional {
+	condition = currentColumn.textDescription;
+}
+
+ImportButton: AjaxSubmitButton {
+	action = validateImport;
+	value = "Import Data";
+    updateContainerID = "ConfigureWebsiteDataTablesPane";
+}
+
+ImportRecordsForm: WOForm {
+	method = "Post";
+	multipleSubmit = true;
+	enctype = "multipart/form-data";
+}
+
+IncludeAllFieldsButton: AjaxSubmitButton {
+	action = includeAllFields;
+	value = "Include All fields";
+    updateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+InvalidFileValidationMessageString: WOString {
+	value = validationFailures.invalidFile;  // VALID
+	escapeHTML = false;
+}
+
+IsInvalidFileConditional: WOConditional {
+	condition = isInvalidFileValidationError;
+}
+
+NoColumnsValidationMessageString: WOString {
+	value = validationFailures.noColumns;  // VALID
+}
+
+NoFileValidationMessageString: WOString {
+	value = validationFailures.noFile;  // VALID
+}
+
+//OrderedColumnsRepetition : AjaxSortableList {
+//    id = "ImportTableID";
+//    item = currentColumn;
+//    list = orderedColumns.ordered;
+//    listItemIDKeyPath = "columnID";
+//}
+
+OrderedColumnsRepetition : WORepetition {
+    item = currentColumn;
+    list = orderedColumns.ordered;
+}
+
+RetainExistingDataRadioButton: WORadioButton {
+	name = "RetainData";
+	selection = retainExistingData;
+	value = true;
+}
+
+SkipFirstLineRadioButton: WORadioButton {
+	name = "HeaderLine";
+	selection = skipFirstLine;
+	value = true;
+}
+
+MaxImportFieldsString: WOString {
+	value = application.properties.DataAccessMaximumNumberOfFieldsInImport;  // VALID
+}
+
+TabDelimiterRadioButton: WORadioButton {
+	selection = delimiter;
+	value = "tab";
+	name = "delimiter";
+}
+
+UploadFileModalDialog: AjaxModalDialog {
+    id = "UploadFileModalDialog";
+    title = "Upload File";
+    label = "Upload File";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 400;
+    clickOnReturnId = "UploadFileModalDialogCloseLink";
+    clickOnEscId = "UploadFileModalDialogCloseLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+AjaxUploadFile: AjaxFileUpload {
+    data = uploadedFile;
+    filePath = uploadedFileName;
+    size = "60";
+    allowCancel = true;
+}
+
+UploadFileModalDialogCloseLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "UploadFileModalDialogCloseLink";
+}
+
+ConfirmImportModalDialog: AjaxModalDialog {
+    id = "ConfirmImportModalDialog";
+    title = "Confirm Import";
+    label = "Import file";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmImportModalDialogYesLink";
+    clickOnEscId = "ConfirmImportModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+ConfirmImportMessageString: WOString {
+    value = importDialogMessage;
+}
+
+ConfirmImportModalDialogYesLink: AjaxHyperlink {
+    action = performImport;
+    id = "ConfirmImportModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmImportModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmImportModalDialogNoLink";
+}
+
+ImportSuccessModalDialog: AjaxModalDialog {
+    id = "ImportSuccessModalDialog";
+    title = "Import Successful";
+    label = "Import successful";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ImportSuccessModalDialogOkLink";
+    clickOnEscId = "ImportSuccessModalDialogOkLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+ImportSuccessModalDialogOkLink: AjaxHyperlink {
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ImportSuccessModalDialogOkLink";
+    evalScripts = true;
+}
+
+ReorderFieldsModalDialog: AjaxModalDialog {
+    id = "ReorderFieldsModalDialog";
+    title = "Reorder Fields";
+    label = "Reorder Fields";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ReorderFieldsModalDialogDoneLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesImportPane";
+}
+
+ReorderUpdateArea : AjaxUpdateContainer {
+    id = "ReorderUpdateArea";
+}
+
+ReorderForm : WOForm {
+    multipleSubmit = true;
+}
+
+ReorderRepetition : AjaxSortableList {
+    id = "ReorderImportFields";
+    item = currentColumn;
+    list = orderedColumns.ordered;
+//    list = orderedColumns.objects;
+    listItemIDKeyPath = "columnID";
+    listItemStyle = "list-style-type:none;";
+    action = reorder;
+}
+
+ReorderColumnNameString: WOString {
+    value = currentColumn.name;
+}
+
+ReorderFieldsModalDialogDoneLink: AjaxHyperlink {
+    action = reorderFields;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ReorderFieldsModalDialogDoneLink";
+    evalScripts = true;
+}

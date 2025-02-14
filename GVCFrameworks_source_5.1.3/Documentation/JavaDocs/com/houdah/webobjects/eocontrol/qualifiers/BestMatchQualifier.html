@@ -1,0 +1,1217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+BestMatchQualifier (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="BestMatchQualifier (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/BestMatchQualifier.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.ValueHolder.html" title="class in com.houdah.webobjects.eocontrol.qualifiers"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="BestMatchQualifier.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.houdah.webobjects.eocontrol.qualifiers</FONT>
+<BR>
+Class BestMatchQualifier</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOQualifier
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">com.houdah.webobjects.eocontrol.qualifiers.Qualifier</A>
+          <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol.EOKeyValueArchiving, com.webobjects.eocontrol.EOQualifierEvaluation, com.webobjects.foundation.NSCoding, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.36"><B>BestMatchQualifier</B></A><DT>extends <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">Qualifier</A><DT>implements <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A>, com.webobjects.foundation.NSCoding, com.webobjects.eocontrol.EOKeyValueArchiving</DL>
+</PRE>
+
+<P>
+<p>Qualifier to find an object with a given attribute as close as possible to a specified value.</p>
+ 
+ <p>The qualifier is initialized with the key path to the value to approximate, the target value and a
+ qualifierOperator specifying how to approximate the limit. Usually this qualifier will match at most one
+ object. Thus, in most cases, sensible results are obtained only if the key path represents an attribute
+ or a to-one relationship. In cases where a to-many relationship is involved, the BestRelationshipMatchesQualifier
+ is likely to be most appropriate for the task.</p>
+ 
+ <p>An alternate way of using the qualifier is to specify an optional array of valuing key paths. This allows for
+ handling cases where the objects to be fetched are valued by relationships in a way that the best match is
+ different for each value in the relationship. The qualifier will thus match as many objects as there are
+ distinct value combinations reachable by theses key paths.</p>
+ 
+ <p>For database qualification the best matching entry is searched for among all commited instances of that
+ entity. The list may actually be restricted by using a qualifier. For in-memory evaluation such a list must
+ be made available to the qualifier. This is done by calling either prepareWithArray() or qualifierPreparedWithArray().</p>
+ 
+ <p>A null (or NSKeyValueCoding.NullValue) limit allows for matching of the object with largest or lowest value
+ at keyPath.
+ 
+ <p>This sample code is provided for educational purposes. It is mainly to be considered a source of information 
+ and a way to spark off discussion. I make no warranty, expressed or implied, about the quality of this code or 
+ its usefulness in any particular situation. Use this code or any code based on it at your own risk. Basically, 
+ enjoy the read, but don't blame me for anything.</p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Pierre Bernard http://homepage.mac.com/i_love_my/webobjects.html</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../../../serialized-form.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.ValueHolder.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier.ValueHolder</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOQualifier"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOQualifier</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOQualifier.Comparison, com.webobjects.eocontrol.EOQualifier.ComparisonSupport, com.webobjects.eocontrol.EOQualifier.QualifierVariableSubstitutionException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSCoding._BigDecimalSupport, com.webobjects.foundation.NSCoding._BigIntegerSupport, com.webobjects.foundation.NSCoding._BooleanSupport, com.webobjects.foundation.NSCoding._ByteSupport, com.webobjects.foundation.NSCoding._CharacterSupport, com.webobjects.foundation.NSCoding._DateSupport, com.webobjects.foundation.NSCoding._DoubleSupport, com.webobjects.foundation.NSCoding._FloatSupport, com.webobjects.foundation.NSCoding._IntegerSupport, com.webobjects.foundation.NSCoding._LongSupport, com.webobjects.foundation.NSCoding._NumberSupport, com.webobjects.foundation.NSCoding._ShortSupport, com.webobjects.foundation.NSCoding._StringSupport, com.webobjects.foundation.NSCoding.Support</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueArchiving"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueArchiving</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueArchiving._NullValueSupport, com.webobjects.eocontrol.EOKeyValueArchiving._NumberSupport, com.webobjects.eocontrol.EOKeyValueArchiving._TimestampSupport, com.webobjects.eocontrol.EOKeyValueArchiving.Awaking, com.webobjects.eocontrol.EOKeyValueArchiving.FinishInitialization, com.webobjects.eocontrol.EOKeyValueArchiving.Support</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;com.webobjects.foundation.NSSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#availableSelectors">availableSelectors</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of allowed qualifierOperators</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#bestValues">bestValues</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Best matching values from an in-memory array</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#KEY_PATH">KEY_PATH</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key value for the one argument clone method</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#keyPath">keyPath</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Path to the value to maximize below the given limt</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#limit">limit</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upper limit for the value at the given keyPath</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#LIMIT">LIMIT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key value for the one argument clone method</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#QUALIFIER_OPERATOR">QUALIFIER_OPERATOR</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key value for the one argument clone method</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSSelector</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#qualifierOperator">qualifierOperator</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qualifier operator used to approximate the limit</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#SUB_QUALIFIER">SUB_QUALIFIER</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key value for the one argument clone method</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eocontrol.EOQualifier</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#subQualifier">subQualifier</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qualifier used to limit the list of accepatble values</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#UNIQUING_PATHS">UNIQUING_PATHS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key value for the one argument clone method</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#uniquingPaths">uniquingPaths</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of key paths to the valuing attributes</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.houdah.webobjects.eocontrol.qualifiers.Qualifier"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.houdah.webobjects.eocontrol.qualifiers.<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">Qualifier</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html#KEY_PATH_SEPARATOR">KEY_PATH_SEPARATOR</A>, <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html#KEY_PATH_SEPARATOR_CHAR">KEY_PATH_SEPARATOR_CHAR</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOQualifier"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOQualifier</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, QualifierOperatorCaseInsensitiveLike, QualifierOperatorContains, QualifierOperatorEqual, QualifierOperatorGreaterThan, QualifierOperatorGreaterThanOrEqualTo, QualifierOperatorLessThan, QualifierOperatorLessThanOrEqualTo, QualifierOperatorLike, QualifierOperatorNotEqual</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOKeyValueArchiving"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.eocontrol.EOKeyValueArchiving</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector)">BestMatchQualifier</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                                     com.webobjects.foundation.NSSelector&nbsp;qualifierOperator)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector, com.webobjects.eocontrol.EOQualifier)">BestMatchQualifier</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                                     com.webobjects.foundation.NSSelector&nbsp;qualifierOperator,
+                                     com.webobjects.eocontrol.EOQualifier&nbsp;subQualifier)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor
+ 
+ The applicable qualifierOperators are:
+ 
+ EOQualifier.QualifierOperatorLessThan
+ EOQualifier.QualifierOperatorLessThanOrEqualTo
+ EOQualifier.QualifierOperatorGreaterThanOrEqualTo
+ EOQualifier.QualifierOperatorGreaterThan
+ </TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">BestMatchQualifier</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                                     com.webobjects.foundation.NSSelector&nbsp;qualifierOperator,
+                                     com.webobjects.eocontrol.EOQualifier&nbsp;subQualifier,
+                                     com.webobjects.foundation.NSArray&nbsp;uniquingPaths)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor
+ 
+ The applicable qualifierOperators are:
+ 
+ EOQualifier.QualifierOperatorLessThan
+ EOQualifier.QualifierOperatorLessThanOrEqualTo
+ EOQualifier.QualifierOperatorGreaterThanOrEqualTo
+ EOQualifier.QualifierOperatorGreaterThan
+ </TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#addQualifierKeysToSet(com.webobjects.foundation.NSMutableSet)">addQualifierKeysToSet</A></B>(com.webobjects.foundation.NSMutableSet&nbsp;keySet)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.ValueHolder.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier.ValueHolder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#bestValueHolder(java.lang.Object, boolean)">bestValueHolder</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object,
+                               boolean&nbsp;mayExpand)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#classForCoder()">classForCoder</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#clone()">clone</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#clone(com.webobjects.foundation.NSDictionary)">clone</A></B>(com.webobjects.foundation.NSDictionary&nbsp;newValues)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#decodeObject(com.webobjects.foundation.NSCoder)">decodeObject</A></B>(com.webobjects.foundation.NSCoder&nbsp;coder)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#decodeWithKeyValueUnarchiver(com.webobjects.eocontrol.EOKeyValueUnarchiver)">decodeWithKeyValueUnarchiver</A></B>(com.webobjects.eocontrol.EOKeyValueUnarchiver&nbsp;keyValueUnarchiver)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#encodeWithCoder(com.webobjects.foundation.NSCoder)">encodeWithCoder</A></B>(com.webobjects.foundation.NSCoder&nbsp;coder)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#encodeWithKeyValueArchiver(com.webobjects.eocontrol.EOKeyValueArchiver)">encodeWithKeyValueArchiver</A></B>(com.webobjects.eocontrol.EOKeyValueArchiver&nbsp;keyValueArchiver)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#equals(java.lang.Object)">equals</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#evaluateWithObject(java.lang.Object)">evaluateWithObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#keyPath()">keyPath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#limit()">limit</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#prepareWithArray(com.webobjects.foundation.NSArray)">prepareWithArray</A></B>(com.webobjects.foundation.NSArray&nbsp;array)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prepares the qualifier for in-memory qualifying.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSSelector</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#qualifierOperator()">qualifierOperator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#qualifierPreparedWithArray(com.webobjects.foundation.NSArray)">qualifierPreparedWithArray</A></B>(com.webobjects.foundation.NSArray&nbsp;array)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOQualifier</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#qualifierWithBindings(com.webobjects.foundation.NSDictionary, boolean)">qualifierWithBindings</A></B>(com.webobjects.foundation.NSDictionary&nbsp;bindings,
+                                           boolean&nbsp;requiresAll)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#resetBestValues()">resetBestValues</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOQualifier</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#subQualifier()">subQualifier</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#uniquingPaths()">uniquingPaths</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#validateKeysWithRootClassDescription(com.webobjects.eocontrol.EOClassDescription)">validateKeysWithRootClassDescription</A></B>(com.webobjects.eocontrol.EOClassDescription&nbsp;classDescription)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.houdah.webobjects.eocontrol.qualifiers.Qualifier"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.houdah.webobjects.eocontrol.qualifiers.<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">Qualifier</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html#allButLastPathComponent(java.lang.String)">allButLastPathComponent</A>, <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html#lastPathComponent(java.lang.String)">lastPathComponent</A>, <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/Qualifier.html#validateKeyPathWithRootClassDescription(java.lang.String, com.webobjects.eocontrol.EOClassDescription)">validateKeyPathWithRootClassDescription</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOQualifier"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOQualifier</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_accept, _isEmpty, allQualifierKeys, allQualifierOperators, bindingKeys, filterArrayWithQualifier, filteredArrayWithQualifier, keyPathForBindingKey, operatorSelectorForSelectorNamed, operatorSelectorForString, qualifierToMatchAllValues, qualifierToMatchAnyValue, qualifierWithQualifierFormat, relationalQualifierOperators, stringForOperatorSelector</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="KEY_PATH"><!-- --></A><H3>
+KEY_PATH</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.44"><B>KEY_PATH</B></A></PRE>
+<DL>
+<DD>Key value for the one argument clone method
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier.KEY_PATH">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="LIMIT"><!-- --></A><H3>
+LIMIT</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.45"><B>LIMIT</B></A></PRE>
+<DL>
+<DD>Key value for the one argument clone method
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier.LIMIT">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="QUALIFIER_OPERATOR"><!-- --></A><H3>
+QUALIFIER_OPERATOR</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.46"><B>QUALIFIER_OPERATOR</B></A></PRE>
+<DL>
+<DD>Key value for the one argument clone method
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier.QUALIFIER_OPERATOR">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SUB_QUALIFIER"><!-- --></A><H3>
+SUB_QUALIFIER</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.47"><B>SUB_QUALIFIER</B></A></PRE>
+<DL>
+<DD>Key value for the one argument clone method
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier.SUB_QUALIFIER">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="UNIQUING_PATHS"><!-- --></A><H3>
+UNIQUING_PATHS</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.48"><B>UNIQUING_PATHS</B></A></PRE>
+<DL>
+<DD>Key value for the one argument clone method
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#com.houdah.webobjects.eocontrol.qualifiers.BestMatchQualifier.UNIQUING_PATHS">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="availableSelectors"><!-- --></A><H3>
+availableSelectors</H3>
+<PRE>
+protected static final com.webobjects.foundation.NSSet <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.54"><B>availableSelectors</B></A></PRE>
+<DL>
+<DD>List of allowed qualifierOperators
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="keyPath"><!-- --></A><H3>
+keyPath</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.66"><B>keyPath</B></A></PRE>
+<DL>
+<DD>Path to the value to maximize below the given limt
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="limit"><!-- --></A><H3>
+limit</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.70"><B>limit</B></A></PRE>
+<DL>
+<DD>Upper limit for the value at the given keyPath
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="qualifierOperator"><!-- --></A><H3>
+qualifierOperator</H3>
+<PRE>
+protected com.webobjects.foundation.NSSelector <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.74"><B>qualifierOperator</B></A></PRE>
+<DL>
+<DD>Qualifier operator used to approximate the limit
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="subQualifier"><!-- --></A><H3>
+subQualifier</H3>
+<PRE>
+protected com.webobjects.eocontrol.EOQualifier <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.78"><B>subQualifier</B></A></PRE>
+<DL>
+<DD>Qualifier used to limit the list of accepatble values
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="bestValues"><!-- --></A><H3>
+bestValues</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.82"><B>bestValues</B></A></PRE>
+<DL>
+<DD>Best matching values from an in-memory array
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="uniquingPaths"><!-- --></A><H3>
+uniquingPaths</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.86"><B>uniquingPaths</B></A></PRE>
+<DL>
+<DD>List of key paths to the valuing attributes
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector)"><!-- --></A><H3>
+BestMatchQualifier</H3>
+<PRE>
+public <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.104"><B>BestMatchQualifier</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                          com.webobjects.foundation.NSSelector&nbsp;qualifierOperator)</PRE>
+<DL>
+<DD>Constructor. No restricting qualifier</p></p>
+ 
+ The applicable qualifierOperators are:
+ <UL>
+ <LI>EOQualifier.QualifierOperatorLessThan
+ <LI>EOQualifier.QualifierOperatorLessThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThan
+ </UL>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>keyPath</CODE> - Path to the value to maximize below the given limit<DD><CODE>limit</CODE> - Upper limit for the value at the given keyPath<DD><CODE>qualifierOperator</CODE> - Qualifier operator used to approximate the limit</DL>
+</DL>
+<HR>
+
+<A NAME="BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector, com.webobjects.eocontrol.EOQualifier)"><!-- --></A><H3>
+BestMatchQualifier</H3>
+<PRE>
+public <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.124"><B>BestMatchQualifier</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                          com.webobjects.foundation.NSSelector&nbsp;qualifierOperator,
+                          com.webobjects.eocontrol.EOQualifier&nbsp;subQualifier)</PRE>
+<DL>
+<DD>Constructor</p></p>
+ 
+ The applicable qualifierOperators are:
+ <UL>
+ <LI>EOQualifier.QualifierOperatorLessThan
+ <LI>EOQualifier.QualifierOperatorLessThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThan
+ </UL>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>keyPath</CODE> - Path to the value to maximize below the given limit<DD><CODE>limit</CODE> - Upper limit for the value at the given keyPath<DD><CODE>qualifierOperator</CODE> - qualifierOperator used to approximate the limit<DD><CODE>subQualifier</CODE> - qualifier used to limit the list of accepatble values</DL>
+</DL>
+<HR>
+
+<A NAME="BestMatchQualifier(java.lang.String, java.lang.Object, com.webobjects.foundation.NSSelector, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+BestMatchQualifier</H3>
+<PRE>
+public <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.149"><B>BestMatchQualifier</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;limit,
+                          com.webobjects.foundation.NSSelector&nbsp;qualifierOperator,
+                          com.webobjects.eocontrol.EOQualifier&nbsp;subQualifier,
+                          com.webobjects.foundation.NSArray&nbsp;uniquingPaths)</PRE>
+<DL>
+<DD>Constructor</p></p>
+ 
+ The applicable qualifierOperators are:
+ <UL>
+ <LI>EOQualifier.QualifierOperatorLessThan
+ <LI>EOQualifier.QualifierOperatorLessThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThanOrEqualTo
+ <LI>EOQualifier.QualifierOperatorGreaterThan
+ </UL>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>keyPath</CODE> - Path to the value to maximize below the given limit<DD><CODE>limit</CODE> - Upper limit for the value at the given keyPath<DD><CODE>qualifierOperator</CODE> - qualifierOperator used to approximate the limit<DD><CODE>subQualifier</CODE> - qualifier used to limit the list of accepatble values<DD><CODE>uniquingPaths</CODE> - list of key paths to the valuing attributes</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="keyPath()"><!-- --></A><H3>
+keyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.180"><B>keyPath</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="limit()"><!-- --></A><H3>
+limit</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.185"><B>limit</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="qualifierOperator()"><!-- --></A><H3>
+qualifierOperator</H3>
+<PRE>
+public com.webobjects.foundation.NSSelector <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.190"><B>qualifierOperator</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="subQualifier()"><!-- --></A><H3>
+subQualifier</H3>
+<PRE>
+public com.webobjects.eocontrol.EOQualifier <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.195"><B>subQualifier</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="uniquingPaths()"><!-- --></A><H3>
+uniquingPaths</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.200"><B>uniquingPaths</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="prepareWithArray(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+prepareWithArray</H3>
+<PRE>
+public void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.212"><B>prepareWithArray</B></A>(com.webobjects.foundation.NSArray&nbsp;array)</PRE>
+<DL>
+<DD>Prepares the qualifier for in-memory qualifying.</p></p>
+ 
+ The best matching values (usually one) are picked from the array. Later evaluations
+ need only to determine if the object to evaluate matches the found value.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>array</CODE> - the array from which to pick values</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="qualifierPreparedWithArray(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+qualifierPreparedWithArray</H3>
+<PRE>
+public <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.259"><B>qualifierPreparedWithArray</B></A>(com.webobjects.foundation.NSArray&nbsp;array)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="evaluateWithObject(java.lang.Object)"><!-- --></A><H3>
+evaluateWithObject</H3>
+<PRE>
+public boolean <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.268"><B>evaluateWithObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>evaluateWithObject</CODE> in interface <CODE>com.webobjects.eocontrol.EOQualifierEvaluation</CODE><DT><B>Overrides:</B><DD><CODE>evaluateWithObject</CODE> in class <CODE>com.webobjects.eocontrol.EOQualifier</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="qualifierWithBindings(com.webobjects.foundation.NSDictionary, boolean)"><!-- --></A><H3>
+qualifierWithBindings</H3>
+<PRE>
+public com.webobjects.eocontrol.EOQualifier <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.287"><B>qualifierWithBindings</B></A>(com.webobjects.foundation.NSDictionary&nbsp;bindings,
+                                                                  boolean&nbsp;requiresAll)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>qualifierWithBindings</CODE> in class <CODE>com.webobjects.eocontrol.EOQualifier</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateKeysWithRootClassDescription(com.webobjects.eocontrol.EOClassDescription)"><!-- --></A><H3>
+validateKeysWithRootClassDescription</H3>
+<PRE>
+public void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.325"><B>validateKeysWithRootClassDescription</B></A>(com.webobjects.eocontrol.EOClassDescription&nbsp;classDescription)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>validateKeysWithRootClassDescription</CODE> in class <CODE>com.webobjects.eocontrol.EOQualifier</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addQualifierKeysToSet(com.webobjects.foundation.NSMutableSet)"><!-- --></A><H3>
+addQualifierKeysToSet</H3>
+<PRE>
+public void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.338"><B>addQualifierKeysToSet</B></A>(com.webobjects.foundation.NSMutableSet&nbsp;keySet)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>addQualifierKeysToSet</CODE> in class <CODE>com.webobjects.eocontrol.EOQualifier</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="equals(java.lang.Object)"><!-- --></A><H3>
+equals</H3>
+<PRE>
+public boolean <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.360"><B>equals</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clone()"><!-- --></A><H3>
+clone</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.378"><B>clone</B></A>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>clone</CODE> in class <CODE>com.webobjects.eocontrol.EOQualifier</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clone(com.webobjects.foundation.NSDictionary)"><!-- --></A><H3>
+clone</H3>
+<PRE>
+public <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.391"><B>clone</B></A>(com.webobjects.foundation.NSDictionary&nbsp;newValues)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"><!-- --></A><H3>
+toString</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.411"><B>toString</B></A>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="resetBestValues()"><!-- --></A><H3>
+resetBestValues</H3>
+<PRE>
+protected void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.486"><B>resetBestValues</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="bestValueHolder(java.lang.Object, boolean)"><!-- --></A><H3>
+bestValueHolder</H3>
+<PRE>
+protected <A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.ValueHolder.html" title="class in com.houdah.webobjects.eocontrol.qualifiers">BestMatchQualifier.ValueHolder</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.500"><B>bestValueHolder</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object,
+                                                         boolean&nbsp;mayExpand)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classForCoder()"><!-- --></A><H3>
+classForCoder</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.540"><B>classForCoder</B></A>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>classForCoder</CODE> in interface <CODE>com.webobjects.foundation.NSCoding</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="decodeObject(com.webobjects.foundation.NSCoder)"><!-- --></A><H3>
+decodeObject</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.545"><B>decodeObject</B></A>(com.webobjects.foundation.NSCoder&nbsp;coder)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="encodeWithCoder(com.webobjects.foundation.NSCoder)"><!-- --></A><H3>
+encodeWithCoder</H3>
+<PRE>
+public void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.555"><B>encodeWithCoder</B></A>(com.webobjects.foundation.NSCoder&nbsp;coder)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>encodeWithCoder</CODE> in interface <CODE>com.webobjects.foundation.NSCoding</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="encodeWithKeyValueArchiver(com.webobjects.eocontrol.EOKeyValueArchiver)"><!-- --></A><H3>
+encodeWithKeyValueArchiver</H3>
+<PRE>
+public void <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.566"><B>encodeWithKeyValueArchiver</B></A>(com.webobjects.eocontrol.EOKeyValueArchiver&nbsp;keyValueArchiver)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>encodeWithKeyValueArchiver</CODE> in interface <CODE>com.webobjects.eocontrol.EOKeyValueArchiving</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="decodeWithKeyValueUnarchiver(com.webobjects.eocontrol.EOKeyValueUnarchiver)"><!-- --></A><H3>
+decodeWithKeyValueUnarchiver</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html#line.575"><B>decodeWithKeyValueUnarchiver</B></A>(com.webobjects.eocontrol.EOKeyValueUnarchiver&nbsp;keyValueUnarchiver)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/BestMatchQualifier.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.ValueHolder.html" title="class in com.houdah.webobjects.eocontrol.qualifiers"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/houdah/webobjects/eocontrol/qualifiers/BestMatchQualifier.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="BestMatchQualifier.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

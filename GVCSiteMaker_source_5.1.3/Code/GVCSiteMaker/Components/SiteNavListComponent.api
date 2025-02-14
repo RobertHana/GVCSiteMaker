@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+        <wo wocomponentcontent="false" class="SiteNavListComponent">
+			<binding name="sectionNodeList"/>
+			<binding name="listId"/>
+			<binding name="website"/>
+			<binding name="parentNode"/>
+
+			<validation message="&apos;sectionNodeList&apos; is a required binding">
+				<unbound name="sectionNodeList"/>
+			</validation>
+			<validation message="&apos;website&apos; is a required binding">
+				<unbound name="website"/>
+			</validation>			
+        </wo>
+</wodefinitions>

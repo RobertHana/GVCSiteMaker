@@ -1,0 +1,71 @@
+GVC WebObjects Application Installation
+
+For each new applications or set of applications that are part of the same website (GVCSiteMaker, GVCSMAdmin and GVCSMUtility for example), one unique user on the server will be created. Its home directory will be used to store the documentroot and all the WebObjects application specific files.
+
+Typically:
+
+~/Applications
+~/DocumentRoot
+~/Frameworks
+
+
+The installation files needs to be copied in a 4th directory:
+
+~/Install
+
+
+With the following subdirectories:
+
+Directory used to backup previous installed configuration files that needs to be restored after an upgrade:
+
+~/Install/Backup 
+
+
+Directory used to store the installation scripts:
+
+~/Install/Script 
+
+
+Directory used to store all the archived files (format .tar.gz) that needs to be installed:
+
+~/Install/Archive 
+
+
+
+Installation script:
+
+
+The main installation script is:
+
+~/Install/Script/WOInstall.sh
+
+
+Installation from scratch without backups:
+
+./WOInstall.sh <Installation Directory>
+
+
+Installation keeping the defined configuration files:
+
+./WOInstall.sh <Installation Directory> backup
+
+
+Configuration files:
+
+~/Install/Script/backup.list
+
+This file lists all the files that needs to be backed up before installation (ususally upgrade). These files are going to be copied back to the original location at the end of the installation process.  Path names are relative, e.g.
+Framework/GVCSMCustom.framework/Resources/GVCSMCustom.plist
+
+
+~/Install/Script/archive.list
+
+This file lists all the archive files (format .tar.gz) that will need to be installed the format is the following:
+
+<Archive>:<Install directory>
+
+<Install Directory> have a path relative to the home directory.
+
+Example:
+
+DevelopmentGVCSiteMakerCustomFrameworks.tar.gz:Framework

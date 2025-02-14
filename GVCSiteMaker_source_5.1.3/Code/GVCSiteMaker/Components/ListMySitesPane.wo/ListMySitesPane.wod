@@ -1,0 +1,174 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageTitle = "Choose Site to Configure";
+    pageType = "ListMySitesPane";
+    isAdmin = false;
+    isConfigPage = false;  // not a configuration page
+    hasSite = false;
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ListMySitesPane";
+}
+
+UserIDString : WOString {
+    value = session.currentUser.userID;
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ListMySitesPane";
+}
+
+InfoPercentFreeString : WOString {
+    value = application.properties.WebsiteFileUsageWarningLevelPercent;  // VALID
+}
+
+SortOnNameHyperlink : AjaxUpdateLink {
+    action = sortOnSiteID;
+    title = "Sort on name";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnNameDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedNameConditional : WOConditional {
+    condition = isSortingOnName;
+}
+
+SortOnBannerHyperlink : AjaxUpdateLink {
+    action = sortOnBanner;
+    title = "Sort on banner";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnBannerDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedBannerConditional : WOConditional {
+    condition = isSortingOnBanner;
+}
+
+SortOnOwnerHyperlink : AjaxUpdateLink {
+    action = sortOnOwner;
+    title = "Sort on owner";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnOwnerDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedOwnerConditional : WOConditional {
+    condition = isSortingOnOwner;
+}
+
+SortOnQuotaHyperlink : AjaxUpdateLink {
+    action = sortOnQuota;
+    title = "Sort on quota";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnQuotaDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedQuotaConditional : WOConditional {
+    condition = isSortingOnQuota;
+}
+
+SortOnFreeHyperlink : AjaxUpdateLink {
+    action = sortOnFree;
+    title = "Sort on free";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnFreeDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedFreeConditional : WOConditional {
+    condition = isSortingOnFree;
+}
+
+SortOnDateCreatedHyperlink : AjaxUpdateLink {
+    action = sortOnDateCreated;
+    title = "Sort on date Created";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnDateCreatedDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedDateCreatedConditional : WOConditional {
+    condition = isSortingOnDateCreated;
+}
+
+SortOnDateModifiedHyperlink : AjaxUpdateLink {
+    action = sortOnDateModified;
+    title = "Sort on date modified";
+    updateContainerID = "ListMySitesPane";
+}
+
+SortOnDateModifiedDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedDateModifiedConditional : WOConditional {
+    condition = isSortingOnDateModified;
+}
+
+SiteRepetition : WORepetition {
+    item = aSite;
+    list = configurableWebsites;
+}
+
+TRContainer : WOGenericContainer {
+    elementName = "tr";
+    style = rowStyle;
+}
+
+EditSiteHyperlink: WOHyperlink {
+    action = editSite;
+}
+
+SiteIDString : WOString {
+    value = aSite.siteID;
+}
+
+BannerNameString : WOString {
+    value = aSite.banner.bannerText;
+}
+
+PrincipalOwnerString : WOString {
+    value = aSite.owner.userID;
+}
+
+QuotaString : WOString {
+    value = aSite.megQuota;
+}
+
+PercentFreeString : WOString {
+    value = ~100 - aSite.percentageOfQuotaUsed;
+    numberformat = "###.00";
+}
+
+DateCreatedString : WOString {
+    value = aSite.dateCreated;
+    dateformat = application.properties.CompressedDateFormat;  // VALID
+}
+
+DateModifiedString : WOString {
+    value = aSite.dateLastModified;
+    dateformat = application.properties.CompressedDateFormat;  // VALID
+}

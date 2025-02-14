@@ -1,0 +1,45 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=BodyTitle></WEBOBJECT>
+	<webobject name="ReportForm">
+    <table BORDER=0 CELLSPACING=2 CELLPADDING=2 class="contentTable">
+          <tr> 
+            <td valign="top" width="400" class="boldText">
+				<WEBOBJECT NAME=HasValidData>
+					Sucessfully created <WEBOBJECT NAME="ValidUserArrayCount"></WEBOBJECT> 						user(s):
+				</WEBOBJECT>
+				<WEBOBJECT NAME=HasNoValidData>
+					No valid data obtained
+				</WEBOBJECT>
+			</td>
+            <td valign="top" align="right"> 
+                <WEBOBJECT NAME=ReturnToUserCreation></WEBOBJECT>
+            </td>
+          </tr>
+          <WEBOBJECT NAME="HasValidUsers">
+		  <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=ValidUserList></WEBOBJECT>
+            </td>
+          </tr>
+		  </WEBOBJECT>
+			<webobject name=HasInvalidData>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <hr class="alternateBarStyle">
+            </td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2" class="boldText">
+				Creation failed for <WEBOBJECT NAME="InvalidUserArrayCount"></WEBOBJECT>
+            user(s):
+			</td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=InvalidUserList></WEBOBJECT>
+            </td>
+          </tr>
+		</webobject>
+        </table>
+      </webobject>
+</webobject> 

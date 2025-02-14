@@ -1,0 +1,53 @@
+CancelAddButton: WOSubmitButton {
+	action = cancelAddFolder;
+	value = "Cancel";
+}
+
+CancelModifyButton: WOSubmitButton {
+	action = cancelModifyFolder;
+	value = "Cancel";
+}
+
+CreateFolderButton: WOSubmitButton { 
+	action = saveChanges; 
+	value = "Create Folder"; 
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	isAdmin = false;
+	hasSite = true;
+}
+
+ErrorMessage: WOString {
+  value = message;
+}
+
+FolderForm: WOForm { 
+	multipleSubmit = true;
+}
+
+FolderName: WOTextField {
+	maxLength = "100";
+	size = "50";
+	value = folder.name;
+}
+
+HasErrorMessageConditional: WOConditional {
+	condition = message;
+}
+
+IsModifyingFolder: WOConditional {
+	condition = isModifyingSiteFileFolder;
+}
+
+IsNotModifyingFolder: WOConditional {
+	condition = isModifyingSiteFileFolder;
+	negate = true;
+}
+
+SaveChangesButton: WOSubmitButton {
+	action = saveChanges;
+	value = "Submit";
+}

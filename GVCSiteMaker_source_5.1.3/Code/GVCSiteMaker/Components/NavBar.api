@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="NavBar" wocomponentcontent="false">
+
+		<binding name="parentComponent"/>
+		<binding name="currentSection"/>
+
+		<validation message="&apos;parentComponent&apos; is a required binding">
+			<unbound name="parentComponent"/>
+		</validation>
+
+		<validation message="&apos;currentSection&apos; is a required binding">
+			<unbound name="currentSection"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / JavaDoc Support
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">JavaDoc Support</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">JavaDoc support</a>
+  </td>
+  </tr>
+      <tr>
+    <td></td>
+    <td class="tocf">1.1</td>
+    <td class="toc"> 
+      <a href="#subsect11">How Jass supports JavaDoc</a>
+    </td>
+    </tr>
+      <tr>
+    <td></td>
+    <td class="tocf">1.2</td>
+    <td class="toc"> 
+      <a href="#subsect12">An Example</a>
+    </td>
+    </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    JavaDoc Support<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Support Jass!</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              If you found a better solution for the JavaDoc support of Jass, 
+e.g. a Doclet that will work with old and new Java versions, please
+contact us.
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+    next: 
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+  <hr size="1" noshade/>
+</div>
+  <h1><a name="javadoc"></a>
+  <a name="sect1">
+  1 JavaDoc support</a></h1>
+<a name="idx1"><em></em></a>
+<p>JavaDoc is a tool included in the JDK distribution for automatic
+HTML documentation generation. It supports special tags that describe
+entities like parameters, return values and exception. A JavaDoc
+generated documentation is quasi standard for Java APIs. </p>
+    <h2>
+    <a name="subsect11">
+    1.1 How Jass supports JavaDoc
+    </a></h2>
+<a name="idx2"><em></em></a>
+<p>
+Jass supports JavaDoc in a very easy way. If a formal comment is found
+in front of a method or a class, by default Jass adds special tags at 
+the end of this comment that describe the pre- and postconditions or the
+class invariant. To generate the documentation you may run the javadoc
+with the Doclet provided in the jass distribution (when using Java &lt;
+1.4), or the special <code>-tag</code> options (javadoc 1.4). Have a
+look at the <code>example.xml</code> ant build-file to see how to do
+so.
+</p>
+<p>
+Alternativly by giving the option <code>-htmldoc</code> you may
+instruct Jass to add plain HTML code. Option <code>-nodoc</code>
+disables the JavaDoc support.
+</p>
+    <h2>
+    <a name="subsect12">
+    1.2 An Example
+    </a></h2>
+<a name="idx3"><em></em></a>
+<p>JavaDoc would generate from the following source code ...
+</p>
+<pre>  
+/**
+ * This methods adds an object to the buffer.
+ * @param o the object that should be added.
+ */
+public void add(Object o) {
+    /** require [valid_object]    o != null; 
+                [buffer_not_full] !full();    **/
+    buffer[in % buffer.length] = o;
+    in++;
+    /** ensure Old.in == in - 1; **/
+}
+</pre> 
+
+<p> ... the following HTML code:
+</p>
+<p> <b>add</b></p>
+<pre>
+public void add(Object o)
+</pre>
+<dl>
+<dd> This methods adds an object to the buffer.
+</dd>
+<dd><dl>
+<dt> <b>Parameters:</b>
+<dd> o - the object that should be added.
+</dl></dd>
+</dl>
+<p> If the source code is passed through Jass the resulting HTML code
+looks like ...
+</p>
+<p> <b>add</b></p>
+<pre>
+public void add(Object o)
+</pre>
+<dl>
+<dd> This methods adds an object to the buffer.
+</dd>
+<dt><b>Requires:</b></dt>
+<dd><code><b>valid_object</b>: o!=null &&<br>
+  <b>buffer_not_full</b>: !full()</code>
+</dd>
+<dt><b>Ensures:</b></dt><dd><code>Old.in==in-1</code></dd>
+<dt> <b>Parameters:</b> </dt>
+<dd> o - the object that should be added.
+</dd>
+</dl>
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+    next: 
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 03/28/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

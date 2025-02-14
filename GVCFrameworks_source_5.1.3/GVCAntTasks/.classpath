@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="src" path="Tests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.apache.ant_1.7.0.v200803061910/lib/ant.jar"/>
+	<classpathentry kind="con" path="WOFramework/GVCJars"/>
+	<classpathentry kind="lib" path="Libraries/ant.jar"/>
+	<classpathentry kind="lib" path="/GVCJars/Libraries/woproject.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

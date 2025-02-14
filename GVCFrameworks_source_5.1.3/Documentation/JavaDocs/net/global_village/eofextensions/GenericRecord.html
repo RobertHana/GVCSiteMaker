@@ -1,0 +1,1104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+GenericRecord (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="GenericRecord (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/GenericRecord.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/ForgetfulEC.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/GVCFacade.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/GenericRecord.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GenericRecord.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class GenericRecord</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOCustomObject
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOGenericRecord
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.GenericRecord</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol._EOPrivateMemento, com.webobjects.eocontrol.EODeferredFaulting, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOFaulting, com.webobjects.eocontrol.EOKeyValueCoding, com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation._ForwardingBindingCheck, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCodingAdditions, com.webobjects.eocontrol.EORelationshipManipulation, com.webobjects.eocontrol.EOValidation, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation.Callback, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/virtualtables/_Column.html" title="class in net.global_village.virtualtables">_Column</A>, <A HREF="../../../net/global_village/eofextensions/tests/_KeyPathTestEntity.html" title="class in net.global_village.eofextensions.tests">_KeyPathTestEntity</A>, <A HREF="../../../net/global_village/genericobjects/_Lookup.html" title="class in net.global_village.genericobjects">_Lookup</A>, <A HREF="../../../net/global_village/genericobjects/_LookupLocalization.html" title="class in net.global_village.genericobjects">_LookupLocalization</A>, <A HREF="../../../net/global_village/security/_Privilege.html" title="class in net.global_village.security">_Privilege</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html" title="class in net.global_village.virtualtables">_Table</A>, <A HREF="../../../net/global_village/eofextensions/tests/_TestEntity.html" title="class in net.global_village.eofextensions.tests">_TestEntity</A>, <A HREF="../../../net/global_village/eofextensions/tests/_TestEntityWithRelationship.html" title="class in net.global_village.eofextensions.tests">_TestEntityWithRelationship</A>, <A HREF="../../../net/global_village/eofextensions/tests/_ToManyDestinationEntity.html" title="class in net.global_village.eofextensions.tests">_ToManyDestinationEntity</A>, <A HREF="../../../net/global_village/eofextensions/tests/_ToOneDestinationEntity.html" title="class in net.global_village.eofextensions.tests">_ToOneDestinationEntity</A>, <A HREF="../../../net/global_village/security/_User.html" title="class in net.global_village.security">_User</A>, <A HREF="../../../net/global_village/security/_UserGroup.html" title="class in net.global_village.security">_UserGroup</A>, <A HREF="../../../net/global_village/genericobjects/_VersionableArchivableObject.html" title="class in net.global_village.genericobjects">_VersionableArchivableObject</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualField.html" title="class in net.global_village.virtualtables">_VirtualField</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualRow.html" title="class in net.global_village.virtualtables">_VirtualRow</A>, <A HREF="../../../net/global_village/eofvalidation/EOGenericNotificationRecord.html" title="class in net.global_village.eofvalidation">EOGenericNotificationRecord</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.22"><B>GenericRecord</B></A><DT>extends com.webobjects.eocontrol.EOGenericRecord<DT>implements <A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DL>
+</PRE>
+
+<P>
+Extension of EOGenericRecord to add additional EO functionality. Also implements EOCopying,
+ HandleOptimisticLockingConflict, and implements methods to reset (clear) values cached in
+ instance variables.
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 10$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.eofextensions.GenericRecord">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOGenericRecord._DictionaryBinding, com.webobjects.eocontrol.EOGenericRecord._LazyDictionaryBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOCustomObject._BooleanFieldBinding, com.webobjects.eocontrol.EOCustomObject._FieldBinding, com.webobjects.eocontrol.EOCustomObject._LazyFieldBinding, com.webobjects.eocontrol.EOCustomObject._NumberFieldBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions">EOCopying.DefaultImplementation</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html" title="class in net.global_village.eofextensions">EOCopying.Utility</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCodingAdditions.DefaultImplementation, com.webobjects.eocontrol.EOKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._StoredForwardingBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol._EOPrivateMemento"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol._EOPrivateMemento</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol._EOPrivateMemento.DefaultImplementation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__readOnly</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#COPY_CONTEXT">COPY_CONTEXT</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#GenericRecord()">GenericRecord</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constuctor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOAttribute</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#attributeNamed(java.lang.String)">attributeNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#clearCachedValues()">clearCachedValues</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clears all cached values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedSnapshot()">committedSnapshot</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the committed snapshot for this EO.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedValueFor(java.lang.String)">committedValueFor</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the committed value associated with <code>key</code> based from its committed snapshot.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy()">copy</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EOCopying interface.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy(com.webobjects.foundation.NSMutableDictionary)">copy</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EOCopying interface.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#duplicate(com.webobjects.foundation.NSMutableDictionary)">duplicate</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EOCopying interface.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOEntity</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#entity()">entity</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#equals(java.lang.Object, java.lang.Object)">equals</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;first,
+             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;second)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if the first object is equal to the second object.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOGlobalID</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#globalID()">globalID</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#hasChanged(java.lang.String)">hasChanged</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the current value for the property named propertyName is not
+ the same as the committed value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isDummyFaultEO()">isDummyFaultEO</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detecting WO 5 dummy fault EOs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isNewEO()">isNewEO</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return true if this EO is a new, unsaved object.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#objectMatchingKeyAndValue(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.String, java.lang.Object)">objectMatchingKeyAndValue</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type coercing version of EOUtilities.objectMatchingKeyAndValue.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue()">primaryKeyValue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue(com.webobjects.eocontrol.EOGenericRecord)">primaryKeyValue</A></B>(com.webobjects.eocontrol.EOGenericRecord&nbsp;record)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOProperty</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#propertyNamed(java.lang.String)">propertyNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshObject()">refreshObject</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forces this object to be re-read from the database; the snapshot and all editing contexts
+ holding this object are updated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshRelationshipNamed(java.lang.String)">refreshRelationshipNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;name)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forces the contents of the named to-many relationship to be re-read from the database; all
+ editing contexts holding this relationship are updated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EORelationship</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#relationshipNamed(java.lang.String)">relationshipNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;relationshipName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#revertToSaved()">revertToSaved</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reverts any changes in this objects values back to the state last fetched.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#turnIntoFault(com.webobjects.eocontrol.EOFaultHandler)">turnIntoFault</A></B>(com.webobjects.eocontrol.EOFaultHandler&nbsp;faultHandler)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overriden to clear cached values when object is saved in another EC, the snapshot is updated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#updateFromSnapshot(com.webobjects.foundation.NSDictionary)">updateFromSnapshot</A></B>(com.webobjects.foundation.NSDictionary&nbsp;aSnapshot)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to clear cached values when object reverted in ec.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()">validateForSave</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overrides validateForSave to call validateForSave(NSMutableArray) and add the result of that
+ to what the super class produces.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)">validateForSave</A></B>(com.webobjects.foundation.NSMutableArray&nbsp;exceptions)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override this method to perform custom validations.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to allow bindings like eo.committedValueFor.name.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__setClassDescription, _keyGetBindingForKey, _keySetBindingForKey, _otherStorageBinding, _storedKeyGetBindingForKey, _storedKeySetBindingForKey, classDescription, usesDeferredFaultCreation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__classDescription, __clearPendingChanges, __editingContext, __globalID, __hasAuxillaryObservers, __hasPendingChanges, __hasPendingUpdate, __isInitialized, __isPendingDeletion, __isPendingInsertion, __isShared, __lastSnapshot, __originalSnapshot, __retainCount, __setAuxillaryObservers, __setEditingContext, __setGlobalID, __setInitialized, __setLastSnapshot, __setOriginalSnapshot, __setPendingDeletion, __setPendingInsertion, __setPendingUpdate, __setRetainCount, __setShared, _createKeyGetBindingForKey, _createKeySetBindingForKey, _createStoredKeyGetBindingForKey, _createStoredKeySetBindingForKey, _fieldKeyBinding, _forwardingBindingNeededForClass, _methodKeyGetBinding, _methodKeySetBinding, addObjectToBothSidesOfRelationshipWithKey, addObjectToPropertyWithKey, allPropertyKeys, attributeKeys, awakeFromClientUpdate, awakeFromFetch, awakeFromInsertion, canAccessFieldsDirectly, changesFromSnapshot, classDescriptionForDestinationKey, clearFault, clearProperties, deleteRuleForRelationshipKey, editingContext, entityName, eoDescription, eoShallowDescription, equals, excludeObjectFromPropertyWithKey, faultHandler, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hashCode, includeObjectIntoPropertyWithKey, inverseForRelationshipKey, invokeRemoteMethod, isFault, isReadOnly, isToManyKey, opaqueState, ownsDestinationObjectsForRelationshipKey, prepareValuesForClient, propagateDeleteWithEditingContext, readResolve, reapplyChangesFromDictionary, removeObjectFromBothSidesOfRelationshipWithKey, removeObjectFromPropertyWithKey, shouldUseStoredAccessors, snapshot, storedValueForKey, takeStoredValueForKey, takeValueForKey, takeValueForKeyPath, takeValuesFromDictionary, takeValuesFromDictionaryWithMapping, toManyRelationshipKeys, toOneRelationshipKeys, toString, unableToSetNullForKey, userPresentableDescription, validateClientUpdate, validateForDelete, validateForInsert, validateForUpdate, validateTakeValueForKeyPath, validateValueForKey, valueForKey, valuesForKeys, valuesForKeysWithMapping, willChange, willRead, willReadRelationship</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="GenericRecord()"><!-- --></A><H3>
+GenericRecord</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.76"><B>GenericRecord</B></A>()</PRE>
+<DL>
+<DD>Designated constuctor.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="primaryKeyValue(com.webobjects.eocontrol.EOGenericRecord)"><!-- --></A><H3>
+primaryKeyValue</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.29"><B>primaryKeyValue</B></A>(com.webobjects.eocontrol.EOGenericRecord&nbsp;record)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>primary key value for this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectMatchingKeyAndValue(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+objectMatchingKeyAndValue</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.57"><B>objectMatchingKeyAndValue</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName,
+                                                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</PRE>
+<DL>
+<DD>Type coercing version of EOUtilities.objectMatchingKeyAndValue.  Uses EOAttribute.validateValue
+ to convert value into the correct type (e.g. String to Number) if it is not of the correct type.
+ FrontBase does this in the plugin, but other databases do not (MySQL, MSSQL).
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>ec</CODE> - editing context to return EO in<DD><CODE>entityName</CODE> - name of the EOEntity to fetch object for<DD><CODE>attributeName</CODE> - name of attribute corresponding to value<DD><CODE>value</CODE> - the value of the attribute to qualify on
+<DT><B>Returns:</B><DD>EO matching value for attributeName
+<DT><B>Throws:</B>
+<DD><CODE>com.webobjects.eoaccess.EOObjectNotAvailableException</CODE> - if product with given ID does not exist</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="entity()"><!-- --></A><H3>
+entity</H3>
+<PRE>
+public com.webobjects.eoaccess.EOEntity <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.86"><B>entity</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the <code>EOEntity</code> associated with this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="globalID()"><!-- --></A><H3>
+globalID</H3>
+<PRE>
+public com.webobjects.eocontrol.EOGlobalID <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.97"><B>globalID</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the globalID of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="attributeNamed(java.lang.String)"><!-- --></A><H3>
+attributeNamed</H3>
+<PRE>
+public com.webobjects.eoaccess.EOAttribute <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.113"><B>attributeNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>attributeName</CODE> - the attribute name of the <code>EOAttribute</code> to return
+<DT><B>Returns:</B><DD>the <code>EOAttribute</code> (from this object's associated <code>EOEntity</code>) which corresponds
+ to the passed name or null if there is no matching attribute</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="relationshipNamed(java.lang.String)"><!-- --></A><H3>
+relationshipNamed</H3>
+<PRE>
+public com.webobjects.eoaccess.EORelationship <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.127"><B>relationshipNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;relationshipName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>relationshipName</CODE> - the name of the relationship to return
+<DT><B>Returns:</B><DD>the <code>EORelationship</code> (from this object's associated <code>EOEntity</code>) which corresponds
+ to the passed name or null if there is no matching relationship</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="propertyNamed(java.lang.String)"><!-- --></A><H3>
+propertyNamed</H3>
+<PRE>
+public com.webobjects.eoaccess.EOProperty <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.142"><B>propertyNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>propertyName</CODE> - the property name of the EOAttribute or EORelationship
+<DT><B>Returns:</B><DD>the <code>EOAttribute</code> or <code>EORelationship</code> (from this object's associated
+ <code>EOEntity</code>) which corresponds to the passed name or null if there is no matching property</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isDummyFaultEO()"><!-- --></A><H3>
+isDummyFaultEO</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.164"><B>isDummyFaultEO</B></A>()</PRE>
+<DL>
+<DD>Detecting WO 5 dummy fault EOs.  The code below is a translation of code posted here:
+ From http://wodeveloper.com/omniLists/eof/2001/November/msg00023.html
+
+ As of WO4.5, EOF resolves faults for objects that don't exist in the database to a dummy object with mostly empty attributes (except those
+    that are set in -init), whereas earlier versions of EOF threw a _fireFault exception.  This method detects whether the receiver is such a dummy object.
+
+  A distinguishing feature of these dummy EOs is that they don't have a corresponding database context snapshot, so we use this to detect its dummy-ness.  This seems more robust than checking if all or most attributes are empty, since these can be changed by client code.
+
+  Dummy fault EOs should be removed from the editingContext (using forgetObject) before it is invalidated (invalidateAllObjects or invalidateObjectWithGlobalID), otherwise an unrecoverable "decrementSnapshotCountForGlobalID - unable to decrement snapshot count for object with global ID" exception is thrown by EOF.<br><br>
+
+ See also: http://www.omnigroup.com/mailman/archive/eof/2001-May/001988.html andfollowing.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="copy(com.webobjects.foundation.NSMutableDictionary)"><!-- --></A><H3>
+copy</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.177"><B>copy</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects)</PRE>
+<DL>
+<DD>EOCopying interface. Returns a copy of this object, copying related objects as well.  The actual copy mechanism (by reference, shallow, deep, or custom) for each object is up to the object being copied.  If a copy already exists in <code>copiedObjects</code>, then that is returned instead of making a new copy.  This allows complex graphs of objects, including those with cycles, to be copied without producing duplicate objects.  The grapch of copied objects will be the same regardless of where copy is started with two exceptions: it is started on a reference copied object or a reference copied object is the only path between two disconnected parts of the graph.  In these cases the reference copied object prevents the copy from following the graph further.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#copy(com.webobjects.foundation.NSMutableDictionary)">copy</A></CODE> in interface <CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>copiedObjects</CODE> - - the copied objects keyed on the EOGlobalID of the object the copy was made from.
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="copy()"><!-- --></A><H3>
+copy</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.193"><B>copy</B></A>()</PRE>
+<DL>
+<DD>EOCopying interface. Convenience cover method for copy(NSMutableDictionary) that creates the dictionary internally.  You can use this to start the copying of a graph if you have no need to reference the dictionary.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="duplicate(com.webobjects.foundation.NSMutableDictionary)"><!-- --></A><H3>
+duplicate</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.208"><B>duplicate</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects)</PRE>
+<DL>
+<DD>EOCopying interface. Returns a copy of this object.  Each EOEnterpriseObject can override this this to produce the actual copy by an appropriate mechanism (reference, shallow, deep, or custom).  The default is a deep copy.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#duplicate(com.webobjects.foundation.NSMutableDictionary)">duplicate</A></CODE> in interface <CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>copiedObjects</CODE> - - the copied objects keyed on the EOGlobalID of the object the copy was made from.
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="turnIntoFault(com.webobjects.eocontrol.EOFaultHandler)"><!-- --></A><H3>
+turnIntoFault</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.222"><B>turnIntoFault</B></A>(com.webobjects.eocontrol.EOFaultHandler&nbsp;faultHandler)</PRE>
+<DL>
+<DD>Overriden to clear cached values when object is saved in another EC, the snapshot is updated.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>turnIntoFault</CODE> in interface <CODE>com.webobjects.eocontrol.EOFaulting</CODE><DT><B>Overrides:</B><DD><CODE>turnIntoFault</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="updateFromSnapshot(com.webobjects.foundation.NSDictionary)"><!-- --></A><H3>
+updateFromSnapshot</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.233"><B>updateFromSnapshot</B></A>(com.webobjects.foundation.NSDictionary&nbsp;aSnapshot)</PRE>
+<DL>
+<DD>Overridden to clear cached values when object reverted in ec.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>updateFromSnapshot</CODE> in interface <CODE>com.webobjects.eocontrol.EOEnterpriseObject</CODE><DT><B>Overrides:</B><DD><CODE>updateFromSnapshot</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clearCachedValues()"><!-- --></A><H3>
+clearCachedValues</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.244"><B>clearCachedValues</B></A>()</PRE>
+<DL>
+<DD>Clears all cached values.  This method should be overridden in subclasses to clear the actual cached values.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="refreshObject()"><!-- --></A><H3>
+refreshObject</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.255"><B>refreshObject</B></A>()</PRE>
+<DL>
+<DD>Forces this object to be re-read from the database; the snapshot and all editing contexts
+ holding this object are updated. Merging or overwriting of the changes is then handled by
+ the editing context delegate. This method takes no action if the object is pending insertion.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="refreshRelationshipNamed(java.lang.String)"><!-- --></A><H3>
+refreshRelationshipNamed</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.267"><B>refreshRelationshipNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;name)</PRE>
+<DL>
+<DD>Forces the contents of the named to-many relationship to be re-read from the database; all
+ editing contexts holding this relationship are updated.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="revertToSaved()"><!-- --></A><H3>
+revertToSaved</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.282"><B>revertToSaved</B></A>()</PRE>
+<DL>
+<DD>Reverts any changes in this objects values back to the state last fetched.  This will not refetch the
+ data from the database.  This method takes no action if the object is pending insertion or deletion.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="equals(java.lang.Object, java.lang.Object)"><!-- --></A><H3>
+equals</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.302"><B>equals</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;first,
+                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;second)</PRE>
+<DL>
+<DD>Returns true if the first object is equal to the second object.  This method treats an object with a value NSKeyValueCoding.NullValue to be equal to null.
+ They are equal if they are either both null or both are not null and first.equals(second) evaluates to true.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>first</CODE> - the first object to compare<DD><CODE>second</CODE> - the second object to compare
+<DT><B>Returns:</B><DD>true if the first object is equal to the second object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasChanged(java.lang.String)"><!-- --></A><H3>
+hasChanged</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.321"><B>hasChanged</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the current value for the property named propertyName is not
+ the same as the committed value.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>propertyName</CODE> - the name of the property to compare
+<DT><B>Returns:</B><DD><code>true</code> if the current value for the property named propertyName is not
+ the same as the committed value<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#equals(java.lang.Object, java.lang.Object)"><CODE>equals(Object, Object)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="primaryKeyValue()"><!-- --></A><H3>
+primaryKeyValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.334"><B>primaryKeyValue</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>primary key value for this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isNewEO()"><!-- --></A><H3>
+isNewEO</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.349"><B>isNewEO</B></A>()</PRE>
+<DL>
+<DD>Return true if this EO is a new, unsaved object.  This is determined by
+ <code>globalID().isTemporary()</code>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>true if this EO is a new, unsaved object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="committedSnapshot()"><!-- --></A><H3>
+committedSnapshot</H3>
+<PRE>
+public com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.371"><B>committedSnapshot</B></A>()</PRE>
+<DL>
+<DD>Returns the committed snapshot for this EO.  The committed snapshot is the values
+ last fetched from or saved to the database and do not include any local, unsaved
+ edits.
+
+ This method exists because
+ <CODE>EOEditingContext.committedSnapshotForObject()</CODE>
+ gives unexpected results for newly inserted objects if
+ <CODE>EOEditingContext.processRecentChanges()</CODE>
+ has been called. This method always returns a dictionary whose values are
+ all NSKeyValueCoding.NullValue in the case of a newly inserted object.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the committed snapshot for this EO</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="committedValueFor(java.lang.String)"><!-- --></A><H3>
+committedValueFor</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.390"><B>committedValueFor</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Returns the committed value associated with <code>key</code> based from its committed snapshot.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key to be searched for
+<DT><B>Returns:</B><DD>the value for <code>key</code>, or <code>null</code> if no value is associated with key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="valueForKeyPath(java.lang.String)"><!-- --></A><H3>
+valueForKeyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.409"><B>valueForKeyPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD>Overridden to allow bindings like eo.committedValueFor.name.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>valueForKeyPath</CODE> in interface <CODE>com.webobjects.foundation.NSKeyValueCodingAdditions</CODE><DT><B>Overrides:</B><DD><CODE>valueForKeyPath</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>keyPath</CODE> - keyPath to return value for
+<DT><B>Returns:</B><DD>committed value for key if keyPath starts with "committedValueFor."
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if keyPath starts with "committedValueFor." and has a key path after that (not a simple key)<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedValueFor(java.lang.String)"><CODE>committedValueFor(String)</CODE></A>, 
+<CODE>EOCustomObject.valueForKeyPath(java.lang.String)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateForSave()"><!-- --></A><H3>
+validateForSave</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.436"><B>validateForSave</B></A>()
+                     throws com.webobjects.foundation.NSValidation.ValidationException</PRE>
+<DL>
+<DD>Overrides validateForSave to call validateForSave(NSMutableArray) and add the result of that
+ to what the super class produces.  Subclasses should implement validateForSave(NSMutableArray)
+ rather than the standard EOF method.  Doing so makes validateForSave(NSMutableArray) much
+ shorter and easier to write.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>validateForSave</CODE> in interface <CODE>com.webobjects.eocontrol.EOValidation</CODE><DT><B>Overrides:</B><DD><CODE>validateForSave</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>ValidationException</CODE> - if validation error are found
+<DD><CODE>com.webobjects.foundation.NSValidation.ValidationException</CODE><DT><B>See Also:</B><DD><CODE>EOCustomObject.validateForSave()</CODE>, 
+<A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)"><CODE>validateForSave(NSMutableArray)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateForSave(com.webobjects.foundation.NSMutableArray)"><!-- --></A><H3>
+validateForSave</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/GenericRecord.html#line.469"><B>validateForSave</B></A>(com.webobjects.foundation.NSMutableArray&nbsp;exceptions)</PRE>
+<DL>
+<DD>Override this method to perform custom validations.  Calling super's implementation
+ is a good idea, it is needed when using EO inheritance if the super class has any
+ custom  validations.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>exceptions</CODE> - list of exceptions that can be added to
+<DT><B>Throws:</B>
+<DD><CODE>ValidationException</CODE> - if validation error are found<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()"><CODE>validateForSave()</CODE></A></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/GenericRecord.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/ForgetfulEC.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/GVCFacade.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/GenericRecord.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GenericRecord.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

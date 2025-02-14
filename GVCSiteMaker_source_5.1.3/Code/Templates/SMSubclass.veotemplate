@@ -1,0 +1,37 @@
+#if ($entity.packageName)
+package $entity.packageName;
+
+#end
+
+import com.webobjects.foundation.*;
+import com.webobjects.eocontrol.*;
+import com.webobjects.eoaccess.*;
+
+
+/**
+ * ${entity.documentation}
+ *
+ * Copyright (c) <$copyrightYear$> <$copyrightBy$>   All rights reserved.
+ *
+ * @version $Revision$
+ */
+public class ${entity.classNameWithoutPackage} extends ${entity.prefixClassNameWithOptionalPackage} 
+{
+
+
+    /**
+     * Convenience method to create a new, inserted instance.
+     *
+     * @param ec the EOEditingContext to insert the new instance into
+     * @return new instance of ${entity.classNameWithoutPackage} inserted into ec
+     */
+    public static ${entity.classNameWithoutPackage} newInstance(EOEditingContext ec)
+    {
+        /** require [valid_ec] ec != null; **/
+        return (${entity.classNameWithoutPackage}) EOUtilities.createAndInsertInstance(ec, ${entity.name.toUpperCase()}_ENTITY_NAME);
+        /** ensure [object_returned] Result != null;
+                   [object_inserted] ec.insertedObjects().containsObject(Result);    **/
+    }
+
+}
+

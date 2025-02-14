@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "SECTION_ID"; 
+            name = sectionId; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "TASK_ID"; name = taskId; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (sectionId, taskId); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (section, task); 
+    externalName = "TASK_SECTION"; 
+    fetchSpecificationDictionary = {}; 
+    name = TaskSection; 
+    primaryKeyAttributes = (sectionId, taskId); 
+    relationships = (
+        {
+            destination = Section; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionId; }); 
+            name = section; 
+        }, 
+        {
+            destination = Task; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = taskId; sourceAttribute = taskId; }); 
+            name = task; 
+        }
+    ); 
+}

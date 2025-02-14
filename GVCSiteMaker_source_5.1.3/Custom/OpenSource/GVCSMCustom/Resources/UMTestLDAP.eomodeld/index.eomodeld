@@ -1,0 +1,15 @@
+{
+    EOModelVersion = 2.1; 
+    adaptorName = JNDI; 
+    connectionDictionary = {
+        authenticationMethod = None; 
+        initialContextFactory = com.sun.jndi.ldap.LdapCtxFactory; 
+        password = ""; 
+        plugInClassName = "net.global_village.jndi.LDAPTLSPlugin"; 
+        scope = Subtree; 
+        serverUrl = "ldap://ldap-dev.itd.umich.edu:5353/ou=User%20Groups,ou=Groups,dc=umich,dc=edu"; 
+        timeout = 5; 
+        username = "anonymous"; 
+    }; 
+    entities = ({className = com.gvcsitemaker.core.LDAPGroupRecord; name = UMTestGroup; }); 
+}

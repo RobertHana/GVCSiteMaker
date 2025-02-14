@@ -1,0 +1,91 @@
+{
+    attributes = (
+        {columnName = "COLUMN_ID"; name = columnID; prototypeName = Key; }, 
+        {columnName = "COLUMN_TYPE_ID"; name = columnTypeID; prototypeName = Key; }, 
+        {columnName = "DATE_CREATED"; name = dateCreated; prototypeName = DateTime; }, 
+        {
+            columnName = "IS_SYSTEM_COLUMN"; 
+            name = isSystemColumn; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 100; }, 
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEXT_DESCRIPTION"; 
+            name = textDescription; 
+            prototypeName = String; 
+            width = 1999; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        columnID, 
+        columnTypeID, 
+        isSystemColumn, 
+        name, 
+        restrictingValue, 
+        tableID, 
+        textDescription
+    ); 
+    className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileColumn"; 
+    classProperties = (
+        dateCreated, 
+        fields, 
+        isSystemColumn, 
+        name, 
+        referringColumns, 
+        restrictingValue, 
+        table, 
+        textDescription, 
+        type
+    ); 
+    externalName = "VIRTUAL_COLUMN"; 
+    fetchSpecificationDictionary = {}; 
+    name = VirtualSiteFileColumn; 
+    parent = VirtualColumn; 
+    primaryKeyAttributes = (columnID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = VirtualField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualColumnID; sourceAttribute = columnID; }); 
+            name = fields; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupColumn; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupColumnID; sourceAttribute = columnID; }); 
+            name = referringColumns; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Table; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = table; 
+        }, 
+        {
+            destination = ColumnType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = columnTypeID; }); 
+            name = type; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'VirtualSiteFileColumn')"; 
+}

@@ -1,0 +1,1430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+EditingPage (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="EditingPage (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EditingPage.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ChangePasswordPage.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/EditingPageComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/EditingPage.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EditingPage.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class EditingPage</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOElement
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOComponent
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">er.extensions.components.ERXComponent
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions">net.global_village.woextensions.WOComponent</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.EditingPage</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.appserver.WOActionResults, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.54"><B>EditingPage</B></A><DT>extends <A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions">WOComponent</A></DL>
+</PRE>
+
+<P>
+EditingPage is intended to be used as the super class of top level pages on which may contain editable data.  It adds:
+ <ul>
+ <li>a page / component specific editing context</li>
+ <li>methods for recording and managing validation failures</li>
+ <li>a page specific editing context</li>
+ <li>concepts of previous and next pages</li>
+ <li>handling of optimistic locking failures</li>
+ </ul>
+
+ <h3>Handling Optimistic Locking Failures</h3>
+ <p>
+ Often you can just use this class as-is to handle these.  All you need to do is to check for a failure and show an
+ error message:
+ <pre>
+ <webobject name="HasOptimisticLockingFailure">
+     <div class="errorMessage"><webobject name="OptimisticLockingFailure"/></div>
+ </webobject name="HasOptimisticLockingFailure">
+ ---
+ HasOptimisticLockingFailure: WOConditional {
+     condition = hasOptimisticLockingFailures;
+ }
+
+ OptimisticLockingFailure: WOString {
+     value = optimisticLockingFailure;
+ }
+ </pre>
+ The two most common methods to override are <code>shouldHandleObjectChangedInStore(EOEnterpriseObject)</code>
+ and <code>optimisticLockingFailureMessage(EOEnterpriseObject)</code>.
+ </p
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 24$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.woextensions.EditingPage">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.appserver.WOComponent._EventLoggingEnabler, com.webobjects.appserver.WOComponent.Event</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCodingAdditions.DefaultImplementation, com.webobjects.foundation.NSKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanFieldBinding, com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._FieldBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberFieldBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.DefaultImplementation, com.webobjects.foundation.NSValidation.Utility, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#optimisticLockingExceptionKey">optimisticLockingExceptionKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key into validationFailures() for failures resulting from optimistic locking exception.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#optimisticLockingExceptionObjectKey">optimisticLockingExceptionObjectKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key into validationFailures() for the object causing failures resulting from optimistic locking exception.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#saveChangesExceptionObjectKey">saveChangesExceptionObjectKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key into validationFailures() for the object causing failures in saveChanges().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#saveChangesExceptionsKey">saveChangesExceptionsKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key into validationFailures() for failures resulting from saveChanges() and not specific to any one control.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.woextensions.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.woextensions.<A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions">WOComponent</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/woextensions/WOComponent.html#dynamic">dynamic</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#trueInteger">trueInteger</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_er.extensions.components.ERXComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class er.extensions.components.ERXComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_dynamicBindings</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_Extension, _IsEventLoggingEnabled, _keyAssociations</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding.ErrorHandling"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding.ErrorHandling</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#EditingPage(com.webobjects.appserver.WOContext)">EditingPage</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#appendToResponse(com.webobjects.appserver.WOResponse, com.webobjects.appserver.WOContext)">appendToResponse</A></B>(com.webobjects.appserver.WOResponse&nbsp;response,
+                                 com.webobjects.appserver.WOContext&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to clear validation failures after they have been returned to the user</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#awake()">awake</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Processes anything in queuedChangedGlobalIDs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#cancelAndGoBack()">cancelAndGoBack</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic action method to cancel (ec.revert()) any outstanding changes and display the previous page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#clearValidationFailures(java.lang.String)">clearValidationFailures</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes all accumulated validation failures, unless clearing them has been delayed to the next
+ RR loop.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#currentComponentIdentifier()">currentComponentIdentifier</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the identifier associated with the current WOComponent.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#delayClearingValidationFailures()">delayClearingValidationFailures</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if clearing validation failures should be delayed until the next request to this page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#editingContext()">editingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calls <code>session().newEditingContext()</code> if no editing context has been set and
+ sets its delegate to editingContextDelegate().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#editingContextDelegate()">editingContextDelegate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns this page as the EOEditingContext.Delegate to use for editingContext().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#editingContextShouldMergeChangesForObject(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOEnterpriseObject)">editingContextShouldMergeChangesForObject</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                                                                   com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return true if all of the uncommitted changes should be merged into the object after the update is applied.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#hadFailuresDuringSaveChanges()">hadFailuresDuringSaveChanges</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#handleEOGeneralAdaptorException(com.webobjects.eoaccess.EOGeneralAdaptorException, com.webobjects.foundation.NSArray)">handleEOGeneralAdaptorException</A></B>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;adaptorException,
+                                                               com.webobjects.foundation.NSArray&nbsp;exceptionMessages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Helper method for various catch clauses in saveChanges().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#handleObjectChangedInStore(com.webobjects.eocontrol.EOEnterpriseObject)">handleObjectChangedInStore</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override this method to change what happens when an object is updated in the Object Store (when
+ shouldHandleObjectChangedInStore(eo) returns true).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#hasOptimisticLockingFailures()">hasOptimisticLockingFailures</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The implementation here returns <code>hasValidationFailureForKey(optimisticLockingExceptionKey)</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#hasValidationFailureForKey(java.lang.String)">hasValidationFailureForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#hasValidationFailures()">hasValidationFailures</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#nextPage()">nextPage</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the page to show after processing is successfully completed on this page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#objectsChangedInStore(com.webobjects.foundation.NSNotification)">objectsChangedInStore</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Catch the ObjectsChangedInStoreNotification so that we can handle concurrent edits
+ within one EOF stack.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#optimisticLockingFailure()">optimisticLockingFailure</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#optimisticLockingFailureMessage(com.webobjects.eocontrol.EOEnterpriseObject)">optimisticLockingFailureMessage</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the message to display to the user when an optimistic locking exception is thrown for <code>eo</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#owningSessionID()">owningSessionID</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the session ID of the WOSession that created this page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#previousPage()">previousPage</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the page to "go back" to, either the real previous page or a new instance of this page
+ if the previous page is not known.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#processQueuedChangedGlobalIDs()">processQueuedChangedGlobalIDs</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calls <code>processUpdatedObjects()</code> with the contents of <code>queuedChangedGlobalIDs()</code> and clears
+ <code>queuedChangedGlobalIDs()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#processUpdatedObjects(com.webobjects.foundation.NSArray)">processUpdatedObjects</A></B>(com.webobjects.foundation.NSArray&nbsp;updatedObjects)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Turns the passed list of globalIDs into EOs checks to see which are registered in our <code>editingContext()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#queuedChangedGlobalIDs()">queuedChangedGlobalIDs</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#recordValidationFailedWithException(java.lang.Throwable, java.lang.Object, java.lang.String)">recordValidationFailedWithException</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A>&nbsp;t,
+                                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Records validation errors thrown during the takeValues phase under the currentComponentIdentifier().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#recordValidationFailureForKey(java.lang.Object, java.lang.String)">recordValidationFailureForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;error,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Records a specific error message (intended for validation failures) against a key for later retrieval with validationFailureForKey.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#recoverFromOptimisticLockingFailure(com.webobjects.eocontrol.EOEnterpriseObject)">recoverFromOptimisticLockingFailure</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override this method to take appropriate action to recover from an optimistic locking exception.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#removeValidationFailureForKey(java.lang.String)">removeValidationFailureForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a specific error message by key</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#saveAndGoForward()">saveAndGoForward</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic action method to save any outstanding changes and display the next page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#saveChanges()">saveChanges</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calls <code>saveChanges()</code> on <code>editingContext()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#saveChangesFailures()">saveChangesFailures</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#setDelayClearingValidationFailures(boolean)">setDelayClearingValidationFailures</A></B>(boolean&nbsp;shouldDelay)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets if clearing validation failures should be delayed until the next request to this page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#shouldHandleObjectChangedInStore(com.webobjects.eocontrol.EOEnterpriseObject)">shouldHandleObjectChangedInStore</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is only called if eo is already registered in this page's editing context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#takeValuesFromRequest(com.webobjects.appserver.WORequest, com.webobjects.appserver.WOContext)">takeValuesFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request,
+                                           com.webobjects.appserver.WOContext&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to clear validation failures after they have been returned to the user and validation failures lying around
+ after an Ajax submit for a partial page update.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailedWithException(java.lang.Throwable, java.lang.Object, java.lang.String)">validationFailedWithException</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A>&nbsp;t,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to catch validation errors thrown during the takeValues phase and record
+ them under the currentComponentIdentifier().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailureForKey(java.lang.String)">validationFailureForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailureMessageForKey(java.lang.String)">validationFailureMessageForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailures()">validationFailures</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailuresAsList()">validationFailuresAsList</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is intended as a bridge for older code and pages that only want to show a list
+ of validation messages at the top.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.woextensions.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.woextensions.<A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions">WOComponent</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/woextensions/WOComponent.html#allAPIBindings()">allAPIBindings</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#apiDictionary()">apiDictionary</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#associationForBinding(java.lang.String)">associationForBinding</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#associations()">associations</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#booleanValueForBinding(java.lang.String, boolean)">booleanValueForBinding</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#hasBindingForAction(java.lang.String)">hasBindingForAction</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#hasNonNullBindingFor(java.lang.String)">hasNonNullBindingFor</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#htmlValue(java.lang.String, com.webobjects.foundation.NSSelector)">htmlValue</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#inheritTemplateFrom(java.lang.String, java.lang.String)">inheritTemplateFrom</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#keyPathForBinding(java.lang.String)">keyPathForBinding</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#keys()">keys</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#localizedStringForKey(java.lang.String)">localizedStringForKey</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#objectParameter(java.lang.String, com.webobjects.foundation.NSSelector)">objectParameter</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#optionalAPIBindings()">optionalAPIBindings</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#preventClientCaching()">preventClientCaching</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#reportError(boolean, java.lang.String)">reportError</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#requiredAPIBindings()">requiredAPIBindings</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#reset()">reset</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#topLevelComponent()">topLevelComponent</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#urlForResource(java.lang.String)">urlForResource</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#userDefinedBindings()">userDefinedBindings</A>, <A HREF="../../../net/global_village/woextensions/WOComponent.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_er.extensions.components.ERXComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class er.extensions.components.ERXComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_awakeInContext, _checkAccess, _frameworkName, _includeCSSResources, _includeJavascriptResources, additionalCSSFiles, additionalJavascriptFiles, booleanValueForBinding, booleanValueForBinding, checkAccess, clickToOpenEnabled, componentName, defaultCSSPath, defaultJavascriptPath, dynamicBindings, floatValueForBinding, intValueForBinding, invokeAction, isPageAccessAllowed, localizer, objectValueForBinding, objectValueForBinding, pageWithName, postAppendToResponse, preAppendToResponse, primaryCSSFile, primaryJavascriptFile, stringValueForBinding, stringValueForBinding, useDefaultComponentCSS, useDefaultComponentJavascript</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__valueForBinding, _associationWithName, _childTemplate, _cleanUpStatelessComponent, _componentDefinition, _componentUnroll, _isPage, _setContext, _setIsPage, _setParent, _setSubcomponent, _sleepInContext, _subcomponentForElementWithID, _templateNameForClass, _unroll, application, baseURL, bindingKeys, canAccessFieldsDirectly, canGetValueForBinding, canSetValueForBinding, clone, context, debugString, descriptionForResponse, ensureAwakeInContext, frameworkName, generateResponse, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hasBinding, hasSession, isCachingEnabled, isEventLoggingEnabled, isStateless, logString, name, pageWithName, parent, path, pathURL, performParentAction, pullValuesFromParent, pushValuesToParent, session, set_componentUnroll, set_unroll, setCachingEnabled, setValueForBinding, setVariableValueForName, sleep, synchronizesVariablesWithBindings, takeValueForKey, takeValueForKeyPath, template, templateWithHTMLString, templateWithHTMLString, templateWithHTMLString, templateWithName, toString, unableToSetNullForKey, validateTakeValueForKeyPath, validateValueForKey, valueForBinding, valueForBooleanBinding, valueForIntegerBinding, valueForKey, valueForNSArrayBindings, valueForNSDictionaryBindings, valueForNumberBinding, valueForStringBinding, variableValueForName, variableWithName</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="saveChangesExceptionsKey"><!-- --></A><H3>
+saveChangesExceptionsKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.58"><B>saveChangesExceptionsKey</B></A></PRE>
+<DL>
+<DD>Key into validationFailures() for failures resulting from saveChanges() and not specific to any one control.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.EditingPage.saveChangesExceptionsKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="saveChangesExceptionObjectKey"><!-- --></A><H3>
+saveChangesExceptionObjectKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.61"><B>saveChangesExceptionObjectKey</B></A></PRE>
+<DL>
+<DD>Key into validationFailures() for the object causing failures in saveChanges().
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.EditingPage.saveChangesExceptionObjectKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="optimisticLockingExceptionKey"><!-- --></A><H3>
+optimisticLockingExceptionKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.64"><B>optimisticLockingExceptionKey</B></A></PRE>
+<DL>
+<DD>Key into validationFailures() for failures resulting from optimistic locking exception.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.EditingPage.optimisticLockingExceptionKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="optimisticLockingExceptionObjectKey"><!-- --></A><H3>
+optimisticLockingExceptionObjectKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.67"><B>optimisticLockingExceptionObjectKey</B></A></PRE>
+<DL>
+<DD>Key into validationFailures() for the object causing failures resulting from optimistic locking exception.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.EditingPage.optimisticLockingExceptionObjectKey">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="EditingPage(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+EditingPage</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.97"><B>EditingPage</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>Constructor. Sets previousPage from <code>context().page()</code>. Registers this page for the
+ EOObjectStore.ObjectsChangedInStoreNotification.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aContext</CODE> - WOContext this page is being created in</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="editingContext()"><!-- --></A><H3>
+editingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.123"><B>editingContext</B></A>()</PRE>
+<DL>
+<DD>Calls <code>session().newEditingContext()</code> if no editing context has been set and
+ sets its delegate to editingContextDelegate(). This method can be overridden to create /
+ return a different editing context if desired.  The editing context is also set to
+ not stop validating after the first error (setStopsValidationAfterFirstError(false)).
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/woextensions/WOComponent.html#editingContext()">editingContext</A></CODE> in class <CODE><A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions">WOComponent</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the EOEditingContext to use in this page / component</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="editingContextDelegate()"><!-- --></A><H3>
+editingContextDelegate</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.143"><B>editingContextDelegate</B></A>()</PRE>
+<DL>
+<DD>Returns this page as the EOEditingContext.Delegate to use for editingContext(). The delegate is used to handle
+ optimistic locking processing. This method can be overridden to return a different delegate if desired.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the EOEditingContext.Delegate to use in this page / component</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="recordValidationFailureForKey(java.lang.Object, java.lang.String)"><!-- --></A><H3>
+recordValidationFailureForKey</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.157"><B>recordValidationFailureForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;error,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Records a specific error message (intended for validation failures) against a key for later retrieval with validationFailureForKey.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>error</CODE> - the localized error message or other object to record<DD><CODE>key</CODE> - the key to record error under</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeValidationFailureForKey(java.lang.String)"><!-- --></A><H3>
+removeValidationFailureForKey</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.172"><B>removeValidationFailureForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Removes a specific error message by key
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key to remove error message for</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validationFailedWithException(java.lang.Throwable, java.lang.Object, java.lang.String)"><!-- --></A><H3>
+validationFailedWithException</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.185"><B>validationFailedWithException</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A>&nbsp;t,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD>Overridden to catch validation errors thrown during the takeValues phase and record
+ them under the currentComponentIdentifier().
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>validationFailedWithException</CODE> in class <CODE>com.webobjects.appserver.WOComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="recordValidationFailedWithException(java.lang.Throwable, java.lang.Object, java.lang.String)"><!-- --></A><H3>
+recordValidationFailedWithException</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.203"><B>recordValidationFailedWithException</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A>&nbsp;t,
+                                                <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                                                <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD>Records validation errors thrown during the takeValues phase under the currentComponentIdentifier().  This is intended
+ to be called from @link{validationFailedWithException(Throwable, Object, String)}.\
+<P>
+<DD><DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/EditingPage.html#validationFailedWithException(java.lang.Throwable, java.lang.Object, java.lang.String)"><CODE>validationFailedWithException(Throwable, Object, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="currentComponentIdentifier()"><!-- --></A><H3>
+currentComponentIdentifier</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.227"><B>currentComponentIdentifier</B></A>()</PRE>
+<DL>
+<DD>Returns the identifier associated with the current WOComponent.  This will be the unqiueIdentifier() for
+ components that extend EditingPageComponent and context().elementID() for those that don't.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>identifier associated with the current WOComponent</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasValidationFailureForKey(java.lang.String)"><!-- --></A><H3>
+hasValidationFailureForKey</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.252"><B>hasValidationFailureForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key lookup the validation failure for
+<DT><B>Returns:</B><DD>true if recordValidationFailureForKey has been called for key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasValidationFailures()"><!-- --></A><H3>
+hasValidationFailures</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.264"><B>hasValidationFailures</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>true if any validation failures have been recorded</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validationFailureMessageForKey(java.lang.String)"><!-- --></A><H3>
+validationFailureMessageForKey</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.275"><B>validationFailureMessageForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key lookup the validation failure for
+<DT><B>Returns:</B><DD>the String message previously passed to recordValidationFailureForKey for key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validationFailureForKey(java.lang.String)"><!-- --></A><H3>
+validationFailureForKey</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.289"><B>validationFailureForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key lookup the validation failure for
+<DT><B>Returns:</B><DD>the object previously passed to recordValidationFailureForKey for key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hadFailuresDuringSaveChanges()"><!-- --></A><H3>
+hadFailuresDuringSaveChanges</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.301"><B>hadFailuresDuringSaveChanges</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>true if there were validation failures recorded during saveChanges()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveChangesFailures()"><!-- --></A><H3>
+saveChangesFailures</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.311"><B>saveChangesFailures</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>validation failures recorded during saveChanges()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validationFailures()"><!-- --></A><H3>
+validationFailures</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.323"><B>validationFailures</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the dictionary used internally to hold registered validation errors</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="optimisticLockingFailureMessage(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+optimisticLockingFailureMessage</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.341"><B>optimisticLockingFailureMessage</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Return the message to display to the user when an optimistic locking exception is thrown for <code>eo</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the EOEnterpriseObject that caused the exception
+<DT><B>Returns:</B><DD>the message to display to the user when an optimistic locking exception is thrown</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasOptimisticLockingFailures()"><!-- --></A><H3>
+hasOptimisticLockingFailures</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.355"><B>hasOptimisticLockingFailures</B></A>()</PRE>
+<DL>
+<DD>The implementation here returns <code>hasValidationFailureForKey(optimisticLockingExceptionKey)</code>.
+ This can be re-implemented if needed.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if an optimistic locking conflict was detected within this EOF stack</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="optimisticLockingFailure()"><!-- --></A><H3>
+optimisticLockingFailure</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.365"><B>optimisticLockingFailure</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>optimistic locking failure message</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validationFailuresAsList()"><!-- --></A><H3>
+validationFailuresAsList</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.381"><B>validationFailuresAsList</B></A>()</PRE>
+<DL>
+<DD>This method is intended as a bridge for older code and pages that only want to show a list
+ of validation messages at the top.  It groups the relevant validation errors from takeValues
+ and from saveChanges() failures into one list.  They keys from validationFailures() are discarded.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>unordered NSArray of validation error messages</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clearValidationFailures(java.lang.String)"><!-- --></A><H3>
+clearValidationFailures</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.405"><B>clearValidationFailures</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;source)</PRE>
+<DL>
+<DD>Removes all accumulated validation failures, unless clearing them has been delayed to the next
+ RR loop.
+<P>
+<DD><DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/EditingPage.html#delayClearingValidationFailures()"><CODE>delayClearingValidationFailures()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="delayClearingValidationFailures()"><!-- --></A><H3>
+delayClearingValidationFailures</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.427"><B>delayClearingValidationFailures</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if clearing validation failures should be delayed until the next request to this page.
+ This is useful when the current request is a component action request and the next request an Ajax request that will
+ retrieve these failure message for display (e.g. in an AjaxModalDialog).
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if clearing validation failures should be delayed until the next request to this page</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDelayClearingValidationFailures(boolean)"><!-- --></A><H3>
+setDelayClearingValidationFailures</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.440"><B>setDelayClearingValidationFailures</B></A>(boolean&nbsp;shouldDelay)</PRE>
+<DL>
+<DD>Sets if clearing validation failures should be delayed until the next request to this page.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>shouldDelay</CODE> - <code>true</code> if clearing validation failures should be delayed until the next request to this page<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/EditingPage.html#delayClearingValidationFailures()"><CODE>delayClearingValidationFailures()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="appendToResponse(com.webobjects.appserver.WOResponse, com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+appendToResponse</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.451"><B>appendToResponse</B></A>(com.webobjects.appserver.WOResponse&nbsp;response,
+                             com.webobjects.appserver.WOContext&nbsp;context)</PRE>
+<DL>
+<DD>Overridden to clear validation failures after they have been returned to the user
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>appendToResponse</CODE> in class <CODE>er.extensions.components.ERXComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="takeValuesFromRequest(com.webobjects.appserver.WORequest, com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+takeValuesFromRequest</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.476"><B>takeValuesFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request,
+                                  com.webobjects.appserver.WOContext&nbsp;context)</PRE>
+<DL>
+<DD>Overridden to clear validation failures after they have been returned to the user and validation failures lying around
+ after an Ajax submit for a partial page update.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>takeValuesFromRequest</CODE> in class <CODE>er.extensions.components.ERXComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="previousPage()"><!-- --></A><H3>
+previousPage</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.516"><B>previousPage</B></A>()</PRE>
+<DL>
+<DD>Return the page to "go back" to, either the real previous page or a new instance of this page
+ if the previous page is not known. This is intended for use when processing a cancel operation.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the page to "go back" to,</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="nextPage()"><!-- --></A><H3>
+nextPage</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.537"><B>nextPage</B></A>()</PRE>
+<DL>
+<DD>Return the page to show after processing is successfully completed on this page. The default is
+ a new instance of this page. This is intended for use when processing a successful save operation.
+ In most cases it will be necessary to override this to initialize the returned page.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the page to show after processing is successfully completed on this page</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cancelAndGoBack()"><!-- --></A><H3>
+cancelAndGoBack</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.550"><B>cancelAndGoBack</B></A>()</PRE>
+<DL>
+<DD>Generic action method to cancel (ec.revert()) any outstanding changes and display the previous page.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>previousPage()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveAndGoForward()"><!-- --></A><H3>
+saveAndGoForward</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.565"><B>saveAndGoForward</B></A>()</PRE>
+<DL>
+<DD>Generic action method to save any outstanding changes and display the next page.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>current page or nextPage()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveChanges()"><!-- --></A><H3>
+saveChanges</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.636"><B>saveChanges</B></A>()</PRE>
+<DL>
+<DD>Calls <code>saveChanges()</code> on <code>editingContext()</code>.
+ This can be overridden if child or peer editing contexts also need to be saved.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleEOGeneralAdaptorException(com.webobjects.eoaccess.EOGeneralAdaptorException, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+handleEOGeneralAdaptorException</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.649"><B>handleEOGeneralAdaptorException</B></A>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;adaptorException,
+                                               com.webobjects.foundation.NSArray&nbsp;exceptionMessages)</PRE>
+<DL>
+<DD>Helper method for various catch clauses in saveChanges().
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>adaptorException</CODE> - EOGeneralAdaptorException that caused the save to fail<DD><CODE>exceptionMessages</CODE> - list of messages to be recorded under saveChangesExceptionsKey</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectsChangedInStore(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+objectsChangedInStore</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.685"><B>objectsChangedInStore</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>Catch the ObjectsChangedInStoreNotification so that we can handle concurrent edits
+ within one EOF stack. This is not, strictly speaking, an optimistic locking failure
+ but as it has the same cause and same effect to the user we handle it the same.
+ <br/>
+ <b>If you override this method, you are responsible for locking any editing contexts that you touch!</b>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - NSNotification to check</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="awake()"><!-- --></A><H3>
+awake</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.732"><B>awake</B></A>()</PRE>
+<DL>
+<DD>Processes anything in queuedChangedGlobalIDs.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>awake</CODE> in class <CODE>com.webobjects.appserver.WOComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processQueuedChangedGlobalIDs()"><!-- --></A><H3>
+processQueuedChangedGlobalIDs</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.745"><B>processQueuedChangedGlobalIDs</B></A>()</PRE>
+<DL>
+<DD>Calls <code>processUpdatedObjects()</code> with the contents of <code>queuedChangedGlobalIDs()</code> and clears
+ <code>queuedChangedGlobalIDs()</code>.  The can be called whenever you want to process the queued changes (if any).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processUpdatedObjects(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+processUpdatedObjects</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.761"><B>processUpdatedObjects</B></A>(com.webobjects.foundation.NSArray&nbsp;updatedObjects)</PRE>
+<DL>
+<DD>Turns the passed list of globalIDs into EOs checks to see which are registered in our <code>editingContext()</code>.
+ Registered, changed objects are passed to <code>shouldHandleObjectChangedInStore()</code> and if they should
+ be handled are then passed to <code>handleObjectChangedInStore() </code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>updatedObjects</CODE> - </DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shouldHandleObjectChangedInStore(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+shouldHandleObjectChangedInStore</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.789"><B>shouldHandleObjectChangedInStore</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>This method is only called if eo is already registered in this page's editing context.
+ Override this to return <code>true</code> if the page is affected by changes in the passed object
+ that has been saved from another editing context in this same application instance.  This
+ default implementation returns <code>true</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the changed object
+<DT><B>Returns:</B><DD><code>true</code> if the page is affected by changes to <code>eo</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleObjectChangedInStore(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+handleObjectChangedInStore</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.806"><B>handleObjectChangedInStore</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Override this method to change what happens when an object is updated in the Object Store (when
+ shouldHandleObjectChangedInStore(eo) returns true).  This implementation calls records the object
+ causing the failure and a message under the validation failure keys optimisticLockingExceptionKey
+ and optimisticLockingExceptionObjectKey; and calls <code>setOptimisticLockingConflictDetected(true)</code>
+ This should be fine for most cases.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - EOEnterpriseObject that was changed outside this page</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="recoverFromOptimisticLockingFailure(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+recoverFromOptimisticLockingFailure</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.834"><B>recoverFromOptimisticLockingFailure</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD><p>Override this method to take appropriate action to recover from an optimistic locking exception.
+ This implementation calls <code>EOObject.refreshObject(eo)</code> / <code>eo.refreshObject()</code> so that
+ fresh data is fetched from the external store and notifications about this new data broadcast.</p>
+
+ <p>The delegate for editingContext() (usually this page) determines if the refreshed changes are merged
+ into existing changes in the EO or if they overwrite them.  It does this by implementing the
+ <code>EOEditingContext.Delegate</code> method <code>editingContextShouldMergeChangesForObject</code>.  See the documentation
+ for <code>EOEditingContext.Delegate</code> for information on performing a custom merge by also implementing
+ the <code>EOEditingContext.Delegate</code> method <code>editingContextDidMergeChanges</code>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the object that caused the optimistic locking failure exception</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="editingContextShouldMergeChangesForObject(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+editingContextShouldMergeChangesForObject</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.859"><B>editingContextShouldMergeChangesForObject</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                                            com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Return true if all of the uncommitted changes should be merged into the object after the update is applied. This will
+ preserve the uncommitted changes.  This is the the default behavior for EOEditingContext and the implementation of this
+ method.  This method can be implemented to return false, in which case no uncommitted changes are applied. That is,
+ the object is updated to reflect the values from the database exactly.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>ec</CODE> - the editing context containing eo<DD><CODE>eo</CODE> - the updated object with changes to be merged
+<DT><B>Returns:</B><DD>true if all uncommitted changes should be merged into object after the update</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="queuedChangedGlobalIDs()"><!-- --></A><H3>
+queuedChangedGlobalIDs</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.872"><B>queuedChangedGlobalIDs</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>set of globalIDs of objects that have been saved in other editing context's since the last time we awoke</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="owningSessionID()"><!-- --></A><H3>
+owningSessionID</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/EditingPage.html#line.885"><B>owningSessionID</B></A>()</PRE>
+<DL>
+<DD>Returns the session ID of the WOSession that created this page.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the session ID of the WOSession that created this page</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EditingPage.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ChangePasswordPage.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/EditingPageComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/EditingPage.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EditingPage.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

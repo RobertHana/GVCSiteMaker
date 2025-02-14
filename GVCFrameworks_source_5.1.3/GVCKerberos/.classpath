@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="src" path="Tests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/GVCJars"/>
+	<classpathentry kind="lib" path="Libraries/jcsi_base.jar"/>
+	<classpathentry kind="lib" path="Libraries/jcsi_jce.jar"/>
+	<classpathentry kind="lib" path="Libraries/jcsi_krb.jar"/>
+	<classpathentry kind="lib" path="Libraries/jcsi_license.jar"/>
+	<classpathentry kind="lib" path="Libraries/jcsi_provider.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="GroupPicker" wocomponentcontent="false">
+
+		<binding name="accessibleObject"/>
+		<binding name="typeOfAccess"/>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,1009 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+VirtualCalculatedColumn (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="VirtualCalculatedColumn (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/VirtualCalculatedColumn.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualBooleanField.html" title="class in net.global_village.virtualtables"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/virtualtables/VirtualCalculatedColumn.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="VirtualCalculatedColumn.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_net.global_village.virtualtables.Column">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.virtualtables</FONT>
+<BR>
+Class VirtualCalculatedColumn</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOCustomObject
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOGenericRecord
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.GenericRecord</A>
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/_Column.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables._Column</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables.Column</A>
+                      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables._VirtualColumn</A>
+                          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables.VirtualColumn</A>
+                              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables._VirtualCalculatedColumn</A>
+                                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.virtualtables.VirtualCalculatedColumn</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol._EOPrivateMemento, com.webobjects.eocontrol.EODeferredFaulting, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOFaulting, com.webobjects.eocontrol.EOKeyValueCoding, com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation._ForwardingBindingCheck, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCodingAdditions, com.webobjects.eocontrol.EORelationshipManipulation, com.webobjects.eocontrol.EOValidation, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation.Callback, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.26"><B>VirtualCalculatedColumn</B></A><DT>extends <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html" title="class in net.global_village.virtualtables">_VirtualCalculatedColumn</A></DL>
+</PRE>
+
+<P>
+A calculated column is defined by an expression which is evaluated on the other fields in a row.
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 13$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.virtualtables.VirtualCalculatedColumn">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_net.global_village.virtualtables.Column"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Column.DefaultComparator.html" title="class in net.global_village.virtualtables">Column.DefaultComparator</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOGenericRecord._DictionaryBinding, com.webobjects.eocontrol.EOGenericRecord._LazyDictionaryBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOCustomObject._BooleanFieldBinding, com.webobjects.eocontrol.EOCustomObject._FieldBinding, com.webobjects.eocontrol.EOCustomObject._LazyFieldBinding, com.webobjects.eocontrol.EOCustomObject._NumberFieldBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions">EOCopying.DefaultImplementation</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html" title="class in net.global_village.eofextensions">EOCopying.Utility</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCodingAdditions.DefaultImplementation, com.webobjects.eocontrol.EOKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._StoredForwardingBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol._EOPrivateMemento"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol._EOPrivateMemento</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol._EOPrivateMemento.DefaultImplementation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#VirtualCalculatedColumnRestrictingValue">VirtualCalculatedColumnRestrictingValue</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables._VirtualCalculatedColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html" title="class in net.global_village.virtualtables">_VirtualCalculatedColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#EXPRESSION">EXPRESSION</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#VIRTUALCALCULATEDCOLUMN_ENTITY_NAME">VIRTUALCALCULATEDCOLUMN_ENTITY_NAME</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables.VirtualColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">VirtualColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#VirtualColumnRestrictingValue">VirtualColumnRestrictingValue</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables._VirtualColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html" title="class in net.global_village.virtualtables">_VirtualColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#FIELDS">FIELDS</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#VIRTUALCOLUMN_ENTITY_NAME">VIRTUALCOLUMN_ENTITY_NAME</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables.Column"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Column.html#cachedNormalizedNames">cachedNormalizedNames</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#DefaultComparator">DefaultComparator</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#normalizedName">normalizedName</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables._Column"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_Column.html" title="class in net.global_village.virtualtables">_Column</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_Column.html#COLUMN_ENTITY_NAME">COLUMN_ENTITY_NAME</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#DATECREATED">DATECREATED</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#ISSYSTEMCOLUMN">ISSYSTEMCOLUMN</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#NAME">NAME</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#REFERRINGCOLUMNS">REFERRINGCOLUMNS</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#RESTRICTINGVALUE">RESTRICTINGVALUE</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#TABLE">TABLE</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#TEXTDESCRIPTION">TEXTDESCRIPTION</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#TYPE">TYPE</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__readOnly</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#COPY_CONTEXT">COPY_CONTEXT</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#VirtualCalculatedColumn()">VirtualCalculatedColumn</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#addColumnTypeForCalculation(java.lang.String)">addColumnTypeForCalculation</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;columnType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a column type name to the list of names of ColumnTypes that can be used in a VirtualCalculatedColumn expression.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)">awakeFromInsertion</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup default values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#canUseColumnInCalculation(net.global_village.virtualtables.Column)">canUseColumnInCalculation</A></B>(<A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A>&nbsp;column)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the passed column can be used in a VirtualCalculatedColumn expression.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#columnsAvailableForCalculation()">columnsAvailableForCalculation</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an ordered list of columns from this Table which may be used in the formula of a calculated column.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#columnTypeNamesForCalculation()">columnTypeNamesForCalculation</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns names of ColumnTypes that can be used in a VirtualCalculatedColumn expression.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#evaluateExpressionWithContextInObject(java.lang.String, java.util.Map, java.lang.Object)">evaluateExpressionWithContextInObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;expression,
+                                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;context,
+                                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates an expression with an object and a calculation context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#exampleValue()">exampleValue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculates the value in this row based on representative values for the columns.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#exportValueInRow(net.global_village.virtualtables.VirtualRow, java.lang.Object)">exportValueInRow</A></B>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;row,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;sender)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculates the value to export for this column in the passed row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/virtualtables/ColumnType.html" title="class in net.global_village.virtualtables">ColumnType</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#expressionColumnType()">expressionColumnType</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns instance of ColumnType matching expressionType().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#expressionType()">expressionType</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates the expression using representative values and maps the class of result to one of the ColumnType types:
+ StringColumnType, NumberColumnType, BooleanColumnType or TimestampColumnType.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#expressionType(java.lang.Object)">expressionType</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;result)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maps the class of result to one of the ColumnType types: StringColumnType, NumberColumnType
+ BooleanColumnType or TimestampColumnType.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#isEditableColumn()">isEditableColumn</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>false</code> as calculated values are not editable.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#newCalculationContext()">newCalculationContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an context to be used when evaluating an expression.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#representativeValue()">representativeValue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculates the value in this row as part of the evaluation of an expression.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#validateExpression(java.lang.String)">validateExpression</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newExpression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Validates this expression by calculating it with dummy representative based on the field types.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#validateForSave(com.webobjects.foundation.NSMutableArray)">validateForSave</A></B>(com.webobjects.foundation.NSMutableArray&nbsp;exceptions)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to perform custom validations.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#valueForImportedValue(java.lang.Object, java.lang.Object)">valueForImportedValue</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;sender,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns null so that calculated values are ignored on import.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#valueInRow(net.global_village.virtualtables.VirtualRow)">valueInRow</A></B>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;row)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculates the value in this row.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables._VirtualCalculatedColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html" title="class in net.global_village.virtualtables">_VirtualCalculatedColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#entity(com.webobjects.eocontrol.EOEditingContext)">entity</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#expression()">expression</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchAllVirtualCalculatedColumns(com.webobjects.eocontrol.EOEditingContext)">fetchAllVirtualCalculatedColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchAllVirtualCalculatedColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)">fetchAllVirtualCalculatedColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchRequiredVirtualCalculatedColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchRequiredVirtualCalculatedColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchRequiredVirtualCalculatedColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchRequiredVirtualCalculatedColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchVirtualCalculatedColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchVirtualCalculatedColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchVirtualCalculatedColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchVirtualCalculatedColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#fetchVirtualCalculatedColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">fetchVirtualCalculatedColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#localInstance(com.webobjects.eocontrol.EOEditingContext)">localInstance</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualCalculatedColumn.html#setExpression(java.lang.String)">setExpression</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables.VirtualColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">VirtualColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#longDescription()">longDescription</A>, <A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#newField(net.global_village.virtualtables.VirtualRow)">newField</A>, <A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#validateName(java.lang.String)">validateName</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables._VirtualColumn"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html" title="class in net.global_village.virtualtables">_VirtualColumn</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#addToFields(net.global_village.virtualtables.VirtualField)">addToFields</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchAllVirtualColumns(com.webobjects.eocontrol.EOEditingContext)">fetchAllVirtualColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchAllVirtualColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)">fetchAllVirtualColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchRequiredVirtualColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchRequiredVirtualColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchRequiredVirtualColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchRequiredVirtualColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchVirtualColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchVirtualColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchVirtualColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchVirtualColumn</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fetchVirtualColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">fetchVirtualColumns</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fields()">fields</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#fields(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, boolean)">fields</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#removeFromFields(net.global_village.virtualtables.VirtualField)">removeFromFields</A>, <A HREF="../../../net/global_village/virtualtables/_VirtualColumn.html#setFields(com.webobjects.foundation.NSMutableArray)">setFields</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables.Column"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Column.html#awakeFromFetch(com.webobjects.eocontrol.EOEditingContext)">awakeFromFetch</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#columnID()">columnID</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#hasReferringColumns()">hasReferringColumns</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#importAttributeName()">importAttributeName</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#isType(java.lang.String)">isType</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#keyPathForSorting()">keyPathForSorting</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#normalizedName()">normalizedName</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#normalizeStringForColumnNames(java.lang.String)">normalizeStringForColumnNames</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#setName(java.lang.String)">setName</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#typeDescription()">typeDescription</A>, <A HREF="../../../net/global_village/virtualtables/Column.html#validateForDelete()">validateForDelete</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables._Column"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_Column.html" title="class in net.global_village.virtualtables">_Column</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_Column.html#addToReferringColumns(net.global_village.virtualtables.VirtualLookupColumn)">addToReferringColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#dateCreated()">dateCreated</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchAllColumns(com.webobjects.eocontrol.EOEditingContext)">fetchAllColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchAllColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)">fetchAllColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchColumns(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">fetchColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchRequiredColumn(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchRequiredColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#fetchRequiredColumn(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchRequiredColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#isSystemColumn()">isSystemColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#name()">name</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#referringColumns()">referringColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#referringColumns(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, boolean)">referringColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#removeFromReferringColumns(net.global_village.virtualtables.VirtualLookupColumn)">removeFromReferringColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#restrictingValue()">restrictingValue</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setDateCreated(com.webobjects.foundation.NSTimestamp)">setDateCreated</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setIsSystemColumn(net.global_village.foundation.GVCBoolean)">setIsSystemColumn</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setReferringColumns(com.webobjects.foundation.NSMutableArray)">setReferringColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setRestrictingValue(java.lang.String)">setRestrictingValue</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setTable(net.global_village.virtualtables.Table)">setTable</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setTextDescription(java.lang.String)">setTextDescription</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#setType(net.global_village.virtualtables.ColumnType)">setType</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#table()">table</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#textDescription()">textDescription</A>, <A HREF="../../../net/global_village/virtualtables/_Column.html#type()">type</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofextensions.GenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">GenericRecord</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#attributeNamed(java.lang.String)">attributeNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#clearCachedValues()">clearCachedValues</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedSnapshot()">committedSnapshot</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedValueFor(java.lang.String)">committedValueFor</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy()">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy(com.webobjects.foundation.NSMutableDictionary)">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#duplicate(com.webobjects.foundation.NSMutableDictionary)">duplicate</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#entity()">entity</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#equals(java.lang.Object, java.lang.Object)">equals</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#globalID()">globalID</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#hasChanged(java.lang.String)">hasChanged</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isDummyFaultEO()">isDummyFaultEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isNewEO()">isNewEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#objectMatchingKeyAndValue(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.String, java.lang.Object)">objectMatchingKeyAndValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue()">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue(com.webobjects.eocontrol.EOGenericRecord)">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#propertyNamed(java.lang.String)">propertyNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshObject()">refreshObject</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshRelationshipNamed(java.lang.String)">refreshRelationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#relationshipNamed(java.lang.String)">relationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#revertToSaved()">revertToSaved</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#turnIntoFault(com.webobjects.eocontrol.EOFaultHandler)">turnIntoFault</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#updateFromSnapshot(com.webobjects.foundation.NSDictionary)">updateFromSnapshot</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()">validateForSave</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__setClassDescription, _keyGetBindingForKey, _keySetBindingForKey, _otherStorageBinding, _storedKeyGetBindingForKey, _storedKeySetBindingForKey, classDescription, usesDeferredFaultCreation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__classDescription, __clearPendingChanges, __editingContext, __globalID, __hasAuxillaryObservers, __hasPendingChanges, __hasPendingUpdate, __isInitialized, __isPendingDeletion, __isPendingInsertion, __isShared, __lastSnapshot, __originalSnapshot, __retainCount, __setAuxillaryObservers, __setEditingContext, __setGlobalID, __setInitialized, __setLastSnapshot, __setOriginalSnapshot, __setPendingDeletion, __setPendingInsertion, __setPendingUpdate, __setRetainCount, __setShared, _createKeyGetBindingForKey, _createKeySetBindingForKey, _createStoredKeyGetBindingForKey, _createStoredKeySetBindingForKey, _fieldKeyBinding, _forwardingBindingNeededForClass, _methodKeyGetBinding, _methodKeySetBinding, addObjectToBothSidesOfRelationshipWithKey, addObjectToPropertyWithKey, allPropertyKeys, attributeKeys, awakeFromClientUpdate, canAccessFieldsDirectly, changesFromSnapshot, classDescriptionForDestinationKey, clearFault, clearProperties, deleteRuleForRelationshipKey, editingContext, entityName, eoDescription, eoShallowDescription, equals, excludeObjectFromPropertyWithKey, faultHandler, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hashCode, includeObjectIntoPropertyWithKey, inverseForRelationshipKey, invokeRemoteMethod, isFault, isReadOnly, isToManyKey, opaqueState, ownsDestinationObjectsForRelationshipKey, prepareValuesForClient, propagateDeleteWithEditingContext, readResolve, reapplyChangesFromDictionary, removeObjectFromBothSidesOfRelationshipWithKey, removeObjectFromPropertyWithKey, shouldUseStoredAccessors, snapshot, storedValueForKey, takeStoredValueForKey, takeValueForKey, takeValueForKeyPath, takeValuesFromDictionary, takeValuesFromDictionaryWithMapping, toManyRelationshipKeys, toOneRelationshipKeys, toString, unableToSetNullForKey, userPresentableDescription, validateClientUpdate, validateForInsert, validateForUpdate, validateTakeValueForKeyPath, validateValueForKey, valueForKey, valuesForKeys, valuesForKeysWithMapping, willChange, willRead, willReadRelationship</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="VirtualCalculatedColumnRestrictingValue"><!-- --></A><H3>
+VirtualCalculatedColumnRestrictingValue</H3>
+<PRE>
+protected static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.28"><B>VirtualCalculatedColumnRestrictingValue</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.virtualtables.VirtualCalculatedColumn.VirtualCalculatedColumnRestrictingValue">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="VirtualCalculatedColumn()"><!-- --></A><H3>
+VirtualCalculatedColumn</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.26"><B>VirtualCalculatedColumn</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="columnTypeNamesForCalculation()"><!-- --></A><H3>
+columnTypeNamesForCalculation</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.43"><B>columnTypeNamesForCalculation</B></A>()</PRE>
+<DL>
+<DD>Returns names of ColumnTypes that can be used in a VirtualCalculatedColumn expression.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>list of names of ColumnTypes that can be used in a VirtualCalculatedColumn expression</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addColumnTypeForCalculation(java.lang.String)"><!-- --></A><H3>
+addColumnTypeForCalculation</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.68"><B>addColumnTypeForCalculation</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;columnType)</PRE>
+<DL>
+<DD>Adds a column type name to the list of names of ColumnTypes that can be used in a VirtualCalculatedColumn expression.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>columnType</CODE> - column type name to add to the list of names of ColumnTypes that can be used in a VirtualCalculatedColumn expression<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/VirtualCalculatedColumn.html#columnTypeNamesForCalculation()"><CODE>columnTypeNamesForCalculation()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="canUseColumnInCalculation(net.global_village.virtualtables.Column)"><!-- --></A><H3>
+canUseColumnInCalculation</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.86"><B>canUseColumnInCalculation</B></A>(<A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A>&nbsp;column)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the passed column can be used in a VirtualCalculatedColumn expression.
+ Columns whose ColumnType name() is in ColumnTypeNamesForCalculation can be used.  VirtualLookupColumns can
+ be used if their lookupColumn()'s ColumnType name() is in ColumnTypeNamesForCalculation
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>column</CODE> - the Column to check
+<DT><B>Returns:</B><DD><code>true</code> if the passed column can be used in a VirtualCalculatedColumn expression</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+awakeFromInsertion</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.109"><B>awakeFromInsertion</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Setup default values.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>awakeFromInsertion</CODE> in interface <CODE>com.webobjects.eocontrol.EOEnterpriseObject</CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)">awakeFromInsertion</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">VirtualColumn</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>ec</CODE> - the editing context in which this is being inserted</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isEditableColumn()"><!-- --></A><H3>
+isEditableColumn</H3>
+<PRE>
+public <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.126"><B>isEditableColumn</B></A>()</PRE>
+<DL>
+<DD>Returns <code>false</code> as calculated values are not editable.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/Column.html#isEditableColumn()">isEditableColumn</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>false</code> as calculated values are not editable</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="evaluateExpressionWithContextInObject(java.lang.String, java.util.Map, java.lang.Object)"><!-- --></A><H3>
+evaluateExpressionWithContextInObject</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.145"><B>evaluateExpressionWithContextInObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;expression,
+                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;context,
+                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</PRE>
+<DL>
+<DD>Evaluates an expression with an object and a calculation context.  Null is returned if the
+ left part of any keypath has a null value for any column.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>expression</CODE> - the expression to evaluate<DD><CODE>context</CODE> - the calculation context to use for evaluation<DD><CODE>object</CODE> - the Object to take the values from
+<DT><B>Returns:</B><DD>the result of evaluating the expression
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE> - if the expression is not valid</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="valueInRow(net.global_village.virtualtables.VirtualRow)"><!-- --></A><H3>
+valueInRow</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.209"><B>valueInRow</B></A>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;row)</PRE>
+<DL>
+<DD>Calculates the value in this row.  Null is returned if the row has a null value for any column
+ referenced in the expression.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#valueInRow(net.global_village.virtualtables.VirtualRow)">valueInRow</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">VirtualColumn</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>row</CODE> - the VirtualRow to take the value from
+<DT><B>Returns:</B><DD>this field's value
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE> - if the expression is not valid<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/VirtualField.html#value()"><CODE>VirtualField.value()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="exportValueInRow(net.global_village.virtualtables.VirtualRow, java.lang.Object)"><!-- --></A><H3>
+exportValueInRow</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.226"><B>exportValueInRow</B></A>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;row,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;sender)</PRE>
+<DL>
+<DD>Calculates the value to export for this column in the passed row.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html#exportValueInRow(net.global_village.virtualtables.VirtualRow, java.lang.Object)">exportValueInRow</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables">VirtualColumn</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>row</CODE> - the VirtualRow to take the value from<DD><CODE>sender</CODE> - an object that this method can use to further distinguish what should be done with the value
+<DT><B>Returns:</B><DD>the value to export for this column in the passed row<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/VirtualField.html#valueForExport(java.lang.Object)"><CODE>VirtualField.valueForExport(Object)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="valueForImportedValue(java.lang.Object, java.lang.Object)"><!-- --></A><H3>
+valueForImportedValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.242"><B>valueForImportedValue</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;sender,
+                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)
+                             throws <A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></PRE>
+<DL>
+<DD>Returns null so that calculated values are ignored on import.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/Column.html#valueForImportedValue(java.lang.Object, java.lang.Object)">valueForImportedValue</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>sender</CODE> - an object that this method can use to further distinguish what should be done with the value<DD><CODE>value</CODE> - the value we got during import, possibly formatted by a formatter
+<DT><B>Returns:</B><DD>null so that calculated values are ignored on import
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE> - thrown if <code>value</code> is not a valid value for this column</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="representativeValue()"><!-- --></A><H3>
+representativeValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.257"><B>representativeValue</B></A>()</PRE>
+<DL>
+<DD>Calculates the value in this row as part of the evaluation of an expression.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/Column.html#representativeValue()">representativeValue</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/Column.html" title="class in net.global_village.virtualtables">Column</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a value representative of this column type<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/Column.html#representativeValue()"><CODE>Column.representativeValue()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="exampleValue()"><!-- --></A><H3>
+exampleValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.275"><B>exampleValue</B></A>()</PRE>
+<DL>
+<DD>Calculates the value in this row based on representative values for the columns.  This
+ calculation and value is used to validate calculated columns without needing to refer
+ to data in the table.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a value representative of this column type<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/Column.html#representativeValue()"><CODE>Column.representativeValue()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="expressionType(java.lang.Object)"><!-- --></A><H3>
+expressionType</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.298"><B>expressionType</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;result)</PRE>
+<DL>
+<DD>Maps the class of result to one of the ColumnType types: StringColumnType, NumberColumnType
+ BooleanColumnType or TimestampColumnType.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>result</CODE> - object to match to a ColumnType type
+<DT><B>Returns:</B><DD>one of ColumnType.StringColumnType, ColumnType.NumberColumnType, ColumnType.BooleanColumnType, ColumnType.TimestampColumnType
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE> - if result is not one of the expected classes</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="expressionType()"><!-- --></A><H3>
+expressionType</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.335"><B>expressionType</B></A>()</PRE>
+<DL>
+<DD>Evaluates the expression using representative values and maps the class of result to one of the ColumnType types:
+ StringColumnType, NumberColumnType, BooleanColumnType or TimestampColumnType.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>one of ColumnType.StringColumnType, ColumnType.NumberColumnType, ColumnType.BooleanColumnType, ColumnType.TimestampColumnType</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="expressionColumnType()"><!-- --></A><H3>
+expressionColumnType</H3>
+<PRE>
+public <A HREF="../../../net/global_village/virtualtables/ColumnType.html" title="class in net.global_village.virtualtables">ColumnType</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.352"><B>expressionColumnType</B></A>()</PRE>
+<DL>
+<DD>Returns instance of ColumnType matching expressionType().
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>instance of ColumnType matching expressionType()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="columnsAvailableForCalculation()"><!-- --></A><H3>
+columnsAvailableForCalculation</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.366"><B>columnsAvailableForCalculation</B></A>()</PRE>
+<DL>
+<DD>Returns an ordered list of columns from this Table which may be used in the formula of a calculated column.
+ This column is excluded from the list.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an ordered list of columns from this Table which may be used in the formula of a calculated column</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newCalculationContext()"><!-- --></A><H3>
+newCalculationContext</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.387"><B>newCalculationContext</B></A>()</PRE>
+<DL>
+<DD>Returns an context to be used when evaluating an expression. This contains a calculatingColumns key that points
+ to a list of columns that are in the process of being evaluated. The calculatingColumns list is used to detect
+ circular expressions. For OGNL, this also contains a classResolver key.  Member access is controlled by
+ WhiteListMemberAccess to prevent attacks via calculated columns.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an OGNL context to be used when evaluating an expression.<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/virtualtables/WhiteListMemberAccess.html" title="class in net.global_village.virtualtables"><CODE>WhiteListMemberAccess</CODE></A>, 
+<CODE>ClassResolver</CODE>, 
+<A HREF="../../../net/global_village/virtualtables/VirtualRowPropertyAccessor.html" title="class in net.global_village.virtualtables"><CODE>VirtualRowPropertyAccessor</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateExpression(java.lang.String)"><!-- --></A><H3>
+validateExpression</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.411"><B>validateExpression</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newExpression)
+                          throws com.webobjects.foundation.NSValidation.ValidationException</PRE>
+<DL>
+<DD>Validates this expression by calculating it with dummy representative based on the field types.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newExpression</CODE> - the expression to validate
+<DT><B>Returns:</B><DD>newExpression if it is valid
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE> - if the expression is not valid
+<DD><CODE>com.webobjects.foundation.NSValidation.ValidationException</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateForSave(com.webobjects.foundation.NSMutableArray)"><!-- --></A><H3>
+validateForSave</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/virtualtables/VirtualCalculatedColumn.html#line.441"><B>validateForSave</B></A>(com.webobjects.foundation.NSMutableArray&nbsp;exceptions)
+                        throws com.webobjects.foundation.NSValidation.ValidationException</PRE>
+<DL>
+<DD>Overridden to perform custom validations.  Calling super's implementation
+ is a good idea, it is needed when using EO inheritance if the super class has any
+ custom  validations.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)">validateForSave</A></CODE> in class <CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">GenericRecord</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>exceptions</CODE> - list of exceptions that can be added to
+<DT><B>Throws:</B>
+<DD><CODE>ValidationException</CODE> - if validation error are found
+<DD><CODE>com.webobjects.foundation.NSValidation.ValidationException</CODE><DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)"><CODE>GenericRecord.validateForSave(NSMutableArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()"><CODE>GenericRecord.validateForSave()</CODE></A></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/VirtualCalculatedColumn.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualBooleanField.html" title="class in net.global_village.virtualtables"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualColumn.html" title="class in net.global_village.virtualtables"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/virtualtables/VirtualCalculatedColumn.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="VirtualCalculatedColumn.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_net.global_village.virtualtables.Column">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,123 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATION_DATE"; 
+            name = creationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_NAME"; 
+            name = name; 
+            prototypeName = shortString; 
+        }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = tinySting; }, 
+        {
+            allowsNull = N; 
+            columnName = "PARENT_WEBSITE"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, name, type); 
+    className = "com.gvcsitemaker.core.LocalGroup"; 
+    classProperties = (
+        name, 
+        creationDate, 
+        type, 
+        users, 
+        dataAccessNotifications, 
+        files, 
+        sections, 
+        parentWebsite
+    ); 
+    externalName = "SM_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            groupName, 
+            creationDate, 
+            websites, 
+            parentWebsite, 
+            sections, 
+            files, 
+            accessType, 
+            users
+        ); 
+    }; 
+    name = LocalGroup; 
+    parent = WebsiteGroup; 
+    primaryKeyAttributes = (groupPKey); 
+    relationships = (
+        {
+            definition = "groupDataAccessNotifications.dataAccess"; 
+            internalInfo = {"_nameInObjectStore" = "dataAccessWebsiteGroupNotifications_dataAccess"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = dataAccessNotifications; 
+        }, 
+        {definition = "groupFiles.file"; joinSemantic = EOInnerJoin; name = files; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = DataAccessWebsiteGroupNotification; 
+            internalInfo = {"_nameInObjectStore" = websiteWebsiteGroups; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupDataAccessNotifications; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupFiles; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupSections; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = parentWebsite; 
+        }, 
+        {
+            definition = "groupSections.section"; 
+            joinSemantic = EOInnerJoin; 
+            name = sections; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = UserGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = userGroups; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "userGroups.user"; 
+            internalInfo = {"_nameInObjectStore" = "userGroups_user"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = users; 
+        }
+    ); 
+    restrictingQualifier = "(type = 'Local')"; 
+}

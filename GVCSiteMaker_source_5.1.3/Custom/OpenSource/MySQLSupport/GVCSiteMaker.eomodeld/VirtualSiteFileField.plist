@@ -1,0 +1,68 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "FILE_FKEY"; 
+            name = fileFkey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            columnName = "VIRTUAL_COLUMN_ID"; 
+            name = virtualColumnID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "VIRTUAL_FIELD_ID"; name = virtualFieldID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (virtualFieldID, virtualRowID, virtualColumnID, restrictingValue, fileFkey); 
+    className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileField"; 
+    classProperties = (virtualFieldID, restrictingValue, column, row, siteFileValue, referringFields); 
+    externalName = "VIRTUAL_FIELD"; 
+    fetchSpecificationDictionary = {}; 
+    name = VirtualSiteFileField; 
+    parent = VirtualField; 
+    primaryKeyAttributes = (virtualFieldID); 
+    relationships = (
+        {
+            destination = VirtualColumn; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = virtualColumnID; }); 
+            name = column; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupValueID; sourceAttribute = virtualFieldID; }); 
+            name = referringFields; 
+            numberOfToManyFaultsToBatchFetch = 100; 
+        }, 
+        {
+            destination = VirtualRow; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = row; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SiteFile; 
+            internalInfo = {"_nameInObjectStore" = siteFile; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filePKey; sourceAttribute = fileFkey; }); 
+            name = siteFileValue; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'SiteFile')"; 
+}

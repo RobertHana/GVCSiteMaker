@@ -1,0 +1,67 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - Confirm User Creation";
+}
+
+
+CancelButton: WOSubmitButton {
+	value = "Cancel";
+	action = cancel;
+}
+
+CreateUsersButton: WOSubmitButton {
+	value = "Create user(s)";
+	action = create;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Confirm User Creation";
+	isAdmin = true;
+}
+
+HasInvalidData: WOConditional {
+	condition = invalidUserArray.count;
+}
+
+HasNoValidData: WOConditional {
+	negate = true;
+	condition = validUserArray.count;
+}
+
+HasValidData: WOConditional {
+	condition = validUserArray.count;
+}
+
+HasValidUsers: WOConditional {
+	condition = validUserArray.count;
+}
+
+Image3: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+InvalidUserCount: WOString {
+	value = invalidUserArray.count;
+}
+
+InvalidUserList: InvalidUserList {
+	invalidUserArray = invalidUserArray;
+}
+
+SpacerImage: Unknown
+{
+}
+
+UserCreationForm: WOForm {
+	multipleSubmit = true;
+}
+
+ValidUserCount: WOString {
+	value = validUserArray.count;
+}
+
+ValidUserList: ValidUserList {
+	validUserArray = validUserArray;
+}

@@ -1,0 +1,64 @@
+
+{
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    PROJECTTYPE = JavaWebObjectsFramework;
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PROJECTVERSION = 2.8;
+    DYNAMIC_CODE_GEN = YES;
+    FILESTABLE = 
+    {
+        OTHER_SOURCES = 
+        (
+           CustomInfo.plist, 
+           java.template, 
+           Makefile, 
+           Makefile.postamble, 
+           Makefile.preamble
+        );
+        SUBPROJECTS = 
+        ();
+        WO_COMPONENTS = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           CustomInfo.plist, 
+           GVCSMAdminPageMap.plist, 
+           GVCSiteMakerBootstrap.plist, 
+           GVCSiteMakerCustom.plist, 
+           GVCSiteMakerPageMap.plist
+        );
+        FRAMEWORKS = 
+        (
+           GVCSMCore.framework, 
+           GVCVirtualTables.framework, 
+           GVCGenericObjects.framework, 
+           GVCWOExtensions.framework
+        );
+        CLASSES = 
+        (
+           src/com/gvcsitemaker/custom/appserver/SMCustomApplication.java, 
+           src/com/gvcsitemaker/custom/appserver/SMCustomDirectAction.java, 
+           src/com/gvcsitemaker/custom/appserver/SMCustomSession.java
+        );
+    };
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    LANGUAGE = English;
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    CURRENTLY_ACTIVE_VERSION = YES;
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    PBPROJECTTYPEVERSION = 4.0;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    DEPLOY_WITH_VERSION_NAME = A;
+    PROJECTNAME = GVCSMCustom;
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+}

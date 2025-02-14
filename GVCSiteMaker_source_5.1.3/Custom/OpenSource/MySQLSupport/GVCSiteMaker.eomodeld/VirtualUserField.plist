@@ -1,0 +1,66 @@
+{
+    attributes = (
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_FKEY"; 
+            name = userFkey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "VIRTUAL_COLUMN_ID"; 
+            name = virtualColumnID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "VIRTUAL_FIELD_ID"; name = virtualFieldID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (virtualFieldID, virtualRowID, virtualColumnID, restrictingValue, userFkey); 
+    className = "com.gvcsitemaker.core.databasetables.VirtualUserField"; 
+    classProperties = (virtualFieldID, restrictingValue, column, row, userValue, referringFields); 
+    externalName = "VIRTUAL_FIELD"; 
+    fetchSpecificationDictionary = {}; 
+    name = VirtualUserField; 
+    parent = VirtualField; 
+    primaryKeyAttributes = (virtualFieldID); 
+    relationships = (
+        {
+            destination = VirtualColumn; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = virtualColumnID; }); 
+            name = column; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupValueID; sourceAttribute = virtualFieldID; }); 
+            name = referringFields; 
+            numberOfToManyFaultsToBatchFetch = 100; 
+        }, 
+        {
+            destination = VirtualRow; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = row; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userFkey; }); 
+            name = userValue; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'User')"; 
+}

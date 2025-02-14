@@ -1,0 +1,8 @@
+SortContent: WOComponentContent
+{
+}
+
+SortHyperlink: WOHyperlink
+{
+	action = sortColumn;
+}

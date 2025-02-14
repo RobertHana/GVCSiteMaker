@@ -1,0 +1,51 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=BodyTitle></WEBOBJECT>
+	<webobject name="UserCreationForm">
+    <table BORDER=0 CELLSPACING=2 CELLPADDING=2 class="contentTable">
+       <tr> 
+          <td valign="top" width="400" class="boldText">
+			<WEBOBJECT NAME=HasValidData>
+				Valid data obtained for <WEBOBJECT NAME="ValidUserCount"></WEBOBJECT>
+        		user(s):
+			</WEBOBJECT>
+			<WEBOBJECT NAME=HasNoValidData>
+				No valid data obtained
+			</WEBOBJECT>
+		  </td>
+          <td valign="top" align="right"> 
+                <WEBOBJECT NAME=CancelButton></WEBOBJECT>
+				<WEBOBJECT NAME="HasValidUsers">
+                	<webobject name="SpacerImage"></webobject> 
+                	<WEBOBJECT NAME=CreateUsersButton></WEBOBJECT>
+				</WEBOBJECT>
+            </td>
+          </tr>
+          <WEBOBJECT NAME="HasValidUsers">
+		  <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=ValidUserList></WEBOBJECT>
+            </td>
+          </tr>
+		  </WEBOBJECT>
+		  <webobject name=HasInvalidData>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <hr class="alternateBarStyle">
+            </td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2" class="boldText">
+				Invalid data obtained for
+            	<WEBOBJECT NAME="InvalidUserCount"></WEBOBJECT>
+           	 	user(s):
+			</td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=InvalidUserList></WEBOBJECT>
+            </td>
+          </tr>
+		</webobject>
+        </table>
+      </webobject>
+</webobject>

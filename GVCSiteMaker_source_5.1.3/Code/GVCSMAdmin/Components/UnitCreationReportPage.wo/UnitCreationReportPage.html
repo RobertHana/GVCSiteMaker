@@ -1,0 +1,41 @@
+<webobject name="DynamicBody">
+	  <WEBOBJECT NAME=BodyTitle></WEBOBJECT>
+      <WebObject Name="ReportForm">
+        <table BORDER=0 CELLSPACING=2 CELLPADDING=2 WIDTH="100%" class="boldText">
+          <tr> 
+            <td valign="top" width="400" class="boldText"><WEBOBJECT NAME=ValidDataObtained>Sucessfully created
+            <WEBOBJECT NAME="NumberOfValidUnits"></WEBOBJECT>
+            unit(s):</WEBOBJECT><WEBOBJECT NAME=NoValidDataObtained>No valid data obtained</WEBOBJECT></td>
+            <td valign="top"> 
+              <div align="right"> 
+                <WEBOBJECT NAME=ReturnToUnitCreation></WEBOBJECT>
+              </div>
+            </td>
+          </tr>
+          <WEBOBJECT NAME=DisplayValidUnitList>
+		  <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=ValidUnitList></WEBOBJECT>
+            </td>
+          </tr>
+          </WEBOBJECT>
+		  <WEBOBJECT NAME=DisplayInvalidUnitList>
+		  <tr> 
+            <td valign="top" colspan="2"> 
+              <hr class="alternateBarStyle">
+            </td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2" class="boldText">Creation failed for
+            <WEBOBJECT NAME="NumberOfInvalidUnits"></WEBOBJECT>
+            unit(s):</td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=InvalidUnitList></WEBOBJECT>
+            </td>
+          </tr>
+					</WEBOBJECT>
+        </table>
+      </WebObject>
+</webobject>

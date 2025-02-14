@@ -1,0 +1,29 @@
+{
+	arrayProperty = ("itemOne", 
+                    "itemTwo", 
+                    "itemThree", 
+                    "itemFour");
+
+  	booleanProperty = "true";
+
+	dateFormat = "%B %e, %Y";
+	numberFormat = "#,##0.00;#,##0.00;-#,##0.00";
+
+	dictionaryProperty = {keyThree = "itemThree"; keyTwo = "itemTwo"; keyOne = "itemOne"; keyFour = "itemFour";};
+
+  	floatProperty = "9.89";
+
+  	intProperty = "9";
+
+    stringProperty = "This is the default string value";
+
+    Application =
+    {
+        email =
+        {
+            fromAddress = "bill@global-village.net";		
+            toAddress= "bill2@global-village.net";		
+        };
+    };
+}  	
+

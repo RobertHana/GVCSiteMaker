@@ -1,0 +1,1046 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / Assertions
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">Assertions</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">Assertions</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">The assertion language</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">Forall and exists expressions</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">Preconditions and postconditions: 'require' and 'ensure'</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">5</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect5">The class invariant: 'invariant'</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">6</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect6">The loop invariant and the loop variant: 'invariant' and 'variant'</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">7</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect7">The check-statement: 'check'</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">8</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect8">The rescue-block: 'rescue' and the retry statement: 'retry'</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">9</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect9">How assertions are checked</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">10</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect10">Comments in assertions</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    Assertions<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+    next: 
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+  <hr size="1" noshade/>
+</div>
+  <h1>
+  <a name="sect1">
+  1 Assertions</a></h1>
+<a name="idx1"><em></em></a> 
+
+<p> In this chapter the kinds of assertions that are possible in Jass
+will be described. The description of the syntax will be illustrated
+by brief examples of the class 
+  <a href="../doc/buffer.html" target="_top">
+Buffer</a> 
+and done in the form of grammatical rules.
+</p>
+<p> The chapter is subdivided into the following parts:
+<ul>
+<li>  <a href="#language" target="_top">The assertion language </a> </li>
+<li>  <a href="#prepost" target="_top">Preconditions and postconditions: 'require' and 
+  'ensure'</a> </li>
+<li>  <a href="#invariant" target="_top">The class invariant: 'invariant'</a> </li>
+<li>  <a href="#loop" target="_top">The loop invariant and the loop variant: 
+  'invariant' and 'variant' </a></li>
+<li>  <a href="#check" target="_top">The check-statement: check' </a> </li>
+<li>  <a href="#rescue" target="_top">The rescue-block: 'rescue' and the 
+  retry-statement: 'retry'</a> </li>
+<li>  <a href="#runtime" target="_top">How assertions are checked </a> </li>
+<li>  <a href="#comments" target="_top">Comments in assertions </a></li>
+</ul>
+  <h1><a name="language"></a>
+  <a name="sect2">
+  2 The assertion language</a></h1>
+<p> Jass supports different kind of assertions which are used to
+specify different properties of a java class. All assertions must
+appear in formal comments and have a introducing keyword which
+specifies the kind of the assertion. In the most cases than follows a
+list of boolean expressions which describe the allowed states. The
+boolean expressions can contain variables and method calls.
+</p>
+<p> To allow arbitrary boolean expressions and method calls is
+dangerous. This will <cite>&quot;... open the gates of the
+declarative city to the applicative hordes.&quot;</cite> Assertions
+describe states but should not modify them.
+</p>
+<p> Jass does restrict the usage of expressions and methods: The
+expressions must be pure declarative, so no side effects like
+assignment and instance creation can be used. Called methods must be
+free of side effects too.
+</p>
+<p> 
+  
+
+<a name="idx2"><em><strong>Example</strong></em></a> for a
+simple precondition:
+</p>
+<p> <code>/** require !isFull(); o != null; **/</code>
+</p>
+<p> <strong>Attention</strong>: After the last boolean expression must
+appear a semicolon and the comment must be closed through '**/'.
+</p>
+<p> 
+  
+
+<a name="idx3"><em></em></a> The semicolon connects the
+assertions like a logical 'and' so that the whole precondition
+ultimately is nothing but one boolean expression. The semicolon can
+therefore be used in order to divide the expression into smaller and
+clearer parts and, if desired, to give each part a label of its own:
+</p>
+<pre>
+/** require [buffer_not_full] !isFull(); 
+            [object_is_valid] o != null; **/
+</pre>
+<p> The label stands in brackets in front of the assertion part and identifies the assertion in error messages.
+</p>
+<p> The boolean expressions of an assertion are produced through the
+following 
+  
+
+<a name="idx4"><em>EBNF</em></a>:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod99">BooleanAssertion</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( <A HREF="#prod101">AssertionLabel</A> )? <A HREF="grammar.html#prod102">AssertionExpression</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod101">AssertionLabel</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"[" &lt;IDENTIFIER&gt; "]"</TD>
+</TR>
+</table>
+<p> The following 
+  
+
+<a name="idx5"><em>table</em></a>
+gives an overview about the semantic side
+conditions of the assertions. See the descriptions of the assertions
+for a detailed explanation.
+</p>
+<table border>
+<tr>
+<td align=center><strong>kind of assertion</strong></td>
+<td align=center><strong>type of expressions</strong></td>
+<td align=center><strong>usage of<br>fields and methods</strong></td>
+<td align=center><strong>usage of<br>local variables</strong></td>
+<td align=center><strong>usage of<br>formal parameters</strong></td>
+<td align=center><strong>usage of<br>Old and Result</strong></td>
+</tr>
+<tr>
+<td align=center>  <a href="#prepost" target="_top">precondition</a></td>
+<td align=center><code>boolean</code></td>
+<td align=center>special</td>
+<td align=center>not allowed</td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+</tr>
+<tr>
+<td align=center>  <a href="#prepost" target="_top">postcondition</a></td>
+<td align=center><code>boolean</code></td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+</tr>
+<tr>
+<td align=center>  <a href="#invariant" target="_top">class invariant</a></td>
+<td align=center><code>boolean</code></td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+<td align=center>not allowed</td>
+<td align=center>not allowed</td>
+</tr>
+<tr>
+<td align=center>  <a href="#loop" target="_top">loop invariant</a></td>
+<td align=center><code>boolean</code></td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+</tr>
+<tr>
+<td align=center>  <a href="#loop" target="_top">loop variant</a></td>
+<td align=center><code>int</code></td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+</tr>
+<tr>
+<td align=center>  <a href="#check" target="_top">check</a></td>
+<td align=center><code>boolean</code></td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>allowed</td>
+<td align=center>not allowed</td>
+</tr>
+</table>
+<p> Recursive definitions of assertions are not allowed. This means: A
+call of the method that declares the assertions in the assertion is
+forbidden. This is true for indirect recursion too.
+</p>
+  <h1><a name="forall"></a>
+  <a name="sect3">
+  3 Forall and exists expressions</a></h1>
+<a name="idx6"><em></em></a>
+<p>With the usage of forall and exists the programmer can express
+properties that must be valid for all elements of an finite set of
+assertions or for one element of this set.</p>
+<p>
+<a name="idx7"><em><strong>Example</strong></em></a>
+for a forall expression:
+</p>
+<p> <code>
+(forall i : {out%buf.length .. in%buf.length-1} # buf[i] != null);
+</code>
+</p>
+<p> Forall and exists expressions are produced through the following 
+  
+
+<a name="idx8"><em>EBNF</em></a>:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod102">AssertionExpression</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( <A HREF="#prod108">AssertionForAllExistsExpression</A> | <A HREF="grammar.html#prod109">AssertionConditionalExpression</A> )</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod108">AssertionForAllExistsExpression</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( &lt;FORALL&gt; | &lt;EXISTS&gt; ) &lt;IDENTIFIER&gt; ":" ( <A HREF="#prod110">AssertionFiniteEnumerationCreation</A> | <A HREF="#prod111">AssertionRangeExpression</A> ) &lt;FORALL_SEP&gt; <A HREF="#prod102">AssertionExpression</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod110">AssertionFiniteEnumerationCreation</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"new" <A HREF="grammar.html#prod5">Name</A> <A HREF="grammar.html#prod112">AssertionArguments</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod111">AssertionRangeExpression</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"{" <A HREF="grammar.html#prod113">AssertionShiftExpression</A> &lt;RANGE&gt; <A HREF="grammar.html#prod113">AssertionShiftExpression</A> "}"</TD>
+</TR>
+</table>
+  <h1><a name="prepost"></a>
+  <a name="sect4">
+  4 Preconditions and postconditions: 'require' and 'ensure'</a></h1>
+<a name="idx9"><em></em></a>
+<a name="idx10"><em></em></a>
+<a name="idx11"><em></em></a>
+<a name="idx12"><em></em></a>
+<p>As in Eiffel, for each method of a class in Java a precondition and
+a postcondition can be stated by the Jass extensions. The precondition
+is at the beginning of the method body (directly after the opening
+brace), the postcondition is at the end (before the close brace).
+</p>
+<p> With the precondition the developer can specify the states in
+which a method may be invoked. To satisfy the precondition is the duty
+of the caller. The precondition is introduced through the keyword
+<code>require</code>.
+</p>
+<p> 
+  
+
+<a name="idx13"><em><strong>Example</strong></em></a> for a
+precondition:
+</p>
+<p> <code>
+public void addElement (Object o) {<BR>
+/** require !isFull(); o != null; **/<BR>
+...<BR>
+}
+</code>
+</p>
+<p> The method <code>addElement</code> can only be invoked if the
+buffer is not full and the formal parameter contains a reference to an
+valid object that should be inserted. Inserting a <code>null</code>
+reference is forbidden.
+</p>
+<p> The called methods and used variables in the precondition must be
+as visible as the method they appear in. This <em>availability</em>
+rule ensures that the caller will understand the conditions under
+which the method can be invoked. This implies that local variables can
+not be used.
+</p>
+<p> In the above examples the method <code>isFull</code> must be
+declared public to satisfy this condition.
+</p>
+<p> A postcondition specifies the states in which the method should
+return. To satisfy the postcondition is the duty of the developer of
+the method. The postcondition is introduced through the keyword
+<code>ensure</code>.
+</p>
+<p> 
+  
+
+<a name="idx14"><em><strong>Example</strong></em></a> 
+for a postcondition:
+</p>
+<p> <code>
+public void addElement (Object o) {<BR>
+...<BR>
+/** ensure !isEmpty() &amp;&amp; contains(o); **/<BR>
+}
+</code>
+</p>
+<p> On return of the method <code>addElement</code> the buffer can not
+be empty and the object to insert should be contained.
+</p>
+<p> 
+  
+
+<a name="idx15"><em></em></a>
+<a name="idx16"><em></em></a>
+<a name="idx17"><em></em></a>
+<a name="idx18"><em></em></a>
+<a name="idx19"><em></em></a>
+<a name="idx20"><em></em></a>
+The postcondition can contain three special constructs: <em>Old</em>,
+<em>changeonly</em> and <em>Result</em>. This constructs are explained
+in the following.
+</p>
+<p> The object state at the begin of the method is stored in the
+special variable <em>Old</em>. With this variable the developer can
+specify relations between entry and exit states. For example the
+monotony of a counter.
+</p>
+<p> 
+  
+
+<a name="idx21"><em><strong>Example</strong></em></a> for 
+the use of Old:
+</p>
+<p> <code>
+public void addElement (Object o) {<BR>
+...<BR>
+/** ensure !isEmpty() &amp;&amp; contains(o); Old.count == count-1; **/<BR>
+}
+</code>
+</p>
+<p> To store a copy of the object at the begin of the method the
+developer must implement the method <em>clone</em> without throwing
+any exception (The interface java.lang.Cloneable must
+implemented!). Thus the developer decides how a copy is
+generated. This is a feature not a bug! Objects may reference complex
+data structures. Only the developer can decide which parts must be
+copied and which can be shared.
+</p>
+<p> Another special construct is the <em>changeonly</em> keyword
+followed by a list of attributes. If such a list is specified in a
+postcondition only the declared attributes are allowed to change their
+values. Not listed attributes must remain constant. The empty list
+stands for: <em>change nothing</em>. To check this a copy of the
+object is generated with the <code>clone</code> method analogous to
+the <em>Old</em> construct. The attributes are compared with the
+method <code>equals</code> which can be overwritten by the
+developer. This is a feature, too! Attributes of array type are handled
+differently. If the array type is unidimensional the contents are
+compared with the <code>equals</code> method through a loop. If the
+array has more than one dimension the whole array is compared for
+reference equality. This approach follows the <code>equals</code>
+method for array objects.
+</p>
+<p> 
+  
+
+<a name="idx22"><em><strong>Example</strong></em></a>
+for the use of changeonly:
+</p>
+<pre>
+public void addElement (Object o) {
+...
+/** ensure !isEmpty() &amp;&amp;  contains(o); 
+           Old.count == count-1; 
+           changeonly{count,buffer}; **/<BR>
+}
+</pre>
+<p> Pre- and Postcondition are produced through the following EBNF:
+</p>
+<a name="idx23"><em></em></a>
+<a name="idx24"><em></em></a>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod17">MethodDeclaration</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( "public" | "protected" | "private" | "static" | "abstract" | "final" | "native" | "synchronized" | "strictfp" )* <A HREF="grammar.html#prod20">ResultType</A> <A HREF="grammar.html#prod29">MethodDeclarator</A> ( "throws" <A HREF="grammar.html#prod9">NameList</A> )? ( "{" <A HREF="#prod30">MethodBodyBlock</A> "}" | ";" )</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod30">MethodBodyBlock</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( <A HREF="#prod94">RequireClause</A> )? ( <A HREF="grammar.html#prod87">BlockStatement</A> )* ( <A HREF="#prod95">EnsureClause</A> )? ( <A HREF="grammar.html#prod96">RescueClause</A> )?</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod94">RequireClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;REQUIRE&gt; ( <A HREF="#prod99">BooleanAssertion</A> ";" )+ &lt;ASS_END&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod95">EnsureClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;ENSURE&gt; ( <A HREF="#prod100">BooleanChangeAssertion</A> ";" )+ &lt;ASS_END&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod99">BooleanAssertion</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( <A HREF="grammar.html#prod101">AssertionLabel</A> )? <A HREF="grammar.html#prod102">AssertionExpression</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod100">BooleanChangeAssertion</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( &lt;CHANGEONLY&gt; "{" ( <A HREF="#prod103">ChangeList</A> )? "}" | <A HREF="#prod99">BooleanAssertion</A> )</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod103">ChangeList</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE><A HREF="#prod104">FieldReference</A> ( "," <A HREF="#prod104">FieldReference</A> )*</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod104">FieldReference</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( "this" "." )? &lt;IDENTIFIER&gt;</TD>
+</TR>
+</table>
+  <h1><a name="invariant"></a>
+  <a name="sect5">
+  5 The class invariant: 'invariant'</a></h1>
+<p>In each class a 
+  
+
+<a name="idx25"><em>class
+invariant</em></a> may be stated. This invariant contains
+assertions, that, apart from the parameter names, may be defined as in
+the preconditions of methods. The class invariant begins with the
+keyword 
+  
+
+<a name="idx26"><em>
+<code>invariant</code></em></a> and is stated at the end of the class
+like a method declaration.  </p>
+<p> The class invariant is supposed to include all assertions that
+contain conditions that hold for the whole class and not just for
+single methods. For instance, with their help the possible state space
+defined by the arrays can be restricted.
+</p>
+<p> The class invariant could also explicitly be added to each
+precondition and postcondition. The semantics would be the same, but
+its intention as an invariant condition could hardly be
+recognized. Changes of the invariant would imply changes in all pre-
+and postconditions.
+</p>
+<p> Like a method, the class invariant is declared at the end of the
+class and it is called by the other methods at the positions in which
+it is supposed to be checked.
+</p>
+<p> 
+  
+
+<a name="idx27"><em><strong>Example</strong></em></a> 
+for a class invariant:
+</p>
+<p> <code>
+public class Buffer {<BR>
+...<BR>
+/** invariant 0 <= in - out &amp;&amp; in - out <=buffer.length; **/<BR>
+}
+</code>
+</p>
+<p> No local variables and formal parameters can be used in the class
+invariant.
+</p>
+<p> The class invariant is checked whenever a method of the class is
+called or ended. Analogous to the postcondition the end of a method
+are the return statements and the end of the body. If the assertion
+expressions of the invariant contain variables that can be changed
+through other instances Jass warns the developer with a message. In
+this case the invariant can be invalidated without any error message
+produced.
+</p>
+<p> The invariant is produced through the following 
+  
+
+<a name="idx28"><em>EBNF</em></a>:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod6">ClassDeclaration</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( "abstract" | "final" | "public" | "strictfp" )* <A HREF="#prod8">UnmodifiedClassDeclaration</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod8">UnmodifiedClassDeclaration</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"class" &lt;IDENTIFIER&gt; ( "extends" <A HREF="grammar.html#prod5">Name</A> )? ( "implements" <A HREF="grammar.html#prod9">NameList</A> )? <A HREF="#prod10">ClassBody</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod10">ClassBody</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"{" ( <A HREF="grammar.html#prod11">ClassBodyDeclaration</A> )* ( <A HREF="#prod12">ClassInvariantClause</A> )? "}"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod12">ClassInvariantClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;INVARIANT&gt; ( <A HREF="grammar.html#prod105">InvariantAssertion</A> ";" )+ &lt;ASS_END&gt;</TD>
+</TR>
+</table>
+  <h1><a name="loop"></a>
+  <a name="sect6">
+  6 The loop invariant and the loop variant: 'invariant' and 'variant'</a></h1>
+<a name="idx29"><em></em></a>
+<a name="idx30"><em></em></a>
+<a name="idx31"><em></em></a>
+<p>Some kinds of errors are typical for loops:</p>
+<ul>
+<li>The loop does not terminate.</li>
+<li>The loop body is execute once too often or to less.</li>
+<li>Special cases like zero iterations are not handled.</li>
+</ul>
+<p> To take the edge of the loops the loop invariant and the loop
+variant are introduced. Both are declared after the head and before
+the body of a loop. If, in the following, confusion with the class
+invariant cannot be excluded by the context, we use the expression
+&quot;loop invariant&quot;. This invariant states an assertion that must be
+influenced by the execution of the loop, while the variant denotes an
+integer expression that explicitly <em>has</em> to do this. Two
+conditions are linked to the variant: first, its value has to be
+positive all the time, second, this value must decrease every time the
+loop is repeated. The Jass precompiler checks these conditions; as
+both conditions cannot be maintained infinitely long, the loop has to
+terminate.
+</p>
+<p> As loops can only be used within methods their assertions are not
+directly part of the documentation but they describe the
+implementation. Therefore, they do not contribute to the contract
+between developer and user. They do have an important function,
+however. They can reveal properties of the implementation that cannot
+be detected at first sight; in particular, the time limitation for
+loops can be shown. They thereby promote the understanding and help
+the developer formulate a precise precondition and postcondition or
+class invariant.
+</p>
+<p> In the case of the forms discussed so far (the integration of
+assertions in the program code), it was implicitly assumed that the
+method call terminates and therefore returns to the caller at some
+point. This point of view is correct if loops are disregarded. With
+loops the time limitation has to be indicated explicitly, as otherwise
+the postcondition would never be checked and thus no guarantees as in
+a contract or in the form of a correctness formula could be given (see
+  <a href="#intro2" target="_top">Design by contract</a>).
+</p>
+<p> 
+  
+
+<a name="idx32"><em></em></a>
+<a name="idx33"><em></em></a>
+<strong>Example</strong> for a loop invariant and variant:
+</p>
+<pre>   public boolean contains(Object o) {
+   /** require o != null; **/
+      for (int i = 0; i &lt; buffer.length; i++) 
+      /** invariant 0 &lt;= i &amp;&amp; i &lt;= buffer.length; **/
+      /** variant buffer.length - i **/
+         if (buffer[i].equals(o)) return true;
+      return false;
+  /** ensure changeonly{}; **/    
+  }
+</pre>
+<p> If both constructs are used the loop invariant must declared
+before the loop variant. The expression of the variant must be of type
+<em>int</em> and can <strong>not</strong> be decorated with a
+label. There is <strong>no semicolon</strong> at the end of the
+variant!
+</p>
+<p> 
+  
+
+<a name="idx34"><em></em></a>
+<a name="idx35"><em></em></a>
+The invariant and variant are produced through the following EBNF:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod76">WhileStatement</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"while" "(" <A HREF="grammar.html#prod28">Expression</A> ")" <A HREF="#prod90">AssertionClause</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod77">DoStatement</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"do" <A HREF="#prod90">AssertionClause</A> "while" "(" <A HREF="grammar.html#prod28">Expression</A> ")" ";"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod78">ForStatement</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"for" "(" ( <A HREF="grammar.html#prod91">ForInit</A> )? ";" ( <A HREF="grammar.html#prod28">Expression</A> )? ";" ( <A HREF="grammar.html#prod92">ForUpdate</A> )? ")" <A HREF="#prod90">AssertionClause</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod90">AssertionClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( <A HREF="#prod97">InvariantClause</A> )? ( <A HREF="#prod98">VariantClause</A> )? <A HREF="grammar.html#prod69">Statement</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod97">InvariantClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;INVARIANT&gt; ( <A HREF="grammar.html#prod99">BooleanAssertion</A> ";" )+ &lt;ASS_END&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod98">VariantClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;VARIANT&gt; <A HREF="grammar.html#prod102">AssertionExpression</A> &lt;ASS_END&gt;</TD>
+</TR>
+</table>
+  <h1><a name="check"></a>
+  <a name="sect7">
+  7 The check-statement: 'check'</a></h1>
+<p>The 
+  
+
+<a name="idx36"><em>
+check statement</em></a> is used to state an
+assertion at any part of the program code of the method body. It shows
+that at this position the validity of the condition is expected,
+although the reason for this is not immediately obvious from the
+program code.  </p>
+<p> For instance, at some point in the program code let there be the
+assignment <code>x=y/z</code>. The programmer is sure that at this
+position <code>z</code> never equals 0. For this reason, he does not
+want to check this, such a check being superfluous. The reason for a
+value unequal to 0 may be found at another, more distant, position in
+the program code, possibly even in another method.
+</p>
+<p> Someone else who looks over the whole code and who cannot
+recognize the reason immediately, is likely to assume that a mistake
+has been made or at least that the programming has been done rather
+sloppily. And even the programmer himself cannot always be aware of
+every single detail of the whole system and may want to be reminded of
+this important property. The check-statement formulates it explicitly:
+<code>check z!=0;</code>. Of course, <strong>the check-statement can
+also be checked during runtime</strong>.
+</p>
+<p> 
+  
+
+<a name="idx37"><em><strong>Example</strong>
+</em></a> for a check statement:
+</p>
+<p> <code>
+/** check x &gt;= 0; **/
+</code>  
+</p>
+<p> 
+  
+
+<a name="idx38"><em></em></a>
+The check statement is produced through the following EBNF:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod85">CheckClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;CHECK&gt; ( <A HREF="grammar.html#prod99">BooleanAssertion</A> ";" )+ &lt;ASS_END&gt;</TD>
+</TR>
+</table>
+  <h1><a name="rescue"></a>
+  <a name="sect8">
+  8 The rescue-block: 'rescue' and the retry statement: 'retry'</a></h1>
+<a name="idx39"><em></em></a>
+<a name="idx40"><em></em></a>
+<a name="idx41"><em></em></a>
+<p>By stating a rescue-block the integrity of the respective instance
+can be secured in the case of a violated exception (e.g. by closing
+files or freeing memory). A detailed description of the aims of its
+use is given in 
+  <a href="../doc/intro.html#intro5" target="_top">
+Violations of the contract:
+success or failure</a>.
+</p>
+<p> It consists of a sequence of catch-statements which each contain a
+block with statements that can contain a <em>retry statement</em>.
+</p>
+<p> 
+  
+
+<a name="idx42"><em><strong>Example</strong></em></a> 
+for a rescue block:
+</p>
+<pre>   public void add(Object o) {
+   /** require [valid_object]    o != null; 
+               [buffer_not_full] !full();   **/  ...
+   /** ensure ... **/
+   /** rescue catch (PreconditionException e) {
+                 if (e.label.equals("valid_object")) {
+		     o = new DefaultObject(); retry;}
+                 else throw e;
+              }
+  }
+</pre>  
+
+<p> This example catches a precondition exception and reinitiates the
+method call with a reassigned formal parameter. A default object is
+created and inserted in the buffer if the formal parameter was
+null. The assertion label is used to distinct between the two possible
+exceptions.
+</p>
+<p> The rescue construct can only be applied to exception of (sub)type
+of AssertionException. If no retry statement appears in the block the
+exception is throw again at the end of the code block.
+</p>
+<p> 
+  
+
+<a name="idx43"><em></em></a>
+The check statement is produced through the following EBNF:
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod96">RescueClause</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;RESCUE&gt; ( <A HREF="#prod107">RescueCatch</A> )+ ( ";" )? &lt;ASS_END&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod107">RescueCatch</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"catch" "(" <A HREF="grammar.html#prod32">FormalParameter</A> ")" <A HREF="grammar.html#prod36">Block</A></TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod86">RetryStatement</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>&lt;RETRY&gt; ";"</TD>
+</TR>
+</table>
+  <h1><a name="runtime"></a>
+  <a name="sect9">
+  9 How assertions are checked</a></h1>
+<a name="idx44"><em></em></a>
+<p>Each assertion, except for the loop invariant, is a boolean
+expression the validity of which can be checked in a conditional
+statement with a preceding negation operator. This negation triggers
+an exception if the assertion condition is invalid.
+</p>
+<p> The precondition and the postcondition are changed at the
+beginning and at the end of a method call, respectively. The end of a
+method call is a <em>return</em> statement or the end of the method
+body. If an <em>Old</em> construct is used a local variable will be
+declared at the beginning of the methods body. This variable will be
+assigned the value produced by the <code>clone</code> method. The
+<em>changeonly</em> construct uses this mechanism too.
+</p>
+<p> Bertrand Meyer has stated a important principal for the evaluation
+of assertions:</p>
+<p><cite>While the evaluation of an assertion no other assertion
+should be evaluated.</cite></p>
+<p>This means: If the evaluation of an assertion invokes a method that
+declares an assertion too this second assertion should not be
+evaluated.  Jass does implement a compromise of this principal. If an
+assertion contains a call to a method of the same class this method is
+copied in an internal version without any assertion checks. While the
+evaluation of this assertion the internal version is called. If the
+internal version calls another method with assertions these will be
+checked again. Thus the principal is implemented on the first level
+for internal calls.
+</p>
+<p> The class invariant is translated into a new method which is
+called from the preconditions and postconditions.
+</p>
+<p> With loops the invariant is checked at the beginning of each run
+and directly after a conditional statement. A local variable is
+generated for the variant. It temporarily stores the value at the
+beginning of a run such that it is possible to check at the end
+whether its value has decreased and whether it is still
+positive. However <code>for</code> loops need some extra work to be
+done.
+</p>
+<p> The check-statement is locally expanded like a macro. A
+conditional statement for the check of its assertion is directly
+generated from it.
+</p>
+<p>
+Jass triggers the following exceptions which are located in the
+package <code>jass.runtime</code>:
+</p>
+<a name="idx45"><em></em></a>
+<table border>
+<tr>
+<td align="left"><strong>Exception</strong></td>
+<td align="left"><strong>Is thrown when ...</strong></td>
+</tr>
+<tr>
+<td align="left">PreconditionException</td>
+<td align="left">... the precondition of a method does not hold.</td>
+</tr>
+<tr>
+<td align="left">PostconditionException</td>
+<td align="left">... the postcondition of a method does not hold.</td>
+</tr>
+<tr>
+<td align="left">InvariantException</td>
+<td align="left">... the invariant of a class does not hold.</td>
+</tr>
+<tr>
+<td align="left">LoopInvariantException </td>
+<td align="left">... the loop invariant for a certain loop iteration does not hold.</td>
+</tr>
+<tr>
+<td align="left">LoopVariantException</td>
+<td align="left">... the loop variant is not decreased or out of its bounds.</td>
+</tr>
+<tr>
+<td align="left">CheckException</td>
+<td align="left">... the assertion of a check statement does not hold.</td>
+</tr>
+<tr>
+<td align="left">RefinementException</td>
+<td align="left">... the class signals a refinement but does not match the refinement requirements.</td>
+</tr>
+</table>
+  <h1><a name="comments"></a>
+  <a name="sect10">
+  10 Comments in assertions</a></h1>
+<a name="idx46"><em></em></a>
+<a name="idx47"><em></em></a>
+<p>Comments in assertions make it easier to understand what semantic
+constraints are expressed. Java does not support nested comments, so a
+Jass developer can not write normal Java comments within an
+assertion. Therefore Jass supports the special comment signs
+<strong><code>/#</code></strong> and <strong><code>#/</code></strong>
+to be used in assertions.
+</p>
+<p> 
+  
+
+<a name="idx48"><em><strong>Example</strong></em></a>
+of comments in an assertion:
+</p>
+<p> <code>
+/** require<BR>
+&nbsp;/# The buffer must contain space to store the object: #/ !isFull();<BR>
+&nbsp;/# Only 'valid' objects can be used: #/ o != null;<BR>
+**/
+</code>
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+    next: 
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <meta name = "generator" content = "WebObjects 5" />
+    <title>GVC.SMUtility Main Page</title>
+  </head>
+  <body bgcolor = "#FFFFFF">
+    <p align = "CENTER">
+      <font color = "#0000ff">
+        <font size = "6">
+          <b>GVC.SiteMaker Utility</b>
+        </font>
+      </font>
+    </p>
+    <p align = "CENTER">
+      <font color = "#0000ff">
+        <font size = "4">
+          <b>Conversion and Maintenance Functions</b>
+        </font>
+      </font>
+    </p>
+    <p />
+    <b>The code behind these functions should be regarded as experimental and approriate backups made before attempting any of
+      these!</b>
+    <p />
+    <b>
+      <font size = "4">&nbsp;1.</font>
+    </b>
+    A nasty little page to collect hacks to clean up SiteFiles from damage from stupidity and
+    bugs in previous versions. ÊThe two problems present are files in the upload directory for which a SiteFile no longer
+    exists, and SiteFiles for which no file exists in the Upload directory. There is also a function to recalculate actual quota
+    usage to accomodate errors caused by previous versions. Ê<br />
+    <webobject name = "Hyperlink2">Clean up Site Files</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;2.</font>
+    </b>
+    There is no functionality in GVCSMAdmin to delete an OrgUnit that still has Websites and
+    other OrgUnits under it. This page provides that functionality. Use with caution!<br />
+    <webobject name = "ForceOrgUnitDeletionHyperlink">Force OrgUnit Deletion</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;3.</font>
+    </b>
+    Due to a bug in GVCSiteMaker PageComponents can retain references to deleted SiteFiles or
+    can become Orphaned when their Section is deleted.<br />
+    <webobject name = "Hyperlink11">Clean up Damaged Page Components</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;4.</font>
+    </b>
+    Locates any pieces of deleted Websites (Sections and uploaded files at present) and removes
+    them. This was done to accomodate Websites deleted with ealier versions which had defects in the deletion process.<br />
+    <webobject name = "RemoveWebsitePiecesHyperlink">Remove Website Pieces</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;5.</font>
+    </b>
+    This was added to handle the need to perform bootstrap like loading of style templates after
+    the initial loading. It does not create any new styles, but does replace the templates for the existing styles.<br />
+    <webobject name = "ReloadStylesHyperlink">Reload all Styles</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;6.</font>
+    </b>
+    Load LDAP Server information. This allows LDAP access groups to be created..<br />
+    <webobject name = "LoadLDAPServersHyperlink">Load LDAP&nbsp;Servers</webobject>
+    <p />
+    <b>
+      <font size = "4">&nbsp;7.</font>
+    </b>
+    Edit the bindings of a PageComponent (AKA SM_PAGE_COMP). Short, brutish, and nasty.<br />
+    <webobject name = "LoadLDAPServersHyperlink2">Binding Editor</webobject>
+    <p />
+    <b>
+      <font size = "4">8.</font>
+    </b>
+    Send a message to internal users, external users, or all users<br />
+    <webobject name = "SendMessageToUsersHyperlin">Send Message to Users</webobject>
+    <p />
+    <b>
+      <font size = "4">9.</font>
+    </b>
+    Remove duplicate columns from a data access section.<br />
+    <webobject name = "RemovedDuplicateColumnsHyperlink">Remove Duplicate Columns</webobject>
+    <p />
+
+
+    <hr />
+
+
+    <p />
+    <font color = "#0000ff">
+      <font size = "4">
+        <b>Conversion from GVC.SiteMaker 3.1 to 3.5</b>
+      </font>
+    </font>
+    <p />
+    <font color = "#ff0000">
+      <font size = "6">
+        <b>Note:</b>
+        Run Part A of the schema update before doing these steps</font>
+    </font>
+    <p />
+    <b>Step 1 - Cleanup Previous Homepage Implementation</b>
+    <br />
+    Sets the &quot;previoius home section&quot;, if any, not navigable. This is not destructive and can be run multiple times.<br />
+    <webobject name = "CleanupHomepageHyperlink">Cleanup Previous Homepage Implementation</webobject>
+    <br />
+    <p />
+    <b>Step 2 - Create Import Mode for DataAccess Sections</b>
+    <br />
+    This creates the Import mode for DataAccess Sections and sets needed defaults. This is not destructive and can be run multiple times.<br />
+    <webobject name = "Hyperlink5">Create Import Mode</webobject>.<br />
+    <p />
+    <b>Step 3 - Configure Search&nbsp;Mode Defaults</b>
+    <br />
+    This the default form mode for DataAccess Search Mode. This is not destructive and can be run multiple times.<br />
+    <webobject name = "ConfigureSearchModeDefaultHyperlink">Configure Search Mode Defaults</webobject>
+    <p />
+    <b>Step 4 - Convert External URL Sections</b>
+    <br />
+    This updates External URL sections and can be run repeatedly.<br />
+    <webobject name = "Hyperlink4">Convert External URL Sections</webobject>
+    <br />
+    <p />
+    <p />
+    <b>Step 5 - Remove Obsolete Access Groups</b>
+    <br />This removes obsolete access groups left in place during previous conversion<br />
+    <webobject name = "Hyperlink1">Remove Obsolete Access Groups</webobject>
+    <br />
+    <p />
+    <p />
+    <b>Step 4 - XXX</b>
+    <br />This<br />
+    <webobject name = "Hyperlink3">Set Default Website Creation Template</webobject>
+    <br />
+    <p />
+    <font size = "6">
+      <font color = "#ff0000">
+        <b>Note:</b>
+        Run Part B of the schema update step now .</font>
+      <br />
+    </font>
+
+
+    <hr />
+
+
+    <p />
+    <font color = "#0000ff">
+      <font size = "4">
+        <b>Conversion from GVC.SiteMaker 4.0 to 4.1</b>
+      </font>
+    </font>
+    <p />
+    <font color = "#ff0000">
+      <font size = "6">
+        <b>Note:</b>
+        Run schema update for 4.1 before doing these steps</font>
+    </font>
+    <p />
+    <b>Step 1 - Set isVersioning on Section with default and creates SectionVersion objects to all Text/Image sections and update Virtual Columns for Portable Tables.</b>
+    <br />
+    <webobject name = "VersioningHomePageHyperlink">Convert to support versioning and portable tables</webobject>
+    <br />
+
+
+    <hr />
+
+
+    <p />
+    <font color = "#0000ff">
+      <font size = "4">
+        <b>Conversion from GVC.SiteMaker 4.6 to 5.0</b>
+      </font>
+    </font>
+    <p />
+    <font color = "#ff0000">
+      <font size = "6">
+        <b>Note:</b>
+        Run schema update for 5.0 before doing these steps</font>
+    </font>
+    <p />
+    <b>Step 1 - Populate section versions for Mixed Media Text panes.</b>
+    <br />
+    <webobject name = "PopulateMixedMediaSectionVersionsHyperlink">Populate section versions for Mixed Media Text panes</webobject>
+    <br />
+
+  </body>
+</html>

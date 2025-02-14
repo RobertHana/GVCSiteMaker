@@ -1,0 +1,14 @@
+Reason: WOString {
+	value = errorString;
+	escapeHTML = false;
+}
+
+InvalidUserRepetition: WORepetition {
+	list = invalidUserArray;
+	item = currentUserDictionary;
+}
+
+UserID: WOString {
+	value = userID;
+	escapeHTML = false;
+}

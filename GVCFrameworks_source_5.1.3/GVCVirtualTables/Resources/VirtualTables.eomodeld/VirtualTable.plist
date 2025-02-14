@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {columnName = "DATE_CREATED"; name = dateCreated; prototypeName = DateTime; }, 
+        {columnName = "DATE_MODIFIED"; name = dateModified; prototypeName = DateTime; }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 100; }, 
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEXT_DESCRIPTION"; 
+            name = textDescription; 
+            prototypeName = String; 
+            width = 1999; 
+        }
+    ); 
+    attributesUsedForLocking = (tableID, name, textDescription); 
+    className = "net.global_village.virtualtables.VirtualTable"; 
+    classProperties = (name, textDescription, columns, rows, dateCreated, tableID, dateModified); 
+    externalName = "VIRTUAL_TABLE"; 
+    internalInfo = {"_nameInObjectStore" = "VIRTUAL_TABLE"; }; 
+    maxNumberOfInstancesToBatchFetch = 10; 
+    name = VirtualTable; 
+    parent = Table; 
+    primaryKeyAttributes = (tableID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Column; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = columns; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = VirtualRow; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualTableID; sourceAttribute = tableID; }); 
+            name = rows; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

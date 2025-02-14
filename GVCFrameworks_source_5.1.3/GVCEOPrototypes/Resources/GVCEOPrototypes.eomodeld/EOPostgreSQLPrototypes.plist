@@ -1,0 +1,149 @@
+{
+    attributes = (
+        {
+            adaptorValueConversionMethodName = stringValue; 
+            columnName = boolean; 
+            externalType = char; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = Boolean; 
+            valueClassName = GVCBoolean; 
+            valueFactoryMethodName = "booleanWithString:"; 
+            width = 1; 
+        }, 
+        {
+            columnName = data; 
+            externalType = bytea; 
+            name = Data; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = date; 
+            name = Date; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "date_time"; 
+            externalType = timestamp; 
+            name = DateTime; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "date_time_time_zone"; 
+            externalType = "timestamp with time zone"; 
+            name = DateTimeWithTimeZone; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = numeric; 
+            name = Decimal; 
+            precision = 8; 
+            scale = 4; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            adaptorValueConversionMethodName = description; 
+            columnName = dictionary; 
+            externalType = varchar; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = Dictionary; 
+            valueClassName = NSMutableDictionary; 
+            valueFactoryMethodName = "dictionaryWithString:"; 
+            width = 2000; 
+        }, 
+        {
+            columnName = float; 
+            externalType = real; 
+            name = Float; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = integer; 
+            externalType = int4; 
+            name = Integer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            adaptorValueConversionMethodName = stringValue; 
+            columnName = "java_Boolean"; 
+            externalType = char; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = JavaBoolean; 
+            valueClassName = "net.global_village.foundation.GVCBoolean"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+            width = 1; 
+        }, 
+        {
+            columnName = key; 
+            externalType = int4; 
+            name = Key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = memo; 
+            externalType = text; 
+            name = Memo; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = string; 
+            externalType = varchar; 
+            name = String; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "char_4_key"; 
+            externalType = char; 
+            name = char4KeyComponent; 
+            valueClassName = NSString; 
+            width = 4; 
+        }, 
+        {
+            columnName = flag; 
+            externalType = int4; 
+            name = flag; 
+            valueClassName = NSDecimalNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        Boolean, 
+        Key, 
+        DateTime, 
+        Float, 
+        Integer, 
+        Memo, 
+        String, 
+        char4KeyComponent, 
+        flag, 
+        Dictionary, 
+        DateTimeWithTimeZone, 
+        JavaBoolean, 
+        Decimal, 
+        Date
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        Boolean, 
+        DateTime, 
+        Float, 
+        Integer, 
+        Memo, 
+        String, 
+        flag, 
+        Dictionary, 
+        Data, 
+        DateTimeWithTimeZone, 
+        JavaBoolean, 
+        Decimal, 
+        Date
+    ); 
+    fetchSpecificationDictionary = {}; 
+    name = EOPostgreSQLPrototypes; 
+    primaryKeyAttributes = (Key, char4KeyComponent); 
+}

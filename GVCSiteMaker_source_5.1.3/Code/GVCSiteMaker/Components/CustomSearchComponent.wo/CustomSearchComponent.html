@@ -1,0 +1,14 @@
+	<TR>
+		<TH CLASS="dataAccessTableHeading"><WEBOBJECT NAME=ColumnNameString></WEBOBJECT></TH>
+		<TD CLASS="dataAccessTableCell">
+			<WEBOBJECT NAME=SearchValueField></WEBOBJECT>
+			<INPUT TYPE="hidden" NAME="<WEBOBJECT NAME=ColumnParamNameString></WEBOBJECT>" VALUE="<WEBOBJECT NAME=ColumnParamValueString></WEBOBJECT>">
+			<WEBOBJECT NAME=ShouldHaveJoinConditionConditional>
+				<INPUT TYPE="hidden" NAME="<WEBOBJECT NAME=JoinConditionParamNameString></WEBOBJECT>" VALUE="AND">
+			</WEBOBJECT>
+			<INPUT TYPE="hidden" NAME="<WEBOBJECT NAME=ComparisonTypeParamNameString></WEBOBJECT>" VALUE="is equal to">
+		</TD>
+	</TR>
+	<WEBOBJECT NAME=HasErrorConditional><TR>
+		<TD align="center" valign="middle" COLSPAN="2"><span class="warningText"><WEBOBJECT NAME=ErrorString></WEBOBJECT></span></TD>
+	</TR></WEBOBJECT>

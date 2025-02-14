@@ -1,0 +1,52 @@
+<webobject name="DynamicBody">
+			<WEBOBJECT NAME=BodyTitle></WEBOBJECT>
+			<webobject name="ConfrimationForm">
+        <table BORDER=0 CELLSPACING=2 CELLPADDING=2 class="contentTable">
+          <tr> 
+            <td valign="top" width="400" class="boldText"><WEBOBJECT NAME=HasValidData>Valid data obtained for
+            <WEBOBJECT NAME="WebsiteCount"></WEBOBJECT>
+            website(s):</WEBOBJECT><WEBOBJECT NAME=HasNoValidData>No valid data obtained</WEBOBJECT></td>
+            <td valign="top" align="right"> 
+                <WEBOBJECT NAME=CancelButton></WEBOBJECT>
+                <WEBOBJECT NAME="HasWebsites"><webobject name="SpacerImage"></webobject> 
+                <WEBOBJECT NAME=CreateWebsiteButton></WEBOBJECT></WEBOBJECT>
+            </td>
+          </tr>
+		<WEBOBJECT NAME="HasWebsites">
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=ValidWebsiteList></WEBOBJECT>
+            </td>
+          </tr><!--
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <table width="100%" border="0" cellspacing="2" cellpadding="0">
+                <tr> 
+                  <td align="right" valign="top"><font size="2" face="Arial"><b>Notes:</b></font></td>
+                  <td><font size="2" face="Arial"><b><font color="#FF0000">(1)<font color="#000000"> 
+                    ID was not found in database - new user will be created</font></font></b></font></td>
+                </tr>
+              </table>
+              </td>
+          </tr>-->
+					</WEBOBJECT>
+					<webobject name=HasInvalidData>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <hr class="alternateBarStyle">
+            </td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2" class="boldText">Invalid data obtained for
+            <WEBOBJECT NAME="InvalidWebsiteCount"></WEBOBJECT>
+            website(s):</td>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME="InvalidWebsiteList"></WEBOBJECT>
+            </td>
+          </tr>
+					</webobject>
+        </table>
+      </webobject>
+</webobject>

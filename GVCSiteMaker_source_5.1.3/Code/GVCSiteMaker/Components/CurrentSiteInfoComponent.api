@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CurrentSiteInfoComponent" wocomponentcontent="false">    <binding name="website"/>
+        <validation message="'website' is a required binding.">
+            <unbound name="website"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,5 @@
+{
+    howAreYou = "How are you?";
+	TestSubcomponent.pageSpecificString = "Only for the TestComponent page.";
+    language = "English";
+}

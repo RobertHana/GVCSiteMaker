@@ -1,0 +1,669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Response (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Response (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Response.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ResourceManagerAdditions.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/ValidatingComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/Response.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Response.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class Response</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOMessage
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOResponse
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.Response</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.appserver.WOActionResults, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.27"><B>Response</B></A><DT>extends com.webobjects.appserver.WOResponse</DL>
+</PRE>
+
+<P>
+Fixes and hacks for WOResponse.
+ <p>
+ Creates a response configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.
+ </p>
+ <p>
+ Prevents disabling client caching for downloads by IE to fix the bug with IE that causes problems when displaying
+ content that cannot be displayed inline in the browswer (pdf files, for example). This was a known bug in IE 4.0 and
+ is reported fixed by MS:
+ http://support.microsoft.com/support/kb/articles/Q231/2/96.ASP?LN=EN-US&SD=gn&FR=0&qry=Internet%20Explorer%20cannot%20download&rnk=19&src=DHCS_MSPSS_gn_SRCH&SPR=IE
+ "When you try to download a .pdf file from a Web site that uses the Hypertext Transfer Protocol (HTTP) "Cache-Control =
+ 'no-cache'" directive, Internet Explorer may generate the following error message: Internet Explorer cannot down load
+ from the Internet site File_name from Computer_name."
+ </p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2008  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCodingAdditions.DefaultImplementation, com.webobjects.foundation.NSKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanFieldBinding, com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._FieldBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberFieldBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#ContentDispositionHeaderKey">ContentDispositionHeaderKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#ContentTypeHeaderKey">ContentTypeHeaderKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#DisablePageCachingKey">DisablePageCachingKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.appserver.WOResponse"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.appserver.WOResponse</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_channelCount, _channelPosition, _contentInputStream, _contentInputStreamBufferSize, _contentInputStreamLength, _fileChannel, _lastDitchErrorResponse</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.appserver.WOMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.appserver.WOMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_content, _contentData, _contentEncoding, _cookies, _headerEncoding, _httpHeaders, _httpVersion, _storePageInBacktrackCache, _TheCookieKey, _TheSetCookieKey, _userInfo, HTTP_STATUS_FORBIDDEN, HTTP_STATUS_FOUND, HTTP_STATUS_INTERNAL_ERROR, HTTP_STATUS_MOVED_PERMANENTLY, HTTP_STATUS_NO_CONTENT, HTTP_STATUS_NOT_FOUND, HTTP_STATUS_OK, map, TheDefaultResponseEncoding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding.ErrorHandling"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding.ErrorHandling</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#Response(com.webobjects.appserver.WOContext)">Response</A></B>(com.webobjects.appserver.WOContext&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a response configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#_finalizeInContext(com.webobjects.appserver.WOContext)">_finalizeInContext</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forces all HTML pages returned to be UTF-8.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#contentDisposition()">contentDisposition</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#contentType()">contentType</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#disableClientCaching()">disableClientCaching</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to <b>not</b> call super if trying to download an attachment to IE.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#disablePageCaching()">disablePageCaching</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a value for DisablePageCachingKey to this response's userInfo().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#isAttachment()">isAttachment</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#isHTML()">isHTML</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#isIE()">isIE</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#isPageCachingDisabled()">isPageCachingDisabled</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#setUserInfoForKey(java.lang.Object, java.lang.String)">setUserInfoForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WO 5.4 API
+ Sets the value for key in the user info dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/Response.html#userInfoForKey(java.lang.String)">userInfoForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WO 5.4 API</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.appserver.WOResponse"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.appserver.WOResponse</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_appendTagAttributeAndValue, _isClientCachingDisabled, _redirectionResponseForAbsoluteURL, _redirectResponse, clone, contentInputStream, contentInputStreamBufferSize, contentInputStreamLength, generateResponse, setContentStream, setContentStream, setStatus, status, toString</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.appserver.WOMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.appserver.WOMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_appendContentAsciiString, _contentLength, _finalizeCookies, _initCookies, _setHeaders, _stringByEscapingString, addCookie, appendContentCharacter, appendContentData, appendContentDOMDocumentFragment, appendContentHTMLAttributeValue, appendContentHTMLString, appendContentString, appendHeader, appendHeaders, canAccessFieldsDirectly, content, contentAsDOMDocument, contentEncoding, contentString, cookies, defaultEncoding, defaultHeaderEncoding, defaultURLEncoding, equals, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hasHeaderForKey, headerForKey, headerForKey, headerKeys, headers, headersForKey, httpVersion, removeCookie, removeHeadersForKey, requiresHTMLEscaping, setContent, setContent, setContent, setContent, setContentDOMDocument, setContentEncoding, setDefaultEncoding, setDefaultHeaderEncoding, setDefaultURLEncoding, setHeader, setHeaders, setHeaders, setHTTPVersion, setStorePageInBacktrackCache, setUserInfo, storePageInBacktrackCache, stringByEscapingHTMLAttributeValue, stringByEscapingHTMLString, takeValueForKey, takeValueForKeyPath, unableToSetNullForKey, userInfo, valueForKey, valueForKeyPath</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ContentDispositionHeaderKey"><!-- --></A><H3>
+ContentDispositionHeaderKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.30"><B>ContentDispositionHeaderKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.Response.ContentDispositionHeaderKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="ContentTypeHeaderKey"><!-- --></A><H3>
+ContentTypeHeaderKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.31"><B>ContentTypeHeaderKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.Response.ContentTypeHeaderKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DisablePageCachingKey"><!-- --></A><H3>
+DisablePageCachingKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.32"><B>DisablePageCachingKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.Response.DisablePageCachingKey">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Response(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+Response</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.42"><B>Response</B></A>(com.webobjects.appserver.WOContext&nbsp;context)</PRE>
+<DL>
+<DD>Creates a response configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>context</CODE> - WOContext to create response for</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="_finalizeInContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+_finalizeInContext</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.57"><B>_finalizeInContext</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>Forces all HTML pages returned to be UTF-8.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>_finalizeInContext</CODE> in class <CODE>com.webobjects.appserver.WOResponse</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aContext</CODE> - the WOContext the request is being finalized in<DT><B>See Also:</B><DD><CODE>WOResponse._finalizeInContext(com.webobjects.appserver.WOContext)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="disableClientCaching()"><!-- --></A><H3>
+disableClientCaching</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.77"><B>disableClientCaching</B></A>()</PRE>
+<DL>
+<DD>Overridden to <b>not</b> call super if trying to download an attachment to IE.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>disableClientCaching</CODE> in class <CODE>com.webobjects.appserver.WOResponse</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>See Also:</B><DD><CODE>WOResponse.disableClientCaching()</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isPageCachingDisabled()"><!-- --></A><H3>
+isPageCachingDisabled</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.93"><B>isPageCachingDisabled</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if disablePageCaching() has been called for this response<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/Response.html#disablePageCaching()"><CODE>disablePageCaching()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="disablePageCaching()"><!-- --></A><H3>
+disablePageCaching</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.107"><B>disablePageCaching</B></A>()</PRE>
+<DL>
+<DD>Adds a value for DisablePageCachingKey to this response's userInfo().  This can be used later
+ to flag that this response should not be cached.
+<P>
+<DD><DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOSession.html#savePage(com.webobjects.appserver.WOComponent)"><CODE>WOSession.savePage(WOComponent)</CODE></A>, 
+<A HREF="../../../net/global_village/woextensions/Response.html#isPageCachingDisabled()"><CODE>isPageCachingDisabled()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setUserInfoForKey(java.lang.Object, java.lang.String)"><!-- --></A><H3>
+setUserInfoForKey</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.121"><B>setUserInfoForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value,
+                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>WO 5.4 API
+ Sets the value for key in the user info dictionary.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>setUserInfoForKey</CODE> in class <CODE>com.webobjects.appserver.WOMessage</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - value to add to userInfo()<DD><CODE>key</CODE> - key to add value under</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userInfoForKey(java.lang.String)"><!-- --></A><H3>
+userInfoForKey</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.143"><B>userInfoForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>WO 5.4 API
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>userInfoForKey</CODE> in class <CODE>com.webobjects.appserver.WOMessage</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - key to return value from userInfo() for
+<DT><B>Returns:</B><DD>value from userInfo() for key, or null if not available</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isAttachment()"><!-- --></A><H3>
+isAttachment</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.149"><B>isAttachment</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isHTML()"><!-- --></A><H3>
+isHTML</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.162"><B>isHTML</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if the content type of this response indicates HTML</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="contentDisposition()"><!-- --></A><H3>
+contentDisposition</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.172"><B>contentDisposition</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>header value for ContentDispositionHeaderKey</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="contentType()"><!-- --></A><H3>
+contentType</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.182"><B>contentType</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>header value for ContentTypeHeaderKey</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isIE()"><!-- --></A><H3>
+isIE</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/Response.html#line.192"><B>isIE</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if the Request this Response is for has a user agent that indicates and IE browser</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Response.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ResourceManagerAdditions.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/ValidatingComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/Response.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Response.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {columnName = "is_active"; name = isActive; prototypeName = JavaBoolean; }, 
+        {
+            columnName = name; 
+            name = name; 
+            prototypeName = String; 
+            userInfo = {modificationDate = "2000-10-24 04:14:43 +0000"; }; 
+            width = 50; 
+        }, 
+        {
+            columnName = "the_id"; 
+            name = theID; 
+            prototypeName = Key; 
+            userInfo = {modificationDate = "2000-10-24 04:04:41 +0000"; }; 
+        }
+    ); 
+    attributesUsedForLocking = (theID, isActive, name); 
+    className = "net.global_village.genericobjects.tests.TestVersionedObject"; 
+    classProperties = (isActive, name); 
+    externalName = "TEST_VERSIONED_OBJECT"; 
+    fetchSpecificationDictionary = {}; 
+    name = TestVersionedObject; 
+    parent = GVCVersionableArchivableObject; 
+    primaryKeyAttributes = (theID); 
+    userInfo = {modificationDate = "2000-10-24 04:14:28 +0000"; }; 
+}

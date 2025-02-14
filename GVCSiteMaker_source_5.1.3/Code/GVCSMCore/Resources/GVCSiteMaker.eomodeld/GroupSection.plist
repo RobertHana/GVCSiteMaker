@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_PKEY"; 
+            name = sectionPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, sectionPKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    externalName = "SM_GROUP_SECTION"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 100; 
+    name = GroupSection; 
+    primaryKeyAttributes = (groupPKey, sectionPKey); 
+    relationships = (
+        {
+            destination = Group; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = group; 
+        }, 
+        {
+            destination = Section; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = section; 
+        }
+    ); 
+}

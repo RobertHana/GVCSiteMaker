@@ -1,0 +1,14 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {className = EOGenericRecord; name = EODB2Prototypes; }, 
+        {className = EOGenericRecord; name = EOFrontBasePrototypes; }, 
+        {className = EOGenericRecord; name = EOJDBCPrototypes; }, 
+        {className = EOGenericRecord; name = EOMySQLPrototypes; }, 
+        {className = EOGenericRecord; name = EOOpenBasePrototypes; }, 
+        {className = EOGenericRecord; name = EOOraclePrototypes; },
+        {className = EOGenericRecord; name = EOPostgreSQLPrototypes; }
+    ); 
+}

@@ -1,0 +1,59 @@
+package jass.examples;
+
+public class UnlimitedBuffer extends Buffer implements jass.runtime.Refinement {
+
+    protected java.util.Vector v = new java.util.Vector();
+      
+    public boolean empty() {
+	return v.size() == 0;
+	/** ensure changeonly{}; **/
+    }
+  
+    public boolean full() {
+	return false;
+	/** ensure changeonly{}; **/    
+    }
+  
+    public synchronized void add(Object o) {
+	/** require [valid_object] o != null; **/
+	v.addElement(o);
+	/** ensure Old.v.size() == v.size()-1;**/
+    }
+  
+    public synchronized Object remove() {
+	/** require [buffer_not_empty] !empty(); **/
+	Object o = v.elementAt(0);
+	v.removeElementAt(0);
+	return o;
+	/** ensure [valid_object] Result != null; **/
+    }
+  
+    public synchronized boolean contains(Object o) {
+	/** require o != null; **/
+	return v.contains(o);
+	/** ensure changeonly{}; **/    
+    }
+
+    protected Object clone() {
+	java.util.Vector h = new java.util.Vector();
+	for (int i = 0; i < v.size(); i++) h.addElement(v.elementAt(i));
+	UnlimitedBuffer ub = new UnlimitedBuffer();
+	ub.v = h;
+	return ub;
+    }
+  
+    private Buffer jassGetSuperState() {
+	// Einen abstrakten Puffer erzeugen.
+	Buffer b = new Buffer(v.size()+1);
+	// Den richtigen Zustand herstellen.
+	b.in = v.size();
+	b.out = 0;
+    
+	for (int i = 0; i < b.buf.length-1; i++)
+	    b.buf[i] = v.elementAt(i);
+	return b;
+    }
+   
+    /** invariant forall i : { 0 .. v.size()-1 } # v.elementAt(i) != null; **/
+
+}

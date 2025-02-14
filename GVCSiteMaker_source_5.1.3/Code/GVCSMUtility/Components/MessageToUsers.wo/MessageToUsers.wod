@@ -1,0 +1,53 @@
+ErrorMessageString: WOString {
+	value = errorMessage;
+}
+
+Form1: WOForm {
+}
+
+FromTextField: WOTextField {
+	size = 50;
+	value = from;
+}
+
+HasErrorConditional: WOConditional {
+	condition = errorMessage;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RadioButton1: WORadioButton {
+	name = "SendToGroup";
+	selection = selectedUsers;
+	value = "Internal";
+}
+
+RadioButton2: WORadioButton {
+	name = "SendToGroup";
+	selection = selectedUsers;
+	value = "External";
+}
+
+RadioButton3: WORadioButton {
+	name = "SendToGroup";
+	selection = selectedUsers;
+	value = "All";
+}
+
+SendButton: WOSubmitButton {
+	action = sendMessage;
+	value = "Send";
+}
+
+Text1: WOText {
+	cols = 70;
+	rows = 20;
+	value = body;
+}
+
+TextField1: WOTextField {
+	size = 70;
+	value = subject;
+}

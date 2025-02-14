@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DictionaryErrorMessage" wocomponentcontent="false">
+
+		<binding name="prefixString"/>
+		<binding name="suffixString"/>
+		<binding name="genericMessage"/>
+		<binding name="dictionary"/>
+		<binding name="errorKey"/>
+
+		<validation message="&apos;dictionary&apos; is a required binding">
+			<unbound name="dictionary"/>
+		</validation>
+
+		<validation message="&apos;errorKey&apos; is a required binding">
+			<unbound name="errorKey"/>
+		</validation>
+	</wo>
+</wodefinitions>

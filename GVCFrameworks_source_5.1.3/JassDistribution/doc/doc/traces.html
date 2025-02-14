@@ -1,0 +1,899 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Michael Plath">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / Trace-Assertions
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">Trace-Assertions</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">Foreword</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">Introduction</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">Trace-Assertions are class invariants</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">Basic Processes</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">5</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect5">Trace-Alphabet</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">6</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect6">Processes</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">7</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect7">Operators for Choice and Parallelism</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">8</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect8">Variables</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">9</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect9">Conditional method invocations</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">10</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect10">Execution of Java code</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">11</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect11">Branches - If/Else</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">12</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect12">Data exchange</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    Trace-Assertions<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+    next: 
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+  <hr size="1" noshade/>
+</div>
+  <h1>
+  <a name="sect1">
+  1 Foreword</a></h1>
+      <p> The documentation of Trace-Assertions serves as a tutorial to learn
+the basic concepts of Trace-Assertions in Jass. Since the subject of
+Trace-Assertions is rather complex, the tutorial does not encompass
+any aspect of the subject. It concentrates on selected issues to give
+the reader the idea what Trace-Assertions are and how they can be used
+to improve Software-Engineering.
+</p>
+<p> The documentation is part of the #WorkPlath#. 
+</p>
+<p> The mastersthesis serves as a reference of Trace-Assertions in
+Jass. The concept of Trace-Assertions was invented by Clemens Fischer,
+who describes his concept at his 
+  <a href="../doc/bib.html#Fischer" target="_top">
+PhD
+Thesis</a>.
+  <h1>
+  <a name="sect2">
+  2 Introduction</a></h1>
+<a name="idx1"><em></em></a> 
+
+<p> Trace-Assertions are a new feature of Jass 2.0. They help to
+specify the dynamic behaviour of your program at
+runtime. Trace-Assertions lay down the order of valid method
+invocations. Furthermore a method invocation can be bound to certain
+conditions.
+</p>
+<p> Here comes a simple example of what a Trace-Assertion looks like:
+</p>
+<p> <code>init().b -&gt; init().e -&gt; start().b -&gt; start().e</code>.
+</p>
+<p> 
+<a name="idx2"><em></em></a>
+<a name="idx3"><em></em></a>
+<a name="idx4"><em></em></a>
+<a name="idx5"><em></em></a>
+It says that the method start() can only be invoked after init()
+finished its execution: The suffix '.b' indicates the <b>b</b>egin of
+a method. '.e' indicates <b>e</b>nd accordingly. Thus the assertion
+describes a sequence of method calls. It forbids nested calls like:
+</p>
+<p> <code>
+public void init() {<BR>
+&nbsp;start();<BR>
+}<BR>
+</code>
+</p>
+<p> If you want to allow nested calls you should modify the above expression: 
+</p>
+<p> <code>init().b -&gt; start().b -&gt; start().e -&gt; init().e</code>. 
+</p>
+<p> <code>init().b -&gt; init().e</code> can be abbreviated to
+<code>init()</code>. So the first example can also be written as
+</p>
+<p> <code>init() -&gt; start()</code>.
+</p>
+<p> The runtime package of Jass checks for every method call if any
+Trace-Assertion of the program is violated. If so, the program is
+stopped and a Trace-Assertion exception is thrown. In addition the
+trace stack is dumped. This helps you as a programmer to determine the
+reason of the abnormal program execution.
+</p>
+<p> A sequence of method calls is called a 
+  
+
+<a name="idx6"><em>
+<B>Trace</B></em></a>. In the first example init()
+start() is a valid Trace while init() init() leads to a
+Trace-Assertion violation.
+  <h1>
+  <a name="sect3">
+  3 Trace-Assertions are class invariants</a></h1>
+<a name="idx7"><em></em></a>
+<p>Since Trace-Assertions describe the global behaviour of class
+instances, they are part of the class invariant. To identify an
+assertion as a Trace-Assertion the keyword 
+  
+
+<a name="idx8"><em><code>trace</code></em></a> is used. The
+following code shows how Trace-Assertions are written in Jass:
+</p>
+<p> <code>
+/** invariant<BR>
+&nbsp;[AssertionName] trace (<BR> 
+&nbsp;&nbsp;...<BR> 
+&nbsp;);<BR>
+**/
+</code>
+</p>
+<p> Remember that class invariants must allways be at the end of a
+sourcefile. </p>
+  <h1>
+  <a name="sect4">
+  4 Basic Processes</a></h1>
+<a name="idx9"><em></em></a>
+<p>Trace-Assertions contain one ore more declarations of processes. A
+process describes the valid behaviour of a program at runtime. In the
+context of Trace-Assertions the term 'process' has a special meaning
+and must not be mixed up with a Java process (Thread).
+</p>
+<p> 
+  
+
+<a name="idx10"><em></em></a>
+<a name="idx11"><em></em></a>
+<a name="idx12"><em></em></a>
+<a name="idx13"><em></em></a>
+Jass knows three Basic Processes which describe a program's behaviour:
+</p>
+<ol>
+<li>STOP - no further method invocations are allowed</li>
+<li>ANY - any method invocation is allowed</li>
+<li>TERM - the actual object must terminate</li>
+</ol>
+<p> 
+  
+
+<a name="idx14"><em></em></a> Remark: The realization of
+TERM has a more theoretical background. While TERM is a mapping
+<code>this.finalize() -&gt; STOP</code> the following documentation is
+restricted to the two Basic Processes STOP and ANY.
+</p>
+  <h1>
+  <a name="sect5">
+  5 Trace-Alphabet</a></h1>
+<a name="idx15"><em></em></a> 
+
+<p> To understand the semantics of the Basic Processes look at the
+following Trace-Assertion:
+</p>
+<p> <code>
+trace(<BR>
+&nbsp;init() -&gt; STOP<BR>
+);
+</code> 
+</p>
+<p> While &laquo;<code>init() init()</code>&raquo; is no valid Trace, 
+&laquo;<code>init() start()</code>&raquo; is
+valid. This may suprise you, because the semantics of STOP says &quot;no
+further invocations&quot;. However the invocation of start() is possible,
+because the Trace-Assertion does not know the method start(). The
+checking mechanism of a Trace-Assertion is limited by a finite
+Trace-Alphabet. The Trace-Alphabet may be determined implicitly or set
+explicitly. In the above example the Alphabet consists of the two
+entries <code>init().b</code> and <code>init().e</code>. If you want to 
+extend the alphabet you must set it explicitly:
+</p>
+<pre>
+/** invariant
+      trace{init(), start()}  /# explicit Trace-Alphabet #/
+        ( 
+          init() -&gt; STOP 
+        )
+ **/
+</pre>
+<p> The Alphabet sets the scope of a Trace-Assertion. When a certain
+method is not in scope of a Trace-Assertion T, T will have no effect
+on this method at runtime (a call of this method).
+</p>
+<p> In the above example the alphabet is given by a simple
+enumeration. Moreover you can use common wildcards to define the
+alphabet. The following examples give you the idea how wildcards can
+be used for the Trace-Alphabet.  
+  
+
+<a name="idx16"><em></em></a> 
+  
+
+<a name="idx17"><em></em></a>
+</p>
+<dl>
+<dt>this.*</dt>
+  <dd>All methods of the belonging class</dd>
+<dt>* EXCEPT init()</dt>
+  <dd>All methods, but init()</dd>
+<dt>{public A.*, public B.*}</dt>
+  <dd>All public methods of class A and B</dd>
+<dt>m(*)</dt>
+  <dd>All methods with name m with no consideration for method
+  parameters</dd>
+<dt>m(?)</dt>
+  <dd>All methods with name m with just one parameter</dd>
+<dt>m(int, ?, *)</dt>
+  <dd>All methods m with at least two parameters. First parameter must
+  be of the type 'int'.</dd>
+</dl>
+<p> A further description of possible abstractions with wildcards is
+not subject of this documentation. You may find help reading the 
+  <a href="../doc/grammar.html" target="_top">
+Jass grammar</a>. A complete description of this
+issue can be found at the #WorkPlath#.</p>
+  <h1>
+  <a name="sect6">
+  6 Processes</a></h1>
+<a name="idx18"><em></em></a>
+<p>As mentioned before the valid behaviour of a program is described
+by process declarations. Look at the following example of a
+Trace-Assertion:
+</p>
+<p> 
+  
+
+<a name="idx19"><em></em></a>
+<code>
+/** invariant<BR>
+&nbsp;trace{public this.*} (<BR>
+&nbsp;&nbsp;MAIN() {<BR>
+&nbsp;&nbsp;&nbsp;STOP<BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;);<BR>
+**/
+</code>
+</p>
+<p> This example shows a declaration of a process named MAIN. While
+the declaration only consists of the Basic Process STOP the semantics
+of MAIN is equal to the semantics of STOP. The process named MAIN has
+a special meaning. It marks the starting point of every
+Trace-Assertion. Assume that the above Trace-Assertion is defined in a
+Java class C. Then the meaning of the Trace-Assertion is &quot;No public
+methods of class C may be invoked&quot;. Probably there is no domain for
+this kind of Trace-Assertion. But look at the following
+Trace-Assertion:
+</p>
+<p> <code>
+/** invariant
+&nbsp;trace{public this.*} (<BR>
+&nbsp;&nbsp;MAIN() {<BR>
+&nbsp;&nbsp;&nbsp;init() -&gt; CALL Initialized()<BR>
+&nbsp;&nbsp;}<BR>
+<BR>
+&nbsp;&nbsp;Initialized() {<BR> 
+&nbsp;&nbsp;&nbsp;* EXCEPT init() -&gt; CALL Initialized()<BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;);<BR>
+**/
+</code>
+</p>
+<p> Here a second process 'Initialized' is declared. MAIN refers to
+'Initialized' by using the 
+  
+
+<a name="idx20"><em>CALL-Operator
+</em></a>
+<a name="idx21"><em></em></a>. 'Initialized' refers to
+itself and creates a local loop. The meaning of the Trace-Assertion
+can be described as follows:</p>
+<ol>
+<li>The first method call must be init()</li>
+<li>After init() no further invocation of init() is allowed</li>
+</ol>
+<p>In more abstract terms one may say "The class must be initialized
+correctly".</p>
+  <h1>
+  <a name="sect7">
+  7 Operators for Choice and Parallelism</a></h1>
+<a name="idx22"><em></em></a>
+<a name="idx23"><em></em></a>
+<a name="idx24"><em></em></a>
+<p>The previous examples of Trace-Assertions limited the program flow
+to a single sequence of method invocations. To overcome this
+limitation Jass provides an operator to define branches or 'choice
+points'. A branch is expressed by the choice-operator
+<code>&lt;|&gt;</code>. The choice-operator symbolizes a branch by showing
+two arrows pointing to the left and to the right.
+</p>
+<p> 
+  
+
+<a name="idx25"><em></em></a>
+The following process shows an expression which has the meaning &quot;After a() either b() or c() may be invoked&quot;.
+</p>
+<p> <code>
+MAIN() {<BR>
+&nbsp;(a() -&gt; b() -&gt; STOP) &lt;|&gt; (a() -&gt; c() -&gt; STOP)<BR>
+}
+</code>
+</p>
+<p> To underline the character of the choice-operator the following declaration shows the same expression using the CALL-operator.
+</p>
+<p> <code>
+MAIN() {<BR>
+&nbsp;CALL P() &lt;|&gt; CALL Q()<BR>
+}<BR>
+<BR>
+P() {<BR>
+&nbsp;a() -&gt; b() -&gt; STOP<BR>
+}<BR>
+<BR>
+Q() {<BR>
+&nbsp;a() -&gt; c() -&gt; STOP<BR>
+}<BR>
+</code>
+</p>
+<p> In general P() and Q() can be arbitrary processes which describe
+certain properties of your program's behaviour. Because of the
+choice-operator either P() <b>or</b> Q() must be satisfied. If your
+program should satisfy more than one property you may want to say that
+P() <b>and</b> Q() must be satisfied. You achive this goal by using
+the parallel-operator <code>|&lt;&gt;|</code>. The operator symbolizes
+that the current path is splitted into two new paths.
+</p>
+<p>
+<a name="idx26"><em></em></a>
+<a name="idx27"><em></em></a>		
+<a name="idx28"><em></em></a>
+<a name="idx29"><em></em></a>
+So what is the semantics of the above example if we use the
+parallel-operator instead of the choice-operator?
+</p>
+<p> <code>
+MAIN() {<BR>
+&nbsp;CALL P() |&lt;&gt;| CALL Q()<BR>
+}<BR>
+<BR>
+P() {<BR>
+&nbsp;a() -&gt; b() -&gt; STOP<BR>
+}<BR>
+<BR>
+Q() {<BR>
+&nbsp;a() -&gt; c() -&gt; STOP<BR>
+}<BR>
+</code>
+</p>
+<p> With the choice-operator the valid Traces were:</p>
+<ul>
+<li>a()</li>
+<li>a() b()</li>
+<li>a() c()		</li>
+</ul>
+<p> Now we have also</p>
+<ul>
+<li>a() b() c()<BR>P() stops before Q()</li>
+<li>a() c() b()<BR>Q() stops before P()</li>
+</ul>
+<p> 
+  
+
+<a name="idx30"><em></em></a>
+The parallel-operator yields a conjunction of expressions. It got its
+name, because it instantiates more than one process in parallel to
+check the current Trace-Assertion. To make this clearer we give a
+equivalent to the above example using two independent assertions:
+</p>
+<p> <code>
+/** invariant<BR>
+&nbsp;trace (<BR>
+&nbsp;&nbsp;MAIN() { <BR>
+&nbsp;&nbsp;&nbsp;a() -&gt; b() -&gt; STOP<BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;);<BR>
+<BR>
+&nbsp;trace (<BR>
+&nbsp;&nbsp;MAIN() {<BR>
+&nbsp;&nbsp;&nbsp;a() -&gt; c() -&gt; STOP<BR>
+&nbsp;&nbsp;}<BR>
+&nbsp;);<BR>
+**/<BR>
+</code>
+</p>
+<p> You may use this alternative if your program's properties are
+static and can be described as single Trace-Assertions.
+</p>
+  <h1>
+  <a name="sect8">
+  8 Variables</a></h1>
+<a name="idx31"><em></em></a>
+<a name="idx32"><em></em></a>
+<a name="idx33"><em></em></a>
+<p>You may have noticed that the syntax of a process declaration is
+derived from a method declaration in Java. Moreover a process can be
+called by another process using the CALL-Operator like a method is
+called at runtime of a Java program. The similarity between processes
+and Java methods goes even further: process declarations can have
+arguments and processes may have variables. The following example
+shows a propagation of the string value "initalized" from the process
+MAIN to the process Q.
+</p>
+<p> 
+  
+
+<a name="idx34"><em></em></a>	
+<code>
+MAIN() {<BR>
+&nbsp;init() -&gt; CALL P("initialized") <BR>
+}<BR>
+<BR>
+P(String status) {<BR>
+&nbsp;m() -&gt; CALL Q(status)<BR>
+}<BR>
+<BR>
+Q(String status) {<BR>
+&nbsp;String msg = "Status:" + status;<BR>
+<BR>
+&nbsp;n() -&gt; ...<BR>
+}
+</code>
+</p>
+<p> Process Q declares a local variable msg. Local variables must
+allways be declared at the beginning of the process declaration.
+</p>
+<p> As long as you cannot operate on the variables, declaring
+variables is useless. There are three possibilities how variables come
+in use.
+</p>
+<ol>
+<li>Certain method invocations can depend on conditions. Variables can
+be used to store information about the actual program state to define
+complex conditions</li> 
+<li>Processes can execute arbitrary Java code. In connections with
+conditional method invocations a method invocation can be bound to any
+condition which can be expressed with the Java language. A second
+important ability is the printing of status messages</li>
+<li>Variables can be used to define branches within processes
+(if-else)</li>
+</ol>
+  <h1><a name="CondMethod"></a>
+  <a name="sect9">
+  9 Conditional method invocations</a></h1>
+<a name="idx35"><em></em></a>
+<p>Due to Trace-Assertions any method invocation at runtime of a
+program can be bound to certain conditions. To distinguish the ability
+from usual assertions (pre- and postconditions) we emphasize that
+<B>any</B> method invocation can have a certain condition. Consider a
+trace m() m(). A Trace-Assertion can demand different conditions for
+each call of m. A usuall assertion does not distinct these two
+calls. This is why the concept of Trace-Assertions is called dynamic,
+while usual assertions are rather static.
+</p>
+<p> The real power of conditional method invocation can not be
+revealed until we present the concept of exchanging data between a
+Trace-Assertion and the running program. However we will present here
+an academical example of a condition to give insight in this feature.
+</p>
+<p> <code>
+MAIN() { CALL Counter(0) }<BR>
+<BR>
+Counter(int num) {<BR>
+&nbsp;m() WHERE(num <3)<BR>
+&nbsp;-&gt; &nbsp;CALL Counter(num + 1)<BR>
+}
+</code>
+</p>
+<p> The meaning of this example is: &quot;method m may at most be invoked
+three times&quot;. The condition given after the keyword 
+  
+
+<a name="idx36"><em>WHERE</em></a> must hold before the body of m is
+executed. Remember that <code>m()</code> stands for an abbreviation of 
+<code>m().b -&gt; m().e</code>. Thus the condition is related to 
+<code>m().b</code>.
+</p>
+  <h1>
+  <a name="sect10">
+  10 Execution of Java code</a></h1>
+<a name="idx37"><em></em></a>
+<a name="idx38"><em></em></a>
+<p>Trace-Assertions offer the feature of executing arbitrary Java code
+depending on the state of your program. This is possible for two main
+purposes:</p>
+<ol>
+<li>To allow complex boolean expressions for 
+    <a href="#CondMethod" target="_top">conditional method invocations</a> </li>
+<li>To follow your program's state by writing status messages 
+  (monitoring)</li>
+</ol>
+<p> 
+  
+
+<a name="idx39"><em></em></a> 
+Here we give a simple example how Trace-Assertions can be used to
+monitor the state of your program.
+</p>
+<p> <code>
+MAIN() {<BR> 
+&nbsp;EXECUTE(System.out.println("init");)<BR>
+&nbsp;-&gt; init() -&gt; ANY<BR>
+}
+</code>
+</p>
+<p> The invocation of init() causes the message &quot;init&quot; to be
+print to the default output stream. You may ask whether
+&quot;init&quot; is printed before or after the execution of
+init(). To answer this question we must remind that
+<code>init()</code> stands for <code>(init().b -&gt;
+init().e)</code>. Thus the printing of &quot;init&quot; appears before
+(at the begin) of the execution of init(). If you want to be informed
+when the initialization is over you should write:
+</p>
+<p> <code>
+MAIN() {<BR> 
+&nbsp;EXECUTE(System.out.println("initialized");)<BR>
+&nbsp;-&gt; init().e -&gt; ANY<BR>
+}
+</code>
+</p>
+<p> The execution of java code is linked to the <b>following</b>
+method call: in the example above we wrote <code>EXECUTE(...) -&gt;
+init().e </code> and not <code>init().e -&gt; EXECUTE</code>. This
+will come clearer if you look at the next example (as an abbreviation
+we us <code>prt</code> instead of <code>System.out.print</code>:
+</p>
+<p> <code>
+MAIN() {<BR>
+&nbsp;a() -&gt; EXECUTE(prt("#");) -&gt;<BR>
+&nbsp;(EXECUTE(prt("b");) -&gt; b() -&gt; STOP<BR>
+&nbsp;&lt;|&gt; EXECUTE(prt("c";) -&gt; c() -&gt; STOP)<BR>
+}
+</code>
+</p>
+<p> What kind of messages do we expect of this kind of
+Trace-Assertion? Consider the trace a() b(). After the execution of
+a() no message will be printed. The second invocation b() yields the
+message "#b". </p>
+  <h1>
+  <a name="sect11">
+  11 Branches - If/Else</a></h1>
+<a name="idx40"><em></em></a>
+<p> Trace-Assertions can have branches. The following code fragment
+shows a possible branch structure:
+</p>
+<p> <code>
+IF(b) {<BR>
+&nbsp; CALL P()<BR>
+} ELSE {<BR>
+&nbsp; CALL Q()<BR>
+}
+</code>
+</p>
+<p> Branches allow to express complex dynamical behaviour of a program. For a more eloquent example read the next section.
+</p>
+  <h1>
+  <a name="sect12">
+  12 Data exchange</a></h1>
+<a name="idx41"><em></em></a>
+<a name="idx42"><em></em></a>
+<a name="idx43"><em></em></a>
+<p>Till now it seems that method calls were only interpreted by their
+signature. E.g. a method call m("", true) was interpreted as "a method
+with name m and first argument of type String and second of type
+Boolean". This is loss of information, because the argument values are
+not known (in the example: 'empty string' and 'true').
+</p>
+<p> Trace-Assertions offer a mechanism to overcome this loss of
+information. In general speaking it is possible to exchange (argument)
+values between the running program and the guarding
+Trace-Assertion. If the Trace-Assertion should have access to the
+argument value a preceding '?' is used:
+</p>
+<p> <code>?s</code>
+</p>
+<p> In more detail, the above example could look like:
+</p>
+<p> <code>
+MAIN() {<BR>
+&nbsp;String s;<BR>
+&nbsp;boolean b;<BR>
+<BR>
+&nbsp;m(?s, ?b) WHERE(s != null) -&gt; CALL Q(b)<BR>
+}
+</code>
+</p>
+<p> When you use the notation '<code>?x</code>', x must allways be a process
+variable. Hence x must be declared. In the example above s is declared
+as type String and b is declared as type boolean. The notation
+<code>m(?s, ?b)</code> yields the signature m(String, boolean).
+</p>
+<p> The notation '?x' is called data exchange, because the value of
+the underlying argument is passed from the program to the process
+variable x. It is also possible to pass a value from the process to
+the running program. Unlike passing from program to process this kind
+of data exchange needs a special interpretation. A Trace-Assertion is
+a guard which restricts the possible behaviour of the running
+program. Thus the Trace-Assertion should be able to restrict the
+possible values of the arguments of a method call. A strong
+restriction is <code>m("x")</code> which expresses that only 'x' is a
+valid value for the call of m. A more general notation is
+<code>m(!x)</code>. Here the two values of x and the argument of m
+must coincide.</p>
+<p>
+<a name="idx44"><em></em></a>
+The following processes P,Q,R demonstrate different applications of
+data exchange. They are all equivalent in semantics.
+</p>
+<p> <code>
+P() {<BR>
+&nbsp;m(7) -&gt; STOP<BR>
+}<BR>
+<BR>
+Q() {<BR>
+&nbsp;int i = 7;<BR>
+&nbsp;m(!i) -&gt; STOP<BR>
+}<BR>
+<BR>
+R() {<BR>
+&nbsp;int i;<BR>
+&nbsp;m(?i) WHERE(i == 7) -&gt; STOP<BR>
+}<BR>	
+</code>
+</p>
+<p> You can specify the result value of a method call as well. If m is
+a method which returns a boolean value, <code>?b m()</code> passes the
+return value to the variable b (assuming that b is declared as
+boolean). Accordingly <code>!b m()</code> restricts the return value
+to the value of b.
+</p>
+<p> You have to be carefull if you refer to the result value and use a
+conditional method at the same time. If you want to express that a
+method m should return 'true' the following Trace-Assertion is wrong:
+</p>
+<p> <code>
+P() { /# Caution #/<BR>
+&nbsp;boolean b = false;<BR>
+&nbsp;?b m() WHERE(b) -&gt; CALL Q()<BR>
+}
+</code>
+</p>
+<p> The WHERE-expression will be evaluated at the beginning of the
+method call m (at the top of the method body). At this point the
+result value of m is not known yet and the value of b is false
+(initial value). If you want to refer to the result value right after
+the method execution you should use a If/Else expression:
+</p>
+<p> <code>
+P() {<BR>
+&nbsp;boolean b = false;<BR>
+&nbsp;?b m() -&gt; IF(!b)<BR>
+&nbsp;&nbsp;CALL E()<BR>
+&nbsp;} ELSE {<BR>
+&nbsp;&nbsp;CALL Q()<BR>
+}<BR>
+<BR>
+E() { <BR>
+&nbsp;EXECUTE(throw new RuntimeException();) -&gt; STOP<BR>
+}
+</code>
+</p>
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+    next: 
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

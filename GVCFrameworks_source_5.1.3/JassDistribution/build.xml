@@ -1,0 +1,309 @@
+<project name="jass" default="build" basedir=".">
+   <!-- set global properties for this build -->
+   <property name="src"   value="src"/>
+   <property name="build" value="build"/>
+   <property name="dist"  value="dist"/>
+   <property name="docs"  value="docs"/>
+   <property name="wwwdoc"  value="www-doc"/>
+   <property name="lib"   value="lib"/> 
+
+   <!-- -->
+   <property name="versionfile" value="${src}/jass/Jass.java"/>
+   <property name="downloadpage" value="${wwwdoc}/download/index.htp"/>
+
+   <!-- compiles jass and creates its javadoc-files -->
+   <target name="all" depends="dist,javadoc"/>
+
+   <!-- build the Jass files -->
+   <target name="build" depends="parser,precompile">
+      <mkdir dir="${build}"/>
+      <javac srcdir="${src}"
+             destdir="${build}"/>
+   </target>
+
+   <target name="parser" 
+           depends="init" 
+           if="build.parser.required">
+      <jjtree target="${src}/jass/parser/Jass.jjt" 
+              javacchome="${lib}"/>
+      <javacc target="${src}/jass/parser/Jass.jj"
+              javacchome="${lib}"/>
+   </target>
+
+   <target name="precompile">
+      <copy todir="${src}" >
+        <fileset dir="${src}"/>
+        <mapper type="glob" from="*.jass" to="*.java"/>
+      </copy>
+   </target>
+
+   
+
+
+   <!-- create the jar-files -->
+   <target name="dist" depends="distfiles,distdoc,distclass,distsrc"/>
+
+   <target name="distclass" depends="build">
+      <mkdir dir="${dist}"/>
+      <jar jarfile="${dist}/jass.jar"
+           basedir="${build}"
+	   manifest="${src}/manifest.mf"/>
+      <jar jarfile="${dist}/jass-rt.jar">
+	<fileset dir="${build}">
+	  <include name="jass/runtime/**"/>
+	  <exclude name="jass/runtime/traceAssertion/**"/>
+	  <exclude name="jass/runtime/util/**"/>
+	</fileset>
+      </jar>
+   </target>
+
+   <target name="distdoc" depends="grammar,htp">
+     <jar jarfile="${dist}/doc.jar">
+	<fileset dir="${wwwdoc}">
+	  <include name="**/*.html"/>
+	  <include name="**/*.png"/>
+	  <include name="**/*.gif"/>
+	  <include name="**/*.css"/>
+	  <include name="**/*.ico"/>
+	  <exclude name="**/tmpl-*.html"/>
+	</fileset>
+     </jar>
+   </target>
+
+   <target name="distsrc" depends="parser">
+      <jar jarfile="${dist}/src.jar">
+	<fileset dir="${src}">
+	  <include name="**/*.java"/>
+	  <include name="**/*.jass"/>
+	  <include name="**/*.jjt"/>
+	  <include name="**/*.html"/>
+	</fileset>
+      </jar>
+   </target>
+
+   <target name="distfiles">
+      <copy todir="${dist}">
+	<fileset dir="${basedir}" 
+		 includes="COPYING,COPYING.LIB,BUGS,NEWS,README,examples.xml,build.xml">
+	  <include name="jass/examples/**/*.jass"/>
+	</fileset>
+      </copy>
+   </target>
+
+
+   <!-- docs -->
+   <target name="docs" depends="grammar,htp"/>
+
+   <target name="javadoc">
+      <mkdir dir="${docs}/api"/>
+      <javadoc packagenames="jass.*"
+               sourcepath="src"
+               destdir="docs/api"
+	       use="yes">
+	<link href="http://java.sun.com/products/jdk/1.2/docs/api/"/>
+      </javadoc>
+   </target>
+      
+   <target name="grammar" depends="parser">
+      <mkdir dir="${docs}/grammars"/>
+      <uptodate property="jass.grammar.uptodate"
+		targetfile="${docs}/grammars/Jass.html">
+         <srcfiles dir="${src}" includes="jass/parser/Jass.jj"/>
+      </uptodate>
+      <uptodate property="cmdline.grammar.uptodate"
+		targetfile="${docs}/grammars/Commandline.html">
+         <srcfiles dir="${src}" includes="jass/commandline/Commandline.jj"/>
+      </uptodate>
+      <antcall target="grammar-jass"/>
+      <antcall target="grammar-cmdline"/>
+   </target>
+
+   <target name="grammar-jass" unless="jass.grammar.uptodate">
+      <java classname="COM.sun.labs.jjdoc.JJDocMain"
+	    dir="${docs}/grammars"
+            fork="true">
+         <arg value="${basedir}/${src}/jass/parser/Jass.jj"/>
+         <classpath>
+	   <fileset dir="${basedir}/${lib}">
+             <include name="**/*.zip"/>
+             <include name="**/*.jar"/>
+           </fileset>
+         </classpath>
+      </java>
+   </target>
+
+   <target name="grammar-cmdline" unless="cmdline.grammar.uptodate">
+      <java classname="COM.sun.labs.jjdoc.JJDocMain"
+	    dir="${docs}/grammars"
+            fork="true">
+         <arg value="${basedir}/${src}/jass/commandline/Commandline.jj"/>
+         <classpath>
+	   <fileset dir="${basedir}/${lib}">
+             <include name="**/*.zip"/>
+             <include name="**/*.jar"/>
+           </fileset>
+         </classpath>
+      </java>
+   </target>
+
+   <target name="htp">
+      <exec executable="make" dir="${wwwdoc}"/>
+   </target>
+
+   <!-- ********* clean targets ************* -->
+
+   <!-- clean all -->
+   <target name="cleanall" depends="clean,cleandist,cleanparser,cleancommandline,precompile,cleanjavadoc,cleangrammar,cleanhtp"/>
+     
+
+   <!-- clean the class files -->
+   <target name="clean">
+     <delete dir="${build}"/>
+   </target>
+
+   <!-- clean dist files -->
+   <target name="cleandist">
+      <delete dir="${dist}"/>
+   </target>
+
+   <!-- clean parser -->
+   <target name="cleanparser">
+     <delete>
+        <fileset dir="${src}/jass/parser">
+           <include name="*.java"/>
+           <include name="*.jj"/>
+           <exclude name="Node.java"/>
+           <exclude name="SimpleNode.java"/>
+        </fileset>
+     </delete>
+   </target>
+
+   <target name="cleancommandline">
+     <delete>
+        <fileset dir="${src}/jass/commandline">
+           <include name="*.java"/>  
+           <exclude name="*.jj"/>
+        </fileset>
+     </delete>
+   </target>
+
+   <target name="cleanhtp">
+      <exec executable="make" dir="${wwwdoc}">
+         <arg value="clean"/>
+      </exec>
+   </target>
+
+   <!-- clean javadocs -->
+   <target name="cleanjavadoc">
+      <delete dir="${docs}/api"/>
+   </target>
+   <target name="cleangrammar">
+      <delete dir="${docs}/grammars"/>
+   </target>
+
+   <!-- clean precompiled java-files -->
+   <target name="cleanprecompile">
+      <delete file="${src}/jass/reflect/Method.java"/>
+      <delete file="${src}/jass/reflect/Class.java"/>
+      <delete file="${src}/jass/reflect/Expression.java"/> 
+      <delete file="${src}/jass/util/Set.java"/>            
+   </target>  
+
+
+   <!-- cvs stuff -->
+   <target name="newversion" depends="setversion"/>
+
+   <target name="setversion" depends="checkversion" if="version">
+      <echo message="---------------------------------------------------"/>
+      <echo message='  Creating new Jass version: "${version}" !!!'/>
+      <echo message="==================================================="/>
+      <!-- 
+           search the old version information and replace it with the new version
+           we will search the $(mainclass) for 'String VERSION = "..."' and
+           replace the contents of the String with the new version. 
+        -->
+      <echo message="updating version in ${versionfile} ..."/>
+      <exec executable="perl" timeout="10000">
+         <arg value="-i"/>
+         <arg value="-pe"/>
+         <arg value='s/(String\s*VERSION\s*=.*)".*"/$${1}"${version}"/' />
+         <arg value="${versionfile}"/>
+      </exec>
+
+      <echo message="adding download in ${downloadpage} ..."/>
+      <exec executable="perl" timeout="10000" output="foo">
+        <arg value="-i"/>
+        <arg value="-pe"/>
+        <arg value='$$found |= ($$_ =~ /deforder.*"${version}"/); if (!$$found and /deforder/) { s/(.*label=")(.*)(".*value=")(.*)(".*)/$${1}${version}$${3}${version}$${5}\n$$1$$2$$3$$4$$5/; $$found = 1}' />
+         <arg value="${downloadpage}"/>
+      </exec>
+
+      <!--
+           commit the new $(VERSIONFILE) to the CVS
+      <echo message="commiting updated files to CVS..."/>
+      <cvs command='ci -m"new version ${version}" ${versionfile} ${downloadpage}'/>
+        -->
+
+      <!--
+           tag the new version
+       
+      <antcall target="tagversion"/>
+      -->
+      <echo message="...done!"/>
+      <echo message="---------------------------------------------------"/>
+   </target>
+
+   <target name="checkversion" unless="version">
+      <echo message="property version is not set."/>
+      <echo message="usage: ant newversion -Dversion=&lt;version&gt;"/>
+      <fail/>
+   </target>
+
+   <target name="tagversion" if="version">
+      <cvs command="tag -Fc Jass-${version}"/>
+   </target>   
+
+   <target name="release" depends="checkversion,dist" if="version">
+      <jar jarfile="${basedir}/jass-${version}.jar" 
+           basedir="${dist}"/>
+   </target>   
+            
+
+
+
+
+   <!-- some workaround for not creating a new parser when it's not necessary -->
+
+   <target name="init">
+      <uptodate property="build.parser.required" 
+                targetfile="${src}/jass/parser/Jass.jjt">
+         <srcfiles dir="${src}/jass/parser" includes="JassParser.java"/>
+      </uptodate>
+      <uptodate property="build.commandline.required"
+                targetfile="${src}/jass/commandline/Commandline.jj">
+         <srcfiles dir="${src}/jass/commandline" includes="CommandlineParser.java"/>
+      </uptodate>
+   </target>
+
+   <target name="help">
+      <echo message=" Building Jass"/>
+      <echo message="----------------"/>
+      <echo />
+      <echo message="   possible targets:"/>
+      <echo message="     build      just compile all sources"/>
+      <echo message="     dist       create the distribution archives"/>
+      <echo message="     javadoc    create JavaDoc for the Jass sources"/>
+      <echo message="     newversion create a new version. This will update the version "/>
+      <echo message="                file and the download page. It will not commit the "/>
+      <echo message="                changed files. "/>
+      <echo message='                version format: -Dversion="MAJOR.MINOR.PATCH"'/>
+      <echo message="     tagversion tag the current files with the given version"/>
+      <echo message="     "/>
+      <echo message='                version format: -Dversion="MAJOR-MINOR-PATCH"'/>
+      <echo message="     release    create a release file with the given version"/>
+      <echo message="                number from the current distribution archives"/>
+      <echo message='                version format: -Dversion="MAJOR.MINOR.PATCH"'/>
+      <echo message="     "/>
+   </target>
+</project>
+

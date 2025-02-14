@@ -1,0 +1,61 @@
+<webobject name = "DisplayMode"> <webobject name = "Hyperlink" /> </webobject>
+<webobject name = "EditMode">
+  <table border = "0" cellspacing = "2" cellpadding = "2" class = "content">
+    <tr>
+      <td colspan = "2" valign = "top"> </td>
+    </tr>
+    <tr>
+      <td align = "LEFT" valign = "TOP" class = "leftContentColumn">
+        <span class = "sectionTitle">Type
+          and Source:</span>
+        <br />
+      </td>
+      <td align = "LEFT" valign = "TOP" class = "rightContentColumn">
+        <table border = "0" cellpadding = "0" cellspacing = "0" width = "100%">
+          <tr>
+            <td><webobject name = "URLImageType" /></td>
+            <td>url:</td>
+            <td><webobject name = "ImageURL" /></td>
+          </tr>
+          <tr>
+            <td colspan = "3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><webobject name = "FileImageType" /></td>
+            <td>file:&nbsp;&nbsp;</td>
+            <td><webobject name = "SectionImageList" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class = "descriptiveText">If the file
+              you want to use is not in the list
+              above you will need to upload it.
+              Click
+              <webobject name = "UploadFileHyperlink">here</webobject>
+              to upload a file.<webobject name = "HasSelectedFileConditional"><br /></webobject>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan = "2" valign = "top"> &nbsp; </td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "left" class = "leftContentColumn">
+        <b>Where to Display:</b>
+      </td>
+      <td valign = "top" class = "rightContentColumn">
+        <webobject name = "TARGET_SELF" />
+        Same Window (replacing 
+        <webobject name = "ProductNameString" />) 
+        <br />
+        <webobject name = "TARGET_BLANK" />
+        New Window 
+        <br />
+        <span class = "descriptiveText"> Applies only to URLs starting with http:// or https:// </span>
+      </td>
+    </tr>
+  </table>
+</webobject>

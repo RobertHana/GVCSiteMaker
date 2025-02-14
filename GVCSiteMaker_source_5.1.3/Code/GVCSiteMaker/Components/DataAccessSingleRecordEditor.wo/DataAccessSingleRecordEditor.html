@@ -1,0 +1,44 @@
+<table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+  <tr>
+    <th align = "center" class = "daListShowFieldHeading">
+      Show<br />Field 
+    </th>
+    <th class = "daListFieldNameHeading">
+      Field<br />Name 
+    </th>
+    <th class = "daListFieldTypeHeading">
+      Field<br />Type 
+    </th>
+    <th class = "daListAllowEditsHeading">
+      Allow<br />Edits 
+    </th>
+    <th class = "daListOptionsHeading"> Field Options </th>
+    <th class="daListChangeOrderHeading">
+      Change<br />Order
+    </th>
+  </tr>
+</table>
+
+<webobject name = "ColumnList">
+  <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+    <tr>
+      <td class = "daListShowField" align = "center"> <webobject name = "ShowField" /> </td>
+      <td class = "daListFieldName" align = "center"> <webobject name = "FieldName" /> </td>
+      <td class = "daListFieldType" align = "center">
+        <webobject name = "IsNotCalculatedColumnConditional"><webobject name = "FieldType" /></webobject>
+        <webobject name = "IsCalculatedColumnConditional"><webobject name = "CalculationType" /></webobject>
+      </td>
+      <td class = "daListAllowEdits" align = "center">
+        <webobject name = "IsEditableColumnConditional"><webobject name = "AllowEdits" /></webobject>
+        <webobject name = "IsCalculatedColumnConditional">Calculated</webobject>
+        <webobject name = "IsSystemColumnConditional">
+          <i>System</i>
+        </webobject>
+      </td>
+      <td class = "daListOptions" align = "left"> <webobject name = "DataAccessColumnComponent" /> </td>
+      <td class="daListChangeOrder" align="center">
+        <webobject name="OrderPopup"></webobject>
+      </td>
+    </tr>
+  </table>
+</webobject>

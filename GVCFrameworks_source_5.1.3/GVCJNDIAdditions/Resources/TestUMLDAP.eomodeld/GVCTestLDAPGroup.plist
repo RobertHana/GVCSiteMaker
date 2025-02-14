@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            columnName = cn; 
+            externalType = "Directory String"; 
+            name = cn; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = mail; 
+            externalType = "Directory String"; 
+            name = mail; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = member; 
+            externalType = DN; 
+            name = member; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = relativeDistinguishedName; 
+            externalType = relativeDistinguishedName; 
+            name = relativeDistinguishedName; 
+            valueClassName = NSString; 
+            writeFormat = "cn=<cn>,ou=User Groups,ou=Groups"; 
+        }
+    ); 
+    attributesUsedForLocking = (cn, relativeDistinguishedName, member, mail); 
+    className = EOGenericRecord; 
+    classProperties = (cn, member, mail); 
+    externalName = rfc822MailGroup; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {_nameInObjectStore = group; }; 
+    name = GVCTestLDAPGroup; 
+    primaryKeyAttributes = (relativeDistinguishedName); 
+}

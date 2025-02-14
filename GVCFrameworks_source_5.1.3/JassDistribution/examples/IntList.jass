@@ -1,0 +1,113 @@
+package jass.examples;
+
+import java.util.Vector;
+
+
+/** This class presents a list of int values.
+  * It is used by the example of the merge sort algorithm
+  * jass.examples.MergeSort
+  */
+  
+public class IntList extends Object implements Cloneable
+{
+    Vector list;
+
+    public IntList() {
+	list = new Vector();
+    }
+
+
+    public IntList(Vector v) // needed for cloning
+    {
+	list = v;
+    }
+
+    public void addElement(int value)
+    {
+	list.addElement(new Integer(value));
+
+	/** ensure
+	      [correctSize] size() == Old.size() + 1;
+	      [containsValue] contains(value);
+	      [valueIsLastElement] lastElement() == value;
+	**/
+    }
+    
+    
+
+    public boolean contains(int value) {
+	return list.contains(new Integer(value));
+
+	/** ensure changeonly{}; **/
+    }
+
+
+
+    public int elementAt(int i)
+    {
+	/** require [insideRange] i < size(); **/
+
+	return ((Integer) list.elementAt(i)).intValue();
+
+	/** 
+	    ensure changeonly{}; 
+			
+	    /# The following condition serves as a bug-workaround.
+	       See KnownBugs.txt, Bug #1 at the Jass distribution #/
+			   
+	       elementAt(i) == elementAt(i);
+	**/
+    }
+
+
+
+    public boolean isEmpty()
+    {
+	return size() == 0;
+
+	/** ensure changeonly{}; **/
+    }
+
+
+
+    public int lastElement()
+    {
+	/** require [notEmpty] !isEmpty(); **/
+
+	return elementAt(size() - 1);
+
+	/** ensure changeonly{}; **/
+    }
+
+
+    
+    public int size()
+    {
+	return list.size();
+	
+	/** ensure changeonly{}; **/
+    }
+
+
+
+    public String toString()
+    {
+	String s = "";
+	
+	for(int i = 0; i < size(); ++i) {
+	    s += list.elementAt(i).toString() + " ";
+	}
+
+	return "[ " + s + "]";
+
+	/** ensure
+	      changeonly{};
+	      [noNullPointer] Result != null;
+	**/
+    }
+
+    public Object clone()
+    {
+	return new IntList((Vector)list.clone());
+    }
+}

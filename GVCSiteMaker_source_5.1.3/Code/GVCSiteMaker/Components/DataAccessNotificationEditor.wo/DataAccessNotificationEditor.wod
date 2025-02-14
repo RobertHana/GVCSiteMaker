@@ -1,0 +1,234 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+Help: HelpComponent {
+    pageClass = "com.gvcsitemaker.editors.DataAccessNotificationEditor";
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+BottomCancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+BottomEditSectionButton: WOSubmitButton {
+	action = editSection;
+	value = "Edit Section";
+}
+
+BottomSaveChangesButton: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+}
+
+ConfigurationForm: WOForm
+{
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}
+
+CreateSubjectMissingConditional: WOConditional {
+	condition = isCreateSubjectMissing;
+}
+
+CreateTemplateInUseCustomRadioButton: WORadioButton {
+	checked = useCustomTemplateForCreate;
+	name = "CreateTemplateInUseRadioButton";
+}
+
+CreateTemplateInUseStandardRadioButton: WORadioButton {
+	checked = useDefaultTemplateForCreate;
+	name = "CreateTemplateInUseRadioButton";
+}
+
+CreationSubjectTextField: WOTextField {
+	value = dataAccessComponent.createRecordsNotificationSubject;
+	class = "mediumEntryBox";
+	size = 50;
+}
+
+DeleteCreateTemplateHyperlink: WOHyperlink {
+	action = deleteCreateTemplate;
+}
+
+DeleteModifyTemplateHyperlink: WOHyperlink {
+	action = deleteModifyTemplate;
+}
+
+DownloadCreateTemplateHyperlink: WOFileDownload {
+	contentType = "application/octet-stream";
+	fileName = "create_template.html";
+	displayAsButton = false;
+	downloadTitle = "Download<br>Template";
+	data = dataAccessComponent.customCreationNotificationTemplateHtml;
+}
+
+DownloadModifyTemplateHyperlink: WOFileDownload {
+	contentType = "application/octet-stream";
+	fileName = "modify_template.html";
+	displayAsButton = false;
+	downloadTitle = "Download<br>Template";
+	data = dataAccessComponent.customModificationNotificationTemplateHtml;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = true;
+	pageTitle = "Edit Section";
+	isAdmin = false;
+	pageType = "DataAccessNotificationEditor";
+}
+
+FromTextField: WOTextField {
+	size = 50;
+	value = section.component.notificationFromAddress;  // VALID
+}
+
+InvalidConfigurationConditional: WOConditional {
+	condition = isConfigurationValid;
+	negate = true;
+}
+
+InvalidCreateTemplateValidationConditional: WOConditional {
+	condition = createTemplateValidationError;
+}
+
+InvalidCreateTemplateValidationString: WOString {
+	value = createTemplateValidationError;
+}
+
+InvalidFromAddressConditional: WOConditional {
+	condition = isFromAddressInvalid;
+}
+
+InvalidModifyTemplateValidationConditional: WOConditional {
+	condition = modifyTemplateValidationError;
+}
+
+InvalidModifyTemplateValidationString: WOString {
+	value = modifyTemplateValidationError;
+}
+
+InvalidNotificationRecipientString: WOString {
+	value = anInvalidRecipient;
+}
+
+InvalidNotificationRecipientsRepetition: WORepetition {
+	list = invalidOtherNotificationRecipients;
+	item = anInvalidRecipient;
+}
+
+InvalidUploadConditional: WOConditional {
+	condition = hasInvalidUpload;
+}
+
+IsNotSystemColumnConditional: WOConditional {
+	condition = aColumn.isSystemColumn.booleanValue;
+	negate = true;
+}
+
+IsSystemColumnConditional: WOConditional {
+	condition = aColumn.isSystemColumn.booleanValue;
+}
+
+MissingRecipientsConditional: WOConditional {
+	condition = isMissingRecipients;
+}
+
+ModificationSubjectTextField: WOTextField {
+	value = dataAccessComponent.modifyRecordsNotificationSubject;
+	class = "mediumEntryBox";
+    size = 50;
+}
+
+ModifySubjectMissingConditional: WOConditional {
+	condition = isModifySubjectMissing;
+}
+
+ModifyTemplateInUseCustomRadioButton: WORadioButton {
+	checked = useCustomTemplateForModify;
+	name = "ModifyTemplateInUseRadioButton";
+}
+
+ModifyTemplateInUseStandardRadioButton: WORadioButton {
+	checked = useDefaultTemplateForModify;
+	name = "ModifyTemplateInUseRadioButton";
+}
+
+NotificationAccessGroupsCheckBoxMatrix: WOCheckboxMatrix {
+	list = website.orderedLocalGroups;
+	maxColumns = 1;
+	selections = selectedAccessGroups;
+	item = anAccessGroup;
+}
+
+NotificationColumnsCheckBoxMatrix: WOCheckboxMatrix {
+	list = columns;
+	selections = section.component.notificationColumns;  // VALID
+	item = aColumn;
+}
+
+NotifyAccessGroupString: WOString {
+	value = anAccessGroup.name;
+}
+
+NotifyColumnString: WOString {
+	value = aColumn.name;
+}
+
+NotifyOnCreateCheckBox: WOCheckBox {
+	checked = section.component.shouldNotifyOnCreateRecords;  // VALID
+}
+
+NotifyOnCreateCustomTemplateFileUpload: WOFileUpload {
+	data = uploadedCreateTemplate;
+	filePath = dummyTemplateFilePath;
+}
+
+NotifyOnModifyCheckBox: WOCheckBox {
+	checked = section.component.shouldNotifyOnModifyRecords;  // VALID
+}
+
+NotifyOnModifyCustomTemplateFileUpload: WOFileUpload {
+	data = uploadedModifyTemplate;
+	filePath = dummyTemplateFilePath;
+}
+
+NotifySystemColumnString: WOString {
+	value = aColumn.name;
+}
+
+OtherNotificationRecipientsInvalidConditional: WOConditional {
+	condition = otherNotificationRecipientsInvalid;
+}
+
+OtherNotificationRecipientsText: WOText {
+	rows = 5;
+	value = section.component.otherNotificationRecipients;  // VALID
+	class = "largeEntryBox";
+}
+
+SectionNameString: WOString {
+	value = section.name;
+}
+
+TopCancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+TopEditSectionButton: WOSubmitButton {
+	action = editSection;
+	value = "Edit Section";
+}
+
+TopSaveChangesButton: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+}

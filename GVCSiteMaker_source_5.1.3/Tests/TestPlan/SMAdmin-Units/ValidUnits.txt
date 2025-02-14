@@ -1,0 +1,6 @@
+UnitName	Encompassing Unit	Filespace Quota	Display In List Of Org Units
+IContainAllData	University of Michigan	100	1	
+OnlyRequiredData	University of Michigan	10		
+Name with Spaces	University of Michigan	10	0	
+Name with specialChars ";/\*?.<b>ÀÌ	University of Michigan	10	0	
+MaxLength9a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789	University of Michigan	10	0	

@@ -1,0 +1,47 @@
+BannerTextString: WOString {
+	value = aConfigurableWebsite.banner.bannerText;
+}
+ConfigureWebsiteHyperlink: WOHyperlink {
+	action = goConfig;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	pageType = "com.gvcsitemaker.pages.MultCSites";
+	isAdmin = false;
+	isConfigPage = false;  // not a configuration page
+	hasSite = false;
+}
+
+OwnersUserIDString: WOString {
+	value = aConfigurableWebsite.owner.userID;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  //VALID
+}
+RequestSiteHyperlink: WOHyperlink {
+  pageName = "RequestSite";
+}
+SiteIDString: WOString {
+	value = aConfigurableWebsite.siteID;
+}
+
+// redundant wod entry?
+SiteMakerMainPageLink: WOHyperlink {
+   pageName = "Main";
+}
+SitesUserMayConfigureRepetition: WORepetition {
+	item = aConfigurableWebsite;
+//	list = session.currentUser.configurableWebsites;
+	list = configurableWebsites;
+}
+
+UserCanConfigureMultipleSitesConditional: WOConditional {
+	condition = session.currentUser.canConfigureMultipleSites;
+}
+UserCannotConfigureMultipleSitesConditional: WOConditional {
+	condition = session.currentUser.canConfigureMultipleSites;
+	negate = true;
+}

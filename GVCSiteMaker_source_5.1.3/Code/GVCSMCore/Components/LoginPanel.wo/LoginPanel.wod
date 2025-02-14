@@ -1,0 +1,40 @@
+ForgotPasswordHyperLink: WOHyperlink {
+	href = sendPasswordURL;
+}
+
+LoginFailureMessage: WOString {
+	value = loginFailureMessage;
+}
+
+LoginForm: WOForm {
+    action = loginAction;
+}
+
+LoginSubmitButton: WOSubmitButton {
+    action = loginAction;
+    value = "Login";
+}
+
+MessageString: WOString {
+	value = subTitle;
+	escapeHTML = false;
+}
+
+PasswordTextField: WOPasswordField {
+	value = password;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+ShowLoginFailureMessageConditional: WOConditional {
+	condition = loginFailureMessage.length;
+}
+
+UserIDTextField: WOTextField {
+	value = userID;
+	size = 50;
+	maxLength = 100;
+}
+

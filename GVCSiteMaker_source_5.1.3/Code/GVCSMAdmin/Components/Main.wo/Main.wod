@@ -1,0 +1,165 @@
+AdminForm: WOForm {
+	multipleSubmit = true;
+}
+
+CanCreateUnits: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+}
+
+CanManageUsers: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+}
+
+CanSendEmailConditional: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+}
+
+CreateANewWebsiteLink: WOHyperlink 
+{
+	action = createWebsites;
+}
+
+CreateUnitLink: WOHyperlink 
+{
+	action = createUnits;
+}
+
+CreateUserLink: WOHyperlink 
+{
+	action = createUsers;
+}
+
+DateFormatInvalidErrorString: WOString {
+	value = dateFormatInvalidErrorMessage;
+}
+
+DateInputFormatHintString: WOString {
+	value = application.properties.InputDateOnlyFormatHint;  //VALID
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	pageType = "Administration";
+	isAdmin = true;
+}
+
+EmailUsersButton: WOHyperlink 
+{
+	action = emailConfigureWebsiteMembers;
+}
+
+FilespaceUsageNegativeErrorString: WOString {
+	value = filespaceUsageNegativeErrorMessage;
+}
+
+FilespaceUsageOperatorPopup: WOPopUpButton {
+	list = FilespaceUsageOperators;
+	selection = filespaceUsageOperator;
+}
+
+FilespaceUsageString: WOTextField {
+	value = filespaceUsage;
+	size = 6;
+	formatter = positiveIntegerFormatter;
+}
+
+FilespaceUsageUnitsPopup: WOPopUpButton {
+	list = FilespaceUsageUnits;
+	selection = filespaceUsageUnit;
+}
+
+InvalidSiteIDErrorString: WOString {
+	value = noCriteriaErrorMessage;
+}
+
+InvalidUserIDErrorString: WOString {
+	value = invalidUserIDErrorMessage;
+}
+
+LastModifiedDateOperatorPopup: WOPopUpButton {
+	list = LastModifiedDateOperators;
+	selection = lastModifiedDateOperator;
+}
+
+LastModifiedDateString: WOTextField {
+	value = lastModifiedDate;
+	size = 20;
+	formatter = application.properties.InputDateOnlyFormatter;  //VALID
+}
+
+OrgUnit: UnitChooser {
+	selectedUnit = selectedUnit;
+	rootOrgUnits = session.currentUser.orgUnitsToAdmin;
+	excludeNonSystemWideUnits = false;
+}
+
+OwnerIDString: WOTextField {
+	value = ownerID;
+	size = 25;
+}
+
+PublishedCheckBox: WOCheckBox {
+	checked = published;
+}
+
+QueuedTasksHyperlink: WOHyperlink {
+	action = viewQueuedTasks;
+}
+
+SelectUnit: WOSubmitButton 
+{
+	action = manageUnit;
+	value = "Select";
+}
+
+SelectUser: WOSubmitButton 
+{
+	action = manageUser;
+	value = "Select";
+}
+
+SelectWebsite: WOSubmitButton 
+{
+	action = findWebsite;
+	value = "Find websites";
+}
+
+ShowDateFormatInvalidErrorMessage: WOConditional {
+	condition = displayDateFormatInvalidErrorMessage;
+}
+
+ShowFilespaceUsageNegativeErrorMessage: WOConditional {
+	condition = displayFilespaceUsageNegativeErrorMessage;
+}
+
+ShowInvalidSiteErrorMessage: WOConditional {
+	condition = displayNoCriteriaErrorMessage;
+}
+
+ShowInvalidUserIDErrorMessage: WOConditional {
+	condition = displayInvalidUserIDErrorMessage;
+}
+
+UnpublishedCheckBox: WOCheckBox {
+	checked = unpublished;
+}
+
+UserID: WOTextField {
+	value = userID;
+	size = "26";
+    maxLength = 100;
+}
+
+WebsiteID: WOTextField {
+	value = siteID;
+	size = "25";
+}
+
+WithinUnitChooser: com.gvcsitemaker.core.components.UnitChooserWithDefault {
+	rootOrgUnits = session.currentUser.orderedAdminableUnits;
+	selectedUnit = searchUnit;
+	size = 1;
+	noSelectionString = "None";
+	excludeNonSystemWideUnits = false;
+}

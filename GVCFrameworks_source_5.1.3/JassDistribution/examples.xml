@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="examples" name="examles">
+
+   <!-- path to Jass distribution, i.e. directory containing the jass.jar --> 
+   <property name="dist" value="."/>
+   <!-- path to examples directory -->
+   <property name="exampledir" value="."/>
+   <property name="exampletarget" value="."/>
+   <!-- property name="java1.4" value="true" -->
+
+   <path id="classpath.base">
+     <pathelement location="${exampledir}"/>
+     <pathelement location="${dist}/jass.jar"/>
+   </path>
+
+   <!-- definition of own tasks -->
+   <taskdef classname="jass.util.ant.JassTask" classpath="${dist}/jass.jar" name="jass"/>
+
+   <target name="jass">
+      <jass contract="pre,post,inv,loop,check,forall"
+            destdir="${exampletarget}"> 
+        <src path="${exampledir}"/>
+        <include name="jass/examples/**.jass"/>
+        <exclude name="jass/examples/traceAssertion/**"/>
+      </jass>
+   </target>
+
+
+   <target name="examples" depends="jass">
+      <javac>
+        <src path="${exampletarget}"/>
+        <include name="jass/**"/>
+        <exclude name="jass/examples/traceAssertion/**"/>
+        <classpath>
+           <path refid="classpath.base"/>
+        </classpath>
+      </javac>
+   </target>
+
+   <target name="javadoc" depends="version,javadoc1.3,javadoc1.4"/>
+
+   <target name="javadoc1.3" depends="jass" unless="java1.4">
+      <mkdir dir="./api"/>
+      <javadoc packagenames="jass.examples.*"
+               sourcepath="${exampledir}:src"
+               destdir="./api"
+	       use="yes"
+	       doclet="jass.util.doc.JassDoc"
+	       docletpathref="classpath.base">
+	<link href="http://java.sun.com/products/jdk/1.2/docs/api/"/>
+	<link href="docs/api"/>
+      </javadoc>
+   </target>
+      
+   <target name="javadoc1.4" depends="jass" if="java1.4">
+      <mkdir dir="./api"/>
+      <exec executable="javadoc" timeout="10000">
+        <arg value="-tag"/> <arg value="jass.require:a:Requires:"/>
+        <arg value="-tag"/> <arg value="jass.ensure:a:Ensures:"/>
+        <arg value="-tag"/> <arg value="jass.invariant:a:Invariant:"/>
+	<arg value="-d"/>   <arg value="./api"/>
+ 	<arg value="-sourcepath"/><arg value="${exampledir}:src"/>
+	<arg value="-link"/><arg value="http://java.sun.com/products/jdk/1.2/docs/api/"/>
+	<arg value="-link"/><arg value="../docs/api"/>
+        <arg value="jass.examples"/>
+      </exec>
+   </target>
+
+   <target name="version">
+      <available property="java1.4" classname="com.sun.tools.doclets.Taglet"
+                 classpathref="classpath.base"/>
+   </target>
+      
+   <target name="examplesTA">
+      <jass>
+        <src path="."/>
+        <include name="jass/examples/traceAssertion/**"/>
+        <classpath>
+           <path refid="classpath.base"/>
+           <pathelement location="${dist}/jass.jar"/>
+        </classpath>
+      </jass>
+      <javac>
+        <src path="."/>
+        <include name="jass/examples/traceAssertion/**"/>
+        <classpath>
+           <path refid="classpath.base"/>
+           <pathelement location="${dist}/jass.jar"/>
+        </classpath>
+      </javac>
+   </target>
+
+   <target name="clean">
+     <delete>
+        <fileset dir="jass/examples">
+           <include name="*.java"/>
+           <include name="*.class"/>
+        </fileset>
+         <fileset dir="jass/examples/traceAssertion">
+           <include name="*.java"/>
+           <include name="*.class"/>
+        </fileset>
+    </delete>
+   </target>
+</project>

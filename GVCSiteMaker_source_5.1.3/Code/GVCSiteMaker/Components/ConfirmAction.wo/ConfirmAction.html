@@ -1,0 +1,48 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME="ConfirmationForm"> 
+    	<table border="0" cellpadding="0" cellspacing="0" class="content">
+        	<TR>
+				<td style="padding-left: 2px;"> 
+					<h1>Confirm <WEBOBJECT NAME="ActionName"></WEBOBJECT></h1>
+				</TD>
+			</TR>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"></td></tr>
+					</table>
+				</td>
+			</tr>
+		</TABLE>
+		<TABLE BORDER="0" CELLPADDING="4" CELLSPACING="4" class="content">
+			<TR>
+				<TD VALIGN="top" COLSPAN="2" align="center">
+					<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="2">
+						<TR>
+							<TD>
+								<webobject name="DefaultMessageConditional">								
+								You are about to <WEBOBJECT NAME="ActionName"></WEBOBJECT> the <WEBOBJECT NAME="Descriptor"></WEBOBJECT>
+								<span class="coloredText">&quot;<WEBOBJECT NAME="Message"></WEBOBJECT>&quot;</span>
+								<br />
+								This action cannot be reversed. Do you wish to continue ?
+								</webobject><webobject name="DisplayCustomMessageConditional"><webobject name="CustomMessage"></webobject></webobject>
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</table>
+		<table align="center">
+			<TR>
+				<!-- May need a table for Netscape 4 if memmory serves me correct... -->
+				<TD VALIGN="top" align="center" class="deleteButton">
+					<WEBOBJECT NAME="DeleteButton"></WEBOBJECT>
+				</TD>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<TD align="center">
+					<WEBOBJECT NAME=SubmitButton></WEBOBJECT>
+				</TD>
+			</TR>
+		</TABLE>
+	</WEBOBJECT>
+</webobject>

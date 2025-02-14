@@ -1,0 +1,124 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject name = "CanUserConfigureWebsite">
+    <webobject name = "FileManagementForm">
+      <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+        <tr>
+          <td colspan = "2" style = "padding-left: 2px;">
+            <h1> Edit Properties </h1>
+          </td>
+        </tr>
+        <tr>
+          <td valign = "top" align = "left" style = "padding-right: 2px;">
+            <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+              Back to Manage Files</webobject>
+          </td>
+          <td valign = "top" align = "right" style = "padding-right: 2px;">
+            <webobject name = "ReplaceFileSubmitButton" />
+            <webobject name = "EmailFileSubmitButton" />
+            <webobject name = "CANCEL" />
+            <webobject name = "ACCEPT_CHANGES" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+              <tr>
+                <td><hr class = "primaryBarStyle" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+
+      <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>File Name:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn"><webobject name = "FileNameString" /></td>
+        </tr>
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>Size:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn"><webobject name = "FileSize" /></td>
+        </tr>
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>Last Modified:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn">
+            <webobject name = "String2" />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>Move to folder:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn">
+            <webobject name = "FoldersPopUpButton" />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan = "2" align = "top"> <webobject name = "GroupPicker" /> </td>
+        </tr>
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>Short Name:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn">
+            <webobject name = "ShortNameTextField" />
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <!-- try to force grid like look across WOComponents -->
+          <td valign = "top" class = "leftContentColumn">
+            <b>File Description:</b>
+            <br />
+            <img src = "/GVCSiteMaker/Images/spacer.gif" width = "250" height = "1" />
+          </td>
+          <td valign = "top" class = "rightContentColumn">
+            <!-- Matches Group Picker width -->
+            <webobject name = "FILE_DESCRIPTION_INPUT" />
+          </td>
+        </tr>
+        <tr>
+          <td valign = "top" class = "leftContentColumn">
+            <b>MIME type:</b>
+          </td>
+          <td class = "rightContentColumn">
+            <webobject name = "MimeTypesPopUpButton" />
+            <br />
+            <span class = "descriptiveText">
+              The MIME type is the information that tells 
+              <webobject name = "ProductNameString" />
+              and users' web browsers how to handle and display files. Your new file was recognized as being of type 
+              <span class = "coloredText">
+                &quot;<webobject name = "MimeType" />&quot;</span>. You may accept this choice or specify a different type. 
+            </span>
+          </td>
+        </tr>
+      </table>
+      <!-- END TABLE WTH FILE DESCRIPTION AND MIME TYPE EDITS -->
+    </webobject>
+    <!-- END FORM -->
+    <!-- END MAIN TABLE IF PERMISSION TO CONFIG SITE -->
+  </webobject>
+  <!-- END IF PERMISSION TO CONFIG SITE -->
+  <webobject name = "UserCanNotConfigureWebsite">
+    <h3>Sorry, you don't have permission to configure this site!</h3>
+    <br />
+  </webobject>
+</webobject>

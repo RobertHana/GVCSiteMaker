@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / Introduction to Design by Contract
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">Introduction to Design by Contract</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">Motivation</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">Design by contract</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">The Aims</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">What are assertions?</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">5</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect5">Violations of the contract: success or failure</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    Introduction to Design by Contract<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+    next: 
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+  <hr size="1" noshade/>
+</div>
+  <h1><a name="intro1"></a>
+  <a name="sect1">
+  1 Motivation</a></h1>
+      <p> Although the design and use of complex software systems has made
+it possible to accumulate much experience and a considerable technical
+know-how in the area of electronic data processing, it is still very
+difficult to develop error-free software. However, computers are used
+in areas in which errors can lead to disastrous consequences. The task
+of developing software has become even more difficult due to the
+complexity of computer systems that has increased enormously in recent
+years and that requires teamwork and project management. Additionally,
+the problems have not become easier in view of calls for reusability
+which is an essential aspect of object-oriented methods. </p>
+<p> Software bugs can be very expensive. Still, for most languages
+there is no satisfactory concept for the development of reliable
+software. Formal languages for the systematic specification of all
+tasks a program has to perform can be useful tools. They often meet
+with considerable opposition in the industry, though. This is because
+they require extra effort because they create an increase in work
+load. This effort is only regarded as economically acceptable in areas
+that are crucial in terms of security. Without a formal description,
+however, the validity of certain desired properties of the software
+system cannot be proven. Therefore, even after extensive test runs one
+can never be sure that the software is actually free from
+bugs. Developing software thus often means looking for compromises and
+weighing costs against correctness. </p>
+<p> This is where the concept of <em>design by contract</em> comes in.
+It tries to do justice to both aspects and promote reusability at the
+same time. The concept was suggested by Bertrand Meyer and bundles a
+plethora of theoretical and practical insights. It combines the
+object-oriented approach, abstract data types and methods taken from
+software verification. </p>
+<p> The idea is made up of four major aims: </p>
+<dl>
+<dt>Formal specification</dt>
+  <dd> A formal specification can be given as an intrinsic part of the
+      language without requiring further efforts in the learning
+      process nor in the actual use.</dd>
+<dt>Documentation</dt>
+  <dd>The specification is part of the program code and can
+     automatically be extracted from it.</dd>
+<dt>Debugging</dt> 
+  <dd>The program can check itself during runtime if
+     the specified conditions are met.</dd>
+<dt>Software-tolerance</dt>
+  <dd>In the case of a violation of the contract an exception is
+     triggered which can itself be handled by the program.</dd>
+</dl>
+<p> Design by contract cannot give and does not want to give easy answers to all problems. It is a down-to-earth concept that tries to contribute to the development of large software systems, making use of all methods and techniques available nowadays.</p> 
+
+<p> The language 
+  
+
+<a name="idx1"><em></em></a>
+<a href="http://www.eiffel.com">Eiffel</a> was designed to put this concept
+into practice. It is object-oriented, generic, supports multiple
+inheritance and has an exception handler. Basically, Eiffel is not
+much different from other current object-oriented languages: they are
+quite comparable in terms of essential language elements for the
+programming and also in terms of expressiveness. However, Eiffel has a
+methodological background that is different from that of other
+languages. It is this background that opens up new perspectives for
+the development of software of a higher quality.</p>
+<p> Even though Eiffel has attracted a large number of followers and
+is used in numerous commercial products it was not as successful as
+other languages like C++. This is certainly due to the fact that C++
+is very wide-spread and has a long history in the beginnings of which
+with C a standard language for the systems programming on various
+platforms came into existence.</p>
+<p> 
+  
+
+<a name="idx2"><em></em></a>
+<a href="http://www.javasoft.com">Java</a> was published in 1991 by
+<a href="http://www.sun.com">Sun Microsystems</a>. This language was meant to succeed C++ and to be used mainly on the internet. Its syntax being based on C++, it contains a number of changes and improvements. Java was booming. It spread very rapidly and quickly turned into one of the most important languages for practical software development, especially in the area of distributed systems. As it supports dynamic loading of classes, systems can be distributed, developed and used all over the internet.</p>
+<p> As part of a thesis the concept of design by contract was examined and transferred to Java. For this purpose certain instructions have been included in the language that make it possible to express assertions in the programs. These instructions have the form of comments so that such an extended program will still be accepted by the Java compiler. A precompiler translates these comments into statements in Java, which then check the assertions during runtime and trigger exceptions in the case of violations.</p>
+<p> The result of this work is the extended language Jass (<strong>J</strong>ava with <strong>Ass</strong>ertions), including the precompiler to translate the extensions. The chosen approach in the transference to Java opts for a completely transparent handling for the developer. At the same time, it allows for numerous additional options for the precompiler by which the degree of the translation can be regulated.</p>
+<p> In this work much importance was attached to an unproblematic and step by step transition phase, as an abrupt change in the methods is often rejected and does more harm than good. The developer shall appreciate the new methods and intensify their use gradually and thus ultimately be supported in the development of software that is much higher in quality.</p>
+  <h1>
+  <a name="sect2">
+  2 Design by contract</a></h1>
+      <p>Software development involves at least two groups of people. First,
+the developer or producer producing the software. Second, the user or
+customer who uses the software and who wants it to perform certain
+tasks. If the product is a library of software components, the
+programmer who uses this library for his own programs shall be
+regarded as a customer of these components.</p>
+<p>The concept of <em>design by contract</em> makes use of a metaphor,
+according to which there is a contract between both groups for the use
+of the software. The contract describes under what conditions the
+software may be used and which tasks it is supposed to perform. These
+conditions and tasks can be considered rights and obligations for both
+parties.</p>
+<p>An obligation for one group is a right for the other and vice
+versa. The producer promises to render the services as described in
+the contract provided the user promises to meet the conditions. He
+therefore does not have to check these explicitly anymore which allows
+an easy and efficient implementation. The user gets a guarantee for
+these services provided he satisfies the conditions. The contract can
+thus be regarded as a 
+  
+
+<a name="idx3"><em>specification</em></a> of the software.</p>
+<p>The idea is to check whether the contract is satisfied by a formal description of the conditions and the services. For this reason 
+  
+
+<a name="idx4"><em>correctness formulae</em></a> are included in the software components on the basis of an operational semantics. A correctness formula:</p>
+<p align=center>
+  {p} S {q}
+</p>
+<p>consists of a precondition p, a program S and a postcondition q. It
+basically means that a program is correct with respect to p and q if
+after the execution of S the condition q holds as long as S was
+started in a state which fulfilled p. Provided that p, the program
+guarantees that q is fulfilled. Unlike in the case of software
+verification, the correctness formulae are not statically verified but
+are dynamically checked during runtime.</p>
+<p>In object-oriented languages each method call of an instance can be
+regarded as the execution of an independent program in such a way that
+the arrays of the respective class are global variables. The
+precondition in the correctness formula expresses the conditions under
+which the method call is allowed, and the postcondition contains those
+tasks that are supposed to be performed by the call.</p>
+<p>The assertions in the correctness formulae used in this connection are boolean expressions which may contain variables and method calls. These assertions can be translated by the compiler as conditional statements and thus be checked during runtime. By using the methods even complex conditions can be expressed as assertions. Examples for assertions are given in 
+  <a href="#intro4" target="_top">What are assertions?</a>.</p>
+  <h1><a name="intro3"></a>
+  <a name="sect3">
+  3 The Aims</a></h1>
+<a name="idx5"><em></em></a> 
+
+<p>In section   <a href="#intro1" target="_top">Motivation</a> the four major
+aims of design by contract have been mentioned. They will now be
+described in more detail. Their mutual influence plays an important
+role in this respect and constitutes a fifth, indirect aim.</p>
+<p><strong>Formal language for specification</strong></p>
+<p>The most important aspect is the possibility of formal
+specification. Assertions are a mechanism directly integrated into the
+language by means of which this can be reached.</p>
+<p><cite>
+&quot;The advantages of exact specification and a systematic procedure
+in the software development can hardly be overemphasized. (...)
+Assertions are an urgently needed method to describe exactly what is
+expected of each party and what is guaranteed.&quot;
+</cite></p>
+<p>It is important that assertions are just a subset of quantification theory, the subset which every developer is automatically familiar with because of his programming skills. He does not have to be able to use quantifiers but can think in terms of his own familiar language. In other words, he can make use of boolean expressions which may contain those identifiers for data structures and methods defined in his program.</p>
+<p><strong>Documentation aid</strong></p>
+<p>The documentation of the software system is considered a contract between user and developer. It must contain all assertions of the class. Thus, all rights and obligations are publicly known. That they are understood by the users is ensured by using only those boolean expressions in the assertions that are also used in the other instructions of the language. This is important as the user may not be familiar with formal methods.</p>
+<p>It would certainly be impractical if after every change in the assertions changes in the documentation had to be carried out manually. Many software engineers share the view that the documentation should not be separated from the program. In Eiffel both are contained in the same file and can be automatically extracted by a tool called "short". Java supports this concept as well, the tool here being called "JavaDoc".</p>
+<p>This automatic extraction has two striking advantages: there is no
+arduous copying (which would be necessary to include all assertions in
+the documentation) and there is no specification that always has to be
+up to date. This guaranteed consistency is an essential part of design
+by contract and will be described in more detail in chapter five.</p>
+<p><strong>Debugging aid</strong></p>
+<p>So far it was only possible to write the assertions into the program
+and thereby into the documentation as well. If one wants to guarantee
+that they are satisfied all assertions have to be checked during
+runtime. Only then can one be sure that the system is in a defined
+state. This task is supported by the computer. It generates the code
+which checks an assertion in consideration of inheritance. The extent
+of the assertions to be checked can be controlled by the modes given
+in 
+  <a href="../doc/handbook.html" target="_top">
+the handbook of Jass</a>.</p>
+<p>The choice of an appropriate mode is a question of the importance of
+efficiency and security. If efficiency is more important, the check is
+turned off by choosing the option <em>nothing</em> for the respective
+classes. This is advantageous in terms of time and memory since the
+compiler does not generate a code for the checks and no checks are
+consequently made during runtime. If security is more important, all
+assertions should remain active. The amount of time can be estimated
+by the set of assertions used, if these are considered an expression
+in a conditional statement. At this point it is important to check
+assertions of the class invariant (including inherited assertions) at
+the beginning and at the end of a method. If method calls or complex
+expressions are used in the assertions, the time needed must be added
+as well.</p>
+<p>Jass supports many options to check some kinds of assertions and some not. The developer of the class can scale the produced code individually to gain a compromise between performance and security.</p>
+<b>Support of fault-tolerant behaviour</b>
+<p>Up to now, by using assertions one can only describe what a program is supposed to do and then check these statements during runtime.</p>
+<p>For such cases Eiffel is equipped with an exception handler. At the
+end of a method body a rescue-block can be stated which is called if
+the body triggers an exception. The purpose of this statement is to
+leave behind the system in a stable state (which is expressed as a
+class invariant). What is special about this kind of error management
+is that each method call is either successful or fails and that this
+is reported to the caller in either case.    <a href="#intro5" target="_top">Violations of the contract - success or failure</a>
+discusses this point in more detail.</p>
+<p>If no other precautions are taken, the error still leads to the termination of the system, but disasters are avoided as the error cannot spread any further. The class invariant will be described in 
+
+  <a href="../doc/assert.html#invariant" target="_top">
+The class invariant: 'invariant'</a>
+, the rescue-statement in
+  <a href="../doc/assert.html#rescue" target="_top">
+The rescue-block: 'rescue'</a>.</p>
+<p>Another possibility in connection with exceptions is offered by the retry-statement. It is stated within the rescue-block or in a method called from within the rescue-block. By means of the retry-statement another execution of the method body can be triggered which may possibly be able to satisfy the contract. The caller gets no information about this (except for the fact that the call has taken slightly more time than usual). A detailed description of the retry-statement will be given in
+  <a href="../doc/assert.html#rescue" target="_top">
+The retry-statement: 'retry'</a>.</p>
+<p>With these language elements the robustness of the system can be increased considerably. The result is a system that reacts in a controlled way even in exceptional situations and thus protects the data in an optimal way.</p>
+<b>Synergies</b>
+<p> In the previous section the advantages of design by contract have
+been discussed at length. They are a powerful tool in the development
+of large software systems. However, as soon as one asks an experienced
+developer one frequently receives an answer along the following lines:
+'In the course of my work I have developed a style of my own that
+already contains these concepts. So why should I switch over and learn
+a new method if I can't benefit from it?' </p>
+<p>Such an answer is by all means understandable. By disciplined work
+software can be produced that satisfies high demands of quality. For
+in one's specification one does try and formulate all conditions that
+have to be fulfilled when calling a method. And one naturally tries to
+avoid all situations that might lead to errors or even crashes. But
+experience with software systems has shown that in most cases this
+approach does not work. Even if the consequences are seldom as
+disastrous as in the Ariane-example, we have to ask why this is the
+case, why bugs creep into our programs time and again.</p>
+<p>The answer is: consistency. Today's programs are of such an
+enormous complexity that one can rarely survey them or keep track of
+every single detail. Team work increases these problems. It is
+possible that the software contains sections one may never come
+across. One has to rely on the statements given in the documentation
+about the interfaces without being assured that these are actually
+followed.</p>
+<p>Unfortunately, we are often left in the dark about some properties
+of the software. The famous 'undocumented functions' are a case in
+point. It is a pity that these functions cannot be used if this allows
+more elegant or more efficient implementation. The phrase 'It's not a
+bug, it's a feature' is well-known.</p>
+<p>However, what has not been discovered are the synergies. If by
+combining components we get more than the sum of the parts the term
+'synergy' is used. The four advantages mentioned so far all have
+synergies. Every formally specified property is automatically
+documented and checked and can be handled by the program itself. The
+contract and the error management as well are always up to date. If
+one tried to reach the aims by four different methods, errors were
+bound to creep in as a result of inconsistencies. Thus, software of a
+higher quality can be produced with the same effort, or, to put it
+another way, the same quality can be achieved with less effort.</p>
+  <h1><a name="intro4"></a>
+  <a name="sect4">
+  4 What are assertions?</a></h1>
+<a name="idx6"><em></em></a> 
+
+<p>Assertions are statements about the state of objects. They describe
+properties of these objects, which have to be true at specific points
+of time during the execution of the program, and are either true or
+false.</p>
+<p>In the extended language Jass it is possible to insert assertions into the program in addition to the Java-statements. For instance, at the beginning of a method call the parameter '<code>a</code>' of type integer might be required to be unequal to 0. This property is an assertion and in Jass it can be included in the source code of the method by a require-statement:</p>
+<p><code>/** require a!=0 **/</code></p>
+<p>If in the class a method '<code>IsEven</code>' is formulated that is assigned an integer-value and that returns a boolean value, a second condition might be that the value of the parameter '<code>a</code>' be even:</p>
+<p><code>/** require a!=0; IsEven(a) **/</code></p>
+<p>In this connection nested method calls such as '<code>f(g(h(s)))</code>' and accesses via references like '<code>a.f(x)</code>' are allowed. However there are some restrictions for the usage of variables and methods which are described in ...</p>
+<p>Assertions do not occur on their own, they are always part of one of the following statements:</p>
+<ul>
+<li>
+  <a href="../doc/assert.html#prepost" target="_top">
+Preconditions and postconditions: 'require' and 'ensure'</a> </li>
+<li>
+  <a href="../doc/assert.html#invariant" target="_top">
+The classinvariant: 'invariant'</a> </li>
+<li>
+  <a href="../doc/assert.html#loop" target="_top">
+The loopinvariant and the loop variant: 'invariant' and 'variant'</a> </li>
+<li>
+  <a href="../doc/assert.html#check" target="_top">
+The check-statement: 'check'</a> </li>
+<li>
+  <a href="../doc/assert.html#rescue" target="_top">
+The rescue-block: 'rescue' and the retry-statement: 'retry'</a> </li>
+</ul>
+<p>A slow and gradual change to the concept of design by contract is
+aimed at. The way back is supposed to remain open at the same
+time. For this reason, all extensions of the language are introduced
+as comments which have to be translated by a precompiler into ordinary
+Java-code. This is how in each case one can return to the direct use
+of the Java compiler without making a detour via the precompiler.</p>
+  <h1><a name="intro5"></a>
+  <a name="sect5">
+  5 Violations of the contract: success or failure</a></h1>
+<a name="idx7"><em></em></a>
+<p>In the previous section we have been discussing the topic of
+checking only. But what happens if an assertion is violated? The
+answer is: an exception is triggered.</p>
+<p>Such an exception can then be caught and usually be handled
+accordingly. In Jass there is a particular exception handler that is
+very different from that of other languages like C++, Java, or Ada. In
+these languages an exception can be used like a 'goto'-statement in
+order to exit a method at any position and then return to the
+caller. The possibilities are potentially dangerous as they may
+prevent errors from being caught.</p>
+<p>Imagine a class '<code>Limited Stack</code>' which represents a
+stack of limited capacity and which is implemented as an array. Let it
+have a method '<code>push</code>' of which the implementation be based
+on another method '<code>setArrayField</code>'. If the array is full
+and an internal counter exits the array, '<code>setArrayField</code>'
+triggers an exception that is caught by '<code>push</code>'.</p>
+<p>The developer of '<code>Limited Stack</code>' wants a robust module
+that is easy to handle. Thus, it is plausible if he ends the call of
+'<code>push</code>' after catching the exception and if he includes in
+the specification the statement that '<code>push</code>' may not be
+called if the stack is full.</p>
+<p>For the user a dangerous error source is created here. It is
+possible that elements get lost completely during runtime if the check
+has been carried out sloppily. In practice this happens quite
+frequently because the check is not compulsory. This problem becomes
+especially important in the case of team work. If the class is already
+in use, an error is possibly let in through the back door by the
+changed specification that does not trigger any actions.</p>
+<p>Such a behaviour is not what design by contract is about. There
+should be exactly two ways for a method to terminate:</p>
+<dl>
+<dt>Success:</dt> 
+<dd>The method call accomplishes its task, i.e. at the beginning the
+precondition and the class invariant are fulfilled, there is no error
+within the method body, and the postcondition and again the class
+invariant are fulfilled.</dd>
+<dt>Failure:</dt>
+<dd>For some reason the method is not able to perform its task
+completely. One of the assertions may be violated or an exception may
+be triggered for some other reason. The failure is reported by handing
+over the exception.</dd>
+</dl>
+<p>The second case implies that the caller is in the same position as
+the called method. The failure of one of its parts signifies that he
+has failed as well. He behaves analogously and reports the
+exception. Thus, the kind of behaviour described above cannot
+occur.</p>
+<p>
+<a name="idx8"><em></em></a> Jass has two further language
+constructs to ensure that not every error leads to the termination of
+the whole system and to guarantee the integrity of the class that has
+been alluded to above. These are the <em>rescue-block</em> and the
+<em>retry-statement</em>.</p>
+<p>The rescue-block can be stated at the end of the method body. If an
+exception occurs during the execution of the method, the body is
+terminated abruptly and the rescue-block is started. Here the
+developer can insert statements such that the integrity of the class
+is ensured. For instance, in a data base with a transaction concept
+the consistency of the data base is guaranteed by undoing those steps
+of the operation that have already been carried out. The exception is
+not deleted, however, but it reports the failure.</p>
+<p>The retry-statement ensures further flexibility. It can retrigger
+the execution of the method body from within the rescue-block. If then
+all the conditions required for the success are satisfied, it has been
+able to fulfil the contract all the same. These retries remain
+invisible, if one disregards the slightly longer runtime.</p>
+<p>Thus, the method call fails if and only if the method is left by
+ending the rescue-block. Furthermore, there is success if and only if
+the method is left by ending its body, possibly after a retry.</p>
+<p>Rescue and retry are two exception handlers that handle the errors
+where they occur: in the method itself. They cannot spread and cause
+damage at other places; errors of the kind described above are
+avoided, as the changed specification is automatically integrated in
+the check during runtime.</p>
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+    next: 
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

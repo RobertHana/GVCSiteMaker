@@ -1,0 +1,221 @@
+BannerText: WOTextField {
+	size = "40";
+	maxLength = 100;
+	value = bannerTitle;
+}
+
+ConfigAppearanceForm: WOForm {
+    id = "ConfigAppearanceForm";
+    multipleSubmit = true;
+}
+ConfigAppearanceUpdateArea: AjaxUpdateContainer {
+    id = "ConfigAppearanceUpdateArea";
+}
+
+ContactEmailTextField: WOTextField {
+	value = website.contactEmail;
+    size = "40";
+	maxLength = "100";
+}
+ContactFaxTextField: WOTextField {
+	value = website.contactFax;
+    size = "40";
+	maxLength = "25";
+}
+ContactNameTextField: WOTextField {
+	value = website.contactName;
+    size = "40";
+	maxLength = "100";
+}
+ContactPhoneTextField: WOTextField {
+	value = website.contactPhone;
+	maxLength = "25";
+    size = "40";
+}
+DoNotShowBannerRadioButton: WORadioButton {
+	name = "Banner";
+	selection = website.showBanner;
+	value = "N";
+}
+DoNotShowFooterRadioButton: WORadioButton {
+	name = "Footer";
+	selection = website.showFooter;
+	value = "N";
+}
+
+DoNotShowLinksRadioButton: WORadioButton {
+	name = "LoginLogout";
+	selection = website.showLoginLogoutLinks;
+	value = "N";
+}
+DoNotShowNavbarRadioButton: WORadioButton {
+	name = "NavBar";
+	selection = website.showNavbar;
+	value = "N";
+}
+
+InvalidBanner: WOConditional {
+	condition = isBannerValid;
+	negate = true;
+}
+
+
+InvalidFooterURL1Conditional: WOConditional {
+	condition = isFooterLinkURL1Invalid;
+}
+
+InvalidFooterURL2Conditional2: WOConditional {
+	condition = isFooterLinkURL2Invalid;
+}
+
+InvalidFooterURL3Conditional3: WOConditional {
+	condition = isFooterLinkURL3Invalid;
+}
+
+InvalidFooterURL4Conditional4: WOConditional {
+	condition = isFooterLinkURL4Invalid;
+}
+
+InvalidURLMessageString: WOString {
+	value = invalidFooterLinkURL1Message;
+}
+
+InvalidURLMessageString2: WOString {
+	value = invalidFooterLinkURL2Message;
+}
+
+InvalidURLMessageString3: WOString {
+	value = invalidFooterLinkURL3Message;
+}
+
+InvalidURLMessageString4: WOString {
+	value = invalidFooterLinkURL4Message;
+}
+
+LinkText1TextField: WOTextField {
+	value = website.footer.linkText1;
+	maxLength = "100";
+    size = "40";
+}
+
+LinkText2TextField: WOTextField {
+	value = website.footer.linkText2;
+	maxLength = "100";
+    size = "40";
+}
+
+LinkText3TextField: WOTextField {
+	value = website.footer.linkText3;
+	maxLength = "100";
+    size = "40";
+}
+
+LinkText4TextField: WOTextField {
+	value = website.footer.linkText4;
+	maxLength = "100";
+    size = "40";
+}
+
+LinkURL1TextField: WOTextField {
+	value = website.footer.linkURL1;
+	maxLength = "255";
+    size = "40";
+}
+
+LinkURL2TextField: WOTextField {
+	value = website.footer.linkURL2;
+	maxLength = "255";
+    size = "40";
+}
+
+LinkURL3TextField: WOTextField {
+	value = website.footer.linkURL3;
+	maxLength = "255";
+    size = "40";
+}
+
+LinkURL4TextField: WOTextField {
+	value = website.footer.linkURL4;
+	maxLength = "255";
+    size = "40";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ConfigAppearance";
+}
+
+ResetButton: AjaxResetButton {
+    formId = "ConfigAppearanceForm";
+	value = "Reset";
+    updateContainerID = "ConfigAppearanceUpdateArea";
+}
+SUBMIT: AjaxSubmitButton {
+	onClickBefore = "tinymce.EditorManager.triggerSave() || true";  // Total hack as there is no onBeforeClick or willClick or whatever binding, yet...
+	action = saveChanges;
+	value = "Save";
+    updateContainerID = "ConfigAppearanceUpdateArea";
+}
+SUBMIT_PREVIEW: AjaxSubmitButton {
+	onClickBefore = "tinymce.EditorManager.triggerSave() || true";  // Total hack as there is no onBeforeClick or willClick or whatever binding, yet...
+	action = savePreviewChanges;
+	value = "Save & View";
+    updateContainerID = "ConfigAppearanceUpdateArea";
+    onSuccess = previewJS;
+}
+
+ShowBannerRadioButton: WORadioButton {
+	name = "Banner";
+	selection = website.showBanner;
+	value = "Y";
+}
+ShowFooterRadioButton: WORadioButton {
+	name = "Footer";
+	selection = website.showFooter;
+	value = "Y";
+}
+
+ShowLinksRadioButton: WORadioButton {
+	name = "LoginLogout";
+	selection = website.showLoginLogoutLinks;
+	value = "Y";
+}
+ShowNavbarRadioButton: WORadioButton {
+	name = "NavBar";
+	selection = website.showNavbar;
+	value = "Y";
+}
+
+StyleChooser: WOPopUpButton {
+	list = styles;
+	selection = website.sectionStyle;
+	item = aStyle;
+	displayString = aStyle.name;
+}
+
+CustomHeaderText: WOText {
+    cols = "40";
+    rows = "20";
+    value = website.customHeaderContent;
+}
+
+ShowHideCustomFooterHyperlink: AjaxUpdateLink {
+    action = showHideCustomFooter;
+    updateContainerID = "ConfigAppearanceUpdateArea";
+    evalScripts = true;
+}
+
+ShowCustomFooterConditional: WOConditional {
+    condition = showCustomFooter;
+}
+
+CustomFooterText: WOText {
+    cols = "40";
+    rows = "20";
+    value = website.footer.customFooter;
+    id = "CustomFooterText";
+}
+
+CustomJSEditorInitString: WOString {
+    value = customJSEditorInitString;
+    escapeHTML = false;
+}

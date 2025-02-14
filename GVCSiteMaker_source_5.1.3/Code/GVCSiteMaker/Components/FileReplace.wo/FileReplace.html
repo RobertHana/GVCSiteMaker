@@ -1,0 +1,124 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject name = "ReplaceModeConditional">
+    <webobject name = "FileUploadForm">
+      <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+        <!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+        <tr>
+          <td colspan = "2" style = "padding-left: 2px;">
+            <h2>Replace File</h2>
+          </td>
+        </tr>
+        <tr>
+          <td valign = "top" align = "left" style = "padding-right: 2px;">
+            <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+              Back to Manage Files</webobject>
+          </td>
+          <td valign = "top" align = "right" style = "padding-right: 2px;">
+            <webobject name = "CancelButton" />
+            <img height = "2" width = "5" src = "/GVCSiteMaker/Images/spacer.gif" />
+            <webobject name = "UPLOAD_FILE_BUTTON" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+              <tr>
+                <td><hr class = "primaryBarStyle" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+
+      <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+        <tr>
+          <td valign = "top" width = "300" class = "boldText"> Show Confirmation Page: </td>
+          <td valign = "top">
+            <webobject name = "YesRadioButton" />Yes 
+            <img height = "2" width = "50" src = "/GVCSiteMaker/Images/spacer.gif" />
+            <webobject name = "NoRadioButton" />No</td>
+        </tr>
+        <tr>
+          <td colspan = "2"> <webobject name = "GroupPicker" /> </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            If you want to overwrite the version of 
+            <span class = "coloredText">
+              &quot;<webobject name = "UploadFileName" />&quot; 
+            </span>
+            that is currently stored in 
+            <webobject name = "ProductNameString" />, browse for the location of the new version. 
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign = "top" width = "300" class = "boldText"> Select New Version of File to Upload: </td>
+          <td valign = "top"> <webobject name = "FILE_UPLOAD" /> </td>
+        </tr>
+        <tr>
+          <td colspan = "2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "microText">
+            <span class = "warningText">Internet Explorer 5.0 Users:</span>
+            IE 5.0 on Windows contains a bug that will prevent your upload from succeeding.  You will need to upgrade your browser to version 5.01 (or later).  This can be downloaded from 
+            <a href = "http://www.microsoft.com/windows/ie/downloads/archive/default.asp">Microsoft</a>. 
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+  <!-- end of form -->
+  <webobject name = "ConfirmModeConditional">
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+      <!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h1>Upload New Files - Upload Confirmation</h1>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "Form1"><webobject name = "DoneButton" /></webobject>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td> <hr class = "primaryBarStyle" /> </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+            <!-- 95% width is more dynamic in Netscape 4 -->
+            <tr>
+              <th class = "coloredTableHeading" width = "10%">Upload</th>
+              <th class = "coloredTableHeading" width = "50%">Status</th>
+              <th class = "coloredTableHeading" width = "25%">Name</th>
+              <th class = "coloredTableHeading" width = "15%">Size</th>
+            </tr>
+            <tr valign = "TOP">
+              <td align = "center">1</td>
+              <td align = "left">
+                <b><webobject name = "StatusString" /></b>
+              </td>
+              <td align = "left"><webobject name = "FileNameString" /></td>
+              <td align = "right"><webobject name = "FileSizeString" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>
+<!-- end of dynamic body -->

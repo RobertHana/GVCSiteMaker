@@ -1,0 +1,55 @@
+HasSubmenuConditional: WOConditional {
+	condition = hasSubMenu;
+}
+
+IDString: WOString {
+	value = cssID;
+}
+
+IsSelectedMenuConditional: WOConditional {
+	condition = isSelected;
+}
+
+IsSelectedSubMenuConditional: WOConditional {
+	condition = isSelected;
+}
+
+MainMenuRepetition: WORepetition {
+	list = menu.elements;
+	item = aMenuElement;
+}
+
+MenuElementHyperlink: WOHyperlink {
+	pageName = aMenuElement.actionName;
+}
+
+MenuElementString: WOString {
+	value = aMenuElement.linkHTML;
+	escapeHTML = true;
+}
+
+SelectedMenuCSSClassString: WOString {
+	value = selectedMenuCSSClass;
+}
+
+SelectedSubMenuCSSClassString: WOString {
+	value = selectedSubMenuCSSClass;
+}
+
+SubMenuCSSClassString: WOString {
+	value = subMenuCSSClass;
+}
+
+SubMenuElementHyperlink: WOHyperlink {
+	pageName = aMenuElement.actionName;
+}
+
+SubMenuElementString: WOString {
+	value = aMenuElement.linkHTML;
+	escapeHTML = true;
+}
+
+SubMenuRepetition: WORepetition {
+	list = subMenu.elements;
+	item = aMenuElement;
+}

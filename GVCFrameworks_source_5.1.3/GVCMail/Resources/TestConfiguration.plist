@@ -1,0 +1,7 @@
+{
+	// TODO Set the following items before running the test.  Don't check in your account info!
+	MailServer = "mail.someserver.com";
+	POPAccount = "you@someserver.com";
+	MailUser = "you";
+	MailUserPassword = "secret";
+}

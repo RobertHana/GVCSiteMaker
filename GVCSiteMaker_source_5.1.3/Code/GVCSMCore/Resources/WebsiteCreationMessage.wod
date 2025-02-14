@@ -1,0 +1,50 @@
+ClonedSiteID : WOString {
+	value = website.clonedSiteID;
+}
+
+
+ConfigureSiteURL : WOString {
+	value = websiteConfigURL;
+}
+
+
+GVCSiteMakerFromAddress : WOString {
+	value = application.properties.FromAddress;
+}
+
+
+IsClonedSite : WOConditional {
+	condition = website.clonedSiteID;
+}
+
+
+OwnerUserID : WOString {
+	value = website.owner.userID;
+}
+
+
+NearestUnitAdmins : WOString {
+	value = emailAddressesForNearestAdmins;
+}
+
+
+SiteID : WOString {
+	value = website.siteID;
+}
+
+SiteQuota : WOString {
+	value = website.megQuota;
+}
+
+
+SiteURL : WOString {
+	value = website.siteURL;
+}
+
+
+UnitName : WOString {
+	value = website.parentOrgUnit.unitName;
+	escapeHTML = false;
+}
+
+

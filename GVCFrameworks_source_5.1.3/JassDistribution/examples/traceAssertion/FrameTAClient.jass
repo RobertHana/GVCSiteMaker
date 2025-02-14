@@ -1,0 +1,39 @@
+package jass.examples.traceAssertion;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+public class FrameTAClient
+{	
+    public void test() {
+	// violate trace assertion
+	
+	FrameTA frame = new FrameTA();
+	
+	frame.show();
+    }
+	
+
+    /* Before a frame is shown a title must be set */
+    /** invariant
+
+
+	[FrameWithTitle] trace {
+	    FrameTA.FrameTA(String title), 
+	    FrameTA.setTitle(String), 
+	    FrameTA.show()
+	  }(
+	    UseConstructor(){ 
+	      FrameTA(String title) -> (CALL UseMethod() <|> show() -> STOP)
+	    }
+
+	    UseMethod(){
+	      setTitle(String) -> (CALL UseMethod() <|> show() -> STOP)
+	    }
+
+	    MAIN(){
+	      CALL UseConstructor() <|> CALL UseMethod()
+	    }
+	  ); 
+    **/
+}

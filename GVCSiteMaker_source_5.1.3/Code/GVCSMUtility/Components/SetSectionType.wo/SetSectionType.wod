@@ -1,0 +1,13 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = setSectionType;
+}
+
+String1: WOString {
+	value = conversionMessage;
+}
+
+

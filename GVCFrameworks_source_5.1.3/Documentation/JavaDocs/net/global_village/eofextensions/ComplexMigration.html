@@ -1,0 +1,826 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+ComplexMigration (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ComplexMigration (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ComplexMigration.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/CopyableGenericRecord.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/ComplexMigration.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ComplexMigration.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_er.extensions.migration.ERXMigrationDatabase.Migration">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class ComplexMigration</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">er.extensions.migration.ERXMigrationDatabase.Migration
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.ComplexMigration</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>er.extensions.migration.IERXMigration</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.39"><B>ComplexMigration</B></A><DT>extends er.extensions.migration.ERXMigrationDatabase.Migration</DL>
+</PRE>
+
+<P>
+Migration that provides for migrations that combine changes from Java code, SQL
+ scripts, and DBUnit datasets.  This assumes that any SQL files are in a specific
+ structure under Resources:
+ <pre>
+ Resources/
+     &lt;OptionalDirectory&gt;/
+         &lt;DatabaseVendorName&gt;/
+             &lt;scripts go here&gt;/
+ </pre>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$REVISION$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2008  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_er.extensions.migration.ERXMigrationDatabase.Migration"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class er.extensions.migration.ERXMigrationDatabase.Migration</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>ALLOWS_NULL, NOT_NULL</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#ComplexMigration()">ComplexMigration</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSBundle</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#bundle()">bundle</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the bundle that the resources are loaded from.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)">databaseSpecificNameForScript</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to take a script path and suffix and customize it with the vendor name of the database
+ currently being migrated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#downgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)">downgrade</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                   er.extensions.migration.ERXMigrationDatabase&nbsp;database)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This  method does nothing and does not need to be implemented unless you really are supporting down grades</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#hasScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)">hasScript</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if a database specific script exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#hasScriptResource(java.lang.String)">hasScriptResource</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if a resource exists at the path.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#importData(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">importData</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Updates existing rows in the database with the DBUnit data set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#importDataAndUpdatePKSequence(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase, java.lang.String)">importDataAndUpdatePKSequence</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                           er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inserts the contents of the indicated resource as DBUnit data set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#modelDependencies()">modelDependencies</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an empty list to indicate that there are no dependencies.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#performDBUnitOperation(org.dbunit.operation.DatabaseOperation, java.lang.String, er.extensions.migration.ERXMigrationDatabase, java.lang.String)">performDBUnitOperation</A></B>(org.dbunit.operation.DatabaseOperation&nbsp;operation,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logAction,
+                                             er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Performs the indicated DbUnit operation on the database with the DBUnit data set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#removeData(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">removeData</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes the contents of the indicated resource as DBUnit data set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runRequiredScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)">runRequiredScript</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the database specific script if it exists and throws if it does not.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">runScript</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;script)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the contents of the indicated resource as an SQL script.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)">runScript</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the database specific script if it exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runScriptForMigration(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">runScriptForMigration</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs a database and migration specific script if it exists and throws if it does not.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runScriptResource(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">runScriptResource</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the contents of the indicated resource as an SQL script.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#runStatement(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">runStatement</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;statement)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs the statement string as a single SQL statement.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#throwIfScriptNotFound(er.extensions.migration.ERXMigrationDatabase, java.lang.String)">throwIfScriptNotFound</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throws if specified script does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#throwIfScriptNotFound(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)">throwIfScriptNotFound</A></B>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throws if a database specific script does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#upgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)">upgrade</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+               er.extensions.migration.ERXMigrationDatabase&nbsp;database)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the method to implement to perform migration.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_er.extensions.migration.ERXMigrationDatabase.Migration"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class er.extensions.migration.ERXMigrationDatabase.Migration</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>downgrade, languages, upgrade</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ComplexMigration()"><!-- --></A><H3>
+ComplexMigration</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.39"><B>ComplexMigration</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="modelDependencies()"><!-- --></A><H3>
+modelDependencies</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.57"><B>modelDependencies</B></A>()</PRE>
+<DL>
+<DD>Returns an empty list to indicate that there are no dependencies.  Subclasses
+ should override this as needed.  A declaration in the version 0 migration should
+ be sufficient.  An example:
+ <pre>
+ return new NSArray(new ERXModelVersion("OtherModel", 0) );
+ </pre>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>modelDependencies</CODE> in interface <CODE>er.extensions.migration.IERXMigration</CODE><DT><B>Overrides:</B><DD><CODE>modelDependencies</CODE> in class <CODE>er.extensions.migration.ERXMigrationDatabase.Migration</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an array of model versions that this migration depends on<DT><B>See Also:</B><DD><CODE>IERXMigration.modelDependencies()</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="upgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)"><!-- --></A><H3>
+upgrade</H3>
+<PRE>
+public abstract void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.73"><B>upgrade</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                             er.extensions.migration.ERXMigrationDatabase&nbsp;database)
+                      throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A></PRE>
+<DL>
+<DD>This is the method to implement to perform migration.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>upgrade</CODE> in class <CODE>er.extensions.migration.ERXMigrationDatabase.Migration</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - locked EOEditingContext that can be used if needed<DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A></CODE> - if any errors prevent migration<DT><B>See Also:</B><DD><CODE>ERXMigrationDatabase.Migration.upgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="downgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)"><!-- --></A><H3>
+downgrade</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.86"><B>downgrade</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                      er.extensions.migration.ERXMigrationDatabase&nbsp;database)
+               throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A></PRE>
+<DL>
+<DD>This  method does nothing and does not need to be implemented unless you really are supporting down grades
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>downgrade</CODE> in class <CODE>er.extensions.migration.ERXMigrationDatabase.Migration</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - locked EOEditingContext that can be used if needed<DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang">Throwable</A></CODE> - if any errors prevent migration<DT><B>See Also:</B><DD><CODE>ERXMigrationDatabase.Migration.downgrade(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="bundle()"><!-- --></A><H3>
+bundle</H3>
+<PRE>
+protected com.webobjects.foundation.NSBundle <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.102"><B>bundle</B></A>()</PRE>
+<DL>
+<DD>Returns the bundle that the resources are loaded from.  By default this is the bundle that the migration
+ is located in.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the bundle that the resources are loaded from</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><!-- --></A><H3>
+databaseSpecificNameForScript</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.120"><B>databaseSpecificNameForScript</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</PRE>
+<DL>
+<DD>Convenience method to take a script path and suffix and customize it with the vendor name of the database
+ currently being migrated.  For example, "SQL" and "DropTables.sql" would become "SQL/FrontBase/DropTables.sql when
+ migrating a FrontBase database.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory<DD><CODE>scriptSuffix</CODE> - final part of the script name including file type extension
+<DT><B>Returns:</B><DD>full path to database specific script</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><!-- --></A><H3>
+hasScript</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.143"><B>hasScript</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)</PRE>
+<DL>
+<DD>Returns true if a database specific script exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory<DD><CODE>scriptSuffix</CODE> - final part of the script name including file type extension
+<DT><B>Returns:</B><DD><code>true</code> if a database specific script exists<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<CODE>#hasScriptResource(EOEditingContext, ERXMigrationDatabase, String)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasScriptResource(java.lang.String)"><!-- --></A><H3>
+hasScriptResource</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.159"><B>hasScriptResource</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)</PRE>
+<DL>
+<DD>Returns true if a resource exists at the path.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>resourcePath</CODE> - full path to resource relative to the Resources directory
+<DT><B>Returns:</B><DD><code>true</code> if a resource exists at the path</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="throwIfScriptNotFound(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><!-- --></A><H3>
+throwIfScriptNotFound</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.179"><B>throwIfScriptNotFound</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)
+                              throws er.extensions.migration.ERXMigrationFailedException</PRE>
+<DL>
+<DD>Throws if a database specific script does not exist.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory<DD><CODE>scriptSuffix</CODE> - final part of the script name including file type extension
+<DT><B>Throws:</B>
+<DD><CODE>er.extensions.migration.ERXMigrationFailedException</CODE> - if a database specific script does not exist<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#hasScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>hasScript(ERXMigrationDatabase, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="throwIfScriptNotFound(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+throwIfScriptNotFound</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.203"><B>throwIfScriptNotFound</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                              throws er.extensions.migration.ERXMigrationFailedException</PRE>
+<DL>
+<DD>Throws if specified script does not exist.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePath</CODE> - path to script relative to Resources directory
+<DT><B>Throws:</B>
+<DD><CODE>er.extensions.migration.ERXMigrationFailedException</CODE> - if a database specific script does not exist<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#hasScriptResource(java.lang.String)"><CODE>hasScriptResource(String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><!-- --></A><H3>
+runScript</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.228"><B>runScript</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)
+                  throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs the database specific script if it exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory<DD><CODE>scriptSuffix</CODE> - final part of the script name including file type extension
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the script fails at the database<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<CODE>#hasScriptResource(EOEditingContext, ERXMigrationDatabase, String)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runRequiredScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><!-- --></A><H3>
+runRequiredScript</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.251"><B>runRequiredScript</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptSuffix)
+                          throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs the database specific script if it exists and throws if it does not.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory<DD><CODE>scriptSuffix</CODE> - final part of the script name including file type extension
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the script fails at the database
+<DD><CODE>er.extensions.migration.ERXMigrationFailedException</CODE> - if a database specific script does not exist<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<CODE>#hasScriptResource(EOEditingContext, ERXMigrationDatabase, String)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runScriptResource(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+runScriptResource</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.270"><B>runScriptResource</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                          throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs the contents of the indicated resource as an SQL script.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePathh</CODE> - full path to resource relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the script fails at the database</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runScriptForMigration(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+runScriptForMigration</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.298"><B>runScriptForMigration</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scriptPath)
+                              throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs a database and migration specific script if it exists and throws if it does not.  The script name
+ is formed as &lt;scriptPath&gt;/&lt;database.productName&gt;/&lt;migrationClass.simpleName&gt;.sql".
+ For example when migrating to version 6 of MyModel, calling this for FrontBase with a scriptPath of SQL
+ the name would be "SQL/FrontBase/MyModel6.sql.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>scriptPath</CODE> - path to database specific script directories relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the script fails at the database
+<DD><CODE>er.extensions.migration.ERXMigrationFailedException</CODE> - if a database specific script does not exist<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#databaseSpecificNameForScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String, java.lang.String)"><CODE>databaseSpecificNameForScript(ERXMigrationDatabase, String, String)</CODE></A>, 
+<CODE>#hasScriptResource(EOEditingContext, ERXMigrationDatabase, String)</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runScript(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+runScript</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.316"><B>runScript</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;script)
+                  throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs the contents of the indicated resource as an SQL script.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>script</CODE> - SQL script to run as a string
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the script fails at the database</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runStatement(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+runStatement</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.334"><B>runStatement</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;statement)
+                     throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></PRE>
+<DL>
+<DD>Runs the statement string as a single SQL statement.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>statement</CODE> - SQL script to run as a statement
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if the statement fails at the database</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importDataAndUpdatePKSequence(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+importDataAndUpdatePKSequence</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.360"><B>importDataAndUpdatePKSequence</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                             er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                                      throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A>,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A>,
+                                             org.dbunit.DatabaseUnitException</PRE>
+<DL>
+<DD>Inserts the contents of the indicated resource as DBUnit data set.  This should be called only after
+ the schema is complete as later ALTER TABLE or ALTER COLUMN statements will cause an SQL error due to
+ the uncommitted data inserted by this method.  The primary key sequence for each table data is imported
+ into can be updated by the number of rows imported.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - the EOEditingContext used to update the primary key sequence<DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePathh</CODE> - full path to resource relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></CODE> - if the JDBC driver can't be loaded
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if a database exception is thrown
+<DD><CODE>org.dbunit.DatabaseUnitException</CODE> - if DBUnit can't proceed<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#importData(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><CODE>importData(ERXMigrationDatabase, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeData(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+removeData</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.399"><B>removeData</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                   throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A>,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A>,
+                          org.dbunit.DatabaseUnitException</PRE>
+<DL>
+<DD>Removes the contents of the indicated resource as DBUnit data set.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePathh</CODE> - full path to resource relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></CODE> - if the JDBC driver can't be loaded
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if a database exception is thrown
+<DD><CODE>org.dbunit.DatabaseUnitException</CODE> - if DBUnit can't proceed</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importData(er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+importData</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.423"><B>importData</B></A>(er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                   throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A>,
+                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A>,
+                          org.dbunit.DatabaseUnitException</PRE>
+<DL>
+<DD>Updates existing rows in the database with the DBUnit data set.  Inserts rows that do not exist.
+ This should be called only after the schema is complete as later ALTER TABLE or ALTER COLUMN
+ statements will cause an SQL error due to the uncommitted data inserted by this method.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePathh</CODE> - full path to resource relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></CODE> - if the JDBC driver can't be loaded
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if a database exception is thrown
+<DD><CODE>org.dbunit.DatabaseUnitException</CODE> - if DBUnit can't proceed<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofextensions/ComplexMigration.html#importDataAndUpdatePKSequence(com.webobjects.eocontrol.EOEditingContext, er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><CODE>importDataAndUpdatePKSequence(EOEditingContext, ERXMigrationDatabase, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="performDBUnitOperation(org.dbunit.operation.DatabaseOperation, java.lang.String, er.extensions.migration.ERXMigrationDatabase, java.lang.String)"><!-- --></A><H3>
+performDBUnitOperation</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ComplexMigration.html#line.445"><B>performDBUnitOperation</B></A>(org.dbunit.operation.DatabaseOperation&nbsp;operation,
+                                      <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logAction,
+                                      er.extensions.migration.ERXMigrationDatabase&nbsp;database,
+                                      <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourcePath)
+                               throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A>,
+                                      <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A>,
+                                      org.dbunit.DatabaseUnitException</PRE>
+<DL>
+<DD>Performs the indicated DbUnit operation on the database with the DBUnit data set.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>operation</CODE> - DbUnit operation to perform<DD><CODE>logAction</CODE> - verb to DbUnit operation to use in log messages<DD><CODE>database</CODE> - ERXMigrationDatabase that the migration is for<DD><CODE>resourcePathh</CODE> - full path to resource relative to the Resources directory
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></CODE> - if the JDBC driver can't be loaded
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/SQLException.html?is-external=true" title="class or interface in java.sql">SQLException</A></CODE> - if a database exception is thrown
+<DD><CODE>org.dbunit.DatabaseUnitException</CODE> - if DBUnit can't proceed</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ComplexMigration.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/CopyableGenericRecord.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/ComplexMigration.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ComplexMigration.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_er.extensions.migration.ERXMigrationDatabase.Migration">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

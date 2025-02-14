@@ -1,0 +1,61 @@
+CanConfigureFormatter: WOConditional {
+	condition = canConfigureFormatter;
+}
+
+CheckedTitleTextField: WOTextField {
+	maxLength = 100;
+	size = 15;
+	value = dataAccessCalculatedColumn.checkedTitle;
+    name = ~"CheckedTitle_" + componentObject.normalizedFieldName();
+}
+
+DefaultSearchComparisonPopUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = componentObject.defaultComparison;  // VALID
+    name = ~"DefaultComparison_" + componentObject.normalizedFieldName();
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+FormatConfiguration: WOPopUpButton {
+	displayString = formatExample;
+	item = aFormatPattern;
+	list = formatPatterns;
+	selection = formatBinding;
+    name = ~"Format_" + componentObject.normalizedFieldName();
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsntConfiguratingAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+	negate = true;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+
+IsBoolean : WOConditional {
+	condition = isBooleanColumn;
+}
+
+IsString : WOConditional {
+	condition = isStringColumn;
+}
+
+ValueAsString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}

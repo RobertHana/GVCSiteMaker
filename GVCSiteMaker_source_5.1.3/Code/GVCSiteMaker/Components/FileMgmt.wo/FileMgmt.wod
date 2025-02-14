@@ -1,0 +1,531 @@
+AddFileHyperlink: WOHyperlink {
+    pageName = "FileUpload";
+}
+
+AddFolderHyperlink: AjaxUpdateLink {
+    action = createFolder;
+    title = "Add Folder";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+    onComplete = "function(receiver, response) {Effect.Appear('FolderAdded', {duration: 1, afterFinish: function() {Effect.Fade('FolderAdded', {delay: 4})}})}";
+}
+
+NotMainFolderConditional: WOConditional {
+    condition = aFolder.isRootFolder;
+    negate = true;
+}
+
+DeleteFolderHyperlink: AjaxUpdateLink {
+    action = confirmDeleteFolder;
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+TotalQuotaString: WOString {
+    value = website.megQuota;
+}
+
+WebsiteRemainingQuotaString: WOString {
+    value = website.availableSpaceInMegaBytes;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+UploadedFilesQuotaUsage: WOString {
+    value = website.uploadedFilesFolder.totalFileSizeUsageInMegabytes;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+DatabaseTablesQuotaUsage: WOString {
+    value = website.databaseTablesFolder.totalFileSizeUsageInMegabytes;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteFilesPane";
+}
+
+ConfigPageForm: WOForm {
+    multipleSubmit = true;
+}
+
+GroupName: WOString {
+    value = aGroup.name;
+}
+
+GroupSeperatorString: WOString {
+    value = groupSeperator;
+    escapeHTML = false;
+}
+
+GroupsRepetition: WORepetition {
+    item = aGroup;
+    list = aFile.groups;
+}
+
+ManageGroupHyperlink: WOHyperlink {
+    action = manageGroup;
+    disabled = aGroup.isSystemGroup;
+}
+
+ObserveContainer: AjaxObserveField {
+    fullSubmit = true;
+    action = fileRepetitionObserverAction;
+}
+
+FolderNameEditor : AjaxInPlace {
+    id = editInPlaceID;
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+}
+
+EditFolderNameView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditAction : WOGenericContainer {
+    elementName = "div";
+    onclick = editInPlaceEdit;
+    class = "editableInPlaceField";
+    title = "Click to edit";
+    style = "float: right; width: 85%;";
+}
+
+FolderNameString: WOString {
+    value = aFolder.name;
+}
+
+EditFolderNameEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+FolderNameTextField : WOTextField {
+    value = aFolder.name;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "float: right; width: 85%;";
+    onBlur = editInPlaceSave;
+    id = editInPlaceTextFieldID;
+}
+
+FolderNameTextFieldID : WOString {
+    value = editInPlaceTextFieldID;
+}
+
+IsMainFolderConditional : WOConditional {
+    condition = isMainFolder;
+}
+
+IsNotMainFolderConditional : WOConditional {
+    condition = isMainFolder;
+    negate = true;
+}
+
+IndentSpacerImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/spacer.gif";
+    width = "18";
+    height = "13";
+}
+
+FileNameString: WOString {
+    value = aFile.uploadedFilename;
+    title = filenameToolTipText;
+}
+
+FolderRepetition: WORepetition {
+    item = aFolder;
+    list = orderedFolders;
+    index = aFolderIndex;
+}
+
+FolderIsOpenConditional: WOConditional {
+    condition = folderShowsFiles;
+}
+
+FileRepetition: WORepetition {
+    item = aFile;
+    list = orderedFiles;
+}
+
+FilesInFolderString: WOString {
+    value = aFolder.files.count;
+}
+
+FolderSizeString: WOString {
+    value = aFolder.fileSizeUsageInMegabytes;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+FileSizeString: WOString {
+    value = formattedFileSize;
+    escapeHTML = false;
+}
+
+ViewFileHyperlink: WOHyperlink {
+    href = aFile.url;
+    target = "_preview";
+}
+
+ActionSelectPopup : WOPopUpButton {
+    list = actionsList;
+    item = anActionString;
+    displayString = anActionString;
+    noSelectionString = "Choose Action...";
+    selection = selectedFileAction;
+}
+
+SelectedFileCheckbox : WOCheckBox {
+    checked = fileSelected;
+}
+
+SelectedFilesPopupObserveField : AjaxObserveField {
+    observeFieldID = "SelectedFilesPopupID";
+    fullSubmit = true;
+    action = selectedFilesObserverAction;
+}
+
+LIGenericContainer : WOGenericContainer {
+    elementName = "li";
+    class = fileListCSSClass;
+    style = fileDisplay;
+}
+
+SelectedFilesPopup : WOPopUpButton {
+    id = "SelectedFilesPopupID";
+    list = selectedFilesActions;
+    item = anActionString;
+    displayString = anActionString;
+    selection = selectedFilesAction;
+    noSelectionString = "Selected Files...";
+}
+
+ToggleExpandCollapseFilesHyperlink : AjaxUpdateLink {
+    action = toggleExpandCollapseAll;
+    title = "Collapse File Hierarchy";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ShowCollapseConditional : WOConditional {
+    condition = hasAtLeastOneFolderExpanded;
+}
+
+ShowExpandConditional : WOConditional {
+    condition = hasAtLeastOneFolderExpanded;
+    negate = true;
+}
+
+SortOnNameHyperlink : AjaxUpdateLink {
+    action = sortOnFilename;
+    title = "Sort on name";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+SortOnNameDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ShowSortedNameConditional : WOConditional {
+    condition = isSortingOnName;
+}
+
+SortOnSizeHyperlink : AjaxUpdateLink {
+    action = sortOnSize;
+    title = "Sort on size";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ShowSortedSizeConditional : WOConditional {
+    condition = isSortingOnSize;
+}
+
+SortOnSizeDirectionImage: WOImage {
+    border = 0;
+    src = sortDirectionImage;
+}
+
+ToggleExpandCollapseGroupsHyperlink : AjaxUpdateLink {
+    action = toggleExpandCollapseAllGroups;
+    title = "Collapse All Access Group Lists";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ShowCollapseGroupsConditional : WOConditional {
+    condition = hasAtLeastOneGroupExpanded;
+}
+
+ShowExpandGroupsConditional : WOConditional {
+    condition = hasAtLeastOneGroupExpanded;
+    negate = true;
+}
+
+HasAtLeastTwoGroupsConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+}
+
+HasAtMostOneGroupConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+    negate = true;
+}
+
+ToggleFolderHyperlink : AjaxUpdateLink {
+    action = toggleShowFolder;
+    title = "Toggle Folder";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+    onLoading = twistFolderHyperlinkOnLoadingScript;
+    onComplete = twistFolderHyperlinkOnCompleteScript;
+}
+
+GroupSummaryHyperlink : AjaxUpdateLink {
+    action = toggleShowGroups;
+    title = "Toggle Groups";
+    updateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+GroupCountString : WOString {
+  value = aFile.groups.count;
+}
+
+GroupsShownConditional : WOConditional {
+  condition = fileShowsGroups;
+}
+
+IsFilesHiddenConditional : WOConditional {
+    condition = folderShowsFiles;
+    negate = true;
+}
+
+IsGroupHiddenConditional : WOConditional {
+    condition = fileShowsGroups;
+    negate = true;
+}
+
+IsFilesDisplayedConditional : WOConditional {
+    condition = folderShowsFiles;
+}
+
+IsGroupDisplayedConditional : WOConditional {
+    condition = fileShowsGroups;
+}
+
+HideFilesImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    height = "13";
+    alt = "Hide Files";
+    style = "float: left;";
+}
+
+ClosedFolderImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/folder_closed.gif";
+    height = "13";
+    alt = "Open Folder";
+    style = "float: left;";
+}
+
+OpenedFolderImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/folder_open.gif";
+    height = "13";
+    alt = "Close Folder";
+    style = "float: left;";
+}
+
+ShowFilesImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    height = "13";
+    alt = "Show Files";
+    style = "float: left;";
+}
+
+HideGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    height = "13";
+    alt = "Hide Groups";
+}
+
+ShowGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    height = "13";
+    alt = "Show Groups";
+}
+
+ErrorMessageModalDialog: AjaxModalDialog {
+    id = "ErrorMessageModalDialog";
+    title = "Error";
+    label = "Error";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ErrorMessageModalDialogOkLink";
+    clickOnEscId = "ErrorMessageModalDialogOkLink";
+    closeUpdateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ErrorMessageString: WOString {
+    value = errorMessage;
+}
+
+ErrorMessageModalDialogOkLink: AjaxHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ErrorMessageModalDialogOkLink";
+}
+
+ConfirmDeleteFolderModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteFolderModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Folder";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteFolderModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteFolderModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ConfirmDeleteFolderModalDialogYesLink: AjaxHyperlink {
+    action = deleteFolder;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteFolderModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteFolderModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteFolderModalDialogNoLink";
+}
+
+ConfirmDeleteFilesModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteFilesModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete File(s)";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteFilesModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteFilesModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ConfirmDeleteFilesModalDialogYesLink: AjaxHyperlink {
+    action = deleteSelectedFiles;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteFilesModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteFilesModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteFilesModalDialogNoLink";
+}
+
+ConfirmDeleteFileModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteFileModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete File";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteFileModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteFileModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+ConfirmDeleteFileModalDialogYesLink: AjaxHyperlink {
+    action = deleteFile;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteFileModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteFileModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteFileModalDialogNoLink";
+}
+
+MoveFilesToFolderModalDialog: AjaxModalDialog {
+    id = "MoveFilesToFolderModalDialog";
+    title = "Move Files To Folder";
+    label = "Move Files";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "MoveFilesToFolderModalDialogOkLink";
+    clickOnEscId = "MoveFilesToFolderModalDialogCancelLink";
+    closeUpdateContainerID = "ConfigureWebsiteFilesPane";
+}
+
+MoveFilesForm: WOForm {
+    multipleSubmit = true;
+    name = "MoveFilesForm";
+}
+
+FolderPopup : WOPopUpButton {
+    list = website.orderedUserFolders;
+    item = aFolder;
+    displayString = aFolder.name;
+    selection = folderToMoveTo;
+    noSelectionString = "Select a folder...";
+}
+
+MoveFilesToFolderModalDialogOkLink: AjaxSubmitButton {
+    action = moveFiles;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "MoveFilesToFolderModalDialogOkLink";
+    evalScripts = true;
+    button = false;
+    formName = "MoveFilesForm";
+}
+
+MoveFilesToFolderModalDialogCancelLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "MoveFilesToFolderModalDialogCancelLink";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.FileMgmt";
+}
+
+BusyLIGenericContainer : WOGenericContainer {
+    elementName = "li";
+    style = "display: none;";
+    id = busyRowID;
+}
+
+BusyImage : WOImage {
+    framework = "Ajax";
+    filename = "wait30.gif";
+}

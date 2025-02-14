@@ -1,0 +1,19 @@
+{
+    testString = "A test string";
+    testArray = (1, 2, 3);
+    testDictionary = {a=1; b=2; c=3;};
+    testInteger=7;
+    testDecimalNumber=7.3;
+    testDateFormatter="%Y";
+    testNumberFormatter="##.00";
+
+    aDictionary = {
+        testString = "A different test string";
+        testArray = (4, 5, 6);
+        testDictionary = {d=4; e=5; f=6;};
+        testInteger=11;
+        testDecimalNumber=3.143;
+        testDateFormatter="%A %B %Y";
+        testNumberFormatter="00.00";
+    };
+}

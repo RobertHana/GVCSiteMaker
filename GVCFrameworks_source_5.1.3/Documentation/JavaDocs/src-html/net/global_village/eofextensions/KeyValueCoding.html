@@ -1,0 +1,170 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofextensions;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.util.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    import com.webobjects.eocontrol.*;<a name="line.5"></a>
+<FONT color="green">006</FONT>    import com.webobjects.foundation.*;<a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    /**<a name="line.9"></a>
+<FONT color="green">010</FONT>     * Methods related to NSKeyValueCoding. <a name="line.10"></a>
+<FONT color="green">011</FONT>     *<a name="line.11"></a>
+<FONT color="green">012</FONT>     * @author Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.<a name="line.12"></a>
+<FONT color="green">013</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.13"></a>
+<FONT color="green">014</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.14"></a>
+<FONT color="green">015</FONT>     * @version $Revision: 2$.<a name="line.15"></a>
+<FONT color="green">016</FONT>     */<a name="line.16"></a>
+<FONT color="green">017</FONT>    public class KeyValueCoding<a name="line.17"></a>
+<FONT color="green">018</FONT>    {<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>        <a name="line.20"></a>
+<FONT color="green">021</FONT>        <a name="line.21"></a>
+<FONT color="green">022</FONT>        /**<a name="line.22"></a>
+<FONT color="green">023</FONT>         * Copies values from source into destination based on mapping.  Keys in mapping are used to extract<a name="line.23"></a>
+<FONT color="green">024</FONT>         * values from source.  The resulting value value is set into destination with a key that is the value associated<a name="line.24"></a>
+<FONT color="green">025</FONT>         * with the key in mapping. Expressed in code:<a name="line.25"></a>
+<FONT color="green">026</FONT>         * &lt;pre&gt;<a name="line.26"></a>
+<FONT color="green">027</FONT>         * destination.takeValueForKey(source.valueForKey(key), <a name="line.27"></a>
+<FONT color="green">028</FONT>         *                             mapping.objectForKey(key));<a name="line.28"></a>
+<FONT color="green">029</FONT>         * &lt;/pre&gt;<a name="line.29"></a>
+<FONT color="green">030</FONT>         * Uses safeTakeValueForKey() to move the value into destination.  Values in source that do not correspond to a key <a name="line.30"></a>
+<FONT color="green">031</FONT>         * in mapping are ignored.  This method is similar to EOKeyValueCodingAdditions.takeValuesFromDictionaryWithMapping <a name="line.31"></a>
+<FONT color="green">032</FONT>         * but does not require a one to one mapping between source and mapping.<a name="line.32"></a>
+<FONT color="green">033</FONT>         * <a name="line.33"></a>
+<FONT color="green">034</FONT>         * @param source keyed dictionary of values to put into destination<a name="line.34"></a>
+<FONT color="green">035</FONT>         * @param mapping keyed dictionary of names in destination<a name="line.35"></a>
+<FONT color="green">036</FONT>         * @param destination object to receive values from source under the names given in mapping<a name="line.36"></a>
+<FONT color="green">037</FONT>         */<a name="line.37"></a>
+<FONT color="green">038</FONT>        public static void copyMappedValues(NSDictionary source, NSDictionary mapping, NSKeyValueCoding destination)<a name="line.38"></a>
+<FONT color="green">039</FONT>        {<a name="line.39"></a>
+<FONT color="green">040</FONT>            /** require [valid_source] source != null;  <a name="line.40"></a>
+<FONT color="green">041</FONT>                        [valid_mapping] mapping != null;  <a name="line.41"></a>
+<FONT color="green">042</FONT>                        [valid_destination] destination != null; **/<a name="line.42"></a>
+<FONT color="green">043</FONT>            Enumeration sourceNames = mapping.keyEnumerator();<a name="line.43"></a>
+<FONT color="green">044</FONT>            while (sourceNames.hasMoreElements())<a name="line.44"></a>
+<FONT color="green">045</FONT>            {<a name="line.45"></a>
+<FONT color="green">046</FONT>                String sourceName = (String) sourceNames.nextElement();<a name="line.46"></a>
+<FONT color="green">047</FONT>                Object value = source.valueForKey(sourceName);<a name="line.47"></a>
+<FONT color="green">048</FONT>                String key = (String)mapping.objectForKey(sourceName);<a name="line.48"></a>
+<FONT color="green">049</FONT>                safeTakeValueForKey(destination, value, key);<a name="line.49"></a>
+<FONT color="green">050</FONT>            }<a name="line.50"></a>
+<FONT color="green">051</FONT>        }<a name="line.51"></a>
+<FONT color="green">052</FONT>        <a name="line.52"></a>
+<FONT color="green">053</FONT>    <a name="line.53"></a>
+<FONT color="green">054</FONT>        <a name="line.54"></a>
+<FONT color="green">055</FONT>        /**<a name="line.55"></a>
+<FONT color="green">056</FONT>         * Moves values from source into destination based on the contents of keys.  Essentially, this is a <a name="line.56"></a>
+<FONT color="green">057</FONT>         * filtered version of EOKeyValueCodingAdditions.takeValuesFromDictionary where the contents of keys<a name="line.57"></a>
+<FONT color="green">058</FONT>         * filters which values are moved.  Uses safeTakeValueForKey() to move the value into destination.<a name="line.58"></a>
+<FONT color="green">059</FONT>         * <a name="line.59"></a>
+<FONT color="green">060</FONT>         * @param source the object where the values will come from<a name="line.60"></a>
+<FONT color="green">061</FONT>         * @param destination the object where the values will go<a name="line.61"></a>
+<FONT color="green">062</FONT>         * @param keys list of keys determining which values will be moved<a name="line.62"></a>
+<FONT color="green">063</FONT>         */<a name="line.63"></a>
+<FONT color="green">064</FONT>        public static void takeValuesForKeys(NSKeyValueCoding source, NSKeyValueCoding destination, NSArray keys)<a name="line.64"></a>
+<FONT color="green">065</FONT>        {<a name="line.65"></a>
+<FONT color="green">066</FONT>            /** require [valid_source] source != null;<a name="line.66"></a>
+<FONT color="green">067</FONT>                        [valid_keys] keys != null;<a name="line.67"></a>
+<FONT color="green">068</FONT>                        [valid_destination] destination != null;  **/<a name="line.68"></a>
+<FONT color="green">069</FONT>            for (Enumeration keynum = keys.objectEnumerator(); keynum.hasMoreElements(); )<a name="line.69"></a>
+<FONT color="green">070</FONT>            {<a name="line.70"></a>
+<FONT color="green">071</FONT>                String key = (String)keynum.nextElement();<a name="line.71"></a>
+<FONT color="green">072</FONT>                safeTakeValueForKey(destination, source.valueForKey(key), key);<a name="line.72"></a>
+<FONT color="green">073</FONT>            }<a name="line.73"></a>
+<FONT color="green">074</FONT>         }<a name="line.74"></a>
+<FONT color="green">075</FONT>        <a name="line.75"></a>
+<FONT color="green">076</FONT>        <a name="line.76"></a>
+<FONT color="green">077</FONT>        <a name="line.77"></a>
+<FONT color="green">078</FONT>        /**<a name="line.78"></a>
+<FONT color="green">079</FONT>         * Implements takeValueForKey and safely handles both null and NSKeyValueCoding.NullValue values. If value is null <a name="line.79"></a>
+<FONT color="green">080</FONT>         * and destination does not implement EOKeyValueCoding, NSKeyValueCoding.NullValue is set into destination.  <a name="line.80"></a>
+<FONT color="green">081</FONT>         * If value is NSKeyValueCoding.NullValue and destination implements EOKeyValueCoding, null is set into the destination. <a name="line.81"></a>
+<FONT color="green">082</FONT>         * <a name="line.82"></a>
+<FONT color="green">083</FONT>         * @param destination object to receive value<a name="line.83"></a>
+<FONT color="green">084</FONT>         * @param value value to put into destination<a name="line.84"></a>
+<FONT color="green">085</FONT>         * @param key name to put value under in destination<a name="line.85"></a>
+<FONT color="green">086</FONT>         */<a name="line.86"></a>
+<FONT color="green">087</FONT>        public static void safeTakeValueForKey( NSKeyValueCoding destination, Object value, String key)<a name="line.87"></a>
+<FONT color="green">088</FONT>        {<a name="line.88"></a>
+<FONT color="green">089</FONT>            /** require [valid_key] key != null;<a name="line.89"></a>
+<FONT color="green">090</FONT>                        [valid_destination] destination != null;  **/<a name="line.90"></a>
+<FONT color="green">091</FONT>            if (destination instanceof EOKeyValueCoding)<a name="line.91"></a>
+<FONT color="green">092</FONT>            {<a name="line.92"></a>
+<FONT color="green">093</FONT>                // EOEnterpriseObject objects handle null properly<a name="line.93"></a>
+<FONT color="green">094</FONT>                value = (value == NSKeyValueCoding.NullValue) ? null : value;<a name="line.94"></a>
+<FONT color="green">095</FONT>                ((EOKeyValueCoding)destination).takeValueForKey(value, key);<a name="line.95"></a>
+<FONT color="green">096</FONT>            }<a name="line.96"></a>
+<FONT color="green">097</FONT>            else<a name="line.97"></a>
+<FONT color="green">098</FONT>            {<a name="line.98"></a>
+<FONT color="green">099</FONT>                value = (value == null) ? NSKeyValueCoding.NullValue : value;<a name="line.99"></a>
+<FONT color="green">100</FONT>                destination.takeValueForKey(value, key);<a name="line.100"></a>
+<FONT color="green">101</FONT>            }<a name="line.101"></a>
+<FONT color="green">102</FONT>        }<a name="line.102"></a>
+<FONT color="green">103</FONT>        <a name="line.103"></a>
+<FONT color="green">104</FONT>    }<a name="line.104"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

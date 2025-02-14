@@ -1,0 +1,26 @@
+{
+    attributes = (
+        {columnName = "status_key"; name = key; prototypeName = String; width = 50; }, 
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, key, name); 
+    className = "com.gvcsitemaker.core.TaskStatus"; 
+    classProperties = (key, localizations, name); 
+    externalName = "TASK_STATUS"; 
+    fetchSpecificationDictionary = {}; 
+    name = TaskStatus; 
+    parent = GVCKeyedLookup; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupID; sourceAttribute = theID; }); 
+            name = localizations; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,78 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageType = "My Websites";
+    hasSite = hasSite;
+    pageTitle = pageTitle;
+    isAdmin = false;
+    needsPreviewURLJavaScript = false;
+}
+
+CurrentSiteInfoComponent: CurrentSiteInfoComponent
+{
+    website = website;
+}
+
+TabbedPanel: AjaxTabbedPanel {
+    id = "tabbedPanel";
+    busyDiv = "busydiv";
+}
+
+Tab1: AjaxTabbedPanelTab {
+    name = "Website Sections";
+    isSelected = tab1Selected;
+}
+
+Tab2: AjaxTabbedPanelTab {
+    name = "Overall Appearance";
+    isSelected = tab2Selected;
+}
+
+Tab3: AjaxTabbedPanelTab {
+    name = "Access Groups";
+    isSelected = tab3Selected;
+}
+
+Tab4: AjaxTabbedPanelTab {
+    name = "Manage Files";
+    isSelected = tab4Selected;
+}
+
+Tab5: AjaxTabbedPanelTab {
+    name = "Data Tables";
+    isSelected = tab5Selected;
+}
+
+Tab6: AjaxTabbedPanelTab {
+    name = "List My Sites";
+    isSelected = tab6Selected;
+}
+
+ConfigureWebsiteSectionsPane: ConfigureWebsiteSectionsPane {
+    website = website;
+}
+
+ConfigAppearance: ConfigAppearance {
+    website = website;
+}
+
+ManageAccessGroups: ManageAccessGroups {
+    website = website;
+    accessGroupToEdit = editingAccessGroup;
+}
+
+UploadedFiles: FileMgmt {
+    website = website;
+}
+
+DataTables: ConfigureDataTablesPane {
+    website = website;
+}
+
+ListMySites: ListMySitesPane {
+    website = website;
+}
+
+BusyImage : WOImage {
+    framework = "Ajax";
+    filename = "wait30.gif";
+}

@@ -1,0 +1,103 @@
+{
+    attributes = (
+        {
+            columnName = CAN_CHANGE_PASSWORD; 
+            name = canChangePassword; 
+            prototypeName = JavaBoolean; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+        }, 
+        {
+            columnName = IS_ACCOUNT_DISABLED; 
+            name = isAccountDisabled; 
+            prototypeName = JavaBoolean; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+        }, 
+        {
+            columnName = MUST_CHANGE_PASSWORD; 
+            name = mustChangePassword; 
+            prototypeName = JavaBoolean; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+        }, 
+        {
+            columnName = PASSWORD; 
+            name = password; 
+            prototypeName = String; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+            width = 50; 
+        }, 
+        {
+            columnName = SIMPLE_ATTRIBUTE; 
+            name = simpleAttribute; 
+            prototypeName = String; 
+            userInfo = {modificationDate = "2001-05-24 23:26:23 +0000"; }; 
+            width = 50; 
+        }, 
+        {
+            columnName = USER_ID; 
+            name = userId; 
+            prototypeName = Key; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+        }, 
+        {
+            columnName = USER_NAME; 
+            name = userName; 
+            prototypeName = String; 
+            userInfo = {modificationDate = "2001-05-24 23:22:50 +0000"; }; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        isAccountDisabled, 
+        canChangePassword, 
+        mustChangePassword, 
+        password, 
+        userId, 
+        userName, 
+        simpleAttribute
+    ); 
+    className = net.global_village.security.tests.SimpleTestUser; 
+    classProperties = (
+        isAccountDisabled, 
+        canChangePassword, 
+        mustChangePassword, 
+        password, 
+        userName, 
+        toUsersGroups, 
+        groups, 
+        simpleAttribute
+    ); 
+    externalName = SIMPLE_TEST_USER; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        _clientClassPropertyNames = (
+            accountDisabled, 
+            cannotChangePassword, 
+            mustChangePassword, 
+            password, 
+            userName, 
+            toUsersGroups, 
+            groups, 
+            simpleAttribute
+        ); 
+    }; 
+    name = SimpleTestUser; 
+    parent = GVCUser; 
+    primaryKeyAttributes = (userId); 
+    relationships = (
+        {
+            definition = toUsersGroups.grpToUsersGrpFk; 
+            joinSemantic = EOInnerJoin; 
+            name = groups; 
+            userInfo = {modificationDate = "2001-05-24 23:23:19 +0000"; }; 
+        }, 
+        {
+            destination = GVCUsersGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userId; sourceAttribute = userId; }); 
+            name = toUsersGroups; 
+            userInfo = {modificationDate = "2001-05-24 23:23:08 +0000"; }; 
+        }
+    ); 
+    userInfo = {modificationDate = "2001-05-30 19:56:22 +0000"; }; 
+}

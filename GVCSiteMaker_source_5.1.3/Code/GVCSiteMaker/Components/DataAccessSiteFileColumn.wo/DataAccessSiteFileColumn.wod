@@ -1,0 +1,150 @@
+CanBeModifiedConditional: WOConditional {
+	condition = dataAccessColumn.isEditable;
+}
+
+DeleteFileCheckBox: WOCheckBox {
+	checked = shouldDeleteFile;
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+DownloadFileHyperlink: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+FileContentsImage: WOImage {
+	alt = fieldValue.uploadedFilename;  // VALID
+	border = 0;
+	mimeType = fieldValue.mimeType;  // VALID
+	width = dataAccessSiteFileColumn.width;
+	src = fileUrl;
+}
+
+FileNameString: WOString {
+	value = fieldValue.uploadedFilename;  // VALID
+}
+
+FileSizeString: WOString {
+	value = fieldValue.fileSizeInKilobytes;  // VALID
+}
+
+HasBeenSavedConditional: WOConditional {
+	condition = hasUnsavedChanges;
+	negate = true;
+}
+
+HasFileConditional: WOConditional {
+	condition = fieldValue;
+}
+
+HasNoSiteFileConditional: WOConditional {
+	condition = fieldValue;
+	negate = true;
+}
+
+HasNotBeenSavedConditional: WOConditional {
+	condition = hasUnsavedChanges;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsReadOnlyConditional: WOConditional {
+	negate = true;
+	condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguringAddMode: WOConditional {
+	condition = isConfiguringAddMode;
+	negate = true;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+MimeTypeString: WOString {
+	value = fieldValue.mimeType;  // VALID
+}
+
+NoFileConditional: WOConditional {
+	condition = fieldValue;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+QuotaValidationFailureConditional: WOConditional {
+	condition = quotaValidationFailure;
+}
+
+QuotaValidationFailureString: WOString {
+	value = quotaValidationFailure;
+}
+
+ShowFileContentsCheckBox: WOCheckBox {
+	checked = dataAccessSiteFileColumn.showFileContents;
+    name = ~"ShowFileContents_" + dataAccessSiteFileColumn.normalizedFieldName();
+}
+
+ShowFileContentsConditional: WOConditional {
+	condition = showFileContents;
+}
+
+ShowTextDescriptionConditional: WOConditional {
+	condition = showTextDescription;
+}
+
+UnsavedUploadedImage: WOImage {
+	alt = fieldValue.uploadedFilename;  // VALID
+	border = 0;
+	mimeType = fieldValue.mimeType;  // VALID
+	width = dataAccessSiteFileColumn.width;
+	data = siteFile.data;
+}
+
+UploadFile: WOFileUpload {
+	filePath = fileUploadBindings.uploadedFileName;
+	size = 45;
+
+	bufferSize = 8192;
+	overwrite = true;
+	streamToFilePath = fileUploadBindings.streamToFilePath;
+	mimeType = fileUploadBindings.mimeType;
+	finalFilePath = fileUploadBindings.finalFilePath;
+}
+
+WidthTextField: WOTextField {
+	maxLength = "4";
+	size = "4";
+	value = dataAccessSiteFileColumn.width;
+    name = ~"Width_" + dataAccessSiteFileColumn.normalizedFieldName();
+}
+
+WidthValidationMessageConditional: WOConditional {
+	condition = widthValidationFailure;
+}
+
+WidthValidationMessageString: WOString {
+	value = widthValidationFailure;
+}
+

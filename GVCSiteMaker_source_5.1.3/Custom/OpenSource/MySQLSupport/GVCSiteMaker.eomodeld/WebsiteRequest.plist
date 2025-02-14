@@ -1,0 +1,82 @@
+{
+    attributes = (
+        {
+            columnName = "ADMINISTRATIVE_NOTES"; 
+            name = administrativeNotes; 
+            prototypeName = largeText; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "DATE_REQUESTED"; 
+            name = dateRequested; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = "DATE_RESOLVED"; name = dateResolved; prototypeName = dateTime; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "ORG_UNIT_OID"; 
+            name = orgUnitOID; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "REQUESTOR_NOTE"; name = requesterNote; prototypeName = note; }, 
+        {
+            allowsNull = N; 
+            columnName = "SITE_ID"; 
+            name = siteID; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_FKEY"; 
+            name = userFKey; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "WEBSITE_FKEY"; name = websiteFKey; prototypeName = dbKey; }
+    ); 
+    attributesUsedForLocking = (oid, orgUnitOID, userFKey, requesterNote, siteID, websiteFKey); 
+    className = "com.gvcsitemaker.core.WebsiteRequest"; 
+    classProperties = (
+        administrativeNotes, 
+        dateResolved, 
+        dateRequested, 
+        orgUnit, 
+        requester, 
+        requesterNote, 
+        siteID, 
+        website
+    ); 
+    externalName = "SM_WEBSITE_REQUEST"; 
+    fetchSpecificationDictionary = {}; 
+    name = WebsiteRequest; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = OrgUnit; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = orgUnitOID; }); 
+            name = orgUnit; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = User; 
+            internalInfo = {"_nameInObjectStore" = user; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userFKey; }); 
+            name = requester; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = website; 
+        }
+    ); 
+}

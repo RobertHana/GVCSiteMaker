@@ -1,0 +1,139 @@
+CanBeModifiedConditional: WOConditional {
+	condition = dataAccessColumn.isEditable;
+}
+
+Component: SMWOTextComponent {
+	value = stringFieldValue;
+	shouldUseRichTextEditor = componentObject.isWYSIWYGEnabled;  // VALID
+	editorCSS = componentObject.sectionUsedIn.activeSectionStyle.relatedCSSUrl;
+	cols = dataAccessColumn.width;  // VALID
+	name = uniqueTextAreaId;
+	rows = dataAccessColumn.height;  // VALID
+	index = index;
+	wysiwygEditorMode = dataAccessStringColumn.wysiwygEditorMode;
+	section = componentObject.sectionUsedIn;
+	website = componentObject.sectionUsedIn.website;
+	columnName = dataAccessColumn.normalizedFieldName;
+	currentDataAccessMode = currentDataAccessMode;
+}
+
+ConvertCRCheckBox: WOCheckBox {
+	checked = dataAccessStringColumn.shouldConvertCR;
+    name = ~"ConvertCR_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+DefaultComparisonPopUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = dataAccessStringColumn.defaultComparison;
+    name = ~"DefaultComparison_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+// *** MODE STUFF ***
+DefaultValueTextField: WOTextField {
+	value = dataAccessStringColumn.defaultValue;
+	size = "40";
+    name = ~"DefaultValue_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+DeleteValidationFailureConditional: WOConditional {
+	condition = deleteValidationFailure;
+}
+
+DeleteValidationFailureString: WOString {
+	value = deleteValidationFailure;
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+EditorModePopUpButton: WOPopUpButton {
+	list = wysiwygEditorModes;
+	selection = dataAccessStringColumn.wysiwygEditorMode;
+    name = ~"EditorMode_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+HeightTextField: WOTextField {
+	maxLength = "3";
+	size = "3";
+	value = dataAccessStringColumn.height;
+    name = ~"Height_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+HeightValidationMessageConditional: WOConditional {
+	condition = heightValidationMessage;
+}
+
+HeightValidationMessageString: WOString {
+	value = heightValidationMessage;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsReadOnlyConditional: WOConditional {
+	negate = true;
+	condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+TextField: WOTextField {
+	value = stringFieldValue;
+	size = dataAccessStringColumn.width;
+}
+
+UseTextAreaConditional: WOConditional {
+	condition = useTextArea;
+}
+
+UseTextFieldConditional: WOConditional {
+	negate = true;
+	condition = useTextArea;
+}
+
+ValueAsString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}
+
+WYSIWYGOptionConditional: WOConditional {
+	condition = isAppWYSIWYGEnabled;
+}
+
+WidthTextField: WOTextField {
+	maxLength = "3";
+	size = "3";
+	value = dataAccessStringColumn.width;
+    name = ~"Width_" + dataAccessStringColumn.normalizedFieldName();
+}
+
+WidthValidationMessageConditional: WOConditional {
+	condition = widthValidationMessage;
+}
+
+WidthValidationMessageString: WOString {
+	value = widthValidationMessage;
+}
+

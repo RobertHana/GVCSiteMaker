@@ -1,0 +1,51 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - Website Creation Report";
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Website Creation Report";
+	isAdmin = true;
+	pageType = "WebsiteCreationReportPage";
+}
+
+HasInvalidData: WOConditional {
+	condition = invalidWebsiteArray.count;
+}
+
+HasNoValidData: WOConditional {
+	negate = true;
+	condition = validWebsiteArray.count;
+}
+
+HasValidData: WOConditional {
+	condition = validWebsiteArray.count;
+}
+
+HasWebsites: WOConditional {
+	condition = validWebsiteArray.count;
+}
+
+InvalidWebsiteCount: WOString {
+	value = invalidWebsiteArray.count;
+}
+
+InvalidWebsiteList: InvalidWebsiteList {
+	invalidWebsiteArray = invalidWebsiteArray;
+}
+
+ReportForm: WOForm {
+}
+
+ReturnToWebsiteCreation: WOSubmitButton {
+	value = "Return to Website Creation";
+	action = returnToWebsiteCreation;
+}
+
+ValidWebsiteList: ValidWebsiteList {
+	validWebsiteArray = validWebsiteArray;
+}
+
+WebsiteCount: WOString {
+	value = validWebsiteArray.count;
+}

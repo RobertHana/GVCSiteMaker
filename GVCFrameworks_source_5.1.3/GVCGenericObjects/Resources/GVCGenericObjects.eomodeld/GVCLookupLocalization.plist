@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {columnName = "LOCALE_ID"; name = localeID; prototypeName = Key; }, 
+        {
+            columnName = "LOCALIZED_NAME"; 
+            name = localizedName; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {columnName = "LOOKUP_ID"; name = lookupID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (localeID, lookupID, localizedName); 
+    className = "net.global_village.genericobjects.LookupLocalization"; 
+    classProperties = (locale, lookup, localizedName); 
+    externalName = "GVC_LOOKUP_LOCALIZATION"; 
+    fetchSpecificationDictionary = {}; 
+    name = GVCLookupLocalization; 
+    primaryKeyAttributes = (localeID, lookupID); 
+    relationships = (
+        {
+            destination = GVCLocale; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = localeID; }); 
+            name = locale; 
+        }, 
+        {
+            destination = GVCLookup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = lookupID; }); 
+            name = lookup; 
+        }
+    ); 
+}

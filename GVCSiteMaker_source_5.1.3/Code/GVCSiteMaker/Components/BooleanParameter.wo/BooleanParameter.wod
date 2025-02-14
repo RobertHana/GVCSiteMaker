@@ -1,0 +1,14 @@
+Conditional1: WOConditional {
+	condition = parameter.isRequired;
+}
+
+NameString: WOString {
+	value = parameter.uiName;
+}
+
+ValuePopUpButton: WOPopUpButton {
+	item = aValue;
+	list = options;
+	noSelectionString = "(not specified)";
+	selection = parameterValue;
+}

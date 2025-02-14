@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = RELATED_ID; 
+            name = relatedID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = ID; name = id; prototypeName = Key; }, 
+        {
+            allowsNull = Y; 
+            columnName = STRING_VALUE; 
+            name = stringValue; 
+            prototypeName = String; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (id, stringValue, relatedID); 
+    className = net.global_village.eofvalidation.tests.NotifyingEditingContextTestObject; 
+    classProperties = (stringValue, relatedObject); 
+    externalName = NOTIFYING_EDITING_CONTEXT_TEST_OBJECT; 
+    fetchSpecificationDictionary = {}; 
+    name = NotifyingEditingContextTestObject; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = NotifyingEditingContextTestObject; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = relatedID; }); 
+            name = relatedObject; 
+        }
+    ); 
+}

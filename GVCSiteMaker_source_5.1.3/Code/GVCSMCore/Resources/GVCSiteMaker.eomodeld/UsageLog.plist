@@ -1,0 +1,69 @@
+
+{
+    attributes = 
+    (
+       
+       {
+           columnName = ACCESS_TIME;
+           name = accessTime;
+           prototypeName = dateTime;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = USAGE_LOG_PKEY;
+           name = usageLogPKey;
+           prototypeName = dbKey;
+       }, 
+       
+       {
+           allowsNull = N;
+           columnName = USER_PKEY;
+           name = userFKey;
+           prototypeName = dbKey;
+       }
+    );
+    attributesUsedForLocking = 
+    (
+       usageLogPKey, 
+       userFKey
+    );
+    className = com.gvcsitemaker.core.UsageLog;
+    classProperties = 
+    (
+       accessTime, 
+       user
+    );
+    externalName = SM_USAGE_LOG;
+    internalInfo = 
+    {
+        _clientClassPropertyNames = 
+        (
+           accessTime, 
+           user
+        );
+    };
+    name = UsageLog;
+    primaryKeyAttributes = 
+    (
+       usageLogPKey
+    );
+    relationships = 
+    (
+       
+       {
+           destination = User;
+           isToMany = N;
+           joinSemantic = EOInnerJoin;
+           joins = 
+           (
+              
+              {
+                  destinationAttribute = userPKey;
+                  sourceAttribute = userFKey;
+              }
+           );
+           name = user;
+       }
+    );
+}

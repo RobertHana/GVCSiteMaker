@@ -1,0 +1,218 @@
+From: Lenny Marks <lenny@aps.org>
+Date: November 21, 2004 9:34:42 AM PST (CA)
+To: Chuck Hill <chill@global-village.net>
+Cc: Webobjects-Dev <webobjects-dev@omnigroup.com>
+Subject: Re: EOF Updating object I'm trying to delete
+
+Chuck,
+
+Thanks so much for shedding some light on this. It was driving me crazy!!
+
+On Friday, Nov 19, 2004, at 18:08 America/New_York, Chuck Hill wrote:
+
+Lenny,
+
+Welcome to Hell.  :-(  What we have here is a persistent and long term EOF bug.  I've never found a work around.  
+The reason that you only see it on the deployment machine is that it is concurrency related.  Sigh, well, you're not going to like this...
+
+The problematic  situation occurs when ObjectStore changes for registered objects are processed while the method 
+<code>processRecentChanges()</code> is running. If this happens, the editing context state for inserted, deleted, 
+and updated objects is lost.  This has unpredictable results including attempting to save as updates those records 
+being deleted which then fails validateForSave. The request to process ObjectStore changes can come as a result of 
+faults firing during processRecentChanged() or the triggering of a refetch of data as the snapshot is older than 
+what the editing context permits and the fetched row being different that what was in the ObjectStore.
+
+
+That was it. I did some experimenting and was finally able to reliably reproduce the bug.
+
+Ex.
+Employee <<-> Department
+
+I created a simple app that lists employees with there departments. There are links to delete each employee. 
+In the deleteEmployee() action method I refault the department and update the ec.fetchTimestamp to force the condition.
+
+public WOComponent deleteEmployee() {
+       EOEditingContext ec = employeeItem.editingContext();
+
+	ec.setFetchTimestamp(System.currentTimeMillis());
+
+       //force a refault. The relationship may happen under normal
+       //circumstances in response to an ObjectChangedInStoreNotification.
+       ec.refaultObject((EOEnterpriseObject)employeeItem.valueForKey("department"));
+
+       ec.deleteObject(employeeItem);
+       ec.saveChanges();
+
+       return null;
+   }
+
+1. load page
+2. update department directly in database
+3. click to delete employee
+4. Success
+
+If I perform the above steps with more than one session under the application, it fails every time. 
+I can see that for whatever reason, if there is only one ec with the department registered in in it, 
+then there's only one ObjectsChangedInStoreNotification posted from the OSC, which includes both the 
+deleted employee, and the updated department. If there is more than one ec, with the department 
+registered then I see a notification immediately containing only the updated department. Then the error.
+
+com.webobjects.eoaccess.EOGeneralAdaptorException: EvaluateExpression failed: 
+<com.webobjects.jdbcadaptor.OpenBasePlugIn$OpenBaseExpression: "UPDATE EMPLOYEE SET DEPARTMENT_ID = NULL 
+WHERE (ID = ? AND FIRST_NAME = ? AND LAST_NAME = ? AND TITLE is NULL AND DEPARTMENT_ID = ?)" 
+withBindings: 1:2(id), 2:"Joe"(firstName), 3:"Smith"(lastName), 4:1(departmentId)>:
+   Next exception:SQL State:42000 -- error code: 0 -- msg: ERROR - Value can not be NULL for column 'DEPARTMENT_ID'
+
+I can see from logging messages I've inserted, and various stack dumps, that the problem occurs when 
+_processObjectStoreChanges is called while _preparePushForChanges is executing. The problem disappears 
+if I remove the back relationship from department->employees. 
+***Also, this happens all within the same thread. The application does not have to be handling concurrent requests. 
+I guess,  if you do make sure to pre-fault all involved relationships before the delete as you mentioned, 
+and the app is single threaded, the problem would be avoided because there would be no other threads 
+changing the object store.
+
+What I have done to work around this, as much as possible, is to fire all the fault that might get touched 
+during saveChanges (mostly a problem when evaluating delete rules for an EO about to be deleted.  I also override    
+public void _processObjectStoreChanges(NSDictionary changes) to detect this condition and throw which at least 
+gives me a fighting chance of cleaning up (dispose the EC etc.).  Very nasty.
+
+
+Very nasty is right! Definitely some race conditions going on. I came up with the following workaround that 
+seems to work, without forcing changes to the model or having to make sure all relationships faults have been 
+fired. (not well tested yet though) I've spent way too much time on this one. I'm planning on packaging up my 
+sample app and submitting it with a bug report to Apple, but it will have to wait till I catch up a bit.
+
+public class WorkAroundEc extends EOEditingContext {
+   private boolean savingChanges;
+   private NSMutableArray queuedNotifications = new NSMutableArray();
+
+   public void saveChanges() {
+
+       _EOAssertSafeMultiThreadedAccess("saveChanges()");
+       savingChanges = true;
+       try {
+           super.saveChanges();
+       } finally {
+           savingChanges = false;
+       }
+
+       processQueuedNotifications();
+   }
+
+   public void _objectsChangedInStore(NSNotification nsnotification) {
+       if(savingChanges) {
+           queuedNotifications.addObject(nsnotification);
+       } else {
+           super._objectsChangedInStore(nsnotification);
+       }
+   }
+
+   private void processQueuedNotifications() {
+       System.out.println("processQueuedNotifications()");
+
+       synchronized(queuedNotifications) {
+           for(Enumeration e = queuedNotifications.objectEnumerator();
+               e.hasMoreElements();) {
+
+               NSNotification n = (NSNotification)e.nextElement();
+
+               _objectsChangedInStore(n);
+
+           }
+           queuedNotifications.removeAllObjects();
+       }
+   }
+
+}
+
+-lenny
+
+
+Chuck
+
+P.S. There was (or is, I don't recall exactly) another related problem.  When an editing context finishes saving 
+it sends a notification that the other editing contexts listen to.  The other editing contexts listen for this 
+notification and update their part of the object graph if any relevant objects have changed.  The bug takes place 
+when one EO is registered in two (or more!) editing contexts and they both get saved at around the same time.  
+The first save finishes and sends the notifications.  The receipt of these notification causes the second EC to 
+lose its internal state and get confused about what is an insert and what is a delete and it starts to treat the 
+half finished operations as updated.  I _think_ proper locking prevents this bug, but I'm not 100% certain at the moment
+
+
+
+On Nov 19, 2004, at 2:24 PM, Lenny Marks wrote:
+
+This one's got me stumped!
+
+We have a WO5.2.3  app that runs inside Tomcat. There is an entity called RefereTag which has a mandatory 
+to-one 'tagger' relationship to an Individual. In the database(which happens to be Oracle), there is a non 
+null constraint on TAG.TAGGER_IND_ID. Via the WO app, there is a page where you can view, add, and delete 
+the tags. On our live deployment machine, AND ONLY on our live deployment, there are sporadic errors when 
+attempting to delete a tag. Some users claim up to one and every 3 times fails. The stacktrace in the error 
+log is below. It is an EOGeneralAdaptorException. The database rejecting EOF's attempt to UPDATE the tag 
+setting its tagger to null. The thing is that no where in the application are tags updated. Only added 
+and deleted. I've been absolutely unable to reproduce this in our testing environment(which is the same 
+as live) or on my development server. I've even gone so far as to use HttpUnit to repetitively add and 
+remove tags through the app. I added some code to dump the stack inside Tag.setTagger whenever the new 
+value is null. Surprisingly this showed that relationships are always nulled out by 
+EOClassDescription.propagateDeleteForObject() up the stack from ec.saveChanges() . It seems like EOF 
+is making it past the nulling out of the relationships, but somehow ends up thinking that the object 
+is updated instead of deleted. I found a thread from a while back that seemed related.
+
+http://www.omnigroup.com/mailman/archive/webobjects-dev/2004-March/038915.html
+
+In it, Chuck, mentions that there is a bug in EOEditingContext where if validateForDelete fails, t
+hings go awry. In this case, I don't think validateForDelete is failing since EOF is actually trying to 
+update the object in the DB. Also, I see no validation exceptions.  I think its scary that if not for the 
+DB constraint, It looks like EOF would have happily updated the object with incorrect data.
+
+Vanilla code used to delete the object:
+
+EOEditingContext ec = refereeTag.editingContext();
+ec.deleteObject(refereeTag);
+ec.saveChanges();
+
+Other clues/theories:
+
+- Maybe something related to weak references being reclaimed by the garbage collector which may explain 
+why this only happens on the live server.
+- In this case, there is no undo manager for the editing context.
+- Notifications?
+- There is only one editing context involved in the action, and it is definitely properly locked.
+- The tags are always fetched via EOUtilities.objectsMatchingKeyAndValue because there is a
+ legacy app that can also add and remove tags.
+- To cope with tags changing out from under, I actually include the globalId of the tag in the url 
+which is checked in the action to ensure that say the 2nd tag in the worepetion is the same object that was there
+when the response was generated.
+
+I have a couple of ideas about things might help:
+-manually nulling out tags relationships.
+-fetching into brand new ec just for delete
+-using an undo manager.
+-just manually delete object with EOAdaptorChannel.deleteRowDescribedByQualifier(drastic)
+
+Its just a pain since it can only be reproduced on our live box. I hate to just throw stuff in and have 
+to wait to here if anyone still complains to know if it's fixed. I'd love to know the the cause of the 
+problem and which workaround was the winner.
+
+ANYWAY(I know this was long winded), any input would be greatly appreciated.
+
+-lenny
+
+com.webobjects.eoaccess.EOGeneralAdaptor
+Exception: EvaluateExpression failed: <com.webobjects.jdbcadaptor.OraclePlugIn$OracleExpression: "UP
+DATE MANUSCRIPTS.REFEREE_TAG SET TAGGER_IND_ID = NULL WHERE (REFTAG_ID = ? AND DATE_TAGGED = ?)" wit
+hBindings: 1:55387(reftagId), 2:2004-11-19 15:36:32(dateTagged)>:
+   Next exception:SQL State:72000 -- error code: 1407 -- msg: ORA-01407: cannot update ("MANUSCRIPT
+S"."REFEREE_TAG"."TAGGER_IND_ID") to NULL
+
+at com.webobjects.eoaccess.EODatabaseContext._exceptionWithDatabaseContextInformationAdded(E
+ODatabaseContext.java:4657)
+       at com.webobjects.eoaccess.EODatabaseContext.performChanges(EODatabaseContext.java:6365)
+       at com.webobjects.eocontrol.EOObjectStoreCoordinator.saveChangesInEditingContext(EOObjectSto
+reCoordinator.java:411)
+       at com.webobjects.eocontrol.EOEditingContext.saveChanges(EOEditingContext.java:3148)
+       at prism.refview.RefTagsComponent.deleteTag(Unknown Source)
+
+
+

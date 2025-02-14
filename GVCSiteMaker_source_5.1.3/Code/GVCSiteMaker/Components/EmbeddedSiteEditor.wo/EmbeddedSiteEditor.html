@@ -1,0 +1,60 @@
+<!-- verrify that this is valid HTML in IE 6 -->
+<WEBOBJECT NAME="EmbeddedForm">
+	<table border="0" cellpadding="0" cellspacing="0" class="content" style = "width: 100%">
+    	<tr> 
+        	<td style="padding-left: 2px;" align = "left">
+              <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+                Back to Website Sections
+              </webobject>
+			</td>
+            <td valign="top" align="right" style="padding-right: 2px;">	 
+           	  <WEBOBJECT NAME="CancelButton"></WEBOBJECT>
+              <WEBOBJECT NAME="UpdateAndDoneButton"></WEBOBJECT>
+            </td>
+        </tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellpadding="2" cellspacing="2" width="100%">
+					<tr><td><hr class="primaryBarStyle"/></td></tr>
+				</table>
+			</td>
+		</tr>
+    </table>
+    <table border="0" cellspacing="2" cellpadding="2" class="content">
+    	<tr> 
+        	<td valign="TOP" class="boldText">
+				Link Text:
+                <br />
+                <i class="requiredText">(required)</i> 
+			</td>
+			<td class="rightContentColumn">
+                <WEBOBJECT NAME="EmbeddedSiteNameField"></WEBOBJECT><br />
+				<WEBOBJECT NAME=HasSectionNameErrorMessageConditional>
+					<p class="warningText"><WEBOBJECT NAME=SectionNameErrorMessageString></WEBOBJECT></p>
+				</WEBOBJECT>
+				<span class="descriptiveText">This text will appear in your navigation bar. When clicked, it will cause the home page of the embedded site to be shown within the current site.</span>
+			</td>
+		</tr>
+        <tr> 
+        	<td valign=TOP class="boldText">
+				Embedded Site Name: 
+                <br />
+                <i class="requiredText">(required)</i> 
+			</td>
+			<td class="rightContentColumn">
+                <WEBOBJECT NAME="EmbeddedSiteIDField"></WEBOBJECT>
+				<br />
+				<span class="descriptiveText">
+					Enter the SiteID for the site 
+                to be embedded within the current one.
+				</span>
+				<WEBOBJECT NAME=HasSiteIDErrorConditional>
+					<p class="warningText">
+						<WEBOBJECT NAME=SiteIDErrorMessageString></WEBOBJECT>
+					</p>
+				</WEBOBJECT>
+            </td>
+		</tr>
+     </table>
+</WEBOBJECT>
+      

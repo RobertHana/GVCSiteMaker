@@ -1,0 +1,95 @@
+<webobject name=DynamicBodyComponent>
+<SCRIPT LANGUAGE="JavaScript">
+function popupNotes( )
+{      var options = "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=400,left=200,top=200";
+   var searchwin = window.open ( "", "popupNotes", options);
+   if (searchwin.opener == null) {searchwin.opener = self;};
+   if (window.focus) {searchwin.focus()};
+   return false;
+}
+</SCRIPT> 
+	<webobject name=DeleteRequestsForm>
+		<!-- cell padding removed except around HR -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+			<tr>
+				<td style="padding-left: 2px;">
+					<h1>Manage Website Requests</h1>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">
+					<webobject name=HasCompletedRequestsConditional>
+						<webobject name=DeleteMarkedRequestsSubmitButton></webobject>
+					</webobject name=HasCompletedRequestsConditional>
+					<WEBOBJECT NAME=PendingRequestsSubmitButton></WEBOBJECT> </td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr>
+							<td>
+								<hr class="primaryBarStyle">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellspacing="2" cellpadding="2" align="center" width="96%">
+			<!-- 95% width is more dynamic in Netscape 4 -->
+			<tr valign="MIDDLE">
+				<td align="left" valign="middle">
+					<font size="4" face="Arial, Helvetica, sans-serif"><b>Completed Requests</b></font><br>
+				</td>
+			</tr>
+			<webobject name=NoCompletedRequestsConditional>
+				<tr valign="MIDDLE">
+					<td align="left" valign="middle"> &nbsp; </td>
+				</tr>
+				<tr>
+					<td>There are currently no completed website requests to display.</td>
+				</tr>
+			</webobject>
+			<webobject name=HasCompletedRequestsConditional>
+				<tr valign="MIDDLE">
+					<td valign="middle" align="right"><webobject name=MarkAllRequestsHyperlink>Mark&nbsp;All&nbsp;Requests</webobject></td>
+				</tr>
+			</webobject name=HasCompletedRequestsConditional>
+		</table>
+		<webobject name=HasCompletedRequestsConditional>
+			<table border="0" cellspacing="2" cellpadding="4" class="coloredTable" align="center" width="96%">
+				<!-- 95% width is more dynamic in Netscape 4 -->
+				<tr>
+					<th width="200" class="coloredTableHeading">Org. Unit</th>
+					<th class="coloredTableHeading">OwnerID<br>
+						SiteID</th>
+					<th width="100" class="coloredTableHeading">Date<br>
+						Requested </th>
+					<th width="100" class="coloredTableHeading">Days to<br>
+						Resolve</th>
+					<th class="coloredTableHeading">Resolution</th>
+					<th class="coloredTableHeading">Mark</th>
+				</tr>
+				<webobject name=Repetition1>
+					<tr valign="MIDDLE">
+						<td width=200 align=left valign=TOP>
+							<webobject name=UnitNameString></webobject>
+						</td>
+						<td align=left valign=TOP> <b><WEBOBJECT NAME=Hyperlink1><webobject name=OwnerIDString></webobject></WEBOBJECT></b><br>
+							<i><WEBOBJECT NAME=ManageWebsiteHyperlink><webobject name=SiteIDString></webobject></WEBOBJECT></i><br>
+						</td>
+						<td width=100 align=LEFT valign=TOP><webobject name=DateRequestedString></webobject></td>
+						<td width=100 align=RIGHT valign=TOP><webobject name=DaysToResolveString></webobject></td>
+						<td valign=TOP align=center>
+							<webobject name=ShowResolutionHyperlink>
+								<webobject name=HasBeenGrantedConditional>Granted</webobject>
+								<webobject name=HasBeenDeniedConditional>Denied</webobject>
+							</webobject name=ShowResolutionHyperlink>
+						</td>
+						<td valign="middle" align="center"><webobject name=MarkCheckBox></webobject></td>
+					</tr>
+				</webobject>
+			</table>
+		</webobject name=HasCompletedRequestsConditional>
+	</webobject>
+</webobject>

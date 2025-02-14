@@ -1,0 +1,107 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            columnName = "FAILURE_REASON"; 
+            name = failureReason; 
+            prototypeName = longString; 
+            width = 1999; 
+        }, 
+        {columnName = "ORG_UNIT_ID"; name = orgUnitId; prototypeName = dbKey; }, 
+        {columnName = "REQUEST_ID"; name = requestId; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "STATUS_ID"; 
+            externalType = INTEGER; 
+            name = statusId; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_ID"; 
+            externalType = INTEGER; 
+            name = taskId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_TYPE"; 
+            name = taskType; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        taskId, 
+        statusId, 
+        userId, 
+        taskType, 
+        details, 
+        failureReason, 
+        bindings, 
+        orgUnitId, 
+        requestId
+    ); 
+    className = "com.gvcsitemaker.core.CopySiteTask"; 
+    classProperties = (
+        status, 
+        owner, 
+        taskType, 
+        details, 
+        failureReason, 
+        createdDate, 
+        bindings, 
+        relatedOrgUnit, 
+        relatedRequest
+    ); 
+    externalName = TASK; 
+    fetchSpecificationDictionary = {}; 
+    name = CopySiteTask; 
+    parent = Task; 
+    primaryKeyAttributes = (taskId); 
+    relationships = (
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userId; }); 
+            name = owner; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = orgUnitId; }); 
+            name = relatedOrgUnit; 
+        }, 
+        {
+            destination = WebsiteRequest; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = requestId; }); 
+            name = relatedRequest; 
+        }, 
+        {
+            destination = TaskStatus; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = statusId; }); 
+            name = status; 
+        }
+    ); 
+    restrictingQualifier = "(taskType = 'CopySite')"; 
+}

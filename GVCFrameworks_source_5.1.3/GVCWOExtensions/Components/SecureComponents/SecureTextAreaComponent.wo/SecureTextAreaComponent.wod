@@ -1,0 +1,37 @@
+SpanTag: WOGenericContainer
+{
+	class = cssClassName;
+	elementName = "span";
+	name = componentName;
+}
+
+NonEditableVersion: WOString 
+{
+	value = value;
+}
+
+
+ShowEditableVersion: WOConditional 
+{
+	condition = isPermissable;
+}
+
+ShowNonEditableVersion: WOConditional 
+{
+	condition = isPermissable;
+	negate = YES;
+	name = componentName;
+	class = cssClassName;
+}
+
+
+
+EditableVersion: WOText 
+{
+	rows = rows;
+	cols = cols;
+	value = ^value;
+	name = componentName;
+	maxLength = maxLength;
+	class = cssClassName;
+}

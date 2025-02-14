@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {columnName = NAME; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "PRIVILEGE_ID"; name = privilegeId; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (privilegeId, name); 
+    className = "net.global_village.security.Privilege"; 
+    classProperties = (name, includedPrivileges); 
+    externalName = "GVC_PRIVILEGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (name, groups, includedPrivileges); }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCPrivilege; 
+    primaryKeyAttributes = (privilegeId); 
+    relationships = (
+        {
+            definition = "toGroupsPrivilege.grpToGrpsPrivFk"; 
+            name = groups; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            definition = "toIncludedPrivilegesPrivileges.includedPrivilege"; 
+            name = includedPrivileges; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = GVCGroupsPrivilege; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = privilegeId; sourceAttribute = privilegeId; }); 
+            name = toGroupsPrivilege; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = GVCPrivilegesPrivilege; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = privilegeId; sourceAttribute = privilegeId; }); 
+            name = toIncludedPrivilegesPrivileges; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

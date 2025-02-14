@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="BodyTitle" wocomponentcontent="false">
+
+		<binding name="bodyTitle"/>
+
+		<validation message="&apos;bodyTitle&apos; is a required binding">
+			<unbound name="bodyTitle"/>
+		</validation>
+	</wo>
+</wodefinitions>

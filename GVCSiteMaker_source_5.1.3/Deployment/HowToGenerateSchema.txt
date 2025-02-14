@@ -1,0 +1,55 @@
+GVCJGenericObjects
+
+1. Open the GVCJGenericObjects project.  Remove the GVCEOPrototypes framework and add the appropriate GVCSiteMaker prototypes framework from ...Projects/GVCSiteMaker/Code/...
+
+2. Open the GVCJGenericObjects EOModel.  Ensure that the adaptor information specifies a database that matches the prototypes in the project.
+
+3. Generate SQL from EOModeler.  
+
+4. Paste the SQL into the schema file for the database taking care to only overwrite the same portions.
+
+
+
+GVCVirtualTables
+
+1. Open the GVCJGenericObjects project.  Remove the GVCEOPrototypes framework and add the appropriate GVCSiteMaker prototypes framework from ...Projects/GVCSiteMaker/Code/...
+
+2. Open the GVCJGenericObjects EOModel.  Ensure that the adaptor information specifies a database that matches the prototypes in the project.
+
+3. Generate SQL from EOModeler.  
+
+4. Paste the SQL into the schema file for the database taking care to only overwrite the same portions.
+
+
+
+GVC.SiteMaker
+
+1. Include prototypes framework for target database in GVCSMCore.  Remove any other prototypes framework.
+
+2. Open the GVCSiteMaker EOModel.  Ensure that the adaptor information specifies a database that matches the prototypes in GVCSMCore.
+
+3. Generate SQL from EOModeler.  
+   NOTE:
+     - do not generate FK constraints as this cause problems with 
+       GVCSiteMaker due to the ordering of operations (last 
+       tested in of 2.5.3) for deletion
+     - do not select VirtualUserField or VirtualSiteFileField
+
+4. Paste the SQL into the schema file for the database taking care to only overwrite the same portions.
+
+5. Open the PageComponents EOModel.  Ensure that the adaptor information specifies a database that matches the prototypes in GVCSMCore.
+
+6. Generate SQL from EOModeler.  
+   NOTE:
+     - do not generate FK constraints as this cause problems with 
+       GVCSiteMaker due to the ordering of operations (last 
+       tested in of 2.5.3) for deletion
+
+7. Paste the SQL into the schema file for the database taking care to only overwrite the same portions.
+
+
+Clean Up
+
+Do a diff between the new version and the old version.  Note the differences between the generated SQL and the SQL in the old version.  The SQL in the old version has been tweaked and should be taken as correct.  Merge or hand edit the file so that the SQL changes in the old version are in the new version too.
+
+

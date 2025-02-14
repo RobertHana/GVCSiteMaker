@@ -1,0 +1,13 @@
+UnitName	Encompassing Unit	Filespace Quota	Display In List Of Org Units
+ShownInListOfAllOrgUnits	UniversityOfMichigan	10	1	
+MissingParentUnit		10	1	
+MissingQuota	University of Michigan		1	
+	University of Michigan	10	1	
+ParentDoesntExist	doesntexist	10	1	
+QuotaIsText	University of Michigan	hello	1	
+QuotaIsNegative	University of Michigan	-10	1	
+QuotaIsDecimal	University of Michigan	10.5	1	
+BooleanAsText	University of Michigan	10	abc	
+BooleanAsNumber9	University of Michigan	10	9	
+OneCharTooLong456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789a123456789z	University of Michigan	10	0	
+NotShownInListOfAllOrgUnits	UniversityOfMichigan	10	0	

@@ -1,0 +1,36 @@
+ColumnNameString: WOString {
+	value = column.name;
+}
+
+ColumnParamNameString: WOString {
+	value = columnParamName;
+}
+
+ColumnParamValueString: WOString {
+	value = column.name;
+}
+
+ComparisonTypeParamNameString: WOString {
+	value = comparisonTypeParamName;
+}
+
+ErrorString: WOString {
+	value = errorMessage;
+}
+
+HasErrorConditional: WOConditional {
+	condition = hasError;
+}
+
+JoinConditionParamNameString: WOString {
+	value = joinConditionParamName;
+}
+
+SearchValueField: WOTextField {
+	value = value;
+	name = valueParamName;
+}
+
+ShouldHaveJoinConditionConditional: WOConditional {
+	condition = isFirstCriteria;
+}

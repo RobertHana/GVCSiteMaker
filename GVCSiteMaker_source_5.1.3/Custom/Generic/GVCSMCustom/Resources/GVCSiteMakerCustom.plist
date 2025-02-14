@@ -1,0 +1,108 @@
+{
+
+//***************************************************************
+//
+// Database Configuration
+//
+// FrontBase JDBC Url format: jdbc:FrontBase://<host>/<databasename>/isolation=read_committed/locking=optimistic
+// Oracle JDBC Url format:    jdbc:oracle:thin:@<host>:<port>:<SID>";
+
+JDBCUrl = "xxx";
+DBUserName = "xxx";
+DBPassword = "xxx";
+
+
+
+//***************************************************************
+//
+// e-Mail Configuration
+//
+
+// SMTP server to use to send mail from GVC SiteMaker application
+SMTPHost = "xxx";
+
+
+// From Address for e-mail sent from GVC SiteMaker application
+FromAddress     = "xxx";
+
+
+// Address to send New Site Requests to if a new site is requested in a unit without designated admins.
+NewSiteRequestAddress = "xxx";
+
+
+
+//***************************************************************
+//
+// Domain and URL Related Items
+//
+
+// This is the main domain underwhich GVCSiteMaker runs.
+DomainName	= "www.xxx.com";
+
+// Login redirects only work for these domains, trying to login to a different domain redirects to the main page
+ValidDomains  = ("www.xxx.com");
+
+
+
+//***************************************************************
+//
+// Uploaded File Configuration
+//
+
+// This absolute path indicates where files are uploaded by the fileupload.pl script and read by GVC SiteMaker.  Both the machine running fileupload.pl and the machine running GVC SiteMaker must have access to this directory.  It must match UPLOAD_DIR in the FileUpload.pl script.
+UploadDirectory = "xxx";
+
+// Number of days that a password to an access protected file is valid for.
+FilePasswordExpirationTimeInDays = "30";
+
+
+// This is used when a new Website is created.
+DefaultQuotaInMegabytes = "50";
+
+
+
+//***************************************************************
+//
+// Kerberos and Internal User Configuration
+//
+// This indicates if the Internal User functionality is in use.  Even if this is false, the InternalUsersGroupName (in GVCSiteMakerBootstrap.plist) must be defined to be *something*.
+HasInternalUsers = "false";
+
+// This is the suffix on a User ID which indicates that it is an Internal User.  It is also added to an Internal User's user ID when sending e-mail.
+//InternalUserSuffix = "";
+
+// This is used in SMUserInstructions to refer to what the Internal Users use for a User ID.
+//InternalUserDesignatorName  = "";
+
+// Host name or IP address of the Kerberos server that Internal users will the authenticated against 
+//KerberosServer="";
+
+// The Kerberos Realm that Internal Users will be authenticated in.
+//KerberosRealm="";
+
+
+
+//***************************************************************
+//
+// Display Configuration
+//
+
+
+// This is the name shown to the user for the installation name (as opposed to the ProductName).  For example this is used before the word Home in the footer link to the main page.
+InstallationName = "xxx";
+
+// Set this to a Website SiteID to use that site as the Main page.
+//MainPageSiteID = "xxx";
+
+
+
+//***************************************************************
+//
+// Appserver Configuration
+//
+
+AuthenticatedUserSessionTimeOutInMinutes = "60";
+PublicUserSessionTimeOutInMinutes = "15";
+
+
+}

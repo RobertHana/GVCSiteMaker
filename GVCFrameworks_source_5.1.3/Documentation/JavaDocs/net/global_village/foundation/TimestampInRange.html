@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+TimestampInRange (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="TimestampInRange (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/TimestampInRange.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/foundation/TemplateSubstitution.html" title="class in net.global_village.foundation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/foundation/ValidationExceptionAdditions.html" title="class in net.global_village.foundation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/foundation/TimestampInRange.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="TimestampInRange.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.foundation.NSTimestamp">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.foundation</FONT>
+<BR>
+Class TimestampInRange</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">java.util.Date</A>
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true" title="class or interface in java.sql">java.sql.Timestamp</A>
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.foundation.NSTimestamp
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.foundation.TimestampInRange</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.foundation.NSCoding, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</A>&lt;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A>&gt;</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.25"><B>TimestampInRange</B></A><DT>extends com.webobjects.foundation.NSTimestamp</DL>
+</PRE>
+
+<P>
+<p><code>NSTimestamp</code> that can also return a beginning and ending 
+ timestamp for a range containing this timestamp with an accuracy of days or 
+ minutes.  For example, if a <code>TimestampInRange</code> is created for 
+ Oct 24, 2003 at 4:38 PM and the accuracy is set to days, then the beginning 
+ and end of range are Oct 24, 2003 at 00:00:00.000 AM and Oct 24, 2003 at 
+ 23:59:59.999 PM.  If the accuracy is set to minutes, then the beginning 
+ and end of range are Oct 24, 2003 at 4:38:00.000 AM and Oct 24, 2003 at 
+ 4:38:59.999 PM.</p>
+ <p>This class was create for use with the OptionalTimeFormatter when using 
+ the resulting timestamp in time comparisons so that the comparison accuracy 
+ would be relative to the accuracy of the data entered.</p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.foundation.TimestampInRange">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSTimestamp"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.foundation.NSTimestamp</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSTimestamp.IntRef</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSCoding._BigDecimalSupport, com.webobjects.foundation.NSCoding._BigIntegerSupport, com.webobjects.foundation.NSCoding._BooleanSupport, com.webobjects.foundation.NSCoding._ByteSupport, com.webobjects.foundation.NSCoding._CharacterSupport, com.webobjects.foundation.NSCoding._DateSupport, com.webobjects.foundation.NSCoding._DoubleSupport, com.webobjects.foundation.NSCoding._FloatSupport, com.webobjects.foundation.NSCoding._IntegerSupport, com.webobjects.foundation.NSCoding._LongSupport, com.webobjects.foundation.NSCoding._NumberSupport, com.webobjects.foundation.NSCoding._ShortSupport, com.webobjects.foundation.NSCoding._StringSupport, com.webobjects.foundation.NSCoding.Support</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#accuracy">accuracy</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#DAY_ACCURACY">DAY_ACCURACY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#MINUTE_ACCURACY">MINUTE_ACCURACY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSTimestamp"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.foundation.NSTimestamp</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, DistantFuture, DistantPast</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange()">TimestampInRange</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(java.util.Date)">TimestampInRange</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A>&nbsp;arg0)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(int, int, int, int, int, int, java.util.TimeZone)">TimestampInRange</A></B>(int&nbsp;arg0,
+                                 int&nbsp;arg1,
+                                 int&nbsp;arg2,
+                                 int&nbsp;arg3,
+                                 int&nbsp;arg4,
+                                 int&nbsp;arg5,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg6)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(long)">TimestampInRange</A></B>(long&nbsp;arg0)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(long, int)">TimestampInRange</A></B>(long&nbsp;arg0,
+                                 int&nbsp;arg1)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(long, int, java.util.TimeZone)">TimestampInRange</A></B>(long&nbsp;arg0,
+                                 int&nbsp;arg1,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg2)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(long, com.webobjects.foundation.NSTimestamp)">TimestampInRange</A></B>(long&nbsp;arg0,
+                                 com.webobjects.foundation.NSTimestamp&nbsp;arg1)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(long, java.util.TimeZone)">TimestampInRange</A></B>(long&nbsp;arg0,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg1)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#TimestampInRange(java.sql.Timestamp)">TimestampInRange</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true" title="class or interface in java.sql">Timestamp</A>&nbsp;arg0)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#accuracy()">accuracy</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the accuracy range of this timestamp.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSTimestamp</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#beginningOfRange()">beginningOfRange</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the beginning of the range containing this timestamp, accurate
+ according to <code>accuracy()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSTimestamp</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#endOfRange()">endOfRange</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the end of the range containing this timestamp, accurate 
+ according to <code>accuracy()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/TimestampInRange.html#setAccuracy(int)">setAccuracy</A></B>(int&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the accuracy range for this timestamp.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.foundation.NSTimestamp"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.foundation.NSTimestamp</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>classForCoder, compare, currentTimeIntervalSinceReferenceDate, dayOfCommonEra, dayOfMonth, dayOfWeek, dayOfYear, decodeObject, distantFuture, distantPast, earlierTimestamp, encodeWithCoder, getNanos, getTime, gregorianUnitsSinceTimestamp, hourOfDay, laterTimestamp, microsecondOfSecond, millisecondsToTimeInterval, minuteOfHour, monthOfYear, secondOfMinute, setDate, setHours, setMinutes, setMonth, setNanos, setSeconds, setTime, setYear, timeIntervalSinceNow, timeIntervalSinceReferenceDate, timeIntervalSinceTimestamp, timeIntervalToMilliseconds, timestampByAddingGregorianUnits, timestampByAddingTimeInterval, timeZone, toString, yearOfCommonEra</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.sql.Timestamp"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.sql.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true" title="class or interface in java.sql">Timestamp</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#after(java.sql.Timestamp)" title="class or interface in java.sql">after</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#before(java.sql.Timestamp)" title="class or interface in java.sql">before</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#compareTo(java.util.Date)" title="class or interface in java.sql">compareTo</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#compareTo(java.sql.Timestamp)" title="class or interface in java.sql">compareTo</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.sql">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#equals(java.sql.Timestamp)" title="class or interface in java.sql">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true#valueOf(java.lang.String)" title="class or interface in java.sql">valueOf</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.util.Date"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.util.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#after(java.util.Date)" title="class or interface in java.util">after</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#before(java.util.Date)" title="class or interface in java.util">before</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#clone()" title="class or interface in java.util">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getDate()" title="class or interface in java.util">getDate</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getDay()" title="class or interface in java.util">getDay</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getHours()" title="class or interface in java.util">getHours</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getMinutes()" title="class or interface in java.util">getMinutes</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getMonth()" title="class or interface in java.util">getMonth</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getSeconds()" title="class or interface in java.util">getSeconds</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getTimezoneOffset()" title="class or interface in java.util">getTimezoneOffset</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#getYear()" title="class or interface in java.util">getYear</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#hashCode()" title="class or interface in java.util">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#parse(java.lang.String)" title="class or interface in java.util">parse</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#toGMTString()" title="class or interface in java.util">toGMTString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#toLocaleString()" title="class or interface in java.util">toLocaleString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true#UTC(int, int, int, int, int, int)" title="class or interface in java.util">UTC</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DAY_ACCURACY"><!-- --></A><H3>
+DAY_ACCURACY</H3>
+<PRE>
+public static final int <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.27"><B>DAY_ACCURACY</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.TimestampInRange.DAY_ACCURACY">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="MINUTE_ACCURACY"><!-- --></A><H3>
+MINUTE_ACCURACY</H3>
+<PRE>
+public static final int <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.28"><B>MINUTE_ACCURACY</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.TimestampInRange.MINUTE_ACCURACY">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="accuracy"><!-- --></A><H3>
+accuracy</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.31"><B>accuracy</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="TimestampInRange()"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.34"><B>TimestampInRange</B></A>()</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(long)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.39"><B>TimestampInRange</B></A>(long&nbsp;arg0)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(long, int)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.44"><B>TimestampInRange</B></A>(long&nbsp;arg0,
+                        int&nbsp;arg1)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(long, com.webobjects.foundation.NSTimestamp)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.49"><B>TimestampInRange</B></A>(long&nbsp;arg0,
+                        com.webobjects.foundation.NSTimestamp&nbsp;arg1)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(long, java.util.TimeZone)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.54"><B>TimestampInRange</B></A>(long&nbsp;arg0,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg1)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(long, int, java.util.TimeZone)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.59"><B>TimestampInRange</B></A>(long&nbsp;arg0,
+                        int&nbsp;arg1,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg2)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(int, int, int, int, int, int, java.util.TimeZone)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.64"><B>TimestampInRange</B></A>(int&nbsp;arg0,
+                        int&nbsp;arg1,
+                        int&nbsp;arg2,
+                        int&nbsp;arg3,
+                        int&nbsp;arg4,
+                        int&nbsp;arg5,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</A>&nbsp;arg6)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(java.util.Date)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.69"><B>TimestampInRange</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A>&nbsp;arg0)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="TimestampInRange(java.sql.Timestamp)"><!-- --></A><H3>
+TimestampInRange</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.74"><B>TimestampInRange</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/sql/Timestamp.html?is-external=true" title="class or interface in java.sql">Timestamp</A>&nbsp;arg0)</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="accuracy()"><!-- --></A><H3>
+accuracy</H3>
+<PRE>
+public int <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.87"><B>accuracy</B></A>()</PRE>
+<DL>
+<DD>Returns the accuracy range of this timestamp.  Timestamps are accurate 
+ either to the day or to the minute.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the accuracy range of this timestamp</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAccuracy(int)"><!-- --></A><H3>
+setAccuracy</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.102"><B>setAccuracy</B></A>(int&nbsp;value)</PRE>
+<DL>
+<DD>Sets the accuracy range for this timestamp.  Timestamps are accurate 
+ either to the day or to the minute.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - the accuracy range for this timestamp</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="beginningOfRange()"><!-- --></A><H3>
+beginningOfRange</H3>
+<PRE>
+public com.webobjects.foundation.NSTimestamp <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.117"><B>beginningOfRange</B></A>()</PRE>
+<DL>
+<DD>Returns the beginning of the range containing this timestamp, accurate
+ according to <code>accuracy()</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the beginning of the range containing this timestamp</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="endOfRange()"><!-- --></A><H3>
+endOfRange</H3>
+<PRE>
+public com.webobjects.foundation.NSTimestamp <A HREF="../../../src-html/net/global_village/foundation/TimestampInRange.html#line.141"><B>endOfRange</B></A>()</PRE>
+<DL>
+<DD>Returns the end of the range containing this timestamp, accurate 
+ according to <code>accuracy()</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the end of the range containing this timestamp</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/TimestampInRange.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/foundation/TemplateSubstitution.html" title="class in net.global_village.foundation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/foundation/ValidationExceptionAdditions.html" title="class in net.global_village.foundation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/foundation/TimestampInRange.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="TimestampInRange.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.foundation.NSTimestamp">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

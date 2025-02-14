@@ -1,0 +1,79 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - Confirm Unit Creation";
+}
+
+CSSComponent: SMCSSComponent 
+{
+}
+
+CancelButton: WOSubmitButton {
+	value = "Cancel";
+	action = cancel;
+}
+
+Conditional1: WOConditional {
+	condition = validUnitArray.count;
+}
+
+CreateButton: WOSubmitButton {
+	value = "Create unit(s)";
+	action = create;
+}
+
+DisplayInvalidUnitList: WOConditional {
+	condition = invalidUnitArray.count;
+}
+
+DisplayValidUnitList: WOConditional {
+	condition = validUnitArray.count;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Confirm Unit Creation";
+	isAdmin = true;
+}
+
+Image3: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+InvalidUnitList1: InvalidUnitList {
+	invalidOrgUnitArray = invalidUnitArray;
+}
+
+NoValidDataObtained: WOConditional {
+	negate = true;
+	condition = validUnitArray.count;
+}
+
+NumberOfInvalidUnits: WOString {
+	value = invalidUnitArray.count;
+}
+
+PageHeader: PageHeader {
+}
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	height = 2;
+	width = 24;
+}
+
+String1: WOString {
+	value = validUnitArray.count;
+}
+
+UnitCreationForm: WOForm {
+	multipleSubmit = true;
+}
+
+ValidDataObtained: WOConditional {
+	condition = validUnitArray.count;
+}
+
+ValidUnitList: ValidUnitList {
+	validOrgUnitArray = validUnitArray;
+}

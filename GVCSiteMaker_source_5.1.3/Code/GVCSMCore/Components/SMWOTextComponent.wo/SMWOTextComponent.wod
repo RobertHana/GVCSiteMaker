@@ -1,0 +1,29 @@
+Component: RichTextComponent {
+	value = value;
+	editorCSS = editorCSS;
+	cols = cols;
+	name = name;
+	rows = rows;
+	index = index;
+	wysiwygEditorMode = wysiwygEditorMode;
+	section = section;
+	website = website;
+	columnName = columnName;	
+	currentDataAccessMode = currentDataAccessMode;
+}
+
+NotRichTextConditional: WOConditional {
+	condition = shouldUseRichTextEditor;
+	negate = true;
+}
+
+RichTextConditional: WOConditional {
+	condition = shouldUseRichTextEditor;
+}
+
+TextArea: WOText {
+	rows = rows;
+    cols = cols; // for NN 4
+	value = value;
+	name = name;
+}

@@ -1,0 +1,330 @@
+<project name="BuildGVCFrameworks" default="help" basedir=".">
+
+    <import file="Ant/properties.xml"/>
+
+    <target name="help">
+	<echo>
+This build file allows all of the GVC frameworks to be built from the
+command line.  The general form of the command (assuming that build.xml is
+in the current directory) is:
+ant [taskName]
+	
+You can produce an optimized build by defining optimize.code:
+ant [taskName] -Doptimize.code=true
+	
+The tasks defined for use in this way are:
+clean          - removes all contracted source, compiled files, and built products
+build          - does a clean and full build of the uncontracted (no DBC) frameworks
+                 and copies built frameworks to ~\Library\Frameworks
+build_dbc      - same as build but with contracted source
+javadoc        - generate JavaDocs
+OpenSource     - build the source and binary versions of the Open Source frameworks
+                 Note: this needs to have -Dversion=_something_ on the command line
+OpenSource_dbc - build the source and binary versions of the Open Source frameworks
+                 Note: this needs to have -Dversion=_something_ on the command line
+
+For details on the build process and definition of properties not defined in
+this file, see the build.xml file in the individual frameworks.  The
+individual build.xml files can also be run from the command line. 
+        </echo>
+    </target>
+
+	<!-- Main targets  -->
+
+	<!-- Build and install all products -->
+	<target name="build">
+	    <antcall target="build.all" inheritAll="true">
+    		<param name="target" value="full.build"/>
+	    </antcall>
+	</target>
+
+	<!-- Deep clean all products (removes build product, contracted source, 
+	     and compiled files.                                               -->
+	<target name="clean">
+
+	    <antcall target="build.all" inheritAll="true">
+    		<param name="target" value="clean"/>
+	    </antcall>
+	</target>
+
+
+	<!-- Convenience targets  -->
+
+	<!-- Build all products with DBC -->
+	<target name="build_dbc" depends="use.dbc, build"/>
+
+	
+	<!-- Define DBC activation flag -->
+	<target name="use.dbc">
+		<property name="use.dbc" value="true"/>
+	</target>
+
+	
+	<!-- Define Optimized build properties -->
+    <!-- These result in a build with no debug information in it which can make
+       troubleshooting production problems difficult.                           -->
+	<target name="check.optimize.code" if="${optimize.code}">
+		<property name="wocompile.debug.flag" value="off" />
+		<property name="wocompile.optimize.flag" value="on" />
+	</target>
+
+	
+	<!-- Target to distribute target over all projects -->
+	<target name="build.all" depends="check.optimize.code">
+	    <ant dir="GVCAntTasks" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCJars" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCFoundation" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCThreadedTasks" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCEOPrototypes" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCTestEOModelBase" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCTestEOModelSubClass" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCEOFExtensions" target="${target}" inheritAll="true"/>
+	    <ant dir="QualifierAdditions" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCEOFValidation" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCGenericObjects" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSecurity" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCVirtualTables" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCKerberos" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCMail" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCWOExtensions" target="${target}" inheritAll="true"/>
+        
+        <available file="GVCPayFlow" property="GVCPayFlow.present"/>
+        <antcall target="build.GVCPayFlow" inheritAll="true">
+    		<param name="target" value="${target}"/>
+	    </antcall>
+        
+        <available file="GVCReportMill" property="GVCReportMill.present"/>
+        <antcall target="build.GVCReportMill" inheritAll="true">
+    		<param name="target" value="${target}"/>
+	    </antcall>
+
+	    <ant dir="GVCJNDIAdditions" target="${target}" inheritAll="true"/>
+	</target>
+    
+    <!-- Target to build GVCPayFlow if it is present -->
+	<target name="build.GVCPayFlow" depends="check.optimize.code" if="GVCPayFlow.present">
+	    <ant dir="GVCPayFlow" target="${target}" inheritAll="true"/>
+	</target>
+
+    <!-- Target to build GVCReportMill if it is present -->
+	<target name="build.GVCReportMill" depends="check.optimize.code" if="GVCReportMill.present">
+	    <ant dir="GVCPayFlow" target="${target}" inheritAll="true"/>
+	</target>
+	
+	<!-- Open Source Distribution Targets -->
+
+	<!-- Target to produce all Open Source tarballs of built versions -->
+	<target name="OpenSource" depends="load.properties, check_version, package_os_binaries, package_os_source"/>
+	
+    <target name="OpenSource_dbc" depends="use.dbc, OpenSource"/>
+
+	<target name="check_version" depends="load.properties">
+		<condition property="version.check.failed">
+			<not>
+ 				  <isset property="version"/>
+ 			</not>
+		</condition>
+		<fail message="OpenSource packaging requires -Dversion=something" if="version.check.failed"/>
+	</target>
+
+	<!-- Target to produce tarballs of built versions -->
+	<target name="package_os_binaries" depends="check_version, load.properties, clean, build, javadoc">
+
+		<!-- Copy in stub versions of WedgeTail libraries -->
+		<ant dir="KerberosDTSCStubs" target="clean" inheritAll="true"/>
+		<ant dir="KerberosDTSCStubs" target="full.build" inheritAll="true"/>
+
+		<delete file="GVCFrameworks_*.*"/>
+		<tar	longfile="gnu"
+				destfile="GVCFrameworks_binary_${version}.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="." username="root" group="root">
+				<include name="README.TXT"/>
+			</tarfileset>
+
+			<tarfileset dir="." 
+						excludes="**/bin/** **/ContractedSource/** **/*.eomodeld~/**"
+						username="root" 
+						group="root">
+				<include name="GVCAntTasks\LICENSE.TXT"/>
+				<include name="GVCAntTasks\GVCAntTasksJavaDocs.tgz"/>
+				<include name="GVCAntTasks\GVCWOProjectAntTasks.jar"/>
+				<include name="GVCAntTasks\GVCAntTasks.jar"/>
+				<include name="GVCAntTasks\README.TXT"/>
+			</tarfileset>
+
+			<tarfileset dir="${frameworks.path}" username="root" group="root">
+				<include name="GVCJars.framework/**"/>
+				<include name="GVCThreadedTasks.framework/**"/>
+				<include name="GVCEOFExtensions.framework/**"/>
+				<include name="GVCEOFValidation.framework/**"/>
+				<include name="GVCEOPrototypes.framework/**"/>
+				<include name="QualifierAdditions.framework/**"/>
+				<include name="GVCFoundation.framework/**"/>
+				<include name="GVCGenericObjects.framework/**"/>
+				<include name="GVCJNDIAdditions.framework/**"/>
+				<include name="GVCKerberos.framework/**"/>
+				<include name="GVCMail.framework/**"/>
+				<include name="GVCSecurity.framework/**"/>
+				<include name="GVCTestEOModelBase.framework/**"/>
+				<include name="GVCTestEOModelSubClass.framework/**"/>
+				<include name="GVCVirtualTables.framework/**"/>
+				<include name="GVCWOExtensions.framework/**"/>
+			</tarfileset>
+			
+			<tarfileset dir=".">
+				<include name="Documentation/**"/>
+                <include name="Ant/**"/>
+				<include name="README.html"/>
+			</tarfileset>
+		</tar>
+		
+		<tar	longfile="gnu"
+				destfile="GVCFrameworks_binary_Wonder_${version}.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="${frameworks.path}" username="root" group="root">
+				<include name="Ajax.framework/**"/>
+				<include name="ERExtensions.framework/**"/>
+				<include name="WOOgnl.framework/**"/>
+                <include name="JavaWOExtensions.framework/**"/>
+			</tarfileset>
+		</tar>
+
+	</target>
+
+	<!-- Target to produce tarball of source code -->
+	<target name="package_os_source" depends="check_version, load.properties, check_version, javadoc">
+		<!-- Copy in stub versions of WedgeTail libraries -->
+		<ant dir="KerberosDTSCStubs" target="clean" inheritAll="true"/>
+		<ant dir="KerberosDTSCStubs" target="full.build" inheritAll="true"/>
+		
+		<delete file="GVCFrameworks_*.*"/>
+		<tar	longfile="gnu"
+				destfile="GVCFrameworks_source_${version}.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="." 
+						excludes="bin/** ContractedSource/** **/*.eomodeld~/** **/*.framework/**  **/*.woa**"
+						username="root" 
+						group="root">
+				<include name="GVCJars/**"/>
+				<include name="GVCThreadedTasks/**"/>
+				<include name="GVCAntTasks/**"/>
+				<include name="GVCEOFExtensions/**"/>
+				<include name="GVCEOFValidation/**"/>
+				<include name="QualifierAdditions/**"/>
+				<include name="GVCEOPrototypes/**"/>
+				<include name="GVCFoundation/**"/>
+				<include name="GVCGenericObjects/**"/>
+				<include name="GVCJNDIAdditions/**"/>
+				<include name="GVCKerberos/**"/>
+				<include name="GVCMail/**"/>
+				<include name="GVCSecurity/**"/>
+				<include name="GVCTestEOModelBase/**"/>
+				<include name="GVCTestEOModelSubClass/**"/>
+				<include name="GVCVirtualTables/**"/>
+				<include name="GVCWOExtensions/**"/>
+				<include name="UsingEclipse/**"/>
+				<include name="JassDistribution/**"/>
+			</tarfileset>
+			
+			<tarfileset dir=".">
+                <include name="build.xml"/>
+                <include name="Documentation/**"/>
+   				<include name="Ant/**"/>
+				<include name="README.*"/>
+   				<include name="GVCTest.sql"/>
+			</tarfileset>
+        </tar>
+		
+		<tar	longfile="gnu"
+				destfile="GVCFrameworks_source_Wonder_${version}.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="${frameworks.path}" 
+						excludes="**/bin/** **/ContractedSource/** **/*.eomodeld~/** **/*.framework/**  **/*.woa**"
+						username="root" 
+						group="root">
+				<exclude name="Wonder/Wonder-latest-Frameworks*"/>
+				<include name="Wonder/**"/>
+			</tarfileset>
+
+        </tar>
+	</target>
+
+	
+   <!-- javadoc -->
+    <target name="javadoc" depends="load.properties, define.paths">
+        <dirname property="jass.basedir" file="${jass.path}"/>
+        <javadoc access="protected" 
+                 author="true"
+                 destdir="Documentation/JavaDocs" 
+                 windowtitle="Global Village Consulting Open Source Frameworks"
+                 doctitle="Global Village Consulting Open Source Frameworks"
+                 header="&lt;b&gt;Global Village Consulting Open Source Frameworks&lt;/b&gt;"
+                 nodeprecated="false" 
+                 nodeprecatedlist="false"
+                 splitindex="false" 
+                 use="true"
+                 breakiterator="true"
+                 linksource="true"
+             verbose="false"
+                 additionalparam="-Xnodate -notimestamp">
+            <!-- Jass's doclet is not compatible with Java 1.5, need to move to Contract4J
+            <doclet name="jass.util.doc.JassDoc" path="${jass.basedir}/jass.jar"/>
+            <tag name="jass.require" description="Requires:" scope="all"/>
+            <tag name="jass.ensure" description="Ensures:" scope="all"/>
+            <tag name="jass.invariant" description="Invariant:" scope="all"/>
+            -->
+            <packageset dir="GVCAntTasks/Sources"/>
+            <packageset dir="GVCAntTasks/Tests"/>
+            <packageset dir="GVCThreadedTasks/Sources"/>
+            <packageset dir="GVCThreadedTasks/Tests"/>
+            <packageset dir="GVCEOFExtensions/Sources"/>
+            <packageset dir="GVCEOFExtensions/Tests"/>
+            <packageset dir="GVCEOFValidation/Sources"/>
+            <packageset dir="GVCEOFValidation/Tests"/>
+            <packageset dir="GVCFoundation/Sources"/>
+            <packageset dir="GVCFoundation/Tests"/>
+            <packageset dir="GVCGenericObjects/Sources"/>
+            <packageset dir="GVCGenericObjects/Tests"/>
+            <packageset dir="GVCGenericObjects/GeneratedEOs"/>
+            <packageset dir="GVCJNDIAdditions/Sources"/>
+            <packageset dir="GVCJNDIAdditions/Tests"/>
+            <packageset dir="GVCMail/Sources"/>
+            <packageset dir="GVCMail/Tests"/>
+            <packageset dir="GVCSecurity/Sources"/>
+            <packageset dir="GVCSecurity/Tests"/>
+            <packageset dir="GVCSecurity/GeneratedEOs"/>
+            <packageset dir="GVCTestEOModelBase/Sources"/>
+            <packageset dir="GVCTestEOModelBase/Tests"/>
+            <packageset dir="GVCTestEOModelBase/GeneratedEOs"/>
+            <packageset dir="GVCTestEOModelSubClass/Sources"/>
+            <packageset dir="GVCTestEOModelSubClass/Tests"/>
+            <packageset dir="GVCTestEOModelSubClass/GeneratedEOs"/>
+            <packageset dir="GVCVirtualTables/Sources"/>
+            <packageset dir="GVCVirtualTables/Tests"/>
+            <packageset dir="GVCVirtualTables/GeneratedEOs"/>
+            <packageset dir="GVCWOExtensions/Sources"/>
+            <packageset dir="GVCWOExtensions/Tests"/>
+            <packageset dir="QualifierAdditions/Sources"/>
+            <packageset dir="QualifierAdditions/Tests"/>
+            <classpath>
+                <fileset dir="GVCJars/Libraries" includes="*.jar"/>
+                <path location="${ant.home}/lib/ant.jar"/>
+                <path location="${ant.home}/lib/optional.jar"/>
+                <path location="GVCMail/Libraries/mail.jar"/>
+                <path location="GVCMail/Libraries/activation.jar"/>
+                <path location="${frameworks.path}/FrontBasePlugIn.framework/Resources/Java/frontbaseplugin.jar"/>
+                <path location="${frameworks.path}/ERExtensions.framework/Resources/Java/ERExtensions.jar"/>
+                <path location="${frameworks.path}/Ajax.framework/Resources/Java/Ajax.jar"/>
+                <fileset dir="${frameworks.path}/WOOgnl.framework/Resources/Java" includes="*.jar"/>
+                <fileset dir="${wo.local.root}/Library/WebObjects/lib" includes="*.jar"/>
+            </classpath>
+            <link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+        </javadoc>
+    </target>
+	
+</project>

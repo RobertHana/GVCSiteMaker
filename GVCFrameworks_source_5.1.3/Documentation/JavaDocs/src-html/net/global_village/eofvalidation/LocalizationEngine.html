@@ -1,0 +1,695 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofvalidation;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.util.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    import org.apache.log4j.*;<a name="line.5"></a>
+<FONT color="green">006</FONT>    <a name="line.6"></a>
+<FONT color="green">007</FONT>    import com.webobjects.appserver.*;<a name="line.7"></a>
+<FONT color="green">008</FONT>    import com.webobjects.eoaccess.*;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import com.webobjects.foundation.*;<a name="line.9"></a>
+<FONT color="green">010</FONT>    <a name="line.10"></a>
+<FONT color="green">011</FONT>    import net.global_village.foundation.*;<a name="line.11"></a>
+<FONT color="green">012</FONT>    <a name="line.12"></a>
+<FONT color="green">013</FONT>    <a name="line.13"></a>
+<FONT color="green">014</FONT>    /**<a name="line.14"></a>
+<FONT color="green">015</FONT>     * Implements search location order and key manipulation for EOFValidation used when localizing strings.  See &lt;a href="#localizedStringFromBundle"&gt;localizedStringFromBundle&lt;/a&gt;&lt;br&gt;<a name="line.15"></a>
+<FONT color="green">016</FONT>     *<a name="line.16"></a>
+<FONT color="green">017</FONT>     * @author Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.<a name="line.17"></a>
+<FONT color="green">018</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.18"></a>
+<FONT color="green">019</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.19"></a>
+<FONT color="green">020</FONT>     * @version $Revision: 8$<a name="line.20"></a>
+<FONT color="green">021</FONT>     */<a name="line.21"></a>
+<FONT color="green">022</FONT>    public class LocalizationEngine extends Object<a name="line.22"></a>
+<FONT color="green">023</FONT>    {<a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>        private static Logger logger = LoggerFactory.makeLogger();<a name="line.25"></a>
+<FONT color="green">026</FONT>    <a name="line.26"></a>
+<FONT color="green">027</FONT>        /**<a name="line.27"></a>
+<FONT color="green">028</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if the given key exists in the given table in the given framework for the given language.<a name="line.28"></a>
+<FONT color="green">029</FONT>         *<a name="line.29"></a>
+<FONT color="green">030</FONT>         * @param key the key whose existance we are checking<a name="line.30"></a>
+<FONT color="green">031</FONT>         * @param tableName the name of the table (without the .strings extension) to search<a name="line.31"></a>
+<FONT color="green">032</FONT>         * @param frameworkName the name of the framework to check<a name="line.32"></a>
+<FONT color="green">033</FONT>         * @param languages the preferred language array<a name="line.33"></a>
+<FONT color="green">034</FONT>         * @return localized string on entity for propertyName and key, or null if not found.<a name="line.34"></a>
+<FONT color="green">035</FONT>         */<a name="line.35"></a>
+<FONT color="green">036</FONT>        protected static boolean resourceStringExistsForKey(String key, String tableName, String frameworkName, NSArray languages)<a name="line.36"></a>
+<FONT color="green">037</FONT>        {<a name="line.37"></a>
+<FONT color="green">038</FONT>            /** require<a name="line.38"></a>
+<FONT color="green">039</FONT>            [valid_bundle_param] key != null;<a name="line.39"></a>
+<FONT color="green">040</FONT>            [valid_entityName_param] tableName != null;<a name="line.40"></a>
+<FONT color="green">041</FONT>            [valid_entityName_param] frameworkName != null;<a name="line.41"></a>
+<FONT color="green">042</FONT>            [valid_key_param] languages != null; **/<a name="line.42"></a>
+<FONT color="green">043</FONT>    <a name="line.43"></a>
+<FONT color="green">044</FONT>            return WOApplication.application().resourceManager().stringForKey(key, tableName, null, frameworkName, languages) != null;<a name="line.44"></a>
+<FONT color="green">045</FONT>        }<a name="line.45"></a>
+<FONT color="green">046</FONT>    <a name="line.46"></a>
+<FONT color="green">047</FONT>    <a name="line.47"></a>
+<FONT color="green">048</FONT>    <a name="line.48"></a>
+<FONT color="green">049</FONT>        /**<a name="line.49"></a>
+<FONT color="green">050</FONT>         * Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.  See class description for details on how the localized string is located.<a name="line.50"></a>
+<FONT color="green">051</FONT>         *<a name="line.51"></a>
+<FONT color="green">052</FONT>         * @param bundle NSBundle to look up this localized string in<a name="line.52"></a>
+<FONT color="green">053</FONT>         * @param entityName name of the entity to look up this localized string for (<a name="line.53"></a>
+<FONT color="green">054</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.54"></a>
+<FONT color="green">055</FONT>         * @param key key to look up this localized string for<a name="line.55"></a>
+<FONT color="green">056</FONT>         * @param language the language to look for<a name="line.56"></a>
+<FONT color="green">057</FONT>         * @return localized string on entity for propertyName and key, or null if not found.<a name="line.57"></a>
+<FONT color="green">058</FONT>         */<a name="line.58"></a>
+<FONT color="green">059</FONT>        public static String localizedStringFromBundle(NSBundle bundle,<a name="line.59"></a>
+<FONT color="green">060</FONT>                                                       String entityName,<a name="line.60"></a>
+<FONT color="green">061</FONT>                                                       String propertyName,<a name="line.61"></a>
+<FONT color="green">062</FONT>                                                       String key,<a name="line.62"></a>
+<FONT color="green">063</FONT>                                                       String language)<a name="line.63"></a>
+<FONT color="green">064</FONT>        {<a name="line.64"></a>
+<FONT color="green">065</FONT>            /** require<a name="line.65"></a>
+<FONT color="green">066</FONT>            [valid_bundle_param] bundle != null;<a name="line.66"></a>
+<FONT color="green">067</FONT>            [valid_entityName_param] entityName != null;<a name="line.67"></a>
+<FONT color="green">068</FONT>            [valid_key_param] key != null;<a name="line.68"></a>
+<FONT color="green">069</FONT>            [valid_language_param] language != null; **/<a name="line.69"></a>
+<FONT color="green">070</FONT>    <a name="line.70"></a>
+<FONT color="green">071</FONT>            String localizedString = null;<a name="line.71"></a>
+<FONT color="green">072</FONT>    <a name="line.72"></a>
+<FONT color="green">073</FONT>            // Create the keys that will be searched for<a name="line.73"></a>
+<FONT color="green">074</FONT>            String genericMessageKey = EOFValidation.EntityGenericName + "." + key; // Entity.&lt;key&gt;<a name="line.74"></a>
+<FONT color="green">075</FONT>            String partiallyQualifiedKey = entityName + "." + key; // &lt;entityName&gt;.&lt;key&gt;<a name="line.75"></a>
+<FONT color="green">076</FONT>            String fullyQualifiedKey = null; // Optional &lt;entityName&gt;.&lt;propertyName&gt;.&lt;key&gt;<a name="line.76"></a>
+<FONT color="green">077</FONT>            boolean hasThreeLevelKey = (propertyName != null) &amp;&amp; (propertyName.length() &gt; 0);<a name="line.77"></a>
+<FONT color="green">078</FONT>            if (hasThreeLevelKey)<a name="line.78"></a>
+<FONT color="green">079</FONT>            {<a name="line.79"></a>
+<FONT color="green">080</FONT>                fullyQualifiedKey = entityName + "." + propertyName + "." + key;<a name="line.80"></a>
+<FONT color="green">081</FONT>            }<a name="line.81"></a>
+<FONT color="green">082</FONT>    <a name="line.82"></a>
+<FONT color="green">083</FONT>            // These are used as string resource names<a name="line.83"></a>
+<FONT color="green">084</FONT>            String bundleName = bundle.name();<a name="line.84"></a>
+<FONT color="green">085</FONT>    <a name="line.85"></a>
+<FONT color="green">086</FONT>            NSArray languages = new NSArray(language);<a name="line.86"></a>
+<FONT color="green">087</FONT>            WOResourceManager rm = WOApplication.application().resourceManager();<a name="line.87"></a>
+<FONT color="green">088</FONT>    <a name="line.88"></a>
+<FONT color="green">089</FONT>            if (hasThreeLevelKey &amp;&amp; resourceStringExistsForKey(fullyQualifiedKey, entityName, bundleName, languages))<a name="line.89"></a>
+<FONT color="green">090</FONT>            {<a name="line.90"></a>
+<FONT color="green">091</FONT>                localizedString = rm.stringForKey(fullyQualifiedKey, entityName, null, bundleName, languages);<a name="line.91"></a>
+<FONT color="green">092</FONT>            }<a name="line.92"></a>
+<FONT color="green">093</FONT>            else if (resourceStringExistsForKey(partiallyQualifiedKey, entityName, bundleName, languages))<a name="line.93"></a>
+<FONT color="green">094</FONT>            {<a name="line.94"></a>
+<FONT color="green">095</FONT>                localizedString = rm.stringForKey(partiallyQualifiedKey, entityName, null, bundleName, languages);<a name="line.95"></a>
+<FONT color="green">096</FONT>            }<a name="line.96"></a>
+<FONT color="green">097</FONT>            else if (hasThreeLevelKey &amp;&amp; resourceStringExistsForKey(fullyQualifiedKey, bundleName, bundleName, languages))<a name="line.97"></a>
+<FONT color="green">098</FONT>            {<a name="line.98"></a>
+<FONT color="green">099</FONT>                localizedString = rm.stringForKey(fullyQualifiedKey, bundleName, null, bundleName, languages);<a name="line.99"></a>
+<FONT color="green">100</FONT>            }<a name="line.100"></a>
+<FONT color="green">101</FONT>            else if (resourceStringExistsForKey(partiallyQualifiedKey, bundleName, bundleName, languages))<a name="line.101"></a>
+<FONT color="green">102</FONT>            {<a name="line.102"></a>
+<FONT color="green">103</FONT>                localizedString = rm.stringForKey(partiallyQualifiedKey, bundleName, null, bundleName, languages);<a name="line.103"></a>
+<FONT color="green">104</FONT>            }<a name="line.104"></a>
+<FONT color="green">105</FONT>            else if (resourceStringExistsForKey(genericMessageKey, bundleName, bundleName, languages))<a name="line.105"></a>
+<FONT color="green">106</FONT>            {<a name="line.106"></a>
+<FONT color="green">107</FONT>                localizedString = rm.stringForKey(genericMessageKey, bundleName, null, bundleName, languages);<a name="line.107"></a>
+<FONT color="green">108</FONT>            }<a name="line.108"></a>
+<FONT color="green">109</FONT>    <a name="line.109"></a>
+<FONT color="green">110</FONT>            return localizedString;<a name="line.110"></a>
+<FONT color="green">111</FONT>        }<a name="line.111"></a>
+<FONT color="green">112</FONT>    <a name="line.112"></a>
+<FONT color="green">113</FONT>    <a name="line.113"></a>
+<FONT color="green">114</FONT>    <a name="line.114"></a>
+<FONT color="green">115</FONT>        /**<a name="line.115"></a>
+<FONT color="green">116</FONT>         * Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.  See class description for details on how the localized string is located.<a name="line.116"></a>
+<FONT color="green">117</FONT>         *<a name="line.117"></a>
+<FONT color="green">118</FONT>         * @param bundle NSBundle to look up this localized string in<a name="line.118"></a>
+<FONT color="green">119</FONT>         * @param entityName name of the entity to look up this localized string for<a name="line.119"></a>
+<FONT color="green">120</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.120"></a>
+<FONT color="green">121</FONT>         * @param key key to look up this localized string for<a name="line.121"></a>
+<FONT color="green">122</FONT>         * @return localized string on entity for propertyName and key, or null if not found<a name="line.122"></a>
+<FONT color="green">123</FONT>         * @see #localizedStringFromBundle(NSBundle, String, String, String, String)<a name="line.123"></a>
+<FONT color="green">124</FONT>         */<a name="line.124"></a>
+<FONT color="green">125</FONT>        public static String localizedStringFromBundle(NSBundle bundle,<a name="line.125"></a>
+<FONT color="green">126</FONT>                                                       String entityName,<a name="line.126"></a>
+<FONT color="green">127</FONT>                                                       String propertyName,<a name="line.127"></a>
+<FONT color="green">128</FONT>                                                       String key)<a name="line.128"></a>
+<FONT color="green">129</FONT>        {<a name="line.129"></a>
+<FONT color="green">130</FONT>            /** require<a name="line.130"></a>
+<FONT color="green">131</FONT>            [valid_bundle_param] bundle != null;<a name="line.131"></a>
+<FONT color="green">132</FONT>            [valid_entityName_param] entityName != null;<a name="line.132"></a>
+<FONT color="green">133</FONT>            [valid_key_param] key != null; **/<a name="line.133"></a>
+<FONT color="green">134</FONT>            return localizedStringFromBundle(bundle, entityName, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.134"></a>
+<FONT color="green">135</FONT>        }<a name="line.135"></a>
+<FONT color="green">136</FONT>    <a name="line.136"></a>
+<FONT color="green">137</FONT>    <a name="line.137"></a>
+<FONT color="green">138</FONT>    <a name="line.138"></a>
+<FONT color="green">139</FONT>        /**<a name="line.139"></a>
+<FONT color="green">140</FONT>         * Primary localization method for EOFValidation.<a name="line.140"></a>
+<FONT color="green">141</FONT>         * &lt;p&gt;The string to localize is indicated by giving the entity, an optional property name, and a key to uniquely identify the localized string.  These three items are used to form a variety of keys which are tried in order from the most specific to the least specific.  The keys, and the order they are tried are as follows:<a name="line.141"></a>
+<FONT color="green">142</FONT>         * &lt;p&gt;<a name="line.142"></a>
+<FONT color="green">143</FONT>         * &lt;TABLE BORDER="1"&gt;<a name="line.143"></a>
+<FONT color="green">144</FONT>         *   &lt;TR&gt;<a name="line.144"></a>
+<FONT color="green">145</FONT>         *     &lt;TD&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/TD&gt;&lt;TD&gt;&lt;b&gt;Format&lt;/b&gt;&lt;/TD&gt;&lt;TD&gt;&lt;b&gt;Example&lt;/b&gt;&lt;/TD&gt;<a name="line.145"></a>
+<FONT color="green">146</FONT>         *   &lt;/TR&gt;<a name="line.146"></a>
+<FONT color="green">147</FONT>         *   &lt;TR&gt;<a name="line.147"></a>
+<FONT color="green">148</FONT>         *     &lt;TD&gt;Fully qualified&lt;/TD&gt;&lt;TD&gt;&amp;lt;entityName&amp;gt;.&amp;lt;propertyName&amp;gt;.&amp;lt;key&amp;gt;&lt;/TD&gt;&lt;TD&gt;Customer.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.148"></a>
+<FONT color="green">149</FONT>         *   &lt;/TR&gt;<a name="line.149"></a>
+<FONT color="green">150</FONT>         *   &lt;TR&gt;<a name="line.150"></a>
+<FONT color="green">151</FONT>         *     &lt;TD&gt;Partially qualified&lt;/TD&gt;&lt;TD&gt;&amp;lt;entityName&amp;gt;.&amp;lt;key&amp;gt;&lt;/TD&gt;&lt;TD&gt;Customer.nullNotAllowed&lt;/TD&gt;<a name="line.151"></a>
+<FONT color="green">152</FONT>         *   &lt;/TR&gt;<a name="line.152"></a>
+<FONT color="green">153</FONT>         *   &lt;TR&gt;<a name="line.153"></a>
+<FONT color="green">154</FONT>         *     &lt;TD&gt;Generic&lt;/TD&gt;&lt;TD&gt;&amp;lt;Entity&amp;gt;.&amp;lt;key&amp;gt;&lt;/TD&gt;&lt;TD&gt;Entity.nullNotAllowed&lt;/TD&gt;<a name="line.154"></a>
+<FONT color="green">155</FONT>         *   &lt;/TR&gt;<a name="line.155"></a>
+<FONT color="green">156</FONT>         * &lt;/TABLE&gt;<a name="line.156"></a>
+<FONT color="green">157</FONT>         * The fully qualified key is not used if the property name is null or an empty string.<a name="line.157"></a>
+<FONT color="green">158</FONT>         * &lt;p&gt;These keys are looked up in a series of bundles as follows:<a name="line.158"></a>
+<FONT color="green">159</FONT>         * &lt;ul&gt;<a name="line.159"></a>
+<FONT color="green">160</FONT>         * &lt;li&gt;The main bundle.  This allows the application to have the ultimate say in localization.<a name="line.160"></a>
+<FONT color="green">161</FONT>         * &lt;li&gt;The bundle that this entity is implemented in.  This allows domain specific defaults to be recorded and allows sub-classes to override the localized strings of super classes.<a name="line.161"></a>
+<FONT color="green">162</FONT>         * &lt;li&gt;The bundle that this entity's super entity (note &lt;b&gt;not&lt;/b&gt; super class) is implemented in.  This is repeated until there is no super entity.<a name="line.162"></a>
+<FONT color="green">163</FONT>         * &lt;/ul&gt;<a name="line.163"></a>
+<FONT color="green">164</FONT>         * &lt;p&gt;Within each bundle, two string resources are checked:<a name="line.164"></a>
+<FONT color="green">165</FONT>         * &lt;ul&gt;<a name="line.165"></a>
+<FONT color="green">166</FONT>         * &lt;li&gt;First, the entity level resource named &lt;b&gt;&amp;lt;entityName&amp;gt;.strings&lt;/b&gt; (e.g. Customer.strings) which is searched for the fully and partially qualified keys<a name="line.166"></a>
+<FONT color="green">167</FONT>         * &lt;li&gt;Then, the bundle level resource named &lt;b&gt;&amp;lt;bundleName&amp;gt;.strings&lt;/b&gt; (e.g. StoreEO.strings) which is searched for the fully qualified, partially qualified, and generic keys<a name="line.167"></a>
+<FONT color="green">168</FONT>         * &lt;/ul&gt;<a name="line.168"></a>
+<FONT color="green">169</FONT>         * &lt;p&gt;If this still fails to locate a localized string, the Generic key is searched for in the GVCEOFValidation bundle, in the GVCEOFValidation.strings resource.<a name="line.169"></a>
+<FONT color="green">170</FONT>         * &lt;br&gt;<a name="line.170"></a>
+<FONT color="green">171</FONT>         * &lt;p&gt;An example will be useful in understanding the full search order.  Here are three components of a mythical eCommerce store site:<a name="line.171"></a>
+<FONT color="green">172</FONT>         * &lt;ul&gt;<a name="line.172"></a>
+<FONT color="green">173</FONT>         * &lt;li&gt;&lt;b&gt;GenericObjects&lt;/b&gt; - a framework that implements generic base classes for common entities.  We are interested in &lt;I&gt;GenericPerson&lt;/I&gt;, and in particular their attribute &lt;I&gt;firstName&lt;/I&gt;.<a name="line.173"></a>
+<FONT color="green">174</FONT>         * &lt;li&gt;&lt;b&gt;StoreEO&lt;/b&gt; - a framework that implements the enterprise and domain objects that we will use to implement the store.  &lt;I&gt;Customer&lt;/I&gt; is implemented here as a sub-class of &lt;I&gt;GenericPerson&lt;/I&gt;.<a name="line.174"></a>
+<FONT color="green">175</FONT>         * &lt;li&gt;&lt;b&gt;Store&lt;/b&gt; - a WebObjects application that implments the UI part of our little on-line store.<a name="line.175"></a>
+<FONT color="green">176</FONT>         * &lt;/ul&gt;<a name="line.176"></a>
+<FONT color="green">177</FONT>         * &lt;p&gt;Now imagine that while registering on the site, that a customer forgets to type in their first name.  This is a required field in the EOModel in StoreEO and so EOF flags this as a validation error.  GVCEOFValidation then steps in to provide a localized message.  Here is the order the search would occur in if there were no matches.  A match at any point stops the search.<a name="line.177"></a>
+<FONT color="green">178</FONT>         * &lt;p&gt;<a name="line.178"></a>
+<FONT color="green">179</FONT>         * &lt;DIV ALIGN="CENTER"&gt;&lt;TABLE BORDER="1"&gt;<a name="line.179"></a>
+<FONT color="green">180</FONT>         *   &lt;TR&gt;<a name="line.180"></a>
+<FONT color="green">181</FONT>         *     &lt;TD&gt;&lt;b&gt;Bundle Examined&lt;/b&gt;&lt;/TD&gt;&lt;TD WIDTH="120"&gt;&lt;b&gt;Strings File&lt;/b&gt;&lt;/TD&gt;&lt;TD&gt;&lt;b&gt;Key Used&lt;/b&gt;&lt;/TD&gt;<a name="line.181"></a>
+<FONT color="green">182</FONT>         *   &lt;/TR&gt;<a name="line.182"></a>
+<FONT color="green">183</FONT>         *   &lt;TR&gt;<a name="line.183"></a>
+<FONT color="green">184</FONT>         *     &lt;TD&gt;Store.woa&lt;/TD&gt;  &lt;TD&gt;Customer.strings&lt;/TD&gt;  &lt;TD&gt;Customer.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.184"></a>
+<FONT color="green">185</FONT>         *   &lt;/TR&gt;<a name="line.185"></a>
+<FONT color="green">186</FONT>         *   &lt;TR&gt;<a name="line.186"></a>
+<FONT color="green">187</FONT>         *     &lt;TD&gt;Store.woa&lt;/TD&gt;  &lt;TD&gt;Customer.strings&lt;/TD&gt;  &lt;TD&gt;Customer.nullNotAllowed&lt;/TD&gt;<a name="line.187"></a>
+<FONT color="green">188</FONT>         *   &lt;/TR&gt;<a name="line.188"></a>
+<FONT color="green">189</FONT>         *   &lt;TR&gt;<a name="line.189"></a>
+<FONT color="green">190</FONT>         *     &lt;TD&gt;Store.woa&lt;/TD&gt;  &lt;TD&gt;Store.strings&lt;/TD&gt;  &lt;TD&gt;Customer.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.190"></a>
+<FONT color="green">191</FONT>         *   &lt;/TR&gt;<a name="line.191"></a>
+<FONT color="green">192</FONT>         *   &lt;TR&gt;<a name="line.192"></a>
+<FONT color="green">193</FONT>         *     &lt;TD&gt;Store.woa&lt;/TD&gt;  &lt;TD&gt;Store.strings&lt;/TD&gt;  &lt;TD&gt;Customer.nullNotAllowed&lt;/TD&gt;<a name="line.193"></a>
+<FONT color="green">194</FONT>         *   &lt;/TR&gt;<a name="line.194"></a>
+<FONT color="green">195</FONT>         *   &lt;TR&gt;<a name="line.195"></a>
+<FONT color="green">196</FONT>         *     &lt;TD&gt;Store.woa&lt;/TD&gt;  &lt;TD&gt;Store.strings&lt;/TD&gt;  &lt;TD&gt;Entity.nullNotAllowed&lt;/TD&gt;<a name="line.196"></a>
+<FONT color="green">197</FONT>         *   &lt;/TR&gt;<a name="line.197"></a>
+<FONT color="green">198</FONT>         *   &lt;TR&gt;<a name="line.198"></a>
+<FONT color="green">199</FONT>         *     &lt;TD&gt;StoreEO.framework&lt;/TD&gt;  &lt;TD&gt;Customer.strings&lt;/TD&gt;  &lt;TD&gt;Customer.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.199"></a>
+<FONT color="green">200</FONT>         *   &lt;/TR&gt;<a name="line.200"></a>
+<FONT color="green">201</FONT>         *   &lt;TR&gt;<a name="line.201"></a>
+<FONT color="green">202</FONT>         *     &lt;TD&gt;StoreEO.framework&lt;/TD&gt;  &lt;TD&gt;Customer.strings&lt;/TD&gt;  &lt;TD&gt;Customer.nullNotAllowed&lt;/TD&gt;<a name="line.202"></a>
+<FONT color="green">203</FONT>         *   &lt;/TR&gt;<a name="line.203"></a>
+<FONT color="green">204</FONT>         *   &lt;TR&gt;<a name="line.204"></a>
+<FONT color="green">205</FONT>         *     &lt;TD&gt;StoreEO.framework&lt;/TD&gt;  &lt;TD&gt;StoreEO.strings&lt;/TD&gt;  &lt;TD&gt;Customer.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.205"></a>
+<FONT color="green">206</FONT>         *   &lt;/TR&gt;<a name="line.206"></a>
+<FONT color="green">207</FONT>         *   &lt;TR&gt;<a name="line.207"></a>
+<FONT color="green">208</FONT>         *     &lt;TD&gt;StoreEO.framework&lt;/TD&gt;  &lt;TD&gt;StoreEO.strings&lt;/TD&gt;  &lt;TD&gt;Customer.nullNotAllowed&lt;/TD&gt;<a name="line.208"></a>
+<FONT color="green">209</FONT>         *   &lt;/TR&gt;<a name="line.209"></a>
+<FONT color="green">210</FONT>         *   &lt;TR&gt;<a name="line.210"></a>
+<FONT color="green">211</FONT>         *     &lt;TD&gt;StoreEO.framework&lt;/TD&gt;  &lt;TD&gt;StoreEO.strings&lt;/TD&gt;  &lt;TD&gt;Entity.nullNotAllowed&lt;/TD&gt;<a name="line.211"></a>
+<FONT color="green">212</FONT>         *   &lt;/TR&gt;<a name="line.212"></a>
+<FONT color="green">213</FONT>    <a name="line.213"></a>
+<FONT color="green">214</FONT>         *   &lt;TR&gt;<a name="line.214"></a>
+<FONT color="green">215</FONT>         *     &lt;TD&gt;GenericObjects.framework&lt;/TD&gt;  &lt;TD&gt;GenericPerson.strings&lt;/TD&gt;  &lt;TD&gt;GenericPerson.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.215"></a>
+<FONT color="green">216</FONT>         *   &lt;/TR&gt;<a name="line.216"></a>
+<FONT color="green">217</FONT>         *   &lt;TR&gt;<a name="line.217"></a>
+<FONT color="green">218</FONT>         *     &lt;TD&gt;GenericObjects.framework&lt;/TD&gt;  &lt;TD&gt;GenericPerson.strings&lt;/TD&gt;  &lt;TD&gt;GenericPerson.nullNotAllowed&lt;/TD&gt;<a name="line.218"></a>
+<FONT color="green">219</FONT>         *   &lt;/TR&gt;<a name="line.219"></a>
+<FONT color="green">220</FONT>         *   &lt;TR&gt;<a name="line.220"></a>
+<FONT color="green">221</FONT>         *     &lt;TD&gt;GenericObjects.framework&lt;/TD&gt;  &lt;TD&gt;GenericObjects.strings&lt;/TD&gt;  &lt;TD&gt;GenericPerson.firstName.nullNotAllowed&lt;/TD&gt;<a name="line.221"></a>
+<FONT color="green">222</FONT>         *   &lt;/TR&gt;<a name="line.222"></a>
+<FONT color="green">223</FONT>         *   &lt;TR&gt;<a name="line.223"></a>
+<FONT color="green">224</FONT>         *     &lt;TD&gt;GenericObjects.framework&lt;/TD&gt;  &lt;TD&gt;GenericObjects.strings&lt;/TD&gt;  &lt;TD&gt;GenericPerson.nullNotAllowed&lt;/TD&gt;<a name="line.224"></a>
+<FONT color="green">225</FONT>         *   &lt;/TR&gt;<a name="line.225"></a>
+<FONT color="green">226</FONT>         *   &lt;TR&gt;<a name="line.226"></a>
+<FONT color="green">227</FONT>         *     &lt;TD&gt;GenericObjects.framework&lt;/TD&gt;  &lt;TD&gt;GenericObjects.strings&lt;/TD&gt;  &lt;TD&gt;Entity.nullNotAllowed&lt;/TD&gt;<a name="line.227"></a>
+<FONT color="green">228</FONT>         *   &lt;/TR&gt;<a name="line.228"></a>
+<FONT color="green">229</FONT>         *   &lt;TR&gt;<a name="line.229"></a>
+<FONT color="green">230</FONT>         *     &lt;TD&gt;GVCEOFValidation.framework&lt;/TD&gt;  &lt;TD&gt;GVCEOFValidation.strings&lt;/TD&gt;  &lt;TD&gt;Entity.nullNotAllowed&lt;/TD&gt;<a name="line.230"></a>
+<FONT color="green">231</FONT>         *   &lt;/TR&gt;<a name="line.231"></a>
+<FONT color="green">232</FONT>         * &lt;/TABLE&gt;&lt;/DIV&gt;<a name="line.232"></a>
+<FONT color="green">233</FONT>         *<a name="line.233"></a>
+<FONT color="green">234</FONT>         * @param entityName name of the EOEntity to look up this localized string for<a name="line.234"></a>
+<FONT color="green">235</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.235"></a>
+<FONT color="green">236</FONT>         * @param key key to look up this localized string for<a name="line.236"></a>
+<FONT color="green">237</FONT>         * @param language the language to use when looking up the string<a name="line.237"></a>
+<FONT color="green">238</FONT>         * @return localized string on entity for propertyName and key<a name="line.238"></a>
+<FONT color="green">239</FONT>         */<a name="line.239"></a>
+<FONT color="green">240</FONT>        protected static String findLocalizedString(String entityName, String propertyName, String key, String language)<a name="line.240"></a>
+<FONT color="green">241</FONT>        {<a name="line.241"></a>
+<FONT color="green">242</FONT>            /** require<a name="line.242"></a>
+<FONT color="green">243</FONT>            [valid_entityName_param] entityName != null;<a name="line.243"></a>
+<FONT color="green">244</FONT>            [valid_key_param] key != null;<a name="line.244"></a>
+<FONT color="green">245</FONT>            [valid_language_param] language != null;<a name="line.245"></a>
+<FONT color="green">246</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.246"></a>
+<FONT color="green">247</FONT>    <a name="line.247"></a>
+<FONT color="green">248</FONT>            // The main bundle is considered the "most derived" source and is hence the first place we look<a name="line.248"></a>
+<FONT color="green">249</FONT>            if (logger.isTraceEnabled()) logger.trace("Three level key [" + entityName + "." + propertyName + "." + key + "]" );<a name="line.249"></a>
+<FONT color="green">250</FONT>            String localizedString = localizedStringFromBundle(NSBundle.mainBundle(),<a name="line.250"></a>
+<FONT color="green">251</FONT>                                                               entityName,<a name="line.251"></a>
+<FONT color="green">252</FONT>                                                               propertyName,<a name="line.252"></a>
+<FONT color="green">253</FONT>                                                               key,<a name="line.253"></a>
+<FONT color="green">254</FONT>                                                               language);<a name="line.254"></a>
+<FONT color="green">255</FONT>            if (logger.isTraceEnabled()) logger.trace("Result from main bundle: " + localizedString);<a name="line.255"></a>
+<FONT color="green">256</FONT>    <a name="line.256"></a>
+<FONT color="green">257</FONT>            // If the localized string is not in the mainBundle() then look on the entity and march up the inheritance chain.<a name="line.257"></a>
+<FONT color="green">258</FONT>            EOEntity currentEntity = EOModelGroup.defaultGroup().entityNamed(entityName);<a name="line.258"></a>
+<FONT color="green">259</FONT>            NSBundle bundle;<a name="line.259"></a>
+<FONT color="green">260</FONT>            while ((localizedString == null) &amp;&amp; (currentEntity != null &amp;&amp; ! currentEntity.className().equals("EOGenericRecord")))<a name="line.260"></a>
+<FONT color="green">261</FONT>            {<a name="line.261"></a>
+<FONT color="green">262</FONT>                bundle = NSBundle.bundleForClass(EOEntityAdditions.safeClassForName(currentEntity, currentEntity.className()));<a name="line.262"></a>
+<FONT color="green">263</FONT>                if (bundle == null)<a name="line.263"></a>
+<FONT color="green">264</FONT>                {<a name="line.264"></a>
+<FONT color="green">265</FONT>                    throw new IllegalStateException("Check classpath: can't locate bundle for " + currentEntity.className());<a name="line.265"></a>
+<FONT color="green">266</FONT>                }<a name="line.266"></a>
+<FONT color="green">267</FONT>    <a name="line.267"></a>
+<FONT color="green">268</FONT>                localizedString = localizedStringFromBundle(bundle,<a name="line.268"></a>
+<FONT color="green">269</FONT>                                                            currentEntity.name(),<a name="line.269"></a>
+<FONT color="green">270</FONT>                                                            propertyName,<a name="line.270"></a>
+<FONT color="green">271</FONT>                                                            key,<a name="line.271"></a>
+<FONT color="green">272</FONT>                                                            language);<a name="line.272"></a>
+<FONT color="green">273</FONT>                if (logger.isTraceEnabled()) logger.trace("Result from " + bundle.name() + " bundle: " + localizedString);<a name="line.273"></a>
+<FONT color="green">274</FONT>    <a name="line.274"></a>
+<FONT color="green">275</FONT>                currentEntity = currentEntity.parentEntity();<a name="line.275"></a>
+<FONT color="green">276</FONT>            }<a name="line.276"></a>
+<FONT color="green">277</FONT>    <a name="line.277"></a>
+<FONT color="green">278</FONT>            // We have still not found a match, check the defaults in this framework.<a name="line.278"></a>
+<FONT color="green">279</FONT>            if (localizedString == null)<a name="line.279"></a>
+<FONT color="green">280</FONT>            {<a name="line.280"></a>
+<FONT color="green">281</FONT>                bundle = NSBundle.bundleForClass(LocalizationEngine.class);<a name="line.281"></a>
+<FONT color="green">282</FONT>                if (bundle == null)<a name="line.282"></a>
+<FONT color="green">283</FONT>                {<a name="line.283"></a>
+<FONT color="green">284</FONT>                    throw new IllegalStateException("Check classpath: can't locate bundle for " + LocalizationEngine.class.getCanonicalName());<a name="line.284"></a>
+<FONT color="green">285</FONT>                }<a name="line.285"></a>
+<FONT color="green">286</FONT>    <a name="line.286"></a>
+<FONT color="green">287</FONT>                localizedString = localizedStringFromBundle(bundle, entityName, propertyName, key, language);<a name="line.287"></a>
+<FONT color="green">288</FONT>            }<a name="line.288"></a>
+<FONT color="green">289</FONT>    <a name="line.289"></a>
+<FONT color="green">290</FONT>            return localizedString;<a name="line.290"></a>
+<FONT color="green">291</FONT>        }<a name="line.291"></a>
+<FONT color="green">292</FONT>    <a name="line.292"></a>
+<FONT color="green">293</FONT>    <a name="line.293"></a>
+<FONT color="green">294</FONT>        /**<a name="line.294"></a>
+<FONT color="green">295</FONT>         * Returns &lt;code&gt;findLocalizedString(String, String, String, Locale.getDefault().getDisplayLanguage())&lt;/code&gt;.<a name="line.295"></a>
+<FONT color="green">296</FONT>         *<a name="line.296"></a>
+<FONT color="green">297</FONT>         * @param entityName name of the EOEntity to look up this localized string for<a name="line.297"></a>
+<FONT color="green">298</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.298"></a>
+<FONT color="green">299</FONT>         * @param key key to look up this localized string for<a name="line.299"></a>
+<FONT color="green">300</FONT>         * @return localized string on entity for propertyName and key<a name="line.300"></a>
+<FONT color="green">301</FONT>         * @see #findLocalizedString(String, String, String, String)<a name="line.301"></a>
+<FONT color="green">302</FONT>         */<a name="line.302"></a>
+<FONT color="green">303</FONT>        protected static String findLocalizedString(String entityName, String propertyName, String key)<a name="line.303"></a>
+<FONT color="green">304</FONT>        {<a name="line.304"></a>
+<FONT color="green">305</FONT>            /** require<a name="line.305"></a>
+<FONT color="green">306</FONT>            [valid_entityName_param] entityName != null;<a name="line.306"></a>
+<FONT color="green">307</FONT>            [valid_key_param] key != null;<a name="line.307"></a>
+<FONT color="green">308</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.308"></a>
+<FONT color="green">309</FONT>            return findLocalizedString(entityName, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.309"></a>
+<FONT color="green">310</FONT>        }<a name="line.310"></a>
+<FONT color="green">311</FONT>    <a name="line.311"></a>
+<FONT color="green">312</FONT>    <a name="line.312"></a>
+<FONT color="green">313</FONT>    <a name="line.313"></a>
+<FONT color="green">314</FONT>        /**<a name="line.314"></a>
+<FONT color="green">315</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if a localized string for the given params exists.<a name="line.315"></a>
+<FONT color="green">316</FONT>         *<a name="line.316"></a>
+<FONT color="green">317</FONT>         * @param entityName EOEntity to look up this localized string for<a name="line.317"></a>
+<FONT color="green">318</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.318"></a>
+<FONT color="green">319</FONT>         * @param key key to look up this localized string for<a name="line.319"></a>
+<FONT color="green">320</FONT>         * @param language the language to use when looking for the string<a name="line.320"></a>
+<FONT color="green">321</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if a localized string exists for these params<a name="line.321"></a>
+<FONT color="green">322</FONT>         */<a name="line.322"></a>
+<FONT color="green">323</FONT>        public static boolean localizedStringExists(String entityName, String propertyName, String key, String language)<a name="line.323"></a>
+<FONT color="green">324</FONT>        {<a name="line.324"></a>
+<FONT color="green">325</FONT>            /** require<a name="line.325"></a>
+<FONT color="green">326</FONT>            [valid_entityName_param] entityName != null;<a name="line.326"></a>
+<FONT color="green">327</FONT>            [valid_key_param] key != null;<a name="line.327"></a>
+<FONT color="green">328</FONT>            [valid_language_param] language != null;<a name="line.328"></a>
+<FONT color="green">329</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.329"></a>
+<FONT color="green">330</FONT>    <a name="line.330"></a>
+<FONT color="green">331</FONT>            return findLocalizedString(entityName, propertyName, key, language) != null;<a name="line.331"></a>
+<FONT color="green">332</FONT>        }<a name="line.332"></a>
+<FONT color="green">333</FONT>    <a name="line.333"></a>
+<FONT color="green">334</FONT>    <a name="line.334"></a>
+<FONT color="green">335</FONT>        /**<a name="line.335"></a>
+<FONT color="green">336</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if a localized string for the given params exists.<a name="line.336"></a>
+<FONT color="green">337</FONT>         *<a name="line.337"></a>
+<FONT color="green">338</FONT>         * @param entityName EOEntity to look up this localized string for<a name="line.338"></a>
+<FONT color="green">339</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.339"></a>
+<FONT color="green">340</FONT>         * @param key key to look up this localized string for<a name="line.340"></a>
+<FONT color="green">341</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if a localized string exists for these params<a name="line.341"></a>
+<FONT color="green">342</FONT>         * @see #localizedStringExists(String, String, String, String)<a name="line.342"></a>
+<FONT color="green">343</FONT>         */<a name="line.343"></a>
+<FONT color="green">344</FONT>        public static boolean localizedStringExists(String entityName, String propertyName, String key)<a name="line.344"></a>
+<FONT color="green">345</FONT>        {<a name="line.345"></a>
+<FONT color="green">346</FONT>            /** require<a name="line.346"></a>
+<FONT color="green">347</FONT>            [valid_entityName_param] entityName != null;<a name="line.347"></a>
+<FONT color="green">348</FONT>            [valid_key_param] key != null;<a name="line.348"></a>
+<FONT color="green">349</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.349"></a>
+<FONT color="green">350</FONT>    <a name="line.350"></a>
+<FONT color="green">351</FONT>    <a name="line.351"></a>
+<FONT color="green">352</FONT>            return localizedStringExists(entityName, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.352"></a>
+<FONT color="green">353</FONT>        }<a name="line.353"></a>
+<FONT color="green">354</FONT>    <a name="line.354"></a>
+<FONT color="green">355</FONT>    <a name="line.355"></a>
+<FONT color="green">356</FONT>        /**<a name="line.356"></a>
+<FONT color="green">357</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if a localized string for the given params exists.<a name="line.357"></a>
+<FONT color="green">358</FONT>         *<a name="line.358"></a>
+<FONT color="green">359</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.359"></a>
+<FONT color="green">360</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.360"></a>
+<FONT color="green">361</FONT>         * @param key key to look up this localized string for<a name="line.361"></a>
+<FONT color="green">362</FONT>         * @param language the language to use when looking for the string<a name="line.362"></a>
+<FONT color="green">363</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if a localized string exists for these params<a name="line.363"></a>
+<FONT color="green">364</FONT>         * @see #localizedStringExists(String, String, String, String)<a name="line.364"></a>
+<FONT color="green">365</FONT>         */<a name="line.365"></a>
+<FONT color="green">366</FONT>        public static boolean localizedStringExists(EOEntity entity, String propertyName, String key, String language)<a name="line.366"></a>
+<FONT color="green">367</FONT>        {<a name="line.367"></a>
+<FONT color="green">368</FONT>            /** require<a name="line.368"></a>
+<FONT color="green">369</FONT>            [valid_entity_param] entity != null;<a name="line.369"></a>
+<FONT color="green">370</FONT>            [valid_key_param] key != null;<a name="line.370"></a>
+<FONT color="green">371</FONT>            [valid_language_param] language != null;<a name="line.371"></a>
+<FONT color="green">372</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.372"></a>
+<FONT color="green">373</FONT>    <a name="line.373"></a>
+<FONT color="green">374</FONT>            return localizedStringExists(entity.name(), propertyName, key, language);<a name="line.374"></a>
+<FONT color="green">375</FONT>        }<a name="line.375"></a>
+<FONT color="green">376</FONT>    <a name="line.376"></a>
+<FONT color="green">377</FONT>    <a name="line.377"></a>
+<FONT color="green">378</FONT>        /**<a name="line.378"></a>
+<FONT color="green">379</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if a localized string for the given params exists.<a name="line.379"></a>
+<FONT color="green">380</FONT>         *<a name="line.380"></a>
+<FONT color="green">381</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.381"></a>
+<FONT color="green">382</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.382"></a>
+<FONT color="green">383</FONT>         * @param key key to look up this localized string for<a name="line.383"></a>
+<FONT color="green">384</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if a localized string exists for these params<a name="line.384"></a>
+<FONT color="green">385</FONT>         * @see #localizedStringExists(String, String, String, String)<a name="line.385"></a>
+<FONT color="green">386</FONT>         */<a name="line.386"></a>
+<FONT color="green">387</FONT>        public static boolean localizedStringExists(EOEntity entity, String propertyName, String key)<a name="line.387"></a>
+<FONT color="green">388</FONT>        {<a name="line.388"></a>
+<FONT color="green">389</FONT>            /** require<a name="line.389"></a>
+<FONT color="green">390</FONT>            [valid_entity_param] entity != null;<a name="line.390"></a>
+<FONT color="green">391</FONT>            [valid_key_param] key != null;<a name="line.391"></a>
+<FONT color="green">392</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.392"></a>
+<FONT color="green">393</FONT>    <a name="line.393"></a>
+<FONT color="green">394</FONT>            return localizedStringExists(entity.name(), propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.394"></a>
+<FONT color="green">395</FONT>        }<a name="line.395"></a>
+<FONT color="green">396</FONT>    <a name="line.396"></a>
+<FONT color="green">397</FONT>    <a name="line.397"></a>
+<FONT color="green">398</FONT>    <a name="line.398"></a>
+<FONT color="green">399</FONT>        /**<a name="line.399"></a>
+<FONT color="green">400</FONT>         * Primary localization method for EOFValidation. See #findLocalizedString(String, String, String, String) for more info.<a name="line.400"></a>
+<FONT color="green">401</FONT>         *<a name="line.401"></a>
+<FONT color="green">402</FONT>         * @param entityName EOEntity to look up this localized string for<a name="line.402"></a>
+<FONT color="green">403</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.403"></a>
+<FONT color="green">404</FONT>         * @param key key to look up this localized string for<a name="line.404"></a>
+<FONT color="green">405</FONT>         * @param language the language to use when looking up the string<a name="line.405"></a>
+<FONT color="green">406</FONT>         * @return localized string on entity for propertyName and key<a name="line.406"></a>
+<FONT color="green">407</FONT>         * @see #findLocalizedString(String, String, String, String)<a name="line.407"></a>
+<FONT color="green">408</FONT>         */<a name="line.408"></a>
+<FONT color="green">409</FONT>        public static String localizedString(String entityName, String propertyName, String key, String language)<a name="line.409"></a>
+<FONT color="green">410</FONT>        {<a name="line.410"></a>
+<FONT color="green">411</FONT>            /** require<a name="line.411"></a>
+<FONT color="green">412</FONT>            [valid_entityName_param] entityName != null;<a name="line.412"></a>
+<FONT color="green">413</FONT>            [valid_key_param] key != null;<a name="line.413"></a>
+<FONT color="green">414</FONT>            [valid_language_param] language != null;<a name="line.414"></a>
+<FONT color="green">415</FONT>            [localized_string_exists] localizedStringExists(entityName, propertyName, key, language);<a name="line.415"></a>
+<FONT color="green">416</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.416"></a>
+<FONT color="green">417</FONT>    <a name="line.417"></a>
+<FONT color="green">418</FONT>            return findLocalizedString(entityName, propertyName, key, language);<a name="line.418"></a>
+<FONT color="green">419</FONT>    <a name="line.419"></a>
+<FONT color="green">420</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.420"></a>
+<FONT color="green">421</FONT>        }<a name="line.421"></a>
+<FONT color="green">422</FONT>    <a name="line.422"></a>
+<FONT color="green">423</FONT>    <a name="line.423"></a>
+<FONT color="green">424</FONT>        /**<a name="line.424"></a>
+<FONT color="green">425</FONT>         * Cover method for the primary localization method for EOFValidation.<a name="line.425"></a>
+<FONT color="green">426</FONT>         *<a name="line.426"></a>
+<FONT color="green">427</FONT>         * @param entityName EOEntity to look up this localized string for<a name="line.427"></a>
+<FONT color="green">428</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.428"></a>
+<FONT color="green">429</FONT>         * @param key key to look up this localized string for<a name="line.429"></a>
+<FONT color="green">430</FONT>         * @return localized string on entity for propertyName and key<a name="line.430"></a>
+<FONT color="green">431</FONT>         * @see #localizedString(String, String, String, String)<a name="line.431"></a>
+<FONT color="green">432</FONT>         */<a name="line.432"></a>
+<FONT color="green">433</FONT>        public static String localizedString(String entityName, String propertyName, String key)<a name="line.433"></a>
+<FONT color="green">434</FONT>        {<a name="line.434"></a>
+<FONT color="green">435</FONT>            /** require<a name="line.435"></a>
+<FONT color="green">436</FONT>            [valid_entityName_param] entityName != null;<a name="line.436"></a>
+<FONT color="green">437</FONT>            [valid_key_param] key != null;<a name="line.437"></a>
+<FONT color="green">438</FONT>            [localized_string_exists] localizedStringExists(entityName, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.438"></a>
+<FONT color="green">439</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.439"></a>
+<FONT color="green">440</FONT>            return localizedString(entityName, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.440"></a>
+<FONT color="green">441</FONT>    <a name="line.441"></a>
+<FONT color="green">442</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.442"></a>
+<FONT color="green">443</FONT>        }<a name="line.443"></a>
+<FONT color="green">444</FONT>    <a name="line.444"></a>
+<FONT color="green">445</FONT>    <a name="line.445"></a>
+<FONT color="green">446</FONT>        /**<a name="line.446"></a>
+<FONT color="green">447</FONT>         * Cover method for the primary localization method for EOFValidation (&lt;a href="#localizedString(String, String, String, String)"&gt;localizedString(String, String, String, String)&lt;/a&gt;).<a name="line.447"></a>
+<FONT color="green">448</FONT>         *<a name="line.448"></a>
+<FONT color="green">449</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.449"></a>
+<FONT color="green">450</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.450"></a>
+<FONT color="green">451</FONT>         * @param key key to look up this localized string for<a name="line.451"></a>
+<FONT color="green">452</FONT>         * @param language the language to use when looking up the string<a name="line.452"></a>
+<FONT color="green">453</FONT>         * @return localized string on entity for propertyName and key<a name="line.453"></a>
+<FONT color="green">454</FONT>         * @see #localizedString(String, String, String, String)<a name="line.454"></a>
+<FONT color="green">455</FONT>         */<a name="line.455"></a>
+<FONT color="green">456</FONT>        public static String localizedString(EOEntity entity, String propertyName, String key, String language)<a name="line.456"></a>
+<FONT color="green">457</FONT>        {<a name="line.457"></a>
+<FONT color="green">458</FONT>            /** require<a name="line.458"></a>
+<FONT color="green">459</FONT>            [valid_entity_param] entity != null;<a name="line.459"></a>
+<FONT color="green">460</FONT>            [valid_key_param] key != null;<a name="line.460"></a>
+<FONT color="green">461</FONT>            [valid_language_param] language != null;<a name="line.461"></a>
+<FONT color="green">462</FONT>            [localized_string_exists] localizedStringExists(entity, propertyName, key, language);<a name="line.462"></a>
+<FONT color="green">463</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.463"></a>
+<FONT color="green">464</FONT>            return localizedString(entity.name(), propertyName, key, language);<a name="line.464"></a>
+<FONT color="green">465</FONT>    <a name="line.465"></a>
+<FONT color="green">466</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.466"></a>
+<FONT color="green">467</FONT>        }<a name="line.467"></a>
+<FONT color="green">468</FONT>    <a name="line.468"></a>
+<FONT color="green">469</FONT>    <a name="line.469"></a>
+<FONT color="green">470</FONT>        /**<a name="line.470"></a>
+<FONT color="green">471</FONT>         * Cover method for the primary localization method for EOFValidation (&lt;a href="#localizedString(String, String, String, String)"&gt;localizedString(String, String, String, String)&lt;/a&gt;).<a name="line.471"></a>
+<FONT color="green">472</FONT>         *<a name="line.472"></a>
+<FONT color="green">473</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.473"></a>
+<FONT color="green">474</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.474"></a>
+<FONT color="green">475</FONT>         * @param key key to look up this localized string for<a name="line.475"></a>
+<FONT color="green">476</FONT>         * @return localized string on entity for propertyName and key<a name="line.476"></a>
+<FONT color="green">477</FONT>         * @see #localizedString(String, String, String, String)<a name="line.477"></a>
+<FONT color="green">478</FONT>         */<a name="line.478"></a>
+<FONT color="green">479</FONT>        public static String localizedString(EOEntity entity, String propertyName, String key)<a name="line.479"></a>
+<FONT color="green">480</FONT>        {<a name="line.480"></a>
+<FONT color="green">481</FONT>            /** require<a name="line.481"></a>
+<FONT color="green">482</FONT>            [valid_entity_param] entity != null;<a name="line.482"></a>
+<FONT color="green">483</FONT>            [valid_key_param] key != null;<a name="line.483"></a>
+<FONT color="green">484</FONT>            [localized_string_exists] localizedStringExists(entity, propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.484"></a>
+<FONT color="green">485</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.485"></a>
+<FONT color="green">486</FONT>    <a name="line.486"></a>
+<FONT color="green">487</FONT>            return localizedString(entity.name(), propertyName, key, Locale.getDefault().getDisplayLanguage());<a name="line.487"></a>
+<FONT color="green">488</FONT>    <a name="line.488"></a>
+<FONT color="green">489</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.489"></a>
+<FONT color="green">490</FONT>        }<a name="line.490"></a>
+<FONT color="green">491</FONT>    <a name="line.491"></a>
+<FONT color="green">492</FONT>    <a name="line.492"></a>
+<FONT color="green">493</FONT>    <a name="line.493"></a>
+<FONT color="green">494</FONT>        /**<a name="line.494"></a>
+<FONT color="green">495</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<a name="line.495"></a>
+<FONT color="green">496</FONT>         *<a name="line.496"></a>
+<FONT color="green">497</FONT>         * @param entityName the name of the entity to lookup<a name="line.497"></a>
+<FONT color="green">498</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.498"></a>
+<FONT color="green">499</FONT>         * @param key key to look up this localized string for<a name="line.499"></a>
+<FONT color="green">500</FONT>         * @param languages an array of languages to lookup in language order<a name="line.500"></a>
+<FONT color="green">501</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<a name="line.501"></a>
+<FONT color="green">502</FONT>         */<a name="line.502"></a>
+<FONT color="green">503</FONT>        protected static String findLocalizedString(String entityName, String propertyName, String key, NSArray languages)<a name="line.503"></a>
+<FONT color="green">504</FONT>        {<a name="line.504"></a>
+<FONT color="green">505</FONT>            /** require<a name="line.505"></a>
+<FONT color="green">506</FONT>            [valid_entity_param] entityName != null;<a name="line.506"></a>
+<FONT color="green">507</FONT>            [valid_key_param] key != null;<a name="line.507"></a>
+<FONT color="green">508</FONT>            [valid_languages_param] languages != null;<a name="line.508"></a>
+<FONT color="green">509</FONT>            [one_or_more_languages]languages.count() &gt; 0;<a name="line.509"></a>
+<FONT color="green">510</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.510"></a>
+<FONT color="green">511</FONT>    <a name="line.511"></a>
+<FONT color="green">512</FONT>            Enumeration languagesEnumerator = languages.objectEnumerator();<a name="line.512"></a>
+<FONT color="green">513</FONT>            while (languagesEnumerator.hasMoreElements())<a name="line.513"></a>
+<FONT color="green">514</FONT>            {<a name="line.514"></a>
+<FONT color="green">515</FONT>                String language = (String)languagesEnumerator.nextElement();<a name="line.515"></a>
+<FONT color="green">516</FONT>                if (localizedStringExists(entityName, propertyName, key, language))<a name="line.516"></a>
+<FONT color="green">517</FONT>                {<a name="line.517"></a>
+<FONT color="green">518</FONT>                    return localizedString(entityName, propertyName, key, language);<a name="line.518"></a>
+<FONT color="green">519</FONT>                }<a name="line.519"></a>
+<FONT color="green">520</FONT>            }<a name="line.520"></a>
+<FONT color="green">521</FONT>            return null;<a name="line.521"></a>
+<FONT color="green">522</FONT>        }<a name="line.522"></a>
+<FONT color="green">523</FONT>    <a name="line.523"></a>
+<FONT color="green">524</FONT>    <a name="line.524"></a>
+<FONT color="green">525</FONT>        /**<a name="line.525"></a>
+<FONT color="green">526</FONT>         * Cover method for the primary localization existance method for EOFValidation (&lt;a href="#localizedStringExists(String, String, String, String)"&gt;localizedStringExists(String, String, String, String)&lt;/a&gt;).<a name="line.526"></a>
+<FONT color="green">527</FONT>         *<a name="line.527"></a>
+<FONT color="green">528</FONT>         * @param entityName name of the entity to lookup<a name="line.528"></a>
+<FONT color="green">529</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.529"></a>
+<FONT color="green">530</FONT>         * @param key key to look up this localized string for<a name="line.530"></a>
+<FONT color="green">531</FONT>         * @param languages an array of languages to lookup in language order<a name="line.531"></a>
+<FONT color="green">532</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<a name="line.532"></a>
+<FONT color="green">533</FONT>         * @see #findLocalizedString(String, String, String, NSArray)<a name="line.533"></a>
+<FONT color="green">534</FONT>         * @see #localizedStringExists(String, String, String, String)<a name="line.534"></a>
+<FONT color="green">535</FONT>         */<a name="line.535"></a>
+<FONT color="green">536</FONT>        public static boolean localizedStringExists(String entityName, String propertyName, String key, NSArray languages)<a name="line.536"></a>
+<FONT color="green">537</FONT>        {<a name="line.537"></a>
+<FONT color="green">538</FONT>            /** require<a name="line.538"></a>
+<FONT color="green">539</FONT>            [valid_entity_param] entityName != null;<a name="line.539"></a>
+<FONT color="green">540</FONT>            [valid_key_param] key != null;<a name="line.540"></a>
+<FONT color="green">541</FONT>            [valid_languages_param] languages != null;<a name="line.541"></a>
+<FONT color="green">542</FONT>            [one_or_more_languages]languages.count() &gt; 0;<a name="line.542"></a>
+<FONT color="green">543</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.543"></a>
+<FONT color="green">544</FONT>    <a name="line.544"></a>
+<FONT color="green">545</FONT>            return findLocalizedString(entityName, propertyName, key, languages) != null;<a name="line.545"></a>
+<FONT color="green">546</FONT>        }<a name="line.546"></a>
+<FONT color="green">547</FONT>    <a name="line.547"></a>
+<FONT color="green">548</FONT>    <a name="line.548"></a>
+<FONT color="green">549</FONT>        /**<a name="line.549"></a>
+<FONT color="green">550</FONT>         * Cover method for the primary localization existance method for EOFValidation (&lt;a href="#localizedStringExists(String, String, String, String)"&gt;localizedStringExists(String, String, String, String)&lt;/a&gt;).<a name="line.550"></a>
+<FONT color="green">551</FONT>         *<a name="line.551"></a>
+<FONT color="green">552</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.552"></a>
+<FONT color="green">553</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.553"></a>
+<FONT color="green">554</FONT>         * @param key key to look up this localized string for<a name="line.554"></a>
+<FONT color="green">555</FONT>         * @param languages an array of languages to lookup in language order<a name="line.555"></a>
+<FONT color="green">556</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<a name="line.556"></a>
+<FONT color="green">557</FONT>         * @see #findLocalizedString(String, String, String, NSArray)<a name="line.557"></a>
+<FONT color="green">558</FONT>         * @see #localizedStringExists(String, String, String, String)<a name="line.558"></a>
+<FONT color="green">559</FONT>         */<a name="line.559"></a>
+<FONT color="green">560</FONT>        public static boolean localizedStringExists(EOEntity entity, String propertyName, String key, NSArray languages)<a name="line.560"></a>
+<FONT color="green">561</FONT>        {<a name="line.561"></a>
+<FONT color="green">562</FONT>            /** require<a name="line.562"></a>
+<FONT color="green">563</FONT>            [valid_entity_param] entity != null;<a name="line.563"></a>
+<FONT color="green">564</FONT>            [valid_key_param] key != null;<a name="line.564"></a>
+<FONT color="green">565</FONT>            [valid_languages_param] languages != null;<a name="line.565"></a>
+<FONT color="green">566</FONT>            [one_or_more_languages]languages.count() &gt; 0;<a name="line.566"></a>
+<FONT color="green">567</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.567"></a>
+<FONT color="green">568</FONT>    <a name="line.568"></a>
+<FONT color="green">569</FONT>            return findLocalizedString(entity.name(), propertyName, key, languages) != null;<a name="line.569"></a>
+<FONT color="green">570</FONT>        }<a name="line.570"></a>
+<FONT color="green">571</FONT>    <a name="line.571"></a>
+<FONT color="green">572</FONT>    <a name="line.572"></a>
+<FONT color="green">573</FONT>        /**<a name="line.573"></a>
+<FONT color="green">574</FONT>         * Cover method for the primary localization method for EOFValidation (&lt;a href="#localizedString(String, String, String, String)"&gt;localizedString(String, String, String, String)&lt;/a&gt;).<a name="line.574"></a>
+<FONT color="green">575</FONT>         *<a name="line.575"></a>
+<FONT color="green">576</FONT>         * @param entityName name of the entity to lookup<a name="line.576"></a>
+<FONT color="green">577</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.577"></a>
+<FONT color="green">578</FONT>         * @param key key to look up this localized string for<a name="line.578"></a>
+<FONT color="green">579</FONT>         * @param languages an array of languages to lookup in language order<a name="line.579"></a>
+<FONT color="green">580</FONT>         * @return localized string on entity for propertyName and key<a name="line.580"></a>
+<FONT color="green">581</FONT>         * @see #findLocalizedString(String, String, String, NSArray)<a name="line.581"></a>
+<FONT color="green">582</FONT>         * @see #localizedString(String, String, String, String)<a name="line.582"></a>
+<FONT color="green">583</FONT>         */<a name="line.583"></a>
+<FONT color="green">584</FONT>        public static String localizedString(String entityName, String propertyName, String key, NSArray languages)<a name="line.584"></a>
+<FONT color="green">585</FONT>        {<a name="line.585"></a>
+<FONT color="green">586</FONT>            /** require<a name="line.586"></a>
+<FONT color="green">587</FONT>            [valid_entity_param] entityName != null;<a name="line.587"></a>
+<FONT color="green">588</FONT>            [valid_key_param] key != null;<a name="line.588"></a>
+<FONT color="green">589</FONT>            [valid_languages_param] languages != null;<a name="line.589"></a>
+<FONT color="green">590</FONT>            [has_language] languages.count() &gt; 0;<a name="line.590"></a>
+<FONT color="green">591</FONT>            [localization_exists] localizedStringExists(entityName, propertyName, key, languages);<a name="line.591"></a>
+<FONT color="green">592</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.592"></a>
+<FONT color="green">593</FONT>    <a name="line.593"></a>
+<FONT color="green">594</FONT>            return findLocalizedString(entityName, propertyName, key, languages);<a name="line.594"></a>
+<FONT color="green">595</FONT>    <a name="line.595"></a>
+<FONT color="green">596</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.596"></a>
+<FONT color="green">597</FONT>        }<a name="line.597"></a>
+<FONT color="green">598</FONT>    <a name="line.598"></a>
+<FONT color="green">599</FONT>    <a name="line.599"></a>
+<FONT color="green">600</FONT>        /**<a name="line.600"></a>
+<FONT color="green">601</FONT>         * Cover method for the primary localization method for EOFValidation (&lt;a href="#localizedString(String, String, String, String)"&gt;localizedString(String, String, String, String)&lt;/a&gt;).<a name="line.601"></a>
+<FONT color="green">602</FONT>         *<a name="line.602"></a>
+<FONT color="green">603</FONT>         * @param entity EOEntity to look up this localized string for<a name="line.603"></a>
+<FONT color="green">604</FONT>         * @param propertyName property name to look up this localized string for.  Ignored if it is null or an empty string<a name="line.604"></a>
+<FONT color="green">605</FONT>         * @param key key to look up this localized string for<a name="line.605"></a>
+<FONT color="green">606</FONT>         * @param languages an array of languages to lookup in language order<a name="line.606"></a>
+<FONT color="green">607</FONT>         * @return localized string on entity for propertyName and key<a name="line.607"></a>
+<FONT color="green">608</FONT>         * @see #findLocalizedString(String, String, String, NSArray)<a name="line.608"></a>
+<FONT color="green">609</FONT>         * @see #localizedString(String, String, String, NSArray)<a name="line.609"></a>
+<FONT color="green">610</FONT>         * @see #localizedString(String, String, String, String)<a name="line.610"></a>
+<FONT color="green">611</FONT>         */<a name="line.611"></a>
+<FONT color="green">612</FONT>        public static String localizedString(EOEntity entity, String propertyName, String key, NSArray languages)<a name="line.612"></a>
+<FONT color="green">613</FONT>        {<a name="line.613"></a>
+<FONT color="green">614</FONT>            /** require<a name="line.614"></a>
+<FONT color="green">615</FONT>            [valid_entity_param] entity != null;<a name="line.615"></a>
+<FONT color="green">616</FONT>            [valid_key_param] key != null;<a name="line.616"></a>
+<FONT color="green">617</FONT>            [valid_languages_param] languages != null;<a name="line.617"></a>
+<FONT color="green">618</FONT>            [has_language] languages.count() &gt; 0;<a name="line.618"></a>
+<FONT color="green">619</FONT>            [localization_exists] localizedStringExists(entity.name(), propertyName, key, languages);<a name="line.619"></a>
+<FONT color="green">620</FONT>            [key_not_empty] key.length() &gt; 0;   **/<a name="line.620"></a>
+<FONT color="green">621</FONT>    <a name="line.621"></a>
+<FONT color="green">622</FONT>            return findLocalizedString(entity.name(), propertyName, key, languages);<a name="line.622"></a>
+<FONT color="green">623</FONT>    <a name="line.623"></a>
+<FONT color="green">624</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.624"></a>
+<FONT color="green">625</FONT>        }<a name="line.625"></a>
+<FONT color="green">626</FONT>    <a name="line.626"></a>
+<FONT color="green">627</FONT>    <a name="line.627"></a>
+<FONT color="green">628</FONT>    <a name="line.628"></a>
+<FONT color="green">629</FONT>    }<a name="line.629"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,2445 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+WOApplication (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="WOApplication (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOApplication.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ValidationErrorsPanel.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOApplication.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOApplication.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_er.extensions.appserver.ajax.ERXAjaxApplication">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class WOApplication</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOApplication
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">er.extensions.appserver.ajax.ERXAjaxApplication
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.WOApplication</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.appserver.WOApplicationMBean, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions</DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/woextensions/tests/Application.html" title="class in net.global_village.woextensions.tests">Application</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.66"><B>WOApplication</B></A><DT>extends er.extensions.appserver.ajax.ERXAjaxApplication</DL>
+</PRE>
+
+<P>
+<p>A collection of extensions for WOApplication. Your Application class should sub-class this class. <br>
+ Note that this class uses the property lists extensively. You must ensure that the keys exist and contain valid data if you wish to use GVC's WOApplication.  See documentation for loadConfigurationInfo() on how to specify additional property lists. <br>
+ <b>A typical project will set the following keys:</b><br>
+ <ul>
+ <li> WOAdaptorURL (<b>Required</b>) - returns the URL for the web server including the path to the WebObjects CGI adaptor (eg. http://localhost/cgi-bin/WebObjects).</li>
+ <li> SMTPHost (<b>Deprecated</b>  use mail.smtp.host in Properties) - name of the host that will be used to send email messages. (eg. mail.global-village.net)</li>
+ <li> PageCacheSize - size of the internal cache for page instances. The default is 30 instances.</li>
+ <li> PermanentPageCacheSize - size of the internal cache for permanent page instances. The default is 10 instances.</li>
+ <li> CachingEnabled - returns whether or not component caching is enabled. The default is true.</li>
+ <li> SessionTimeoutInMinutes - the number of seconds which will be used as the default timeout for each newly created session.</li>
+ <li> DateFormat - the format to be used for displaying dates. (eg. "%b %d %Y")</li>
+ <li> NumberFormat - the format to be used for displaying numbers (eg. "##.####,0;(##.####)")</li>
+ <li> ApplicationsEmailAddress - Should be the complete e-mail address representing the application. This is used as the from address for all e-mail sent to the supportAddress.</li>
+ <li> SupportsEmailAddress - Should be the complete e-mail address of whoever is doing technical support for the application.  Application error messages go here.  For support messages to be sent, it requires Application.email.applicationsEmailAddress to be supplied.</li>
+ <li> JDBCUrl - the URL to be used by all the EOModels when connecting to the database.</li>
+ </ul>
+  To use the functionality available you may want to set the following page name defaults in your property list:
+ <ul>
+   <li> <code>DefaultPageName</code> -  (<b>Required</b>)The name of the page to be shown when the requested page can not be shown.</li>
+   <li> <code>ExceptionPageName</code> - The name of the page to display when an exception occurs. The DefaultPageName is used if not specified. Note that if specified, the page should implement the ExceptionPage interface as defined in GVCJWOExtensions. </li>
+   <li> <code>PageRestorationErrorPageName</code> - The name of the page to display when the page cannot be restored (A user has clicked 'back' past the page cache). The DefaultPageName is used if not specified.</li>
+   <li> <code>SessionCreationErrorPageName</code> - The name of the page to display when an exception occurs while creating a session. The DefaultPageName is used if not specified.</li>
+   <li> <code>SessionRestorationErrorPageName</code> - The name of the page to display when a session cannot be restored (A user's session has timed out). The DefaultPageName is used if not specified.</li>
+   <li> <code>PageMapFileName</code> - Maps existing WOComponents to other WOComponents that will be used at run time.</li>
+ </ul>
+ <p>Note also that pageWithName has been overridden and your components may need to implement various methods to work as desired (SSL, page security, etc). See that method for documentation.</p>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 51$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_er.extensions.appserver.ajax.ERXAjaxApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class er.extensions.appserver.ajax.ERXAjaxApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>er.extensions.appserver.ajax.ERXAjaxApplication.ERXAjaxResponseDelegate</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.appserver.WOApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.appserver.WOApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.appserver.WOApplication._EventLoggingEnabler, com.webobjects.appserver.WOApplication.Event, com.webobjects.appserver.WOApplication.TimeoutTask</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCodingAdditions.DefaultImplementation, com.webobjects.foundation.NSKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanFieldBinding, com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._FieldBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberFieldBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#CookieHeaderKey">CookieHeaderKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#DebugEditingContextLockingPropertyKey">DebugEditingContextLockingPropertyKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#DebuggingEditingContextClassNamePropertyKey">DebuggingEditingContextClassNamePropertyKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#DefaultFetchTimestampLag">DefaultFetchTimestampLag</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#DispatchRequestsConcurrentlyPropertyKey">DispatchRequestsConcurrentlyPropertyKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#editingContextClass">editingContextClass</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#EditingContextClassNamePropertyKey">EditingContextClassNamePropertyKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#LogFetchedRowsKey">LogFetchedRowsKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#LogSlowQueriesKey">LogSlowQueriesKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#LogSlowQueryThesholdInMillisecondsKey">LogSlowQueryThesholdInMillisecondsKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#LogSQLSourceKey">LogSQLSourceKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../net/global_village/eofextensions/ModelConnector.html" title="class in net.global_village.eofextensions">ModelConnector</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#modelConnector">modelConnector</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageMap">pageMap</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#PageMapFileNamePropertyKey">PageMapFileNamePropertyKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#properties">properties</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../net/global_village/eofextensions/EOPrototypeSelector.html" title="class in net.global_village.eofextensions">EOPrototypeSelector</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#prototypeSwitcher">prototypeSwitcher</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#requiredProperties">requiredProperties</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#RRLoopLoggerName">RRLoopLoggerName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log4j Logger name for the conceptual area of RR loop logging.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#SessionTimeOutInMinutesKey">SessionTimeOutInMinutesKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#TestingDirectActionsEnabled">TestingDirectActionsEnabled</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_er.extensions.appserver.ajax.ERXAjaxApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class er.extensions.appserver.ajax.ERXAjaxApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>KEY_AJAX_SUBMIT_BUTTON, KEY_PARTIAL_FORM_SENDER_ID, KEY_REPLACED, KEY_UPDATE_CONTAINER_ID</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.appserver.WOApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.appserver.WOApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_adminRequestHandlerKey, _cgiAdaptorURLParsed, _classPathURLs, _launchServices, _terminating, _TheLastApplicationAccessTime, _unsetHost, _wasMainInvoked, ApplicationDidDispatchRequestNotification, ApplicationDidFinishLaunchingNotification, ApplicationWillDispatchRequestNotification, ApplicationWillFinishLaunchingNotification, CGIAdaptorURLProperty, DirectoryAliasProperty, DocumentRootProperty</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding.ErrorHandling"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding.ErrorHandling</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#WOApplication()">WOApplication</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This constructor sets up the application object using default values from property lists.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#_debugValueForDeclarationNamed(com.webobjects.appserver.WOComponent, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">_debugValueForDeclarationNamed</A></B>(com.webobjects.appserver.WOComponent&nbsp;component,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;verb,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#_terminateFromMonitor()">_terminateFromMonitor</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exposes protected method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#applicationDidHandleRequest(com.webobjects.foundation.NSNotification)">applicationDidHandleRequest</A></B>(com.webobjects.foundation.NSNotification&nbsp;n)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When request is finished, we remove the context from thread local storage.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#appProperties()">appProperties</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to access properties() statically.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#clearDebugEnabledForAllComponents()">clearDebugEnabledForAllComponents</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Turns off binding debugging for all components.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#configurationFrameworkName()">configurationFrameworkName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Optional name of a framework to take configuration information from.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#configureDatabaseConnections(com.webobjects.foundation.NSArray)">configureDatabaseConnections</A></B>(com.webobjects.foundation.NSArray&nbsp;modelsToIgnore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configures all EOModels in this project, using ModelConnector, so it can be updated with the proper connection dictionary
+ (from the configuration files) when they are loaded.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#configureWebObjectsEnvironment()">configureWebObjectsEnvironment</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets up the WebObjects application environment.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#createContextForRequest(com.webobjects.appserver.WORequest)">createContextForRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When a context is created we push it into thread local storage.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#createFormatters()">createFormatters</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates formatters for each date and number format and removes the format strings so that they do not get used by accident.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WORequest</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#createRequest(java.lang.String, java.lang.String, java.lang.String, java.util.Map, com.webobjects.foundation.NSData, java.util.Map)">createRequest</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aMethod,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aURL,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anHTTPVersion,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;someHeaders,
+                           com.webobjects.foundation.NSData&nbsp;aContent,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;someInfo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WO 5.4 version.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WORequest</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#createRequest(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSData, com.webobjects.foundation.NSDictionary)">createRequest</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aMethod,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aURL,
+                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anHTTPVersion,
+                           com.webobjects.foundation.NSDictionary&nbsp;someHeaders,
+                           com.webobjects.foundation.NSData&nbsp;aContent,
+                           com.webobjects.foundation.NSDictionary&nbsp;someInfo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WO 5.3 and prior version Creates and returns a request configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#createResponseInContext(com.webobjects.appserver.WOContext)">createResponseInContext</A></B>(com.webobjects.appserver.WOContext&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSNumberFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#currencyFormatter()">currencyFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the currency formatter using the <code>CustomInfo.plist</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#databaseConnectionDictionary()">databaseConnectionDictionary</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the connection dictionary to use for all EOModels.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#databaseType()">databaseType</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the database type (e.g.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSTimestampFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#dateFormatter()">dateFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the date formatter using the <code>CustomInfo.plist</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSTimestampFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#dateTimeFormatter()">dateTimeFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the date and time formatter using the <code>CustomInfo.plist</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#debugEnabledForComponent(java.lang.String)">debugEnabledForComponent</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns whether or not binding debugging is enabled for the given component</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#defaultPageName()">defaultPageName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The name of the page to be shown when the requested page can not be shown.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#developmentMode()">developmentMode</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Click to Open support and generally useful.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#dispatchRequest(com.webobjects.appserver.WORequest)">dispatchRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overidden to provide debugging hooks.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#documentRootPath()">documentRootPath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to obtain the document root path</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOElement</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#dynamicElementWithName(java.lang.String, com.webobjects.foundation.NSDictionary, com.webobjects.appserver.WOElement, com.webobjects.foundation.NSArray)">dynamicElementWithName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                                             com.webobjects.foundation.NSDictionary&nbsp;someAssociations,
+                                             com.webobjects.appserver.WOElement&nbsp;anElement,
+                                             com.webobjects.foundation.NSArray&nbsp;aLanguageArray)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an instance of the dynamic element requested, or of another dynamic element if one has been mapped to this name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#editingContextClass()">editingContextClass</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#exceptionPageName()">exceptionPageName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method determines the page to be shown by handleExceptioninContext.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#frontDoorURL()">frontDoorURL</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method returns the URL that is used to access the default page for this application.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#handleException(java.lang.Exception, com.webobjects.appserver.WOContext)">handleException</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A>&nbsp;anException,
+                               com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replaces the default WO Exception page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#handleMalformedCookieString(java.lang.RuntimeException, java.lang.String, com.webobjects.foundation.NSMutableDictionary)">handleMalformedCookieString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</A>&nbsp;exception,
+                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;cookieString,
+                                                       com.webobjects.foundation.NSMutableDictionary&nbsp;parsedCookies)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to log out messages when cookie parsing fails.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#handlePageRestorationErrorInContext(com.webobjects.appserver.WOContext)">handlePageRestorationErrorInContext</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method defines the response for handling backtracking beyond the page cache.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#handleSessionCreationErrorInContext(com.webobjects.appserver.WOContext)">handleSessionCreationErrorInContext</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method defines the response for handling a session creation errors.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOResponse</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#handleSessionRestorationErrorInContext(com.webobjects.appserver.WOContext)">handleSessionRestorationErrorInContext</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method defines the response for handling an error that occurred when restoring a session</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#hasPageMap()">hasPageMap</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#initializeApplicationConfiguration()">initializeApplicationConfiguration</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads the application configuration information and configures the debugging and WebObjects environment.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#initializeLog4J()">initializeLog4J</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes log4j with configuration referenced by log4jConfigUrl().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSNumberFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#integerFormatter()">integerFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the integer formatter using the <code>CustomInfo.plist</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#loadCommandLineOverrides()">loadCommandLineOverrides</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds any properties from the command line and the Properties file to the application properties.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#loadConfigurationInfo()">loadConfigurationInfo</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads the application configuration information.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#loadPageMap()">loadPageMap</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads the page mapping, if any.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#loadPropertyDependantConfiguration()">loadPropertyDependantConfiguration</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads application configuration that is dependant on all the properties being loaded.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#log4jConfigUrl()">log4jConfigUrl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the URL to the log4j configuration (either .properties or .xml).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#logSetValueForDeclarationNamed(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">logSetValueForDeclarationNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Little bit better binding debug output than the original.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#logTakeValueForDeclarationNamed(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)">logTakeValueForDeclarationNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Little bit better binding debug output than the original.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;er.extensions.migration.ERXMigrator</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#migrator()">migrator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns ERXMigrator instance to use for migration.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#modelsToIgnore()">modelsToIgnore</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns array of models (models for testing in this case) to not attempt to connect to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#newEditingContext()">newEditingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a new instance of the class of EOEditingContext that the application should use.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#newEditingContext(com.webobjects.eocontrol.EOObjectStore)">newEditingContext</A></B>(com.webobjects.eocontrol.EOObjectStore&nbsp;parent)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a new instance of the class of EOEditingContext that the application should use.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSNumberFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#numberFormatter()">numberFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the number formatter using the <code>CustomInfo.plist</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageMap()">pageMap</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageMapFileName()">pageMapFileName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the name of the file that defines the page mapping, if any.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageNameMappedToName(java.lang.String)">pageNameMappedToName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPageName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the name of the page (can be used for any WOComponent) mapped to the passed name according to pageMap(), or just returns aPageName if there is no mapping for this page.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageRestorationErrorPageName()">pageRestorationErrorPageName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The name of the page to be shown by handlePageRestorationErrorInContext().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageWithName(java.lang.String, com.webobjects.appserver.WOContext)">pageWithName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                         com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to
+ 
+ Disable component access
+ Replace null aName with <code>defaultPageName()</code>
+ Call pageNameMappedToName(String) to check for a replacement for aName
+ Call securePageForPageWithName(String, WOContext) check user permissions and enforce secure (SSL) access.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#performConfigurationDiagnostics()">performConfigurationDiagnostics</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perform diagnostic checks to ensure that the application configuration information is complete and reasonable.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#properties()">properties</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the properies object containing the application configuration so that KVC can access this making bindings easier to write.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#refuseNewSessions(boolean)">refuseNewSessions</A></B>(boolean&nbsp;shouldRefuse)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to log messages when session refusing is turned on and off.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#requiredProperties()">requiredProperties</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of property keys that are required to be in the properties list to ensure that the application configuration information is complete and reasonable.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#requireMappingForPage(java.lang.String)">requireMappingForPage</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;pageName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks to see if the named page is mapped.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#requireProperty(java.lang.String)">requireProperty</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks to see if the named property exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#saveSessionForContext(com.webobjects.appserver.WOContext)">saveSessionForContext</A></B>(com.webobjects.appserver.WOContext&nbsp;wocontext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid a potential bug that causes session deadlock if WOSession.sleep() throws.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#securePageForPageWithName(java.lang.String, com.webobjects.appserver.WOContext)">securePageForPageWithName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                                                   com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to check user permissions and enforce secure (SSL) access.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#sessionCreationErrorPageName()">sessionCreationErrorPageName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of the page to display when an error occurred while creating a session.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#sessionRestorationErrorPageName()">sessionRestorationErrorPageName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of the page to display when a session restoration has failed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#setDebugEnabledForComponent(boolean, java.lang.String)">setDebugEnabledForComponent</A></B>(boolean&nbsp;debugEnabled,
+                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Turns on/off binding debugging for the given component.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#terminate()">terminate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagnostic messages only.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSTimestampFormatter</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#timeFormatter()">timeFormatter</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the time formatter using the <code>CustomInfo.plist</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOApplication.html#willFinishLaunching(com.webobjects.foundation.NSNotification)">willFinishLaunching</A></B>(com.webobjects.foundation.NSNotification&nbsp;n)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification method called when the application posts the notification
+ <CODE>WOApplication.ApplicationWillFinishLaunchingNotification</CODE>.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_er.extensions.appserver.ajax.ERXAjaxApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class er.extensions.appserver.ajax.ERXAjaxApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>ajaxSubmitButtonName, cleanUpHeaders, forceStorePage, invokeAction, isAjaxReplacement, isAjaxRequest, isAjaxSubmit, isAjaxUpdate, partialFormSenderID, setForceStorePage, setResponseDelegate, shouldIgnoreResults, shouldNotStorePage, shouldNotStorePage, takeValuesFromRequest</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.appserver.WOApplication"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.appserver.WOApplication</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_addToExpectedLanguages, _allowsCacheControlHeader, _checksForSpecialHeaders, _componentDefinition, _componentDefinitionFromClassNamed, _debugString, _discountTerminatedSession, _expectedLanguages, _finishInitializingSession, _initializeSessionInContext, _isDebuggingEnabled, _isDomesticSupportedDevelopmentPlatform, _isForeignSupportedDevelopmentPlatform, _isPageRecreationEnabled, _isSupportedDevelopmentPlatform, _lockDefaultEditingContext, _newLocationForRequest, _openInitialURL, _parseCGIAdaptorURL, _quitTimer, _rapidTurnaroundActiveForAnyProject, _removeComponentDefinitionCacheContents, _runLoop, _sessionClass, _setAllowsCacheControlHeader, _setChecksForSpecialHeaders, _setHost, _setHostAddress, _setLifebeatDestinationPort, _setLockDefaultEditingContext, _terminateOrResetTimer, activeSessionsCount, adaptor, adaptorExtensions, adaptorName, adaptorPath, adaptors, adaptorsDispatchRequestsConcurrently, adaptorWithName, additionalAdaptors, ajaxRequestHandlerKey, allowsConcurrentRequestHandling, appendToResponse, application, applicationBaseURL, applicationExtension, associationFactory, associationFactoryRegistry, autoOpenClientApplication, autoOpenInBrowser, awake, baseURL, canAccessFieldsDirectly, cgiAdaptorURL, combinedComponentPathURL, componentRequestHandlerKey, contextClassName, createDefaultAssociationFactoryRegistry, createDefaultNamespaceProvider, createResourceManager, createSessionForRequest, debugString, defaultAdaptor, defaultRequestHandler, defaultRequestHandlerClassName, defaultUndoStackLimit, directActionRequestHandlerKey, directConnectURL, documentRoot, frameworksBaseURL, getAdaptorsDispatchRequestsConcurrently, getAdditionalAdaptors, getAgentID, getAllowsConcurrentRequestHandling, getApplicationBaseURL, getApplicationExtension, getAutoOpenClientApplication, getBaseURL, getCGIAdaptorURL, getClassPaths, getComponentRequestHandlerKey, getDefaultAdaptor, getDefaultUndoStackLimit, getDirectConnectURL, getFrameworkVersions, getHost, getHostAddress, getIncludeCommentsInResponses, getIsCachingEnabled, getIsMonitorEnabled, getIsPageRefreshOnBacktrackEnabled, getIsRefusingNewSessions, getIsTerminating, getJMXDomain, getLifebeatDestinationPort, getLifebeatInterval, getListenQueueSize, getMaxSocketIdleTime, getMBeanServer, getMinimumActiveSessionsCount, getName, getOutputPath, getPageCacheSize, getPageFragmentCacheSize, getPort, getServletConnectURL, getSessionTimeOut, getTimeOut, getWebObjectsVersion, getWebserverConnectURL, getWorkerThreadCountMax, getWorkerThreadCountMin, handleActionRequestError, handleQueryWithUnboundKey, handlerForRequest, handleTakeValueForUnboundKey, host, hostAddress, includeCommentsInResponses, instanceIdKey, isCachingEnabled, isConcurrentRequestHandlingEnabled, isDebuggingEnabled, isDirectConnectEnabled, isMonitorEnabled, isPageRefreshOnBacktrackEnabled, isRefusingNewSessions, isTerminating, launchArguments, licensedRequestLimit, licensedRequestWindow, licensingAllowsMultipleInstances, licensingAllowsMultipleThreads, lifebeatDestinationPort, lifebeatEnabled, lifebeatInterval, listenQueueSize, loadFrameworks, lock, logString, main, main, maxSocketIdleTime, minimumActiveSessionsCount, monitorEnabled, monitorHost, monitoringEnabled, name, namespaceProvider, newDynamicURL, newDynamicURL, number, outputPath, pageCacheSize, pageFragmentCacheSize, path, permanentPageCacheSize, port, primeApplication, primeApplication, printsHTMLParserDiagnostics, projectSearchPath, recordingPath, registeredRequestHandlerKeys, registerMBean, registerMBean, registerRequestHandler, removeRequestHandlerForKey, requestHandlerForKey, requestHandlingLock, resourceManager, resourceRequestHandlerKey, responseForComponentWithName, responseForDirectActionWithNameAndClass, restoreSessionWithID, run, servletConnectURL, sessionIdKey, sessionStore, sessionStoreClassName, sessionTimeOut, setAdaptor, setAdditionalAdaptors, setAllowsConcurrentRequestHandling, setApplicationBaseURL, setAutoOpenClientApplication, setAutoOpenInBrowser, setCachingEnabled, setCGIAdaptorURL, setComponentRequestHandlerKey, setContextClassName, setDefaultRequestHandler, setDefaultUndoStackLimit, setDirectActionRequestHandlerKey, setDirectConnectEnabled, setFrameworksBaseURL, setIncludeCommentsInResponses, setJMXDomain, setListenQueueSize, setLoadFrameworks, setMaxSocketIdleTime, setMinimumActiveSessionsCount, setMonitorEnabled, setMonitorHost, setNamespaceProvider, setPageCacheSize, setPageFragmentCacheSize, setPageRefreshOnBacktrackEnabled, setPermanentPageCacheSize, setPort, setPrintsHTMLParserDiagnostics, setProjectSearchPath, setRecordingPath, setResourceManager, setResourceRequestHandlerKey, setSessionStore, setSessionStoreClassName, setSessionTimeOut, setSMTPHost, setSocketCacheSize, setSocketMonitorSleepTime, setStatisticsStore, setTimeOut, setWebServiceRequestHandlerKey, setWorkerThreadCount, setWorkerThreadCountMax, setWorkerThreadCountMin, sharedEditingContext, shouldRestoreSessionOnCleanEntry, sleep, SMTPHost, socketCacheSize, socketMonitorSleepTime, statistics, statisticsStore, streamActionRequestHandlerKey, takeValueForKey, takeValueForKeyPath, terminateAfterTimeInterval, timeOut, toString, unableToSetNullForKey, unlock, unregisterMBean, validationFailedWithException, valueForKey, valueForKeyPath, wasMainInvoked, webserverConnectURL, webServiceRequestHandlerKey, workerThreadCount, workerThreadCountMax, workerThreadCountMin</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="properties"><!-- --></A><H3>
+properties</H3>
+<PRE>
+protected <A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.68"><B>properties</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="requiredProperties"><!-- --></A><H3>
+requiredProperties</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableArray <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.69"><B>requiredProperties</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="PageMapFileNamePropertyKey"><!-- --></A><H3>
+PageMapFileNamePropertyKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.70"><B>PageMapFileNamePropertyKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.PageMapFileNamePropertyKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="editingContextClass"><!-- --></A><H3>
+editingContextClass</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.71"><B>editingContextClass</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="pageMap"><!-- --></A><H3>
+pageMap</H3>
+<PRE>
+protected com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.72"><B>pageMap</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="modelConnector"><!-- --></A><H3>
+modelConnector</H3>
+<PRE>
+protected <A HREF="../../../net/global_village/eofextensions/ModelConnector.html" title="class in net.global_village.eofextensions">ModelConnector</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.74"><B>modelConnector</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="prototypeSwitcher"><!-- --></A><H3>
+prototypeSwitcher</H3>
+<PRE>
+protected <A HREF="../../../net/global_village/eofextensions/EOPrototypeSelector.html" title="class in net.global_village.eofextensions">EOPrototypeSelector</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.75"><B>prototypeSwitcher</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="RRLoopLoggerName"><!-- --></A><H3>
+RRLoopLoggerName</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.81"><B>RRLoopLoggerName</B></A></PRE>
+<DL>
+<DD>log4j Logger name for the conceptual area of RR loop logging.  This logger name does not match any code.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.RRLoopLoggerName">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="EditingContextClassNamePropertyKey"><!-- --></A><H3>
+EditingContextClassNamePropertyKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.85"><B>EditingContextClassNamePropertyKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.EditingContextClassNamePropertyKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DebuggingEditingContextClassNamePropertyKey"><!-- --></A><H3>
+DebuggingEditingContextClassNamePropertyKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.86"><B>DebuggingEditingContextClassNamePropertyKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.DebuggingEditingContextClassNamePropertyKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DispatchRequestsConcurrentlyPropertyKey"><!-- --></A><H3>
+DispatchRequestsConcurrentlyPropertyKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.87"><B>DispatchRequestsConcurrentlyPropertyKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.DispatchRequestsConcurrentlyPropertyKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DebugEditingContextLockingPropertyKey"><!-- --></A><H3>
+DebugEditingContextLockingPropertyKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.88"><B>DebugEditingContextLockingPropertyKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.DebugEditingContextLockingPropertyKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="LogSlowQueriesKey"><!-- --></A><H3>
+LogSlowQueriesKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.89"><B>LogSlowQueriesKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.LogSlowQueriesKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="LogSlowQueryThesholdInMillisecondsKey"><!-- --></A><H3>
+LogSlowQueryThesholdInMillisecondsKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.90"><B>LogSlowQueryThesholdInMillisecondsKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.LogSlowQueryThesholdInMillisecondsKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="LogFetchedRowsKey"><!-- --></A><H3>
+LogFetchedRowsKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.91"><B>LogFetchedRowsKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.LogFetchedRowsKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="LogSQLSourceKey"><!-- --></A><H3>
+LogSQLSourceKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.92"><B>LogSQLSourceKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.LogSQLSourceKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SessionTimeOutInMinutesKey"><!-- --></A><H3>
+SessionTimeOutInMinutesKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.94"><B>SessionTimeOutInMinutesKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.SessionTimeOutInMinutesKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DefaultFetchTimestampLag"><!-- --></A><H3>
+DefaultFetchTimestampLag</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.95"><B>DefaultFetchTimestampLag</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.DefaultFetchTimestampLag">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="TestingDirectActionsEnabled"><!-- --></A><H3>
+TestingDirectActionsEnabled</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.96"><B>TestingDirectActionsEnabled</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.TestingDirectActionsEnabled">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="CookieHeaderKey"><!-- --></A><H3>
+CookieHeaderKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.98"><B>CookieHeaderKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOApplication.CookieHeaderKey">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="WOApplication()"><!-- --></A><H3>
+WOApplication</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.116"><B>WOApplication</B></A>()</PRE>
+<DL>
+<DD>This constructor sets up the application object using default values from property lists.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="appProperties()"><!-- --></A><H3>
+appProperties</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.106"><B>appProperties</B></A>()</PRE>
+<DL>
+<DD>Convenience method to access properties() statically.  Returns the properies object containing the application configuration.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the properies object containing the application configuration.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="willFinishLaunching(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+willFinishLaunching</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.167"><B>willFinishLaunching</B></A>(com.webobjects.foundation.NSNotification&nbsp;n)</PRE>
+<DL>
+<DD>Notification method called when the application posts the notification
+ <CODE>WOApplication.ApplicationWillFinishLaunchingNotification</CODE>. This method calls
+ initializeApplicationConfiguration() and installs the ApplicationDidDispatchRequestNotification
+ handler.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>n</CODE> - notification that is posted just before the WOApplication has finished launching
+ and is ready for accepting requests<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOApplication.html#initializeApplicationConfiguration()"><CODE>initializeApplicationConfiguration()</CODE></A>, 
+<A HREF="../../../net/global_village/woextensions/WOApplication.html#applicationDidHandleRequest(com.webobjects.foundation.NSNotification)"><CODE>applicationDidHandleRequest(NSNotification)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="initializeLog4J()"><!-- --></A><H3>
+initializeLog4J</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.186"><B>initializeLog4J</B></A>()</PRE>
+<DL>
+<DD>Initializes log4j with configuration referenced by log4jConfigUrl().  Changes NSLog to use log4j for output.
+ if log4jConfigUrl() returns null, log4j is not activated.
+ <p>
+ This method does not use <code>NSLog.Log4JLogger</code> to direct NSLog messages to log4j.  <code>NSLog.Log4JLogger</code>
+ either has a bug or a conflict with more recent versions of log4j that makes it always report that LogLevelDetailed is on.
+ This causes a lot of extra processing and output.  This method uses <code>er.extensions.ERXNSLogLog4jBridge</code> to direct
+ NSLog messages to log4j.  This requires that the configuration returned by log4jConfigUrl() defines the <code>NSLog</code> logger.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="log4jConfigUrl()"><!-- --></A><H3>
+log4jConfigUrl</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/net/URL.html?is-external=true" title="class or interface in java.net">URL</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.219"><B>log4jConfigUrl</B></A>()</PRE>
+<DL>
+<DD>Returns the URL to the log4j configuration (either .properties or .xml).  The default is to return null which results in
+ log4j not being active.  This method can be implemented as:
+ <pre>
+ return resourceManager().pathURLForResourceNamed("log4j.xml", null, null);
+ </pre>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>URL to log4j configuration or null if log4j should not be configured.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="initializeApplicationConfiguration()"><!-- --></A><H3>
+initializeApplicationConfiguration</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.242"><B>initializeApplicationConfiguration</B></A>()</PRE>
+<DL>
+<DD>Loads the application configuration information and configures the debugging and WebObjects environment. The initialization is performed in the following sequence of method calls, where each method can be overriden to add customizations. <br>
+ Called when ApplicationWillFinishLaunchingNotification is broadcast.
+ <b>Steps performed during initialization:</b>
+ <ol>
+ <li>loadConfigurationInfo()</li>
+ <li>performConfigurationDiagnostics()</li>
+ <li>configureDatabaseConnections()</li>
+ <li>configureWebObjectsEnvironment()</li>
+ <li>createFormatters()</li>
+ <li>migrate schema</li>
+ </ol>
+ <br>
+ <b>IMPORTANT:</b> Read notes/instructions carefully on overriding each of these methods to ensure proper initialization.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadConfigurationInfo()"><!-- --></A><H3>
+loadConfigurationInfo</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.324"><B>loadConfigurationInfo</B></A>()</PRE>
+<DL>
+<DD>Loads the application configuration information.  Subclasses can override this method to add more properties. <br>
+ IMPORTANT: When overriding this method, make sure that you call <code>super</code> before doing anything else, to initialize the list and load all the other framework defaults. <br>
+
+ In example: <br>
+ <code><pre>
+ protected void loadConfigurationInfo()
+ {
+     super.loadConfigurationInfo();
+     properties().addPropertiesFromFile(aFile, aFramework);  //to load a plist file
+     properties().addPropertyForKey(anObject, aKey);  //to load a single property
+ }
+ </pre></code>
+ <br>
+ Take note of the order you load the properties, since properties loaded later override properties loaded earlier.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadCommandLineOverrides()"><!-- --></A><H3>
+loadCommandLineOverrides</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.359"><B>loadCommandLineOverrides</B></A>()</PRE>
+<DL>
+<DD>Adds any properties from the command line and the Properties file to the application properties.
+ This is done after loadConfigurationInfo() so it can be used to override properties loaded that way.
+ if you don't want that to happen, you can override this and not call super.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadPageMap()"><!-- --></A><H3>
+loadPageMap</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.380"><B>loadPageMap</B></A>()</PRE>
+<DL>
+<DD>Loads the page mapping, if any.  The name of the page map file is taken from pageMapFileName().
+ It is loaded from the configurationFrameworkName() if specified, otherwise from the application bundle.
+ This method can be overridden if a different method of loading is needed.
+<P>
+<DD><DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOApplication.html#pageMapFileName()"><CODE>pageMapFileName()</CODE></A>, 
+<A HREF="../../../net/global_village/woextensions/WOApplication.html#configurationFrameworkName()"><CODE>configurationFrameworkName()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pageMapFileName()"><!-- --></A><H3>
+pageMapFileName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.417"><B>pageMapFileName</B></A>()</PRE>
+<DL>
+<DD>Returns the name of the file that defines the page mapping, if any. This implementation uses the
+ value of PageMapFileNamePropertyKey.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>he name of the file that defines the page mapping or null if pages are not mapped<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOApplication.html#PageMapFileNamePropertyKey"><CODE>PageMapFileNamePropertyKey</CODE></A>, 
+<A HREF="../../../net/global_village/woextensions/WOApplication.html#pageMapFileName()"><CODE>pageMapFileName()</CODE></A>, 
+<A HREF="../../../net/global_village/woextensions/WOApplication.html#configurationFrameworkName()"><CODE>configurationFrameworkName()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadPropertyDependantConfiguration()"><!-- --></A><H3>
+loadPropertyDependantConfiguration</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.427"><B>loadPropertyDependantConfiguration</B></A>()</PRE>
+<DL>
+<DD>Loads application configuration that is dependant on all the properties being loaded.  Subclasses can override this method to load additional configuration. <br>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="configureDatabaseConnections(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+configureDatabaseConnections</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.468"><B>configureDatabaseConnections</B></A>(com.webobjects.foundation.NSArray&nbsp;modelsToIgnore)</PRE>
+<DL>
+<DD>Configures all EOModels in this project, using ModelConnector, so it can be updated with the proper connection dictionary
+ (from the configuration files) when they are loaded.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>modelsToIgnore</CODE> - list of models to not connect</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelsToIgnore()"><!-- --></A><H3>
+modelsToIgnore</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.507"><B>modelsToIgnore</B></A>()</PRE>
+<DL>
+<DD>Returns array of models (models for testing in this case) to not attempt to connect to.
+ This can be overriden and additional models added to the list.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>array of models to not attempt to connect to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="databaseType()"><!-- --></A><H3>
+databaseType</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.523"><B>databaseType</B></A>()</PRE>
+<DL>
+<DD>Returns the database type (e.g. DB2, Oracle, FrontBase, OpenBase, mySQL etc.) that is to be
+ used.  This must match the name as used in the EO<database name>Prototypes entity for this
+ database in the EOModel.  Remember - case counts!
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the database type that is to be used for this test run</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="databaseConnectionDictionary()"><!-- --></A><H3>
+databaseConnectionDictionary</H3>
+<PRE>
+public com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.547"><B>databaseConnectionDictionary</B></A>()</PRE>
+<DL>
+<DD>Returns the connection dictionary to use for all EOModels.  This is built from information in the configuration files.  A connection dictionary looks like this;
+ <br><br>
+ <pre>
+ connectionDictionary = {
+          URL = "jdbc:oracle:thin:@OTTAWA:1521:GVC";
+          driver = "";
+          password = smaker2;
+          plugin = "";
+          username = smaker2;
+ };
+ </pre>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the connection dictionary to use for all EOModels.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="performConfigurationDiagnostics()"><!-- --></A><H3>
+performConfigurationDiagnostics</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.581"><B>performConfigurationDiagnostics</B></A>()</PRE>
+<DL>
+<DD>Perform diagnostic checks to ensure that the application configuration information is complete and reasonable.  The application is marked for temination if the configuration is not complete and reasonable.<br>
+ To add add more properties to require, override this method, but don't forget to call super at the end. Below is an example: <br>
+ <code><pre>
+ protected void performConfigurationDiagnostics()
+ {
+     requiredProperties().addObjectsFromArray(<array of additional properties names you want to require>);
+     super.performConfigurationDiagnostics();
+ }
+ </pre></code>
+
+ Note: Aside from overriding this method, you can also just call requireProperty(String) anytime to require a single property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="requireProperty(java.lang.String)"><!-- --></A><H3>
+requireProperty</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.640"><B>requireProperty</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName)</PRE>
+<DL>
+<DD>Checks to see if the named property exists.  Marks the application for termination and prints a message if it does not.  This is for use by performConfigurationDiagnostics.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>propertyName</CODE> - the name of the property to require</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="requireMappingForPage(java.lang.String)"><!-- --></A><H3>
+requireMappingForPage</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.657"><B>requireMappingForPage</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;pageName)</PRE>
+<DL>
+<DD>Checks to see if the named page is mapped.  Marks the application for termination and
+ prints a message if it does not.  This is for use by performConfigurationDiagnostics.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="configureWebObjectsEnvironment()"><!-- --></A><H3>
+configureWebObjectsEnvironment</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.671"><B>configureWebObjectsEnvironment</B></A>()</PRE>
+<DL>
+<DD>Sets up the WebObjects application environment.  IMPORTANT: When overriding this method, be sure to call super before doing anything else.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createFormatters()"><!-- --></A><H3>
+createFormatters</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.758"><B>createFormatters</B></A>()</PRE>
+<DL>
+<DD>Creates formatters for each date and number format and removes the format strings so that they do not get used by accident.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createRequest(java.lang.String, java.lang.String, java.lang.String, java.util.Map, com.webobjects.foundation.NSData, java.util.Map)"><!-- --></A><H3>
+createRequest</H3>
+<PRE>
+public com.webobjects.appserver.WORequest <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.780"><B>createRequest</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aMethod,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aURL,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anHTTPVersion,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;someHeaders,
+                                                        com.webobjects.foundation.NSData&nbsp;aContent,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&nbsp;someInfo)</PRE>
+<DL>
+<DD>WO 5.4 version.  Creates and returns a request configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.
+ This is done here as doing it in takeValueFromRequest was too late when the form used
+ <code>enctype="multipart/form-data</code>.  Multi-part form data triggers the new streaming
+ handling and changing the encoding after the stream has been read discards the form values.
+ This might also have been because some of our code peeked at the form values.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>createRequest</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createRequest(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSData, com.webobjects.foundation.NSDictionary)"><!-- --></A><H3>
+createRequest</H3>
+<PRE>
+public com.webobjects.appserver.WORequest <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.812"><B>createRequest</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aMethod,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aURL,
+                                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anHTTPVersion,
+                                                        com.webobjects.foundation.NSDictionary&nbsp;someHeaders,
+                                                        com.webobjects.foundation.NSData&nbsp;aContent,
+                                                        com.webobjects.foundation.NSDictionary&nbsp;someInfo)</PRE>
+<DL>
+<DD>WO 5.3 and prior version Creates and returns a request configured to use UTF-8 for the <code>defaultFormValueEncoding()</code>.
+ This is done here as doing it in takeValueFromRequest was too late when the form used
+ <code>enctype="multipart/form-data</code>.  Multi-part form data triggers the new streaming
+ handling and changing the encoding after the stream has been read discards the form values.
+ This might also have been because some of our code peeked at the form values.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createContextForRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+createContextForRequest</H3>
+<PRE>
+public com.webobjects.appserver.WOContext <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.843"><B>createContextForRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>When a context is created we push it into thread local storage.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>createContextForRequest</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the request
+<DT><B>Returns:</B><DD>the newly created context<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOApplication.html#applicationDidHandleRequest(com.webobjects.foundation.NSNotification)"><CODE>applicationDidHandleRequest(NSNotification)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="applicationDidHandleRequest(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+applicationDidHandleRequest</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.862"><B>applicationDidHandleRequest</B></A>(com.webobjects.foundation.NSNotification&nbsp;n)</PRE>
+<DL>
+<DD>When request is finished, we remove the context from thread local storage.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>n</CODE> - notification<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/WOApplication.html#createContextForRequest(com.webobjects.appserver.WORequest)"><CODE>createContextForRequest(WORequest)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createResponseInContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+createResponseInContext</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.873"><B>createResponseInContext</B></A>(com.webobjects.appserver.WOContext&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>createResponseInContext</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>Response instead of WOResponse<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/woextensions/Response.html" title="class in net.global_village.woextensions"><CODE>Response</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="dispatchRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+dispatchRequest</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.883"><B>dispatchRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Overidden to provide debugging hooks.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>dispatchRequest</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="frontDoorURL()"><!-- --></A><H3>
+frontDoorURL</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.976"><B>frontDoorURL</B></A>()</PRE>
+<DL>
+<DD>This method returns the URL that is used to access the default page for this application.
+ This can be used to re-enter the application without a session.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the URL that is used to access the default page for this application. This can be used to re-enter the application without a session</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="documentRootPath()"><!-- --></A><H3>
+documentRootPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.988"><B>documentRootPath</B></A>()</PRE>
+<DL>
+<DD>Convenience method to obtain the document root path
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the path for DocumentRoot from CustomInfo.plist</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="defaultPageName()"><!-- --></A><H3>
+defaultPageName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1007"><B>defaultPageName</B></A>()</PRE>
+<DL>
+<DD>The name of the page to be shown when the requested page can not be shown. This method must be overridden in the application
+ This is the default page to show for
+ <ul>
+         <li> handlePageRestorationError</li>
+         <li> handleSessionCreationError</li>
+         <li> handleSessionRestorationError</li>
+         <li> handleException</li>
+ </ul>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the name of the page to display</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pageRestorationErrorPageName()"><!-- --></A><H3>
+pageRestorationErrorPageName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1021"><B>pageRestorationErrorPageName</B></A>()</PRE>
+<DL>
+<DD>The name of the page to be shown by handlePageRestorationErrorInContext().  The default is defaultPage(). Override this method to provide different functionality in your application.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the name of the defaultPage() which will be shown next</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handlePageRestorationErrorInContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+handlePageRestorationErrorInContext</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1036"><B>handlePageRestorationErrorInContext</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>This method defines the response for handling backtracking beyond the page cache.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>handlePageRestorationErrorInContext</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aContext</CODE> - The context to use for obtaining the page
+<DT><B>Returns:</B><DD>the response from the next page to display</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleMalformedCookieString(java.lang.RuntimeException, java.lang.String, com.webobjects.foundation.NSMutableDictionary)"><!-- --></A><H3>
+handleMalformedCookieString</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1064"><B>handleMalformedCookieString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</A>&nbsp;exception,
+                                                                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;cookieString,
+                                                                                 com.webobjects.foundation.NSMutableDictionary&nbsp;parsedCookies)</PRE>
+<DL>
+<DD>Overridden to log out messages when cookie parsing fails.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>handleMalformedCookieString</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sessionCreationErrorPageName()"><!-- --></A><H3>
+sessionCreationErrorPageName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1081"><B>sessionCreationErrorPageName</B></A>()</PRE>
+<DL>
+<DD>Name of the page to display when an error occurred while creating a session. Override this method to provide different functionality in your application.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the name of the defaultPage() which will be shown next</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleSessionCreationErrorInContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+handleSessionCreationErrorInContext</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1098"><B>handleSessionCreationErrorInContext</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>This method defines the response for handling a session creation errors.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>handleSessionCreationErrorInContext</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aContext</CODE> - The context to use for obtaining the page
+<DT><B>Returns:</B><DD>the response from the next page to display</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sessionRestorationErrorPageName()"><!-- --></A><H3>
+sessionRestorationErrorPageName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1127"><B>sessionRestorationErrorPageName</B></A>()</PRE>
+<DL>
+<DD>Name of the page to display when a session restoration has failed.  Override this method to provide different functionality in your application.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the name of the page which will be shown when a session resoration has failed</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleSessionRestorationErrorInContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+handleSessionRestorationErrorInContext</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1144"><B>handleSessionRestorationErrorInContext</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>This method defines the response for handling an error that occurred when restoring a session
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>handleSessionRestorationErrorInContext</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aContext</CODE> - The context to use when creating the response.
+<DT><B>Returns:</B><DD>the response</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="exceptionPageName()"><!-- --></A><H3>
+exceptionPageName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1173"><B>exceptionPageName</B></A>()</PRE>
+<DL>
+<DD>This method determines the page to be shown by handleExceptioninContext. The default is to return null which results in the standard WebObjects exception page. Override this method to show a custom error page.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the default page being used for handleException.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleException(java.lang.Exception, com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+handleException</H3>
+<PRE>
+public com.webobjects.appserver.WOResponse <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1187"><B>handleException</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A>&nbsp;anException,
+                                                           com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>Replaces the default WO Exception page.  The page is determined from exceptionPageName.  If you implement a customized exception page, then it must implement the ExceptionPage interface Joee: test if this works
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>handleException</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anException</CODE> - the exception to handle<DD><CODE>aContext</CODE> - the context
+<DT><B>Returns:</B><DD>the response to the exception</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="refuseNewSessions(boolean)"><!-- --></A><H3>
+refuseNewSessions</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1271"><B>refuseNewSessions</B></A>(boolean&nbsp;shouldRefuse)</PRE>
+<DL>
+<DD>Overridden to log messages when session refusing is turned on and off.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>refuseNewSessions</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>shouldRefuse</CODE> - - true if the application should create new sessions, false otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="terminate()"><!-- --></A><H3>
+terminate</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1284"><B>terminate</B></A>()</PRE>
+<DL>
+<DD>Diagnostic messages only.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>terminate</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_terminateFromMonitor()"><!-- --></A><H3>
+_terminateFromMonitor</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1297"><B>_terminateFromMonitor</B></A>()</PRE>
+<DL>
+<DD>Exposes protected method.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>_terminateFromMonitor</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>See Also:</B><DD><CODE>WOApplication._terminateFromMonitor()</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pageNameMappedToName(java.lang.String)"><!-- --></A><H3>
+pageNameMappedToName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1310"><B>pageNameMappedToName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPageName)</PRE>
+<DL>
+<DD>Returns the name of the page (can be used for any WOComponent) mapped to the passed name according to pageMap(), or just returns aPageName if there is no mapping for this page.  The page map is created by the application constructor which reads the file name from the configuration file.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aPageName</CODE> - the name of the page to return a mapped name for
+<DT><B>Returns:</B><DD>the name of the WO page mapped to the passed name according to pageMap(), or aPageName if there is no mapping for this page</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pageWithName(java.lang.String, com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+pageWithName</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1342"><B>pageWithName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                                                         com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD><p>Overridden to</p>
+ <ul>
+ <li>Disable component access</li>
+ <li>Replace null aName with <code>defaultPageName()</code></li>
+ <li>Call pageNameMappedToName(String) to check for a replacement for aName</li>
+ <li>Call securePageForPageWithName(String, WOContext) check user permissions and enforce secure (SSL) access.</li>
+ </ul>
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>pageWithName</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aName</CODE> - the name of the page to return<DD><CODE>aContext</CODE> - the context to obtain the page with
+<DT><B>Returns:</B><DD>appropriate page based on the requested page name in the given context</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="securePageForPageWithName(java.lang.String, com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+securePageForPageWithName</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1393"><B>securePageForPageWithName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                                                                      com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD><p>Overridden to check user permissions and enforce secure (SSL) access. For example, a redirect is performed to switch to a https URI if needed.  Also, if the user lacks permissions for the requested page, a login page is shown instead.</p>
+ <p>In order to make use of this method, pages must implement some of these methods:</p> <ul>
+ <li> <code>public boolean needsSecureConnection()</code> - return <code>true</code> if the page should only be accessible via SSL. </li>
+ <li> <code>public boolean permitsAccess(WOContext aContext)</code> - return <code>true</code> if the current user (typically found in aContext.session().user()) is allowed to access this page.  The method can use any logic it wants to determine if access is granted.  If access is denied (false is returned), <code>pageWithName</code> will return the page named in <code>loginPageName</code> instead.
+ <li> <code>public String loginPageName()</code> - the name of the page to show if <code>permitsAccess</code> returns <code>false</code>.</li>. If <code>permitsAccess</code> is implemented then this method must also be implemented.</ul>
+ <p> With this scheme, if permitsAccess, loginPageName, and setNextPageName are all implemented, then users can bookmark pages that are usually behind a login screen with a URI like this: https://domain/cgi-bin/WebObjects/AppName.woa/wo/SecurePageName.wo.  If they are already logged in, they will be taken to the requested page.  If they are not logged in they will be shown a login page and then taken to the requested page after successfully logging on.</p>
+ <p> NOTE: when using this authentication, pages should ensure that they do not create instances of pages to which the user does not have access as pageWithName may return a different page than requested.  If methods are then called on the returned page, an exception may be raised.</p>
+ <p> If the page identified by <code>loginPageName</code> has implemented a  <code>setNextPageName(String aString)</code> method, then the originally requested page will be set up as the next page to display after logging on.</p>
+ <p>This method can be overidden to just return null if this functionality is not desired.</p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aName</CODE> - the name of the page to return<DD><CODE>aContext</CODE> - the context to obtain the page with
+<DT><B>Returns:</B><DD><code>null</code> if page named aName is OK to return as is, the requested page in the given context or an instance of the loginPage as specified in <code>loginPageNamed</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="dynamicElementWithName(java.lang.String, com.webobjects.foundation.NSDictionary, com.webobjects.appserver.WOElement, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+dynamicElementWithName</H3>
+<PRE>
+public com.webobjects.appserver.WOElement <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1507"><B>dynamicElementWithName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aName,
+                                                                 com.webobjects.foundation.NSDictionary&nbsp;someAssociations,
+                                                                 com.webobjects.appserver.WOElement&nbsp;anElement,
+                                                                 com.webobjects.foundation.NSArray&nbsp;aLanguageArray)</PRE>
+<DL>
+<DD>Returns an instance of the dynamic element requested, or of another dynamic element if one has been mapped to this name.  This allows one component to be substituted for another at runtime.  This was done to support customization of SiteMaker on a page by page basis.<br><br>
+
+ <b>Bug Alert</b>: This only works for sub-classes of WODynamicElement.  It does not work for WOComponent sub-classes, nor is pageWithName called for WOComponent sub-classes.  To get WOComponent sub-classes to work with this use them in a WOSwitchComponent like this:<br>
+ <code>
+     SMUserInstructions: WOSwitchComponent {<br>
+         WOComponentName = "SMUserInstructions";<br>
+     }<br>
+ </code>
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>dynamicElementWithName</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aName</CODE> - the name of the dynamic element to return<DD><CODE>someAssociations</CODE> - a dictionary of associations<DD><CODE>anElement</CODE> - a template of elements<DD><CODE>aLanguageArray</CODE> - NSArray containing the language preferences specified by the browser
+<DT><B>Returns:</B><DD>an instance of the page requested, or of another page if one has been mapped to this name</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="editingContextClass()"><!-- --></A><H3>
+editingContextClass</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1531"><B>editingContextClass</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the class of EOEditingContext that the application should use</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newEditingContext()"><!-- --></A><H3>
+newEditingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1584"><B>newEditingContext</B></A>()</PRE>
+<DL>
+<DD>Returns a new instance of the class of EOEditingContext that the application should use.  The
+ returned instance is <b>not</b> locked.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new instance of the class of EOEditingContext that the application should use</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newEditingContext(com.webobjects.eocontrol.EOObjectStore)"><!-- --></A><H3>
+newEditingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1606"><B>newEditingContext</B></A>(com.webobjects.eocontrol.EOObjectStore&nbsp;parent)</PRE>
+<DL>
+<DD>Returns a new instance of the class of EOEditingContext that the application should use.  The
+ returned instance is <b>not</b> locked.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>parent</CODE> - the parent of this editing context
+<DT><B>Returns:</B><DD>a new instance of the class of EOEditingContext that the application should use</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveSessionForContext(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+saveSessionForContext</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1629"><B>saveSessionForContext</B></A>(com.webobjects.appserver.WOContext&nbsp;wocontext)</PRE>
+<DL>
+<DD>Avoid a potential bug that causes session deadlock if WOSession.sleep() throws.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>saveSessionForContext</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="currencyFormatter()"><!-- --></A><H3>
+currencyFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSNumberFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1648"><B>currencyFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the currency formatter using the <code>CustomInfo.plist</code>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the currency formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="dateFormatter()"><!-- --></A><H3>
+dateFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSTimestampFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1662"><B>dateFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the date formatter using the <code>CustomInfo.plist</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the date formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="timeFormatter()"><!-- --></A><H3>
+timeFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSTimestampFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1677"><B>timeFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the time formatter using the <code>CustomInfo.plist</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the time formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="dateTimeFormatter()"><!-- --></A><H3>
+dateTimeFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSTimestampFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1691"><B>dateTimeFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the date and time formatter using the <code>CustomInfo.plist</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the time formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="integerFormatter()"><!-- --></A><H3>
+integerFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSNumberFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1705"><B>integerFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the integer formatter using the <code>CustomInfo.plist</code>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the integer formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="numberFormatter()"><!-- --></A><H3>
+numberFormatter</H3>
+<PRE>
+public com.webobjects.foundation.NSNumberFormatter <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1723"><B>numberFormatter</B></A>()</PRE>
+<DL>
+<DD>Returns the number formatter using the <code>CustomInfo.plist</code>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the number formatter</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="requiredProperties()"><!-- --></A><H3>
+requiredProperties</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableArray <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1737"><B>requiredProperties</B></A>()</PRE>
+<DL>
+<DD>Returns the list of property keys that are required to be in the properties list to ensure that the application configuration information is complete and reasonable.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the mutable array of required property keys</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="properties()"><!-- --></A><H3>
+properties</H3>
+<PRE>
+public <A HREF="../../../net/global_village/woextensions/ApplicationProperties.html" title="class in net.global_village.woextensions">ApplicationProperties</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1751"><B>properties</B></A>()</PRE>
+<DL>
+<DD>Returns the properies object containing the application configuration so that KVC can access this making bindings easier to write.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the properies object containing the application configuration.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="configurationFrameworkName()"><!-- --></A><H3>
+configurationFrameworkName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1766"><B>configurationFrameworkName</B></A>()</PRE>
+<DL>
+<DD>Optional name of a framework to take configuration information from.  This can be used with
+ NSBundle and WOResourceManager.  If null (the default), there is no configuration framework.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>null or the name of the framework to take configuration information from</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pageMap()"><!-- --></A><H3>
+pageMap</H3>
+<PRE>
+public com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1772"><B>pageMap</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasPageMap()"><!-- --></A><H3>
+hasPageMap</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1778"><B>hasPageMap</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="developmentMode()"><!-- --></A><H3>
+developmentMode</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1792"><B>developmentMode</B></A>()</PRE>
+<DL>
+<DD>For Click to Open support and generally useful.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if the app is in development mode<DT><B>See Also:</B><DD>"README in WOLips framework from Project Wonder", 
+<a href="http://wiki.objectstyle.org/confluence/display/WOL/Click+to+Open">Click to Open Wiki page</a></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="migrator()"><!-- --></A><H3>
+migrator</H3>
+<PRE>
+protected er.extensions.migration.ERXMigrator <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1810"><B>migrator</B></A>()</PRE>
+<DL>
+<DD>Returns ERXMigrator instance to use for migration.  The default is an instance of the inner class
+ Migrator.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>ERXMigrator instance to use for migration</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_debugValueForDeclarationNamed(com.webobjects.appserver.WOComponent, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+_debugValueForDeclarationNamed</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1847"><B>_debugValueForDeclarationNamed</B></A>(com.webobjects.appserver.WOComponent&nbsp;component,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;verb,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="logTakeValueForDeclarationNamed(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+logTakeValueForDeclarationNamed</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1901"><B>logTakeValueForDeclarationNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</PRE>
+<DL>
+<DD>Little bit better binding debug output than the original.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>logTakeValueForDeclarationNamed</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="logSetValueForDeclarationNamed(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+logSetValueForDeclarationNamed</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1912"><B>logSetValueForDeclarationNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aDeclarationType,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBindingName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAssociationDescription,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;aValue)</PRE>
+<DL>
+<DD>Little bit better binding debug output than the original.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>logSetValueForDeclarationNamed</CODE> in class <CODE>com.webobjects.appserver.WOApplication</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDebugEnabledForComponent(boolean, java.lang.String)"><!-- --></A><H3>
+setDebugEnabledForComponent</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1927"><B>setDebugEnabledForComponent</B></A>(boolean&nbsp;debugEnabled,
+                                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName)</PRE>
+<DL>
+<DD>Turns on/off binding debugging for the given component.  Binding debugging requires using the WOOgnl
+ template parser and setting ognl.debugSupport=true.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>debugEnabled</CODE> - whether or not to enable debugging<DD><CODE>componentName</CODE> - the component name to enable debugging for</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="debugEnabledForComponent(java.lang.String)"><!-- --></A><H3>
+debugEnabledForComponent</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1942"><B>debugEnabledForComponent</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName)</PRE>
+<DL>
+<DD>Returns whether or not binding debugging is enabled for the given component
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>componentName</CODE> - the component name
+<DT><B>Returns:</B><DD>whether or not binding debugging is enabled for the given componen</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clearDebugEnabledForAllComponents()"><!-- --></A><H3>
+clearDebugEnabledForAllComponents</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOApplication.html#line.1949"><B>clearDebugEnabledForAllComponents</B></A>()</PRE>
+<DL>
+<DD>Turns off binding debugging for all components.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOApplication.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/ValidationErrorsPanel.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOComponent.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOApplication.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOApplication.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_er.extensions.appserver.ajax.ERXAjaxApplication">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

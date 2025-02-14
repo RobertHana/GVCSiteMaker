@@ -1,0 +1,28 @@
+IsNotSystemAdminConditional: WOConditional {
+	condition = canRemoveAdmin;
+}
+
+IsSystemAdministratorConditional: WOConditional {
+	condition = canRemoveAdmin;
+	negate = true;
+}
+
+ManageUserHyperlink: WOHyperlink {
+	action = manageUser;
+	disabled = isntSystemAdmin;
+}
+
+RemoveLink: WOHyperlink {
+	action = removeAction;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+UserID: WOString {
+	value = userItem.userID;
+}
+
+UserListRep: WORepetition {
+	item = userItem;
+	list = currentUnit.admins;
+}
+

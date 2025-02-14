@@ -1,0 +1,94 @@
+CanBeModifiedConditional: WOConditional {
+	condition = dataAccessColumn.isEditable;
+}
+
+CheckedTitleTextField: WOTextField {
+	maxLength = 100;
+	size = 15;
+	value = dataAccessBooleanColumn.checkedTitle;
+    name = ~"CheckedTitle_" + dataAccessBooleanColumn.normalizedFieldName();
+}
+
+CheckedTitleValidationMessageConditional: WOConditional {
+	condition = checkedTitleValidationMessage;
+}
+
+CheckedTitleValidationMessageString: WOString {
+	value = checkedTitleValidationMessage;
+}
+
+DefaultValuePopUp: WOPopUpButton {
+	list = defaultValues;
+	selection = selectedDefaultValue;
+    name = ~"DefaultValue_" + dataAccessBooleanColumn.normalizedFieldName();
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+FieldValueCheckBox: WOCheckBox {
+	checked = fieldValue;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsReadOnlyConditional: WOConditional {
+	negate = true;
+	condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguratingAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+	negate = true;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+DefaultComparisonPopUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = componentObject.defaultComparison;  // VALID
+    name = ~"DefaultComparison_" + dataAccessBooleanColumn.normalizedFieldName();
+}
+
+UnCheckedTitleValidationMessageConditional: WOConditional {
+	condition = unCheckedTitleValidationMessage;
+}
+
+UnCheckedTitleValidationMessageString: WOString {
+	value = unCheckedTitleValidationMessage;
+}
+
+UncheckedTitleTextField: WOTextField {
+	maxLength = 100;
+	size = 15;
+	value = dataAccessBooleanColumn.unCheckedTitle;
+    name = ~"UncheckedTitle_" + dataAccessBooleanColumn.normalizedFieldName();
+}
+
+ValueAsString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}

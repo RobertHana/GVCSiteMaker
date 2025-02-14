@@ -1,0 +1,20 @@
+{
+    attributes = (
+        {columnName = "is_active"; name = isActive; prototypeName = JavaBoolean; }, 
+        {
+            columnName = "the_id"; 
+            name = theID; 
+            prototypeName = Key; 
+            userInfo = {modificationDate = "2000-10-24 04:04:41 +0000"; }; 
+        }
+    ); 
+    attributesUsedForLocking = (theID, isActive); 
+    className = "net.global_village.genericobjects.VersionableArchivableObject"; 
+    classProperties = (isActive); 
+    externalName = "GVC_VA_OBJECT"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = GVCVersionableArchivableObject; 
+    primaryKeyAttributes = (theID); 
+    userInfo = {modificationDate = "2000-10-24 04:06:53 +0000"; }; 
+}

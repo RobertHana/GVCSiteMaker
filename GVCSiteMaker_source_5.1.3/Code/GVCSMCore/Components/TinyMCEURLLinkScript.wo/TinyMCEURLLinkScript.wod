@@ -1,0 +1,21 @@
+DisplayString: WOString {
+	value = aLinkList.listDisplayName;
+}
+
+LinkString: WOString {
+	value = aLinkList.listURL;
+}
+
+ListNameString: WOString {
+	value = linkListName;
+}
+
+ListRepetition: WORepetition {
+	list = linkList;
+	item = aLinkList;
+}
+
+IsLastLinkConditional: WOConditional {
+	condition = isLastLink;
+	negate = true;	
+}

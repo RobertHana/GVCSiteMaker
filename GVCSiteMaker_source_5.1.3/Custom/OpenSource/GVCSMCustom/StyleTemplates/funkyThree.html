@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title><webobject name="Banner"></webobject>: <webobject name="SectionName"></webobject></title>
+<style type="text/css">
+<!--
+  body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #009999;
+  background-color: #99cccc;
+  }
+  a {
+	  text-decoration: underline;
+    font-weight: bold;
+    color:  #009999;
+    outline: none;
+
+  }
+  a:visited {
+  color:  #009999;
+  }
+  a:active {
+  color:  #009999;
+  }
+  a:hover {
+    color: #006666;
+		background-color: #99cccc;
+  }
+ 	.navbarText {
+	  color: black;
+		font-weight: 900;
+	  border: 3px inset #009999;
+		padding: 2px;
+		text-align: center;
+	}
+  strong, b {
+    font-weight: bold;
+  }
+	
+  p {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+  
+  /* weird ie5win bug: all line-height to font-size ratios must agree or box gets pushed around. 
+	UPDATE: this has turned out to be very rare. my current recommendation is IGNORE this warning. 
+	at the moment i'm leaving it in only in case the issue turns up again. possibly the original 
+	bug in march 2001 was caused by an unusual combination of factors, although this solved it at the time.*/
+  
+  h1 {
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+	font-family: courier, monospace;
+  }
+  h2 {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+		font-family: courier, monospace;
+  }
+  h3, .dataAccessSubtitle,  .dataAccessColoredSubtitle {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: courier, monospace;
+  }
+  .dataAccessColoredSubtitle {
+     color: #00EEEE;
+  }
+  h4 {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+		font-family: courier, monospace;
+  }
+  h5 {
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+		font-family: courier, monospace;
+  }
+  h6 {
+  font-size: 10px;
+  line-height: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+		font-family: courier, monospace;
+  }
+  img {
+  border: 0;
+  }
+  small {
+  font-size: 9px;
+  line-height: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  }
+	  pre {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+	
+  #banner {
+  margin: 20px 20px 0px 20px;
+  padding: 10px;
+  border: 5px ridge #009999;
+  background-color: #ccc;
+  height: 120px; /* ie5win fudge begins */
+  voice-family: "\"}\"";
+  voice-family:inherit;
+  height: 90px;
+  }
+  html>body #banner {
+  height: 90px; /* ie5win fudge ends */
+  }
+  #menu {
+  position: absolute;
+  top: 144px;
+  left: 0px;
+  margin: 20px 20px 0px 20px;
+  padding: 10px;
+  border: 5px outset #009999;
+  background-color: #ccc;
+  width: 200px; 
+  voice-family: "\"}\"";
+  voice-family:inherit;
+  width: 170px;
+  }
+  html>body #menu {
+  width: 170px; 
+  }
+
+  #content {
+  margin: 20px 20px 20px 240px;
+  padding: 10px;
+  border: 5px groove #009999;
+  background-color: #ccc;
+  }
+	
+	#leftPotionOfBanner {
+	  float: left;
+	}
+	#rightPortionOfBanner {
+	  float: right;
+		width: 400px;
+	}
+	#bannerText {
+		text-align: center;
+		vertical-align: middle;
+		margin: 0px 0px 0px 0px;
+		padding: 20px 0px 0px 20%;
+	}
+	
+	hr {
+	  color: #009999;
+		background-color: #009998;  /* slightly different for Netscape (Gecko) and W3C */
+	}
+	
+	div#poweredByText, span#gvcSiteMakerLink  {
+		  color: #009999;
+	}
+
+/* should be noted that the version in the Style Gallery / Demo site is much more tweaked, nonethe less the database specific tags were added here
+before eventually being added to style gallery / demo site.  */
+
+.dataAccessAlternateText {
+    color: #00EEEE;
+}
+
+.dataAccessNavigation td {
+
+}
+
+#dataAccessActions {
+
+}
+
+#dataAccessTable {
+  width: 100%;
+}
+
+.dataAccessTableHeading {
+  background-color: #99cccc;
+	text-align: left;
+	width: 30%;
+}
+
+.dataAccessTableCell  {
+ /* just regular text in this development style */
+}
+
+.dataAccessException {
+  color: red;
+	font-weight: bold;
+}
+
+.dataAccessCaution {
+  color: red;
+	font-weight: bold;
+}
+
+.dataAccessInstruction {
+  font-size: 9px;
+	font-decoration: italic;
+}
+
+-->
+</style>
+</head>
+<body>
+
+<webobject name="ShowBanner">
+  <div id="banner">
+	  <div id="leftPotionOfBanner">
+		  <div id="bannerText">
+    		 <h2><webobject name="Banner"></webobject></h2>
+			</div>
+		</div>
+		<webobject name="ShowFooter">
+      <div id="rightPortionOfBanner">
+        <webobject name="Footer"></webobject>
+      </div>
+	  </webobject>
+  </div>
+</webobject name="ShowBanner">
+
+<webobject name="ShowNavBar">
+  <div id="menu">
+   <webobject name="NavBar"></webobject>
+  </div>
+</webobject name="ShowNavBar">
+
+<div id="content">
+	<webobject name="SectionContents"></webobject>
+</div> 
+
+</body>
+</html>

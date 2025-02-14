@@ -1,0 +1,419 @@
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ConfigureWebsiteSectionsPane";
+}
+
+AddSectionHyperlink: WOHyperlink {
+    pageName = "AddSection";
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteSectionsPane";
+    frequency = autoUpdateFrequency;
+    action = updateAction;
+}
+
+CanReOrderConditional: WOConditional {
+    condition = aSection.canBeModified;
+}
+
+CannotReOrderConditional: WOConditional {
+    condition = aSection.canBeModified;
+    negate = true;
+}
+
+ConfigPageForm: WOForm {
+    multipleSubmit = true;
+    action = saveOrder;
+}
+
+CopyingResourcesConditional: WOConditional {
+    condition = aSection.canBeModified;
+    negate = true;
+}
+
+DataAccessHasNotificationConditional: WOConditional {
+    condition = aSection.isDataAccessWithNotificationOn;
+}
+
+GroupName: WOString {
+    value = aGroup.name;
+}
+
+GroupSeperatorString: WOString {
+    value = groupSeperator;
+    escapeHTML = false;
+}
+
+GroupsRepetition: WORepetition {
+    item = aGroup;
+    list = aSection.groups;
+}
+
+HomePageConditional: WOConditional {
+    condition = aSection.isHomeSection;
+}
+
+IndentTD: WOGenericContainer {
+    elementName = "td";
+    class = "sectionName";
+    style = sectionIndentationStyle;
+}
+
+HideIndentedNextSectionImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    width = 18;
+    alt = "Hide Children";
+}
+
+ShowIndentedNextSectionImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    width = 18;
+    alt = "Show Children";
+}
+
+IndentImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/format-indent-more.png";
+    class = indentClass;
+}
+
+IndentHyperlink: AjaxUpdateLink {
+    action = indentSection;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    disabled = "~!aSection.canIndent";
+}
+
+InstallingPackageConditional: WOConditional {
+    condition = aSection.isPackageSectionPlaceHolder;
+}
+
+IsCopyingConditional: WOConditional {
+    condition = aSection.isCopyingResourcesSection;
+}
+
+IsNotCopyingResourcesConditional: WOConditional {
+    condition = aSection.canBeModified;
+}
+
+IsntHomeSectionConditional2: WOConditional {
+    condition = aSection.isHomeSection;
+    negate = true;
+}
+
+MailImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/email.png";
+}
+
+ManageGroupHyperlink: WOHyperlink {
+    action = manageGroup;
+    disabled = aGroup.isSystemGroup;
+}
+
+ObserveSelectedSectionCheckboxContainer: AjaxObserveField {
+    fullSubmit = true;
+    action = sectionRepetitionObserverAction;
+    evalScripts = true;
+}
+
+OrderPopup: ReorderPopup {
+    container = orderedSections;
+    object = aSection;
+}
+
+OrderField: ReorderTextField {
+    container = orderedSections;
+    object = aSection;
+}
+
+OrderString: WOString {
+    value = ~aSection.sectionOrder + 1;
+}
+
+OutDentImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/format-indent-less.png";
+    class = outdentClass;
+}
+
+OutdentHyperlink: AjaxUpdateLink {
+    action = outdentSection;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    disabled = "~!aSection.canOutdent";
+}
+
+SectionNameString: WOString {
+    value = aSection.name;
+    valueWhenEmpty = "&nbsp;";
+}
+
+SectionNameString2: WOString {
+    value = aSection.name;
+    valueWhenEmpty = "&nbsp;";
+}
+
+SectionRepetition: WORepetition {
+    item = aSection;
+    list = orderedSections.ordered;
+    index = sectionIndex;
+}
+
+ShouldDisplaySection: WOConditional {
+    condition = sectionIsVisible;
+}
+
+SectionString: WOString {
+    value = aSection.name;
+}
+SectionTypeString: WOString {
+    value = aSection.type.name;
+}
+
+ViewSectionHyperlink: WOHyperlink {
+    href = sectionPreviewUrl;
+    target = "_preview";
+    class = viewSectionHyperlinkCSSClass;
+}
+
+ActionSelectPopup : WOPopUpButton {
+    list = actionsList;
+    item = anActionString;
+    displayString = anActionString;
+    noSelectionString = "Choose Action...";
+    selection = selectedSectionAction;
+}
+
+ObserveActionPopupContainer: AjaxObserveField {
+    action = sectionRepetitionObserverAction;
+    evalScripts = true;
+}
+
+SelectedSectionCheckbox : WOCheckBox {
+    checked = sectionSelected;
+}
+
+SelectedSectionsPopupObserveField : AjaxObserveField {
+    observeFieldID = "SelectedSectionsPopupID";
+    fullSubmit = true;
+    action = selectedSectionsObserverAction;
+}
+
+LIGenericContainer : WOGenericContainer {
+    elementName = "li";
+    class = sectionListCSSClass;
+    style = sectionDisplay;
+}
+
+SelectedSectionsPopup : WOPopUpButton {
+    id = "SelectedSectionsPopupID";
+    list = selectedSectionsActions;
+    item = anActionString;
+    display = anActionString;
+    selection = selectedSectionsAction;
+    noSelectionString = "Selected Sections...";
+}
+
+NextSectionIsIndentedConditional : WOConditional {
+    condition = aSection.nextSectionIsIndented;
+}
+
+IsNextSectionHiddenConditional : WOConditional {
+    condition = sectionShowsIndentedChildren;
+    negate = true;
+}
+
+IsNextSectionDisplayedConditional : WOConditional {
+    condition = sectionShowsIndentedChildren;
+}
+
+ExpandSectionsHyperlink : AjaxUpdateLink {
+    action = toggleShowIndentedChildren;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    onLoading = twistSectionsHyperlinkOnLoadingScript;
+    onComplete = twistSectionsHyperlinkOnCompleteScript;
+}
+
+CollapseSectionsHyperlink : AjaxUpdateLink {
+    action = toggleShowIndentedChildren;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    onLoading = twistSectionsHyperlinkOnLoadingScript;
+    onComplete = twistSectionsHyperlinkOnCompleteScript;
+}
+
+ToggleExpandCollapseSectionsHyperlink : AjaxUpdateLink {
+    action = toggleExpandCollapseAll;
+    title = "Collapse Section Hierarchy";
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+ShowCollapseConditional : WOConditional {
+    condition = hasAtLeastOneSectionExpanded;
+}
+
+ShowExpandConditional : WOConditional {
+    condition = hasAtLeastOneSectionExpanded;
+    negate = true;
+}
+
+ToggleExpandCollapseGroupsHyperlink : AjaxUpdateLink {
+    action = toggleExpandCollapseAllGroups;
+    title = "Collapse All Access Group Lists";
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+ShowCollapseGroupsConditional : WOConditional {
+    condition = hasAtLeastOneGroupExpanded;
+}
+
+ShowExpandGroupsConditional : WOConditional {
+    condition = hasAtLeastOneGroupExpanded;
+    negate = true;
+}
+
+HasAtLeastTwoGroupsConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+}
+
+HasAtMostOneGroupConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+    negate = true;
+}
+
+GroupSummaryHyperlink : AjaxUpdateLink {
+    action = toggleShowGroups;
+    title = "Toggle Groups";
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+GroupCountString : WOString {
+  value = aSection.groups.count;
+}
+
+GroupsShownConditional : WOConditional {
+  condition = sectionShowsGroups;
+}
+
+IsGroupHiddenConditional : WOConditional {
+    condition = sectionShowsGroups;
+    negate = true;
+}
+
+IsGroupDisplayedConditional : WOConditional {
+    condition = sectionShowsGroups;
+}
+
+HideGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    height = "13";
+    alt = "Hide Groups";
+}
+
+ShowGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    height = "13";
+    alt = "Show Groups";
+}
+
+ConfirmDeleteSectionsModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteSectionsModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Section(s)";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteSectionsModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteSectionsModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+CantDeleteHomeSectionString : WOString {
+    value = cantDeleteHomeSection;
+    escapeHTML = false;
+}
+
+ConfirmDeleteSectionsModalDialogYesLink: AjaxHyperlink {
+    action = deleteSelectedSections;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteSectionsModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteSectionsModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteSectionsModalDialogNoLink";
+}
+
+ConfirmDeleteSectionModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteSectionModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Section";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteSectionModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteSectionModalDialogNoLink";
+    closeUpdateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+ConfirmDeleteSectionModalDialogYesLink: AjaxHyperlink {
+    action = deleteSection;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteSectionModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteSectionModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteSectionModalDialogNoLink";
+}
+
+ToggleShowHideSectionsModalDialog: AjaxModalDialog {
+    id = "ToggleShowHideSectionsModalDialog";
+    title = "Cannot Hide Home Section";
+    label = "Toggle Show/Hide Section(s)";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ToggleShowHideSectionsModalDialogOKLink";
+    clickOnEscId = "ToggleShowHideSectionsModalDialogOKLink";
+    closeUpdateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+Ok : AjaxHyperlink {
+    action = toggleShowHideSelectedSections;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ToggleShowHideSectionsModalDialogOKLink";
+    evalScripts = true;
+}
+
+TRGenericContainer : WOGenericContainer {
+    elementName = "tr";
+    style = "display: none;";
+    id = busyRowID;
+}
+
+BusyImage : WOImage {
+    framework = "Ajax";
+    filename = "wait30.gif";
+}

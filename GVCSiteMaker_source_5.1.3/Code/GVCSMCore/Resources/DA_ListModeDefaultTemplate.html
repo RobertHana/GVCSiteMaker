@@ -1,0 +1,176 @@
+<WebObject name=DataAccess_IsViewingData>
+
+    <WebObject name=DataAccess_CanBrowseOrSearchRecords>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+      <tr>
+        <td align="left" valign="middle" colspan="2">
+          <span class="dataAccessSubtitle">Navigate Database Table:</span> <span class="dataAccessColoredSubtitle">"<WebObject name=DataAccess_TableName></WebObject>"</span>
+        </td>
+      </tr>
+
+      <WebObject name=DataAccess_TableHasData>
+      <tr>
+        <td align="Left" valign="Middle" colspan="2">
+          <b>Current records are <span class="dataAccessAlternateText">#<WebObject name=DataAccess_RecordOrRecordRangeBeingViewed></WebObject></span>
+             out of <span class="dataAccessAlternateText"><WebObject name=DataAccess_NumberOfRecordsInFoundSet></WebObject></span>
+             in found set (<span class="dataAccessAlternateText"><WebObject name=DataAccess_NumberOfRecordsInTable></WebObject></span> total records in 
+             table)
+          </b>
+        </td>
+      </tr>
+      </WebObject name=DataAccess_TableHasData>
+
+      <tr>
+        <td align="left" valign="middle"> 
+          <table border="0" cellpadding="2" cellspacing="0" class="dataAccessNavigation">
+            <tr>
+              <td align="center">
+                <WebObject name=DataAccess_ToggleView>Single View</WebObject>
+              </td>
+              <td>&nbsp;&nbsp;</td>
+              <td align="center">
+                <WebObject name=DataAccess_SearchForRecords>Search</WebObject name=DataAccess_SearchForRecords>
+              </td>
+              <td>&nbsp;&nbsp;</td>
+              <td align="center">
+                <WebObject name=DataAccess_ShowAllRecords>Find All</WebObject>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td align="right" valign="middle">
+          <table border="0" cellpadding="2" cellspacing="0" class="dataAccessNavigation">
+            <tr>
+              <td align="center">
+                <WebObject name=DataAccess_GoFirst>&lt;&lt;First</WebObject>
+              </td>
+              <td align="center">
+                <WebObject name=DataAccess_GoPrevious>&lt;Prev</WebObject>
+              </td>
+              <td align="center">
+                <WebObject name=DataAccess_GoNext>Next&gt;</WebObject>
+              </td>
+              <td align="center">
+                <WebObject name=DataAccess_GoLast>Last&gt;&gt;</WebObject>
+              </td>
+            </tr>
+          </table>
+        </td>        
+      </tr>
+    </table>
+    </WebObject name=DataAccess_CanBrowseOrSearchRecords>
+
+    <WebObject name=DataAccess_TableHasData>
+    <hr>
+    <table border="1" cellpadding="4" cellspacing="0" align="center" id="dataAccessTable">
+      <tr>
+        <WebObject name="DataAccess_VisibleFields"><th class="dataAccessTableHeading">
+            <WebObject name=DataAccess_FieldName></WebObject>
+        </th>
+        </WebObject name="DataAccess_VisibleFields">
+        <th class="dataAccessTableHeading">
+          Show
+        </th>
+        <WebObject name=DataAccess_CanDeleteRecords>
+        <th class="dataAccessTableHeading">
+          Delete
+        </th>
+        </WebObject name=DataAccess_CanDeleteRecords>
+      </tr>
+
+      <WebObject name="DataAccess_RecordsInGroup"><tr>
+
+        <WebObject name="DataAccess_VisibleFields"><td class="dataAccessTableCell">
+          <WebObject name=DataAccess_FieldValue></WebObject>&nbsp;
+        </td></WebObject name="DataAccess_VisibleFields">
+
+        <td class="dataAccessTableCell" align="center">
+          <WebObject name=DataAccess_ShowDetails>Details...</WebObject>
+        </td>
+
+        <WebObject name=DataAccess_CanDeleteRecords><td class="dataAccessTableCell" align="center">
+          <WebObject name=DataAccess_DeleteRecordCheckbox></WebObject>
+        </td></WebObject name=DataAccess_CanDeleteRecords>
+
+      </tr>
+      </WebObject name="DataAccess_RecordsInGroup">
+    </table>
+
+    <hr>
+    </WebObject name=DataAccess_TableHasData>
+
+    <WebObject name=DataAccess_TableIsEmpty>
+      <br><br><div align="center">There are no data to display.</div><br><br>
+    </WebObject name=DataAccess_TableIsEmpty>
+
+    <WebObject name=DataAccess_CanModifyRecords>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="left" valign="middle">
+            <span class="dataAccessSubtitle">Modify Database Table:</span>
+            <span class="dataAccessColoredSubtitle">"<WebObject name=DataAccess_TableName></WebObject>"</span>
+
+            <WebObject name=DataAccess_ShowNotificationNotNeededCheckBox>
+              <span style="text-align: right;"><WebObject name=DataAccess_ShouldNotSendNotification></WebObject> No notification needed</span>
+            </WebObject name=DataAccess_ShowNotificationNotNeededCheckBox>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table border="0" cellpadding="4" cellspacing="0" id="dataAccessActions">
+              <tr>
+                <WebObject name=DataAccess_CanAddRecords>
+                  <td align="left" valign="middle">
+                    <WebObject name=DataAccess_AddRecord>Add</WebObject>
+                  </td>
+                </WebObject name=DataAccess_CanAddRecords>
+
+                <WebObject name=DataAccess_CanImportRecords>
+                  <td align="left" valign="middle">
+                    <WebObject name=DataAccess_ImportRecords>Import</WebObject>
+                  </td>
+                </WebObject name=DataAccess_CanImportRecords>
+  
+                <WebObject name=DataAccess_CanEditRecords>
+                  <td align="left" valign="middle">
+                    <WebObject name=DataAccess_SaveButton></WebObject>
+                  </td>
+                </WebObject name=DataAccess_CanEditRecords>
+              
+              </tr>
+            </table>
+          </td>  
+        </tr>
+      </table>
+    </WebObject name=DataAccess_CanModifyRecords>
+</WebObject name=DataAccess_IsViewingData>
+
+<WebObject name=DataAccess_IsConfirmingDeletion>
+  <table align="center" border="0" cellpadding="4" cellspacing="0">
+    <tr>
+      <td align="center" valign="middle" colspan="3">
+        <WebObject name=DataAccess_DeletedRecordCount></WebObject> record(s) selected for deletion.<br><br>Proceed with deletion?
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle">
+        <input type="submit" value="Yes" name="<WebObject name=DataAccess_AcceptDeletion></WebObject>">
+      </td>
+      <td align="center" valign="middle">&nbsp;</td>
+      <td align="left" valign="middle">
+        <input type="submit" value="No!" name="<WebObject name=DataAccess_RejectDeletion></WebObject>">
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle" colspan="3">
+        If you do not proceed with the deletion, you will be returned to the previous page with your edits intact, but unsaved.
+      </td>
+    </tr>
+  </table>
+</WebObject name=DataAccess_IsConfirmingDeletion>

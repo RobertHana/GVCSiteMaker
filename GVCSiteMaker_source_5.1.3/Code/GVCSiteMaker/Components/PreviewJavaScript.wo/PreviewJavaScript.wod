@@ -1,0 +1,16 @@
+
+// Ack Hack.
+// Have to do this cause WO ignores tags inside comments.
+BEGIN_COMMENT: WOString {
+  value = "<!--";
+  escapeHTML = false;
+}
+CLOSE_COMMENT: WOString {
+  value = "-->";
+  escapeHTML = false;
+}
+
+PREVIEW_URL: WOString {
+  value = previewURL;
+	escapeHTML = false;
+}

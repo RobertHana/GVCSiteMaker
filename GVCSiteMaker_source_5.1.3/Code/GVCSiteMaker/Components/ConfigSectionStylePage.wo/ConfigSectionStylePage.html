@@ -1,0 +1,279 @@
+<webobject name="DynamicBody">
+	<webobject name="PreviewJavaScript"></webobject>
+	<WEBOBJECT NAME=StyleForm>
+		<!-- cell padding removed except around HR -->
+		<table border="0" cellpadding="0" cellspacing="0" class="content">
+    		<!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+    		<tr>
+				<td style="padding-left: 2px;">
+            		<h1>
+            			<WEBOBJECT NAME=IsEditingStyleConditional>Configure</WEBOBJECT>
+            			<WEBOBJECT NAME=IsCreatingStyleConditional>Create</WEBOBJECT>
+            			Website Style
+            		</h1>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">	
+        			<WEBOBJECT NAME=CancelChangesButton></WEBOBJECT>
+        			<WEBOBJECT NAME=SaveChangesButton></WEBOBJECT>
+        			<WEBOBJECT NAME=IsEditingStyleConditional>
+        				<WEBOBJECT NAME=DoneButton></WEBOBJECT>
+        			</WEBOBJECT NAME=IsEditingStyleConditional>
+				</td>
+			</tr>
+    		<!-- END ROW WITH TITLE AND BUTTONS -->
+    		<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"/></td></tr>
+					</table>
+				</td>
+    		</tr>
+		</table>
+		<!-- TABLE WITH STYLE CONTENTS -->
+		<table border="0" cellpadding="2" cellspacing="2" class="content">
+			<tr>
+				<td valign="top" width="15%">
+					<b>Style ID:</b><br/>
+					<i class="requiredText">(required)</i>
+				</td>
+				<td valign="top">
+					<WEBOBJECT NAME=StyleIDTextField></WEBOBJECT><br/>
+					<span class="descriptiveText">
+						Unique indentifier for this style. Only use A-Z, a-z, 0-9, period, hyphen, and underline.
+					</span>
+                     <!-- added span for errors -->
+					<span class="warningText">
+    					<WEBOBJECT NAME=StyleIDIsRequiredError></WEBOBJECT>
+    					<WEBOBJECT NAME=StyleIDIsInvalidError></WEBOBJECT>
+    					<WEBOBJECT NAME=StyleIDIsInUse></WEBOBJECT>
+					</span>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" width="15%">
+					<b>Name:</b>
+					<br/>
+					<i class="requiredText">(required)</i>
+				</td>
+				<td valign="top">
+					<WEBOBJECT NAME=StyleNameTextField></WEBOBJECT><br/>
+					<span class="descriptiveText">
+						The name people will see when selecting a template. Must be unique.
+					</span>
+					<i class="warningText">
+						<WEBOBJECT NAME=NameIsRequiredError></WEBOBJECT>
+						<WEBOBJECT NAME=NameIsInUse></WEBOBJECT>
+					</i>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" width="15%">
+					<b>Org Unit:</b>
+					<br/>
+					<i class="requiredText">(required)</i>
+				</td>
+				<td valign="top"><font size="2" face="Arial">
+					<WEBOBJECT NAME=IsNotDefaultStyleConditional>
+						<WEBOBJECT NAME=StyleOwningUnit></WEBOBJECT>
+					</WEBOBJECT NAME=IsNotDefaultStyleConditional>
+					<WEBOBJECT NAME=IsDefaultStyleConditional>
+						<b><WEBOBJECT NAME=OwningOrgUnitNameString></WEBOBJECT></b>
+						<BR/>
+						<span class="descriptiveText">
+							The Org Unit of the default style must be the root unit and cannot be changed.
+						</span>
+					</WEBOBJECT NAME=IsDefaultStyleConditional>
+					<br/>
+					<span class="descriptiveText">
+						This style will only be available to sites in and below this Org Unit.
+					</span>
+					<br/>
+					<br/>
+				</font></td>
+			</tr>
+			<tr>
+				<td valign="top" width="15%">
+					<b>Upload Template:</b><br/>
+					<i class="requiredText">(required)</i>
+				</td>
+				<td valign="top">
+					<WEBOBJECT NAME=TemplateUpload></WEBOBJECT>
+					<br/>
+					<span class="descriptiveText">
+						Use this to upload the HTML template when you create a style or after you make changes to the template.
+						<WEBOBJECT NAME=TemplateIsRequired></WEBOBJECT>
+					</span>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<WEBOBJECT NAME=IsEditingStyleConditional>
+				<tr>
+					<td valign="top" width="15%">
+						<b>Download Template:</b>
+						<br/>
+						<br/>
+					</td>
+					<td valign="top">
+						Click <b><WEBOBJECT NAME=HyperlinkDownloadTemplateLink></WEBOBJECT></b> to download the HTML template for this style.
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" width="15%">
+						<b>Preview:</b>
+					</td>
+					<td valign="top">
+						<WEBOBJECT NAME=PreviewSiteIDTextField></WEBOBJECT>
+						<WEBOBJECT NAME=PreviewSiteButton></WEBOBJECT>
+						<WEBOBJECT NAME=SiteIDNotFound></WEBOBJECT>
+						<br />
+						<span class="descriptiveText">
+							Enter a Site ID to preview a site in this style.  
+                            You can only preview published sites and sites that you can configure.
+							Previewing a site does not permanently assign this template to the site. 
+							<br />
+						</span>
+						<br /> <!-- extra white space -->
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" width="15%">
+						<b>Published:</b>
+					</td>
+					<td valign="top">
+						<WEBOBJECT NAME=CanChangePublicationStatusConditional>
+							<WEBOBJECT NAME=IsPublishedCheckBox></WEBOBJECT>
+						</WEBOBJECT>
+						<WEBOBJECT NAME=CanNotChangePublicationStatusConditional>
+							<B><WEBOBJECT NAME=IsPublishedString></WEBOBJECT></B>.
+						</WEBOBJECT>
+						&nbsp;
+						<span class="descriptiveText">Only published styles are available to people configuring a site.</span>
+						<br/>
+						<br/>
+					</td>
+				</tr>
+			</WEBOBJECT NAME=IsEditingStyleConditional>
+			<tr>
+				<td valign="top" width="15%">
+					<b>Notes:</b>
+				</td>
+				<td valign="top">
+					<WEBOBJECT NAME=StyleNotesTextArea></WEBOBJECT>
+					<br/>
+					<span class="descriptiveText">Notes for your use, not shown to people configuring a site.</span>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" width="15%">
+					<b>CSS File URL:</b>
+				</td>
+				<td valign="top">
+					
+					<webobject name="RelatedCSSTextField"></webobject><br/>
+					<span class="descriptiveText">URL for the relevant CSS file for this style.</span>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<WEBOBJECT NAME=IsEditingStyleConditional>
+				<tr>
+					<td valign="top" width="15%">
+						<b>Resource Path:</b>
+						<br/>
+						<i class="requiredText">(required)</i>
+					</td>
+					<td valign="top">
+						<WEBOBJECT NAME=IsSystemAdminConditional>
+							<WEBOBJECT NAME=ResourceDirectoryTextField></WEBOBJECT>
+						</WEBOBJECT>
+						<WEBOBJECT NAME=IsNotSysAdminConditional>
+							<WEBOBJECT NAME=ResourceDirectoryString></WEBOBJECT>
+						</WEBOBJECT><br/>
+						<span class="descriptiveText">
+							The location under the web server's document root where images, style sheets, and other resources for this template are located.  Use only path friendly characters.
+							<span class="warningText"><!-- made warning text...-->
+    							<WEBOBJECT NAME=ResourcePathIsRequired></WEBOBJECT>
+    							<WEBOBJECT NAME=ResourcePathIsInvalid></WEBOBJECT>
+							</span>
+						</span>
+						<br/>
+						<br/>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" width="15%">
+						<b>Default Style:</b>
+					</td>
+					<td valign="top">
+						<b><WEBOBJECT NAME=IsDefaultString></WEBOBJECT></b>. 
+						<span class="descriptiveText">
+							The default style is used when a site is created. Only styles in the root Org Unit can be the default.
+						</span>
+						<WEBOBJECT NAME=IsSystemAdminConditional>
+							<WEBOBJECT NAME=CanBecomeDefaultStyleConditional>
+								<br/>
+								Click <WEBOBJECT NAME=MakeDefaultStyleHyperlink><b>here</b></WEBOBJECT> to make this style the default for all new sites.
+							</WEBOBJECT>
+						</WEBOBJECT>
+						<br/>
+						<br/>
+					</td>
+				</tr>
+				<tr>
+					<td valign="middle" width="15%">
+						<b>Created:</b>
+					</td>
+					<td valign="middle">
+						<B>By</B>
+						<WEBOBJECT NAME=CreatingUserIDString></WEBOBJECT>
+						<B>on</B>
+						<WEBOBJECT NAME=DateCreatedString></WEBOBJECT>
+					</td>
+				</tr>
+				<tr>
+					<td valign="middle" width="15%">
+						<b>Last Modified:</b>
+					</td>
+					<td valign="middle">
+						<WEBOBJECT NAME=IsEditingStyleConditional>
+							<B>By</B>
+							<WEBOBJECT NAME=ModifyingUserIDString></WEBOBJECT>
+							<B>on</B>
+							<WEBOBJECT NAME=DateModifiedString></WEBOBJECT>
+						</WEBOBJECT>
+					</td>
+				</tr>
+			</WEBOBJECT NAME=IsEditingStyleConditional>
+		</TABLE>
+		<!-- END OF TABLE WITH STYLE CONTENTS -->
+	</WEBOBJECT>
+
+	<WEBOBJECT NAME=IsEditingStyleConditional>
+		<hr class="primaryBarStyle"/><!-- only show bar when editing -->
+		<table border="0" cellpadding="0" cellspacing="0" class="content">
+			<tr>
+				<td valign="middle" colspan="2">
+					<b>Click <WEBOBJECT NAME=DisplaySitesWithStyleHyperlink>here</WEBOBJECT>
+					to list all sites using this style.</b>
+					<br/>
+					<br/>
+				</td>
+			</tr>
+			<WEBOBJECT NAME=SitesUsingStyleRepetition>
+				<tr>
+					<td width="5%">&nbsp;</td>
+					<td><WEBOBJECT NAME=WebsiteDescriptionComponent></WEBOBJECT></td>
+				</tr>
+			</WEBOBJECT>
+		</table>
+	</WEBOBJECT NAME=IsEditingStyleConditional>
+</webobject>

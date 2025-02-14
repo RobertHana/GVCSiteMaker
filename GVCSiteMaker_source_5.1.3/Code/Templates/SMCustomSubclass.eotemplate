@@ -1,0 +1,40 @@
+/**
+ * Site specific changes and extensions to <$classNameWithoutPackage$>.
+ *
+ * @author Copyright (c) <$copyrightYear$>, The Regents of the University of Michigan, Ann Arbor, MI 48109 USA
+ * @version $REVISION$
+ *
+ */  
+<$comment
+EO Template for use by "eogenerator" based upon MiscMerge engine.
+You may customize this file to modify the templates generated
+by this tool.  See the MiscMerge documentation for a description
+of the parsing language.  The engine gets passed this file and an
+EOEntity to process, so the methods used must be ones that an
+EOEntity can respond to.
+
+BE SURE NOT TO INCLUDE DATES IN THIS FILE.  Since the "eogenerator"
+tool tries to compare the newly generated file with the old file,
+adding dates to this file will guarantee the old file gets
+overridden by the new file, forcing a recompilation of your EO.$>
+<$foreach package classPackage do$>package <$package$>;<$endforeach do$>
+import com.webobjects.foundation.*;
+import com.webobjects.eocontrol.*;
+import java.util.*;
+import java.math.BigDecimal;
+
+
+public class <$classNameWithoutPackage$>Custom extends <$classNameWithoutPackage$>
+{
+
+    //
+    // Methods below here are just stubs for constructors and casting.  Move them above this if you add extra functionality.
+    //
+
+    public <$classNameWithoutPackage$>Custom() 
+    {
+        super();
+    }
+
+}
+

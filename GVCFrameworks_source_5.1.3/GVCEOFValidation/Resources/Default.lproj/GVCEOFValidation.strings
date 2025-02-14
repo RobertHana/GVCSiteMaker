@@ -1,0 +1,33 @@
+{
+	//
+	// Default values for validation messages
+	//
+	Entity.nullNotAllowed = "You must enter a <<propertyName>> for this <<entityName>>";
+	Entity.tooLong = "The value you entered, <<failedValue>>, is longer than the <<attribute.width>> characters allowed for <<propertyName>> on <<entityName>>.";
+	Entity.invalidValue = "<<failedValue>> is not an acceptable <<propertyName>> for <<entityName>>.";
+	Entity.belowMinimum = "<<failedValue>> is below the acceptable limit for <<propertyName>> for <<entityName>>.";
+	Entity.aboveMaximum = "<<failedValue>> is above the acceptable limit for <<propertyName>> for <<entityName>>.";
+	Entity.notUnique = "<<failedValue>> has already been used as a <<propertyName>> for <<entityName>>.";
+	
+	// Entity level default messages.
+	Entity.optimisticLockingFailure = "Another user has changed this <<entityName>>, check your changes and re-submit.";
+	Entity.integrityConstraintViolation = "This cannot be saved as it violates integrity constraint <<failedValue>>.  Check your changes and re-submit.";
+	Entity.failedToDelete = "This <<entityName>> can not be deleted.";
+	Entity.failedToInsert = "Failed while trying to add this <<entityName>>.";
+	Entity.failedToUpdate = "Failed while trying to update this <<entityName>>.";
+	Entity.failedToLock = "Another user is changing this <<entityName>>, please try again in a few minutes.";
+	Entity.failedOnStoredProcedure = "Failed while trying to call stored procedure for this <<entityName>>.";
+
+
+	//
+	// Validation Tests
+	//
+
+	// LocalizationEngine tests
+	//
+	keyThatExists="Localized string for keyThatExists";
+	// Don't define this keyThatDoesNotExist
+	"AttributeValidationTestEntity.localizationTestProperty.fullyQualifiedBundleKeyTest"="Localization key for fully qualified bundle key";
+	"AttributeValidationTestEntity.partiallyQualifiedBundleKeyTest"="Localization key for partially qualified bundle key";
+	"Entity.genericBundleKeyTest"="Localization key for generic bundle key";
+}

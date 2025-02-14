@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Building GVC.SiteMaker From Source</title>
+</head>
+
+<body>
+
+
+<h1>Introduction</h1>
+<p>
+This document describes how to use Ant and / or Eclipse to build GVC.SiteMaker 
+from source.  The easiest way to do this is by using Ant at the command line.  
+Setting these applications and frameworks up in Eclipse, so that you can work on 
+the source code, requires more effort.
+<br />
+<br />
+<font color="red"><b>Note: </b></font>Some of the documents referenced are for our
+own internal use and may have references that you are unfamiliar with or which are not
+publicly available.  We will try to note where this happens.  In particular, StarTeam
+is the revision control system that we use.  It is like CVS.  When you see StarTeam 
+just think "CVS" or "source repository".
+</p>
+
+
+<h1>Requirements</h1>
+GVC.SiteMaker has the following requirements:
+
+<h2>Java <a target="_new" href="http://java.sun.com/j2se/1.4.2/download.html">1.4.2</a> Runtime</h2>
+GVC.SiteMaker will not run with JDK 1.3 and have not been tested against JDK 1.5.
+
+<h2>Licensed version of <a target="_new" href="http://www.webobjects.com">WebObjects</a> 5.2.3</h2>
+A deployment installation of WebObjects will work for Ant builds (and for Eclipse builds, 
+but you won't have any of the other development tools such as WOBuilder and EOModeler).
+You can get a licensed version of WebObjects from these sources
+<ul>
+<li><a target="_new" href="http://store.apple.com">Apple Store</a></li>
+<li><a target="_new" href="http://store.apple.com">Purchase of an X Serve</a></li>
+<li><a target="_new" href="http://developer.apple.com">ADC, register for developers evaluation copy for OS X</a></li>
+<li><a href="mailto:webobjects@apple.com">Request developers evaluation copy for Windows</a></li>
+</ul>
+
+<h2>SQL Database with JDBC connectivity</h2>
+GVC.SiteMaker has been most often tested with <a target="_new" href="http://www.FrontBase.com">FrontBase</a>
+and only SQL scripts for that database are provided. <a target="_new" href="http://developer.apple.com/documentation/WebObjects/UsingEOModeler/4WorkingWithAttributes/chapter_4_section_4.html">
+EOPrototypes</a> are also provided for Oracle.  These may not be fully up to 
+date and / or tested.  If not using FrontBase, you will need to generate your
+own SQL scripts to use in place of the FrontBase ones.  Other databases can be supported by
+the addition of a database specific set of EOPrototypes to the GVCEOPrototypes project.
+
+<h2>GVC Frameworks</h2>
+GVC.SiteMaker makes extensive use of the <a target="_new" href="http://sourceforge.net/project/showfiles.php?group_id=138889">GVC Frameworks</a>. 
+These will need to be build and installed (and imported into Eclipse if you are using that) before
+GVC.SiteMaker can be built.
+
+<h2>eoGenerator</h2>
+If you want to regenerate the Java files from the models, you will need 
+<a target="_new" href="http://www.rubicode.com/Software/EOGenerator/">eoGenerator</a>, otherwise it is not required.
+
+<h1>Contents</h1>
+<b>The Open Source distribution is arranged into these directories:</b><br/><br/>
+<a target="_new" href="Code">Code/</a> - Main WebObjects frameworks and applications:
+<ul>
+<li><b>GVCSMCore</b> - this framework contains the core functionality.  This functionality can be
+customized by code in GVCSMCustom (see below).</li>
+<li><b>GVCSMEOPrototypes</b> - contains <a target="_new" href="http://developer.apple.com/documentation/WebObjects/UsingEOModeler/4WorkingWithAttributes/chapter_4_section_4.html">
+EOPrototypes</a> for the models in GVCSMCore and GVCSMCustom.</li>
+<li><b>GVCSiteMaker</b> - application handling site configuration and display</li>
+<li><b>GVCSMAdmin</b> - application handling administrative functions.  Eventually this should get merged into GVCSiteMaker</li>
+<li><b>GVCSMUtility</b> - contains seldom needed functionality to repair data and assist in data conversions between versions</li>
+</ul>
+<a target="_new" href="Custom">Custom/</a> - Versions of WebObjects framework to customize installation, scripts to build final deployment package<br/>
+<a target="_new" href="DocumentRoot">DocumentRoot/</a> - resources that need to be copied into the web server's Document Root<br/>
+<a target="_new" href="Documentation">Documentation/</a> - user manual, customization and configuration guides.  
+A PDF version and other information is available at <a target="_new" href="http://eval.gvcsitemaker.com/clients/user_manual">www.GVCSiteMaker.com</a>.<br/>
+<a target="_new" href="Deployment">Deployment/</a> - scripts and supporting material to build deployment packages<br/> 
+<a target="_new" href="Tests">Tests/</a> - system test plan and supporting files<br/>
+
+
+<h1>Installation</h1>
+
+<h2>Download and Install GVC Frameworks</h2>
+<p>
+Do this first and follow all the configuration instructions for the frameworks as
+that work is also needed for GVC.SiteMaker.  If you are using the pre-built version of the
+frameworks, you will need to download the source code distribution and follow the 
+installation and configuration steps for Ant and Eclipse included with that distribution.
+</p>
+<h2>Download and Unpack the Source</h2>
+<p>
+If you are reading this, you have probably already done this.  If not, the tar balls
+of the source can be found on <a target="_blank" 
+href="http://sourceforge.net/projects/gvcsitemaker/">SourceForge</a>.  At this time we 
+are not putting the individual files into CVS on SourceForge.  We are making available 
+tarballs of the source projects and also pre-built versions.
+<br />
+<br />
+<font color="red"><b>Hint: </b></font>Don't use paths with spaces in them.
+</p>
+
+<h2>Configure GVCSMCustom Framework</h2>
+<p>
+The GVCSMCustom framework contains configuration settings, and optionally code and 
+components, that are unique to each installation.  Two versions are supplied in the
+Custom directory.  The one in the <a target="_blank" href="Custom/Generic/GVCSMCustom">Generic</a> 
+directory is a template that is intended to be used when <a target="_blank" href="Documentation/HowTo_CreateNewInstallation.txt">creating</a> 
+the GVCSMCustom framework for a specific installation. The one in the 
+<a target="_blank" href="Custom/OpenSource/GVCSMCustom">OpenSource</a> is intended 
+for Open Source developers to use while developing. 
+You will need to configure one of these before you can run GVC.SiteMaker.  
+<a target="_blank" href="Documentation/ConfigurationGuide.doc">Instructions</a>
+are provided on the configurations available.
+</p>
+
+<h1>Building With Ant</h1>
+<p>
+Once everything is installed, this is easy. Just cd into the Code directory and type:<br/>
+<code>ant build</code><br/><br/>
+You can build contracted (with Design by Contract enabled) versions with :<br/>
+<code>ant build_dbc</code><br/><br/>
+You can do a deep clean on the projects with:<br/>
+<code>ant clean</code>
+<br />
+<br />
+<font color="red"><b>Note: </b></font> Building the frameworks
+will install them into /Library/Frameworks ($NEXT_ROOT/Local/Library/Frameworks on Windows).
+</p>
+
+<h1>Building With Eclipse</h1>
+<p>
+The frameworks are build order dependent and must be build before the applications. 
+Your life will be easier if you do a full
+build with Ant (see above) so that there are installed versions before you being
+importing the projects into your workspace.  You will need to import, refresh, 
+build, and refresh again each project in this order:
+<ul>
+<li>All GVC Frameworks</li>
+<li>GVCSMEOPrototypes</li>
+<li>GVCSMCore</li>
+<li>GVCSMCustom</li>
+<li>GVCSiteMaker</li>
+<li>GVCSMAdmin</li>
+<li>GVCSMUtility</li>
+</ul>
+If you have build problems, check the trouble shooting suggestions from the
+GVC Frameworks.  These rely on the same build process.
+</p>
+<h1>Building With For Deployment</h1>
+<p>
+The <a target="_blank" href="Deployment/BuildDeploymentPackages.xml">Deployment/BuildDeploymentPackages.xml</a>
+Ant script controls the deployment build process.  Once built, the final packaging of the
+deployment packages for a particular installation is done with  
+<a target="_blank" href="Custom/Generic/BuildInstallPackage.xml">BuildInstallPackage.xml</a> Ant
+script found above each GVCSMCustom project.  These Ant scripts contain comments
+explaining their use.
+</p>
+
+</body>
+</html>

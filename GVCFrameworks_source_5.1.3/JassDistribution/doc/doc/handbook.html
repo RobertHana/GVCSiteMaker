@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / Jass Handbook
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">Jass Handbook</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">Jass handbook</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">The commandline syntax</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">Options</a>
+  </td>
+  </tr>
+      <tr>
+    <td></td>
+    <td class="tocf">3.1</td>
+    <td class="toc"> 
+      <a href="#subsect31">Compile options</a>
+    </td>
+    </tr>
+      <tr>
+    <td></td>
+    <td class="tocf">3.2</td>
+    <td class="toc"> 
+      <a href="#subsect32">Compile controls</a>
+    </td>
+    </tr>
+      <tr>
+    <td></td>
+    <td class="tocf">3.3</td>
+    <td class="toc"> 
+      <a href="#subsect33">General options</a>
+    </td>
+    </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">Examples</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/refine.html" target="_top">
+Refinement - Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    Jass Handbook<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+    next: 
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+  <hr size="1" noshade/>
+</div>
+  <h1><a name="handbook"></a>
+  <a name="sect1">
+  1 Jass handbook</a></h1>
+<a name="idx1"><em></em></a>
+<p>The precompiler Jass translates a <CODE>.jass</CODE> file to a
+<CODE>.java</CODE>. This file can be compiled with a Java
+compiler in byte code. The compiler <CODE>javac</CODE> from <em><a href='http://www.sun.com'>Sun</a></em> included in <a href='http://java.sun.com/products'>JDK 1.2</a> is reference. The Jass
+precompiler is used from commandline like <CODE>javac</CODE>.
+</p>
+  <h1>
+  <a name="sect2">
+  2 The commandline syntax</a></h1>
+      <p> 
+
+<a name="idx2"><em></em></a>
+The following grammar rules specify the commandline.
+</p>
+<table>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod1">Start</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( ( <A HREF="#prod2">CompileOptions</A> )? ( <A HREF="#prod3">GeneralOptions</A> )* (&lt;FILENAME&gt;)+ ) &lt;EOF&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod2">CompileOptions</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>( ( "-contract" | "-warning" ) ( <A HREF="#prod4">CompileControls</A> )? )</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-nothing"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-interference"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod4">CompileControls</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"[" ( "pre" | "post" | "inv" | "loop" | "check" | "forall" | "refine" | "trace" | "opt" )* "]"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE><A NAME="prod3">GeneralOptions</A></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>::=</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-depend"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-nodepend"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-quiet"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-normal"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-verbose"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-dataflow"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-nodataflow"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-source" &lt;FLOATING_POINT_LITERAL&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-d" &lt;FILENAME&gt;</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-help"</TD>
+</TR>
+<TR>
+<TD ALIGN=RIGHT VALIGN=BASELINE></TD>
+<TD ALIGN=CENTER VALIGN=BASELINE>|</TD>
+<TD ALIGN=LEFT VALIGN=BASELINE>"-version"</TD>
+</TR>
+</table>
+<p> <EM>Start</EM> is the start symbol of the grammar and
+<EM>Filename</EM> a platform specific file name of the class to compile.
+</p>
+  <h1>
+  <a name="sect3">
+  3 Options</a></h1>
+      <p>
+The options divide in two groups. Options for the   <a href="#translation" target="_top">translation</a>, called compile options, and   <a href="#general" target="_top">general options</a>. Some compile options may be
+annotated with a list of   <a href="#commands" target="_top">control commands</a>,
+called compile controls, that specify the code to generate.
+</p>
+    <h2><a name="translation"></a>
+    <a name="subsect31">
+    3.1 Compile options
+    </a></h2>
+        <p> 
+
+<a name="idx3"><em></em></a>
+There are three different translation modes and a special mode for
+interference checks. The modes <STRONG>contract</STRONG>,
+<STRONG>warning</STRONG> and <STRONG>nothing</STRONG> translate a
+<CODE>.jass</CODE> file to a Java file. The modes will be explained
+below.
+</p>
+<DL>
+<DT><STRONG>contract</STRONG> (default)</DT> 
+  <DD>The mode <STRONG>contract</STRONG> represents the understanding
+   of design by contract. A break of the contract will trigger an
+   exception.</DD>
+<DT><STRONG>warning</STRONG></DT> 
+  <DD>The mode <STRONG>warning</STRONG> is for the integration of
+   assertions in existing projects. A break of the contract triggers
+   <em>not</em> an exceptions. A warning message is displayed at the
+   terminal in this case. The <code>rescue</code> construct has no
+   function in this mode.</DD>
+<DT><STRONG>nothing</STRONG></DT> 
+  <DD>In mode <STRONG>nothing</STRONG> no assertions will be
+   translated.</DD>
+<DT><STRONG>interference</STRONG></DT> 
+  <DD>The mode <STRONG>interference</STRONG> is for interference
+   checks of the program. The mode can only be used for classes with
+   <CODE>main</CODE> method. After an analysis Jass displays the
+   results of the check. This is the information if an interference is
+   possible and which control flow interferes with which assertion.
+  </DD>
+</DL>
+<p>
+A list of compile controls defines which assertions should be
+translated, if an refinement should be taken in account and if
+optimization should be done.
+</p>
+    <h2><a name="commands"></a>
+    <a name="subsect32">
+    3.2 Compile controls
+    </a></h2>
+<a name="idx4"><em></em></a>
+<DL>
+<DT><STRONG>pre</STRONG></DT>
+<DD>Preconditions will be checked.</DD>
+<DT><STRONG>post</STRONG></DT>
+<DD>Postconditions will be checked.</DD>
+<DT><STRONG>inv</STRONG></DT>
+<DD>Class invariants will be checked.</DD>
+<DT><STRONG>loop</STRONG></DT> 
+<DD>Loop variants and invariants will be checked.</DD>
+<DT><STRONG>check</STRONG></DT>
+<DD>Check assertions will be checked.</DD>
+<DT><STRONG>forall</STRONG></DT> 
+<DD>Quantified expressions (forall,exists) will be checked.</DD>
+<DT><STRONG>refine</STRONG></DT> 
+<DD>A refinement is taken in account.</DD>
+<DT><STRONG>trace</STRONG></DT> 
+<DD>Trace assertions will be checked.</DD>
+<DT><STRONG>opt</STRONG><DT> 
+<DD>The destination code (java) will be optimized.</DD>
+</DL>
+<p> The usage of the compile control list is optional. All controls
+except the command <em>opt</em> are used by default. The multiple use
+of controls has no special effects. 
+</p>
+<p> Versions 2.0.6 and 2.0.7 of Jass have a bug in parsing the compile 
+control list. These version will only use the first control. The others 
+are ignored!
+</p>
+    <h2><a name="general"></a>
+    <a name="subsect33">
+    3.3 General options
+    </a></h2>
+<a name="idx5"><em></em></a>
+<p>
+With the general options the basic behaviour of the precompiler is determined.
+</p>
+<DL>
+<DT><STRONG>-d &lt;dir&gt;</STRONG></DT>
+  <DD>Output goes to destination directory &lt;dir&gt;. This option must
+  be set if you use <code>.java</code> suffix instead of <code>.jass</code> 
+  suffix for your source code files.</DD>
+<DT><STRONG>-source &lt;release&gt;</STRONG></DT>
+  <DD>Provide source compatibility with specified Java release. If you 
+  want to translate source code that uses Java's new assert keyword you
+  must set the option <code>-source 1.4</code> </DD>
+<DT><STRONG>-quiet</STRONG></DT>
+  <DD>No console output is done.</DD>
+<DT><STRONG>-normal</STRONG> (default)<DT>
+  <DD>Important message are displayed</DD>
+<DT><STRONG>-verbose</STRONG></DT> 
+  <DD>Many message of all system components are displayed. This option
+  is for debugging purpose.</DD>
+<DT><STRONG>-depend</STRONG></DT>
+  <DD>If the class is a refinement the superclass will be translated
+  too. In later versions this option will translated all necessary
+  classes.</DD>
+<DT><STRONG>-nodepend</STRONG> (default)</DT>
+  <DD>No depending classes will be translated.</DD>
+<DT><STRONG>-dataflow</STRONG></DT>
+  <DD>Dataflow analysis is done. This option will increase time and
+  space requirements a lot! This option will be activated
+  automatically with the command <STRONG>opt</STRONG> or the mode
+  <STRONG>interference</STRONG>.</DD>
+<DT><STRONG>-nodataflow</STRONG> (default)<DT> 
+  <DD>No dataflow analysis is done. Method calls in assertions are
+  <em>not</em> checked for freedom of side effects.</DD>
+<DT><STRONG>-jassdoc</STRONG> (default)<DT> 
+  <DD>Userdefined sections for assertions are inserted into existing 
+  formal comments. This can be used by your own Doclets, for example
+  <code>jass.util.doc.JassDoc</code></DD>
+<DT><STRONG>-htmldoc</STRONG><DT> 
+  <DD>Use HTML code to format assertions in existing formal comments.
+  </DD>
+<DT><STRONG>-nodoc</STRONG><DT> 
+  <DD>Do not add any code for assertions to existing formal comments.
+  </DD>
+</DL>
+<p> If contrary options (e.g. <STRONG>quiet</STRONG> and
+<STRONG>verbose</STRONG>) are used the last one has priority.
+</p>
+  <h1><a name="examples"></a>
+  <a name="sect4">
+  4 Examples</a></h1>
+<p> The following example demonstrates the simplest invocation of the
+precompiler (from the Jass main directory): </p>
+<p><code>java jass.Jass jass/examples/Buffer.jass</code></p>
+<p> This produces a file <code>Buffer.java</code> with can be compiled 
+through:</p>
+<p> <code>javac examples\Buffer.jass</code></p>
+<p>With the commandline</p>
+<p><code>java jass.Jass -warning jass/examples/Buffer.jass</code></p>
+<p>Jass generates a Java file that produces an error message not an
+exception when an assertion is violated.</p>
+<p>The compilation modes <em>contract</em> and <em>warning</em> can be
+annotated with compilation controls. The compilation controls decide
+which kind of assertions are handled and if optimizations should be
+done. The commandline</p>
+<p><code>java jass.Jass -contract[pre,post,forall] 
+jass/examples/Buffer.jass</code></p>
+<p>produces an output that contains only code for pre- and
+postcondition checks. The forall and exists expressions are checked
+trough loops. If the <em>forall</em> control is dropped this
+expressions are assumed to be true. 
+
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+    next: 
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

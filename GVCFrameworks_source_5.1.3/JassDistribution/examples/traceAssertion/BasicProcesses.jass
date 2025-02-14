@@ -1,0 +1,57 @@
+package jass.examples.traceAssertion;
+
+public class BasicProcesses
+{
+    public void m(int i){}
+
+    public void test() {
+	boolean b = true;
+	int i = 0;
+		
+	while(i <= 10) {
+	    m(i++);
+	}
+    }
+    
+    
+    public final static void main(String argv[]) {
+	BasicProcesses test = new BasicProcesses();
+	
+	test.test();
+    }
+	
+	
+    /** invariant
+
+	[Stop] trace (
+	  final int MAX_M = 5;
+	  
+	  MAIN() {
+	    int i;
+				
+	    EXECUTE(System.out.println("next m");) -> m(?i).b 
+	    -> IF(i >= MAX_M) {
+	         EXECUTE(System.out.println(i + " >= " + MAX_M);) 
+		 -> IF(i == MAX_M) {
+		      EXECUTE(System.out.println(
+		          "Next call causes trace exception");) 
+		      -> CALL MAIN()
+		    }
+		    ELSE {
+		      EXECUTE(System.out.println("STOP");) 
+		      -> STOP
+		    }
+	       }
+	       ELSE {
+	         EXECUTE(System.out.println(i + " < " + MAX_M);) 
+		 -> CALL MAIN()
+	       }
+	  }
+	);
+	
+	[Any] trace{test(), m(int)} ( ANY );		
+		
+	[AlmostAny] trace{this.*} EXCEPT test() ( * -> ANY );
+
+    **/
+}

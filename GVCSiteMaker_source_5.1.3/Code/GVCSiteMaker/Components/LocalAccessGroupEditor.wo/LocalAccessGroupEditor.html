@@ -1,0 +1,61 @@
+<table class = "content" width = "100%">
+  <tr>
+    <td valign = "top" class = "leftContentColumn">
+      <b>
+        <webobject name = "ModifyingGroupConditional">Update</webobject>
+        <webobject name = "NewGroupConditional">Add</webobject>
+        Members:</b>
+    </td>
+    <td class = "rightContentColumn">
+      <webobject name = "ModifyingGroupConditional">
+        <webobject name = "UserActionsPopUpButton" />
+        <br />
+      </webobject>
+      <webobject name = "NewUserIDString" />
+      <webobject name = "UserValidationErrorConditional">
+        <webobject name = "UserValidationErrorsRepetition">
+          <br />
+          <span class = "warningText" align = "CENTER"><webobject name = "UserValidationErrorString" /></span>
+        </webobject>
+      </webobject>
+      <br />
+      <webobject name = "ModifyingGroupConditional">
+        <span class = "descriptiveText">Select the action you want to perform, enter the user names in the box above, and click the Update or Update &amp; Done button.</span>
+      </webobject>
+      <webobject name = "NewGroupConditional">
+        <span class = "descriptiveText">Enter the user names in the box above, and click the Add button. &nbsp;The Add button completes the process to add this Access Group.</span>
+      </webobject>
+    </td>
+  </tr>
+  <tr>
+    <td valign = "top" colspan = "2"><webobject name = "SMUserInstructions" /></td>
+  </tr>
+  <tr>
+    <td colspan = "2"> <hr class = "alternateBarStyle" /></td>
+  </tr>
+  <tr>
+    <td colspan = "2" valign = "top" align = "center" style = "text-align: center;">
+      <webobject name = "CurrentGroupHasUsers">
+        <h3 align = "left">Membership List:</h3>
+        <br />
+        <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+          <tr>
+            <th class = "coloredTableHeading">Unique Name or E-mail address</th>
+            <th class = "coloredTableHeading">Action</th>
+          </tr>
+          <webobject name = "SortedUserList">
+            <tr>
+              <td><webobject name = "UserID" /></td>
+              <td align = "center">
+                <webobject name = "CanRemoveUserConditional">
+                  <webobject name = "RemoveUserFromCurrentGroupLink">Remove</webobject>
+                </webobject>
+                <webobject name = "CantRemoveUserConditional"> Site Owner cannot be removed. </webobject>
+              </td>
+            </tr>
+          </webobject>
+        </table>
+      </webobject>
+    </td>
+  </tr>
+</table>

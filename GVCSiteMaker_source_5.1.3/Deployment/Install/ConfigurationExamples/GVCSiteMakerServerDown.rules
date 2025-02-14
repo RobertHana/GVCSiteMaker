@@ -1,0 +1,4 @@
+# Uncomment this when taking the appliction out of service.
+# Don't forget to update ServerDown.html first.  :-)
+
+#RewriteRule    ^/(.*) /ServerDown.html [last]

@@ -1,0 +1,15 @@
+{
+    EOModelVersion = 2.1; 
+    adaptorName = JNDI; 
+    connectionDictionary = {
+        authenticationMethod = None; 
+        initialContextFactory = com.sun.jndi.ldap.LdapCtxFactory; 
+        password = ""; 
+        plugInClassName = net.global_village.jndi.LDAPTLSPlugin; 
+        scope = Subtree; 
+        serverUrl = "ldap://ldap.itd.umich.edu:389/dc=umich,dc=edu"; 
+        timeout = 3600; 
+        username = anonymous; 
+    }; 
+    entities = ({className = EOGenericRecord; name = GVCTestLDAPGroup; }); 
+}

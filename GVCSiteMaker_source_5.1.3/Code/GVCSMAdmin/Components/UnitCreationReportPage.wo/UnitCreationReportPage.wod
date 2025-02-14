@@ -1,0 +1,68 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - Unit Creation Report";
+}
+
+CSSComponent: SMCSSComponent 
+{
+}
+
+DisplayInvalidUnitList: WOConditional {
+	condition = invalidUnitArray.count;
+}
+
+DisplayValidUnitList: WOConditional {
+	condition = validUnitArray.count;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Unit Creation Report";
+	isAdmin = true;
+}
+
+InvalidUnitList: InvalidUnitList {
+	invalidOrgUnitArray = invalidUnitArray;
+}
+
+NoValidDataObtained: WOConditional {
+	condition = validUnitArray.count;
+	negate = true;
+}
+
+NumberOfInvalidUnits: WOString {
+	value = invalidUnitArray.count;
+}
+
+NumberOfValidUnits: WOString {
+	value = validUnitArray.count;
+}
+
+PageHeader: PageHeader {
+}
+
+ReportForm: WOForm {
+	multipleSubmit = true;
+}
+
+ReturnToUnitCreation: WOSubmitButton {
+	value = "Return to Unit Creation";
+	action = returnToUnitCreation;
+}
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	height = 2;
+	width = 24;
+}
+
+ValidDataObtained: WOConditional {
+	condition = validUnitArray.count;
+}
+
+ValidUnitList: Unknown
+{
+}
+
+ValidUnitList1: ValidUnitList {
+	validOrgUnitArray = validUnitArray;
+}

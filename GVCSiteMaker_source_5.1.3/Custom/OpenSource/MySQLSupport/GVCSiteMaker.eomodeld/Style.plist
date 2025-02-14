@@ -1,0 +1,97 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "DATE_CREATED"; 
+            name = dateCreated; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = "DATE_MODIFIED"; name = dateModified; prototypeName = dateTime; }, 
+        {
+            allowsNull = N; 
+            columnName = NAME; 
+            name = name; 
+            prototypeName = mediumString; 
+        }, 
+        {columnName = NOTES; name = notes; prototypeName = note; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_CREATED_BY"; 
+            name = oidCreatedBy; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "OID_MODIFIED_BY"; name = oidModifiedBy; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_OWN_UNIT"; 
+            name = oidOwningUnit; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = PUBLISHED; 
+            name = published; 
+            prototypeName = charBoolean; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STYLE_ID"; 
+            name = styleID; 
+            prototypeName = shortString; 
+        }, 
+        {columnName = TEMPLATE; name = template; prototypeName = largeText; }
+    ); 
+    attributesUsedForLocking = (
+        oid, 
+        styleID, 
+        oidCreatedBy, 
+        oidModifiedBy, 
+        oidOwningUnit, 
+        published, 
+        template, 
+        name, 
+        notes
+    ); 
+    className = "com.gvcsitemaker.core.Style"; 
+    classProperties = (
+        styleID, 
+        dateCreated, 
+        dateModified, 
+        published, 
+        name, 
+        notes, 
+        createdBy, 
+        modifiedBy, 
+        owningOrgUnit, 
+        template
+    ); 
+    externalName = "SM_STYLE"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = Style; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidCreatedBy; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidModifiedBy; }); 
+            name = modifiedBy; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOwningUnit; }); 
+            name = owningOrgUnit; 
+        }
+    ); 
+}

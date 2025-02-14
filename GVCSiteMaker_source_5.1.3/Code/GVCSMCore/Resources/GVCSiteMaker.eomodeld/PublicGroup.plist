@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATION_DATE"; 
+            name = creationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_NAME"; 
+            name = name; 
+            prototypeName = shortString; 
+        }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = tinySting; }
+    ); 
+    attributesUsedForLocking = (groupPKey, name, type); 
+    cachesObjects = Y; 
+    className = "com.gvcsitemaker.core.PublicGroup"; 
+    classProperties = (creationDate, name, type); 
+    externalName = "SM_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (creationDate); }; 
+    maxNumberOfInstancesToBatchFetch = 50; 
+    name = PublicGroup; 
+    parent = Group; 
+    primaryKeyAttributes = (groupPKey); 
+    restrictingQualifier = "(type = 'Public')"; 
+}

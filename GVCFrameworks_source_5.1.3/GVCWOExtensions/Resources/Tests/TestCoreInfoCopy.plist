@@ -1,0 +1,14 @@
+{
+    Application =
+    {
+        stringProperty = "This a string value";
+        email =
+        {
+            fromAddress = "joee@global-village.net";		
+            dasEmailAddress = "joee@global-village.net";		
+        };
+    };
+
+  	booleanProperty = "true";
+}  	
+

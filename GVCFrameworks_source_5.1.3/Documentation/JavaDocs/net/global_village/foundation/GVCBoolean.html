@@ -1,0 +1,831 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+GVCBoolean (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="GVCBoolean (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/GVCBoolean.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/foundation/FixedWidthStringTokenizer.html" title="class in net.global_village.foundation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/foundation/ImageInfo.html" title="class in net.global_village.foundation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/foundation/GVCBoolean.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GVCBoolean.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.foundation</FONT>
+<BR>
+Class GVCBoolean</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.foundation.GVCBoolean</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.32"><B>GVCBoolean</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DL>
+</PRE>
+
+<P>
+Represents a Boolean value as an object.  GVCBoolean can translate between the internal Boolean state and a string representation of 'Y' for true and 'N' for false.
+
+ GVCBoolean was created to support storing boolean values in a database as character data. To create an attribute in EOModeler that is mapped to this class, set these items in the Attribute Inspector:
+ <ul>
+   <li>External Type: CHARACTER, VARCHAR or equivalent
+   <li>Internal Data Type: Custom
+   <li>External Width: 1 (or greateer)
+   <li>Class: GVCBoolean
+   <li>Factory Method: booleanWithString:
+   <li>Conversion Method: stringValue
+   <li>Init Argument: NSString
+ </ul>
+
+ To manually set up an EOAttribute, use this code:
+ <code>
+   myBooleanAttribute.setValueClassName("GVCBoolean");
+   myBooleanAttribute.setFactoryMethodArgumentType(EOFactoryMethodArgumentIsNSString);
+   myBooleanAttribute.setValueFactoryMethodName("booleanWithString");
+   myBooleanAttribute.setAdaptorValueConversionMethodName("stringValue");
+ </code>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 1$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#falseValueDisplayString">falseValueDisplayString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#falseValueString">falseValueString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#internalBooleanValue">internalBooleanValue</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The value of the boolean.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#trueValueDisplayString">trueValueDisplayString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values to be localized and returned in the <a href="#toString()">toString()</a> method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#trueValueString">trueValueString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values returned in the <a href="#stringValue()">stringValue()</a> method.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#GVCBoolean(boolean)">GVCBoolean</A></B>(boolean&nbsp;booleanValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated initializer.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#booleanValue()">booleanValue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the value of the <code>boolean</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#booleanWithBoolean(boolean)">booleanWithBoolean</A></B>(boolean&nbsp;booleanValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance with a state equivalent to <code>booleanValue</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#booleanWithString(java.lang.String)">booleanWithString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance that is <code>true</code> if <code>stringValue</code> is 'Y' or <code>false</code> if <code>stringValue</code> is 'N'.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#clone()">clone</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implemented so that EOF can do copying.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#compareTo(net.global_village.foundation.GVCBoolean)">compareTo</A></B>(<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A>&nbsp;otherBoolean)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compares the localized string values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#equals(java.lang.Object)">equals</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;otherValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override equals so it does not do instance equality.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#falseBoolean()">falseBoolean</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance representing the <code>false</code> state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#isFalse()">isFalse</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns false if the Boolean state is true.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#isTrue()">isTrue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if the Boolean state is true.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#negate()">negate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a boolean that is the negated value of this object.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#no()">no</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance representing the <code>false</code> state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#objectWithArchiveData(java.lang.String)">objectWithArchiveData</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method for a custom attribute in EOModeler.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#setBooleanValue(boolean)">setBooleanValue</A></B>(boolean&nbsp;newValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the value of the <code>boolean</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#setStringValue(java.lang.String)">setStringValue</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accepts 'Y' if the new state should be true, or 'N' if the state should be false.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#stringValue()">stringValue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns 'Y' if the state is true, or 'N' if the state is false.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns localized string for "Yes" if the state is <code>true</code>, or for "No" if the state is <code>false</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#trueBoolean()">trueBoolean</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance representing the <code>true</code> state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/foundation/GVCBoolean.html#yes()">yes</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method returning a <code>GVCBoolean</code> instance representing the <code>true</code> state.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="trueValueString"><!-- --></A><H3>
+trueValueString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.37"><B>trueValueString</B></A></PRE>
+<DL>
+<DD>Values returned in the <a href="#stringValue()">stringValue()</a> method.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.GVCBoolean.trueValueString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="falseValueString"><!-- --></A><H3>
+falseValueString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.38"><B>falseValueString</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.GVCBoolean.falseValueString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="trueValueDisplayString"><!-- --></A><H3>
+trueValueDisplayString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.43"><B>trueValueDisplayString</B></A></PRE>
+<DL>
+<DD>Values to be localized and returned in the <a href="#toString()">toString()</a> method.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.GVCBoolean.trueValueDisplayString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="falseValueDisplayString"><!-- --></A><H3>
+falseValueDisplayString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.44"><B>falseValueDisplayString</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.foundation.GVCBoolean.falseValueDisplayString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="internalBooleanValue"><!-- --></A><H3>
+internalBooleanValue</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.49"><B>internalBooleanValue</B></A></PRE>
+<DL>
+<DD>The value of the boolean.
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="GVCBoolean(boolean)"><!-- --></A><H3>
+GVCBoolean</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.173"><B>GVCBoolean</B></A>(boolean&nbsp;booleanValue)</PRE>
+<DL>
+<DD>Designated initializer.  Initializes the <code>GVCBoolean</code> with a state equivalent to <code>booleanValue</code>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>booleanValue</CODE> - the value of the <code>boolean</code>'s state</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="trueBoolean()"><!-- --></A><H3>
+trueBoolean</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.57"><B>trueBoolean</B></A>()</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance representing the <code>true</code> state.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the <code>true</code> state</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="falseBoolean()"><!-- --></A><H3>
+falseBoolean</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.71"><B>falseBoolean</B></A>()</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance representing the <code>false</code> state.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the <code>false</code> state</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="yes()"><!-- --></A><H3>
+yes</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.85"><B>yes</B></A>()</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance representing the <code>true</code> state.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the <code>true</code> state</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="no()"><!-- --></A><H3>
+no</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.99"><B>no</B></A>()</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance representing the <code>false</code> state.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the <code>false</code> state</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="booleanWithBoolean(boolean)"><!-- --></A><H3>
+booleanWithBoolean</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.114"><B>booleanWithBoolean</B></A>(boolean&nbsp;booleanValue)</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance with a state equivalent to <code>booleanValue</code>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>booleanValue</CODE> - the value of the <code>boolean</code>'s state
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the state of <code>booleanValue</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="booleanWithString(java.lang.String)"><!-- --></A><H3>
+booleanWithString</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.129"><B>booleanWithString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</PRE>
+<DL>
+<DD>Factory method returning a <code>GVCBoolean</code> instance that is <code>true</code> if <code>stringValue</code> is 'Y' or <code>false</code> if <code>stringValue</code> is 'N'.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>stringValue</CODE> - 'Y' for <code>true</code>, 'N' for <code>false</code>
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the state of <code>booleanValue</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectWithArchiveData(java.lang.String)"><!-- --></A><H3>
+objectWithArchiveData</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.157"><B>objectWithArchiveData</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</PRE>
+<DL>
+<DD>Factory method for a custom attribute in EOModeler.  Has the same semantics as booleanWithString() (which it uses to implement this method).
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>stringValue</CODE> - 'Y' for <code>true</code>, 'N' for <code>false</code>
+<DT><B>Returns:</B><DD>a <code>GVCBoolean</code> instance representing the state of <code>booleanValue</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isTrue()"><!-- --></A><H3>
+isTrue</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.188"><B>isTrue</B></A>()</PRE>
+<DL>
+<DD>Returns true if the Boolean state is true.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if this <code>GVCBoolean</code> represents <code>true</code>, <code>false</code> if it represents <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isFalse()"><!-- --></A><H3>
+isFalse</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.200"><B>isFalse</B></A>()</PRE>
+<DL>
+<DD>Returns false if the Boolean state is true.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>false</code> if this <code>GVCBoolean</code> represents <code>true</code>, <code>true</code> if it represents <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="booleanValue()"><!-- --></A><H3>
+booleanValue</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.212"><B>booleanValue</B></A>()</PRE>
+<DL>
+<DD>Returns the value of the <code>boolean</code>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if this <code>GVCBoolean</code> represents <code>true</code>, <code>false</code> if it represents <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBooleanValue(boolean)"><!-- --></A><H3>
+setBooleanValue</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.224"><B>setBooleanValue</B></A>(boolean&nbsp;newValue)</PRE>
+<DL>
+<DD>Sets the value of the <code>boolean</code>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newValue</CODE> - <code>true</code> if this <code>GVCBoolean</code> is <code>true</code>, <code>false</code> if it is <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="stringValue()"><!-- --></A><H3>
+stringValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.236"><B>stringValue</B></A>()</PRE>
+<DL>
+<DD>Returns 'Y' if the state is true, or 'N' if the state is false.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>'Y' if <code>true</code>, 'N' if <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setStringValue(java.lang.String)"><!-- --></A><H3>
+setStringValue</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.250"><B>setStringValue</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;stringValue)</PRE>
+<DL>
+<DD>Accepts 'Y' if the new state should be true, or 'N' if the state should be false.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>stringValue</CODE> - 'Y' if <code>true</code>, 'N' if <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"><!-- --></A><H3>
+toString</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.266"><B>toString</B></A>()</PRE>
+<DL>
+<DD>Returns localized string for "Yes" if the state is <code>true</code>, or for "No" if the state is <code>false</code>.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>localized version of "Yes" if <code>true</code>, "No" if <code>false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="equals(java.lang.Object)"><!-- --></A><H3>
+equals</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.292"><B>equals</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;otherValue)</PRE>
+<DL>
+<DD>Override equals so it does not do instance equality.  (Does value equality instead.)
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>otherValue</CODE> - the value to check equality against
+<DT><B>Returns:</B><DD><code>true</code> if the two <code>GVCBoolean</code>s are equal, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="compareTo(net.global_village.foundation.GVCBoolean)"><!-- --></A><H3>
+compareTo</H3>
+<PRE>
+public int <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.320"><B>compareTo</B></A>(<A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A>&nbsp;otherBoolean)</PRE>
+<DL>
+<DD>Compares the localized string values.  Implement compare so that in-memory sortings have the same order as database orderings.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>otherBoolean</CODE> - the value to compare against
+<DT><B>Returns:</B><DD>less than 0 if the localized string of <code>otherBoolean</code> is greater (alphanumerically) than the localized string of this, greater than 0 if <code>otherBoolean</code>'s is smaller, 0 if they are equal</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="negate()"><!-- --></A><H3>
+negate</H3>
+<PRE>
+public <A HREF="../../../net/global_village/foundation/GVCBoolean.html" title="class in net.global_village.foundation">GVCBoolean</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.334"><B>negate</B></A>()</PRE>
+<DL>
+<DD>Returns a boolean that is the negated value of this object.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a boolean that is the negated value of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clone()"><!-- --></A><H3>
+clone</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/foundation/GVCBoolean.html#line.346"><B>clone</B></A>()</PRE>
+<DL>
+<DD>Implemented so that EOF can do copying.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a copy of this</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/GVCBoolean.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/foundation/FixedWidthStringTokenizer.html" title="class in net.global_village.foundation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/foundation/ImageInfo.html" title="class in net.global_village.foundation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/foundation/GVCBoolean.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GVCBoolean.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

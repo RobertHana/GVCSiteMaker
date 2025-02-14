@@ -1,0 +1,17 @@
+// *** MODE STUFF ***
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+
+// *** DISPLAY STUFF ***
+
+HTML: WOString {
+	value = componentObject.html;
+	escapeHTML = NO;
+}

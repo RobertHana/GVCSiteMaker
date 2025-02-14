@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+OrderableList (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="OrderableList (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/OrderableList.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/woextensions/orderablelists/ReorderPopup.html" title="class in net.global_village.woextensions.orderablelists"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/woextensions/orderablelists/OrderableList.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="OrderableList.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions.orderablelists</FONT>
+<BR>
+Class OrderableList</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.orderablelists.OrderableList</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.19"><B>OrderableList</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+This object holds an array that can be sorted and reordered. It is intended
+ for use with the UI widgets in this package, but other resuse is possible.
+ This is not a UI widget itself, but instead serves to act as a common point
+ of reference for the UI component which can't communicate peer to peer
+ (parent to child is possbible, but makes for a hard to maintain UI in
+ WOBuilder). <br/> <p>For manual re-ordering of the list, use ReorderPopup or
+ a similar component. ReorderPopup <b>must</b> go in a form.</p> <br/>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005 Global Village Consulting, Inc. All rights
+ reserved. This software is published under the terms of the Educational
+ Community License (ECL) version 1.0, a copy of which has been included with
+ this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#objects">objects</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#OrderableList(com.webobjects.foundation.NSArray)">OrderableList</A></B>(com.webobjects.foundation.NSArray&nbsp;sourceArray)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#canMoveObjectToPosition(java.lang.Object, int)">canMoveObjectToPosition</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject,
+                                               int&nbsp;index)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default implementation always returns <code>true</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#moveObjectToPosition(java.lang.Object, int)">moveObjectToPosition</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject,
+                                         int&nbsp;index)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default implementation just moves the object in the order() array.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#ordered()">ordered</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of objects being managed and orderd by this object in the current order.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#positionForPositionName(java.lang.Object)">positionForPositionName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;name)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the zero based position for the UI presentable name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#positionNameForObject(java.lang.Object)">positionNameForObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an Object with a UI presentable name indicating the postion that this object is in in 
+ the ordered() list.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#positionNameForPosition(int)">positionNameForPosition</A></B>(int&nbsp;i)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a UI presentable name for position i, a zero based index.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#positionOfObject(java.lang.Object)">positionOfObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the zero based position of anObject in the ordered list.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#positionsForObject(java.lang.Object)">positionsForObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an array of Objects indicating the positions that this object can be moved to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/orderablelists/OrderableList.html#setOrdered(com.webobjects.foundation.NSArray)">setOrdered</A></B>(com.webobjects.foundation.NSArray&nbsp;newOrdered)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the ordered list.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="objects"><!-- --></A><H3>
+objects</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableArray <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.21"><B>objects</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="OrderableList(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+OrderableList</H3>
+<PRE>
+public <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.29"><B>OrderableList</B></A>(com.webobjects.foundation.NSArray&nbsp;sourceArray)</PRE>
+<DL>
+<DD>Designated constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>sourceArray</CODE> - the list of objects to manage and order</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="positionsForObject(java.lang.Object)"><!-- --></A><H3>
+positionsForObject</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.48"><B>positionsForObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</PRE>
+<DL>
+<DD>Returns an array of Objects indicating the positions that this object can be moved to.  Positions 
+ can be explicitly excluded by canMoveObjectToPostition().  The objects indicating positions can
+ be anything.  By default they are java.lang.Integer, but positionNameForPosition and 
+ positionForPositionName can be overidden to translate between the int position and anything
+ you want to use for the UI.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - the object to return an array of potential positions for
+<DT><B>Returns:</B><DD>an array of Integers indicating the postions that this object can be moved to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="positionNameForPosition(int)"><!-- --></A><H3>
+positionNameForPosition</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.78"><B>positionNameForPosition</B></A>(int&nbsp;i)</PRE>
+<DL>
+<DD>Returns a UI presentable name for position i, a zero based index.  The default implementation 
+ is new Integer(i + 1).  positionForPositionName must be the inverse of this function.  These 
+ two methods can be overridden to control the UI display of ordering.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>i</CODE> - the zero based position to return a postion name for
+<DT><B>Returns:</B><DD>a UI presentable name for position i</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="positionForPositionName(java.lang.Object)"><!-- --></A><H3>
+positionForPositionName</H3>
+<PRE>
+public int <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.95"><B>positionForPositionName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;name)</PRE>
+<DL>
+<DD>Returns the zero based position for the UI presentable name.  The default implementation 
+ is ((Integer)name).intValue() - 1.  positionNameForPosition must be the inverse of this function.
+ These two methods can be overridden to control the UI display of ordering.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the user presentable name to return a zero based position for
+<DT><B>Returns:</B><DD>a UI presentable name for position i</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="positionNameForObject(java.lang.Object)"><!-- --></A><H3>
+positionNameForObject</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.111"><B>positionNameForObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</PRE>
+<DL>
+<DD>Returns an Object with a UI presentable name indicating the postion that this object is in in 
+ the ordered() list. The returned value is from positionNameForPosition.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - 
+<DT><B>Returns:</B><DD>an Integer indicating the postion that this object is in in the ordered() list</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="positionOfObject(java.lang.Object)"><!-- --></A><H3>
+positionOfObject</H3>
+<PRE>
+public int <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.130"><B>positionOfObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</PRE>
+<DL>
+<DD>Returns the zero based position of anObject in the ordered list.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - the object to return the position for
+<DT><B>Returns:</B><DD>the zero based position of anObject in the ordered list</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="canMoveObjectToPosition(java.lang.Object, int)"><!-- --></A><H3>
+canMoveObjectToPosition</H3>
+<PRE>
+public boolean <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.151"><B>canMoveObjectToPosition</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject,
+                                       int&nbsp;index)</PRE>
+<DL>
+<DD>The default implementation always returns <code>true</code>.  Subclasses can override this if 
+ some objects can't be moved to some positions.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - the object from ordered() to tbe checked<DD><CODE>index</CODE> - the index to check, 0 <= index < ordered().count()
+<DT><B>Returns:</B><DD><code>true</code> if this object can be moved to this index.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="moveObjectToPosition(java.lang.Object, int)"><!-- --></A><H3>
+moveObjectToPosition</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.169"><B>moveObjectToPosition</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject,
+                                 int&nbsp;index)</PRE>
+<DL>
+<DD>The default implementation just moves the object in the order() array.  Subclasses may choose to 
+ implement a different ordering algorithm (such as making the objects relocate themselves). Be aware
+ that this is not a UI component.  This change happens immediately and may cause undesired side
+ effects if called, for example, during takeValuesFromRequest.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - the object from ordered() being moved<DD><CODE>index</CODE> - the index to move it to, 0 <= index < ordered().count()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="ordered()"><!-- --></A><H3>
+ordered</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.190"><B>ordered</B></A>()</PRE>
+<DL>
+<DD>Returns the list of objects being managed and orderd by this object in the current order.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the list of objects being managed and orderd by this object in the current order</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setOrdered(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setOrdered</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/orderablelists/OrderableList.html#line.202"><B>setOrdered</B></A>(com.webobjects.foundation.NSArray&nbsp;newOrdered)</PRE>
+<DL>
+<DD>Sets the ordered list.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newOrdered</CODE> - the new ordered list</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/OrderableList.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/woextensions/orderablelists/ReorderPopup.html" title="class in net.global_village.woextensions.orderablelists"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/woextensions/orderablelists/OrderableList.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="OrderableList.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

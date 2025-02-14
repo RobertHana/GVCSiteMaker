@@ -1,0 +1,8 @@
+PopUpButton1: WOPopUpButton {
+	displayString = aBoolean.toString;
+	item = aBoolean;
+	list = availableBooleanValues;
+	noSelectionString = "- none -";
+	selection = selection;
+}
+

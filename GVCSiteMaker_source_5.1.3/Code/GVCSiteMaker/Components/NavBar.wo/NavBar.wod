@@ -1,0 +1,57 @@
+ExternalURL: WOHyperlink {
+  href = section.sectionURL;
+  string = section.name;
+  target = section.component.target;
+}
+
+GoToSectionLink: WOHyperlink {
+	href = urlForSection;
+}
+
+IsExternalURL: WOConditional {
+	condition = isExternalURL;
+}
+
+IsNotExternalURL: WOConditional {
+	condition = isExternalURL;
+    negate = true;
+}
+
+IsNotRedirectedEmbeddedWebSiteConditional: WOConditional {
+	condition = isRedirectedEmbeddedSite;
+	negate = true;
+}
+
+IsNotViewingSection: WOConditional {
+	condition = isViewingSection;
+    negate = true;
+}
+
+IsRedirectedEmbeddedWebSite: WOConditional {
+	condition = isRedirectedEmbeddedSite;
+}
+
+IsViewingSection: WOConditional {
+	condition = isViewingSection;
+}
+
+NameSpacers: WOString {
+	value = nameSpacers;
+	escapeHTML = false;
+}
+
+RedirectedWebsiteURL: WOHyperlink {
+  href = section.component.linkedWebsite.redirectURL;
+  string = section.name;
+  target = "_blank";
+}
+
+SectionListRepetition: WORepetition {
+	item = aSection;
+	list = sectionHierarchy.visibleSectionsInHierarchy;
+}
+
+SectionName: WOString {
+	value = section.name;
+	escapeHTML = true;
+}

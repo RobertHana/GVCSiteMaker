@@ -1,0 +1,38 @@
+// Copyright (c) <$copyrightYear$>, The Regents of the University of Michigan, Ann Arbor, MI 48109 USA
+
+<$comment
+EO Template for use by "eogenerator" based upon MiscMerge engine.
+You may customize this file to modify the templates generated
+by this tool.  See the MiscMerge documentation for a description
+of the parsing language.  The engine gets passed this file and an
+EOEntity to process, so the methods used must be ones that an
+EOEntity can respond to.
+
+BE SURE NOT TO INCLUDE DATES IN THIS FILE.  Since the "eogenerator"
+tool tries to compare the newly generated file with the old file,
+adding dates to this file will guarantee the old file gets
+overridden by the new file, forcing a recompilation of your EO.$><$foreach package classPackage do$>package <$package$>;<$endforeach do$>
+
+import com.gvcsitemaker.core.*;
+import com.webobjects.foundation.*;
+import com.webobjects.eocontrol.*;
+
+
+public class <$classNameWithoutPackage$> extends _<$classNameWithoutPackage$>
+{
+
+
+    /**
+     * Factory method to create new instances of <$classNameWithoutPackage$>.  Use this rather than calling the constructor
+     * directly so that customized versions in GVCSMCustom will be used if present.
+     *
+     * @return a new instance of <$classNameWithoutPackage$> or a subclass.
+     */
+    public static <$classNameWithoutPackage$> new<$classNameWithoutPackage$>()
+    {
+        return (<$classNameWithoutPackage$>) SMEOUtils.newInstanceOf("<$classNameWithoutPackage$>");
+
+        /** ensure [result_not_null] Result != null; **/
+    }
+}
+

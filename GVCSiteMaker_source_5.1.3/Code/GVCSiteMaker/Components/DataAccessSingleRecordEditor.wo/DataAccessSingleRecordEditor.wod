@@ -1,0 +1,64 @@
+AllowEdits: WOCheckBox {
+	checked = aColumn.isEditable;
+    name = ~"AllowEdits_" + aColumn.normalizedFieldName();
+}
+
+CalculationType: WOString {
+	value = aColumn.column.expressionColumnType.textDescription;  // VALID
+}
+
+ColumnList: WORepetition {
+    list = orderedComponents.ordered;
+    item = aColumn;
+}
+
+SortableColumnList : AjaxSortableList {
+    id = "SingleRecordsTableID";
+    list = orderedComponents.ordered;
+    item = aColumn;
+    listItemIDKeyPath = "componentId";
+    action = updateSorting;  // VALID
+    listItemStyle = "list-style-type: none;";
+}
+
+DataAccessColumnComponent: WOSwitchComponent {
+	componentObject = aColumn;
+	WOComponentName = aColumn.componentType;
+	currentMode = "edit";
+	currentDataAccessMode = "single";
+}
+
+FieldName: WOString {
+	value = aColumn.fieldName;
+}
+
+FieldType: WOString {
+	value = aColumn.fieldType;
+}
+
+IsCalculatedColumnConditional: WOConditional {
+	condition = isCalculatedColumn;
+}
+
+IsNotCalculatedColumnConditional: WOConditional {
+	condition = isCalculatedColumn;
+	negate = true;
+}
+
+IsSystemColumnConditional: WOConditional {
+	condition = aColumn.isSystemColumn;
+}
+
+IsEditableColumnConditional: WOConditional {
+	condition = aColumn.isEditableColumn;
+}
+
+OrderPopup: ReorderPopup {
+	container = orderedComponents;
+	object = aColumn;
+}
+
+ShowField: WOCheckBox {
+	checked = aColumn.showField;
+    name = ~"ShowField_" + aColumn.normalizedFieldName();
+}

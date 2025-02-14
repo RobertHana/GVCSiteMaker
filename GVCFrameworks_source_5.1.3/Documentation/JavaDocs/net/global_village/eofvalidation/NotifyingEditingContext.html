@@ -1,0 +1,858 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+NotifyingEditingContext (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="NotifyingEditingContext (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/NotifyingEditingContext.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/NotifyingLockErrorScreamerEditingContext.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/NotifyingEditingContext.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="NotifyingEditingContext.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofvalidation</FONT>
+<BR>
+Class NotifyingEditingContext</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOObjectStore
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOEditingContext
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/ForgetfulEC.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.ForgetfulEC</A>
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.DeleteFiresFaultWorkAroundEditingContext</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">net.global_village.eofvalidation.EOEditingContext</A>
+                      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofvalidation.NotifyingEditingContext</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol.EOKeyValueArchiving, com.webobjects.eocontrol.EOObserving, com.webobjects.foundation.NSDisposable, com.webobjects.foundation.NSLocking, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/eofvalidation/NotifyingLockErrorScreamerEditingContext.html" title="class in net.global_village.eofvalidation">NotifyingLockErrorScreamerEditingContext</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.23"><B>NotifyingEditingContext</B></A><DT>extends <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">EOEditingContext</A></DL>
+</PRE>
+
+<P>
+NotifyingEditingContext extends EOEditingContext by providing users with the ability to get
+ notifications about inserting, updating and deleting objects to/from the object graph.  If you
+ want to get these notifications, first create an instance of this class, as you would a regluar
+ editing context, then implement the EditingContextNotification interface on any EO for which you
+ want to receive notifications (the EOGenericNotificationRecord class is provided to do some of
+ that work for you).  Finally, insert, update and delete objects from this editing context as you
+ would a normal editing context.
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 8$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.eofvalidation.NotifyingEditingContext">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOEditingContext._EventLoggingEnabler, com.webobjects.eocontrol.EOEditingContext.Delegate, com.webobjects.eocontrol.EOEditingContext.EditingContextEvent, com.webobjects.eocontrol.EOEditingContext.Editor, com.webobjects.eocontrol.EOEditingContext.MessageHandler</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueArchiving"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueArchiving</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueArchiving._NullValueSupport, com.webobjects.eocontrol.EOKeyValueArchiving._NumberSupport, com.webobjects.eocontrol.EOKeyValueArchiving._TimestampSupport, com.webobjects.eocontrol.EOKeyValueArchiving.Awaking, com.webobjects.eocontrol.EOKeyValueArchiving.FinishInitialization, com.webobjects.eocontrol.EOKeyValueArchiving.Support</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#hasDeletedSet">hasDeletedSet</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#hasInsertedSet">hasInsertedSet</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#hasUpdatedSet">hasUpdatedSet</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#willDeleteSet">willDeleteSet</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.eofvalidation.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.eofvalidation.<A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">EOEditingContext</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#deletePrefetcher">deletePrefetcher</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#private_processingChanges">private_processingChanges</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#shouldInstanceUseDeletePrefetcher">shouldInstanceUseDeletePrefetcher</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#useDeletePrefetcher">useDeletePrefetcher</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _EditingContextDidChangeSharedEditingContextNotification, _EditingContextEditorHasChangesNotification, _IsEventLoggingEnabled, EditingContextDidSaveChangesNotification, EditingContextFlushChangesRunLoopOrdering, ObjectsChangedInEditingContextNotification</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOObjectStore"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOObjectStore</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_doAssertLock, _doAssertLockInitialized, _userInfo, _wasDisposed, DeletedKey, InsertedKey, InvalidatedAllObjectsInStoreNotification, InvalidatedKey, ObjectsChangedInStoreNotification, UpdatedKey</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSLocking"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSLocking</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>OneCentury, OneDay, OneHour, OneMinute, OneSecond, OneWeek, OneYear</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#NotifyingEditingContext()">NotifyingEditingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new EOEditingContext object with the default parent object store as its parent object store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#NotifyingEditingContext(com.webobjects.eocontrol.EOObjectStore)">NotifyingEditingContext</A></B>(com.webobjects.eocontrol.EOObjectStore&nbsp;anObjectStore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constuctor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#_insertObjectWithGlobalID(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOGlobalID)">_insertObjectWithGlobalID</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object,
+                                                   com.webobjects.eocontrol.EOGlobalID&nbsp;eoglobalid)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overriden to record this object as inserted so that notifications can be sent.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#deleteObject(com.webobjects.eocontrol.EOEnterpriseObject)">deleteObject</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override deleteObject() to provide various notifications.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#isNotifiableObject(com.webobjects.eocontrol.EOEnterpriseObject)">isNotifiableObject</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if eo should get notifications from this editing context</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifiedWillUpdateSet()">notifiedWillUpdateSet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the set of objects already notified willUpdate in this save cycle.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifyHasDeleted()">notifyHasDeleted</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends the hasDeleted() notification to all the objects which have just been removed from
+ the persistent object store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifyHasInserted()">notifyHasInserted</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends the hasInserted() notification to all the new objects which have just been saved
+ to the persistent object store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifyHasReverted()">notifyHasReverted</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends the hasReverted() notification to all the objects registered in this editing
+ context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifyHasUpdated()">notifyHasUpdated</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends the hasUpdated() notification to all the updated objects which have just been saved
+ to the persistent object store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#notifyWillUpdate()">notifyWillUpdate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends the willUpdate() notification to all modified objects.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#objectBeingNotified()">objectBeingNotified</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the eo object currently being sent the willUpdate notification.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#objectWillChange(java.lang.Object)">objectWillChange</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override objectWillChange() to track objects which may be sent the willUpdate notification.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#resetNotifiedWillUpdateSet()">resetNotifiedWillUpdateSet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes all objects from the set of objects already notified willUpdate in this save cycle</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#resetSets()">resetSets</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reset all the sets to be empty.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#revert()">revert</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override revert() to keep our modified objects in sync.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#saveChanges()">saveChanges</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override saveChanges() to provide various notifications.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html#setObjectBeingNotified(com.webobjects.eocontrol.EOEnterpriseObject)">setObjectBeingNotified</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eoObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the eo object currently being sent the willUpdate notification.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofvalidation.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofvalidation.<A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">EOEditingContext</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#_processObjectStoreChanges(com.webobjects.foundation.NSDictionary)">_processObjectStoreChanges</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#initializePrivateFieldAccess()">initializePrivateFieldAccess</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretEOGeneralAdaptorException(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretEOGeneralAdaptorException</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretInsertFailureFromException(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretInsertFailureFromException</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretIntegrityConstraintViolation(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretIntegrityConstraintViolation</A>, <A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretOptimisticLockingFailure(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretOptimisticLockingFailure</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofextensions.DeleteFiresFaultWorkAroundEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">DeleteFiresFaultWorkAroundEditingContext</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#_objectsChangedInStore(com.webobjects.foundation.NSNotification)">_objectsChangedInStore</A>, <A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#setThreadSavingEditingContext(java.lang.Thread)">setThreadSavingEditingContext</A>, <A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#threadSavingEditingContext()">threadSavingEditingContext</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_clearChangedThisTransaction, _clearOriginalSnapshotAndInitializeRec, _clearOriginalSnapshotForObject, _defaultEditingContextNowInitialized, _defaultSharedEditingContextWasInitialized, _editorHasChanges, _EOAssertSafeMultiThreadedAccess, _EOAssertSafeMultiThreadedAccess, _EOAssertSafeMultiThreadedReadAccess, _globalIDChanged, _globalIDsForObjects, _initWithParentObjectStore, _invalidatedAllObjectsInStore, _invalidateObjectsDuringSave, _noop, _objectBasedChangeInfoForGIDInfo, _objectsInitializedInSharedContext, _processEndOfEventNotification, _processGlobalIDChanges, _processInitializedObjectsInSharedContext, _processNotificationQueue, _processRecentChanges, _resetAllChanges, _resetAllChanges, _retainCountForObjectWithGlobalID, _undoDelete, _undoManagerCheckpoint, _undoUpdate, addEditor, arrayFaultWithSourceGlobalID, committedSnapshotForObject, currentEventSnapshotForObject, decodeWithKeyValueUnarchiver, defaultFetchTimestampLag, defaultParentObjectStore, delegate, deletedObjects, dispose, editingContextDidForgetObjectWithGlobalID, editors, editorsHaveChanges, encodeObjectWithCoder, encodeWithKeyValueArchiver, faultForGlobalID, faultForRawRow, faultForRawRow, fetchTimestamp, finalize, forgetObject, globalIDForObject, hasChanges, initializeObject, initObjectWithCoder, insertedObjects, insertObject, insertObjectWithGlobalID, instancesRetainRegisteredObjects, invalidateAllObjects, invalidateObjectsWithGlobalIDs, invalidatesObjectsWhenFinalized, invokeRemoteMethod, isObjectLockedWithGlobalID, lock, lockObject, lockObjectStore, lockObjectWithGlobalID, locksObjectsBeforeFirstModification, messageHandler, objectForGlobalID, objectsForSourceGlobalID, objectsWithFetchSpecification, objectsWithFetchSpecification, parentObjectStore, processRecentChanges, propagatesDeletesAtEndOfEvent, readResolve, recordObject, redo, refaultAllObjects, refaultObject, refaultObject, refaultObjects, refetch, refreshAllObjects, refreshObject, registeredObjects, removeEditor, reset, retainsRegisteredObjects, rootObjectStore, saveChanges, saveChangesInEditingContext, setDefaultFetchTimestampLag, setDefaultParentObjectStore, setDelegate, setFetchTimestamp, setInstancesRetainRegisteredObjects, setInvalidatesObjectsWhenFinalized, setLocksObjectsBeforeFirstModification, setMessageHandler, setPropagatesDeletesAtEndOfEvent, setRetainsRegisteredObjects, setSharedEditingContext, setStopsValidationAfterFirstError, setSubstitutionEditingContext, setUndoManager, setUsesContextRelativeEncoding, sharedEditingContext, stopsValidationAfterFirstError, substitutionEditingContext, tryLock, tryToSaveChanges, undo, undoManager, unlock, unlockObjectStore, updatedObjects, usesContextRelativeEncoding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOObjectStore"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOObjectStore</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_checkAssertLock, _resetAssertLock, _suppressAssertLock, setUserInfo, setUserInfoForKey, userInfo, userInfoForKey</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="willDeleteSet"><!-- --></A><H3>
+willDeleteSet</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.25"><B>willDeleteSet</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="hasDeletedSet"><!-- --></A><H3>
+hasDeletedSet</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.26"><B>hasDeletedSet</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="hasUpdatedSet"><!-- --></A><H3>
+hasUpdatedSet</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.27"><B>hasUpdatedSet</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="hasInsertedSet"><!-- --></A><H3>
+hasInsertedSet</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.28"><B>hasInsertedSet</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="NotifyingEditingContext(com.webobjects.eocontrol.EOObjectStore)"><!-- --></A><H3>
+NotifyingEditingContext</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.40"><B>NotifyingEditingContext</B></A>(com.webobjects.eocontrol.EOObjectStore&nbsp;anObjectStore)</PRE>
+<DL>
+<DD>Designated constuctor.  Creates a new EOEditingContext object with anObjectStore as its parent object store.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>anObjectStore</CODE> - parent object store</DL>
+</DL>
+<HR>
+
+<A NAME="NotifyingEditingContext()"><!-- --></A><H3>
+NotifyingEditingContext</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.50"><B>NotifyingEditingContext</B></A>()</PRE>
+<DL>
+<DD>Creates a new EOEditingContext object with the default parent object store as its parent object store.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="resetSets()"><!-- --></A><H3>
+resetSets</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.60"><B>resetSets</B></A>()</PRE>
+<DL>
+<DD>Reset all the sets to be empty.  Called at the end of saveChanges() and revert().
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_insertObjectWithGlobalID(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOGlobalID)"><!-- --></A><H3>
+_insertObjectWithGlobalID</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.78"><B>_insertObjectWithGlobalID</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object,
+                                         com.webobjects.eocontrol.EOGlobalID&nbsp;eoglobalid)</PRE>
+<DL>
+<DD>Overriden to record this object as inserted so that notifications can be sent.  This method,
+ rather than insertObject(), is used so that parent editing contexts will also get notified of
+ objects inserted and saved into one of their nested editing contexts.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>_insertObjectWithGlobalID</CODE> in class <CODE>com.webobjects.eocontrol.EOEditingContext</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>object</CODE> - the EOEnterpriseObject to be inserted into this editing context</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deleteObject(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+deleteObject</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.93"><B>deleteObject</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object)</PRE>
+<DL>
+<DD>Override deleteObject() to provide various notifications.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#deleteObject(com.webobjects.eocontrol.EOEnterpriseObject)">deleteObject</A></CODE> in class <CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">EOEditingContext</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectWillChange(java.lang.Object)"><!-- --></A><H3>
+objectWillChange</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.119"><B>objectWillChange</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;object)</PRE>
+<DL>
+<DD>Override objectWillChange() to track objects which may be sent the willUpdate notification.
+ This is ignored if the object this is called for is <code>objectBeingNotified()</code>.  If
+ the object is already in <code>notifiedWillUpdateSet()</code> it is removed so that the
+ notification will be sent again.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>objectWillChange</CODE> in interface <CODE>com.webobjects.eocontrol.EOObserving</CODE><DT><B>Overrides:</B><DD><CODE>objectWillChange</CODE> in class <CODE>com.webobjects.eocontrol.EOEditingContext</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveChanges()"><!-- --></A><H3>
+saveChanges</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.140"><B>saveChanges</B></A>()</PRE>
+<DL>
+<DD>Override saveChanges() to provide various notifications.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#saveChanges()">saveChanges</A></CODE> in class <CODE><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html" title="class in net.global_village.eofvalidation">EOEditingContext</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="revert()"><!-- --></A><H3>
+revert</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.158"><B>revert</B></A>()</PRE>
+<DL>
+<DD>Override revert() to keep our modified objects in sync.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>revert</CODE> in class <CODE>com.webobjects.eocontrol.EOEditingContext</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifyWillUpdate()"><!-- --></A><H3>
+notifyWillUpdate</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.185"><B>notifyWillUpdate</B></A>()</PRE>
+<DL>
+<DD><p>Sends the willUpdate() notification to all modified objects.  Objects receiving this
+ message may update other objects so this is done repeatedly until no more objects get
+ updated and each updated object receives this message.  An object may recieve this message
+ more than once if other objects being notified modify it.  The number of messages received
+ depends on the order in which updated objects are processed.  This is non-deterministic and
+ must not be relied upon.  The <code>willUpdate()</code> method should be written to handle
+ multiple calls in a single save cycle.  This class will prevent the <code>willUpdate()</code>
+ method from producing notification cycles.</p>
+ <p>Newly inserted and deleted objects will also receive this message.  This method is intended
+ to be called in the context of saveChanges().  Calling it at other times will result in the
+ willUpdate() message being sent.  If the save fails, the message will be sent again if the
+ save is attempted again.</p>
+ <p>This notification can be sent even if the object receiving it has not actually changed the
+ values.  If this is a concern, you can determine if any values were actually changed by testing
+ <code>changesFromSnapshot(editingContext().committedSnapshotForObject(this)).count() > 0</code>.
+ </p>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifyHasDeleted()"><!-- --></A><H3>
+notifyHasDeleted</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.224"><B>notifyHasDeleted</B></A>()</PRE>
+<DL>
+<DD>Sends the hasDeleted() notification to all the objects which have just been removed from
+ the persistent object store.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifyHasInserted()"><!-- --></A><H3>
+notifyHasInserted</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.244"><B>notifyHasInserted</B></A>()</PRE>
+<DL>
+<DD>Sends the hasInserted() notification to all the new objects which have just been saved
+ to the persistent object store.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifyHasUpdated()"><!-- --></A><H3>
+notifyHasUpdated</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.265"><B>notifyHasUpdated</B></A>()</PRE>
+<DL>
+<DD>Sends the hasUpdated() notification to all the updated objects which have just been saved
+ to the persistent object store.  Note that this is not sent to objects which recieve
+ hasInserted or hasDeleted().
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifyHasReverted()"><!-- --></A><H3>
+notifyHasReverted</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.289"><B>notifyHasReverted</B></A>()</PRE>
+<DL>
+<DD>Sends the hasReverted() notification to all the objects registered in this editing
+ context.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isNotifiableObject(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+isNotifiableObject</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.313"><B>isNotifiableObject</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Returns <code>true</code> if eo should get notifications from this editing context
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the EOEnterpriseObject to check
+<DT><B>Returns:</B><DD><code>true</code> if eo should get notifications from this editing context</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="notifiedWillUpdateSet()"><!-- --></A><H3>
+notifiedWillUpdateSet</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.328"><B>notifiedWillUpdateSet</B></A>()</PRE>
+<DL>
+<DD>Returns the set of objects already notified willUpdate in this save cycle.  Returns an empty
+ set if willUpdate notification is not in progress.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the set of objects already notified willUpdate in this save cycle</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="resetNotifiedWillUpdateSet()"><!-- --></A><H3>
+resetNotifiedWillUpdateSet</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.339"><B>resetNotifiedWillUpdateSet</B></A>()</PRE>
+<DL>
+<DD>Removes all objects from the set of objects already notified willUpdate in this save cycle
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setObjectBeingNotified(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+setObjectBeingNotified</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.350"><B>setObjectBeingNotified</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eoObject)</PRE>
+<DL>
+<DD>Sets the eo object currently being sent the willUpdate notification.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eoObject</CODE> - the eo object currently being sent the willUpdate notification</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectBeingNotified()"><!-- --></A><H3>
+objectBeingNotified</H3>
+<PRE>
+protected com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofvalidation/NotifyingEditingContext.html#line.362"><B>objectBeingNotified</B></A>()</PRE>
+<DL>
+<DD>Returns the eo object currently being sent the willUpdate notification.  This is used to
+ prevent notification cycles if the eo calls willChange() while processing the notification.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the eo object currently being sent the willUpdate notification</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/NotifyingEditingContext.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/NotifyingLockErrorScreamerEditingContext.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/NotifyingEditingContext.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="NotifyingEditingContext.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

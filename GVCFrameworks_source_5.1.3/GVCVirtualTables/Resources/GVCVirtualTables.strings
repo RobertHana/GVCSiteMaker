@@ -1,0 +1,30 @@
+{
+	Column.name.duplicate = "The column name you entered, <<failedValue>>, is a duplicate of an existing column name.";
+	Column.name.missing = "The column name is required.";
+	Column.name.invalid = "The column name you entered, <<failedValue>>, is not allowed - it must start with a letter.";
+	Column.referringColumns.inUse = "This column has another column referring to it for lookup values.";
+
+	// OK, _you_ try to make this make sense to a user...
+	VirtualLookupField.lookupValue.invalidColumnLookedUp = "The value referred to by this field does not match the column referred to by this fields column.";
+
+	VirtualColumn.name.badName = "The column name you entered, <<failedValue>>, is not a valid name.";
+	VirtualColumn.value.noLookupValue = "Value <<failedValue>> for column <<object.name>>, does not exist in the lookup table.";
+	
+	VirtualTable.expression.columnDoesNotExist = "The value can't be calculated because it refers to a non-existent field named <<failedValue>>";
+	VirtualTable.expression.circularReference = "The value can't be calculated because it contains a circular reference to field <<failedValue>>";
+	VirtualTable.expression.cantBeUsedInCalculation = "<<failedValue>> can't be used in a formula.";
+	VirtualTable.expression.syntaxError = "There is an error in the expression, it can't be understood.";
+	VirtualTable.expression.cantAssign = "The = operator can't be used";
+	VirtualTable.expression.invalidRelationalNavigation = "<<failedValue>> is not a lookup field.";
+	VirtualTable.expression.invalidRelationalExpression = "<<failedValue>> is not complete.";
+	
+	VirtualCalculatedColumn.expression.parseError = "There is an error in the expression (<<failedValue>>).";
+	VirtualCalculatedColumn.expression.syntaxError = "There is an error in the expression, it can't be understood.";
+	VirtualCalculatedColumn.expression.divideByZero = "There is an arithmetic error in the expression (divide by zero?)";
+	VirtualCalculatedColumn.expression.unexpectedType = "There is an error in the expression.  The result (<<failedValue>>), is of an unexpected type (<<failedValue.getClass.getName>>).";
+	VirtualCalculatedColumn.expression.cantBeUsedInCalculation = "<<failedValue>> can't be used in a formula.";
+	VirtualCalculatedColumn.expression.nullNotAllowed = "The expression is required.";
+	VirtualCalculatedColumn.expression.cantAssign = "The = operator can't be used";
+	VirtualCalculatedColumn.expression.invalidRelationalNavigation = "<<failedValue>> is not a lookup field.";
+
+}

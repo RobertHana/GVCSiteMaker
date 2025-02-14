@@ -1,0 +1,98 @@
+
+{
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    PROJECTNAME = GVCSMCustom;
+    PBPROJECTTYPEVERSION = 4.0;
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+    LANGUAGE = English;
+    DEPLOY_WITH_VERSION_NAME = A;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+    DYNAMIC_CODE_GEN = YES;
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    PROJECTTYPE = JavaWebObjectsFramework;
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    PROJECTVERSION = 2.8;
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/com/gvcsitemaker/custom/appserver/SMCustomApplication.java, 
+           src/com/gvcsitemaker/custom/appserver/SMCustomDirectAction.java, 
+           src/com/gvcsitemaker/custom/appserver/SMCustomSession.java, 
+           src/com/gvcsitemaker/custom/pages/LogoutPage.java, 
+           ContractedSource/com/gvcsitemaker/custom/appserver/SMCustomApplication.java, 
+           ContractedSource/com/gvcsitemaker/custom/appserver/SMCustomDirectAction.java, 
+           ContractedSource/com/gvcsitemaker/custom/appserver/SMCustomSession.java, 
+           ContractedSource/com/gvcsitemaker/custom/pages/LogoutPage.java, 
+           bin/com/gvcsitemaker/custom/pages/LogoutPage.class, 
+           bin/com/gvcsitemaker/custom/appserver/SMCustomApplication.class, 
+           bin/com/gvcsitemaker/custom/appserver/SMCustomDirectAction.class, 
+           bin/com/gvcsitemaker/custom/appserver/SMCustomSession.class
+        );
+        FRAMEWORKS = 
+        (
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCSMCore.framework, 
+           FrontBasePlugIn.framework, 
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCSMCore.framework, 
+           GVCWOExtensions.framework, 
+           JavaEOAccess.framework, 
+           JavaEOControl.framework, 
+           JavaFoundation.framework, 
+           JavaWebObjects.framework, 
+           JavaWOExtensions.framework, 
+           JavaXML.framework, 
+           JavaJNDIAdaptor.framework
+        );
+        WO_COMPONENTS = 
+        ();
+        SUBPROJECTS = 
+        ();
+        OTHER_SOURCES = 
+        (
+           CustomInfo.plist, 
+           java.template, 
+           Makefile, 
+           Makefile.postamble, 
+           Makefile.preamble
+        );
+        WOAPP_RESOURCES = 
+        (
+           LogoutPage.wo/LogoutPage.html, 
+           LogoutPage.wo/LogoutPage.wod, 
+           StyleTemplates/blueRobotLeft.html, 
+           StyleTemplates/blueRobotRight.html, 
+           StyleTemplates/fourBoxes.html, 
+           StyleTemplates/funkyThree.html, 
+           StyleTemplates/topfooter.html, 
+           CustomInfo.plist, 
+           GVCSMAdminPageMap.plist, 
+           GVCSiteMakerBootstrap.plist, 
+           GVCSiteMakerCustom.plist, 
+           GVCSiteMakerPageMap.plist, 
+           LogoutPage.api, 
+           UmodLDAP.eomodeld/UmodGroup.plist, 
+           UMTestLDAP.eomodeld, 
+           UMTestLDAP.eomodeld/UMTestGroup.plist, 
+           Properties
+        );
+    };
+    CURRENTLY_ACTIVE_VERSION = YES;
+}

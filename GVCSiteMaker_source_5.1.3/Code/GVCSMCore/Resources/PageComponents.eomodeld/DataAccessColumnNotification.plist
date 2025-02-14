@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "COLUMN_COMPONENT_ID"; 
+            name = columnId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_ID"; 
+            name = componentId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (componentId, columnId); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    externalName = "SM_DA_COLUMN_NOTIFICATION"; 
+    fetchSpecificationDictionary = {}; 
+    name = DataAccessColumnNotification; 
+    primaryKeyAttributes = (componentId, columnId); 
+    relationships = (
+        {
+            destination = Column; 
+            internalInfo = {"_nameInObjectStore" = dataAccessColumn; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = columnId; }); 
+            name = column; 
+        }, 
+        {
+            destination = DataAccess; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = componentId; }); 
+            name = dataAccess; 
+        }
+    ); 
+}

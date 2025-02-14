@@ -1,0 +1,14 @@
+
+{
+    orgUnitsForAdministrators = 
+    {
+        class = EOFetchSpecification;
+        entityName = OrgUnit;
+        fetchLimit = 0;
+        isDeep = YES;
+        prefetchingRelationshipKeyPaths = 
+        (
+           admins
+        );
+    };
+}

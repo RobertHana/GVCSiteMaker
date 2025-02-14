@@ -1,0 +1,30 @@
+CustomEditor: WOSwitchComponent {
+    section = section;
+	WOComponentName = section.type.editorName;
+	inPlaceEditingMode = inPlaceEditingMode;
+	returnUrl =  returnUrl;
+	version = version;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Edit Section";
+    pageType = "com.gvcsitemaker.pages.EditSection";
+	needsPreviewURLJavaScript = showPreviewURLJavaScript;
+	isAdmin = false;
+	hasSite = true;
+	inPlaceEditingMode = inPlaceEditingMode;
+}
+
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+SectionNameString: WOString {
+    value = section.name;
+}
+
+Help: HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.EditSection";
+}

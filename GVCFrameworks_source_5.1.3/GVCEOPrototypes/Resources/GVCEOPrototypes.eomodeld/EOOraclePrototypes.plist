@@ -1,0 +1,151 @@
+{
+    attributes = (
+        {
+            adaptorValueConversionMethodName = stringValue; 
+            columnName = BOOLEAN; 
+            externalType = CHAR; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = Boolean; 
+            valueClassName = GVCBoolean; 
+            valueFactoryMethodName = "booleanWithString:"; 
+            width = 1; 
+        }, 
+        {externalType = "LONG RAW"; name = Data; valueClassName = NSData; }, 
+        {
+            columnName = DATE; 
+            externalType = DATE; 
+            name = Date; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DATE_TIME"; 
+            externalType = DATETIME; 
+            name = DateTime; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = DATETIME; 
+            name = DateTimeWithTimeZone; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = FLOAT; 
+            externalType = NUMBER; 
+            name = Decimal; 
+            precision = 14; 
+            scale = 4; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            adaptorValueConversionMethodName = description; 
+            columnName = ""; 
+            externalType = VARCHAR2; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = Dictionary; 
+            valueClassName = NSMutableDictionary; 
+            valueFactoryMethodName = "dictionaryWithString:"; 
+            width = 2000; 
+        }, 
+        {
+            columnName = FLOAT; 
+            externalType = NUMBER; 
+            name = Float; 
+            precision = 14; 
+            scale = 4; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = INTEGER; 
+            externalType = NUMBER; 
+            name = Integer; 
+            precision = 12; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            adaptorValueConversionMethodName = stringValue; 
+            columnName = ""; 
+            externalType = CHAR; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = JavaBoolean; 
+            valueClassName = "net.global_village.foundation.GVCBoolean"; 
+            valueFactoryMethodName = objectWithArchiveData; 
+            width = 1; 
+        }, 
+        {
+            columnName = KEY; 
+            externalType = NUMBER; 
+            name = Key; 
+            precision = 15; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = MEMO; 
+            externalType = LONG; 
+            name = Memo; 
+            valueClassName = NSString; 
+            valueType = C; 
+        }, 
+        {
+            columnName = STRING; 
+            externalType = VARCHAR2; 
+            name = String; 
+            valueClassName = NSString; 
+        }, 
+        {
+            externalType = CHAR; 
+            name = char4KeyComponent; 
+            valueClassName = NSString; 
+            width = 4; 
+        }, 
+        {
+            externalType = NUMBER; 
+            name = flag; 
+            precision = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        Boolean, 
+        Key, 
+        DateTime, 
+        Float, 
+        Integer, 
+        Memo, 
+        String, 
+        char4KeyComponent, 
+        flag, 
+        Dictionary, 
+        DateTimeWithTimeZone, 
+        JavaBoolean, 
+        Date, 
+        Decimal
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        Boolean, 
+        DateTime, 
+        Float, 
+        Integer, 
+        Memo, 
+        String, 
+        flag, 
+        Dictionary, 
+        Data, 
+        DateTimeWithTimeZone, 
+        JavaBoolean, 
+        Date, 
+        Decimal
+    ); 
+    fetchSpecificationDictionary = {}; 
+    name = EOOraclePrototypes; 
+    primaryKeyAttributes = (Key, char4KeyComponent); 
+}

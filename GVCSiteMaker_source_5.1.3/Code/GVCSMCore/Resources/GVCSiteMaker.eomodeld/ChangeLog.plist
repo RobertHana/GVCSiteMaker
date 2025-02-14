@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {columnName = CHANGES; name = changes; prototypeName = note; }, 
+        {
+            allowsNull = N; 
+            columnName = "DATE_RECORDED"; 
+            name = dateRecorded; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = NOTES; name = notes; prototypeName = note; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_FKEY"; 
+            name = userFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (changes, dateRecorded, notes, oid, userFKey); 
+    className = "com.gvcsitemaker.core.ChangeLog"; 
+    classProperties = (changes, dateRecorded, notes, user); 
+    externalName = "SM_CHANGE_LOG"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "SM_CAHNGE_LOG"; }; 
+    isAbstractEntity = Y; 
+    name = ChangeLog; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userFKey; }); 
+            name = user; 
+        }
+    ); 
+}

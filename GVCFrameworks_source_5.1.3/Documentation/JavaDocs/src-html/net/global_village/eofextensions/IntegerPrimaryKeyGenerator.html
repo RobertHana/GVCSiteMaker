@@ -1,0 +1,313 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofextensions;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import com.webobjects.eoaccess.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import com.webobjects.eocontrol.*;<a name="line.4"></a>
+<FONT color="green">005</FONT>    import com.webobjects.foundation.*;<a name="line.5"></a>
+<FONT color="green">006</FONT>    <a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    /**<a name="line.8"></a>
+<FONT color="green">009</FONT>     * Generates PKs for given entities.<a name="line.9"></a>
+<FONT color="green">010</FONT>     *<a name="line.10"></a>
+<FONT color="green">011</FONT>     * @author Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.<a name="line.11"></a>
+<FONT color="green">012</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.12"></a>
+<FONT color="green">013</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.13"></a>
+<FONT color="green">014</FONT>     * @version $Revision: 7$<a name="line.14"></a>
+<FONT color="green">015</FONT>     */<a name="line.15"></a>
+<FONT color="green">016</FONT>    public abstract class IntegerPrimaryKeyGenerator<a name="line.16"></a>
+<FONT color="green">017</FONT>    {<a name="line.17"></a>
+<FONT color="green">018</FONT>        public static final int DefaultNumberOfPKsToCache = 100;<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>        protected int numberOfPKsToCache;<a name="line.20"></a>
+<FONT color="green">021</FONT>    <a name="line.21"></a>
+<FONT color="green">022</FONT>        /** Holds the entities for which this will generate PKs. */<a name="line.22"></a>
+<FONT color="green">023</FONT>        protected NSMutableSet cachePKsForEntities = new NSMutableSet();<a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>        /** Holds the first cached value with the entity name as the key. */<a name="line.25"></a>
+<FONT color="green">026</FONT>        protected NSMutableDictionary pkInitialValues = new NSMutableDictionary();<a name="line.26"></a>
+<FONT color="green">027</FONT>    <a name="line.27"></a>
+<FONT color="green">028</FONT>        /** Holds the number of values we've used with the entity name as the key. */<a name="line.28"></a>
+<FONT color="green">029</FONT>        protected NSMutableDictionary pkAmountUsed = new NSMutableDictionary();<a name="line.29"></a>
+<FONT color="green">030</FONT>    <a name="line.30"></a>
+<FONT color="green">031</FONT>    <a name="line.31"></a>
+<FONT color="green">032</FONT>        /**<a name="line.32"></a>
+<FONT color="green">033</FONT>         * Designated constructor.<a name="line.33"></a>
+<FONT color="green">034</FONT>         *<a name="line.34"></a>
+<FONT color="green">035</FONT>         * @param pksToCache the number of PKs to cache<a name="line.35"></a>
+<FONT color="green">036</FONT>         */<a name="line.36"></a>
+<FONT color="green">037</FONT>        public IntegerPrimaryKeyGenerator(int pksToCache)<a name="line.37"></a>
+<FONT color="green">038</FONT>        {<a name="line.38"></a>
+<FONT color="green">039</FONT>            super();<a name="line.39"></a>
+<FONT color="green">040</FONT>            numberOfPKsToCache = pksToCache;<a name="line.40"></a>
+<FONT color="green">041</FONT>        }<a name="line.41"></a>
+<FONT color="green">042</FONT>    <a name="line.42"></a>
+<FONT color="green">043</FONT>    <a name="line.43"></a>
+<FONT color="green">044</FONT>    <a name="line.44"></a>
+<FONT color="green">045</FONT>        /**<a name="line.45"></a>
+<FONT color="green">046</FONT>         * Constructor that sets the number of PKs to cache to the default value.<a name="line.46"></a>
+<FONT color="green">047</FONT>         */<a name="line.47"></a>
+<FONT color="green">048</FONT>        public IntegerPrimaryKeyGenerator()<a name="line.48"></a>
+<FONT color="green">049</FONT>        {<a name="line.49"></a>
+<FONT color="green">050</FONT>            this(DefaultNumberOfPKsToCache);<a name="line.50"></a>
+<FONT color="green">051</FONT>        }<a name="line.51"></a>
+<FONT color="green">052</FONT>    <a name="line.52"></a>
+<FONT color="green">053</FONT>    <a name="line.53"></a>
+<FONT color="green">054</FONT>    <a name="line.54"></a>
+<FONT color="green">055</FONT>        /**<a name="line.55"></a>
+<FONT color="green">056</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if this PK generator generates PKs for the given entity.<a name="line.56"></a>
+<FONT color="green">057</FONT>         *<a name="line.57"></a>
+<FONT color="green">058</FONT>         * @param entity the entity to check<a name="line.58"></a>
+<FONT color="green">059</FONT>         */<a name="line.59"></a>
+<FONT color="green">060</FONT>        public boolean cachesPKsForEntity(EOEntity entity)<a name="line.60"></a>
+<FONT color="green">061</FONT>        {<a name="line.61"></a>
+<FONT color="green">062</FONT>            /** require [valid_param] entity != null; **/<a name="line.62"></a>
+<FONT color="green">063</FONT>            return cachePKsForEntities.containsObject(entity);<a name="line.63"></a>
+<FONT color="green">064</FONT>        }<a name="line.64"></a>
+<FONT color="green">065</FONT>    <a name="line.65"></a>
+<FONT color="green">066</FONT>    <a name="line.66"></a>
+<FONT color="green">067</FONT>    <a name="line.67"></a>
+<FONT color="green">068</FONT>        /**<a name="line.68"></a>
+<FONT color="green">069</FONT>         * Tells this to start generating PKs for the given entity.<a name="line.69"></a>
+<FONT color="green">070</FONT>         *<a name="line.70"></a>
+<FONT color="green">071</FONT>         * @param entity the entity whose PKs we will cache<a name="line.71"></a>
+<FONT color="green">072</FONT>         */<a name="line.72"></a>
+<FONT color="green">073</FONT>        public void cachePKsForEntity(EOEntity entity)<a name="line.73"></a>
+<FONT color="green">074</FONT>        {<a name="line.74"></a>
+<FONT color="green">075</FONT>            /** require [valid_param] entity != null; **/<a name="line.75"></a>
+<FONT color="green">076</FONT>            cachePKsForEntities.addObject(entity);<a name="line.76"></a>
+<FONT color="green">077</FONT>            /** ensure [caching_for_entity] cachePKsForEntities.containsObject(entity); **/<a name="line.77"></a>
+<FONT color="green">078</FONT>        }<a name="line.78"></a>
+<FONT color="green">079</FONT>    <a name="line.79"></a>
+<FONT color="green">080</FONT>    <a name="line.80"></a>
+<FONT color="green">081</FONT>    <a name="line.81"></a>
+<FONT color="green">082</FONT>        /**<a name="line.82"></a>
+<FONT color="green">083</FONT>         * Tells this to start generating PKs for all entities in the given model.<a name="line.83"></a>
+<FONT color="green">084</FONT>         *<a name="line.84"></a>
+<FONT color="green">085</FONT>         * @param model the model whose entities we will cache PKs for<a name="line.85"></a>
+<FONT color="green">086</FONT>         */<a name="line.86"></a>
+<FONT color="green">087</FONT>        public void cachePKsForModel(EOModel model)<a name="line.87"></a>
+<FONT color="green">088</FONT>        {<a name="line.88"></a>
+<FONT color="green">089</FONT>            /** require [valid_param] model != null; **/<a name="line.89"></a>
+<FONT color="green">090</FONT>            cachePKsForEntities.addObjectsFromArray(model.entities());<a name="line.90"></a>
+<FONT color="green">091</FONT>            /** ensure [caching_for_entities_of_model] (forall i : {0 .. model.entities().count() - 1} # cachePKsForEntities.containsObject(model.entities().objectAtIndex(i))); **/<a name="line.91"></a>
+<FONT color="green">092</FONT>        }<a name="line.92"></a>
+<FONT color="green">093</FONT>    <a name="line.93"></a>
+<FONT color="green">094</FONT>    <a name="line.94"></a>
+<FONT color="green">095</FONT>    <a name="line.95"></a>
+<FONT color="green">096</FONT>        /**<a name="line.96"></a>
+<FONT color="green">097</FONT>         * Returns &lt;code&gt;true&lt;/code&gt; if the PK cache for the given entity name is used up, &lt;code&gt;false&lt;/code&gt; otherwise.<a name="line.97"></a>
+<FONT color="green">098</FONT>         *<a name="line.98"></a>
+<FONT color="green">099</FONT>         * @param entity the entity whose PK cache we are checking<a name="line.99"></a>
+<FONT color="green">100</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if the PK cache for the given entity name is used up, &lt;code&gt;false&lt;/code&gt; otherwise<a name="line.100"></a>
+<FONT color="green">101</FONT>         */<a name="line.101"></a>
+<FONT color="green">102</FONT>        protected boolean needAdditionalPKs(EOEntity entity)<a name="line.102"></a>
+<FONT color="green">103</FONT>        {<a name="line.103"></a>
+<FONT color="green">104</FONT>            /** require [valid_param] entity != null; **/<a name="line.104"></a>
+<FONT color="green">105</FONT>    <a name="line.105"></a>
+<FONT color="green">106</FONT>            Number amountUsed = (Number)pkAmountUsed.objectForKey(entity.name());<a name="line.106"></a>
+<FONT color="green">107</FONT>            return (amountUsed == null) || (amountUsed.intValue() &gt; numberOfPKsToCache);<a name="line.107"></a>
+<FONT color="green">108</FONT>        }<a name="line.108"></a>
+<FONT color="green">109</FONT>    <a name="line.109"></a>
+<FONT color="green">110</FONT>    <a name="line.110"></a>
+<FONT color="green">111</FONT>    <a name="line.111"></a>
+<FONT color="green">112</FONT>        /**<a name="line.112"></a>
+<FONT color="green">113</FONT>         * Adds additional PKs to the cache for the given entity.  The default implementation just caches the PKs in memory, which, of course, isn't terribly useful...<a name="line.113"></a>
+<FONT color="green">114</FONT>         *<a name="line.114"></a>
+<FONT color="green">115</FONT>         * @param entity the entity whose PK cache we are caching<a name="line.115"></a>
+<FONT color="green">116</FONT>         * @param dbCtxt the database context from which we will get the PKs<a name="line.116"></a>
+<FONT color="green">117</FONT>         */<a name="line.117"></a>
+<FONT color="green">118</FONT>        protected void cacheAdditionalPKs(EOEntity entity, EODatabaseContext dbCtxt)<a name="line.118"></a>
+<FONT color="green">119</FONT>        {<a name="line.119"></a>
+<FONT color="green">120</FONT>            /** require<a name="line.120"></a>
+<FONT color="green">121</FONT>            [valid_entity_param] entity != null;<a name="line.121"></a>
+<FONT color="green">122</FONT>            [valid_dbCtxt_param] dbCtxt != null; **/<a name="line.122"></a>
+<FONT color="green">123</FONT>    <a name="line.123"></a>
+<FONT color="green">124</FONT>            Integer amountUsed = (Integer)pkAmountUsed.objectForKey(entity.name());<a name="line.124"></a>
+<FONT color="green">125</FONT>            pkAmountUsed.setObjectForKey(new Integer(0), entity.name());<a name="line.125"></a>
+<FONT color="green">126</FONT>            Integer initialValue = (Integer)pkInitialValues.objectForKey(entity.name());<a name="line.126"></a>
+<FONT color="green">127</FONT>            if (initialValue == null)<a name="line.127"></a>
+<FONT color="green">128</FONT>            {<a name="line.128"></a>
+<FONT color="green">129</FONT>                initialValue = new Integer(0);<a name="line.129"></a>
+<FONT color="green">130</FONT>            }<a name="line.130"></a>
+<FONT color="green">131</FONT>            else<a name="line.131"></a>
+<FONT color="green">132</FONT>            {<a name="line.132"></a>
+<FONT color="green">133</FONT>                initialValue = new Integer(initialValue.intValue() + amountUsed.intValue());<a name="line.133"></a>
+<FONT color="green">134</FONT>            }<a name="line.134"></a>
+<FONT color="green">135</FONT>            pkInitialValues.setObjectForKey(initialValue, entity.name());<a name="line.135"></a>
+<FONT color="green">136</FONT>    <a name="line.136"></a>
+<FONT color="green">137</FONT>            /** ensure<a name="line.137"></a>
+<FONT color="green">138</FONT>            [no_pks_used] ((Integer)pkAmountUsed.objectForKey(entity.name())).intValue() == 0;<a name="line.138"></a>
+<FONT color="green">139</FONT>            [has_initial_value] pkInitialValues.objectForKey(entity.name()) != null; **/<a name="line.139"></a>
+<FONT color="green">140</FONT>        }<a name="line.140"></a>
+<FONT color="green">141</FONT>    <a name="line.141"></a>
+<FONT color="green">142</FONT>    <a name="line.142"></a>
+<FONT color="green">143</FONT>    <a name="line.143"></a>
+<FONT color="green">144</FONT>        /**<a name="line.144"></a>
+<FONT color="green">145</FONT>         * Invoked to provide a PK for a VT entity.  This is part of EODatabaseContext's delegate interface.<a name="line.145"></a>
+<FONT color="green">146</FONT>         *<a name="line.146"></a>
+<FONT color="green">147</FONT>         * @param dbCtxt the database context<a name="line.147"></a>
+<FONT color="green">148</FONT>         * @param object a newly inserted EO, or null if you're doing raw rows inserts<a name="line.148"></a>
+<FONT color="green">149</FONT>         * @param entity the EOEntity object<a name="line.149"></a>
+<FONT color="green">150</FONT>         * @return a dictionary containing the PK attribute names and their values, or &lt;code&gt;null&lt;/code&gt; if this method didn't generate a PK for the given object<a name="line.150"></a>
+<FONT color="green">151</FONT>         */<a name="line.151"></a>
+<FONT color="green">152</FONT>        public synchronized NSDictionary databaseContextNewPrimaryKey(EODatabaseContext dbCtxt, Object object, EOEntity entity)<a name="line.152"></a>
+<FONT color="green">153</FONT>        {<a name="line.153"></a>
+<FONT color="green">154</FONT>            /** require<a name="line.154"></a>
+<FONT color="green">155</FONT>            [valid_dbCtxt_param] dbCtxt != null;<a name="line.155"></a>
+<FONT color="green">156</FONT>            [valid_entity_param] entity != null; **/<a name="line.156"></a>
+<FONT color="green">157</FONT>            if (cachesPKsForEntity(entity))<a name="line.157"></a>
+<FONT color="green">158</FONT>            {<a name="line.158"></a>
+<FONT color="green">159</FONT>                if (object instanceof PregeneratesPrimaryKey &amp;&amp;<a name="line.159"></a>
+<FONT color="green">160</FONT>                                ((PregeneratesPrimaryKey)object).pregeneratedPrimaryKey() != null)<a name="line.160"></a>
+<FONT color="green">161</FONT>                {<a name="line.161"></a>
+<FONT color="green">162</FONT>                    return new NSDictionary(((PregeneratesPrimaryKey)object).pregeneratedPrimaryKey(), entity.primaryKeyAttributeNames().objectAtIndex(0));<a name="line.162"></a>
+<FONT color="green">163</FONT>                }<a name="line.163"></a>
+<FONT color="green">164</FONT>    <a name="line.164"></a>
+<FONT color="green">165</FONT>                // Get the top-level entity<a name="line.165"></a>
+<FONT color="green">166</FONT>                while (entity.parentEntity() != null)<a name="line.166"></a>
+<FONT color="green">167</FONT>                {<a name="line.167"></a>
+<FONT color="green">168</FONT>                    entity = entity.parentEntity();<a name="line.168"></a>
+<FONT color="green">169</FONT>                }<a name="line.169"></a>
+<FONT color="green">170</FONT>    <a name="line.170"></a>
+<FONT color="green">171</FONT>                if (needAdditionalPKs(entity))<a name="line.171"></a>
+<FONT color="green">172</FONT>                {<a name="line.172"></a>
+<FONT color="green">173</FONT>                    cacheAdditionalPKs(entity, dbCtxt);<a name="line.173"></a>
+<FONT color="green">174</FONT>                }<a name="line.174"></a>
+<FONT color="green">175</FONT>    <a name="line.175"></a>
+<FONT color="green">176</FONT>                Number amountUsed = (Number)pkAmountUsed.objectForKey(entity.name());<a name="line.176"></a>
+<FONT color="green">177</FONT>                Number initialValue = (Number)pkInitialValues.objectForKey(entity.name());<a name="line.177"></a>
+<FONT color="green">178</FONT>                Number cachedValue = new Integer(initialValue.intValue() + amountUsed.intValue());<a name="line.178"></a>
+<FONT color="green">179</FONT>    <a name="line.179"></a>
+<FONT color="green">180</FONT>                amountUsed = new Integer(amountUsed.intValue() + 1);<a name="line.180"></a>
+<FONT color="green">181</FONT>                pkAmountUsed.setObjectForKey(amountUsed, entity.name());<a name="line.181"></a>
+<FONT color="green">182</FONT>    <a name="line.182"></a>
+<FONT color="green">183</FONT>                return new NSDictionary(cachedValue, entity.primaryKeyAttributeNames().objectAtIndex(0));<a name="line.183"></a>
+<FONT color="green">184</FONT>            }<a name="line.184"></a>
+<FONT color="green">185</FONT>    <a name="line.185"></a>
+<FONT color="green">186</FONT>            return null;<a name="line.186"></a>
+<FONT color="green">187</FONT>        }<a name="line.187"></a>
+<FONT color="green">188</FONT>    <a name="line.188"></a>
+<FONT color="green">189</FONT>    <a name="line.189"></a>
+<FONT color="green">190</FONT>    <a name="line.190"></a>
+<FONT color="green">191</FONT>        /**<a name="line.191"></a>
+<FONT color="green">192</FONT>         * Generates and records a primary key value for the passed EO before saveChanges() is called.<a name="line.192"></a>
+<FONT color="green">193</FONT>         *<a name="line.193"></a>
+<FONT color="green">194</FONT>         * @see PregeneratesPrimaryKey<a name="line.194"></a>
+<FONT color="green">195</FONT>         *<a name="line.195"></a>
+<FONT color="green">196</FONT>         * @param eo the object to generate a primary key value for<a name="line.196"></a>
+<FONT color="green">197</FONT>         */<a name="line.197"></a>
+<FONT color="green">198</FONT>        public void pregeneratePrimaryKeyForObject(PregeneratesPrimaryKey eo)<a name="line.198"></a>
+<FONT color="green">199</FONT>        {<a name="line.199"></a>
+<FONT color="green">200</FONT>            /** require [valid_eo] eo != null;<a name="line.200"></a>
+<FONT color="green">201</FONT>                        [eo_in_ec] ((EOEnterpriseObject)eo).editingContext() != null;<a name="line.201"></a>
+<FONT color="green">202</FONT>             **/<a name="line.202"></a>
+<FONT color="green">203</FONT>            EOEntity entity = EOUtilities.entityForObject(eo.editingContext(), eo);<a name="line.203"></a>
+<FONT color="green">204</FONT>            EODatabaseContext dbContext = EODatabaseContext.registeredDatabaseContextForModel(entity.model(), eo.editingContext());<a name="line.204"></a>
+<FONT color="green">205</FONT>            dbContext.lock();<a name="line.205"></a>
+<FONT color="green">206</FONT>            try<a name="line.206"></a>
+<FONT color="green">207</FONT>            {<a name="line.207"></a>
+<FONT color="green">208</FONT>                NSDictionary pkDictionary = databaseContextNewPrimaryKey(dbContext, eo, entity);<a name="line.208"></a>
+<FONT color="green">209</FONT>                eo.setPregeneratedPrimaryKey(pkDictionary.allValues().lastObject());<a name="line.209"></a>
+<FONT color="green">210</FONT>            }<a name="line.210"></a>
+<FONT color="green">211</FONT>            finally<a name="line.211"></a>
+<FONT color="green">212</FONT>            {<a name="line.212"></a>
+<FONT color="green">213</FONT>                dbContext.unlock();<a name="line.213"></a>
+<FONT color="green">214</FONT>            }<a name="line.214"></a>
+<FONT color="green">215</FONT>        }<a name="line.215"></a>
+<FONT color="green">216</FONT>    <a name="line.216"></a>
+<FONT color="green">217</FONT>    <a name="line.217"></a>
+<FONT color="green">218</FONT>    <a name="line.218"></a>
+<FONT color="green">219</FONT>        /**<a name="line.219"></a>
+<FONT color="green">220</FONT>         * Interface for EOs that need to know their PK value before saving.  This is used with this IntegerPrimaryKeyGenerator<a name="line.220"></a>
+<FONT color="green">221</FONT>         * to generate the PK early and then use that value it when the object is saved.<a name="line.221"></a>
+<FONT color="green">222</FONT>         */<a name="line.222"></a>
+<FONT color="green">223</FONT>        public interface PregeneratesPrimaryKey extends EOEnterpriseObject<a name="line.223"></a>
+<FONT color="green">224</FONT>        {<a name="line.224"></a>
+<FONT color="green">225</FONT>            /**<a name="line.225"></a>
+<FONT color="green">226</FONT>             * Call this to set the pre-generated key value, or to clear it.  This method is called by the<a name="line.226"></a>
+<FONT color="green">227</FONT>             * method @link {@link IntegerPrimaryKeyGenerator#pregeneratePrimaryKeyForObject(PregeneratesPrimaryKey)}.<a name="line.227"></a>
+<FONT color="green">228</FONT>             *<a name="line.228"></a>
+<FONT color="green">229</FONT>             * @param pkValue the pre-generated key value, or null to clear it<a name="line.229"></a>
+<FONT color="green">230</FONT>             */<a name="line.230"></a>
+<FONT color="green">231</FONT>            public void setPregeneratedPrimaryKey(Object pkValue);<a name="line.231"></a>
+<FONT color="green">232</FONT>    <a name="line.232"></a>
+<FONT color="green">233</FONT>    <a name="line.233"></a>
+<FONT color="green">234</FONT>            /**<a name="line.234"></a>
+<FONT color="green">235</FONT>             * @return value previously set by {@link #setPregeneratedPrimaryKey(Object)} or null if none set<a name="line.235"></a>
+<FONT color="green">236</FONT>             */<a name="line.236"></a>
+<FONT color="green">237</FONT>            public Object pregeneratedPrimaryKey();<a name="line.237"></a>
+<FONT color="green">238</FONT>        }<a name="line.238"></a>
+<FONT color="green">239</FONT>    <a name="line.239"></a>
+<FONT color="green">240</FONT>    <a name="line.240"></a>
+<FONT color="green">241</FONT>        /** invariant<a name="line.241"></a>
+<FONT color="green">242</FONT>        [valid_pkInitialValues] pkInitialValues != null;<a name="line.242"></a>
+<FONT color="green">243</FONT>        [valid_pkAmountUsed] pkAmountUsed != null; **/<a name="line.243"></a>
+<FONT color="green">244</FONT>    <a name="line.244"></a>
+<FONT color="green">245</FONT>    <a name="line.245"></a>
+<FONT color="green">246</FONT>    <a name="line.246"></a>
+<FONT color="green">247</FONT>    }<a name="line.247"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

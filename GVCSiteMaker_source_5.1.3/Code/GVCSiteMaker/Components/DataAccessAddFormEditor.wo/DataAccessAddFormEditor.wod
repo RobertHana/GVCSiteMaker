@@ -1,0 +1,38 @@
+SortableColumnList : AjaxSortableList {
+    id = "AddRecordsTableID";
+    list = orderedComponents.ordered;
+    item = aColumn;
+    listItemIDKeyPath = "componentId";
+    action = updateSorting;  // VALID
+    listItemStyle = "list-style-type: none;";
+}
+
+ColumnList: WORepetition {
+    list = orderedComponents.ordered;
+    item = aColumn;
+}
+
+DataAccessColumnComponent: WOSwitchComponent {
+	componentObject = aColumn;
+	WOComponentName = aColumn.componentType;
+	currentMode = "edit";
+	currentDataAccessMode = "add";
+}
+
+FieldName: WOString {
+	value = aColumn.fieldName;
+}
+
+FieldType: WOString {
+	value = aColumn.fieldType;
+}
+
+OrderPopup: ReorderPopup {
+	container = orderedComponents;
+	object = aColumn;
+}
+
+ShowField: WOCheckBox {
+	checked = aColumn.showField;
+	name = ~"ShowField_" + aColumn.normalizedFieldName();
+}

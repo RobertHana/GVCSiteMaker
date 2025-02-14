@@ -1,0 +1,1213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+RequestUtilities (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="RequestUtilities (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/RequestUtilities.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/Request.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/ResourceManagerAdditions.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/RequestUtilities.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="RequestUtilities.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class RequestUtilities</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.RequestUtilities</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.20"><B>RequestUtilities</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+RequestUtilities provides easy access to information contained in a WORequest.  Browser detection (via JavaScript) is detailed at <a href="http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html">this site</a> is useful as it contains an extensive list of browser versions and how they are detected.  Since we are primarily concerned with CSS <A HREF="http://www.webreview.com/style/css1/charts/mastergrid.shtml">this link</a> lists the major browser changes that effected CSS.  The details of the User-Agent header are listed   <A HREF="http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#user-agent">here</A>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 16$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#countriesISO3166">countriesISO3166</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#defaultKey">defaultKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#defaultLanguageISOCode">defaultLanguageISOCode</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#firefoxUserAgent">firefoxUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#geckoBasedUserAgent">geckoBasedUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#ieUserAgent">ieUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#languagesISO639">languagesISO639</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#macOSIdentifierString">macOSIdentifierString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#mozillaUserAgent">mozillaUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#netscapeVersionString">netscapeVersionString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#operaUserAgent">operaUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#safariUserAgent">safariUserAgent</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userAgentKey">userAgentKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userAgentNameKeyPathPrefix">userAgentNameKeyPathPrefix</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userOSKeyPathPrefix">userOSKeyPathPrefix</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#windowsIdentifierString">windowsIdentifierString</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#RequestUtilities()">RequestUtilities</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#browserLanguages(com.webobjects.appserver.WORequest)">browserLanguages</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the browser languages from the accept-language header ordered, and translated into
+ longer names.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#cleanedFormValueForKey(com.webobjects.appserver.WORequest, java.lang.String)">cleanedFormValueForKey</A></B>(com.webobjects.appserver.WORequest&nbsp;aRequest,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the form value associated with the key after all trailing slashes and white space have been stripped off.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#countriesISO3166()">countriesISO3166</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a dictionary of counties keyed on ISO 3166 country code.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#defaultLanguage()">defaultLanguage</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#defaultLanguageISOCode()">defaultLanguageISOCode</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#hostNameFromRequest(com.webobjects.appserver.WORequest)">hostNameFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the host name (the domain name) used in this request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#humanReadableNameForISOName(java.lang.String)">humanReadableNameForISOName</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;isoName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the human readable name (in English) for the passed ISO language  and country name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#humanReadableUserAgentNameFor(java.lang.String)">humanReadableUserAgentNameFor</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userAgentName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the human readable user agent name that corresponds to the <code>userAgentName<code> argument from this framework's <code>CustomInfo.plist</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#humanReadableUserOSNameFor(java.lang.String)">humanReadableUserOSNameFor</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userOSName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the human readable user OS name that corresponds to the <code>userOSName<code> argument from this framework's <code>CustomInfo.plist</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isHTTPSRequest(com.webobjects.appserver.WORequest)">isHTTPSRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the request was made via https/SSL, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentFirefox(com.webobjects.appserver.WORequest)">isUserAgentFirefox</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentInternetExplorer(com.webobjects.appserver.WORequest)">isUserAgentInternetExplorer</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user agent from the request argument is from <code>Internet Explorer</code>, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentMozillaCompatible(com.webobjects.appserver.WORequest)">isUserAgentMozillaCompatible</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user agent mentions mozilla, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentNetscape(com.webobjects.appserver.WORequest)">isUserAgentNetscape</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user agent from the request argument is from <code>Netscape</code>, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentOpera(com.webobjects.appserver.WORequest)">isUserAgentOpera</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user agent from the request argument is from <code>Opera</code>, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentSafari(com.webobjects.appserver.WORequest)">isUserAgentSafari</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserAgentUsingGecko(com.webobjects.appserver.WORequest)">isUserAgentUsingGecko</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user agent from the request argument contains Gecko but not the safariUserAgent as
+     initially Safari was billing itself as "like Gecko" but it does not use Gecko at all.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserOSMac(com.webobjects.appserver.WORequest)">isUserOSMac</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user OS from the request argument from <code>Mac</code>, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#isUserOSWindows(com.webobjects.appserver.WORequest)">isUserOSWindows</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the user OS from the request argument from <code>Windows</code>, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#languagesISO639()">languagesISO639</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a dictionary of languages keyed on ISO 639 language code.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#orderedLanguagesFromHeader(java.lang.String)">orderedLanguagesFromHeader</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;header)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the raw languages from the passed accept-language header, ordered by their
+ descending q values (explicit or implied).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#originalURLFromRequest(com.webobjects.appserver.WORequest)">originalURLFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the original (i.e. unaltered by rewrite rules etc.)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#rawBrowserLanguages(com.webobjects.appserver.WORequest)">rawBrowserLanguages</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the raw accept-language header sent in this request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#setDefaultLanguageISOCode(java.lang.String)">setDefaultLanguageISOCode</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;code)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#urlEncodedFormValues(com.webobjects.appserver.WORequest)">urlEncodedFormValues</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a URL encoded version of the form values from this request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userAgentFromRequest(com.webobjects.appserver.WORequest)">userAgentFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the user agent (browser) from the passed in request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userAgentMajorVersionNumberFromRequest(com.webobjects.appserver.WORequest)">userAgentMajorVersionNumberFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the user agent version number (browser version number) from the passed in request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userAgentNameFromRequest(com.webobjects.appserver.WORequest)">userAgentNameFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the user agent (browser) from the passed in request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/RequestUtilities.html#userOSFromRequest(com.webobjects.appserver.WORequest)">userOSFromRequest</A></B>(com.webobjects.appserver.WORequest&nbsp;request)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the user OS from the passed in request.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="operaUserAgent"><!-- --></A><H3>
+operaUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.23"><B>operaUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.operaUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="ieUserAgent"><!-- --></A><H3>
+ieUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.24"><B>ieUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.ieUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="mozillaUserAgent"><!-- --></A><H3>
+mozillaUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.25"><B>mozillaUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.mozillaUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="geckoBasedUserAgent"><!-- --></A><H3>
+geckoBasedUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.26"><B>geckoBasedUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.geckoBasedUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="safariUserAgent"><!-- --></A><H3>
+safariUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.27"><B>safariUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.safariUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="firefoxUserAgent"><!-- --></A><H3>
+firefoxUserAgent</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.28"><B>firefoxUserAgent</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.firefoxUserAgent">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="netscapeVersionString"><!-- --></A><H3>
+netscapeVersionString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.30"><B>netscapeVersionString</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.netscapeVersionString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="macOSIdentifierString"><!-- --></A><H3>
+macOSIdentifierString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.32"><B>macOSIdentifierString</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.macOSIdentifierString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="windowsIdentifierString"><!-- --></A><H3>
+windowsIdentifierString</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.33"><B>windowsIdentifierString</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.windowsIdentifierString">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="defaultKey"><!-- --></A><H3>
+defaultKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.35"><B>defaultKey</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.defaultKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="userAgentNameKeyPathPrefix"><!-- --></A><H3>
+userAgentNameKeyPathPrefix</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.37"><B>userAgentNameKeyPathPrefix</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.userAgentNameKeyPathPrefix">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="userOSKeyPathPrefix"><!-- --></A><H3>
+userOSKeyPathPrefix</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.38"><B>userOSKeyPathPrefix</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.RequestUtilities.userOSKeyPathPrefix">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="userAgentKey"><!-- --></A><H3>
+userAgentKey</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.39"><B>userAgentKey</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="countriesISO3166"><!-- --></A><H3>
+countriesISO3166</H3>
+<PRE>
+protected static com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.42"><B>countriesISO3166</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="languagesISO639"><!-- --></A><H3>
+languagesISO639</H3>
+<PRE>
+protected static com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.43"><B>languagesISO639</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="defaultLanguageISOCode"><!-- --></A><H3>
+defaultLanguageISOCode</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.44"><B>defaultLanguageISOCode</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="RequestUtilities()"><!-- --></A><H3>
+RequestUtilities</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.20"><B>RequestUtilities</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="isUserAgentOpera(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentOpera</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.53"><B>isUserAgentOpera</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user agent from the request argument is from <code>Opera</code>, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument is <code>Opera</code>, <code>false</code> otherwise.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentInternetExplorer(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentInternetExplorer</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.69"><B>isUserAgentInternetExplorer</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user agent from the request argument is from <code>Internet Explorer</code>, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument is from <code>Internet Explorer</code>, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentNetscape(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentNetscape</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.85"><B>isUserAgentNetscape</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user agent from the request argument is from <code>Netscape</code>, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument is from <code>Netscape</code>, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentMozillaCompatible(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentMozillaCompatible</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.101"><B>isUserAgentMozillaCompatible</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user agent mentions mozilla, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent mentions mozilla, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentSafari(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentSafari</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.111"><B>isUserAgentSafari</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentFirefox(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentFirefox</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.121"><B>isUserAgentFirefox</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserAgentUsingGecko(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserAgentUsingGecko</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.138"><B>isUserAgentUsingGecko</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user agent from the request argument contains Gecko but not the safariUserAgent as
+     initially Safari was billing itself as "like Gecko" but it does not use Gecko at all.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument contains Gecko else returns false</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserOSWindows(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserOSWindows</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.166"><B>isUserOSWindows</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user OS from the request argument from <code>Windows</code>, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument is from <code>Windows</code>, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isUserOSMac(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isUserOSMac</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.182"><B>isUserOSMac</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the user OS from the request argument from <code>Mac</code>, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD><code>true</code> if the user agent from the request argument is from <code>Mac</code>, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="humanReadableUserAgentNameFor(java.lang.String)"><!-- --></A><H3>
+humanReadableUserAgentNameFor</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.198"><B>humanReadableUserAgentNameFor</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userAgentName)</PRE>
+<DL>
+<DD>Returns the human readable user agent name that corresponds to the <code>userAgentName<code> argument from this framework's <code>CustomInfo.plist</code>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>userAgentName</CODE> - the key to look for
+<DT><B>Returns:</B><DD>the human readable user agent name that corresponds to the <code>userAgentName<code> argument from this framework's <code>CustomInfo.plist</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="humanReadableUserOSNameFor(java.lang.String)"><!-- --></A><H3>
+humanReadableUserOSNameFor</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.215"><B>humanReadableUserOSNameFor</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userOSName)</PRE>
+<DL>
+<DD>Returns the human readable user OS name that corresponds to the <code>userOSName<code> argument from this framework's <code>CustomInfo.plist</code>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>userOSName</CODE> - the key to look for
+<DT><B>Returns:</B><DD>the human readable OS name that corresponds to the <code>userOSName<code> argument from this framework's <code>CustomInfo.plist</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userAgentFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+userAgentFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.234"><B>userAgentFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the user agent (browser) from the passed in request.  This is the full User Agent (in all lower case).  userAgentNameFromRequest() returns a simplified and more readable version of the User Agent.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD>user agent/browser name in original form.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userAgentNameFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+userAgentNameFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.262"><B>userAgentNameFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the user agent (browser) from the passed in request.  The returned value is retrieved from the <code>CustomInfo.plist</code> to be more human readable than what is contained in the HTTP request.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD>user agent/browser name.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userOSFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+userOSFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.307"><B>userOSFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the user OS from the passed in request.  Currently we only recognize Macintosh and Widows lumping all other OS'es into the default category.  The returned value is retrieved from the <code>CustomInfo.plist</code> to be more human readable than what is contained in the HTTP request.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD>OS name.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userAgentMajorVersionNumberFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+userAgentMajorVersionNumberFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.339"><B>userAgentMajorVersionNumberFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the user agent version number (browser version number) from the passed in request.  The major version number is the number(s) before the decimal point.  (Currently it will not handle greater then single digit version numbers correctly)  Although RFC 1945 specifies a standard it proved necessary to have slightly different code for each browser.  Currently we determine if the userAgent is IE, Netscape, Opera, or other then return a version number as appropriate. <code>null</code> is a valid version number.  If more exact versions are required another method will be written which this method could then be modified to call removing all numbers after the decimal point.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the <code>WORequest</code> where the result will be taken from
+<DT><B>Returns:</B><DD>user agent/browser major version.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isHTTPSRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+isHTTPSRequest</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.424"><B>isHTTPSRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the request was made via https/SSL, <code>false</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the WORequest to check for HTTPS state
+<DT><B>Returns:</B><DD><code>true</code> if the request was made via https/SSL, <code>false</code> otherwise.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hostNameFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+hostNameFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.453"><B>hostNameFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the host name (the domain name) used in this request.  This may not match the one specified in the cgiAdaptorURL if there are aliases for the web server.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the request to get the hostname from
+<DT><B>Returns:</B><DD>the host name (the domain name) used in this request.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="originalURLFromRequest(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+originalURLFromRequest</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.490"><B>originalURLFromRequest</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the original (i.e. unaltered by rewrite rules etc.) URL sent to the webserver that
+ triggered this request.  This is useful when redirecting, for example to the login page and
+ back.  Form values are included.  The scheme and domain name are not included.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - WORequest to take form values from
+<DT><B>Returns:</B><DD>the original (i.e. unaltered by rewrite rules etc.) URL sent to the webserver that
+ triggered this request</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="urlEncodedFormValues(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+urlEncodedFormValues</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.543"><B>urlEncodedFormValues</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns a URL encoded version of the form values from this request.  The form values are first
+ translated into the form key1=value1&key2=value2 etc, and then this is url encoded into
+ x-www-form-urlencoded format.  This is intended to be used when the form values are to be
+ passed as a form value themself (i.e. when using a URL with form values as a form value).
+ See java.net.URLEncoder for more information.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - WORequest to take form values from
+<DT><B>Returns:</B><DD>URL encoded version of the form values from this request</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cleanedFormValueForKey(com.webobjects.appserver.WORequest, java.lang.String)"><!-- --></A><H3>
+cleanedFormValueForKey</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.579"><B>cleanedFormValueForKey</B></A>(com.webobjects.appserver.WORequest&nbsp;aRequest,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey)</PRE>
+<DL>
+<DD>Returns the form value associated with the key after all trailing slashes and white space have been stripped off.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aRequest</CODE> - WORequest to take form value from<DD><CODE>aKey</CODE> - key identifying form value
+<DT><B>Returns:</B><DD>the form value associated with the key after all trailing slashes and white space have been stripped off.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="browserLanguages(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+browserLanguages</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.613"><B>browserLanguages</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the browser languages from the accept-language header ordered, and translated into
+ longer names.  See humanReadableNameForISOName for how this translation is done.
+ Unlike the WORequest method of this name, country names are included.  This
+ allows the basic localization to handle different dialects. The defaultLanguage() is included
+ at the end if not specified in the request.  This ensures that the user at least seems something
+ intelligible (assuming it is defined in the default language).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the request to get the accept-language header from
+<DT><B>Returns:</B><DD>browser languages from the accept-language header orderd, and translated into longer names</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="rawBrowserLanguages(com.webobjects.appserver.WORequest)"><!-- --></A><H3>
+rawBrowserLanguages</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.642"><B>rawBrowserLanguages</B></A>(com.webobjects.appserver.WORequest&nbsp;request)</PRE>
+<DL>
+<DD>Returns the raw accept-language header sent in this request. If the header can't be found,
+ returns defaultLanguageISOCode() as the default.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the request to get the accept-language header from
+<DT><B>Returns:</B><DD>the accept-language header sent in this request.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="orderedLanguagesFromHeader(java.lang.String)"><!-- --></A><H3>
+orderedLanguagesFromHeader</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.676"><B>orderedLanguagesFromHeader</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;header)</PRE>
+<DL>
+<DD>Returns the raw languages from the passed accept-language header, ordered by their
+ descending q values (explicit or implied).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>header</CODE> - the accept-language header to get the languages and weighting order from
+<DT><B>Returns:</B><DD>the raw languages ordered by their descending q values</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="humanReadableNameForISOName(java.lang.String)"><!-- --></A><H3>
+humanReadableNameForISOName</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.715"><B>humanReadableNameForISOName</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;isoName)</PRE>
+<DL>
+<DD>Returns the human readable name (in English) for the passed ISO language  and country name.
+ The format is language-country, e.g. English-Canada.  The country is optional. If no language
+ is recognized, English is returned.  The codes are translated into names using the dictionaries
+ from languagesISO639() and countriesISO3166().
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>isoName</CODE> - the ISO language / country pair from the accept-language header
+<DT><B>Returns:</B><DD>the human readable name for the passed ISO language  and country name</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="countriesISO3166()"><!-- --></A><H3>
+countriesISO3166</H3>
+<PRE>
+public static com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.759"><B>countriesISO3166</B></A>()</PRE>
+<DL>
+<DD>Returns a dictionary of counties keyed on ISO 3166 country code.  The entries in
+ the dictionary are taken from the CountriesISO3166.plist resource in this framework.
+ These values are intended for use with localization, but may also be used for other purposes.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>dictionary of counties keyed on ISO 3166 country code</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="languagesISO639()"><!-- --></A><H3>
+languagesISO639</H3>
+<PRE>
+public static com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.786"><B>languagesISO639</B></A>()</PRE>
+<DL>
+<DD>Returns a dictionary of languages keyed on ISO 639 language code.  The entries in
+ the dictionary are taken from the LanguagesISO639.plist resource in this framework.
+ These values are intended for use with localization, but may also be used for other purposes.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>dictionary of languages keyed on ISO 639 country code</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="defaultLanguageISOCode()"><!-- --></A><H3>
+defaultLanguageISOCode</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.812"><B>defaultLanguageISOCode</B></A>()</PRE>
+<DL>
+<DD>The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the ISO 639 code for the default language</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="defaultLanguage()"><!-- --></A><H3>
+defaultLanguage</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.827"><B>defaultLanguage</B></A>()</PRE>
+<DL>
+<DD>The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the human recognizable name for the default language</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDefaultLanguageISOCode(java.lang.String)"><!-- --></A><H3>
+setDefaultLanguageISOCode</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/RequestUtilities.html#line.841"><B>setDefaultLanguageISOCode</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;code)</PRE>
+<DL>
+<DD>The default language is used if the browser does not supply one or if none of the languages
+ requested by the browser are available.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>code</CODE> - the ISO 639 code for the language to use as the default</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/RequestUtilities.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/Request.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/ResourceManagerAdditions.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/RequestUtilities.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="RequestUtilities.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

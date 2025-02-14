@@ -1,0 +1,27 @@
+0. Add ValidDomains to your config file:
+ValidDomains    = ("www.global-village.net", "global-village.net", "gvcsitemaker.com", "www.gvcsitemaker.com");
+
+1. Run DataConversionFrom4.6To5.0_Script.sql
+
+
+STEP BELOW ARE TO CONVERT YOUR PKs TO BYTE(24)
+
+2. Write out the database to text using
+write all output (dir='/wherever/', content=true);
+
+3. Run convert_exported_data_to_byte24.sh on the directory, like so:
+./convert_exported_data_to_byte24.sh /whatever/
+
+4. Copy the table creation statements (only) out "clusteringschema.sql", and replace the create table statements in the schema.sql file you created in #2.  Then, in schema.sql, search for sm_website.  In the create table statement that follows, change this line:
+"SITE_ID" CHARACTER VARYING(150) COLLATE "UMICH"."CASEINSENSITIVE",
+
+to
+"SITE_ID" CHARACTER VARYING(150) COLLATE "your schema"."CASEINSENSITIVE",
+
+where "your schema" is the user that has all the SiteMaker data.  You can find it by looking for these lines at the top of schema.sql:
+CREATE SCHEMA "your schema" AUTHORIZATION "your schema"
+CREATE COLLATION "CASEINSENSITIVE" FOR "INFORMATION_SCHEMA"."SQL_TEXT" FROM EXTERNAL('CaseInsensitive.coll1')
+
+5. Re-create the database using the edited schema.sql and munged data.
+
+If your database is large, it can happen that FB will crash while re-creating the database.  If this happens, you will need to split the schema.sql file into 2 (or more) segments.  Recreate the database and run the first segment, ensure that it executed cleanly, then shut down the database, restart the database, and run the second segment.  FB may take a while to shut down, during which time it will be unable to restart, so if you try to start the database and get an error, wait a few seconds longer and try again.

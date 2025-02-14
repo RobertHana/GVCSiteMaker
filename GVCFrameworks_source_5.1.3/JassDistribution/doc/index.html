@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="./jass.ico">
+   <link rel="stylesheet" type="text/css" href="./jass.css">
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko, Michael Möller, Michael Plath">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Homepage
+</title>
+<meta name="Generator" content="htp 1.14">
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="./pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Homepage</h2>
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+  Home
+ |
+    <a href="./download/index.html" target="_top">Download</a>
+ |
+    <a href="./tour/index.html" target="_top">Tour</a>
+ |
+    <a href="./doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="./jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="./index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc">
+    <a href="#sect1">Intro</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc">
+    <a href="#sect2">Development</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc">
+    <a href="#sect3">Information &amp; Contact</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Info</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <b>Mailing List</b><br />
+You may want to subscribe to the Jass Mailing List. See section
+<a href="#info">Info</a> for details.
+<br />
+<br />
+<b>Trace Assertions</b><br />
+Have a look at the   <a href="./jassda/index.html" target="_top">jassda chapter</a>
+to see what's new.
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Jan 14 2003</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              A new patch-level version, <b>Jass 2.0.11</b>, is ready for
+download. It fixes a bug in JassDoc and adds a new attribute
+&quot;docmode&quot; to the ant task. <br>
+Since version 2.0.9 you can specify a set of source
+files at the commandline and therefore get a speedup (also when
+using the ant task)!
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+</div>
+  <h1>
+  <a name="sect1">
+  1 Intro</a></h1>
+<p> Many people have criticized the lack of assertions in Java.
+Assertion support was voted second on the list 'Request For
+Enhancements'.  This bug is closed now and the (beta) release 1.4 of
+Java 2 has assertion support.  However, the assertion support of 1.4
+is very primitive, no pre/post conditions or invariants.  </p>
+<p> So other people requested <a
+href="http://developer.java.sun.com/developer/bugParade/bugs/4449383.html">`Support
+for Design by Contract Beyond a Simple Assertion Mechanism'</a>. It is
+currently the voted 9th on the list 'Request For Enhancements'.
+<em>Jass </em>(acronym:<strong> J</strong>ava with
+<strong>ass</strong>ertions, spoken: jazz - like the music) is a
+precompiler that supports these extended assertions for Java. The
+concepts of <em><a
+href="http://www.eiffel.com/doc/manuals/technology/contract/page.html">design
+by contract</a></em> from Bertrand Meyer have been transferred to Java
+and extended with new features. So even if you switched to the Java
+1.4 version, Jass can still do a lot for you.  </p>
+<p>
+The Jass precompiler is written in 100% pure Java and can be downloaded from this pages. It is an improvement of the language extension
+<a href="http://semantik.informatik.uni-oldenburg.de/~jawa">JaWA</a> designed by Dieter Meemken.
+</p>
+<p>
+Jass supports the 'design by contract' with the following features:
+</p>
+<ul>
+<li>  <a href="./doc/assert.html#prepost" target="_top">Pre- and postconditions for methods</a></li>
+<li>  <a href="./doc/assert.html#invariant" target="_top">Invariants for classes</a></li>
+<li>  <a href="./doc/assert.html#loop" target="_top">Invariants and variants for loops</a></li>
+<li>  <a href="./doc/assert.html#check" target="_top">Check statements</a></li>
+<li>  <a href="./doc/assert.html#forall" target="_top">Forall and exists expressions</a></li>
+<li>  <a href="./doc/assert.html#rescue" target="_top">Rescue and retry statements</a></li>
+<li>  <a href="./doc/refine.html" target="_top">Inheritance of assertions (refinement)</a></li>
+<li>  <a href="./doc/javadoc.html" target="_top">JavaDoc support</a> (since Jass 2.0.6)</li>
+<li>  <a href="./doc/assert.html#comments" target="_top">Comments in assertions</a></li>
+<li>Jass 2.x provides the new Feature of   <a href="./doc/traces.html" target="_top">Trace-Assertions</a></li>
+<li>Jass comes with an
+<a name="idx1"><em></em></a>  <a href="http://jakarta.apache.org/ant/" target="_top">Ant</a>-Task</li>
+</ul>
+  <h1>
+  <a name="sect2">
+  2 Development</a></h1>
+      <p>
+Jass was developed by Dipl.-Inform.  <a
+href="mailto:Detlef.Bartetzko@informatik.uni-oldenburg.de">Detlef Bartetzko</a> at
+his   <a href="./doc/bib.html#Bartetzko" target="_top">mastersthesis</a>. The
+concept of Trace Assertions was added by Dipl.-Infom. <a
+href="mailto:Michael.Plath@informatik.uni-oldenburg.de">Michael Plath</a> as part
+of his   <a href="./doc/bib.html#Plath" target="_top">mastersthesis</a>. The
+development was supported by Dr. <a href="http://semantik.informatik.uni-oldenburg.de/persons/clemens.fischer/eindex.html">Clemens Fischer</a>.  The concept of Trace-Assertions was developed by Dr.<a
+href="http://semantik.informatik.uni-oldenburg.de/persons/clemens.fischer/eindex.html">Clemens
+Fischer</a> at his   <a href="./doc/bib.html#Fischer" target="_top">PhD thesis</a>.
+</p>
+<p>
+Jass is a product of the   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+.
+</p>
+  <h1><a name="info"></a>
+  <a name="sect3">
+  3 Information &amp; Contact</a></h1>
+      <p>
+Please send questions comments and bugs to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.
+</p>
+<p>
+If you want to be informed about jass, please subscribe to
+the jass mailing-list. Send a mail to
+<a href="mailto:lists@theoretica.informatik.uni-oldenburg.de?subject=subscribe%20jass-list">lists@theoretica.informatik.uni-oldenburg.de</a>
+with the subject `subscribe jass-list'; to unsubscribe use the subject
+<a href="mailto:lists@theoretica.informatik.uni-oldenburg.de?subject=unsubscribe%20jass-list">`unsubscribe jass-list'</a>. Messages to the list must be send to
+<a href="mailto:jass-list@theoretica.informatik.uni-oldenburg.de">jass-list@theoretica.informatik.uni-oldenburg.de</a>
+.
+</p>
+<div class="toc">
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 01/14/03
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

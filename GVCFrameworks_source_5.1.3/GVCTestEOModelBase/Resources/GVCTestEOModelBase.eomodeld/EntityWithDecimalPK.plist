@@ -1,0 +1,18 @@
+{
+    attributes = (
+        {
+            columnName = data_attribute; 
+            name = dataAttribute; 
+            prototypeName = Data; 
+            width = 12; 
+        }, 
+        {name = theDecimalPK; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theDecimalPK, dataAttribute); 
+    className = net.global_village.testeomodelbase.EntityWithDecimalPK; 
+    classProperties = (theDecimalPK, dataAttribute); 
+    externalName = ENTITY_WITH_DECIMAL_PK; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityWithDecimalPK; 
+    primaryKeyAttributes = (theDecimalPK); 
+}

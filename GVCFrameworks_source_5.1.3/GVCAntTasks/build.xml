@@ -1,0 +1,76 @@
+<project name="GVCAntTasks" default="full.build" basedir=".">
+
+	<import file="../Ant/common.xml"/>
+
+	<!-- Build and Package -->
+    <target name="full.build" depends="load.properties, clean, compile, package"/>
+
+	<!-- Build and Package -->
+    <target name="clean">
+	  	<delete dir="bin/net"/>
+        <delete dir="ContractedSource/net"/>
+        <delete dir="doc"/>
+        <delete file="GVCAntTasks.jar"/>
+        <delete file="GVCAntTasksJavaDocs.tgz"/>
+        <delete file="GVCWOProjectAntTasks.jar"/>
+	</target>
+
+
+	<!-- javadoc -->
+	<target name="javadoc" depends="load.properties">
+        <javadoc access="public" 
+                 author="true"
+                 destdir="doc" 
+                 nodeprecated="false" 
+                 nodeprecatedlist="false"
+                 noindex="true" 
+                 nonavbar="false" 
+                 notree="true"
+                 packagenames="net.global_village.anttasks,net.global_village.anttasks.eogenerator,net.global_village.anttasks.jass"
+                 sourcepath="Sources" 
+                 splitindex="false" 
+                 use="false" 
+	             version="true"
+                 additionalparam="-notimestamp">
+	    	<classpath>
+                <path location="bin"/>
+                <path location="${woproject.path}"/>
+     		    <path location="${ant.home}/lib/ant.jar"/>
+			    <path location="${ant.home}/lib/optional.jar"/>
+	    	</classpath>
+            <link href="http://java.sun.com/j2ee/1.4/docs/api"/>
+        </javadoc>
+    </target>
+		
+
+	<!-- package for distribution -->	
+	<target name="package" depends="javadoc">
+
+        <!-- Jar of the "pure" version of the Jass task without references to WOProject  -->
+		<jar destfile="GVCAntTasks.jar">
+			<fileset dir="bin">
+                <exclude name="net/global_village/anttasks/eogenerator/*"/> 
+                <exclude name="net/global_village/anttasks/jass/WOProjectJass.class"/> 
+            </fileset>
+			<fileset dir="pure">
+				<filename name="taskdef.properties"/>
+			</fileset>
+			<fileset dir=".">
+				<filename name="LICENSE.TXT"/>
+			</fileset>
+		</jar>
+
+        <!-- Jar including eogenerator task and WOProject specific version of the Jass task  -->
+		<jar destfile="GVCWOProjectAntTasks.jar">
+			<fileset file="LICENSE.TXT"/>
+			<fileset file="taskdef.properties"/>
+			<fileset dir="bin"/>
+		</jar>
+
+        <!-- The JavaDocs, one for both versions  -->
+        <tar destfile="GVCAntTasksJavaDocs.tgz" compression="gzip"
+           basedir="doc"
+        />
+	</target>
+		
+</project>

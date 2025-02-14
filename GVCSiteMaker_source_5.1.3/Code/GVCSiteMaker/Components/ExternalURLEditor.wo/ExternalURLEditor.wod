@@ -1,0 +1,36 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+EditForm: Hyperlink {
+	componentObject = hyperLink;
+	currentMode = "edit";
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+}
+
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURLWithoutConfig = previewURL;
+}
+
+// Buttons
+//
+Reset: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+Submit: WOSubmitButton {
+	action = updateSettings;
+	value = "Save & Done";
+}
+
+SubmitAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Save & View";
+}

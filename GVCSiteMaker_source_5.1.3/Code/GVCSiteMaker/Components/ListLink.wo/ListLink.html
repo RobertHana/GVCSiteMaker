@@ -1,0 +1,97 @@
+<WEBOBJECT NAME=DisplayMode>
+	<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 width="100%">
+		<TR>
+			<TD COLSPAN=2>
+				<span  align="left" style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 16px;"><span class="listLinkLink">
+				<WEBOBJECT NAME=Hyperlink><WEBOBJECT NAME=Name></WEBOBJECT></WEBOBJECT>
+				</span></span>
+				<span  align="left" style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12px;"><span class="listLinkInfo">(<WEBOBJECT NAME=LinkInfo></WEBOBJECT>, <WEBOBJECT NAME=LinkDate></WEBOBJECT>)</span>
+			</span></TD>
+		</TR>
+		<WEBOBJECT NAME=HasDescriptionConditional><TR>
+			<TD WIDTH="4%">&nbsp;</TD>
+			<TD WIDTH="96%">
+				<div  align="left" style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 16px;"><div class="listLinkDescription"><WEBOBJECT NAME=Description></WEBOBJECT></div></div>
+			</TD>
+		</TR></WEBOBJECT>
+	</TABLE>
+	<br />
+</WEBOBJECT>
+
+<WEBOBJECT NAME=EditMode>
+	<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="2" class="content">
+		<TR>
+			<TD ALIGN="LEFT" VALIGN="TOP" class="leftContentColumn">
+		   		<B>Name:</B>
+                <br />
+				<i class="requiredText">(required)</i>
+		   	</TD>
+		   	<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+				<WEBOBJECT NAME=LinkName></WEBOBJECT>
+				<br />
+				<span class="descriptiveText">This text will be the link to the item.</span>
+			</TD>
+		</TR>
+		<TR>
+			<TD ALIGN="LEFT" VALIGN="TOP" class="leftContentColumn">
+		   		<B>Description:</B>
+			</TD>
+			<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+		   		<WEBOBJECT NAME=LinkDescription></WEBOBJECT>
+				<br />
+			   	<span class="descriptiveText">This text will be shown beneath the link.</span>
+		  	</TD>
+		</TR>
+		<TR>
+		   	<TD ALIGN="LEFT" VALIGN="TOP" class="leftContentColumn">
+    		   		<B>Type and Source:</B>
+                    <br />
+    			  	<i class="requiredText">(required)</i>			</TD>
+		   	<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+				<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+					<TR>
+						<TD><WEBOBJECT NAME=URLButton></WEBOBJECT></TD>
+						<TD class="microText">url:</TD>
+						<TD><WEBOBJECT NAME=Link></WEBOBJECT></TD>
+					</TR>
+					<TR>
+						<TD colspan="3">&nbsp;</TD>
+					</TR>
+					<TR>
+						<TD><WEBOBJECT NAME=FileButton></WEBOBJECT></TD>
+						<TD class="microText">file:</TD>
+						<TD><WEBOBJECT NAME=FileList></WEBOBJECT></TD>
+					</TR>
+					<TR>
+						<TD colspan="3" class="descriptiveText">
+							If the file you want to use is not in the list above you will need to upload it.  Click <WEBOBJECT NAME=UploadFileHyperlink>here</WEBOBJECT> to upload a file.<webobject name="HasSelectedFileConditional"><br/>To replace the image selected above, click <webobject name="ReplaceFileHyperlink2">replace</webobject>.</webobject>
+						</TD>
+					</TR>
+				</TABLE>
+			</TD>
+		</TR>
+
+		<TR>
+		   	<TD ALIGN="LEFT" VALIGN="TOP" class="leftContentColumn">
+    		   		<B>Where to Display:</B>
+                    <br />
+    			  	<i class="requiredText">(required)</i>
+			</TD>
+		   	<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+				<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0>
+					<TR>
+						<TD><WEBOBJECT NAME=SameWIndowRationButton></WEBOBJECT></TD>
+						<TD class="descriptiveText">&nbsp;Same Window</TD>
+					</TR>
+					<TR>
+						<TD colspan="2">&nbsp;</TD>
+					</TR>
+					<TR>
+						<TD><WEBOBJECT NAME=RadioButton2></WEBOBJECT></TD>
+						<TD class="descriptiveText">&nbsp;New Window</TD>
+					</TR>
+				</TABLE>
+			</TD>
+		</TR>
+	</TABLE>
+</WEBOBJECT>

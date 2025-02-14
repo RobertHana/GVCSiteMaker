@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="GeneratedEOs"/>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry kind="src" path="Tests"/>
+	<classpathentry kind="con" path="WOFramework/GVCEOFExtensions"/>
+	<classpathentry kind="con" path="WOFramework/GVCEOFValidation"/>
+	<classpathentry kind="con" path="WOFramework/GVCFoundation"/>
+	<classpathentry kind="con" path="WOFramework/GVCTestEOModelBase"/>
+	<classpathentry kind="con" path="WOFramework/GVCTestEOModelSubClass"/>
+	<classpathentry kind="con" path="WOFramework/FrontBasePlugIn"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="WOFramework/GVCJars"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOControl"/>
+	<classpathentry kind="con" path="WOFramework/JavaFoundation"/>
+	<classpathentry kind="con" path="WOFramework/JavaEOAccess"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

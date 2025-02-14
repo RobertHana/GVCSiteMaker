@@ -1,0 +1,54 @@
+<WEBOBJECT NAME=DisplayMode>
+	<WEBOBJECT NAME=HasImageToShow>
+		<WEBOBJECT NAME=IsCentered><div align="center"></WEBOBJECT>
+	   	<WEBOBJECT NAME=IsSiteMakerImageFile><WEBOBJECT NAME=SMImage></WEBOBJECT></WEBOBJECT>
+	   	<WEBOBJECT NAME=IsURLImageFile><WEBOBJECT NAME=URLImage></WEBOBJECT></WEBOBJECT>
+		<WEBOBJECT NAME=IsCentered></div></WEBOBJECT>
+	</WEBOBJECT>
+</WEBOBJECT>
+<WEBOBJECT NAME=EditMode>
+   	<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="2" class="content">
+   		<TR>
+			<TD ALIGN=LEFT VALIGN=TOP class="leftContentColumn">
+	   	 		<span class="sectionTitle">Select Image:</span> 
+				<BR>
+				<span class="descriptiveText">You may select an image file stored in <WEBOBJECT NAME=ProductNameString></WEBOBJECT>, or enter a URL for an image file at another location.</span>
+   			</TD>
+   			<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+				<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" width="100%">
+					<TR>
+						<TD><WEBOBJECT NAME=URLImageType></WEBOBJECT></TD>
+						<TD>url:</TD>
+						<TD><WEBOBJECT NAME=ImageURL></WEBOBJECT></TD>
+					</TR>
+					<TR>
+						<TD Colspan="3">&nbsp;</TD>
+					</TR>
+					<TR>
+						<TD><WEBOBJECT NAME=FileImageType></WEBOBJECT></TD>
+						<TD>file:&nbsp;&nbsp;</TD>
+						<TD><WEBOBJECT NAME=SectionImageList></WEBOBJECT></TD>
+					</TR>
+					<TR>
+						<TD>&nbsp;</TD>
+						<TD>&nbsp;</TD>
+						<TD class="descriptiveText">If the image you want to use is not in the list above you will need to upload it. Click <WEBOBJECT NAME=UploadFileHyperlink>here</WEBOBJECT> to upload an image file. <webobject name="HasSelectedFileConditional"><BR>To replace the image selected above, click <webobject name="ReplaceFileHyperlink2">replace</webobject>.</webobject></TD>
+					</TR>
+				</TABLE>
+			</TD>
+   		</TR>
+   		<TR>
+			<TD ALIGN="LEFT" VALIGN="TOP" class="leftContentColumn">
+	   	 		<span class="sectionTitle">Image Size:</span>
+				<BR>
+  				<span class="descriptiveText">Enter the size of your image in 
+  pixels. Leave blank to show image at original dimensions.</span>
+			</TD>
+   			<TD ALIGN="LEFT" VALIGN="TOP" class="rightContentColumn">
+				width:&nbsp;&nbsp;<WEBOBJECT NAME=ImageHSize></WEBOBJECT><webobject name="WidthErrorConditional"><br /><span class="warningText"><webobject name="WidthError"></webobject></span></webobject>
+			</TD>
+   		</TR>
+   	</TABLE>
+	<HR class="alternateBarStyle">
+</WEBOBJECT>
+

@@ -1,0 +1,14 @@
+{
+
+    databaseToUse = "FrontBase"; 
+    
+    connectionDictionaries = { 
+        FrontBase = {
+            URL = "jdbc:FrontBase://localhost/GVCTest";
+            username = "tester";
+            password="tester";
+        };
+    };
+    
+    modelsToIgnore = ("TestModel2", "TestModel3");
+}

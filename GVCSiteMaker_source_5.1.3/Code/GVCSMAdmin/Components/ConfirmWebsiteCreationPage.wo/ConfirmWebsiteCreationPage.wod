@@ -1,0 +1,61 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - Confirm Website Creation";
+}
+
+CancelButton: WOSubmitButton {
+	value = "Cancel";
+	action = cancel;
+}
+
+ConfrimationForm: WOForm {
+	multipleSubmit = true;
+}
+
+CreateWebsiteButton: WOSubmitButton {
+	value = "Create site(s)";
+	action = create;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Confirm Website Creation";
+	isAdmin = true;
+}
+
+HasInvalidData: WOConditional {
+	condition = invalidWebsiteArray.count;
+}
+
+HasNoValidData: WOConditional {
+	negate = true;
+	condition = validWebsiteArray.count;
+}
+
+HasValidData: WOConditional {
+	condition = validWebsiteArray.count;
+}
+HasWebsites: WOConditional {
+	condition = validWebsiteArray.count;
+}
+
+InvalidWebsiteCount: WOString {
+	value = invalidWebsiteArray.count;
+}
+
+InvalidWebsiteList: InvalidWebsiteList {
+	invalidWebsiteArray = invalidWebsiteArray;
+}
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+ValidWebsiteList: ValidWebsiteList {
+	validWebsiteArray = validWebsiteArray;
+}
+
+WebsiteCount: WOString {
+	value = validWebsiteArray.count;
+}

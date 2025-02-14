@@ -1,0 +1,109 @@
+CanBeModifiedConditional: WOConditional {
+	condition = dataAccessColumn.isEditable;
+}
+
+DefaultValueTextField: WOTextField {
+	size = "30";
+	value = dataAccessNumberColumn.defaultValue;
+    name = ~"DefaultValue_" + dataAccessNumberColumn.normalizedFieldName();
+}
+
+DefaultValueValidationFailureConditional: WOConditional {
+	condition = defaultValueValidationFailure;
+}
+
+DefaultValueValidationFailureString: WOString {
+	value = defaultValueValidationFailure;
+}
+
+DeleteValidationFailureConditional: WOConditional {
+	condition = deleteValidationFailure;
+}
+
+DeleteValidationFailureString: WOString {
+	value = deleteValidationFailure;
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+HasInputValidationFailureConditional: WOConditional {
+	condition = inputValidationFailure;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsReadOnlyConditional: WOConditional {
+	negate = true;
+	condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+FormatPopUpButton: WOPopUpButton {
+	displayString = formatExample;
+	item = aFormatPattern;
+	list = formatPatterns;
+	selection = dataAccessNumberColumn.numberFormat;
+    name = ~"Format_" + dataAccessNumberColumn.normalizedFieldName();
+}
+
+DefaultComparisonUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = componentObject.defaultComparison;  // VALID
+    name = ~"DefaultComparison_" + dataAccessNumberColumn.normalizedFieldName();
+}
+
+TextField: WOTextField {
+	value = fieldValue;
+	size = dataAccessColumn.width;  // VALID
+	formatter = outputFormatter;
+}
+
+ValidationFailureString: WOString {
+	value = inputValidationFailure;
+}
+
+ValueAsString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}
+
+WidthTextField: WOTextField {
+	maxLength = "3";
+	size = "3";
+	value = dataAccessNumberColumn.width;
+    name = ~"Width_" + dataAccessNumberColumn.normalizedFieldName();
+}
+
+WidthValidationMessageConditional: WOConditional {
+	condition = widthValidationFailure;
+}
+
+WidthValidationMessageString: WOString {
+	value = widthValidationFailure;
+}
+

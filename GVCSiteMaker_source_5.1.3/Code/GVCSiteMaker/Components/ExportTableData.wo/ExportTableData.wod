@@ -1,0 +1,267 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = cancelExport;
+    id = "BackHyperlink";
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteDataTablesExportPane";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ImportTableData";
+}
+
+AddCriterionSubmitButton: WOSubmitButton {
+    action = addCriterion;
+    value = "Use More Criteria...";
+}
+
+CancelButton : AjaxSubmitButton {
+    action = cancelExport;
+    value = "Cancel";
+    updateContainerID = "ConfigureWebsiteDataTablesPane";
+}
+
+ClearAllFieldsSubmitButton: AjaxSubmitButton {
+    action = excludeAllFields;
+    value = "Exclude All Fields";
+    updateContainerID = "ConfigureWebsiteDataTablesExportPane";
+}
+
+ReorderFieldsDialogOpener: AjaxSubmitButton {
+    action = reorder;
+    value = "Reorder Fields";
+    updateContainerID = "ConfigureWebsiteDataTablesExportPane";
+}
+
+ReorderFieldsDialog: AjaxModalDialog {
+    id = "ReorderFieldsDialog";
+    title = "Reorder Fields";
+    label = "Reorder Fields";
+    action = openReorderFieldsDialog;
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ReorderFieldsModalDialogDoneLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesExportPane";
+//    afterHide = "function() { UIUpdater1Update(); UIUpdater2Update(); }";
+}
+
+ReorderFieldsLink: ERXWOTemplate {
+    templateName = "link";
+}
+
+ColumnDescriptionString: WOString {
+    value = currentColumn.textDescription;
+}
+
+ColumnIncludedCheckBox: WOCheckBox {
+    checked = isColumnIncluded;
+    name = columnIncludedCheckBoxName;
+}
+
+ColumnNameString: WOString {
+    value = currentColumn.name;
+}
+
+ColumnNamesPopUpButton: WOPopUpButton {
+    item = aColumn;
+    list = searchableColumns;
+    noSelectionString = "Choose field...";
+    selection = aCriterion.column;
+    displayString = aColumn.name;
+}
+
+ColumnOrder: ReorderPopup {
+    container = orderedColumns;
+    object = currentColumn;
+}
+
+//ColumnRepetition : AjaxSortableList {
+//    id = "ColumnRepetition";
+//    item = currentColumn;
+//    list = orderedColumns.ordered;
+//    list = orderedColumns.objects;
+//    listItemIDKeyPath = "columnID";
+//}
+
+ColumnRepetition : WORepetition {
+    item = currentColumn;
+    list = orderedColumns.ordered;
+}
+
+ColumnTypeString: WOString {
+    value = currentColumn.typeDescription;
+}
+
+CommaDelimiterRadioButton: WORadioButton {
+	selection = delimiter;
+	value = "comma";
+	name = "delimiter";
+}
+
+ComparisionTypesPopUpButton: WOPopUpButton {
+    item = aComparisonType;
+    list = comparisonTypes;
+    selection = aCriterion.comparisonType;
+    noSelectionString = "Choose...";
+}
+
+Conditional1: WOConditional {
+    condition = aCriterion.isFirstCriterion;
+    negate = true;
+}
+
+ExcludeHeaderLineRadioButton: WORadioButton {
+    name = "HeaderLine";
+    selection = includeHeaderLine;
+    value = false;
+}
+
+ExportButton: WOSubmitButton {
+    action = performExport;
+    value = "Export";
+}
+
+ExportDownload: WOFileDownload {
+    action = performExport;
+    contentType = "UTF-8";
+    data = exportedData;
+    downloadTitle = "Export";
+    fileName = exportFileName;
+    displayAsButton = true;
+}
+
+ExportFileNameTextField: WOTextField {
+	size = 60;
+	value = exportFileName;
+}
+
+ExportForm: WOForm {
+	method = "Post";
+	multipleSubmit = true;
+}
+
+ExportValidationErrorMessageConditional: WOConditional {
+	condition = exportValidationErrorMessage;
+}
+
+ExportValidationErrorMessageString: WOString {
+	value = exportValidationErrorMessage;
+}
+
+HasTextDescriptionConditional: WOConditional {
+    condition = currentColumn.textDescription;
+}
+
+HasValidationFailureConditional: WOConditional {
+    condition = validationFailureForCriterion;
+}
+
+IncludeAllFieldsSubmitButton: AjaxSubmitButton {
+    action = includeAllFields;
+    value = "Include All Fields";
+    updateContainerID = "ConfigureWebsiteDataTablesExportPane";
+}
+
+InlcudeHeaderLineRadioButton: WORadioButton {
+	name = "HeaderLine";
+	selection = includeHeaderLine;
+	value = true;
+}
+
+JoinConditionsPopUpButton: WOPopUpButton {
+    item = aJoinCondition;
+    list = joinConditions;
+    noSelectionString = "(unused)";
+    selection = aCriterion.joinCondition;
+}
+
+SearchCriteriaRepetition: WORepetition {
+    index = criteriaIndex;
+    item = aCriterion;
+    list = searchCriteria;
+}
+
+SearchValueTextField: WOTextField {
+    size = 30;
+    value = aCriterion.value;
+}
+
+SelectedRecordCountString: WOString {
+    value = selectedRecordCount;
+}
+
+TabDelimiterRadioButton: WORadioButton {
+    selection = delimiter;
+    value = "tab";
+    name = "delimiter";
+}
+
+TableNameString: WOString {
+    value = table.name;
+}
+
+TotalRecordCountString: WOString {
+    value = totalRecordCount;
+}
+
+ValidationFailureString: WOString {
+    value = validationFailureForCriterion;
+}
+
+ValueDateHintString: WOString {
+    value = application.properties.InputDateFormatHint;  // VALID
+}
+
+
+
+ReorderFieldsModalDialog: AjaxModalDialog {
+    id = "ReorderFieldsModalDialog";
+    title = "Reorder Fields";
+    label = "Reorder Fields";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ReorderFieldsModalDialogDoneLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesExportPane";
+}
+
+ReorderUpdateArea : AjaxUpdateContainer {
+    id = "ReorderUpdateArea";
+}
+
+ReorderForm : WOForm {
+    multipleSubmit = true;
+}
+
+ReorderRepetition : AjaxSortableList {
+    id = "ReorderExportFields";
+    item = currentColumn;
+    list = orderedColumns.ordered;
+//    list = orderedColumns.objects;
+    listItemIDKeyPath = "columnID";
+    listItemStyle = "list-style-type:none;";
+    action = reorder;
+}
+
+ReorderColumnNameString: WOString {
+    value = currentColumn.name;
+}
+
+ReorderFieldsModalDialogDoneLink: AjaxHyperlink {
+    action = reorderFields;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ReorderFieldsModalDialogDoneLink";
+    evalScripts = true;
+}

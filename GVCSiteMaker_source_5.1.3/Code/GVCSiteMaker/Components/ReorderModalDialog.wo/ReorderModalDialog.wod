@@ -1,0 +1,42 @@
+ReorderFieldsModalDialog: AjaxModalDialog {
+    id = "ReorderFieldsModalDialog";
+    title = "Reorder Fields";
+    label = "Reorder Fields";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ReorderFieldsModalDialogDoneLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesExportPane";
+}
+
+ReorderUpdateArea : AjaxUpdateContainer {
+    id = "ReorderUpdateArea";
+}
+
+ReorderForm : WOForm {
+    multipleSubmit = true;
+}
+
+ReorderRepetition : AjaxSortableList {
+    id = "ReorderExportFields";
+    item = currentColumn;
+    list = ordered;
+    listItemIDKeyPath = "columnID";
+    listItemStyle = "list-style-type:none;";
+}
+
+ReorderColumnNameString: WOString {
+    value = currentColumn.name;
+}
+
+ReorderFieldsModalDialogDoneLink: AjaxHyperlink {
+    action = closeDialog;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ReorderFieldsModalDialogDoneLink";
+    evalScripts = true;
+}

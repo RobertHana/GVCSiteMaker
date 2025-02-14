@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {columnName = decimal_id; name = decimalD; prototypeName = Key; }, 
+        {columnName = relationship_ID; name = relationshipID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (decimalD, relationshipID); 
+    className = EOGenericRecord; 
+    classProperties = (relEntity, decimalEntity); 
+    externalName = REL_TO_DECIMAL; 
+    fetchSpecificationDictionary = {}; 
+    name = RelationshipToDecimal; 
+    primaryKeyAttributes = (decimalD, relationshipID); 
+    relationships = (
+        {
+            destination = EntityWithDecimalPK; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theDecimalPK; sourceAttribute = decimalD; }); 
+            name = decimalEntity; 
+        }, 
+        {
+            destination = RelationshipValidationTestEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = relationshipID; }); 
+            name = relEntity; 
+        }
+    ); 
+}

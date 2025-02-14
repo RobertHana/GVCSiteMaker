@@ -1,0 +1,261 @@
+CanReOrderConditional: WOConditional {
+    condition = aSection.canBeModified;
+}
+
+CanReOrderConditional2: WOConditional {
+    condition = aSection.canBeModified;
+    negate = true;
+}
+
+CopyingResourcesConditional: WOConditional {
+    condition = aSection.canBeModified;
+    negate = true;
+}
+
+DataAccessHasNotificationConditional: WOConditional {
+    condition = aSection.isDataAccessWithNotificationOn;
+}
+
+GroupName: WOString {
+    value = aGroup.name;
+}
+
+GroupSeperatorString: WOString {
+    value = groupSeperator;
+    escapeHTML = false;
+}
+
+GroupsRepetition: WORepetition {
+    item = aGroup;
+    list = aSection.groups;
+}
+
+HomePageConditional: WOConditional {
+    condition = aSection.isHomeSection;
+}
+
+IndentTD: WOGenericContainer {
+    elementName = "td";
+    class = "sectionName";
+    style = sectionIndentationStyle;
+}
+
+HideIndentedNextSectionImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    width = 18;
+    alt = "Hide Children";
+}
+
+ShowIndentedNextSectionImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    width = 18;
+    alt = "Show Children";
+}
+
+IndentImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/format-indent-more.png";
+    class = indentClass;
+}
+
+IndentHyperlink: AjaxUpdateLink {
+    action = indentSection;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    disabled = "~!aSection.canIndent";
+}
+
+InstallingPackageConditional: WOConditional {
+    condition = aSection.isPackageSectionPlaceHolder;
+}
+
+IsCopyingConditional: WOConditional {
+    condition = aSection.isCopyingResourcesSection;
+}
+
+IsNotCopyingResourcesConditional: WOConditional {
+    condition = aSection.canBeModified;
+}
+
+IsntHomeSectionConditional2: WOConditional {
+    condition = aSection.isHomeSection;
+    negate = true;
+}
+
+MailImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/email.png";
+}
+
+ManageGroupHyperlink: WOHyperlink {
+    action = manageGroup;
+    disabled = aGroup.isSystemGroup;
+}
+
+ObserveSelectedSectionCheckboxContainer: AjaxObserveField {
+    fullSubmit = true;
+    action = sectionRepetitionObserverAction;
+    evalScripts = true;
+}
+
+OrderPopup: ReorderPopup {
+    container = orderedSections;
+    object = aSection;
+}
+
+OrderString: WOString {
+    value = ~aSection.sectionOrder + 1;
+}
+
+OutDentImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/format-indent-less.png";
+    class = outdentClass;
+}
+
+OutdentHyperlink: AjaxUpdateLink {
+    action = outdentSection;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    disabled = "~!aSection.canOutdent";
+}
+
+SectionNameString: WOString {
+    value = aSection.name;
+    valueWhenEmpty = "&nbsp;";
+}
+
+SectionNameString2: WOString {
+    value = aSection.name;
+    valueWhenEmpty = "&nbsp;";
+}
+
+SectionRepetition: WORepetition {
+    item = aSection;
+    list = orderedSections;
+    index = sectionIndex;
+}
+
+ShouldDisplaySection: WOConditional {
+    condition = sectionIsVisible;
+}
+
+SectionString: WOString {
+    value = aSection.name;
+}
+SectionTypeString: WOString {
+    value = aSection.type.name;
+}
+
+ViewSectionHyperlink: WOHyperlink {
+    href = sectionPreviewUrl;
+    target = "_preview";
+    class = viewSectionHyperlinkCSSClass;
+}
+
+ActionSelectPopup : WOPopUpButton {
+    list = actionsList;
+    item = anActionString;
+    displayString = anActionString;
+    noSelectionString = "Choose Action...";
+    selection = selectedSectionAction;
+}
+
+ObserveActionPopupContainer: AjaxObserveField {
+    action = sectionRepetitionObserverAction;
+    evalScripts = true;
+}
+
+SelectedSectionCheckbox : WOCheckBox {
+    checked = sectionSelected;
+}
+
+LIGenericContainer : WOGenericContainer {
+    elementName = "li";
+    class = sectionListCSSClass;
+    style = sectionDisplay;
+}
+
+NextSectionIsIndentedConditional : WOConditional {
+    condition = aSection.nextSectionIsIndented;
+}
+
+IsNextSectionHiddenConditional : WOConditional {
+    condition = sectionShowsIndentedChildren;
+    negate = true;
+}
+
+IsNextSectionDisplayedConditional : WOConditional {
+    condition = sectionShowsIndentedChildren;
+}
+
+ExpandSectionsHyperlink : AjaxUpdateLink {
+    action = toggleShowIndentedChildren;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    onLoading = twistSectionsHyperlinkOnLoadingScript;
+    onComplete = twistSectionsHyperlinkOnCompleteScript;
+}
+
+CollapseSectionsHyperlink : AjaxUpdateLink {
+    action = toggleShowIndentedChildren;
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+    onLoading = twistSectionsHyperlinkOnLoadingScript;
+    onComplete = twistSectionsHyperlinkOnCompleteScript;
+}
+
+HasAtLeastTwoGroupsConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+}
+
+HasAtMostOneGroupConditional : WOConditional {
+    condition = hasAtLeastTwoGroups;
+    negate = true;
+}
+
+GroupSummaryHyperlink : AjaxUpdateLink {
+    action = toggleShowGroups;
+    title = "Toggle Groups";
+    updateContainerID = "ConfigureWebsiteSectionsPane";
+}
+
+GroupCountString : WOString {
+  value = aSection.groups.count;
+}
+
+GroupsShownConditional : WOConditional {
+  condition = sectionShowsGroups;
+}
+
+IsGroupHiddenConditional : WOConditional {
+    condition = sectionShowsGroups;
+    negate = true;
+}
+
+IsGroupDisplayedConditional : WOConditional {
+    condition = sectionShowsGroups;
+}
+
+HideGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/collapse.gif";
+    height = "13";
+    alt = "Hide Groups";
+}
+
+ShowGroupsImage: WOImage {
+    border = "0";
+    src = "/GVCSiteMaker/Images/expand.gif";
+    height = "13";
+    alt = "Show Groups";
+}
+
+TRGenericContainer : WOGenericContainer {
+    elementName = "tr";
+    style = "display: none;";
+    id = busyRowID;
+}
+
+BusyImage : WOImage {
+    framework = "Ajax";
+    filename = "wait30.gif";
+}

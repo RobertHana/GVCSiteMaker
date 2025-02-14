@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+EOCopying.Utility (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="EOCopying.Utility (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOCopying.Utility.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EODatabaseContextAdditions.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/EOCopying.Utility.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOCopying.Utility.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class EOCopying.Utility</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.EOCopying.Utility</B>
+</PRE>
+<DL>
+<DT><B>Enclosing interface:</B><DD><A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public static class <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.html#line.167"><B>EOCopying.Utility</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+This class provides utility methods for use implementing EOCopying.  They handle the most common situations encountered copying EO objects.  The DefaultImplementation uses them internally.  The implementations of referenceCopy, shallowCopy(), and deepCopy() should be suitable for most EO objects to use for their duplicate(NSMutableDictionary) method.  However there are some situations that can not be handled with this generic code:<br>
+ <ol>
+ <li>An attribute or relationship must not be copied (e.g. order numbers).</li>
+ <li>An attribute or relationship needs special handling (e.g. dateModified should reflect when the copy was made, not when the original object was created).</li>
+ <li>An EO object should not be copied the same way in all situations (e.g. the relationship from one object should be copied deeply, but from another object should be a reference copy).</li>
+ <li>The relationships must be copied in a certain order (e.g. due to side effects in the methods setting the relationships).</li>
+ </ol>
+ In this situations you will need to write a custom implementation of the duplicate(NSMutableDictionary) method.  This can be as simple as invoking the default implementation and then cleaning up the result to as complex as doing it all by hand.  Utility also provides lower-level methods that you can use when creating a custom duplicate(NSMutableDictionary) method.  These are: newInstance(), copyAttributes(), exposedKeyAttributeNames(), shallowCopyRelatedObjects(), and deepCopyRelatedObjects(), cleanRelationships(), and deepCopyRelationship.  Debugging information can be turned on with <code>NSLog.setAllowedDebugLevel(NSLog.DebugLevelDetailed);</code>.<br>
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#exposedKeyAttributeDictionary">exposedKeyAttributeDictionary</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#EOCopying.Utility()">EOCopying.Utility</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#cleanRelationships(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)">cleanRelationships</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                     com.webobjects.eocontrol.EOEnterpriseObject&nbsp;copy)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When an EO object is created it can already have some relationships set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#copyAttributes(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)">copyAttributes</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                             com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This copies the attributes from the source EOEnterpriseObject to the destination.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#deepCopy(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject)">deepCopy</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                 com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a deep copy of this object, the attribute values are copied and the relationships are copied by calling copy(NSMutableDictionary) on them.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#deepCopyRelatedObjects(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)">deepCopyRelatedObjects</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                                             com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                             com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This copies related objects from the source EOEnterpriseObject to the destination by calling copy(NSMutableDictionary) on them.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#deepCopyRelationship(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eoaccess.EORelationship)">deepCopyRelationship</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                                         com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                         com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination,
+                                         com.webobjects.eoaccess.EORelationship&nbsp;relationship)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This copies the object(s) for the named relationship from the source EOEnterpriseObject to the destination by calling copy(NSMutableDictionary) on them.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#exposedKeyAttributeNames(com.webobjects.eocontrol.EOEnterpriseObject)">exposedKeyAttributeNames</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an array of attribute names from the EOEntity of source that are used in the primary key, or in forming relationships.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#newInstance(com.webobjects.eocontrol.EOEnterpriseObject)">newInstance</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This creates and returns a new instance of the same Entity as source.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#prettyPrintPK(com.webobjects.eocontrol.EOEnterpriseObject)">prettyPrintPK</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formats the PK for pretty printing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#referenceCopy(com.webobjects.eocontrol.EOEnterpriseObject)">referenceCopy</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a copy of this object by reference.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#shallowCopy(com.webobjects.eocontrol.EOEnterpriseObject)">shallowCopy</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a shallow copy of this object, the attribute values are copied
+ and the relationships are copied by reference.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#shallowCopyRelatedObjects(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)">shallowCopyRelatedObjects</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                                   com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This copies related objects from the source EOEnterpriseObject to the destination by reference.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eocontrol.EOEnterpriseObject</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html#shallowCopyWithoutRelationships(com.webobjects.eocontrol.EOEnterpriseObject)">shallowCopyWithoutRelationships</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a shallow copy of this object, the attribute values are copied
+ and the relationships are copied by reference.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="exposedKeyAttributeDictionary"><!-- --></A><H3>
+exposedKeyAttributeDictionary</H3>
+<PRE>
+protected static com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.169"><B>exposedKeyAttributeDictionary</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="EOCopying.Utility()"><!-- --></A><H3>
+EOCopying.Utility</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.167"><B>EOCopying.Utility</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="prettyPrintPK(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+prettyPrintPK</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.178"><B>prettyPrintPK</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Formats the PK for pretty printing. Handles NSData PKs and composite PKs.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the object who's Pk we are formatting
+<DT><B>Returns:</B><DD>the PK ready for printing</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="referenceCopy(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+referenceCopy</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.222"><B>referenceCopy</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Returns a copy of this object by reference.  This is equivalent to <code>return this;</code> on an EOEnterpriseObject.  This method of copying is suitable for lookup list items and other objects which should never be duplicated.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - - the EOEnterpriseObject to copy
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shallowCopyWithoutRelationships(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+shallowCopyWithoutRelationships</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.247"><B>shallowCopyWithoutRelationships</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Returns a shallow copy of this object, the attribute values are copied
+ and the relationships are copied by reference.  This method of copying
+ is suitable for things like an order item where duplication of the
+ product is not wanted and where the order will no tbe changed (the
+ copied order item will be on the orginal order, not a copy of it).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the EOEnterpriseObject to copy
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shallowCopy(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+shallowCopy</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.277"><B>shallowCopy</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Returns a shallow copy of this object, the attribute values are copied
+ and the relationships are copied by reference.  This method of copying
+ is suitable for things like an order item where duplication of the
+ product is not wanted and where the order will no tbe changed (the
+ copied order item will be on the orginal order, not a copy of it).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the EOEnterpriseObject to copy
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deepCopy(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+deepCopy</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.304"><B>deepCopy</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                                                                   com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Returns a deep copy of this object, the attribute values are copied and the relationships are copied by calling copy(NSMutableDictionary) on them.  Thus each related will be copied by its own reference, shallow, deep, or custom duplicate(NSMutableDictionary) method.  The copy is registered with copiedObjects as soon as it is created so that circular relationships can be accomodated.  This method of copying is suitable for duplicating complex graphs of objects.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>copiedObjects</CODE> - - the copied objects keyed on the EOGlobalID of the object the copy was made from.<DD><CODE>source</CODE> - - the EOEnterpriseObject to copy
+<DT><B>Returns:</B><DD>a copy of this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newInstance(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+newInstance</H3>
+<PRE>
+public static com.webobjects.eocontrol.EOEnterpriseObject <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.341"><B>newInstance</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>This creates and returns a new instance of the same Entity as source.  When an EO object is created it can already have some relationships and attributes set.  These can come from to one relationships that are marked as 'owns destination' and also from the effects of awakeFromInsertion().  Preset attributes should be overwritten when all attributes are copied, but the relationships need some special handling.  See the method cleanRelationships(NSMutableDictionary,EOEnterpriseObject, EOEnterpriseObject) for details on what is done.  This method can be used when creating custom implementations of the duplicate() method in EOCopying.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the EOEnterpriseObject to copy
+<DT><B>Returns:</B><DD>a new instance of the same Entity as source</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cleanRelationships(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+cleanRelationships</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.371"><B>cleanRelationships</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                      com.webobjects.eocontrol.EOEnterpriseObject&nbsp;copy)</PRE>
+<DL>
+<DD>When an EO object is created it can already have some relationships set.  This can come from to one relationships that are marked as 'owns destination' and also from the effects of awakeFromInsertion() and need some special handling prior to making a copy.
+ <ol>
+ <li>All objects are disconnected from the relationship.</li>
+ <li>If a disconnected object has a temporary EOGlobalID it is deleted.</li>
+ </ol>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the EOEnterpriseObject that copy was created from<DD><CODE>copy</CODE> - the newly instantiated copy of source that needs to have its relationships cleaned</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="copyAttributes(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+copyAttributes</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.444"><B>copyAttributes</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                  com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</PRE>
+<DL>
+<DD>This copies the attributes from the source EOEnterpriseObject to the destination.  Only attributes which are class properties are copied.  However if an attribute is a class property and also used in a relationship it is assumed to be an exposed primary or forign key and not copied.  Such attributes are set to null.  See exposedKeyAttributeNames for details on how this is determined.  It can be used when creating custom implementations of the duplicate() method in EOCopying.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - - the EOEnterpriseObject to copy attribute values from<DD><CODE>destination</CODE> - - the EOEnterpriseObject to copy attribute values to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="exposedKeyAttributeNames(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+exposedKeyAttributeNames</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.492"><B>exposedKeyAttributeNames</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source)</PRE>
+<DL>
+<DD>Returns an array of attribute names from the EOEntity of source that are used in the primary key, or in forming relationships.  These can be presumed to be exposed primary or foreign keys and handled accordingly when copying an object.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - - the EOEnterpriseObject to copy attribute values from
+<DT><B>Returns:</B><DD>an array of attribute names from the EOEntity of source that are used in forming relationships.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shallowCopyRelatedObjects(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+shallowCopyRelatedObjects</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.554"><B>shallowCopyRelatedObjects</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                             com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</PRE>
+<DL>
+<DD>This copies related objects from the source EOEnterpriseObject to the destination by reference.  Only relationships which are class properties are copied.  It can be used when creating custom implementations of the duplicate() method in EOCopying.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - - the EOEnterpriseObject to copy attribute values from<DD><CODE>destination</CODE> - - the EOEnterpriseObject to copy attribute values to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deepCopyRelatedObjects(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+deepCopyRelatedObjects</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.610"><B>deepCopyRelatedObjects</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                                          com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                          com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination)</PRE>
+<DL>
+<DD>This copies related objects from the source EOEnterpriseObject to the destination by calling copy(NSMutableDictionary) on them.  Thus each related will be copied by its own reference, shallow, deep, or custom duplicate(NSMutableDictionary) method.  This method of copying is suitable for duplicating complex graphs of objects.  Only relationships which are class properties are copied.  It can be used when creating custom implementations of the duplicate() method in EOCopying.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>copiedObjects</CODE> - - the copied objects keyed on the EOGlobalID of the object the copy was made from<DD><CODE>source</CODE> - - the EOEnterpriseObject to copy attribute values from<DD><CODE>destination</CODE> - - the EOEnterpriseObject to copy attribute values to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deepCopyRelationship(com.webobjects.foundation.NSMutableDictionary, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eoaccess.EORelationship)"><!-- --></A><H3>
+deepCopyRelationship</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/EOCopying.Utility.html#line.646"><B>deepCopyRelationship</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;copiedObjects,
+                                        com.webobjects.eocontrol.EOEnterpriseObject&nbsp;source,
+                                        com.webobjects.eocontrol.EOEnterpriseObject&nbsp;destination,
+                                        com.webobjects.eoaccess.EORelationship&nbsp;relationship)</PRE>
+<DL>
+<DD>This copies the object(s) for the named relationship from the source EOEnterpriseObject to the destination by calling copy(NSMutableDictionary) on them.  Thus each related will be copied by its own reference, shallow, deep, or custom duplicate(NSMutableDictionary) method.  It can be used when creating custom implementations of the duplicate() method in EOCopying.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>copiedObjects</CODE> - - the copied objects keyed on the EOGlobalID of the object the copy was made from<DD><CODE>source</CODE> - - the EOEnterpriseObject to copy attribute values from<DD><CODE>destination</CODE> - - the EOEnterpriseObject to copy attribute values to<DD><CODE>relationship</CODE> - - the EORelationship to copy</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOCopying.Utility.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EODatabaseContextAdditions.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/EOCopying.Utility.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOCopying.Utility.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

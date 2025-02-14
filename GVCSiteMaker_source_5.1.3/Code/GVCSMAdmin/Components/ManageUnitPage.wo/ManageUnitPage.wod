@@ -1,0 +1,275 @@
+AddAdmin: WOSubmitButton {
+	value = "Add New Admin";
+	action = addAdmin;
+}
+
+AdminIDInUseErrorString: WOString {
+	value = adminIDInUseErrorMessage;
+}
+
+AdminIDNotFoundErrorString: WOString {
+	value = adminIDNotFoundErrorMessage;
+}
+
+AvailableFilespaceString: WOString {
+	formatter = application.properties.StandardNumberFormatter;  // VALID
+	value = unit.availableSpaceInMegaBytes;
+}
+
+CanDeleteUnit: WOConditional {
+	condition = unitCanBeDeleted;
+}
+
+CanDeleteWebsiteCreationMessageConditional: WOConditional {
+	condition = canDeleteWebsiteCreationMessage;
+}
+
+DeleteErrorMessage: WOString {
+	value = deleteFailedErrorString;
+}
+
+DeleteWebsiteCreationMessageHyperlink2: WOHyperlink {
+	action = deleteWebsiteCreationMessage;
+}
+
+DisplaySystemWideString: WOString {
+	value = displaySystemWide;
+}
+
+DownloadWebsiteCreationMessageHyperlink: WOHyperlink {
+	action = downloadWebsiteCreationMessage;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Unit Management";
+	isAdmin = true;
+	pageType = "ManageUnitPage";
+}
+
+EncompassingUnit: WOString {
+	value = unit.parentOrgUnit.unitName;
+}
+
+ErrorRepetition: WORepetition {
+	item = deleteFailedErrorString;
+	list = deleteNotPermittedErrorArray;
+}
+
+FilespaceQuota: WOString {
+	value = unit.fileSizeQuota;
+}
+
+FilespaceUsage: WOString {
+    value = fsUsage;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+HasAdminUnits: WOConditional {
+	condition = unit.admins.count;
+}
+
+IncludeSubUnitAdminsCheckBox: WOCheckBox {
+	checked = includeSubUnitAdmins;
+}
+
+InvalidFilespaceQuotaErrorString: WOString {
+	value = invalidFilespaceQuotaErrorMessage;
+}
+
+InvalidWebsiteCreationTemplateConditional: WOConditional {
+	condition = invalidWebsiteCreationTemplateMesssage;
+}
+
+IsNotRootUnit: WOConditional {
+	negate = true;
+	condition = unit.isRootUnit;
+}
+
+IsNotSystemAdmin: WOConditional {
+	negate = true;
+	condition = session.currentUser.isSystemAdmin;
+}
+
+IsRootUnit: WOConditional {
+	condition = unit.isRootUnit;
+}
+
+IsSystemAdmin: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+}
+
+ManageUnit: WOSubmitButton {
+	value = "Manage";
+	action = manageUnit;
+}
+
+MessageBodyText: WOText {
+	cols = 60;
+	rows = 5;
+	value = messageBody;
+}
+
+MessageSubjectTextField: WOTextField {
+	size = 60;
+	value = messageSubject;
+}
+
+MissingSubjectConditional: WOConditional {
+	condition = missingSubjectError;
+}
+
+MissingSubjectString: WOString {
+	value = missingSubjectError;
+}
+
+NewAdminID: WOTextField {
+	size = "40";
+	value = newAdminID;
+    maxLength = 100;
+}
+
+NewEncompassingUnit: UnitChooser {
+	selectedUnit = newParentUnit;
+	rootOrgUnits = session.currentUser.orgUnitsToAdmin;
+	excludeNonSystemWideUnits = false;
+}
+
+NewFilespaceQuota: WOTextField {
+	size = "8";
+	value = unit.fileSizeQuota;
+}
+
+NewParentIsChildErrorString: WOString {
+	value = newParentIsChildErrorMessage;
+}
+
+NewUnitName: WOTextField {
+	class = "largeEntryBox";
+	maxLength = 255;
+	value = unit.unitName;
+}
+
+NoButton: WORadioButton
+{
+	name = "SystemWide";
+	selection = unit.inPublicList;
+	value = "N";
+}
+
+
+NullEncompassingUnitErrorString: WOString {
+	value = nullEncompassingUnitErrorMessage;
+}
+
+NullFilespaceQuotaErrorString: WOString {
+	value = nullFilespaceQuotaErrorMessage;
+}
+
+NullUnitNameErrorString: WOString {
+	value = nullUnitNameErrorMessage;
+}
+
+PercentageOfQuota: WOString {
+	value = unit.percentageOfQuotaUsed;
+	numberformat = "0.00";
+}
+
+RemovalButton: RemovalButton {
+	removeButtonName = "Delete";
+	removeButtonActionName = "removeUnit";
+	objectToDelete = unit;
+}
+
+SendMessageSubmitButton: WOSubmitButton {
+	action = sendMessageToAdmins;
+	value = "Send";
+}
+
+ShowAdminIDInUseErrorMessage: WOConditional {
+	condition = displayAdminIDInUseErrorMessage;
+}
+
+ShowAdminIDNotFoundMessage: WOConditional {
+	condition = displayAdminIDNotFoundErrorMessage;
+}
+
+ShowDeleteNotPermittedErrorMessage: WOConditional {
+	condition = displayDeleteNotPermittedErrorMessages;
+}
+
+ShowInvalidFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayInvalidFilespaceQuotaErrorMessage;
+}
+
+ShowNewParentIsChildErrorMessage: WOConditional {
+	condition = displayNewParentIsChildErrorMessage;
+}
+
+ShowNullEncompassingUnitErrorMessage: WOConditional {
+	condition = displayNullEncompassingUnitErrorMessage;
+}
+
+ShowNullFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayNullFilespaceQuotaErrorMessage;
+}
+
+ShowNullUnitNameErrorMessage: WOConditional {
+	condition = displayNullUnitNameErrorMessage;
+}
+
+ShowUnitNameExistsErrorMessage: WOConditional {
+	condition = displayUnitNameExistsErrorMessage;
+}
+
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+
+UnitAdminList: UnitAdminList {
+	currentUnit = unit;
+}
+
+UnitManagementForm: WOForm {
+	multipleSubmit = true;
+	enctype = "multipart/form-data";
+}
+
+UnitName: WOString {
+	value = unit.unitName;
+}
+
+UnitNameExistsErrorString: WOString {
+	value = unitNameExistsErrorMessage;
+}
+
+UnitToManage: UnitChooser {
+	selectedUnit = unitToManage;
+	rootOrgUnits = session.currentUser.orgUnitsToAdmin;
+	excludeNonSystemWideUnits = false;
+}
+
+UpdateProperties: WOSubmitButton {
+	value = "Update";
+	action = updateProperties;
+}
+
+WebsiteCreationMessageFileUpload: WOFileUpload {
+	data = templateData;
+	filePath = dummyFilePath;
+}
+
+YesButton: WORadioButton 
+{
+	selection = unit.inPublicList;
+	name = "SystemWide";
+	value = "Y";
+}
+
+invalidWebsiteCreationTemplateMesssageString: WOString {
+	value = invalidWebsiteCreationTemplateMesssage;
+}

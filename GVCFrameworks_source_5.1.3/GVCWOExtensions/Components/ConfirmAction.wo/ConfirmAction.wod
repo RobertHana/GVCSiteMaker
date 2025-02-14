@@ -1,0 +1,14 @@
+ConfirmButton: WOSubmitButton {
+	action = notifyOfConfirmation;
+	value = confirmString;
+}
+ConfirmForm: WOForm {
+	multipleSubmit = true;
+}
+DenyButton: WOSubmitButton {
+	action = notifyOfDenial;
+	value = denyString;
+}
+Message: WOString {
+	value = message;
+}

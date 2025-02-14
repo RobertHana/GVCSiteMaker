@@ -1,0 +1,25 @@
+{
+    attributes = (
+        {allowsNull = Y; columnName = fk; name = fk; prototypeName = Key; }, 
+        {columnName = "the_name"; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }, 
+        {columnName = "the_value"; name = value; prototypeName = String; width = 50; }
+    ); 
+    attributesUsedForLocking = (theID, name, fk, value); 
+    className = "net.global_village.eofextensions.tests.KeyPathTestEntity"; 
+    classProperties = (name, relationship, value); 
+    externalName = "KEYPATH_SIMPLE_TEST_ENTITY"; 
+    fetchSpecificationDictionary = {}; 
+    name = KeyPathTestEntity; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = TestEntityWithRelationship; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = fk; }); 
+            name = relationship; 
+        }
+    ); 
+}

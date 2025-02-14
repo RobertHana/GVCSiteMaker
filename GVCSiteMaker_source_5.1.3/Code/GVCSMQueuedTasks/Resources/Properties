@@ -1,0 +1,5 @@
+WOWorkerThreadMonitor.MonitorForDeadlock = false
+WOWorkerThreadMonitor.SecondsForDeadlock = 240
+WOWorkerThreadMonitor.SecondsBetweenChecks = 120
+WOWorkerThreadMonitor.DeadlockWatchWindowStart = 20:00
+WOWorkerThreadMonitor.DeadlockWatchWindowEnd = 07:30

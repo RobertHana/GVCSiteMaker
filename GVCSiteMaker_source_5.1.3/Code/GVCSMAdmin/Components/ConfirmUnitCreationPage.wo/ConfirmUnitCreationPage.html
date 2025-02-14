@@ -1,0 +1,37 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=BodyTitle></WEBOBJECT>
+      <WebObject Name="UnitCreationForm">
+        <table BORDER=0 CELLSPACING=2 CELLPADDING=2 class="contentTable">
+          <tr> 
+            <th valign="top" width="400" class="sectionTitle"><WEBOBJECT NAME=ValidDataObtained>Valid data obtained for <WEBOBJECT NAME=String1></WEBOBJECT> unit(s):</WEBOBJECT><WEBOBJECT NAME=NoValidDataObtained>No valid data obtained</WEBOBJECT></th>
+            <td valign="top" align="right"> 
+                <WEBOBJECT NAME=CancelButton></WEBOBJECT>
+                <WEBOBJECT NAME=Conditional1><webobject name=Image3></webobject> 
+                <WEBOBJECT NAME=CreateButton></WEBOBJECT></WEBOBJECT>
+            </td>
+          </tr>
+          <WEBOBJECT NAME=DisplayValidUnitList>
+		  <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME="ValidUnitList"></WEBOBJECT>
+            </td>
+          </tr>
+		 </WEBOBJECT>
+					<WebObject Name=DisplayInvalidUnitList>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <hr class="alternateBarStyle">
+            </td>
+          </tr>
+          <tr> 
+            <th valign="top" colspan="2" class="sectionTitle">Invalid data obtained for <WEBOBJECT NAME="NumberOfInvalidUnits"></WEBOBJECT> unit(s):</th>
+          </tr>
+          <tr> 
+            <td valign="top" colspan="2"> 
+              <WEBOBJECT NAME=InvalidUnitList1></WEBOBJECT>
+            </td>
+          </tr>
+					</WebObject>
+        </table>
+      </WebObject>
+</webobject>

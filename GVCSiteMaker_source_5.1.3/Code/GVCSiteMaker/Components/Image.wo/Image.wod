@@ -1,0 +1,112 @@
+// *** MODE STUFF ***
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+
+FileImageType: WORadioButton {
+	value = "file";
+	name = "imageType";
+	selection = componentObject.imageType; //VALID
+}
+
+
+// *** DISPLAY STUFF ***
+
+HasImageToShow: WOConditional {
+	condition = componentObject.hasImageToShow; //VALID
+}
+
+HasSelectedFileConditional: WOConditional {
+	condition = shouldShowReplaceLink;
+}
+
+
+// *** EDIT STUFF ***
+
+
+ImageHSize: WOTextField {
+	value = hSize;
+	size = 4;
+	numberformat = "#";
+}
+
+
+ImageURL: WOTextField {
+	value = componentObject.url; //VALID
+	size = 35;
+	onKeyDown="\"this.form.imageType[0].checked=true;\"";
+}
+
+IsCentered: WOConditional {
+	condition = isCentered;
+}
+
+IsSiteMakerImageFile: WOConditional {
+	condition = componentObject.isSiteFileImage; //VALID
+}
+
+IsURLImageFile: WOConditional {
+	condition = componentObject.isExternalImage; //VALID
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName; //VALID
+}
+
+ReplaceFileHyperlink2: WOHyperlink {
+	action = replaceFile;
+}
+
+SMImage: WOImage {
+    src = siteFileUrl;
+	mimeType = componentObject.relatedFile.mimeType;
+	alt = componentObject.relatedFile.displayName;
+	hspace = componentObject.hSpace; //VALID
+	vspace = componentObject.vSpace; //VALID
+	align = componentObject.align; //VALID
+	otherTagString = imageSize;
+}
+
+
+SectionImageList: WOPopUpButton {
+	list = website.imageFiles;
+	item = anImage;
+	value = anImage.displayName;
+	selection = componentObject.relatedFile;
+	noSelectionString = "Select an image ...";
+	onChange="\"this.form.imageType[1].checked=true;\"";
+}
+
+URLImage: WOImage {
+	src = componentObject.url; //VALID
+	hspace = componentObject.hSpace; //VALID
+	vspace = componentObject.vSpace; //VALID
+	align = componentObject.align; //VALID
+	otherTagString = imageSize;
+	alt = componentObject.relatedFile.displayName;
+}
+
+URLImageType: WORadioButton {
+	value = "url";
+	name = "imageType";
+	selection = componentObject.imageType; //VALID
+}
+
+UploadFileHyperlink: WOHyperlink {
+	pageName = "FileUpload";
+}
+
+WidthError: WOString {
+    value = widthValidationError;
+}
+
+
+WidthErrorConditional: WOConditional {
+    condition = widthValidationError;
+}

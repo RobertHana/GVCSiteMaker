@@ -1,0 +1,642 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+EOModelNotificationProxy (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="EOModelNotificationProxy (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOModelNotificationProxy.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOGenericNotificationRecord.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EORelationshipValidator.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOModelNotificationProxy.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOModelNotificationProxy.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofvalidation</FONT>
+<BR>
+Class EOModelNotificationProxy</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofvalidation.EOModelNotificationProxy</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.45"><B>EOModelNotificationProxy</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+EOModelNotificationProxy stands in for an EOModel to receive the EOClassDescription notifications
+ EOClassDescriptionNeededForClassNotification and EOClassDescriptionNeededForEntityNameNotification. The model itself
+ is disconnected from these notifications. This allows the proxy to register a special sub-class of EOClassDescription
+ in place of the EOEntityClassDescription that an EOModel returns by default. This appears to be the only way to get
+ EOF to use any other sub-class as there are no public methods that could be overridden nor any delegation methods on
+ either EOModelGroup or EOModel. The proxy also receives the EOModelGroup notification EOModelInvalidatedNotification
+ so that it can retire itself with the model.
+ <p>
+ <b>Notes</b>
+ <p>
+ <p>
+ These notifications are broadcast to all models and could be handled by a single object if there was only ever a
+ single model group. As this is not guaranteed, the notifications are handled on a model by model basis so that no
+ model "slips between the cracks".
+ <p>
+ <p>
+ These notifications must be handled on an on going basis as the cache of class descriptions is invalidated each time
+ a model is loaded (from constructor of EOModel). That is, they can not just be registered once at startup due to
+ repeated invalidations of the cache.
+ <p>
+ <p>
+ EOClassDescriptionNeededForClassNotification is sent for EO objects implemented as their own class.
+ EOClassDescriptionNeededForEntityNameNotification is sent for EO objects implemented as EOGenericRecord (many
+ entities share the same EOGenericRecord class).
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 6$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005 Global Village Consulting, Inc. All rights reserved. This software is published under
+         the terms of the Educational Community License (ECL) version 1.0, a copy of which has been included with this
+         distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#allProxies">allProxies</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is needed to prevent the proxies from being garbage collected as notifications are referenced by the notification center through "weak" references, which don't show up on the garbage collection radar.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#cachedDescriptionsByClassName">cachedDescriptionsByClassName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#cachedDescriptionsByEntityName">cachedDescriptionsByEntityName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eoaccess.EOModel</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#model">model</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#EOModelNotificationProxy(com.webobjects.eoaccess.EOModel)">EOModelNotificationProxy</A></B>(com.webobjects.eoaccess.EOModel&nbsp;aModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializes a proxy to stand in for the model.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOEntityClassDescription</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#classDescriptionForClassNamed(java.lang.String)">classDescriptionForClassNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;className)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tries to find a class description for the named class.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOEntityClassDescription</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#classDescriptionForEntityNamed(java.lang.String)">classDescriptionForEntityNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tries to find a class description for the named entity.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#classDescriptionNeededForClass(com.webobjects.foundation.NSNotification)">classDescriptionNeededForClass</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks the model to see if it has an entity corresponding to this class and registers a class description for it if it does.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#classDescriptionNeededForEntityName(com.webobjects.foundation.NSNotification)">classDescriptionNeededForEntityName</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks the model to see if it has an entity with ths name and registers a class description for it if it does.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#createClassDescriptionCache(net.global_village.eofvalidation.EOModelNotificationProxy)">createClassDescriptionCache</A></B>(<A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html" title="class in net.global_village.eofvalidation">EOModelNotificationProxy</A>&nbsp;proxy)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates cache(s) of class descriptions to speed up processing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#createClassDescriptionCaches()">createClassDescriptionCaches</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates caches of class descriptions for all proxies to speed up processing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#destroyProxy()">destroyProxy</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method removes the proxy as an observer of events and releases any internal resources.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eocontrol.EOClassDescription</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#eoEntityClassDescriptionSubClassForEntity(com.webobjects.eoaccess.EOEntity)">eoEntityClassDescriptionSubClassForEntity</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;anEntity)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a new instance of an EOEntityClassDescription sub-class initialized with this entity.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#listenForAddedModels()">listenForAddedModels</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method installs the EOFValidation "hook".</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOModel</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#model()">model</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the model that we are a proxy for.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#modelAddedNotification(com.webobjects.foundation.NSNotification)">modelAddedNotification</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This notification is sent whenever a model is loaded or re-loaded (see EOModelGroup for details).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#modelInvalidatedNotification(com.webobjects.foundation.NSNotification)">modelInvalidatedNotification</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This notification indicates that this proxy is no longer needed and can be destroyed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#setupEntity(com.webobjects.foundation.NSNotification)">setupEntity</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Called by the EntityLoadedNotification.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="allProxies"><!-- --></A><H3>
+allProxies</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Vector.html?is-external=true" title="class or interface in java.util">Vector</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.50"><B>allProxies</B></A></PRE>
+<DL>
+<DD>This is needed to prevent the proxies from being garbage collected as notifications are referenced by the notification center through "weak" references, which don't show up on the garbage collection radar.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="model"><!-- --></A><H3>
+model</H3>
+<PRE>
+protected com.webobjects.eoaccess.EOModel <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.52"><B>model</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="cachedDescriptionsByEntityName"><!-- --></A><H3>
+cachedDescriptionsByEntityName</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.53"><B>cachedDescriptionsByEntityName</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="cachedDescriptionsByClassName"><!-- --></A><H3>
+cachedDescriptionsByClassName</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.54"><B>cachedDescriptionsByClassName</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="EOModelNotificationProxy(com.webobjects.eoaccess.EOModel)"><!-- --></A><H3>
+EOModelNotificationProxy</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.160"><B>EOModelNotificationProxy</B></A>(com.webobjects.eoaccess.EOModel&nbsp;aModel)</PRE>
+<DL>
+<DD>Initializes a proxy to stand in for the model.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aModel</CODE> - model to stand in for.</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="listenForAddedModels()"><!-- --></A><H3>
+listenForAddedModels</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.60"><B>listenForAddedModels</B></A>()</PRE>
+<DL>
+<DD>This method installs the EOFValidation "hook".  It is intended that it be called before any EOModels have been loaded (this is caused by EOF activity or direct references to EOModel or EOModelGroup).  The best place to call this is in the constructor of the main class in the system.  If this is called after EOModels have been loaded, all of those models will need to be invalidated and reloaded so that their notifications can be diconnected.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelAddedNotification(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+modelAddedNotification</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.88"><B>modelAddedNotification</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>This notification is sent whenever a model is loaded or re-loaded (see EOModelGroup for details).  This is handled by creating a proxy to handle the notifications that this model would normally handle.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - notification of which model was added.<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html#EOModelNotificationProxy(com.webobjects.eoaccess.EOModel)"><CODE>EOModelNotificationProxy(com.webobjects.eoaccess.EOModel)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createClassDescriptionCache(net.global_village.eofvalidation.EOModelNotificationProxy)"><!-- --></A><H3>
+createClassDescriptionCache</H3>
+<PRE>
+protected static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.106"><B>createClassDescriptionCache</B></A>(<A HREF="../../../net/global_village/eofvalidation/EOModelNotificationProxy.html" title="class in net.global_village.eofvalidation">EOModelNotificationProxy</A>&nbsp;proxy)</PRE>
+<DL>
+<DD>Creates cache(s) of class descriptions to speed up processing.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>proxy</CODE> - the proxy that we are setting up the caches for</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createClassDescriptionCaches()"><!-- --></A><H3>
+createClassDescriptionCaches</H3>
+<PRE>
+protected static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.141"><B>createClassDescriptionCaches</B></A>()</PRE>
+<DL>
+<DD>Creates caches of class descriptions for all proxies to speed up processing.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setupEntity(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+setupEntity</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.209"><B>setupEntity</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>Called by the EntityLoadedNotification.  Sets up the entity to have the correct class description, this one.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - the notification</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eoEntityClassDescriptionSubClassForEntity(com.webobjects.eoaccess.EOEntity)"><!-- --></A><H3>
+eoEntityClassDescriptionSubClassForEntity</H3>
+<PRE>
+protected com.webobjects.eocontrol.EOClassDescription <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.234"><B>eoEntityClassDescriptionSubClassForEntity</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;anEntity)</PRE>
+<DL>
+<DD>Returns a new instance of an EOEntityClassDescription sub-class initialized with this entity.  The default implementation uses EOFValidationEOEntityClassDescription.  Sub-classes can override this so that different sub-classes are used.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anEntity</CODE> - entity to create class description for.
+<DT><B>Returns:</B><DD>EOClassDescription class description for this entity</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classDescriptionForEntityNamed(java.lang.String)"><!-- --></A><H3>
+classDescriptionForEntityNamed</H3>
+<PRE>
+public com.webobjects.eoaccess.EOEntityClassDescription <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.248"><B>classDescriptionForEntityNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Tries to find a class description for the named entity.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - name of entity to lookup class description for.
+<DT><B>Returns:</B><DD>EOEntityClassDescription        class description for this entity or null if the entity is not in the model.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classDescriptionForClassNamed(java.lang.String)"><!-- --></A><H3>
+classDescriptionForClassNamed</H3>
+<PRE>
+public com.webobjects.eoaccess.EOEntityClassDescription <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.267"><B>classDescriptionForClassNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;className)</PRE>
+<DL>
+<DD>Tries to find a class description for the named class.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>className</CODE> - name of class to lookup class description for.
+<DT><B>Returns:</B><DD>EOEntityClassDescription        class description for this class or null if an entity with this className is not in the model</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="model()"><!-- --></A><H3>
+model</H3>
+<PRE>
+public com.webobjects.eoaccess.EOModel <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.285"><B>model</B></A>()</PRE>
+<DL>
+<DD>Returns the model that we are a proxy for.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>EOModel model we are a proxy for.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classDescriptionNeededForClass(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+classDescriptionNeededForClass</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.297"><B>classDescriptionNeededForClass</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>Checks the model to see if it has an entity corresponding to this class and registers a class description for it if it does.  This is the most common notification.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - notification of which class a description is needed for.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classDescriptionNeededForEntityName(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+classDescriptionNeededForEntityName</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.346"><B>classDescriptionNeededForEntityName</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)
+                                         throws <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></PRE>
+<DL>
+<DD>Checks the model to see if it has an entity with ths name and registers a class description for it if it does.  This notification is used with entities implemented as EOGenericRecords.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - notification of which entity a description is needed for.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ClassNotFoundException.html?is-external=true" title="class or interface in java.lang">ClassNotFoundException</A></CODE> - if the className for the entity can not be resolved into a class</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelInvalidatedNotification(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+modelInvalidatedNotification</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.372"><B>modelInvalidatedNotification</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>This notification indicates that this proxy is no longer needed and can be destroyed.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - notification of which model is being invalidated.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="destroyProxy()"><!-- --></A><H3>
+destroyProxy</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/EOModelNotificationProxy.html#line.387"><B>destroyProxy</B></A>()</PRE>
+<DL>
+<DD>This method removes the proxy as an observer of events and releases any internal resources.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOModelNotificationProxy.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOGenericNotificationRecord.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EORelationshipValidator.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOModelNotificationProxy.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOModelNotificationProxy.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

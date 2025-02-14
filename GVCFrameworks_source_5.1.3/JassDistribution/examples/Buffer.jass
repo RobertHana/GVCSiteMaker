@@ -1,0 +1,134 @@
+package jass.examples;
+
+/**
+ * This is a buffer example class
+ */
+public class Buffer implements Cloneable {
+
+    /**
+     * positions where to store/extract next element
+     */
+    protected int in,out;
+
+    /**
+     * the internal storage
+     */
+    protected Object[] buf;
+
+    /** 
+     * create a buffer with 0 capacity - not very usefull
+     */
+    public Buffer() {
+	buf = new Object[0];
+    }
+
+    /** 
+     * create a buffer with the given capacity
+     */
+    public Buffer (int capacity) {
+	/** require capacity > 0; **/
+	buf = new Object[capacity];
+	/** ensure buf.length == capacity; **/
+    }
+    
+
+    /**
+     * is the buffer empty
+     */
+    public boolean empty() {
+	return in - out == 0;
+	/** ensure changeonly{}; **/
+    }
+  
+    /**
+     * is the buffer full
+     */
+    public boolean full() {
+	return in - out == buf.length;
+	/** ensure changeonly{}; **/    
+    }
+  
+    /**
+     * add an object to the buffer
+     */
+    public void add(Object o) {
+	/** require [valid_object] o != null; [buffer_not_full] !full(); **/
+	buf[in % buf.length] = o;
+	in++;
+	/** ensure changeonly{in,buf}; Old.in == in - 1; **/
+    }
+  
+    /**
+     * take an object from the buffer
+     */
+    public Object remove() {
+	/** require [buffer_not_empty] !empty(); **/
+	Object o = buf[out % buf.length];
+	out++;
+	return o;
+	/** ensure changeonly{out}; [valid_object] Result != null; **/
+    }
+  
+    /**
+     * does the buffer contain the object
+     */
+    public boolean contains(Object o) {
+	/** require o != null; **/
+	boolean found = false;
+	for (int i = 0; i < buf.length; i++) 
+	    /** invariant 0 <= i && i <= buf.length; **/
+	    /** variant buf.length - i **/
+	    if (buf[i].equals(o)) found = true;
+	return found;
+	/** ensure changeonly{}; **/    
+    }
+
+    protected Object clone() {
+	/* Use the Objects clone method. This is enough cause only in and 
+	   out are refered with Old expressions. */
+	Object b = null;
+	try {
+	    b = super.clone();
+	}
+	catch (CloneNotSupportedException e){}
+	return b;
+    }
+
+    /**
+     * This method will perform clone on the given buffer. This method is 
+     * static also it should not. This is just because we want a test case 
+     * for a static method.
+     */
+    public static Buffer clone(Buffer toCopy) {
+	/** require toCopy != null; **/
+	Buffer newOne = (Buffer) toCopy.clone();
+	return newOne;
+	/** ensure true; **/
+	/* ensure newOne.full() == toCopy.full();
+	           forall i: {0 .. newOne.buf.length-1} #
+		   newOne.buf[i] == toCopy.buf[i] || 
+		     newOne.buf[i].equals( toCopy.buf[i] );
+         **/
+    }
+
+
+    /**
+     * This method will print all buffer elements to System.out. This 
+     * method is  static also it should not. This is just because we want 
+     * another test case for a static method.
+     */
+    public static void print(Buffer toPrint) {
+	/** require toPrint != null; **/
+	for (int i = 0; i < toPrint.buf.length; i++) {
+	    System.out.println(toPrint.buf[i]);
+	}
+	/** ensure !(1 >= 2); **/
+    }
+
+
+    /** invariant [range] 0 <= in - out && in - out <= buf.length; 
+	[valid_content] buf.length == 0 
+	  || (forall i : {out%buf.length .. in%buf.length-1} # 
+	      buf[i] != null); **/
+
+}

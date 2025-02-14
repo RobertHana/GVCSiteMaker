@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Java Applet</title>
+    <usesIFrame>true</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>          
+    <parameterInstructions>The settings below apply to the Java Applet, not to the pane containing it.</parameterInstructions>       
+	<parameter>
+		<name>width</name>
+		<uiName>Width</uiName>
+		<type>integer</type>
+		<isRequired>required</isRequired>
+	</parameter> 
+	<parameter>
+		<name>height</name>
+		<uiName>Height</uiName>
+		<type>integer</type>
+		<isRequired>required</isRequired>
+	</parameter> 	
+	<parameter>
+		<name>align</name>
+		<uiName>Alignment</uiName>
+		<type>valueList</type>
+		<paramValue>
+			<value>Left</value>
+		</paramValue>	
+		<paramValue>
+			<value>Top</value>
+		</paramValue>	
+		<paramValue>
+			<value>Right</value>
+		</paramValue>	
+		<paramValue>
+			<value>Bottom</value>
+		</paramValue>			
+	</parameter>
+	<parameter>
+		<name>alt</name>
+		<uiName>Alternate Text</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+	<parameter>
+		<name>name</name>
+		<uiName>Applet Instance Name</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>
+	<parameter>
+		<name>vspace</name>
+		<uiName>Vertical Space</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+	<parameter>
+		<name>hspace</name>
+		<uiName>Horizontal Space</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+	<parameter>
+		<name>specificparams</name>
+		<uiName>Special Parameters</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+ <template><![CDATA[
+    <APPLET code="<webobject name=SourceFile></webobject>" codebase="<webobject name=SourcePath></webobject>" align="<webobject name=align></webobject>" width="<webobject name=width></webobject>" height="<webobject name=height></webobject>"  name="<webobject name=name></webobject>" vspace="<webobject name=vspace></webobject>" hspace="<webobject name=hspace></webobject>">
+	<webobject name="specificparams"></webobject>
+	<webobject name=alt></webobject>
+	</APPLET>
+    ]]></template>	
+</mediaComponent>

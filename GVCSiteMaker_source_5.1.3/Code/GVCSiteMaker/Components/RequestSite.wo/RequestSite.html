@@ -1,0 +1,116 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=RequestForm>
+		<!-- cell padding removed except around HR -->
+		<table border="0" cellpadding="0" cellspacing="0" class="content">
+    		<!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+    		<tr>
+				<td style="padding-left: 2px;">
+					<h1>Request a New Website</h1>
+				</td>
+			</tr>
+			<WEBOBJECT NAME=IsRequestPendingContional>
+    			<tr>
+    				<td valign="top" align="right" style="padding-right: 2px;">
+    					<!-- This page uses a normal submit button which seems a bit odd. -->
+    					<INPUT TYPE="submit" NAME="Submit" VALUE="Request new site">
+    				</td>
+    			</tr>
+			</webobject>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"></td></tr>
+					</table>
+				</td>
+    		</tr>
+		</table>
+		<WEBOBJECT NAME=IsRequestSuccessfulConditional>
+			<h3>Thanks!</h3>
+			<p>
+				Your request has been sent by Email to the <WEBOBJECT NAME="ProductNameString"></WEBOBJECT> administrator(s) for your unit, with a copy to you. If you don't hear from them within a few days, feel free to send them a message to ask about the status of your request.
+			</p>
+		</WEBOBJECT>
+		<WEBOBJECT NAME=IsRequestPendingContional>
+		<table border="0" cellspacing="2" cellpadding="2" class="content">
+			<tr>
+				<td colspan="2">
+				Use the form below to send a request to the administrators for your unit, asking for creation of a new website.
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<B>Organizational Unit:</B>
+					<br/><i class="requiredText">(required)</i>
+				</td>
+				<td><WEBOBJECT NAME=TargetOrgUnit></WEBOBJECT>
+					<WEBOBJECT NAME=OrgUnitMissingConditional>
+						<br/><span class="warningText">Please select an organizational unit to create this website under.</span>
+					</WEBOBJECT>
+					<br/>If your unit is not listed here, it means that they have not yet been set up in <WEBOBJECT NAME=ProductNameString></WEBOBJECT>. Please send a message to <WEBOBJECT NAME=SiteRequestAddressHyperlink></WEBOBJECT> for more information.
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top">
+        			<B>Enter a SiteID for the new site:</B> 
+        			<br/><i class="requiredText">(required)</i>
+				</td>
+				<td>
+					<WEBOBJECT NAME=SiteIDTextField></WEBOBJECT>
+					<WEBOBJECT NAME=IsDuplicateSiteIDConditional>
+						<br/><span class="warningText">This SiteID is already being used by another site.<br>Please choose a different SiteID.</span>
+					</WEBOBJECT>
+					<WEBOBJECT NAME=IsIllegalSiteIDConditional>
+						<br/><span class="warningText">This SiteID contains characters which are not permitted or this is a restricted name.<br>Please choose a different SiteID.</span>
+					</WEBOBJECT>
+					<WEBOBJECT NAME=IsSiteIDMissingConditional>
+						<br/><span class="warningText">The SiteID is required. Please enter the SiteID that you want to use.</span>
+					</WEBOBJECT>
+					<br/>The SiteID will become part of the URL that people use to access the site. It should be short, but reasonably descriptive, and must not contain any spaces, forward slashes, semicolons or ampersands (there are also some special names which are restricted from use as a SiteID). Some examples of acceptable SiteIDs are "abraham.lincoln", "alincoln" and "lincoln.lab".
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top">
+        			<B>Comments/Special Requests:</B> 
+				</td>
+				<td>
+					<webobject name=RequestorCommentTextArea></webobject><br/>Enter any additional notes for your website request. This could include such things as a comment explaining your affiliation with a unit, a special requests to copy a template site, or a suggestion of an alternative unit or siteIDs. 
+				</td>
+			</tr>
+		</table>
+<!-- this stuff needs to be made into paragraphs and headings rather then redundant tables -->
+<!-- This part left for future implementation
+												<TR>
+													<TD BGCOLOR="#FFFF99">
+														<HR>
+													</TD>
+												</TR>
+												<TR>
+													<TD BGCOLOR="#FFFF99"> <FONT FACE="Arial, Helvetica, sans-serif" SIZE="3"><B>Use a template for the new site:</B>
+														<SELECT NAME="select">
+															<OPTION>Use no template - create blank site</OPTION>
+															<OPTION>Lab website</OPTION>
+														</SELECT>
+														&nbsp;<FONT SIZE="2"><FONT SIZE="2">(</FONT><B>Optional)</B></FONT></FONT>
+														<TABLE WIDTH="100%" BORDER="0" CELLPADDING="2" CELLSPACING="4">
+															<TR>
+																<TD><FONT FACE="Arial, Helvetica, sans-serif" SIZE="3"><FONT SIZE="2">Information about these templates can be found <A HREF="xxx">here</A>.</FONT></FONT></TD>
+															</TR>
+														</TABLE>
+													</TD>
+												</TR>
+-->
+		</WEBOBJECT><!-- IsRequestPendingContional ends -->
+	</WEBOBJECT> <!-- end of form -->
+</webobject>

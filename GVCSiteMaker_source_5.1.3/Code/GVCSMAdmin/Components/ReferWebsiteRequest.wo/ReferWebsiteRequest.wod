@@ -1,0 +1,53 @@
+AdminNotesString: WOString {
+	escapeHTML = false;
+	value = formattedAdminNotes;
+}
+
+CancelButton: WOSubmitButton {
+	action = cancelReferral;
+	value = "Cancel";
+}
+
+DynamicBodyComponent: DynamicBodyComponent {
+	isAdmin = true;
+	pageTitle = "Website RequestReferral";
+}
+
+OrgUnitString: WOString {
+	value = websiteRequest.orgUnit.unitName;
+}
+
+OwnerIDString: WOString {
+	value = websiteRequest.requester.userID;
+}
+
+ReferralForm: WOForm {
+	method = "post";
+	multipleSubmit = true;
+}
+
+ReferralNotesTextArea: WOText {
+	rows = 5;
+	value = referralNote;
+	class = "largeEntryBox";
+}
+
+RequestNotesString: WOString {
+	value = websiteRequest.requesterNote;
+}
+
+SendButton: WOSubmitButton {
+	action = makeReferral;
+	value = "Send";
+}
+
+SiteIDString: WOString {
+	value = websiteRequest.siteID;
+}
+
+UnitChooser: UnitChooser {
+	rootOrgUnits = rootUnits;
+	selectedUnit = unitReferedTo;
+	excludedUnits = excludedUnits;
+	excludeNonSystemWideUnits = false;
+}

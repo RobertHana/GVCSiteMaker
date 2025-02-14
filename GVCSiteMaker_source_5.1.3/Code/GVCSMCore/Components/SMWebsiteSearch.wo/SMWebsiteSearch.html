@@ -1,0 +1,113 @@
+<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" class="content">
+	<!-- Start of No Search Results -->
+	<WEBOBJECT NAME=ShowNoResultsConditional>
+		<WEBOBJECT NAME=IsDisplayingSearchResultsConditional>
+			<TR>
+				<TD COLSPAN="2" class="coloredBoldText"> 
+					No sites matching your criteria were found.
+					<HR class="alternateBarStyle">
+				</TD>
+			</TR>
+		</WEBOBJECT>
+	</WEBOBJECT>
+	<!-- End of No Search Results -->
+	<!-- Start of Search Results -->
+	<WEBOBJECT NAME=HasSearchResultsConditional>
+		<!-- Start of Recently Visited Sites Summary -->
+		<!-- End of Recently Visited Sites Summary -->
+		<!-- Start of Search Results Summary -->
+		<WEBOBJECT NAME=ShowSearchResultsSummaryConditional>
+			<TR>
+				<TD COLSPAN="2"> 
+					Displaying sites
+					<B class="coloredText">
+    					<WEBOBJECT NAME=FirstObjectIndexString></WEBOBJECT>-
+    					<WEBOBJECT NAME=LastObjectIndexString></WEBOBJECT>
+					</B>
+					of
+					<B class="coloredText">
+					<WEBOBJECT NAME=NumberOfResultsStringString></WEBOBJECT></B>
+					that meet your criteria:
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- five space indent actually a bit more -->
+				</td>
+				<td>
+					-Site contains
+					<B class="coloredText">
+						<WEBOBJECT NAME=SearchTextDescriptionString></WEBOBJECT>
+					</B>
+                </td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- five space indent -->
+				</td>
+				<td>
+					 -Primary associated organizational unit is
+					<!-- This does not display well in Netscape 4.  -->
+					<B class="coloredText">
+						<WEBOBJECT NAME=OrgUnitDescriptionString></WEBOBJECT>
+					</B>
+				</TD>
+			</TR>
+		</WEBOBJECT NAME=ShowSearchResultsSummaryConditional>
+		<!-- End of Search Results Summary -->
+		<!-- Top Page Flipper -->
+		<WEBOBJECT NAME=HasMultipleGroupsConditional>
+			<TR>
+				<TD COLSPAN="2"><WEBOBJECT NAME=PageFlipper></WEBOBJECT></TD>
+			</TR>
+		</WEBOBJECT NAME=HasMultipleGroupsConditional>
+		<TR>
+			<TD COLSPAN="2">&nbsp;</TD>
+		</TR>
+		<WEBOBJECT NAME=SearchResultsRepetition>
+			<TR>
+				<TD VALIGN="top">&nbsp;</TD>
+				<TD><WEBOBJECT NAME=WebsiteDescriptionComponent></WEBOBJECT></TD>
+			</TR>
+		</WEBOBJECT NAME=SearchResultsRepetition>
+		<!-- Bottom Page Flipper -->
+		<WEBOBJECT NAME=HasMultipleGroupsConditional>
+			<TR>
+				<TD COLSPAN="2"><WEBOBJECT NAME=PageFlipper></WEBOBJECT></TD>
+			</TR>
+		</WEBOBJECT NAME=HasMultipleGroupsConditiona>
+	</WEBOBJECT NAME=HasSearchResultsConditional>
+	<!-- End of Search Results -->
+	<TR>
+		<TD COLSPAN="2">
+			<WEBOBJECT NAME=SearchForm>
+				<!-- Start of Search Form -->
+				<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" class="content">
+					<TR>
+						<TD COLSPAN="2" VALIGN="top">
+							Search for sites that contain this text:
+							<WEBOBJECT NAME=SearchStringField></WEBOBJECT>
+						</TD>
+						<TD VALIGN="top" WIDTH="20" align="right">
+							<WEBOBJECT NAME=SearchSubmit></WEBOBJECT>
+						</TD>
+					</TR>
+					<TR>
+						<TD COLSPAN="3">&nbsp;</TD>
+					</TR>
+					<TR>
+						<TD COLSPAN="3">
+							and that are primarily associated with this organizational unit:
+							<WEBOBJECT NAME=OrgUnitPopUp></WEBOBJECT></TD>
+					</TR>
+					<TR>
+						<TD COLSPAN=2 ALIGN=LEFT><WEBOBJECT NAME=IncludeContainedOrgUnitsCheckBox></WEBOBJECT>Limit search to the selected unit only (excluding
+							any units below it)</TD>
+						<TD><FONT FACE="Arial">&nbsp;</FONT> </TD>
+					</TR>
+				</TABLE>
+			</WEBOBJECT NAME=SearchForm>
+			<!-- End of Search Form -->
+		</TD>
+	</TR>
+</TABLE>

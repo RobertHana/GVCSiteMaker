@@ -1,0 +1,6 @@
+ImageButton: WOImageButton {
+	action = selectTab;
+	src = imageName;
+    disabled = isTabSelected;
+    border = "0";
+}

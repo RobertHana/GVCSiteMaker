@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = A_VALUE; 
+            name = aValue; 
+            prototypeName = Integer; 
+        }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 50; }, 
+        {columnName = OID; name = oid; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (oid, name, aValue); 
+    className = net.global_village.eofextensions.tests.RootObject; 
+    classProperties = (name, ownedObjects, unOwnedObjects, oid, aValue); 
+    externalName = ROOT_OBJECT; 
+    fetchSpecificationDictionary = {}; 
+    name = RootObject; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = OwnedObject; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rootObjectOID; sourceAttribute = oid; }); 
+            name = ownedObjects; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RootUnOwnedJoin; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rootOID; sourceAttribute = oid; }); 
+            name = rootUnOwnedJoins; 
+        }, 
+        {
+            definition = rootUnOwnedJoins.unOwnedObject; 
+            joinSemantic = EOInnerJoin; 
+            name = unOwnedObjects; 
+        }
+    ); 
+}

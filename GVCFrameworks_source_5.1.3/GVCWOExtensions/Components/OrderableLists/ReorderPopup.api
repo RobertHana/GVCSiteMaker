@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ReorderPopup" wocomponentcontent="false">
+
+		<binding name="container"/>
+		<binding name="object"/>
+
+		<validation message="&apos;container&apos; is a required binding">
+			<unbound name="container"/>
+		</validation>
+
+		<validation message="&apos;object&apos; is a required binding">
+			<unbound name="object"/>
+		</validation>
+	</wo>
+</wodefinitions>

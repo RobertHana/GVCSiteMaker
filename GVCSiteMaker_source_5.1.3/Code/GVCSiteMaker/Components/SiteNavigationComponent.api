@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+        <wo wocomponentcontent="false" class="SiteNavigationComponent">
+			<binding name="navigationType"/>
+
+			<validation message="&apos;navigationType&apos; is a required binding">
+				<unbound name="navigationType"/>
+			</validation>
+        </wo>
+</wodefinitions>

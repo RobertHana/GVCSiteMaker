@@ -1,0 +1,90 @@
+CalculatedWidthString: WOString {
+	value = calculatedWidthText;
+}
+
+ContentTypesPopUpButton: WOPopUpButton {
+	item = aContentType;
+	list = contentTypes;
+	noSelectionString = "(none)";
+	selection = pane.typeName;
+	displayString = aContentType;
+}
+
+DeletePaneSubmitButton: WOSubmitButton {
+	value = "Delete pane contents";
+	action = deletePaneContents;
+}
+
+DescriptionString: WOString {
+	value = pane.description;
+}
+
+EditPaneSubmitButton: WOSubmitButton {
+	action = editPaneContents;
+	value = "Edit pane contents";
+}
+
+HasDescriptionConditional: WOConditional {
+	condition = showDescription;
+}
+
+HeightConditional: WOConditional {
+	condition = showHeight;
+}
+
+HeightErrorConditional: WOConditional {
+    condition = heightValidationError;
+}
+
+HeightTextField: WOTextField {
+	size = "4";
+	value = pane.height;
+}
+
+KnownContentConditional: WOConditional {
+	condition = isContentTypeUnknown;
+	negate = true;
+}
+
+PaneOrderString: WOString {
+	value = pane.order;
+}
+
+TypeString: WOString {
+	value = pane.typeName;
+}
+
+UnknownContentTypeConditional: WOConditional {
+	condition = isContentTypeUnknown;
+}
+
+WidthDerivedConditional: WOConditional {
+	condition = showCalculatedWidth;
+}
+
+WidthError: WOString {
+    value = widthValidationError;
+}
+
+WidthError2: WOString {
+    value = heightValidationError;
+}
+
+WidthErrorConditional: WOConditional {
+    condition = widthValidationError;
+}
+
+WidthNoRequiredConditional: WOConditional {
+	condition = showMaximumWidth;
+	negate = false;
+}
+
+WidthRequiredConditional: WOConditional {
+	condition = pane.isWidthRequired;
+	negate = false;
+}
+
+WidthTextField: WOTextField {
+	size = "4";
+	value = arrangement.rootPanelWidth;
+}

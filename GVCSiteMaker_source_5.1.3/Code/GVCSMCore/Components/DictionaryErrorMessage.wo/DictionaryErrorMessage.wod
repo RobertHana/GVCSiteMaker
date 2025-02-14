@@ -1,0 +1,22 @@
+ErrorMessageString: WOString {
+	value = errorMessage;
+}
+
+HasErrorConditional: WOConditional {
+	condition = hasError;
+}
+
+PrefixString: WOString {
+	escapeHTML = false;
+	value = ^prefixString;
+}
+
+String2: WOString {
+	value = ^genericMessage;
+}
+
+SuffixString: WOString {
+	escapeHTML = false;
+	value = ^suffixString;
+}
+

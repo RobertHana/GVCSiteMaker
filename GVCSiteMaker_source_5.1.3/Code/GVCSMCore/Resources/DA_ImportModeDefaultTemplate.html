@@ -1,0 +1,96 @@
+<WebObject name=DataAccess_IsImportingData>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="left" valign="middle">
+        <span class="dataAccessSubtitle">Import Records into Database Table:</span> <span class="dataAccessColoredSubtitle">"<WebObject name=DataAccess_TableName></WebObject>"</span>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <table border="0" cellpadding="2" cellspacing="2" class="content">
+    <tr>
+      <td valign="top"><b class="dataAccessSubtitle">Select File to Import:</b> <br /><span class="dataAccessCaution">(required) </span></td>
+      <td valign="top"><WebObject name="DataAccess_ImportFileUplod"></WebObject><br>
+        <span class="dataAccessInstruction">The first row must contain valid field names </span></td>
+    </tr>
+    <tr>
+      <td colspan="2" valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top"><b class="dataAccessSubtitle">Delimiter:</b></td>
+      <td valign="top" class="dataAccessInstruction"><WebObject name="DataAccess_ImportDelimiterComma"></WebObject>
+          <span class="dataAccessSubtitle">Comma&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <WebObject name="DataAccess_ImportDelimiterTab"></WebObject>
+          <span class="dataAccessSubtitle">Tab<br>
+          </span>Choose the character in the file to be imported </td>
+    </tr>
+    <tr>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top"><b class="dataAccessSubtitle">Retain Existing Data in Table?</b></td>
+      <td valign="top" class="dataAccessInstruction"><WebObject name="DataAccess_ImportRetainDataYes"></WebObject>
+        <span class="dataAccessSubtitle">Yes</span> - append the imported data to the existing data <br>
+      <WebObject name="DataAccess_ImportRetainDataNo"></WebObject> 
+      <span class="dataAccessSubtitle">No</span> - delete the existing data and replace it with the imported data</td>
+    </tr>
+  </table>
+  <hr>
+
+  
+	<span id="dataAccessActions" style="text-align: left;">
+	  <WebObject name="DataAccess_ImportButton"></WebObject>
+	  <img src="/GVCSiteMaker/Images/spacer.gif" width="5" height="2">
+	  <WebObject name="DataAccess_CancelButton"></WebObject>
+	</span>
+</WebObject name=DataAccess_IsImportingData>
+
+<WebObject name=DataAccess_IsViewingResults>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left" valign="top" colspan="2">
+          <span class="dataAccessSubtitle">Navigate Database Table:</span> <span class="dataAccessColoredSubtitle">"<WebObject name=DataAccess_TableName></WebObject>"</span>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" valign="middle"> 
+          <table border="0" cellpadding="2" cellspacing="0" class="dataAccessNavigation">
+            <tr>
+              <td align="center">
+                <WebObject name=DataAccess_SingleView>Single View</WebObject>
+              </td>
+              <td>&nbsp;&nbsp;</td>
+              <td align="center">
+                <WebObject name=DataAccess_ListView>List View</WebObject>
+              </td>
+              <td>&nbsp;&nbsp;</td>
+              <td align="center">
+                <WebObject name=DataAccess_SearchForRecords>Search</WebObject name=DataAccess_SearchForRecords>
+              </td>
+              <td>&nbsp;&nbsp;</td>
+              <td align="center">
+                <WebObject name=DataAccess_ImportRecords>Import</WebObject>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+   <WebObject name="DataAccess_ImportDidSucceed">
+   <br />
+   Import successful, <WebObject name=DataAccess_ImportNumberOfRecords>Import</WebObject> records imported. 
+   </WebObject name="DataAccess_ImportDidSucceed">
+   <WebObject name="DataAccess_ImportDidFail">
+     <br />
+     <span class="dataAccessException">Import failed:<span>
+     <ul>
+      <WebObject name="DataAccess_ImportErrorMessages">
+       <li><span class="dataAccessException">- <WebObject name="DataAccess_ImportErrorMessage"></WebObject></span></li>
+     </WebObject name="DataAccess_ImportErrorMessages">
+     </ul>
+   </WebObject name="DataAccess_ImportDidFail">
+  </WebObject name=DataAccess_IsViewingResults>

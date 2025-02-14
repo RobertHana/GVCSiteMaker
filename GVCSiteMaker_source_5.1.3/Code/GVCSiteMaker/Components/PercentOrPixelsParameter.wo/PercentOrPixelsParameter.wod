@@ -1,0 +1,18 @@
+Conditional1: WOConditional {
+	condition = parameter.isRequired;
+}
+
+NameString: WOString {
+	value = parameter.uiName;
+}
+
+OptionPopUpButton: WOPopUpButton {
+	item = aUnit;
+	list = units;
+	selection = unit;
+}
+
+ValueTextField: WOTextField {
+	value = parameterValue;
+	size = "4";
+}

@@ -1,0 +1,99 @@
+<webobject name = "AjaxUpdateArea">
+  <table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+    <tr>
+      <td class = "screenTitleContainer">
+        <div>Access Groups 
+          <div class = "createNewItemLinkContainer">
+            <webobject name = "AddLocalAccessGroupHyperlink"><img src = "/GVCSiteMaker/Images/add.png" alt = "Add Access Group" border = "0" style = "position:relative; top:3px;"/> <b>Create New Access Group</b></webobject>
+            <webobject name = "HasLDAPGroupsConditional"><webobject name = "AddDirectoryAccessGroupHyperlink"><img src = "/GVCSiteMaker/Images/add.png" alt = "Add UM Directory Access Group" border = "0" style = "position:relative; top:3px;" /> <b>Use UM Directory Access Group</b></webobject></webobject>
+            <webobject name = "HasRemoteParticipantsGroup">
+              <webobject name = "ConfigureRemoteParticipantsGroupHyperlink"><img src = "/GVCSiteMaker/Images/wrench_orange.png" alt = "Remote Participants Settings" border = "0" style = "position:relative; top:3px;" /> <b>Remote Participants Settings</b></webobject>
+            </webobject>
+          </div>
+        </div>
+      </td>
+      <td align = "right" valign = "top" class = "helpButtonContainer">
+        <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+      </td>
+    </tr>
+  </table>
+
+  <p id="AccessGroupAdded" style="display: none;">Access group added to the list below</p>
+
+  <webobject name = "ConfigurationForm">
+    <table cellpadding = "2" cellspacing = "0" border = "0" class = "versionColumnTitles">
+      <tr>
+        <td valign = "bottom" class = "accessGroupNameListHeading">Name</td>
+        <td valign = "bottom" class = "accessGroupMembershipListHeading">Membership</td>
+        <td valign = "bottom" class = "accessGroupTypeListHeading">Type</td>
+        <td valign = "bottom" class = "accessGroupActionListHeading">Action</td>
+      </tr>
+    </table>
+
+    <table cellpadding = "2" cellspacing = "0" border = "0" class = "versionItems">
+      <webobject name = "GroupRepetition">
+        <tr>
+          <td valign = "middle" class = "accessGroupNameInList">
+            <webobject name="IsOwnerGroupConditional">
+              <b><webobject name="GroupNameString"/></b>
+            </webobject>
+            <webobject name="IsNotOwnerGroupConditional">
+              <webobject name = "GroupNameEditor"/>
+            </webobject>
+          </td>
+
+          <td valign = "middle" class = "accessGroupMembershipInList">
+            <webobject name = "EditMembersInPlace">
+              <webobject name = "EditMembersView">
+                <webobject name = "EditInPlaceDivContainer">
+                  <webobject name="MembershipViewString"/>
+                </webobject>
+              </webobject>
+              <webobject name = "EditMembersEdit">
+                <webobject name = "IsNotLDAPGroupConditional">
+                  <webobject name = "GroupMembersText"/><br/>
+                  <webobject name = "EditMembersSave"/>
+                  <webobject name = "EditMembersCancel"/>
+                </webobject>
+                <webobject name = "IsLDAPGroupConditional">
+                  <webobject name = "LDAPGroupNameField"/>
+                  <script>$('<webobject name = "LDAPGroupNameFieldID"/>').focus();</script>
+                </webobject>
+              </webobject>
+            </webobject>
+            <webobject name = "ConditionallyEditAccessGroupOnOpenJS" />
+          </td>
+
+          <td valign = "middle" class = "accessGroupTypeInList">
+            <webobject NAME="GroupTypeString"/> Group
+          </td>
+
+          <td valign = "middle" class = "accessGroupActionInList">
+            <webobject name = "CanGroupBeDeletedConditional">
+              <webobject name = "DeleteGroupLink">Delete</webobject>
+            </webobject>
+            <webobject name = "CantDeleteConditional">
+              <webobject name = "GroupInUseConditional">
+                <span class = "warningText">In Use</span>
+              </webobject>
+            </webobject>
+          </td>
+        </tr>
+
+        <webobject name = "HasValidationErrorConditional">
+          <tr>
+            <td>&nbsp;</td>
+            <td class = "warningText" align = "left"><webobject name = "ValidationErrorMessageString" /></td>
+          </tr>
+        </webobject>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>
+
+
+<webobject name = "ConfirmDeleteAccessGroupModalDialog">
+  Are you sure you want to delete the access group?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteAccessGroupModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteAccessGroupModalDialogNoLink">No</webobject></span>
+</webobject>

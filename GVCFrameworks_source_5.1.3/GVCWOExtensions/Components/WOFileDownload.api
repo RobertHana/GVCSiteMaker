@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="WOFileDownload" wocomponentcontent="false">
+
+    <!--
+       D O C U M E N T A T I O N
+
+      WOFileDownload is a simple hyperlink that can either download a file on the file system, or source the data from a provided NSData object.   
+
+      Bindings
+      ========
+         action
+           - the action on the parent that should be performed when the file is downloaded.
+
+         contentType
+           - the MIME content type of the data to be downloaded.  If not specified, a default of application/octet-stream is used.
+
+         data (one of filePath OR data is required)
+           - an NSData object containing the data to be downloaded when this link is clicked.  If both filePath and data are specified, data will be used.
+
+         downloadTitle
+           - the text to display as the download link.  The fileName is used if this is not specified.
+
+         fileName
+           - the name that the file will be downloaded as.  If filePath is also specified, file name is appended to filePath to determine the file that should be downloaded.
+
+         filePath (one of filePath OR data is required)
+           - the path to the file to be downloaded if data is not being used.  Can be nil if fileName does not need a path qualifier.  If both filePath and data are specified, data will be used.
+    -->
+
+		<binding name="displayAsButton" defaults="Boolean"/>
+		<binding name="action"/>
+		<binding name="contentType"/>
+		<binding name="data"/>
+		<binding name="downloadTitle"/>
+		<binding name="fileName"/>
+		<binding name="filePath"/>
+
+		<validation message="&apos;fileName&apos; is a required binding">
+			<unbound name="fileName"/>
+		</validation>
+	</wo>
+</wodefinitions>

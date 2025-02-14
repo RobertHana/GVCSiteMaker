@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_TABLE_ID"; name = virtualTableID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (virtualRowID, virtualTableID); 
+    className = "net.global_village.virtualtables.VirtualRow"; 
+    classProperties = (virtualRowID, table, fields); 
+    externalName = "VIRTUAL_ROW"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 100; 
+    name = VirtualRow; 
+    primaryKeyAttributes = (virtualRowID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = VirtualField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = fields; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = VirtualTable; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = virtualTableID; }); 
+            name = table; 
+        }
+    ); 
+}

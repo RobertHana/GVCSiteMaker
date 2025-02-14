@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="SMWOTextComponent" wocomponentcontent="false">
+			<binding name="editorCSS"/>
+			<binding name="cols"/>
+			<binding name="rows"/>	
+			<binding name="name"/>
+			<binding name="shouldUseRichTextEditor"/>
+			<binding name="value"/>	
+			<binding name="index"/>		
+			
+			<binding name="wysiwygEditorMode"/>	
+			<binding name="section"/>			
+			
+			<validation message="'index' is a required binding">
+				<unbound name="index"/>
+			</validation>
+			<validation message="'value' is a required binding">
+				<unbound name="value"/>
+			</validation>	
+			<validation message="'wysiwygEditorMode' is a required binding">
+				<unbound name="wysiwygEditorMode"/>
+			</validation>
+			<validation message="'website' is a required binding">
+				<unbound name="wysiwygEditorMode"/>
+			</validation>	
+			<validation message="'section' is a required binding">
+				<unbound name="section"/>
+			</validation>					
+        <binding name="newBinding"/>
+    </wo>
+</wodefinitions>

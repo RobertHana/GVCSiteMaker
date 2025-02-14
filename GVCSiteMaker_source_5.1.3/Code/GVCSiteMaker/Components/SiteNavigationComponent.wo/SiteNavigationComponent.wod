@@ -1,0 +1,13 @@
+ContainerIDString: WOString {
+	value = containerId;
+}
+
+ListIDString: WOString {
+	value = listId;
+}
+
+SiteNavListComponent: SiteNavListComponent {
+	sectionNodeList = sectionNodeHierarchy.sectionNodes;
+	listId = listId;
+	website = website;
+}

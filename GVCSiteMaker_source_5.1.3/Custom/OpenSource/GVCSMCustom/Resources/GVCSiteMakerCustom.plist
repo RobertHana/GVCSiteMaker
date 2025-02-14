@@ -1,0 +1,198 @@
+{
+
+//***************************************************************
+//
+// Database Connection / JDBC related parameters
+//
+// FrontBase JDBC Url format: jdbc:FrontBase://<host>/<databasename>
+// Oracle JDBC Url format:    jdbc:oracle:thin:@<host>:<port>:<SID>";
+
+JDBCUrl = "jdbc:FrontBase://localhost/GVCSiteMaker/isolation=read_committed/locking=optimistic";
+DBUserName = "SiteMaker";
+DBPassword = "SiteMaker";
+
+DBType = "FrontBase";
+
+
+
+//***************************************************************
+//
+// Debugging and development items added to Generic for
+// developer's convenience.  Should not be left here for deployment
+//
+DebugRequestResponseLoop = "true";
+DevelopmentMode = "true";
+DeveloperID = "me@work.com";  
+DeveloperPassword = "sEcrEt";
+DebugLevel = 30;
+EOAdaptorDebugging = "false";
+LogFetchedRows = "false";
+DebugEditingContextLocking = "false";
+
+
+//***************************************************************
+//
+// Mail related parameters
+//
+
+// SMTP server to use to send mail from GVC SiteMaker application
+SMTPHost = "mail.domain.com";
+
+
+// From Address for e-mail sent from GVC SiteMaker application
+FromAddress     = "me@work.com";
+
+
+
+//***************************************************************
+//
+// Domain and URL Related Items
+//
+
+// This is the main domain underwhich GVCSiteMaker runs.
+DomainName	= "localhost";
+
+// Login redirects only work for these domains, trying to login to a different domain redirects to the main page
+ValidDomains  = ("localhost");
+
+// This is the path below the domain to the WebObjects adaptor.  e.g. /cgi-bin/WebObjects
+AdaptorPath	= "/cgi-bin/WebObjects";
+
+
+//***************************************************************
+//
+// File upload related parameters
+//
+
+// This absolute path indicates where files are uploaded and read by GVC SiteMaker.  
+UploadDirectory = "/Users/sitemaker/uploads";
+
+// Number of days that a password to an access protected file is valid for.
+FilePasswordExpirationTimeInDays = "1";
+
+
+// This is used when a new Website is created.
+DefaultQuotaInMegabytes = "50";
+
+
+
+//***************************************************************
+//
+// Display related parameters
+//
+
+InstallationName = "System Test";
+
+// Set this to a Website SiteID to use that site as the Main page.
+//MainPageSiteID = "test.home";
+
+
+// Number of sites to display in each page of results on Directory of Sites page
+HitsDisplayedPerPageInDirectory = 3;
+
+
+// Number of sites to keep in the history list of recently visited sites.
+NumberOfVisitedSitesToList = 3;
+
+
+//
+// Date formatting
+//
+// List of Date Formats
+// %a  abbreviated weekday name   
+// %A  full weekday name   
+// %b  abbreviated month name   
+// %B  full month name   
+// %c  shorthand for "%X %x", the locale format for date and time   
+// %d  day of the month as a decimal number (01-31)    
+// %e  same as %d but does not print the leading 0 for days 1 through 9   
+// %F  milliseconds as a decimal number (000-999)   
+// %H  hour based on a 24-hour clock as a decimal number (00-23)    
+// %I  hour based on a 12-hour clock as a decimal number (01-12)   
+// %j  day of the year as a decimal number (001-366)    
+// %m  month as a decimal number (01-12)    
+// %M  minute as a decimal number (00-59)    
+// %p  AM/PM designation for the locale   
+// %S  second as a decimal number (00-59)    
+// %w  weekday as a decimal number (0-6), where Sunday is 0   
+// %x  date using the date representation for the locale   
+// %X  time using the time representation for the locale   
+// %y  year without century (00-99)    
+// %Y  year with century (such as 1990)   
+// %Z  time zone name (such as Pacific Daylight Time)   
+// %z  time zone name (such as Pacific Daylight Time)
+//
+LongDateFormat = "%B %e, %Y";    			// %B %e, %Y formats as March 3, 2002
+StandardDateFormat = "%m-%d-%Y"; 			// %m/%d/%Y formats as 03/03/2002
+CompressedDateFormat = "%m-%d-%Y"; 			// %m/%d/%Y formats as 03/03/2002
+DateAndTimeFormat = "%m/%d/%Y - %I:%M %p";	// %m/%d/%Y - %I:%M %p formats as 03/03/2002 - 09:07 PM
+
+DataAccessDateFormats = (
+	"%m/%d/%y",           // 11/05/01
+	"%m/%d/%Y",           // 11/05/2001
+	"%b %e %Y",           // Nov 5 2001
+	"%e %b %Y",           // 5 Nov 2001
+	"%B %e %Y",           // November 5 2001
+	"%e %B %Y",           // 5 November 2001
+	"%m/%d/%y %I:%M %p",  // 11/05/01 12:27 PM
+	"%m/%d/%Y %I:%M %p",  // 11/05/2001 12:27 PM
+	"%b %e %Y %I:%M %p",  // Nov 5 2001 12:27 PM
+	"%e %b %Y %I:%M %p",  // 5 Nov 2001 12:27 PM
+	"%B %e %Y %I:%M %p",  // November 1 2001 12:27 PM
+	"%e %B %Y %I:%M %p",  // 5 November 2001 12:27 PM
+	"%I:%M %p",           // 12:27 PM
+	"%a",                 // Fri
+	"%A",                 // Friday
+	"%b",                 // Jan
+	"%B",                 // January
+);
+ 
+
+//***************************************************************
+//
+// General UI message and name related parameters
+//
+
+
+// This is used in SMUserInstructions to refer to what the Internal Users use for a User ID.
+InternalUserDesignatorName  = "Internal Users";
+
+
+
+
+//***************************************************************
+//
+// Kerberos and Internal User related parameters
+//
+// This indicates if the Internal User functionality is in use.  Even if this is false, the InternalUsersGroupName (in GVCSiteMakerBootstrap.plist) must be defined to be *something*.
+HasInternalUsers = "false";
+
+// This is the suffix on a User ID which indicates that it is an Internal User.  It is also added to an Internal User's user ID when sending e-mail.
+InternalUserSuffix = "@umich.edu";
+
+// This is used in SMUserInstructions to refer to what the Internal Users use for a User ID.
+InternalUserDesignatorName  = "uniqname";
+
+
+// Host name or IP address of the Kerberos server that Internal users will the authenticated against 
+//KerberosServer="kerberos.umich.edu";
+
+// The Kerberos Realm that Internal Users will be authenticated in.
+//KerberosRealm="UMICH.EDU";
+
+//DebugKerberos = "false";
+
+
+//***************************************************************
+//
+// WebObjects related parameters
+//
+
+// How long can a user session remain alive without activity?  There are two numbers, one for authenticated (logged in) users, and one for public, generic users.  Public users use only direct actions.  If their session times out their next request will be slightly slower (the same as their first request) but otherwise they will not have a negative experience.  Because of this they can have a much shorter session timeout than authenticated users who might be uploading a large file, configuring a site, etc.  This reduces the number of active sessions at one time and therefor the memory load on the server.
+AuthenticatedUserSessionTimeOutInMinutes = "60";
+PublicUserSessionTimeOutInMinutes = "15";
+
+// Set to true for deploy.
+CachingEnabled = "true";
+
+}

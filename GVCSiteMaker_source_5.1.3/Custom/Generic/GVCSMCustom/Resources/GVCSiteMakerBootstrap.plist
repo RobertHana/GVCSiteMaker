@@ -1,0 +1,34 @@
+{
+
+
+//***************************************************************
+//
+// Bootstrap only parameters
+// - these are not used again after database initialization and this file can be deleted.
+//
+
+RootUnitName = "xxx";
+
+AdminSiteName   = "XXX";  // Note that the Administrator Site ID is 'admin'.
+AdminID         = "xxx";
+AdminPassword   = "xxx";
+
+PublicGroupName = "Everyone";
+InternalUsersGroupName  = "xxx";
+
+
+
+//***************************************************************
+//
+// Site Style related parameters
+//
+SiteStyles = {
+	//Style ID = "Style Name";
+};
+
+
+DefaultStyle = "xxx";
+
+}
+
+

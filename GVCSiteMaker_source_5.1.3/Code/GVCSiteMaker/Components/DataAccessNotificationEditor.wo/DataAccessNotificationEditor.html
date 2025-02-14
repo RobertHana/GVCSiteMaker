@@ -1,0 +1,225 @@
+<webobject name="DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+	<webobject name=ConfigurationForm>
+		<table border="0" cellpadding="0" cellspacing="0" class="content" style = "width: 100%">
+          <tr>
+            <td>
+              <h2>Email Notification: <span class="coloredText"><webobject name=SectionNameString></webobject></span></h2>
+            </td>
+            <td align = "right" valign = "top" class = "helpButtonContainer">
+              <webobject name = "Help"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+            </td>
+          </tr>
+
+			<tr>
+				<td colspan = "2"> &nbsp; </td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" style="padding-right: 2px;">
+                    <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+                      Back to Website Sections</webobject>
+                </td>
+                <td valign="top" align="right" style="padding-right: 2px;">
+					<webobject name=TopCancelButton></webobject>&nbsp;&nbsp;
+					<webobject name=TopSaveChangesButton></webobject>&nbsp;&nbsp;
+					<webobject name=TopEditSectionButton></webobject>
+				</td>
+			</tr>
+			<webobject name=InvalidConfigurationConditional>
+				<tr>
+					<td colspan = "2" align=center><span class=warningText>The notification configuration is not valid. Please correct the problems.
+						<br/>
+						See message(s) below for details.</span></td>
+				</tr>
+			</webobject>
+			<tr>
+				<td colspan = "2">
+					<hr class="primaryBarStyle"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan = "2" valign="Top">
+					<h3>Email Notification Templates:</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan = "2" valign="top">
+					<table width="100%" border="0" cellpadding="8" align="Center" class="coloredTable">
+						<tbody>
+							<tr>
+								<th align="Center"> Send Email </th>
+								<th align="Center"> Action </th>
+								<th align="Center"> Template In Use </th>
+								<th colspan="3" align="Center" valign="Bottom"> Template Actions </th>
+							</tr>
+							<tr>
+								<td align="Center" valign="Middle">
+									<webobject name=NotifyOnCreateCheckBox></webobject>
+								</td>
+								<td align="Center" valign="Middle"> <strong>Create<br/>Records</strong> </td>
+								<td align="left" valign="Middle">
+									<nobr><webobject name=CreateTemplateInUseStandardRadioButton></webobject>&nbsp;Standard</nobr><br/>
+									<nobr><webobject name=CreateTemplateInUseCustomRadioButton></webobject>&nbsp;Custom</nobr>
+								</td>
+								<td align="Center">
+									<webobject name=DownloadCreateTemplateHyperlink></webobject>
+								</td>
+								<td valign="Middle">
+									<div class="descriptiveText">
+										<B>Subject</B>:<br /><webobject name=CreationSubjectTextField></webobject><br />
+										<webobject name=CreateSubjectMissingConditional><span class="warningText">The subject is required if you are sending notifications.</span><br />
+										</webobject><B>Message</B>: Replace Template (browse for new version, then submit changes)
+									</div>
+									<webobject name=NotifyOnCreateCustomTemplateFileUpload></webobject>
+									<webobject name=InvalidCreateTemplateValidationConditional>
+										<br />
+										<span class="warningText"><webobject name=InvalidCreateTemplateValidationString></webobject></span>
+									</webobject name=InvalidCreateTemplateValidationConditional>
+								</td>
+								<td align="Center">
+									<webobject name=DeleteCreateTemplateHyperlink>Delete<br/>
+										Template</webobject></td>
+							</tr>
+							<tr>
+								<td align="Center" valign="Middle">
+									<webobject name=NotifyOnModifyCheckBox></webobject>
+								</td>
+								<td align="Center" valign="Middle"><strong>Modify<br/>
+									Records</strong></td>
+								<td align="left" valign="Middle">
+									<nobr><webobject name=ModifyTemplateInUseStandardRadioButton></webobject>&nbsp;Standard</nobr><br/>
+									<nobr><webobject name=ModifyTemplateInUseCustomRadioButton></webobject>&nbsp;Custom</nobr>
+								</td>
+								<td align="Center">
+									<webobject name=DownloadModifyTemplateHyperlink></webobject></td>
+								<td valign="Middle">
+									<div class="descriptiveText">
+										<b>Subject</b>:<br /><webobject name=ModificationSubjectTextField></webobject><br />
+										<webobject name=ModifySubjectMissingConditional><span class="warningText">The subject is required if you are sending notifications.</span><br />
+										</webobject><b>Message</b>: Replace Template (browse for new version, then submit changes)
+									</div>
+									<webobject name=NotifyOnModifyCustomTemplateFileUpload></webobject>
+									<webobject name=InvalidModifyTemplateValidationConditional>
+										<br />
+										<span class="warningText"><webobject name=InvalidModifyTemplateValidationString></webobject></span>
+									</webobject name=InvalidModifyTemplateValidationConditional>
+								</td>
+								<td align="Center">
+									<webobject name=DeleteModifyTemplateHyperlink>Delete<br/>
+										Template</webobject>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan = "2">
+					<blockquote> <br/>
+						<p> "<em>Download Template</em>" allows you to view or save the currently loaded Custom Template. Initially, this template displays notification data
+							in the format very much like the Standard Template.</p>
+						<p>After you have downloaded and modified a copy of the initial Custom Template, you can use it to replace the currently loaded version.</p>
+						<p>"<em>Delete Template</em>" will discard any Custom Template that you have uploaded, and revert the Custom Template to its initial state.</p>
+					</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td colspan = "2">
+					<table border="0">
+						<tr>
+							<td colspan="2" class="boldText" valign="top">From Address:&nbsp;&nbsp;&nbsp;</td>
+							<td valign="top" class="rightContentColumn"><webobject name="FromTextField"></webobject>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="2">&nbsp; </td>
+							<td><webobject name=InvalidFromAddressConditional><span class="warningText">Update Failed: You must enter a valid email address.</span></webobject>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="boldText" valign="top">Send&nbsp;Email Notification&nbsp;To:&nbsp;&nbsp;&nbsp;</td>
+							<td valign="top" class="rightContentColumn">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="left" valign="top">Access&nbsp;Groups:</td>
+							<td valign="top" class="rightContentColumn">
+								<webobject name="NotificationAccessGroupsCheckBoxMatrix"><webobject name=NotifyAccessGroupString></webobject></webobject>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">&nbsp; </td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="left" valign="top">Other&nbsp;recipients: <br/>
+							</td>
+							<td valign="top" class="rightContentColumn">
+								<webobject name=OtherNotificationRecipientsText></webobject><br/>
+								<span class="descriptiveText">Enter Email addresses</span>
+								<webobject name=OtherNotificationRecipientsInvalidConditional><br/>
+									<span class="warningText"> The following are not valid email addresses:<br/>
+									<webobject name=InvalidNotificationRecipientsRepetition>
+										<webobject name=InvalidNotificationRecipientString></webobject><br/>
+									</webobject>
+									</span></webobject>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">&nbsp; </td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="left" valign="top">Addresses&nbsp;in&nbsp;these<br />Data&nbsp;Access&nbsp;Fields:</td>
+							<td valign="top" class="rightContentColumn">
+								<webobject name=NotificationColumnsCheckBoxMatrix>
+									<webobject name=IsSystemColumnConditional>
+										<i><webobject name=NotifySystemColumnString></webobject></i>
+									</webobject>
+									<webobject name=IsNotSystemColumnConditional>
+										<webobject name=NotifyColumnString></webobject>
+									</webobject>
+								</webobject>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">&nbsp; </td>
+							<td><webobject name=MissingRecipientsConditional><span class="warningText">Update Failed: You must select at least one recipient for the
+									notification.</span></webobject>
+							</td>
+						</tr>
+					</table>
+			    </td>
+			</tr>
+
+			<tr>
+				<td colspan = "2">
+					<hr class="primaryBarStyle"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan = "2" valign="top" align="right" style="padding-right: 2px;">
+					<webobject name=BottomCancelButton></webobject>&nbsp;&nbsp;
+					<webobject name=BottomSaveChangesButton></webobject>&nbsp;&nbsp;
+					<webobject name=BottomEditSectionButton></webobject>
+				</td>
+			</tr>
+
+
+			<webobject name=InvalidUploadConditional>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td> Your template could not be uploaded due to errors. Some things to check are:
+						<ul>
+							<li>Are all your WebObject tag names spelled correctly? (Remember they are case sensitive and must have spaces removed.)</li>
+							<li>Have any fields referenced in this template recently been deleted?</li>
+							<li>Has "Show Field" been enabled for all the fields used in this template?</li>
+						</ul>
+					</td>
+				</tr>
+			</webobject>
+		</table>
+	</webobject>
+</webobject>

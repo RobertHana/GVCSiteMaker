@@ -1,0 +1,7 @@
+ModalEditor: WOSwitchComponent {
+    parameter = parameter;
+    parameterValue = parameterValue;
+	pane = pane;
+	WOComponentName = parameterComponent;
+}
+

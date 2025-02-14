@@ -1,0 +1,11 @@
+package jass.examples.traceAssertion;
+
+public class FrameTAMAIN extends FrameTAClient
+{
+    public static final void main(String[] argv)
+    {
+	FrameTAMAIN test = new FrameTAMAIN();
+	
+	test.test();
+    }
+}

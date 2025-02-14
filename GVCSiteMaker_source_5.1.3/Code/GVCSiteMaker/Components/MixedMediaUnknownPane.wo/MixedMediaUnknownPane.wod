@@ -1,0 +1,3 @@
+PaneOrderString: WOString {
+	value = componentObject.order; //VALID
+}

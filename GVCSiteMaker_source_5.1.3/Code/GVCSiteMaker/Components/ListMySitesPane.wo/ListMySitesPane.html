@@ -1,0 +1,73 @@
+<webobject name="DynamicBody">
+<table class = "level2TabContentsContainer listMySitesTab" cellpadding = "0" cellspacing = "0" border = "0">
+  <tr>
+    <td>
+      <table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+        <tr>
+          <td class = "screenTitleContainer">
+            <div>Websites Owned or Co-Owned By: 
+              <span class = "highlightedText"><webobject name = "UserIDString" /></span>
+            </div>
+          </td>
+          <td align = "right" valign = "top" class = "helpButtonContainer">
+            <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <b>Click SiteID to Configure Website</b><br />
+        <span style ="color: red;">Red</span> sites have less than <webobject name = "InfoPercentFreeString"/>% of filespace remaining.<br/>
+        <span style = "color: grey">Grey</span> sites are unpublished.
+      </p>
+      <webobject name = "AjaxUpdateArea">
+        <table cellpadding = "2" cellspacing = "0" border = "0">
+          <tr>
+            <td valign = "bottom" class = "mySitesSiteIDListHeading">
+              <webobject name = "SortOnNameHyperlink">SiteID</webobject>
+              <webobject name = "ShowSortedNameConditional">&nbsp;<webobject name = "SortOnNameDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesBannerListHeading">
+              <webobject name = "SortOnBannerHyperlink">Banner Name</webobject>
+              <webobject name = "ShowSortedBannerConditional">&nbsp;<webobject name = "SortOnBannerDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesOwnerListHeading">
+              <webobject name = "SortOnOwnerHyperlink">Principal Owner</webobject>
+              <webobject name = "ShowSortedOwnerConditional">&nbsp;<webobject name = "SortOnOwnerDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesQuotaListHeading">
+              <webobject name = "SortOnQuotaHyperlink">Quota (MiB)</webobject>
+              <webobject name = "ShowSortedQuotaConditional">&nbsp;<webobject name = "SortOnQuotaDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesFreeListHeading">
+              <webobject name = "SortOnFreeHyperlink">% free</webobject>
+              <webobject name = "ShowSortedFreeConditional">&nbsp;<webobject name = "SortOnFreeDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesCreatedListHeading">
+              <webobject name = "SortOnDateCreatedHyperlink">Date Created</webobject>
+              <webobject name = "ShowSortedDateCreatedConditional">&nbsp;<webobject name = "SortOnDateCreatedDirectionImage" /></webobject>
+            </td>
+            <td valign = "bottom" class = "mySitesModifiedListHeading">
+              <webobject name = "SortOnDateModifiedHyperlink">Date of Last Config</webobject>
+              <webobject name = "ShowSortedDateModifiedConditional">&nbsp;<webobject name = "SortOnDateModifiedDirectionImage" /></webobject>
+            </td>
+          </tr>
+          <webobject name = "SiteRepetition">
+            <webobject name = "TRContainer">
+              <td valign = "middle" class = "mySitesSiteIDInList">
+                <webobject name = "EditSiteHyperlink"><webobject name = "SiteIDString" /></webobject>
+              </td>
+              <td valign = "middle" class = "mySitesBannerInList"><webobject name = "BannerNameString" /></td>
+              <td valign = "middle" class = "mySitesOwnerInList"><webobject name = "PrincipalOwnerString" /></td>
+              <td valign = "middle" class = "mySitesQuotaInList"><webobject name = "QuotaString" /></td>
+              <td valign = "middle" class = "mySitesFreeInList"><webobject name = "PercentFreeString" /></td>
+              <td valign = "middle" class = "mySitesCreatedInList"><webobject name = "DateCreatedString" /></td>
+              <td valign = "middle" class = "mySitesModifiedInList"><webobject name = "DateModifiedString" /></td>
+            </webobject>
+          </webobject>
+        </table>
+      </webobject>
+    </td>
+  </tr>
+</table>
+</webobject>

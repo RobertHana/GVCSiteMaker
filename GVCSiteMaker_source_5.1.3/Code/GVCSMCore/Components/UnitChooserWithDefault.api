@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="UnitChooserWithDefault" wocomponentcontent="false">
+
+		<binding name="rootOrgUnits"/>
+		<binding name="selectedUnit"/>
+		<binding name="size"/>
+		<binding name="noSelectionString"/>
+		<binding name="excludeNonSystemWideUnits" defaults="Boolean"/>
+		<binding name="excludedUnits"/>
+
+		<validation message="&apos;rootOrgUnits&apos; is a required binding">
+			<unbound name="rootOrgUnits"/>
+		</validation>
+
+		<validation message="&apos;selectedUnit&apos; is a required binding">
+			<unbound name="selectedUnit"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,30 @@
+package jass.examples.traceAssertion;
+
+public class Counter
+{
+    static int MAX_COUNT = 5;
+    
+    public void count(){}
+
+    public static void main(String[] argv) throws Throwable {
+	Counter test = new Counter();
+		
+	for(int i = 1; i <= MAX_COUNT; ++i) {
+	    test.count();
+	}
+	
+	test.finalize();
+		
+	// causes trace assertion violation
+	test.count();
+    }
+	
+	
+    /** invariant
+	    trace(
+	        MAIN()    { CALL Counter() |<>| CALL Loop() }
+		Counter() { TERM }
+		Loop()    { (count() -> CALL MAIN()) <|> TERM }
+	    );
+    **/
+}

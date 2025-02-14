@@ -1,0 +1,10 @@
+LinkToEmbeddedSite: WOHyperlink {
+	string = ^website.banner.bannerText;
+	href = ^website.siteURL;
+	target = "_blank";
+}
+
+
+ShouldShowNotificationConditional: WOConditional {
+	condition = shouldShowNotification;
+}

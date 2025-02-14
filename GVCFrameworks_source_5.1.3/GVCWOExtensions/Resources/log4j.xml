@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- Set debug to true if you are having problems with your configuration.  -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <!-- Appenders define where the log output goes (see class and params), which output goes
+         there (see Threshold param), and what it looks like (see Layout).  -->
+
+    <!-- This is what we use for the default appender (nothing magic about that name,
+         STDOUT and Appender are other common names for this same idea).  It is reasonably fast.  -->
+    <appender name="defaultAppender" class="org.apache.log4j.ConsoleAppender">
+
+        <!-- This appender ignores anything less critical than an Info log message.
+             The defined levels (from most to least critical) are:
+             fatal, error, warn, info, debug, and trace.  On and off may also be used.  -->
+         <param name="Threshold" value="Info" />
+
+       <!-- This defines how the Object passed to this logger is rendered into other forms.
+             There are other layouts, such as HTML and XML. See org.apache.log4j.Layout.   -->
+        <layout class="org.apache.log4j.PatternLayout">
+
+             <!-- See below for details on the pattern formats.  -->
+            <param name="ConversionPattern" value="[%d{ISO8601}] &lt;%t&gt; %C{1} - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!-- This appender is slow (see ConversionPattern parameter) and so should  be avoided
+         other than when debugging.  -->
+    <appender name="debugAppender" class="org.apache.log4j.ConsoleAppender">
+          <param name="Threshold" value="trace" />
+         <layout class="org.apache.log4j.PatternLayout">
+
+            <!-- The ConversionPattern defines what the actual log message looks like:
+                 [2005-09-30 14:32:01,615] <main> Application - Starting DuaBlog
+
+             %d is date and time, %t is the name of the thread, %c is the name of the class,
+             %m is the message sent to the logger, %n is a platform independant new line.
+             More details can be found in the JavaDocs for org.apache.log4j.PatternLayout.
+
+            This pattern uses %c, which is slow and to be avoided other than when debugging.
+            %c has an advantage over %C when the name of the logger is not the same as the name
+             of the class. %M is also slow. -->
+            <param name="ConversionPattern" value="[%d{ISO8601}] &lt;%t&gt; %C{1}.%M - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!-- Loggers define what gets sent to appenders for processing.  They are sort of gatekeepers.  -->
+
+    <!-- This logger is for the underlying threaded task support.  -->
+     <logger name="net.global_village.threadedtasks" additivity="false">
+          <level value="info"/>
+          <appender-ref ref="defaultAppender"/>
+      </logger>
+
+    <!-- This logger is for the underlying SMTP support used by CadreProctor.  -->
+     <logger name="net.global_village.jmail" additivity="false">
+          <level value="info"/>
+          <appender-ref ref="defaultAppender"/>
+      </logger>
+
+   <!-- This logger is tied to a conceptual area, not to a class or package.  This is also useful
+        for processes and domain areas that encompass many packages and classes.  -->
+    <logger name="com.webobjects.RequestResponseLoop">
+          <level value="info"/>
+         <appender-ref ref="debugAppender"/>
+     </logger>
+
+
+   <!-- Logger specifically for NSLog messages.  -->
+    <logger name="NSLog" additivity="false">
+          <level value="debug"/>
+         <appender-ref ref="debugAppender"/>
+     </logger>
+
+
+
+   <!-- The root logger is always present and sets the default priority (level) and appenders for all
+        loggers that do not explicitly state them.  -->
+   <root>
+        <priority value="info" />
+        <appender-ref ref="defaultAppender"/>
+    </root>
+
+</log4j:configuration>

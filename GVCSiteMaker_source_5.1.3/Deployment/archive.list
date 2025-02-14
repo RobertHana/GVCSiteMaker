@@ -1,0 +1,8 @@
+GVCSiteMakerApplications.tar.gz:Applications
+GVCSiteMakerFrameworks.tar.gz:Frameworks
+GVCKerberos.tar.gz:Frameworks
+GVCSiteMakerMisc.tar.gz:Install/Misc
+GVCSiteMakerDocumentRoot.tar.gz:DocumentRoot
+GVCSiteMakerCustomFrameworks.tar.gz:Frameworks
+GVCSiteMakerCustomDocumentRoot.tar.gz:DocumentRoot
+jass-rt.tar.gz:Frameworks/Library/Java

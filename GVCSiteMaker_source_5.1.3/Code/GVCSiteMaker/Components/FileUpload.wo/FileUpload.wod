@@ -1,0 +1,138 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+CanUserConfigureWebsite: WOConditional {
+	condition = canUserUploadFiles;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelButton: WOSubmitButton {
+	action = cancelUpload;
+	value = "Cancel";
+}
+
+ConfirmModeConditional: WOConditional {
+	condition = isConfirmMode;
+}
+
+DoneButton: WOSubmitButton {
+	action = cancelUpload;
+	value = "Done";
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = canUserUploadFiles;
+	isConfigPage = canUserUploadFiles;
+	pageTitle = pageTitle;
+	isAdmin = false;
+	inPlaceEditingMode = inPlaceEditingMode;
+	pageType = "FileUpload";
+}
+
+FileNameString: WOString {
+	value = aFileUploadBinding.uploadedFileName;
+}
+
+FileSizeString: WOString {
+	value = formattedFileSize;
+}
+
+FileUpload: WOFileUpload {
+	maxlength = 255;
+	size = "25";
+	bufferSize = 8192;
+	streamToFilePath = aFileUploadBinding.streamToFilePath;
+	finalFilePath = aFileUploadBinding.finalFilePath;
+	filePath = aFileUploadBinding.uploadedFileName;
+	mimeType = aFileUploadBinding.mimeType;
+	overwrite = true;
+}
+
+FileUploadForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}
+
+FoldersPopUpButton: WOPopUpButton {
+	item = aFolder;
+	list = website.orderedUserFolders;
+	selection = selectedFolder;
+	displayString = aFolder.name;
+}
+
+Form1: WOForm {
+}
+
+FrontPage: WOHyperlink {
+	href = application.mainPageURL;
+}
+
+GroupPicker: GroupPicker {
+	accessibleObject = selectedGroups;
+	typeOfAccess = "Files";
+}
+
+NoRadioButton: WORadioButton {
+	name = "ShowConfirmationPage";
+	selection = showConfirmationPage;
+	value = false;
+}
+
+NumberOfUploads: WOString {
+	value = numberOfUploads;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+Repetition1: WORepetition {
+	index = uploadIndex;
+	item = aFileUploadBinding;
+	list = fileUploadBindings;
+}
+SiteURL: WOHyperlink {
+	href = website.siteURL;
+}
+
+StatusString: WOString {
+	value = aFileUploadBinding.statusMessage;
+}
+
+UPLOAD_FILE_BUTTON: WOSubmitButton {
+    value = "Upload";
+	action = saveUploads;
+}
+
+UploadIndexString: WOString {
+	value = formattedUploadIndex;
+}
+
+UploadModeConditional: WOConditional {
+	condition = isConfirmMode;
+	negate = true;
+}
+
+UploadsRepetition: WORepetition {
+	item = aFileUploadBinding;
+	list = fileUploadBindings;
+}
+
+UserCanNotConfigureWebsite: WOConditional {
+	condition = canUserUploadFiles;
+	negate = true;
+}
+
+YesRadioButton: WORadioButton {
+	name = "ShowConfirmationPage";
+	selection = showConfirmationPage;
+	value = true;
+}
+

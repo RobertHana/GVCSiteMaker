@@ -1,0 +1,9 @@
+ChooserList: WOPopUpButton {
+	displayString = formattedOrgUnitName;
+	item = orgUnitItem;
+	list = orderedOrgUnitsInHierarchy;
+	selection = selectedUnit;
+	size = size;
+	escapeHTML = false;
+	noSelectionString = noSelectionString;
+}

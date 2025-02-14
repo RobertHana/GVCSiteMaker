@@ -1,0 +1,118 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.jmail;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    <a name="line.3"></a>
+<FONT color="green">004</FONT>    import java.util.Properties;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    import javax.mail.Folder;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import javax.mail.MessagingException;<a name="line.7"></a>
+<FONT color="green">008</FONT>    import javax.mail.Session;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import javax.mail.Store;<a name="line.9"></a>
+<FONT color="green">010</FONT>    <a name="line.10"></a>
+<FONT color="green">011</FONT>    <a name="line.11"></a>
+<FONT color="green">012</FONT>    /**<a name="line.12"></a>
+<FONT color="green">013</FONT>     * @author Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.<a name="line.13"></a>
+<FONT color="green">014</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.14"></a>
+<FONT color="green">015</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.15"></a>
+<FONT color="green">016</FONT>     */<a name="line.16"></a>
+<FONT color="green">017</FONT>    public class IMAPInBox extends Object<a name="line.17"></a>
+<FONT color="green">018</FONT>    {<a name="line.18"></a>
+<FONT color="green">019</FONT>    <a name="line.19"></a>
+<FONT color="green">020</FONT>        protected javax.mail.Session mailSession;           // Session used for all mail activities in this object<a name="line.20"></a>
+<FONT color="green">021</FONT>        protected Folder inbox;<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>        /**<a name="line.23"></a>
+<FONT color="green">024</FONT>         * Creates a IMAPInBox on the indicated host with the provided account information.<a name="line.24"></a>
+<FONT color="green">025</FONT>         *<a name="line.25"></a>
+<FONT color="green">026</FONT>         * @param IMAPHost - the name of the  mail server to use<a name="line.26"></a>
+<FONT color="green">027</FONT>         * @param account - the name of the mailbox<a name="line.27"></a>
+<FONT color="green">028</FONT>         * @param password - the password for the mailbox<a name="line.28"></a>
+<FONT color="green">029</FONT>         */<a name="line.29"></a>
+<FONT color="green">030</FONT>        public IMAPInBox(String IMAPHost,<a name="line.30"></a>
+<FONT color="green">031</FONT>                         String account,<a name="line.31"></a>
+<FONT color="green">032</FONT>                         String password) throws MessagingException<a name="line.32"></a>
+<FONT color="green">033</FONT>        {<a name="line.33"></a>
+<FONT color="green">034</FONT>            /** require <a name="line.34"></a>
+<FONT color="green">035</FONT>                [IMAPHost_not_null] IMAPHost != null;<a name="line.35"></a>
+<FONT color="green">036</FONT>                [account_not_null] account != null;<a name="line.36"></a>
+<FONT color="green">037</FONT>                [password_not_null] password != null;<a name="line.37"></a>
+<FONT color="green">038</FONT>                **/<a name="line.38"></a>
+<FONT color="green">039</FONT>            <a name="line.39"></a>
+<FONT color="green">040</FONT>            // I'm not clear on what the advantage / disadvantage is of using the default session as here or in a custom one as in MailDelivery.  I chose this method here as it is not possible to specify the IMAP password in the properties passed to the Session constructor.  Rather that setup part of the information here and part of it later I chose to do it all later.  -ch<a name="line.40"></a>
+<FONT color="green">041</FONT>            Properties props = System.getProperties();<a name="line.41"></a>
+<FONT color="green">042</FONT>            mailSession = Session.getDefaultInstance(props, null);<a name="line.42"></a>
+<FONT color="green">043</FONT>            Store store = mailSession.getStore("imap");<a name="line.43"></a>
+<FONT color="green">044</FONT>            store.connect(IMAPHost, account, password);<a name="line.44"></a>
+<FONT color="green">045</FONT>    <a name="line.45"></a>
+<FONT color="green">046</FONT>            // Open the in-box Folder<a name="line.46"></a>
+<FONT color="green">047</FONT>            inbox = store.getFolder("INBOX");<a name="line.47"></a>
+<FONT color="green">048</FONT>            inbox.open(Folder.READ_WRITE);<a name="line.48"></a>
+<FONT color="green">049</FONT>        }<a name="line.49"></a>
+<FONT color="green">050</FONT>    <a name="line.50"></a>
+<FONT color="green">051</FONT>    <a name="line.51"></a>
+<FONT color="green">052</FONT>    }<a name="line.52"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

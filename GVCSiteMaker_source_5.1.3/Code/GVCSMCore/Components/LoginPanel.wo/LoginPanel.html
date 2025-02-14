@@ -1,0 +1,29 @@
+<!-- Start of LoginPanel -->
+<!-- The HTML was rediculous so it was redone to include slightly less tables and hacks... -->
+<WEBOBJECT NAME=LoginForm>
+	<div  class="content">
+    	<div align="right">
+    		<WEBOBJECT NAME=LoginSubmitButton></WEBOBJECT>
+    	</div>
+    	<p><WEBOBJECT NAME=MessageString></WEBOBJECT></p>
+        <WEBOBJECT NAME=ShowLoginFailureMessageConditional>
+        	<p class="warningText">
+        		<WEBOBJECT NAME="LoginFailureMessage"></WEBOBJECT>
+        	</p>
+        </WEBOBJECT>
+    	<TABLE BORDER="0">
+    		<TR>
+    			<th class="boldText">User Name:</th>
+    			<td align="left"><WEBOBJECT NAME=UserIDTextField></WEBOBJECT></td>
+    		</TR>
+    		<TR>
+    			<th class="boldText">Password:</th>
+    			<TD align="left"><WEBOBJECT NAME=PasswordTextField></WEBOBJECT></TD>
+    		</TR>
+    	</TABLE>
+    	<p>
+    		If you have forgotten your <WEBOBJECT NAME=ProductNameString></WEBOBJECT> password, click <WEBOBJECT NAME=ForgotPasswordHyperLink>here</WEBOBJECT>
+    	</p>
+	</div>
+</WEBOBJECT NAME=LoginForm>
+<!-- End of LoginPanel -->

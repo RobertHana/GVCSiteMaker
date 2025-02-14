@@ -1,0 +1,82 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+AccessGroupNameString: WOString {
+	value = anAccessGroup.name;
+}
+
+AccessGroupRepetition: WORepetition {
+	item = anAccessGroup;
+	list = availableAccessGroups;
+}
+
+AccessGroupSelectedCheckBox: WOCheckBox {
+	checked = isAccessGroupSelected;
+}
+
+AdditionalMessage: WOText { 
+	rows = 4; 
+    cols = "55"; // For NN 4
+	value = additionalMessage; 
+} 
+
+CancelButton: WOSubmitButton { 
+	action = cancelEmail; 
+	value = "Cancel"; 
+}
+ 
+DynamicBody: DynamicBodyComponent 
+{
+	isAdmin = false;
+	pageTitle = pageTitle;
+	hasSite = true;
+	pageType = "EmailPage";
+} 
+
+EmailForm: WOForm { 
+	multipleSubmit = 1; 
+} 
+
+ExpirationDate: WOString { 
+	formatter = application.properties.StandardDateFormatter;  // VALID
+	value = filePassword.expirationDate; 
+}
+
+IsFileNotPublic: WOConditional { 
+	condition = file.isPublic; 
+	negate = true; 
+}
+
+MailtoHyperlink: WOHyperlink {
+	href = mailtoHyperlink;
+} 
+
+Message: WOString { 
+	value = message; 
+} 
+
+SendEmailButton: WOSubmitButton { 
+	action = sendEmail; 
+	value = "Send"; 
+} 
+
+Subject: WOString { 
+	value = subject; 
+} 
+
+ToAddressesTextArea: WOText {
+	cols = 55;
+	rows = 4;
+	value = toAddresses;
+} 
+
+UploadedFileName: WOString { 
+	value = file.uploadedFilename; 
+}

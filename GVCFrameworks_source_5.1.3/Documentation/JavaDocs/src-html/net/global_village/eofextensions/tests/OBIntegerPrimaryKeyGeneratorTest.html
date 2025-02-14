@@ -1,0 +1,191 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofextensions.tests;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.util.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    import com.webobjects.eoaccess.*;<a name="line.5"></a>
+<FONT color="green">006</FONT>    import com.webobjects.eocontrol.*;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import com.webobjects.foundation.*;<a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    import net.global_village.eofextensions.*;<a name="line.9"></a>
+<FONT color="green">010</FONT>    import net.global_village.gvcjunit.*;<a name="line.10"></a>
+<FONT color="green">011</FONT>    import net.global_village.testeomodelbase.*;<a name="line.11"></a>
+<FONT color="green">012</FONT>    <a name="line.12"></a>
+<FONT color="green">013</FONT>    <a name="line.13"></a>
+<FONT color="green">014</FONT>    /**<a name="line.14"></a>
+<FONT color="green">015</FONT>     * Test the OpenBase primary key generator.<a name="line.15"></a>
+<FONT color="green">016</FONT>     *<a name="line.16"></a>
+<FONT color="green">017</FONT>     * @author Copyright (c) 2001-5  Global Village Consulting, Inc.  All rights reserved.<a name="line.17"></a>
+<FONT color="green">018</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.18"></a>
+<FONT color="green">019</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.19"></a>
+<FONT color="green">020</FONT>     */<a name="line.20"></a>
+<FONT color="green">021</FONT>    public class OBIntegerPrimaryKeyGeneratorTest extends GVCJUnitEOTestCase<a name="line.21"></a>
+<FONT color="green">022</FONT>    {<a name="line.22"></a>
+<FONT color="green">023</FONT>        public static final int PKCacheSize = 10;<a name="line.23"></a>
+<FONT color="green">024</FONT>        public static final int NumberOfObjectsToInsert = 100;  // Don't go below PKCacheSize * 2 or the tests won't work<a name="line.24"></a>
+<FONT color="green">025</FONT>    <a name="line.25"></a>
+<FONT color="green">026</FONT>        public EODatabaseContext dbContext;<a name="line.26"></a>
+<FONT color="green">027</FONT>        public Object oldDBContextDelegate;<a name="line.27"></a>
+<FONT color="green">028</FONT>    <a name="line.28"></a>
+<FONT color="green">029</FONT>    <a name="line.29"></a>
+<FONT color="green">030</FONT>        public OBIntegerPrimaryKeyGeneratorTest(String name)<a name="line.30"></a>
+<FONT color="green">031</FONT>        {<a name="line.31"></a>
+<FONT color="green">032</FONT>            super(name);<a name="line.32"></a>
+<FONT color="green">033</FONT>        }<a name="line.33"></a>
+<FONT color="green">034</FONT>    <a name="line.34"></a>
+<FONT color="green">035</FONT>    <a name="line.35"></a>
+<FONT color="green">036</FONT>    <a name="line.36"></a>
+<FONT color="green">037</FONT>        /**<a name="line.37"></a>
+<FONT color="green">038</FONT>         * Sets up the fixtures.<a name="line.38"></a>
+<FONT color="green">039</FONT>         * @exception Exception an exception that the setup may throw<a name="line.39"></a>
+<FONT color="green">040</FONT>         */<a name="line.40"></a>
+<FONT color="green">041</FONT>        public void setUp() throws java.lang.Exception<a name="line.41"></a>
+<FONT color="green">042</FONT>        {<a name="line.42"></a>
+<FONT color="green">043</FONT>            super.setUp();<a name="line.43"></a>
+<FONT color="green">044</FONT>    <a name="line.44"></a>
+<FONT color="green">045</FONT>            // Set a new PK generator delegate...<a name="line.45"></a>
+<FONT color="green">046</FONT>            EOModel model = EOModelGroup.defaultGroup().modelNamed("GVCTestEOModelBase");<a name="line.46"></a>
+<FONT color="green">047</FONT>            OBIntegerPrimaryKeyGenerator pkGenerator = new OBIntegerPrimaryKeyGenerator(PKCacheSize);<a name="line.47"></a>
+<FONT color="green">048</FONT>            pkGenerator.cachePKsForEntity(EOUtilities.entityNamed(editingContext(), "EntityWithDecimalPK"));<a name="line.48"></a>
+<FONT color="green">049</FONT>            <a name="line.49"></a>
+<FONT color="green">050</FONT>            dbContext = EODatabaseContext.registeredDatabaseContextForModel(model, EOObjectStoreCoordinator.defaultCoordinator());<a name="line.50"></a>
+<FONT color="green">051</FONT>            dbContext.lock();<a name="line.51"></a>
+<FONT color="green">052</FONT>            try<a name="line.52"></a>
+<FONT color="green">053</FONT>            {<a name="line.53"></a>
+<FONT color="green">054</FONT>                oldDBContextDelegate = dbContext.delegate();<a name="line.54"></a>
+<FONT color="green">055</FONT>                dbContext.setDelegate(pkGenerator);<a name="line.55"></a>
+<FONT color="green">056</FONT>            }<a name="line.56"></a>
+<FONT color="green">057</FONT>            finally<a name="line.57"></a>
+<FONT color="green">058</FONT>            {<a name="line.58"></a>
+<FONT color="green">059</FONT>                dbContext.unlock();<a name="line.59"></a>
+<FONT color="green">060</FONT>            }<a name="line.60"></a>
+<FONT color="green">061</FONT>        }<a name="line.61"></a>
+<FONT color="green">062</FONT>    <a name="line.62"></a>
+<FONT color="green">063</FONT>    <a name="line.63"></a>
+<FONT color="green">064</FONT>    <a name="line.64"></a>
+<FONT color="green">065</FONT>        /**<a name="line.65"></a>
+<FONT color="green">066</FONT>         * Test the PK generation for sequential numbers.<a name="line.66"></a>
+<FONT color="green">067</FONT>         */<a name="line.67"></a>
+<FONT color="green">068</FONT>        public void testPKGeneratorGeneratesSequentialNumbers()<a name="line.68"></a>
+<FONT color="green">069</FONT>        {<a name="line.69"></a>
+<FONT color="green">070</FONT>            for (int i = 0; i &lt; NumberOfObjectsToInsert; i++)<a name="line.70"></a>
+<FONT color="green">071</FONT>            {<a name="line.71"></a>
+<FONT color="green">072</FONT>                EntityWithDecimalPK testEO = new EntityWithDecimalPK();<a name="line.72"></a>
+<FONT color="green">073</FONT>                editingContext().insertObject(testEO);<a name="line.73"></a>
+<FONT color="green">074</FONT>                testEO.setDataAttribute(new NSData("test " + i, "ASCII"));<a name="line.74"></a>
+<FONT color="green">075</FONT>            }<a name="line.75"></a>
+<FONT color="green">076</FONT>            editingContext().saveChanges();<a name="line.76"></a>
+<FONT color="green">077</FONT>    <a name="line.77"></a>
+<FONT color="green">078</FONT>            EntityWithDecimalPK lastEO = null;<a name="line.78"></a>
+<FONT color="green">079</FONT>            NSArray sortedEOs = EOSortOrdering.sortedArrayUsingKeyOrderArray(EOUtilities.objectsForEntityNamed(editingContext(), "EntityWithDecimalPK"), new NSArray(new EOSortOrdering("theDecimalPK", EOSortOrdering.CompareAscending)));<a name="line.79"></a>
+<FONT color="green">080</FONT>            Enumeration sortedEOsEnumerator = sortedEOs.objectEnumerator();<a name="line.80"></a>
+<FONT color="green">081</FONT>            while (sortedEOsEnumerator.hasMoreElements())<a name="line.81"></a>
+<FONT color="green">082</FONT>            {<a name="line.82"></a>
+<FONT color="green">083</FONT>                EntityWithDecimalPK eo = (EntityWithDecimalPK)sortedEOsEnumerator.nextElement();<a name="line.83"></a>
+<FONT color="green">084</FONT>                if (lastEO != null)<a name="line.84"></a>
+<FONT color="green">085</FONT>                {<a name="line.85"></a>
+<FONT color="green">086</FONT>                    assertEquals(lastEO.theDecimalPK().intValue() + 1, eo.theDecimalPK().intValue());<a name="line.86"></a>
+<FONT color="green">087</FONT>                }<a name="line.87"></a>
+<FONT color="green">088</FONT>                lastEO = eo;<a name="line.88"></a>
+<FONT color="green">089</FONT>            }<a name="line.89"></a>
+<FONT color="green">090</FONT>        }<a name="line.90"></a>
+<FONT color="green">091</FONT>    <a name="line.91"></a>
+<FONT color="green">092</FONT>    <a name="line.92"></a>
+<FONT color="green">093</FONT>    <a name="line.93"></a>
+<FONT color="green">094</FONT>        /**<a name="line.94"></a>
+<FONT color="green">095</FONT>         * Cleans up the fixtures.<a name="line.95"></a>
+<FONT color="green">096</FONT>         * @exception Exception an exception that the setup may throw<a name="line.96"></a>
+<FONT color="green">097</FONT>         */<a name="line.97"></a>
+<FONT color="green">098</FONT>        public void tearDown() throws java.lang.Exception<a name="line.98"></a>
+<FONT color="green">099</FONT>        {<a name="line.99"></a>
+<FONT color="green">100</FONT>            editingContext().revert();<a name="line.100"></a>
+<FONT color="green">101</FONT>            NSArray eos = EOUtilities.objectsForEntityNamed(editingContext(), "EntityWithDecimalPK");<a name="line.101"></a>
+<FONT color="green">102</FONT>            Enumeration eoEnumerator = eos.objectEnumerator();<a name="line.102"></a>
+<FONT color="green">103</FONT>            while (eoEnumerator.hasMoreElements())<a name="line.103"></a>
+<FONT color="green">104</FONT>            {<a name="line.104"></a>
+<FONT color="green">105</FONT>                EntityWithDecimalPK eo = (EntityWithDecimalPK)eoEnumerator.nextElement();<a name="line.105"></a>
+<FONT color="green">106</FONT>                editingContext().deleteObject(eo);<a name="line.106"></a>
+<FONT color="green">107</FONT>            }<a name="line.107"></a>
+<FONT color="green">108</FONT>            editingContext().saveChanges();<a name="line.108"></a>
+<FONT color="green">109</FONT>    <a name="line.109"></a>
+<FONT color="green">110</FONT>            dbContext.lock();<a name="line.110"></a>
+<FONT color="green">111</FONT>            try<a name="line.111"></a>
+<FONT color="green">112</FONT>            {<a name="line.112"></a>
+<FONT color="green">113</FONT>                dbContext.setDelegate(oldDBContextDelegate);<a name="line.113"></a>
+<FONT color="green">114</FONT>            }<a name="line.114"></a>
+<FONT color="green">115</FONT>            finally<a name="line.115"></a>
+<FONT color="green">116</FONT>            {<a name="line.116"></a>
+<FONT color="green">117</FONT>                dbContext.unlock();<a name="line.117"></a>
+<FONT color="green">118</FONT>            }<a name="line.118"></a>
+<FONT color="green">119</FONT>    <a name="line.119"></a>
+<FONT color="green">120</FONT>            super.tearDown();<a name="line.120"></a>
+<FONT color="green">121</FONT>        }<a name="line.121"></a>
+<FONT color="green">122</FONT>    <a name="line.122"></a>
+<FONT color="green">123</FONT>    <a name="line.123"></a>
+<FONT color="green">124</FONT>    <a name="line.124"></a>
+<FONT color="green">125</FONT>    }<a name="line.125"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

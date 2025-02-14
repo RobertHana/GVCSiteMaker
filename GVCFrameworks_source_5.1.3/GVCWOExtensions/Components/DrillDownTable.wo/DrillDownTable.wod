@@ -1,0 +1,54 @@
+AttributeHyperlink: WOHyperlink {
+	action = performAttributeAction;
+}
+AttributeKeyPathRepetition: WORepetition {
+	index = columnNumber;
+	item = attributeKeyPath;
+	list = attributeKeyPaths;
+}
+AttributeString: WOString {
+	escapeHTML = NO;
+	value = currentAttribute;
+}
+DataGroupRepetition: WORepetition {
+	index = rowNumber;
+	item = aDataGroup;
+	list = masterDataGroup.allSubGroups;
+}
+GenericDiv: WOGenericContainer {
+	align = alignmentForAttribute;
+	elementName = "div";
+}
+
+GenericFontAttribute: WOGenericContainer {
+	class = columnStyle;
+	elementName = "FONT";
+}
+GenericRow: WOGenericContainer {
+	class = rowStyle;
+	elementName = "TR";
+	valign = "top";
+}
+GenericTitleFont: WOGenericContainer {
+	class = titleStyle;
+	elementName = "FONT";
+}
+TitleHyperlink: WOHyperlink {
+	action = performTitleAction;
+}
+TitleRepetition: WORepetition {
+	item = aTitle;
+	list = titles;
+}
+TitleString: WOString {
+	value = aTitle;
+	escapeHTML = NO;
+}
+isAttributeBlankConditional: WOConditional {
+	condition = isBlank;
+	negate = NO;
+}
+isAttributeNotBlankDisplayConditional: WOConditional {
+	condition = isBlank;
+	negate = YES;
+}

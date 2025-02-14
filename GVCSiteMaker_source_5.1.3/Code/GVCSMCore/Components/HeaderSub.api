@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="HeaderSub" wocomponentcontent="false">
+
+		
+		
+		
+		
+
+		
+	
+    
+    
+    <binding name="pageType"/>
+        <validation message="'PageType' is a required binding.">
+            <unbound name="pageType"/>
+        </validation>
+    </wo>
+</wodefinitions>

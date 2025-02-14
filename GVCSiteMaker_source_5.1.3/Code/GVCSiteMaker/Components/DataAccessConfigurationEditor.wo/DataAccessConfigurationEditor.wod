@@ -1,0 +1,79 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+AddFormTab: ColouredTab {
+	action = selectAddFormMode;
+	selected = isAddFormMode;
+	image = "addForm";
+}
+
+CancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+ConfigurationForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}
+
+DatabaseTableNameString: WOString {
+	value = databaseTable.name;
+}
+
+InvalidSectionConditional: WOConditional {
+	condition = isSectionValid;
+	negate = true;
+}
+
+LayoutTemplatesTab: ColouredTab {
+	action = selectLayoutTemplatesMode;
+	selected = isLayoutTemplatesMode;
+	image = "customLayouts";
+}
+
+ListOfRecordsTab: ColouredTab {
+	action = selectListOfRecordsMode;
+	selected = isListOfRecordsMode;
+	image = "listOfRecords";
+}
+
+ModalComponent: WOSwitchComponent {
+	WOComponentName = componentNameForMode;
+	section = section;
+}
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURL = previewURL;
+}
+
+SearchFormTab: ColouredTab {
+	action = selectSearchFormMode;
+	selected = isSearchFormMode;
+	image = "searchForm";
+}
+
+SelectionSettingsTab: ColouredTab {
+	image = "sectionSettings";
+	action = selectSectionSettingsMode;
+	selected = isSectionSettingsMode;
+}
+
+SingleRecordTab: ColouredTab {
+	action = selectSingleRecordMode;
+	selected = isSingleRecordMode;
+	image = "singleRecord";
+}
+
+SubmitAndPreviewButton: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Save & View";
+}
+
+SubmitButton: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+}

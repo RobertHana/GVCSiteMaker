@@ -1,0 +1,193 @@
+AddTableHyperlink: AjaxUpdateLink {
+    action = createTable;
+    title = "Add Table";
+    updateContainerID = "AddEditDatabaseTables";
+    onComplete = "function(receiver, response) {Effect.Appear('TableAdded', {duration: 2, afterFinish: function() {Effect.Fade('TableAdded')}})}";
+}
+
+InstallPackageHyperlink: WOHyperlink {
+    pageName = "InstallDataTablePackagePage";
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "AddEditDatabaseTables";
+}
+
+ConfigPageForm: WOForm {
+    multipleSubmit = true;
+//    action = saveOrder;
+}
+
+ObserveContainer: AjaxObserveField {
+    updateContainerID = "ConfigureWebsiteDataTablesPane";
+    fullSubmit = true;
+    action = dataTableRepetitionObserverAction;
+}
+
+TableRepetition: WORepetition {
+    item = aTable;
+    list = website.orderedDatabaseTables;
+    index = aTableIndex;
+}
+
+TableNameInPlaceEditor : AjaxInPlaceEditor {
+    value = aTable.name;
+    class = "editableInPlaceField";
+    submitOnBlur = true;
+    action = saveChanges;
+    size = "30";
+    okButton = false;
+    cancelLink = false;
+}
+
+TableNameEditor : AjaxInPlace {
+    id = editTableNameInPlaceID;
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+    //editing = isEditingTableName;
+    canEdit = canEditTableName;
+}
+
+EditTableNameView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditTableNameAction : WOGenericContainer {
+    elementName = "div";
+    onclick = editTableNameInPlaceEdit;
+    class = "editableInPlaceField";
+    title = "Click to edit";
+}
+
+TableNameString: WOString {
+    value = aTable.name;
+}
+
+EditTableNameEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+TableNameTextField : WOTextField {
+    value = aTable.name;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = editTableNameInPlaceSave;
+    id = editTableNameInPlaceNameFieldID;
+    //onKeyPress="return blurOnEnter(this,event)";
+}
+
+TableNameTextFieldID: WOString {
+    value = editTableNameInPlaceNameFieldID;
+}
+
+TableDescriptionEditor : AjaxInPlace {
+    id = editTableDescriptionInPlaceID;
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+}
+
+EditTableDescriptionView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditTableDescriptionAction : WOGenericContainer {
+    elementName = "div";
+    onclick = editTableDescriptionInPlaceEdit;
+    class = "editableInPlaceField";
+    title = "Click to edit";
+}
+
+TableDescriptionString: WOString {
+    value = aTable.textDescription;
+    valueWhenEmpty = "<i>(none - click to edit)</i>";
+}
+
+EditTableDescriptionEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+TableDescriptionTextField : WOTextField {
+    value = aTable.textDescription;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = editTableDescriptionInPlaceSave;
+    id = editTableNameInPlaceDescriptionFieldID;
+    onKeyPress="return blurOnEnter(this,event)";
+}
+
+TableDescriptionTextFieldID: WOString {
+    value = editTableNameInPlaceDescriptionFieldID;
+}
+
+ActionSelectPopup : WOPopUpButton {
+    list = actionsList;
+    item = anActionString;
+    displayString = anActionString;
+    noSelectionString = "Choose Action...";
+    selection = selectedTableAction;
+}
+
+DeleteTableErrorModalDialog: AjaxModalDialog {
+    id = "DeleteTableErrorModalDialog";
+    title = "Delete Error";
+    label = "Delete Error";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "DeleteTableErrorModalDialogOkLink";
+    clickOnEscId = "DeleteTableErrorModalDialogOkLink";
+    closeUpdateContainerID = "AddEditDatabaseTables";
+}
+
+DeleteTableErrorModalDialogOkLink: AjaxHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "DeleteTableErrorModalDialogOkLink";
+}
+
+DeleteTableErrorString: WOString {
+    value = deleteTableErrorString;
+}
+
+ConfirmDeleteTableModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteTableModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Table";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteTableModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteTableModalDialogNoLink";
+    closeUpdateContainerID = "AddEditDatabaseTables";
+}
+
+ConfirmDeleteTableModalDialogYesLink: AjaxHyperlink {
+    action = deleteTable;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteTableModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteTableModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteTableModalDialogNoLink";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.AddEditDatabaseTable";
+}

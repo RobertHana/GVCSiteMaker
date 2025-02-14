@@ -1,0 +1,125 @@
+{
+    attributes = (
+        {
+            columnName = "FILE_DESCRIPTION"; 
+            name = fileDescription; 
+            prototypeName = note; 
+            width = 6000; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FILE_PKEY"; 
+            name = filePKey; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "FILE_SIZE_USAGE"; name = fileSizeUsage; prototypeName = long; }, 
+        {
+            columnName = FILENAME; 
+            name = filename; 
+            prototypeName = mediumString; 
+            width = 300; 
+        }, 
+        {columnName = "MIME_TYPE"; name = mimeType; prototypeName = shortString; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_SITE_FILE_FOLDER"; 
+            name = oidSiteFileFolder; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "SHORT_NAME"; name = shortName; prototypeName = mediumString; }, 
+        {columnName = "UPLOAD_DATE"; name = uploadDate; prototypeName = dateTime; }, 
+        {
+            columnName = "UPLOADED_FILENAME"; 
+            name = uploadedFilename; 
+            prototypeName = mediumString; 
+            width = 300; 
+        }, 
+        {columnName = "WEBSITE_FKEY"; name = websiteFKey; prototypeName = dbKey; }
+    ); 
+    attributesUsedForLocking = (
+        fileDescription, 
+        filename, 
+        uploadedFilename, 
+        oidSiteFileFolder, 
+        filePKey, 
+        shortName
+    ); 
+    className = "com.gvcsitemaker.core.SiteFile"; 
+    classProperties = (
+        filename, 
+        mimeType, 
+        website, 
+        fileDescription, 
+        uploadDate, 
+        groups, 
+        passwords, 
+        toComponents, 
+        uploadedFilename, 
+        fileSizeUsage, 
+        filePKey, 
+        folder, 
+        shortName
+    ); 
+    externalName = "SM_SITE_FILE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            filename, 
+            mimeType, 
+            data, 
+            title, 
+            website, 
+            fileURL, 
+            uploader, 
+            description, 
+            uploadDate, 
+            groups, 
+            sections, 
+            isImage
+        ); 
+    }; 
+    name = SiteFile; 
+    primaryKeyAttributes = (filePKey); 
+    relationships = (
+        {
+            destination = SiteFileFolder; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidSiteFileFolder; }); 
+            name = folder; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filePKey; sourceAttribute = filePKey; }); 
+            name = groupFiles; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {definition = "groupFiles.group"; joinSemantic = EOInnerJoin; name = groups; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = FilePassword; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = siteFilePasswordFKey; sourceAttribute = filePKey; }); 
+            name = passwords; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = PageComponent; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = relatedFileId; sourceAttribute = filePKey; }); 
+            name = toComponents; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = website; 
+        }
+    ); 
+}

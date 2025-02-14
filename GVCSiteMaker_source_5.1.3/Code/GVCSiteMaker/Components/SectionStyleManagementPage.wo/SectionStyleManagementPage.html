@@ -1,0 +1,55 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=CreateNewStyleForm>
+		<!-- cell padding removed except around HR -->
+		<table border="0" cellpadding="0" cellspacing="0" class="content">
+			<TR>
+				<td style="padding-left: 2px;">
+					<h1>Manage Website Styles</h1>
+				</TD>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">	
+					<WEBOBJECT NAME=CreateNewStyleButton></WEBOBJECT>
+				</TD>
+			</TR>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"></td></tr>
+					</table>
+				</td>
+    		</tr>
+		</TABLE>
+	</WEBOBJECT>
+    <TABLE BORDER="0" CELLSPACING="2" cellpadding="2" class="coloredTable" align="center" width="95%"><!-- 95% width is more dynamic in Netscape 4 -->
+		<TR>
+			<TH class="coloredTableHeading">Associated Org Unit</TH>
+			<TH class="coloredTableHeading">Style Name</TH>
+			<TH class="coloredTableHeading">Style ID</TH>
+			<TH class="coloredTableHeading">Published</TH>
+			<TH class="coloredTableHeading">Action</TH>
+		</TR>
+		<WEBOBJECT NAME=StyleDetailList>
+			<TR VALIGN="MIDDLE">
+				<TD VALIGN="top" align="left">
+					<WEBOBJECT NAME= OrgUnitName ></WEBOBJECT>
+				</TD>
+				<TD VALIGN="top" align="left">
+					<WEBOBJECT NAME=StyleName></WEBOBJECT>
+					<WEBOBJECT NAME=IsDefaultConditional>
+						<i class="requiredText">(default)</i>
+					</WEBOBJECT>
+				</TD>
+				<TD VALIGN="top" align="left">
+					<WEBOBJECT NAME=StyleID></WEBOBJECT>
+				</TD>
+				<TD VALIGN="top" ALIGN="center">
+					<WEBOBJECT NAME=IsPublishedString></WEBOBJECT>
+				</TD>
+				<TD VALIGN="top" ALIGN="center">
+					<WEBOBJECT NAME=ConfigureStyle>Configure</WEBOBJECT>
+				</TD>
+			</TR>
+		</WEBOBJECT NAME=StyleDetailList>
+	</TABLE>
+</webobject>

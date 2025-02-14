@@ -1,0 +1,97 @@
+<webobject name = "AjaxUpdateArea">
+  <table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+    <tr>
+      <td class = "screenTitleContainer">Data Tables
+        <div class = "createNewItemLinkContainer">
+          <webobject name = "AddTableHyperlink">
+            <img src = "/GVCSiteMaker/Images/add.png" alt = "Create New Table" border = "0" style = "position:relative; top:3px;" />
+            <b>Create New Table</b>
+          </webobject>
+          &nbsp;&nbsp;&nbsp;
+          <webobject name = "InstallPackageHyperlink">
+            <img src = "/GVCSiteMaker/Images/add.png" alt = "Install Package" border = "0" style = "position:relative; top:3px;" />
+            <b>Install Package</b>
+          </webobject>
+        </div>
+      </td>
+      <td align = "right" valign = "top" class = "helpButtonContainer">
+        <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+      </td>
+    </tr>
+  </table>
+
+
+  <p id="TableAdded" style="display: none;">Table added to the list below</p>
+
+  <webobject name = "ConfigPageForm">
+    <table cellpadding="2" cellspacing="0" border="0">
+      <tr>
+        <td class = "dtNameListHeading" valign = "bottom">
+          Name
+        </td>
+
+        <td valign = "bottom" class = "dtDescriptionListHeading">
+          Description
+        </td>
+
+        <td class = "dtActionListHeading" valign = "bottom">
+          Action
+        </td>
+      </tr>
+    </table>
+
+    <webobject name = "ObserveContainer">
+      <webobject Name = "TableRepetition">
+        <table cellpadding="2" cellspacing="0" border="0">
+          <tr valign = "middle">
+            <td class = "dtNameInList">
+              <strong>
+                <webobject name = "TableNameEditor">
+                  <webobject name = "EditTableNameView">
+                    <webobject name = "EditTableNameAction">
+                      <webobject name="TableNameString"/>
+                    </webobject>
+                  </webobject>
+                  <webobject name = "EditTableNameEdit">
+                    <webobject name = "TableNameTextField"/>
+                    <script>$('<webobject name = "TableNameTextFieldID"/>').focus();</script>
+                  </webobject>
+                </webobject>
+              </strong>
+            </td>
+
+            <td class = "dtDescriptionInList">
+              <webobject name = "TableDescriptionEditor">
+                <webobject name = "EditTableDescriptionView">
+                  <webobject name = "EditTableDescriptionAction">
+                    <webobject name = "TableDescriptionString" />
+                  </webobject>
+                </webobject>
+                <webobject name = "EditTableDescriptionEdit">
+                  <webobject name = "TableDescriptionTextField"/>
+                  <script>$('<webobject name = "TableDescriptionTextFieldID"/>').focus();</script>
+                </webobject>
+              </webobject>
+            </td>
+
+            <td class="dtActionInList"><webobject name = "ActionSelectPopup" /></td>
+          </tr>
+        </table>
+      </webobject>
+    </webobject>
+  </webobject>
+</webobject>
+<br />
+
+
+<webobject name = "DeleteTableErrorModalDialog">
+  You cannot delete this table:<br/>
+  <webobject name = "DeleteTableErrorString"/><br/>
+  <span style="float:left"><webobject name = "DeleteTableErrorModalDialogOkLink">Ok</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteTableModalDialog">
+  Are you sure you want to delete the table?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteTableModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteTableModalDialogNoLink">No</webobject></span>
+</webobject>

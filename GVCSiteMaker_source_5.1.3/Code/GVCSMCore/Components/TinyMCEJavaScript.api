@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="TinyMCEJavaScript.java" wocomponentcontent="false">
+
+        <binding name="website"/>
+        <validation message="'website' is a required binding.">
+            <unbound name="website"/>
+        </validation>
+    <binding name="section"/>
+        <validation message="'section' is a required binding.">
+            <unbound name="section"/>
+        </validation>
+    <binding name="wysiwygEditorMode"/>
+        <validation message="'wysiwygEditorMode' is a required binding.">
+            <unbound name="wysiwygEditorMode"/>
+        </validation>
+    <binding name="editorCSS"/>
+        <validation message="'editorCSS' is a required binding.">
+            <unbound name="editorCSS"/>
+        </validation>
+    </wo>
+</wodefinitions>

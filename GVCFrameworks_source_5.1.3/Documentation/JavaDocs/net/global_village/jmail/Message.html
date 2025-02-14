@@ -1,0 +1,807 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Message (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Message (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Message.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/jmail/MailDelivery.html" title="class in net.global_village.jmail"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html" title="class in net.global_village.jmail"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/jmail/Message.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Message.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_javax.mail.internet.MimeMessage">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.sun.mail.smtp.SMTPMessage">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.jmail</FONT>
+<BR>
+Class Message</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">javax.mail.Message
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">javax.mail.internet.MimeMessage
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.sun.mail.smtp.SMTPMessage
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.jmail.Message</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>javax.mail.internet.MimePart, javax.mail.Part</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.26"><B>Message</B></A><DT>extends com.sun.mail.smtp.SMTPMessage</DL>
+</PRE>
+
+<P>
+Extends com.sun.mail.smtp.SMTPMessage with some convenience methods and support for using NSArray in place of
+ Address[]. This class can be used to send messages with MailDelivery.<br>
+ <br>
+ It also provides methods for accessing addresses without needing to handle the pointless MessagingException. The docs
+ don't state why this can be thown and there is no apparent way to cause it. It is probably just another pointless
+ exception in the Java APIs or the result of some code in javax.mail using a method that throws this exception not
+ being smart enough to realize that it can not happen in that situation and not propagating it needlessly. So we will
+ do the reasonable thing and convert it to RuntimeException (as if it could ever happen!) so those using our class
+ don't need to deal with this nonsense.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005 Global Village Consulting, Inc. All rights reserved. This software is published under
+         the terms of the Educational Community License (ECL) version 1.0, a copy of which has been included with this
+         distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_javax.mail.internet.MimeMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class javax.mail.internet.MimeMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>javax.mail.internet.MimeMessage.RecipientType</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.sun.mail.smtp.SMTPMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.sun.mail.smtp.SMTPMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NOTIFY_DELAY, NOTIFY_FAILURE, NOTIFY_NEVER, NOTIFY_SUCCESS, RETURN_FULL, RETURN_HDRS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_javax.mail.internet.MimeMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class javax.mail.internet.MimeMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>content, contentStream, dh, flags, headers, modified, saved</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_javax.mail.Message"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class javax.mail.Message</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>expunged, folder, msgnum, session</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_javax.mail.Part"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface javax.mail.Part</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>ATTACHMENT, INLINE</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#Message(javax.mail.internet.MimeMessage)">Message</A></B>(javax.mail.internet.MimeMessage&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#Message(javax.mail.Session)">Message</A></B>(javax.mail.Session&nbsp;aSession)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#Message(javax.mail.Session, java.io.InputStream)">Message</A></B>(javax.mail.Session&nbsp;aSession,
+               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;is)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#addRecipientsWithoutException(javax.mail.Message.RecipientType, javax.mail.Address[])">addRecipientsWithoutException</A></B>(javax.mail.Message.RecipientType&nbsp;type,
+                                                           javax.mail.Address[]&nbsp;addresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for addRecipientsWithoutException(javax.mail.Message.RecipientType, Address[]) that translates
+ MessagingException into RuntimeException.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#associatedObject()">associatedObject</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the object previously sent to setAssociatedObject(Object), or null if not set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#bccAddresses()">bccAddresses</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the e-mail addresses in the list of direct "bcc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#ccAddresses()">ccAddresses</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the e-mail addresses in the list of direct "cc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#fromAddress()">fromAddress</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the e-mail addresses used as the "from:" address for this javax.mail.Message.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.mail.Address[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#getRecipientsWithoutException(javax.mail.Message.RecipientType)">getRecipientsWithoutException</A></B>(javax.mail.Message.RecipientType&nbsp;type)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for Address[] getRecipientsWithoutException(javax.mail.Message.RecipientType) that translates
+ MessagingException into RuntimeException.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#replyToAddresses()">replyToAddresses</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the e-mail addresses in the list of direct "to:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setAssociatedObject(java.lang.Object)">setAssociatedObject</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the optional object to associate with this message.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setBCCAddress(java.lang.String)">setBCCAddress</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds anAddress to the list of direct "bcc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setBCCAddresses(com.webobjects.foundation.NSArray)">setBCCAddresses</A></B>(com.webobjects.foundation.NSArray&nbsp;theAddresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds the e-mail addresses in theAddresses to the list of direct "bcc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setCCAddress(java.lang.String)">setCCAddress</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds anAddress to the list of direct "cc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setCCAddresses(com.webobjects.foundation.NSArray)">setCCAddresses</A></B>(com.webobjects.foundation.NSArray&nbsp;theAddresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds the e-mail addresses in theAddresses to the list of direct "cc:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setFromAddress(java.lang.String)">setFromAddress</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the message "from:" address to anAddress.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setReplyToAddress(java.lang.String)">setReplyToAddress</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds anAddress to the list of "reply to" addresses.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setReplyToAddresses(com.webobjects.foundation.NSArray)">setReplyToAddresses</A></B>(com.webobjects.foundation.NSArray&nbsp;theAddresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds the e-mail addresses in theAddresses to the list of "reply to" addresses.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setToAddress(java.lang.String)">setToAddress</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds anAddress to the list of direct "to:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#setToAddresses(com.webobjects.foundation.NSArray)">setToAddresses</A></B>(com.webobjects.foundation.NSArray&nbsp;theAddresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds the e-mail addresses in theAddresses to the list of direct "to:" recipients.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/Message.html#toAddresses()">toAddresses</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the e-mail addresses in the list of direct "to:" recipients.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.sun.mail.smtp.SMTPMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.sun.mail.smtp.SMTPMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>getAllow8bitMIME, getEnvelopeFrom, getNotifyOptions, getReturnOption, getSendPartial, setAllow8bitMIME, setEnvelopeFrom, setNotifyOptions, setReturnOption, setSendPartial</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.mail.internet.MimeMessage"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.mail.internet.MimeMessage</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>addFrom, addHeader, addHeaderLine, addRecipients, addRecipients, createInternetHeaders, getAllHeaderLines, getAllHeaders, getAllRecipients, getContent, getContentID, getContentLanguage, getContentMD5, getContentStream, getContentType, getDataHandler, getDescription, getDisposition, getEncoding, getFileName, getFlags, getFrom, getHeader, getHeader, getInputStream, getLineCount, getMatchingHeaderLines, getMatchingHeaders, getMessageID, getNonMatchingHeaderLines, getNonMatchingHeaders, getRawInputStream, getReceivedDate, getRecipients, getReplyTo, getSentDate, getSize, getSubject, isMimeType, isSet, parse, removeHeader, reply, saveChanges, setContent, setContent, setContentID, setContentLanguage, setContentMD5, setDataHandler, setDescription, setDescription, setDisposition, setFileName, setFlags, setFrom, setFrom, setHeader, setRecipients, setRecipients, setReplyTo, setSentDate, setSubject, setSubject, setText, setText, updateHeaders, writeTo, writeTo</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.mail.Message"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.mail.Message</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>addRecipient, getFolder, getMessageNumber, isExpunged, match, setExpunged, setFlag, setMessageNumber, setRecipient</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Message(javax.mail.internet.MimeMessage)"><!-- --></A><H3>
+Message</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.32"><B>Message</B></A>(javax.mail.internet.MimeMessage&nbsp;source)
+        throws javax.mail.MessagingException</PRE>
+<DL>
+<DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.MessagingException</CODE></DL>
+</DL>
+<HR>
+
+<A NAME="Message(javax.mail.Session)"><!-- --></A><H3>
+Message</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.39"><B>Message</B></A>(javax.mail.Session&nbsp;aSession)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="Message(javax.mail.Session, java.io.InputStream)"><!-- --></A><H3>
+Message</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.46"><B>Message</B></A>(javax.mail.Session&nbsp;aSession,
+               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;is)
+        throws javax.mail.MessagingException</PRE>
+<DL>
+<DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.MessagingException</CODE></DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="setFromAddress(java.lang.String)"><!-- --></A><H3>
+setFromAddress</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.59"><B>setFromAddress</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</PRE>
+<DL>
+<DD>Sets the message "from:" address to anAddress.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anAddress</CODE> - - e-mail address to use as "from" address for this javax.mail.Message.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if one of the e-mail addresses in emailAddresses can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fromAddress()"><!-- --></A><H3>
+fromAddress</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.82"><B>fromAddress</B></A>()</PRE>
+<DL>
+<DD>Returns the e-mail addresses used as the "from:" address for this javax.mail.Message.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the e-mail addresses in the list of direct "from:" recipients.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setReplyToAddress(java.lang.String)"><!-- --></A><H3>
+setReplyToAddress</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.108"><B>setReplyToAddress</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)</PRE>
+<DL>
+<DD>Adds anAddress to the list of "reply to" addresses.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anAddress</CODE> - - e-mail address to add to the list of "reply to" addresses
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if the e-mail addresses anAddress can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setReplyToAddresses(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setReplyToAddresses</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.126"><B>setReplyToAddresses</B></A>(com.webobjects.foundation.NSArray&nbsp;theAddresses)</PRE>
+<DL>
+<DD>Adds the e-mail addresses in theAddresses to the list of "reply to" addresses. Note that this is additive and
+ does not replace any existing addresses.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theAddresses</CODE> - - e-mail addresses to add to the list of direct "to:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if one of the e-mail addresses in emailAddresses can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="replyToAddresses()"><!-- --></A><H3>
+replyToAddresses</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.152"><B>replyToAddresses</B></A>()</PRE>
+<DL>
+<DD>Returns the e-mail addresses in the list of direct "to:" recipients.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the e-mail addresses in the list of direct "to:" recipients.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setToAddress(java.lang.String)"><!-- --></A><H3>
+setToAddress</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.178"><B>setToAddress</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)
+                  throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds anAddress to the list of direct "to:" recipients.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anAddress</CODE> - - e-mail address to add to the list of direct "to:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if the e-mail addresses anAddress can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setToAddresses(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setToAddresses</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.196"><B>setToAddresses</B></A>(com.webobjects.foundation.NSArray&nbsp;theAddresses)
+                    throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds the e-mail addresses in theAddresses to the list of direct "to:" recipients. Note that this is additive and
+ does not replace any existing addresses.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theAddresses</CODE> - - e-mail addresses to add to the list of direct "to:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if one of the e-mail addresses in emailAddresses can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toAddresses()"><!-- --></A><H3>
+toAddresses</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.215"><B>toAddresses</B></A>()</PRE>
+<DL>
+<DD>Returns the e-mail addresses in the list of direct "to:" recipients.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the e-mail addresses in the list of direct "to:" recipients.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setCCAddress(java.lang.String)"><!-- --></A><H3>
+setCCAddress</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.234"><B>setCCAddress</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)
+                  throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds anAddress to the list of direct "cc:" recipients.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anAddress</CODE> - - e-mail address to add to the list of direct "cc:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if the e-mail addresses anAddress can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setCCAddresses(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setCCAddresses</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.253"><B>setCCAddresses</B></A>(com.webobjects.foundation.NSArray&nbsp;theAddresses)
+                    throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds the e-mail addresses in theAddresses to the list of direct "cc:" recipients. Note that this is additive and
+ does not replace any existing addresses.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theAddresses</CODE> - - e-mail addresses to add to the list of direct "cc:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if one of the e-mail addresses in emailAddresses can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="ccAddresses()"><!-- --></A><H3>
+ccAddresses</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.272"><B>ccAddresses</B></A>()</PRE>
+<DL>
+<DD>Returns the e-mail addresses in the list of direct "cc:" recipients.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the e-mail addresses in the list of direct "cc:" recipients.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBCCAddress(java.lang.String)"><!-- --></A><H3>
+setBCCAddress</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.291"><B>setBCCAddress</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;anAddress)
+                   throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds anAddress to the list of direct "bcc:" recipients.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anAddress</CODE> - - e-mail address to add to the list of direct "bcc:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if the e-mail addresses anAddress can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setBCCAddresses(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setBCCAddresses</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.310"><B>setBCCAddresses</B></A>(com.webobjects.foundation.NSArray&nbsp;theAddresses)
+                     throws javax.mail.internet.AddressException</PRE>
+<DL>
+<DD>Adds the e-mail addresses in theAddresses to the list of direct "bcc:" recipients. Note that this is additive and
+ does not replace any existing addresses.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theAddresses</CODE> - - e-mail addresses to add to the list of direct "bcc:" recipients.
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.internet.AddressException</CODE> - if one of the e-mail addresses in emailAddresses can not be parsed.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="bccAddresses()"><!-- --></A><H3>
+bccAddresses</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.331"><B>bccAddresses</B></A>()</PRE>
+<DL>
+<DD>Returns the e-mail addresses in the list of direct "bcc:" recipients.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the e-mail addresses in the list of direct "bcc:" recipients.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addRecipientsWithoutException(javax.mail.Message.RecipientType, javax.mail.Address[])"><!-- --></A><H3>
+addRecipientsWithoutException</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.348"><B>addRecipientsWithoutException</B></A>(javax.mail.Message.RecipientType&nbsp;type,
+                                          javax.mail.Address[]&nbsp;addresses)</PRE>
+<DL>
+<DD>Cover method for addRecipientsWithoutException(javax.mail.Message.RecipientType, Address[]) that translates
+ MessagingException into RuntimeException.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getRecipientsWithoutException(javax.mail.Message.RecipientType)"><!-- --></A><H3>
+getRecipientsWithoutException</H3>
+<PRE>
+public javax.mail.Address[] <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.366"><B>getRecipientsWithoutException</B></A>(javax.mail.Message.RecipientType&nbsp;type)</PRE>
+<DL>
+<DD>Cover method for Address[] getRecipientsWithoutException(javax.mail.Message.RecipientType) that translates
+ MessagingException into RuntimeException.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="associatedObject()"><!-- --></A><H3>
+associatedObject</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.397"><B>associatedObject</B></A>()</PRE>
+<DL>
+<DD>Returns the object previously sent to setAssociatedObject(Object), or null if not set.
+ This is intended to be used to link this Message to  other objects in your application.
+ It will be particularly useful with the notifications sent by ThreadedMailAgent.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the object previously sent to setAssociatedObject(Object), or null if not set<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/Message.html#setAssociatedObject(java.lang.Object)"><CODE>setAssociatedObject(Object)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAssociatedObject(java.lang.Object)"><!-- --></A><H3>
+setAssociatedObject</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/Message.html#line.411"><B>setAssociatedObject</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;anObject)</PRE>
+<DL>
+<DD>Sets the optional object to associate with this message.  This is intended to be used to link this Message to
+ other objects in your application.  It will be particularly useful with the notifications sent by ThreadedMailAgent.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>anObject</CODE> - the optional object to associate with this message<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/Message.html#associatedObject()"><CODE>associatedObject()</CODE></A></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Message.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/jmail/MailDelivery.html" title="class in net.global_village.jmail"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html" title="class in net.global_village.jmail"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/jmail/Message.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Message.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_javax.mail.internet.MimeMessage">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.sun.mail.smtp.SMTPMessage">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

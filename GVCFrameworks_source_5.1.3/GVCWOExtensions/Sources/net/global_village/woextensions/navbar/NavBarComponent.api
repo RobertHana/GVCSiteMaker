@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="NavBarComponent" wocomponentcontent="false">
+
+		<binding name="menu"/>
+		<binding name="selectedMenu"/>
+		<binding name="selectedMenuCSSClass"/>
+		<binding name="selectedSubMenuCSSClass"/>
+		<binding name="subMenuCSSClass"/>
+
+		<validation message="&apos;menu&apos; is a required binding">
+			<unbound name="menu"/>
+		</validation>
+
+		<validation message="&apos;selectedMenu&apos; is a required binding">
+			<unbound name="selectedMenu"/>
+		</validation>
+	</wo>
+</wodefinitions>

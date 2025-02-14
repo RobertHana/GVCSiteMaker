@@ -1,0 +1,247 @@
+CanBecomeDefaultStyleConditional: WOConditional {
+	condition = style.canBecomeDefaultStyle;
+}
+
+CanChangePublicationStatusConditional: WOConditional {
+	condition = canChangePublicationStatus;
+}
+
+CanNotChangePublicationStatusConditional: WOConditional {
+	condition = canChangePublicationStatus;
+	negate = true;
+}
+
+CancelChangesButton: WOSubmitButton {
+    action = cancelChanges;
+	value = "Cancel";
+}
+
+CreatingUserIDString: WOString {
+	value = style.createdBy.userID;
+}
+
+DateCreatedString: WOString {
+	value = style.dateCreated;
+	formatter = application.properties.StandardDateFormatter;  //VALID
+}
+
+DateModifiedString: WOString {
+	value = style.dateModified;
+	formatter = application.properties.StandardDateFormatter;  //VALID
+}
+
+DisplaySitesWithStyleHyperlink: WOHyperlink {
+	action = showSitesUsingStyle;
+}
+
+DoneButton: WOSubmitButton {
+	action = cancelChanges;
+	value = "Done";
+}
+
+DynamicBody: DynamicBodyComponent {
+	pageTitle = "Site Style Management";
+	needsPreviewURLJavaScript = true;
+	isAdmin = false;
+	isConfigPage = false;  // Not configuring a site!
+	pageType = "ConfigSectionStylePage";
+}
+
+
+HyperlinkDownloadTemplateLink: WOFileDownload {
+	contentType = "application/octet-stream";
+	fileName = style.templateFileName;
+	displayAsButton = false;
+	downloadTitle = "here";
+	data = style.templateHtmlData;
+}
+
+IsCreatingStyleConditional: WOConditional {
+	condition = isNewStyle;
+}
+
+IsDefaultString: WOString {
+	value = isDefaultString;
+}
+
+IsDefaultStyleConditional: WOConditional {
+	condition = style.isDefaultStyle;
+}
+
+IsEditingStyleConditional: WOConditional {
+	condition = isNewStyle;
+	negate = true;
+}
+
+IsNotDefaultStyleConditional: WOConditional {
+	condition = style.isDefaultStyle;
+	negate = true;
+}
+
+IsNotSysAdminConditional: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+	negate = true;
+}
+
+IsPublishedCheckBox: WOCheckBox {
+	checked = style.isPublished;
+}
+
+IsPublishedString: WOString {
+	value = isPublishedString;
+}
+
+IsSystemAdminConditional: WOConditional {
+	condition = session.currentUser.isSystemAdmin;
+}
+
+MakeDefaultStyleHyperlink: WOHyperlink {
+	action = makeDefaultStyle;
+}
+
+ModifyingUserIDString: WOString {
+	value = style.modifiedBy.userID;
+}
+
+NameIsInUse: DictionaryErrorMessage {
+	errorKey = "StyleNameIsInUseKey";
+	dictionary = errors;
+	prefixString = "<br>";
+}
+
+NameIsRequiredError: DictionaryErrorMessage {
+	prefixString = "<br>";
+	dictionary = errors;
+	errorKey = "StyleNameIsRequiredKey";
+}
+
+OwningOrgUnitNameString: WOString {
+	value = style.owningOrgUnit.unitName;
+}
+
+PreviewForm: WOForm {
+	action = previewSiteWithStyle;
+}
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURLWithoutConfig = previewURL;
+}
+
+PreviewSiteButton: WOSubmitButton {
+	action = previewSiteWithStyle;
+	value = "View";
+}
+
+PreviewSiteIDTextField: WOTextField {
+	value = previewSiteID;
+	size = "40";
+}
+
+RelatedCSSTextField: WOTextField {
+	value = style.relatedCSSUrl;
+	size = 40;
+    maxLength = 100;
+}
+
+
+ResourceDirectoryString: WOString {
+	value = style.resourceDirectory;
+}
+
+ResourceDirectoryTextField: WOTextField {
+	value = style.resourceDirectory;
+	size = "40";
+    maxLength = 100;
+}
+
+ResourcePathIsInvalid: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleResourceDirectoryIsInvalidKey";
+	prefixString = "<br>";
+}
+
+ResourcePathIsRequired: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleResourceDirectoryIsRequiredKey";
+	prefixString = "<br>";
+}
+
+SaveChangesButton: WOSubmitButton {
+	value = "Submit";
+	action = saveChanges;
+}
+
+SiteIDNotFound: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "SiteIDNotFound";
+	prefixString = "<br>";
+}
+
+SitesUsingStyleRepetition: WORepetition {
+	item = aWebsite;
+	list = sitesUsingStyle;
+}
+
+StyleForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}
+
+StyleIDIsInUse: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleIDIsInUseKey";
+	prefixString = "<br>";
+}
+
+StyleIDIsInvalidError: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleIDIsInvalidKey";
+	prefixString = "<br>";
+}
+
+StyleIDIsRequiredError: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleIDIsRequiredKey";
+	prefixString = "<br>";
+}
+
+StyleIDTextField: WOTextField {
+	value = style.styleID;
+	size = 30;
+    maxLength = 50;
+}
+
+StyleNameTextField: WOTextField {
+	value = style.name;
+	size = "40";
+    maxLength = 100;
+}
+
+StyleNotesTextArea: WOText {
+	value = style.notes;
+	cols = "40";
+	rows = 2;
+}
+
+StyleOwningUnit: UnitChooser {
+	selectedUnit = style.owningOrgUnit;
+	rootOrgUnits = rootUnitsForStyle;
+	excludeNonSystemWideUnits = false;
+}
+
+TemplateIsRequired: DictionaryErrorMessage {
+	dictionary = errors;
+	errorKey = "StyleTemplateIsRequiredKey";
+	prefixString = "<br>";
+}
+
+TemplateUpload: WOFileUpload {
+	data = templateData;
+	filePath = templateFilePath;
+	size = "40";
+}
+
+WebsiteDescriptionComponent: WebsiteDescriptionComponent {
+	website = aWebsite;
+}

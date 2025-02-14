@@ -1,0 +1,17 @@
+{
+	// *** W A R N I N G ***
+	// DO not change ANYTHING in this file unless you are certain you know what you are doing.  
+	
+	// This file allows one WO page to be substituted for another at runtime.  This was done to 
+	// support customization of GVC SiteMaker on a page by page basis and is used by the Page Mapper 
+	// in Application.java.  In most cases this will only work if the mapped page is a sub-class of 
+	// the page it is mapped to.  The format is 
+	//   PageNameRequested = PageNameToBeUsed;
+  	// for example 
+	//   LoginPage = SMLoginPage;
+	// will result in SMLoginPage being used for all requests for the LoginPage.  
+
+	LoginPage = SMLoginPage;
+	LogoutPage = SMLogoutPage;	
+
+}

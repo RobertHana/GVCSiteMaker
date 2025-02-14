@@ -1,0 +1,215 @@
+<table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+  <tr>
+    <td class = "screenTitleContainer">Manage Files
+      <div class = "createNewItemLinkContainer">
+        <webobject name = "AddFileHyperlink">
+          <img src = "/GVCSiteMaker/Images/add.png" alt = "Upload New Files" border = "0" style = "position:relative; top:3px;" />
+          <b>Upload New Files</b>
+        </webobject>
+        &nbsp;&nbsp;&nbsp;
+        <webobject name = "AddFolderHyperlink">
+          <img src = "/GVCSiteMaker/Images/add.png" alt = "Create New Folder" border = "0" style = "position:relative; top:3px;" />
+          <b>Create New Folder</b>
+        </webobject>
+      </div>
+    </td>
+    <td align = "right" valign = "top" class = "helpButtonContainer">
+      <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+    </td>
+  </tr>
+</table>
+
+
+<p id="FolderAdded" style="display: none;">Folder added to the list below</p>
+
+
+<div class="descriptiveText">
+  The filespace quota for this website is
+  <span class=coloredBoldText><webobject name="TotalQuotaString"/></span> MB, with
+  <span class=coloredBoldText><webobject name="WebsiteRemainingQuotaString"/></span> MB currently available.<br/>
+  <span class=coloredBoldText><webobject name="UploadedFilesQuotaUsage"/></span> MB are used for uploaded files (below), and
+  <span class=coloredBoldText><webobject name="DatabaseTablesQuotaUsage"/></span> MB are used for files uploaded into Data Tables.
+</div>
+
+
+<webobject name = "ConfigPageForm">
+  <webobject name = "AjaxUpdateArea">
+    <table class = "uploadedFilesListHeadingsTable" border = "0" cellpadding = "0" cellspacing = "0" style = "clear:both;">
+      <tr>
+        <td class = "uploadedFilesNameHeading" valign = "bottom">
+          <webobject name = "ToggleExpandCollapseFilesHyperlink">
+            <webobject name = "ShowCollapseConditional"><img src = "/GVCSiteMaker/Images/double-collapse.gif" border = "0" /></webobject>
+            <webobject name = "ShowExpandConditional"><img src = "/GVCSiteMaker/Images/double-expand.gif" border = "0" /></webobject>
+          </webobject>
+          &nbsp;
+          <webobject name = "SortOnNameHyperlink">Name</webobject>
+          <webobject name = "ShowSortedNameConditional">&nbsp;<webobject name = "SortOnNameDirectionImage" /></webobject>
+        </td>
+
+        <td valign = "bottom" class = "uploadedFilesSizeHeading">
+          <webobject name = "SortOnSizeHyperlink">Size</webobject>&nbsp;(MB)
+          <webobject name = "ShowSortedSizeConditional">&nbsp;<webobject name = "SortOnSizeDirectionImage" /></webobject>
+        </td>
+
+        <td class = "uploadedFilesAccessGroupsHeading" valign = "bottom">
+          <webobject name = "ToggleExpandCollapseGroupsHyperlink">
+            <webobject name = "ShowCollapseGroupsConditional"><img src = "/GVCSiteMaker/Images/double-collapse.gif" border = "0" /></webobject>
+            <webobject name = "ShowExpandGroupsConditional"><img src = "/GVCSiteMaker/Images/double-expand.gif" border = "0" /></webobject>
+          </webobject>&nbsp;Access
+        </td>
+
+        <td class = "uploadedFilesActionsHeading" valign = "bottom">Actions</td>
+
+        <td class = "uploadedFilesMarkHeading" valign = "bottom">
+          <webobject name = "SelectedFilesPopup" />
+          <webobject name = "SelectedFilesPopupObserveField" />
+        </td>
+      </tr>
+    </table>
+
+    <webobject name = "ObserveContainer">
+      <div class="uploadedFilesListContainer">
+        <ul>
+          <webobject Name = "FolderRepetition"><li>
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tr valign = "middle">
+                  <td class = "uploadedFilesNameInList">
+                    <webobject name = "IsMainFolderConditional">
+                      <strong style = "float: right; width: 85%;"><webobject name = "FolderNameString" /></strong>
+                    </webobject>
+                    <webobject name = "IsNotMainFolderConditional"><strong>
+                      <webobject name = "FolderNameEditor">
+                        <webobject name = "EditFolderNameView">
+                          <webobject name = "EditAction">
+                            <webobject name="FolderNameString"/>
+                          </webobject>
+                        </webobject>
+                        <webobject name = "EditFolderNameEdit">
+                          <webobject name = "FolderNameTextField"/>
+                          <script>$('<webobject name = "FolderNameTextFieldID"/>').focus();</script>
+                        </webobject>
+                      </webobject>
+                    </strong></webobject>
+                    &nbsp;
+                    <webobject name = "ToggleFolderHyperlink">
+                      <webobject name = "IsFilesHiddenConditional">
+                        <webobject name = "ShowFilesImage" /><webobject name = "ClosedFolderImage" />
+                      </webobject>
+                      <webobject name = "IsFilesDisplayedConditional">
+                        <webobject name = "HideFilesImage" /><webobject name = "OpenedFolderImage" />
+                      </webobject>
+                    </webobject>
+                  </td>
+
+                  <td class = "uploadedFilesSizeInList">
+                    (<webobject name = "FilesInFolderString" /> files,
+                    <webobject name = "FolderSizeString" /> MB)
+                  </td>
+
+                  <td class="uploadedFilesAccessGroupsInList">&nbsp;</td>
+
+                  <td class="uploadedFilesActionsInList">
+                    <webobject name = "NotMainFolderConditional">
+                      <webobject name = "DeleteFolderHyperlink">Delete</webobject>
+                    </webobject>
+                  </td>
+
+                  <td class="uploadedFilesMarkInList">&nbsp;</td>
+              </tr>
+            </table></li>
+
+            <webobject name = "BusyLIGenericContainer">
+              <webobject name = "BusyImage" />&nbsp;Processing...
+            </webobject>
+
+            <webobject name = "FolderIsOpenConditional"><webobject name="FileRepetition">
+              <webobject name = "LIGenericContainer">
+                <table border = "0" cellpadding = "0" cellspacing = "0">
+                  <tr valign = "middle">
+                      <td class = "uploadedFilesNameInList">
+                        <webobject name = "IndentSpacerImage" />
+                        <strong>
+                          <webobject name = "ViewFileHyperlink">
+                            <webobject name = "FileNameString" />
+                          </webobject>
+                        </strong>
+                      </td>
+
+                      <td class = "uploadedFilesSizeInList">
+                        <webobject name = "FileSizeString" />
+                      </td>
+
+                      <td class = "uploadedFilesAccessGroupsInList">
+                        <webobject name = "HasAtMostOneGroupConditional">
+                          <webobject name = "GroupsRepetition">
+                            <webobject name = "ManageGroupHyperlink"><webobject name = "GroupName" /></webobject>
+                          </webobject>
+                        </webobject>
+                        <webobject name = "HasAtLeastTwoGroupsConditional">
+                          <webobject name = "GroupSummaryHyperlink">
+                            <webobject name = "IsGroupHiddenConditional">
+                              <webobject name = "ShowGroupsImage" />
+                            </webobject>
+                            <webobject name = "IsGroupDisplayedConditional">
+                              <webobject name = "HideGroupsImage" />
+                            </webobject>
+                            <b><webobject name = "GroupCountString"/> Groups</b>
+                          </webobject><br/>
+                          <webobject name = "GroupsShownConditional">
+                              <webobject name = "GroupsRepetition">
+                                <webobject name = "ManageGroupHyperlink"><webobject name = "GroupName" /></webobject>
+                                <webobject name = "GroupSeperatorString" />
+                              </webobject>
+                          </webobject>
+                        </webobject>
+                      </td>
+
+                      <td class = "uploadedFilesActionsInList"><webobject name = "ActionSelectPopup" /></td>
+
+                      <td class = "uploadedFilesMarkInList">
+                        <span class = "FileCheckbox"><webobject name = "SelectedFileCheckbox" /></span>
+                      </td>
+                  </tr>
+                </table>
+              </webobject>
+            </webobject></webobject>
+          </webobject>
+        </ul>
+      </div>
+    </webobject>
+  </webobject>
+</webobject>
+<br />
+
+
+<webobject name = "ErrorMessageModalDialog">
+  <webobject name = "ErrorMessageString"/><br />
+  <span style="float:left"><webobject name = "ErrorMessageModalDialogOkLink">Ok</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteFolderModalDialog">
+  Are you sure you want to delete this folder?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteFolderModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteFolderModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteFilesModalDialog">
+  Are you sure you want to delete the selected file(s)?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteFilesModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteFilesModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteFileModalDialog">
+  Are you sure you want to delete this file?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteFileModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteFileModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "MoveFilesToFolderModalDialog">
+  <webobject name = "MoveFilesForm">
+    Select the folder to move to:<br />
+    <webobject name = "FolderPopup"/><br />
+    <span style="float:left"><webobject name = "MoveFilesToFolderModalDialogOkLink">Ok</webobject></span>
+    <span style="float:right"><webobject name = "MoveFilesToFolderModalDialogCancelLink">Cancel</webobject></span>
+  </webobject>
+</webobject>

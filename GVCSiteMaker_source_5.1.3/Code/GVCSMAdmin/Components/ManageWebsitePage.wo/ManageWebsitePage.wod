@@ -1,0 +1,292 @@
+AdminNotesTextArea: WOText {
+	value = adminNotes;
+	class = "largeEntryBox";
+	rows = "4";
+}
+
+AssociatedUnit: WOString {
+	value = website.parentOrgUnit.unitName;
+}
+
+AvailableFilespaceString: WOString {
+	formatter = application.properties.StandardNumberFormatter;  // VALID
+	value = website.availableSpaceInMegaBytes;
+}
+
+CanDeleteWebsiteConditional: WOConditional {
+	condition = website.canBeDeleted;
+}
+
+Conditional1: WOConditional {
+	condition = aChangeLog.notes;
+}
+
+Conditional2: WOConditional {
+	condition = aChangeLog.changes;
+}
+
+Conditional3: WOConditional {
+	condition = messageSubjectRequiredErrorMessage;
+}
+
+ConfigureLink: WOHyperlink 
+{
+	href = websiteConfigURL;  
+	target = "_configure";  
+}
+
+CreatePackageLink: WOHyperlink 
+{
+	action = createDataTablePackage;
+}
+
+
+DeleteError: WOString {
+	value = deleteFailedErrorString;
+}
+
+DeleteFailureErrorMessagesRepetition: WORepetition {
+	item = deleteFailedErrorString;
+	list = deleteNotPermittedErrorArray;
+}
+
+DisplayDeleteFailureErrorMessagesConditional: WOConditional {
+	condition = displayDeleteNotPermittedErrorMessages;
+}
+
+DisplayInvalidRedirectURLErrorMessageConditional: WOConditional {
+	condition = displayInvalidRedirectURLErrorMessage;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Website Management";
+	isAdmin = true;
+	pageType = "ManageWebsitePage";
+}
+
+FilespaceQuota: WOString {
+	value = website.megQuota;
+}
+
+FilespaceUsage: WOString {
+	value = website.fileSizeUsageInMegabytes;
+    formatter = application.properties.StandardNumberFormatter;  // VALID
+}
+
+FilespaceUsagePct: WOString {
+	value = website.percentageOfQuotaUsed;
+	numberformat = "0.00";
+}
+
+InstallationNameString: WOString {
+	value = productName;
+}
+
+InvalidFilespaceQuotaErrorString: WOString {
+	value = invalidFilespaceQuotaErrorMessage;
+}
+
+InvalidManageSiteIDErrorMessage: WOString {
+	value = invalidManageSiteIDErrorMessage;
+}
+
+InvalidRedirectURLErrorMessageString: WOString {
+	value = invalidRedirectUrlErrorMessage;
+}
+
+InvalidSiteIDErrorString: WOString {
+	value = invalidSiteIDErrorMessage;
+}
+
+IsNotRedirected: WOConditional 
+{
+	negate = true;
+	condition = website.isRedirected;
+}
+
+
+IsRedirected: WOConditional 
+{
+	condition = website.isRedirected;
+}
+
+ManagementForm: WOForm {
+	multipleSubmit = true;
+}
+
+MessageBodyTextArea: WOText {
+	class = "largeEntryBox";
+	value = messageBody;
+	rows = "4";
+}
+
+MessageSubjectTextField: WOTextField {
+	class = "largeEntryBox";
+	value = messageSubject;
+}
+
+NewAssociatedUnit: UnitChooser {
+	size = 1;
+	selectedUnit = newAssociatedUnit;
+	rootOrgUnits = session.currentUser.orgUnitsToAdmin;
+	excludeNonSystemWideUnits = false;
+}
+
+NewFilespaceQuota: WOTextField {
+	size = 8;
+	value = website.megQuota;
+}
+
+NewOwnerID: WOTextField {
+	class = "largeEntryBox";
+	value = newOwnerID;
+    maxLength = 100;
+}
+
+NewSiteID: WOTextField {
+	class = "largeEntryBox";
+	value = website.siteID;
+}
+
+NoPublish: WORadioButton 
+{
+	value = "N";
+	selection = website.publicationPermitted;
+	name = "Published";
+}
+
+NoReplicate: WORadioButton 
+{
+	value = "N";
+	selection = website.canReplicate;
+	name = "Replicateable";
+}
+
+NullAssociatedUnitErrorString: WOString {
+	value = nullAssociatedUnitErrorMessage;
+}
+
+NullOwnerIDErrorString: WOString {
+	value = nullOwnerIDErrorMessage;
+}
+
+NullSiteIDErrorString: WOString {
+	value = nullSiteIDErrorMessage;
+}
+
+RedirectURL: WOTextField {
+	class = "largeEntryBox";
+	value = website.redirectURL;
+}
+
+RemovalButton: RemovalButton {
+	removeButtonName = "Delete";
+	removeButtonActionName = "removeWebsite";
+	objectToDelete = website;
+}
+
+Repetition1: WORepetition {
+	item = aChangeLog;
+	list = changeLogs;
+}
+
+SendMessageSubmitButton: WOSubmitButton {
+	action = sendMessageToOwners;
+	value = "Send";
+}
+
+ShowInvalidCharsInOwnerIDErrorMessage: WOConditional {
+	condition = displayInvalidCharsInOwnerIDErrorMessage;
+}
+
+ShowInvalidFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayInvalidFilespaceQuotaErrorMessage;
+}
+
+ShowInvalidManageSiteIDErrorMessage: WOConditional {
+	condition = displayInvalidManageSiteIDErrorMessage;
+}
+
+ShowInvalidSiteIDErrorMessage: WOConditional {
+	condition = displayInvalidSiteIDErrorMessage;
+}
+
+ShowNullAssociatedUnitErrorMessage: WOConditional {
+	condition = displayNullAssociatedUnitErrorMessage;
+}
+
+ShowNullOwnerIDErrorMessage: WOConditional {
+	condition = displayNullOwnerIDErrorMessage;
+}
+
+ShowNullSiteIDErrorMessage: WOConditional {
+	condition = displayNullSiteIDErrorMessage;
+}
+
+ShowPackageConditional: WOConditional {
+	condition = showDataTablePackageLink;
+}
+
+ShowSiteIDExistsErrorMessage: WOConditional {
+	condition = displaySiteIDExistsErrorMessage;
+}
+
+ShowWebsiteOutOfAdminScopeErrorMessage: WOConditional {
+	condition = displayWebsiteOutOfAdminScopeErrorMessage;
+}
+
+SiteIDExistsErrorString: WOString {
+	value = siteIDExistsErrorMessage;
+}
+
+SiteIDToManage: WOTextField {
+	class = "largeEntryBox";
+	value = websiteIDToManage;
+}
+
+String1: WOString {
+	value = invalidCharsInOwnerIDErrorMessage;
+}
+
+String2: WOString {
+	value = aChangeLog.dateRecorded;
+	formatter = application.properties.DateAndTimeFormatter;  // VALID
+}
+
+String3: WOString {
+	value = aChangeLog.user.userID;
+}
+
+String4: WOString {
+	value = formattedChangeLogNotes;
+	escapeHTML = false;
+}
+
+String5: WOString {
+	escapeHTML = false;
+	value = formattedChangeLogChanges;
+}
+
+UpdateProperties: WOSubmitButton {
+	value = "Update";
+	action = updateProperties;
+}
+
+WebsiteOutOfAdminScopeErrorMessage: WOString {
+	value = websiteOutOfAdminScopeErrorMessage;
+}
+
+YesPublish: WORadioButton 
+{
+	name = "Published";
+	selection = website.publicationPermitted;
+	value = "Y";
+}
+
+YesReplicate: WORadioButton 
+{
+	value = "Y";
+	selection = website.canReplicate;
+	name = "Replicateable";
+}

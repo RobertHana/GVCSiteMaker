@@ -1,0 +1,163 @@
+########################################################################
+# Rewrite rules for GVC.SiteMaker
+
+#
+# IMPORTANT
+#
+# Images, CSS files, static HTML files etc. should be placed under the 
+# GVCSiteMaker directory under the document root to that references to them
+# are not interpreted as site requests.  If there are any static files, or 
+# directories of files, that need to be accessed directly and cannot go in 
+# the DocumentRoot below GVCSiteMaker add rules to exclude them here.  
+#
+# IMPORTANT
+#
+# If other rewrite rules are added here, update the RestrictedSiteIDs
+# configuration item in GVCSiteMakerCustom.plist to reflect this or it will 
+# be possible to create a Website with a SiteID that matches one of these
+# special  strings which will result in a website which can not be displayed
+# and odd errors being shown to the user.
+#
+# Example
+#
+# # Allow requests for statically generated HTML file through unmolested
+# #
+# # File Example
+# RewriteRule  ^/sitestats.html  -  [last]
+# #
+# # Directory Example
+# RewriteRule  ^/Stats/(.*)      -  [last]
+# #
+# You will also nee to udpate (may need to add) the GVCSiteMakerCustom.plist
+# file so that someone does not make a site named after the file / directory:
+# RestrictedSiteIDs = ("sitestats.html");  // For a file
+# RestrictedSiteIDs = ("Stats");  // For a directory
+
+
+# Fail requests for favicon.ico.  Change to [last] if there is such an icon file
+RewriteRule    ^/favicon.ico$   -   [F]
+
+
+# Hack around Nimda attacks with unicode chars
+RewriteRule    ^/scripts      -
+RewriteRule    ^/msadc        -                                            [F]
+RewriteRule    ^/_mem_bin     -                                            [F]
+RewriteRule    ^/_vti_bin     -                                            [F]
+RewriteRule    ^/MSADC        -                                            [F]
+RewriteRule    ^/c/           -                                            [F]
+RewriteRule    ^/d/           -                                            [F]
+
+
+# Strip off trailing slashes and start again
+RewriteRule    ^(.+)/$ $1                                                  [redirect]
+
+
+# Handle requests for robots.txt
+RewriteRule    ^/robots.txt$ /robots.txt                                   [last]
+
+
+#
+# IMPORTANT
+#
+# These next rules are to prevent rewritten URLs or full URLs from being
+# rewritten.  If you are getting messages about 'A site with this ID can 
+# not be found.' then you are probably missing something here.  You will 
+# need to include both the cgi-bin and whatever you are using with 
+# mod_WebObjects here.  
+
+RewriteRule    ^/cgi-bin        -                                            [last]
+RewriteRule    ^/apps           -                                            [last]
+RewriteRule    ^/WebObjects     -                                            [last]
+RewriteRule    ^/GVCSiteMaker   -                                            [last]
+RewriteRule    ^/editlive       -                                            [last]
+RewriteRule    ^/tiny_mce       -                                            [last]
+
+
+#
+# IMPORTANT
+#
+# The default rules below assume that the main application is named 
+# GVCSiteMaker.woa  If it is named otherwise in Monitor, for example to 
+# support multiple installations on a single machine, then the 
+# corresponding names in the rules below will need to be altered.
+
+#
+# IMPORTANT
+#
+# If you are using mod_webobjects with a WebObjectsAlias other than 
+# /apps/WebObjects you will need to modify the rules below to reflect 
+# that alias.
+                                                                         
+# Any hit to these goes to the front door of the app                     
+RewriteRule    ^/$            /apps/WebObjects/GVCSiteMaker.woa             [last,passthrough]
+RewriteRule    ^/index.html$  /apps/WebObjects/GVCSiteMaker.woa             [last,passthrough]
+RewriteRule    ^/index.htm$   /apps/WebObjects/GVCSiteMaker.woa             [last,passthrough]
+RewriteRule    ^/Index.html$  /apps/WebObjects/GVCSiteMaker.woa             [last,passthrough]
+RewriteRule    ^/Index.htm$   /apps/WebObjects/GVCSiteMaker.woa             [last,passthrough]
+
+# Search engines indexing the mail page will also index this link
+# Direct them to our specially prepared page of links to index
+RewriteRule    ^/siteindex.html$ /apps/WebObjects/GVCSiteMaker.woa/wa/index [last,passthrough]
+
+
+#
+# The next URLS are special versions of the section handling ruless below them.  
+# They are here to match the Location directive in the HTTPS virtual host
+#
+
+# Public, encrypted version of Data Access Section file URLs
+RewriteRule    ^/encrypt/(.+)/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displayDataAccessFile?site=$1&section=$2&recordID=$3&fileColumnName=$4 [last,passthrough]
+
+# Public, encrypted version of direct access to files in a database table URLs
+RewriteRule    ^/encrypt/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/exportDataAccessFile?site=$1&recordID=$2&fileColumnName=$3 [last,passthrough]
+
+# Public, encrypted version of /sitename/embeddedsitename/foo
+RewriteRule    ^/encrypt/(.+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1&embeddedsite=$2&section=$3    [last,passthrough]
+
+# Public, encrypted version of /uniqname/foo
+RewriteRule    ^/encrypt/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1&section=$2    [last,passthrough]
+
+# Public, encrypted version of /uniqname
+RewriteRule    ^/encrypt/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1 [last,passthrough]
+
+
+#
+# Section handling rules
+#
+
+# Handle Data Access Section file URLs
+# http://www.GVCSiteMaker.com/siteID/section.name/da.data/recordID/column_name/filename
+# RewriteRule               ^/(.+)  /(.+)        /da.data/([0-9]+)/(.+)       /(.+)
+#                               $1    $2                   $3       $4          $5
+RewriteRule    ^/(.+)/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displayDataAccessFile?site=$1&section=$2&recordID=$3&fileColumnName=$4 [last,passthrough]
+
+
+# Handle direct access to files in a database table URLs
+# http://www.GVCSiteMaker.com/siteID/da.data/recordID/column_name/filename
+# RewriteRule               ^/(.+)  /da.data/([0-9]+)/(.+)       /(.+)
+#                               $1    $2                   $3       $4
+RewriteRule    ^/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/exportDataAccessFile?site=$1&recordID=$2&fileColumnName=$3 [last,passthrough]
+
+
+# Account for files with a password.
+RewriteRule    ^/(.+)/files/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displayFile?site=$1&file=$2&key=$3 [last,passthrough]
+
+# Any hit to a 'files' URL (eg  /uniqname/files/foo) takes this rule
+RewriteRule    ^/(.+)/files/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displayFile?site=$1&file=$2 [last,passthrough]
+
+
+# Any hit to /sitename/embeddedsitename/foo gets passed to an embedded section
+RewriteRule    ^/(.+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displaySection?site=$1&embeddedsite=$2&section=$3    [last,passthrough]
+
+
+# Any hit to /uniqname/foo gets passed to a section
+RewriteRule    ^/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displaySection?site=$1&section=$2    [last,passthrough]
+
+
+# For Tools Interoperability URLs
+RewriteRule    ^/(.+)&wosid=(.+)&woinst=([0-9]+)(&style=.+)? /apps/WebObjects/GVCSiteMaker.woa/$3/wa/displaySection?wosid=$2&site=$1$4    [last,passthrough]
+RewriteRule    ^/(.+)/(.+)&wosid=(.+)&woinst=([0-9]+)(&style=.+)? /apps/WebObjects/GVCSiteMaker.woa/$4/wa/displaySection?wosid=$3&site=$1&section=$2$5    [last,passthrough]
+
+
+# Last but not least, any hit to /uniqname gets sent as the sitename
+RewriteRule    ^/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/displaySection?site=$1 [last,passthrough]

@@ -1,0 +1,7 @@
+UnitName	Encompassing Unit	Filespace Quota	Display In List Of Org Units
+Faculties	University of Michigan	100	1
+Staff	University of Michigan	100	1
+Mathematics	Faculties	50	1
+Physics	Faculties	50	1
+Professors	Staff	15	1
+Administrative Staff	Staff	50	1

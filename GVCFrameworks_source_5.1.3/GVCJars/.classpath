@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sources"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/ganymed.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/GVCWOProjectAntTasks.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/jass-rt.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/javasvn.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/junit.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/jxl.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/log4j-1.2.14.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/svnant.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/svnClientAdapter.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/svnjavahl.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/taglets.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/testng-5.6-jdk14.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/woproject.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/dbunit-2.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="Libraries/ognl-2.6.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

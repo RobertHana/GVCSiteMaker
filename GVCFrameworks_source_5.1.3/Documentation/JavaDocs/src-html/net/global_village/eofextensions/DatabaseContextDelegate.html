@@ -1,0 +1,119 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofextensions;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    <a name="line.3"></a>
+<FONT color="green">004</FONT>    import org.apache.log4j.*;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    import com.webobjects.eoaccess.*;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import com.webobjects.eocontrol.*;<a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    import net.global_village.foundation.*;<a name="line.9"></a>
+<FONT color="green">010</FONT>    <a name="line.10"></a>
+<FONT color="green">011</FONT>    <a name="line.11"></a>
+<FONT color="green">012</FONT>    /**<a name="line.12"></a>
+<FONT color="green">013</FONT>     * EODatabaseContext.Delegate implementation installed by PrincipalClass.<a name="line.13"></a>
+<FONT color="green">014</FONT>     *<a name="line.14"></a>
+<FONT color="green">015</FONT>     * @author Copyright (c) 2001-2009  Global Village Consulting, Inc.  All rights reserved.<a name="line.15"></a>
+<FONT color="green">016</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.16"></a>
+<FONT color="green">017</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.17"></a>
+<FONT color="green">018</FONT>     * @version $REVISION$<a name="line.18"></a>
+<FONT color="green">019</FONT>     */<a name="line.19"></a>
+<FONT color="green">020</FONT>    public class DatabaseContextDelegate<a name="line.20"></a>
+<FONT color="green">021</FONT>    {<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>        private Logger logger = LoggerFactory.makeLogger();<a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>    <a name="line.25"></a>
+<FONT color="green">026</FONT>        /**<a name="line.26"></a>
+<FONT color="green">027</FONT>         * Delegate on EODatabaseContext that gets called when a to-one fault cannot find its data in the database. The object is<a name="line.27"></a>
+<FONT color="green">028</FONT>         * a cleared fault. We raise here to restore the functionality that existed prior to WebObjects 4.5.  Whenever a fault fails<a name="line.28"></a>
+<FONT color="green">029</FONT>         * for a globalID (i.e. the object is NOT found in the database), we may raise.<a name="line.29"></a>
+<FONT color="green">030</FONT>         *<a name="line.30"></a>
+<FONT color="green">031</FONT>         * Source: Kelly Hawk, http://wodeveloper.com/omniLists/eof/2000/December/msg00149.html<a name="line.31"></a>
+<FONT color="green">032</FONT>         */<a name="line.32"></a>
+<FONT color="green">033</FONT>        public boolean databaseContextFailedToFetchObject(com.webobjects.eoaccess.EODatabaseContext context,<a name="line.33"></a>
+<FONT color="green">034</FONT>                                                          java.lang.Object object,<a name="line.34"></a>
+<FONT color="green">035</FONT>                                                          com.webobjects.eocontrol.EOGlobalID globalID)<a name="line.35"></a>
+<FONT color="green">036</FONT>        {<a name="line.36"></a>
+<FONT color="green">037</FONT>            EOEditingContext ec = ((EOEnterpriseObject) object).editingContext();<a name="line.37"></a>
+<FONT color="green">038</FONT>    <a name="line.38"></a>
+<FONT color="green">039</FONT>            // we need to refault the object before raising, otherwise, if the caller traps the exception, it will be a successful<a name="line.39"></a>
+<FONT color="green">040</FONT>            // lookup the next time a fault with the same global id fires.  NOTE: refaulting in a sharedEditingContext is illegal,<a name="line.40"></a>
+<FONT color="green">041</FONT>            // so we specifically check for that special case.<a name="line.41"></a>
+<FONT color="green">042</FONT>            if (! (ec instanceof EOSharedEditingContext))<a name="line.42"></a>
+<FONT color="green">043</FONT>            {<a name="line.43"></a>
+<FONT color="green">044</FONT>                context.refaultObject((EOEnterpriseObject) object, globalID, ec);<a name="line.44"></a>
+<FONT color="green">045</FONT>            }<a name="line.45"></a>
+<FONT color="green">046</FONT>    <a name="line.46"></a>
+<FONT color="green">047</FONT>            String failureMessage = "Failed to fetch " + object.getClass() + " with globalID " + globalID;<a name="line.47"></a>
+<FONT color="green">048</FONT>            logger.error(failureMessage);<a name="line.48"></a>
+<FONT color="green">049</FONT>            throw new EOObjectNotAvailableException(failureMessage);<a name="line.49"></a>
+<FONT color="green">050</FONT>        }<a name="line.50"></a>
+<FONT color="green">051</FONT>    <a name="line.51"></a>
+<FONT color="green">052</FONT>    <a name="line.52"></a>
+<FONT color="green">053</FONT>    }<a name="line.53"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

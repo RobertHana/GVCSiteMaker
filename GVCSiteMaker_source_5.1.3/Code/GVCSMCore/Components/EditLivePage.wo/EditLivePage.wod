@@ -1,0 +1,23 @@
+EditLiveDownloadDirectory: WOString {
+	value = editLiveDownloadDirectory;
+}
+
+EditLiveJavaScript: WOString {
+	value = editLiveJavaScript;
+}
+
+EditLiveXMLConfig: WOString {
+	value = editLiveXMLConfig;
+}
+
+SaveParentFormAction: WOString {
+	value = saveParentFormAction;
+}
+
+TextAreaIdentifier: WOString {
+	value = textAreaIdentifier;
+}
+
+SaveParentFormOnClose: WOConditional {
+	condition = saveParentFormOnClose;
+}

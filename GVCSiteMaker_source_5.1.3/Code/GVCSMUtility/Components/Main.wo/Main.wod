@@ -1,0 +1,67 @@
+CleanupHomepageHyperlink: WOHyperlink {
+	pageName = "CleanupPreviousHomePage";
+}
+
+ConfigureSearchModeDefaultHyperlink: WOHyperlink {
+	pageName = "ConfigureSearchModeDefault";
+}
+
+ForceOrgUnitDeletionHyperlink: WOHyperlink {
+	pageName = "ForceOrgUnitDeletion";
+}
+
+Hyperlink1: WOHyperlink {
+	pageName = "com.gvcsitemaker.utility.conversion.RemoveObsoleteAccessGroups";
+}
+
+Hyperlink11: WOHyperlink {
+	pageName = "CleanUpDamagedPageComponents";
+}
+
+Hyperlink2: WOHyperlink {
+	pageName = "SiteFileCleanupHack";
+}
+
+Hyperlink3: WOHyperlink {
+	pageName = "com.gvcsitemaker.utility.conversion.SetSiteCreationTemplate";
+}
+
+Hyperlink4: WOHyperlink {
+	pageName = "ConvertExternalURL";
+}
+
+Hyperlink5: WOHyperlink {
+	pageName = "CreateImportMode";
+}
+
+LoadLDAPServersHyperlink: WOHyperlink {
+	pageName = "LoadLDAPServers";
+}
+
+LoadLDAPServersHyperlink2: WOHyperlink {
+	pageName = "BindingEditor";
+}
+
+ReloadStylesHyperlink: WOHyperlink {
+	pageName = "ReloadStyles";
+}
+
+RemoveWebsitePiecesHyperlink: WOHyperlink {
+	pageName = "RemoveWebsitePieces";
+}
+
+RemovedDuplicateColumnsHyperlink: WOHyperlink {
+	pageName = "RemoveDuplicateColumns";
+}
+
+SendMessageToUsersHyperlin: WOHyperlink {
+	pageName = "com.gvcsitemaker.utility.pages.MessageToUsers";
+}
+
+VersioningHomePageHyperlink: WOHyperlink {
+    pageName = "VersioningPage";
+}
+
+PopulateMixedMediaSectionVersionsHyperlink: WOHyperlink {
+    pageName = "MixedMediaVersioningPage";
+}

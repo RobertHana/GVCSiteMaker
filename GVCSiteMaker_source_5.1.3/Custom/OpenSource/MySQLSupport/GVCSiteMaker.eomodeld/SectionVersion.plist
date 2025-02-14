@@ -1,0 +1,105 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {columnName = "IS_LOCKED"; name = isLocked; prototypeName = JavaBoolean; }, 
+        {columnName = "MODIFIED_DATE"; name = modifiedDate; prototypeName = dateTime; }, 
+        {allowsNull = N; columnName = NAME; name = name; prototypeName = shortString; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_COMPONENT"; 
+            name = oidComponent; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_CREATED_BY"; 
+            name = oidCreatedBy; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "OID_MODIFIED_BY"; name = oidModifiedBy; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_SECTION"; 
+            name = oidSection; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "VERSION_NUMBER"; 
+            name = versionNumber; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "VERSION_PKEY"; 
+            name = versionPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        versionPKey, 
+        createdDate, 
+        modifiedDate, 
+        oidCreatedBy, 
+        oidModifiedBy, 
+        details, 
+        name, 
+        isLocked, 
+        versionNumber, 
+        oidSection, 
+        oidComponent
+    ); 
+    className = "com.gvcsitemaker.core.SectionVersion"; 
+    classProperties = (
+        createdDate, 
+        modifiedDate, 
+        createdBy, 
+        modifiedBy, 
+        details, 
+        name, 
+        isLocked, 
+        section, 
+        versionNumber, 
+        component
+    ); 
+    externalName = "SM_SECTION_VERSION"; 
+    fetchSpecificationDictionary = {}; 
+    name = SectionVersion; 
+    primaryKeyAttributes = (versionPKey); 
+    relationships = (
+        {
+            destination = PageComponent; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = oidComponent; }); 
+            name = component; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidCreatedBy; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidModifiedBy; }); 
+            name = modifiedBy; 
+        }, 
+        {
+            destination = Section; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = oidSection; }); 
+            name = section; 
+        }
+    ); 
+}

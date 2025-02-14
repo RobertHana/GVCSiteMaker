@@ -1,0 +1,11 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = createImportMode;
+}
+
+String1: WOString {
+	value = importModeMessage;
+}

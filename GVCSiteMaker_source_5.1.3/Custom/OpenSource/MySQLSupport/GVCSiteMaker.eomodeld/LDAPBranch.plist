@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "DISPLAY_NAME"; 
+            name = displayName; 
+            prototypeName = mediumString; 
+        }, 
+        {columnName = "DISPLAY_ORDER"; name = displayOrder; prototypeName = Integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_SUBTREE"; 
+            name = groupSubTree; 
+            prototypeName = mediumString; 
+        }, 
+        {columnName = INSTRUCTIONS; name = instructions; prototypeName = note; }, 
+        {
+            allowsNull = N; 
+            columnName = "LDAP_ENTITY_NAME"; 
+            name = ldapEntityName; 
+            prototypeName = shortString; 
+        }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID_ATTR"; 
+            name = userIDAttribute; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_SUBTREE"; 
+            name = userSubTree; 
+            prototypeName = mediumString; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        oid, 
+        displayName, 
+        displayOrder, 
+        instructions, 
+        userSubTree, 
+        groupSubTree, 
+        ldapEntityName, 
+        userIDAttribute
+    ); 
+    className = "com.gvcsitemaker.core.LDAPBranch"; 
+    classProperties = (
+        displayName, 
+        displayOrder, 
+        instructions, 
+        userSubTree, 
+        groupSubTree, 
+        ldapEntityName, 
+        userIDAttribute
+    ); 
+    externalName = "SM_LDAP_BRANCH"; 
+    fetchSpecificationDictionary = {}; 
+    name = LDAPBranch; 
+    primaryKeyAttributes = (oid); 
+}

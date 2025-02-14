@@ -1,0 +1,23 @@
+{
+    attributes = (
+        {columnName = NAME; name = name; prototypeName = String; width = 50; }, 
+        {columnName = OID; name = oid; prototypeName = Key; }, 
+        {columnName = ROOT_OID; name = rootObjectOID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (oid, rootObjectOID, name); 
+    className = net.global_village.eofextensions.tests.OwnedObject; 
+    classProperties = (name, rootObject); 
+    externalName = OWNED_OBJECT; 
+    fetchSpecificationDictionary = {}; 
+    name = OwnedObject; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = RootObject; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = rootObjectOID; }); 
+            name = rootObject; 
+        }
+    ); 
+}

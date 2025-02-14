@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Using Jass with Eclipse (and WebObjects)</title>
+</head>
+
+<body>
+<p><a href="#introduction">Introduction</a></p>
+<p><a href="#dependancies">Dependancies</a></p>
+<p><a href="#installation">Installation</a></p>
+<p><a href="#woproject">Configuring build.xml in a WOLips Project</a></p>
+<p><a href="#javaproject">Configuring build.xml in a Java Project</a></p>
+<p><a href="#eclipse">Using Jass With an Eclipse Project</a></p>
+<hr/>
+
+<a name="introduction"></a>
+<h1>Introduction</h1>
+<p>This document describes how we use <a href="http://ant.apache.org/bindownload.cgi">Ant</a> 
+and <a href="http://csd.informatik.uni-oldenburg.de/~jass/">Jass</a> when building WebObjects 
+frameworks and applications. This should be generally applicable to all Java 
+applications, though some aspects are doubtless particular to GVC.  This 
+document will look at something...
+</p>
+
+<a name="dependancies"></a>
+<h1>Dependancies</h1>
+<p>You need <a href="http://ant.apache.org">Ant</a>. You can  
+<a href="http://ant.apache.org/bindownload.cgi">download</a> it if you are not
+using <a href="http://www.eclipse.org">Eclipse</a> or otherwise have it installed.
+</p>
+<p>If you are developing with WebObjects (and you should be!) either 
+<a target="_new" href="http://www.objectstyle.org/woproject/">WOProject or 
+WOLips</a> needs to be installed.  WOProject alone will suffice, but if you will 
+be using Eclipse, WOLips will take care of both.
+</p>
+
+<a name="installation"></a>
+<h1>Installation</h1>
+<p>You will need one of two jar files which contain our Jass Ant task. One version
+is for <a href="#">use with WebObjects</a>.  This version allows the classpath to be
+set in terms of WebObjects frameworks.  The other version is for 
+<a href="#">standard Java development</a>.
+</p>
+<p>You might also want to use <a href="#">our build of Jass</a>.  Sometimes this has
+bug fixes which have not made it into the main release yet.</p>
+
+<h2>Install and Configure Property Files</h2>
+<p>You will need to put one or two files in your home library directory:
+<br/><br/>
+On <b>Win2K</b> this is, C:\Documents and Settings\[user_id]\Library<br/><br/>
+On <b>OS X</b> this is, ~/Library<br/></p> 
+
+<p>The first file, <a target="_blank" href="gvc.properties">gvc.properties</a>, 
+defines Ant properties specific to our build process.  You will need to
+edit some of the paths to match the configuration of your machine.  You can rename
+this file, or put the properties in another file, but you will need to amend the
+build.xml file to reflect this.</p>
+
+<p>The second file, <a target="_blank" href="woproject_tasks.properties">woproject_tasks.properties</a>, 
+is only needed for WebObjects development, and defines Ant tasks supplied by 
+WOProject.  You don't need to edit this file.</p>
+
+<p>If you are using WebObjects, the WOLips/WOProject install should have created 
+the properties file <a target="_blank" href="wobuild.properties">wobuild.properties</a>.  
+If not, create that manually and edit the paths as needed.</p>
+
+<a name="woproject"></a>
+<h1>Configuring build.xml in a WOLips Project</h1>
+<p>Some changes are needed to the default build.xml file generated for a new 
+project by WOLips.  These changes are mostly mechanical replacements and additions. 
+The build.xml files for applications and frameworks are slightly different.  Here are a 
+<a href="Example WOApplication build.xml">application example</a> and a <a href="Example WOFramework build.xml">framework example</a>.</p>
+<p>Here are the steps to change a WOLips generated build.xml file to conform to the standard used at GVC:</p>
+
+<ol>
+<li>Edit the <b>setProps</b> target in the build.xml file to also include this:<br/><br/>
+	<pre>
+    &lt;property file="${user.library.dir}/gvc.properties"/&gt;
+
+    <b>&lt;!-- For uncontracted builds --&gt;</b>
+    &lt;path id="uncontracted.class.path"&gt;
+        &lt;pathelement location="src"/&gt;
+    &lt;/path&gt;
+    
+    <b>&lt;!-- For contracted builds --&gt;</b>
+    &lt;path id="contracted.class.path"&gt;
+        &lt;pathelement location="ContractedSource"/&gt;
+    &lt;/path&gt;
+    		
+    <b>&lt;!-- GVC Tasks --&gt;</b>
+    &lt;taskdef resource="taskdef.properties"&gt;
+        &lt;classpath&gt;
+            &lt;pathelement path="${gvc.ant.tasks.path}"/&gt;
+            &lt;pathelement path="${woproject.path}"/&gt;
+            &lt;pathelement path="${log4j.path}"/&gt;
+        &lt;/classpath&gt;
+    &lt;/taskdef>
+    		
+    <b>&lt;!-- woproject Tasks --&gt;</b>
+    &lt;taskdef file="${user.library.dir}/woproject_tasks.properties" classpath="${woproject.path}" /&gt;
+    		
+    <b>&lt;!-- GVC Standard jar files --&gt;</b>
+    &lt;path id="gvc.standard.jars"&gt;
+    	&lt;pathelement location="${junit.path}"/&gt;
+    	&lt;pathelement location="${jass.path}"/&gt;
+    &lt;/path&gt;
+    		
+    <b>&lt;!-- Additional, project specific jar files --&gt;</b>
+    &lt;path id="additional.jars"&gt;
+    	&lt;!-- Add any additional jars here --&gt;
+    	&lt;!-- &lt;pathelement location="ognl-2.3.2.jar"/&gt; --&gt;
+    &lt;/path&gt;
+
+    <b>&lt;!-- Create directories for generated files if they don't already exist --&gt;</b>
+    &lt;mkdir dir="bin"/&gt;
+    &lt;mkdir dir="ContractedSource"/&gt;
+</li>
+	<li>Add the targets to support Eclipse and command line builds with optional Jass DBC.
+Once this is done you can build the WebObjects project from the command line with commands like:<br/><br/>
+	<code>ant clean<br/></code>
+	<code>ant install<br/></code>
+	<code>ant build -Duse.dbc=true<br/></code>
+	<br/>Here are the tasks to add:<br/> 
+	<pre>
+<b>&lt;!-- Target for Jass contracted builds from within Eclipse --&gt;</b>
+&lt;target name="jass.builder" depends="define.use.dbc, full.build" /&gt;
+&lt;target name="define.use.dbc"&gt;
+    &lt;property name="use.dbc" value="true"/&gt;	
+&lt;/target>
+
+
+<b>&lt;!-- Target for command line builds, also used by Jass contracted builds from within Eclipse --&gt;</b>
+&lt;target name="full.build" depends="setProps, contract, compile, build, copy.install" /&gt;
+
+
+<b>&lt;!-- Target used by jass.builder and full.build to copy the built product to the installed location.
+     This is done as the classpaths generated for the jass and wocompile tasks expect to find
+     the frameworks in the installed location.                                                  --&gt;</b>
+&lt;target name="copy.install" depends="setProps" if="framework.name"&gt;
+    &lt;copy todir="${install.dir}"&gt;
+        &lt;fileset dir="." includes="${framework.name}.framework/**"/&gt;
+    &lt;/copy&gt;
+&lt;/target&gt;
+
+
+<b>&lt;!-- Jass Design By Contract Generation --&gt;</b>
+&lt;target name="contract" depends="setProps" if="use.dbc"&gt;
+    &lt;property name="project.source.path" value="contracted.class.path"/&gt;
+    &lt;jass contract="pre,post,inv,loop,check,forall"
+          isDebugging="${jass.debug}"
+          destination="ContractedSource"&gt;
+        &lt;source dir="src"&gt;
+            &lt;depend targetdir="ContractedSource"/&gt;
+            &lt;include name="**/*.java"/&gt;
+    	&lt;/source&gt;
+        &lt;frameworks root="${wo.wosystemroot}"&gt;
+            &lt;patternset&gt;
+                &lt;includesfile name="woproject/ant.frameworks.wo.wosystemroot"/&gt;
+            &lt;/patternset&gt;
+        &lt;/frameworks&gt;
+        &lt;frameworks root="${wo.wolocalroot}"&gt;
+            &lt;patternset&gt;
+                &lt;includesfile name="woproject/ant.frameworks.wo.wolocalroot"/&gt;
+            &lt;/patternset&gt;
+        &lt;/frameworks&gt;
+        &lt;classpath refid="gvc.standard.jars" /&gt;
+        &lt;classpath refid="additional.jars" /&gt;
+        &lt;!-- Need this so that Jass sees the classes in GeneratedEOs --&gt;
+        &lt;classpath refid="uncontracted.class.path"/&gt;
+    &lt;/jass&gt;
+&lt;/target&gt;
+
+    	
+<b>&lt;!-- Distribution WOProject compilation --&gt;</b>
+&lt;target name="compile" depends="setProps"&gt;
+
+    <b>&lt;!-- This will get overriden if the contract task is run --&gt;</b>
+    &lt;property name="project.source.path" value="uncontracted.class.path"/&gt;
+
+    &lt;wocompile	destdir="bin" 
+                debug="${wocompile.debug.flag}" 
+                optimize="${wocompile.optimize.flag}" 
+                deprecation="on"&gt;
+        &lt;src refid="${project.source.path}"/&gt;
+        &lt;frameworks root="${wo.wosystemroot}"&gt;
+            &lt;patternset&gt;
+                &lt;includesfile name="woproject/ant.frameworks.wo.wosystemroot"/&gt;
+            &lt;/patternset&gt;
+        &lt;/frameworks&gt;
+        &lt;/frameworks&gt;
+        &lt;frameworks root="${wo.wolocalroot}"&gt;
+            &lt;patternset&gt;
+                &lt;includesfile name="woproject/ant.frameworks.wo.wolocalroot"/&gt;
+            &lt;/patternset&gt;
+        &lt;/frameworks&gt;
+        &lt;classpath refid="gvc.standard.jars" /&gt;
+        &lt;classpath refid="additional.jars" /&gt;
+    &lt;/wocompile&gt;
+&lt;/target&gt;
+</pre>
+	</li>
+</ol>
+<a name="javaproject"></a>
+<h1>Configuring build.xml in a Java Project</h1>
+<p>Some changes are needed to the default build.xml file, but those exact changes 
+will depend on what you are using already.  What follows below is a general guide 
+on what needs to be done.
+<ol>
+<li>Load and set properties needed by the Jass integration":<br/><br/>
+	<pre>
+    &lt;property file="${user.library.dir}/gvc.properties"/&gt;
+
+    <b>&lt;!-- For uncontracted builds --&gt;</b>
+    &lt;path id="uncontracted.class.path"&gt;
+        &lt;pathelement location="src"/&gt;
+    &lt;/path&gt;
+    
+    <b>&lt;!-- For contracted builds --&gt;</b>
+    &lt;path id="contracted.class.path"&gt;
+        &lt;pathelement location="ContractedSource"/&gt;
+    &lt;/path&gt;
+    		
+    <b>&lt;!-- GVC Tasks --&gt;</b>
+    &lt;taskdef resource="taskdef.properties"&gt;
+        &lt;classpath&gt;
+            &lt;pathelement path="${gvc.ant.tasks.path}"/&gt;
+            &lt;pathelement path="${log4j.path}"/&gt;
+        &lt;/classpath&gt;
+    &lt;/taskdef>
+    		
+    <b>&lt;!-- GVC Standard jar files --&gt;</b>
+    &lt;path id="gvc.standard.jars"&gt;
+    	&lt;pathelement location="${junit.path}"/&gt;
+    	&lt;pathelement location="${jass.path}"/&gt;
+    &lt;/path&gt;
+    		
+    <b>&lt;!-- Additional, project specific jar files --&gt;</b>
+    &lt;path id="additional.jars"&gt;
+    	&lt;!-- Add any additional jars here --&gt;
+    	&lt;!-- &lt;pathelement location="ognl-2.3.2.jar"/&gt; --&gt;
+    &lt;/path&gt;
+
+    <b>&lt;!-- Create directories for generated files if they don't already exist --&gt;</b>
+    &lt;mkdir dir="bin"/&gt;
+    &lt;mkdir dir="ContractedSource"/&gt;
+</li>
+	<li>Add the targets to support Eclipse and command line builds with optional Jass DBC.
+	<br/>Here are the tasks to add:<br/> 
+	<pre>
+<b>&lt;!-- Target for Jass contracted builds from within Eclipse --&gt;</b>
+&lt;target name="jass.builder" depends="define.use.dbc, full.build" /&gt;
+&lt;target name="define.use.dbc"&gt;
+    &lt;property name="use.dbc" value="true"/&gt;	
+&lt;/target>
+
+
+<b>&lt;!-- Jass Design By Contract Generation --&gt;</b>
+&lt;target name="contract" depends="setProps" if="use.dbc"&gt;
+    &lt;property name="project.source.path" value="contracted.class.path"/&gt;
+    &lt;jass contract="pre,post,inv,loop,check,forall"
+          isDebugging="${jass.debug}"
+          destination="ContractedSource"&gt;
+        &lt;source dir="src"&gt;
+            &lt;depend targetdir="ContractedSource"/&gt;
+            &lt;include name="**/*.java"/&gt;
+    	&lt;/source&gt;
+		
+		<b>&lt;!-- DEFINE YOUR CLASSPATH HERE! --&gt;</b>
+
+        &lt;classpath refid="gvc.standard.jars" /&gt;
+        &lt;classpath refid="additional.jars" /&gt;
+        &lt;!-- Need this so that Jass sees the classes in GeneratedEOs --&gt;
+        &lt;classpath refid="uncontracted.class.path"/&gt;
+    &lt;/jass&gt;
+&lt;/target&gt;
+</pre>
+	</li>
+</ol>
+
+<a name="eclipse"></a>
+<h2>Using Jass With an Eclipse Project</h2>
+Now that you have all of the above installed and configured, you are ready to add
+Jass support to a project in Eclipse.
+<h3>Locate the jass-rt.jar</h3>
+In order to run contracted code, <code>jass-rt.jar</code> needs to be on the
+class path.  We do this by defining a special class path variable, <code><b>JASS</b></code>.  
+The easiest thing to point it to is the <code>jass-rt.jar</code>:<br /><br />
+<img src="images/JassVariable.jpg" border="0"><br><br>
+
+<h3>Add a Builder for Jass</h3>
+<font color="red">After you do this, be certain to add the new <b>.externalToolBuilders</b> folder to your revision control system!</font><br/><br/>
+Go to the project's properties, and select Builders.<br/>
+<b>WebObjects</b>: Uncheck the <b>WOLips Ant Builder</b> (the Jass builder does this step too).<br/>
+<b>Non-WebObjects</b>: Uncheck the <b>Ant Builder</b> in use (if any).<br/>
+<p>Leave the <b>Java Builder</b> checked.  This builder is not required, but helps to provide better error feedback in Eclipse for things
+like method references that become invalid when a method is renamed (instead of refactoring).  After unchecking the <b>WOLips Ant Builder</b>, 
+click New... and select Ant Build:</p>
+<img src="images/CreateJassAntBuilderStep1.jpg"><br /><br />
+<p>Give it a <b>Name</b> like <i>ProjectName</i> Jass Builder.  This name needs 
+to be unique in the workspace.</p><p><font color="red">You can't just name it
+Jass Builder.</font></p><p>Next to <b>Buildfile</b>, click <b>Browse Workspace...</b> and select the build.xml file from the project:</p>
+<img src="images/CreateJassAntBuilderStep2.jpg"><br /><br />
+<p>Next to <b>Base Directory</b>, click <b>Browse Workspace...</b> and select the project:</p>
+<img src="images/CreateJassAntBuilderStep3.jpg"><br /><br />
+<p>Go to the <b>Refresh</b> tab, click <b>Refresh resources upon completion</b> and check off <b>The project containing the selected 
+resource</b>:</p>
+<img src="images/CreateJassAntBuilderStep4.jpg"><br /><br />
+<p>Go to the <b>Targets</b> tab, uncheck <b>build (default target)</b> and check off <b>jass.builder</b>:</p>
+<img src="images/CreateJassAntBuilderStep5.jpg"><br /><br />
+<p>Go to the <b>Build Options</b> tab, and check off <b>During Auto Builds</b>:</p>
+<img src="images/CreateJassAntBuilderStep6.jpg"><br /><br />
+
+<h3>Turing Jass Off and On</h3>
+To turn Jass off, go to the project's properties, and select Builders.  Check <b>Java Builder</b> and <b>WOLips Ant Builder</b> 
+then uncheck the Jass Builder.  To turn Jass on, unheck <b>Java Builder</b> and <b>WOLips Ant Builder</b> 
+(or whatever you are using) then check off the Jass Builder.<br /><br />
+
+</body>
+</html>

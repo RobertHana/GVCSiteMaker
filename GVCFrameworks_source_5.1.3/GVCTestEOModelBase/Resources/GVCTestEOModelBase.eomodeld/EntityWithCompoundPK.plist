@@ -1,0 +1,13 @@
+{
+    attributes = (
+        {columnName = key_1; name = key1; prototypeName = Key; }, 
+        {columnName = key_2; name = key2; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (key1, key2); 
+    className = net.global_village.testeomodelbase.EntityWithCompoundPK; 
+    classProperties = (key1, key2); 
+    externalName = ENTITY_WITH_COMPOUND_PK; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityWithCompoundPK; 
+    primaryKeyAttributes = (key1, key2); 
+}

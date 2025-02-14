@@ -1,0 +1,18 @@
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Website Copy in Progess";
+	isAdmin = true;
+}
+
+ExampleSiteIDString: WOString {
+	value = exampleSiteID;
+}
+
+SiteIDString: WOString {
+	value = siteID;
+}
+
+StatusMessageString: WOString {
+	value = statusMessage;
+}
+

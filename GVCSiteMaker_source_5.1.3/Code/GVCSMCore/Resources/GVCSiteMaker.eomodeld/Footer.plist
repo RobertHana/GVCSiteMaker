@@ -1,0 +1,50 @@
+{
+    attributes = (
+        {
+            columnName = "CUSTOM_FOOTER"; 
+            name = customFooter; 
+            prototypeName = largeText; 
+        }, 
+        {columnName = "LINK_TEXT_1"; name = linkText1; prototypeName = mediumString; }, 
+        {columnName = "LINK_TEXT_2"; name = linkText2; prototypeName = mediumString; }, 
+        {columnName = "LINK_TEXT_3"; name = linkText3; prototypeName = mediumString; }, 
+        {columnName = "LINK_TEXT_4"; name = linkText4; prototypeName = mediumString; }, 
+        {columnName = "LINK_URL_1"; name = linkURL1; prototypeName = longString; }, 
+        {columnName = "LINK_URL_2"; name = linkURL2; prototypeName = longString; }, 
+        {columnName = "LINK_URL_3"; name = linkURL3; prototypeName = longString; }, 
+        {columnName = "LINK_URL_4"; name = linkURL4; prototypeName = longString; }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        linkText1, 
+        linkText2, 
+        linkText3, 
+        linkText4, 
+        linkURL1, 
+        linkURL2, 
+        linkURL3, 
+        linkURL4, 
+        websiteFKey
+    ); 
+    className = "com.gvcsitemaker.core.Footer"; 
+    classProperties = (
+        customFooter, 
+        linkText1, 
+        linkText2, 
+        linkText3, 
+        linkText4, 
+        linkURL1, 
+        linkURL2, 
+        linkURL3, 
+        linkURL4
+    ); 
+    externalName = "SM_FOOTER"; 
+    fetchSpecificationDictionary = {}; 
+    name = Footer; 
+    primaryKeyAttributes = (websiteFKey); 
+}

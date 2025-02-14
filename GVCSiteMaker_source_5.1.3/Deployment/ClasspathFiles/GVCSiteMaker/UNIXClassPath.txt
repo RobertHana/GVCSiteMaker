@@ -1,0 +1,57 @@
+# JVM              == java
+# JVMOptions       ==
+# JDB              == jdb
+# JDBOptions       ==
+# ApplicationClass == com.gvcsitemaker.appserver.Application
+
+APPROOT/Resources/Java/gvcsitemaker.jar
+
+APPROOT/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar
+APPROOT/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar
+APPROOT/Frameworks/JavaFoundation.framework/Resources/Java/javafoundation.jar
+APPROOT/Frameworks/JavaJDBCAdaptor.framework/Resources/Java/javajdbcadaptor.jar
+APPROOT/Frameworks/JavaJNDIAdaptor.framework/Resources/Java/javajndiadaptor.jar
+APPROOT/Frameworks/JavaWebObjects.framework/Resources/Java/javawebobjects.jar
+APPROOT/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar
+
+LOCALROOT/Library/Frameworks/FrontBasePlugIn.framework/Resources/Java/frontbaseplugin.jar
+
+APPROOT/../../../Frameworks/Ajax.framework/Resources/Java/Ajax.jar
+APPROOT/../../../Frameworks/Ajax.framework/Resources/Java/jabsorb-1.2.2.jar
+APPROOT/../../../Frameworks/GVCFoundation.framework/Resources/Java/gvcfoundation.jar
+APPROOT/../../../Frameworks/GVCEOFExtensions.framework/Resources/Java/gvceofextensions.jar
+APPROOT/../../../Frameworks/GVCEOFValidation.framework/Resources/Java/gvceofvalidation.jar
+APPROOT/../../../Frameworks/GVCGenericObjects.framework/Resources/Java/gvcgenericobjects.jar
+APPROOT/../../../Frameworks/GVCWOExtensions.framework/Resources/Java/gvcwoextensions.jar
+APPROOT/../../../Frameworks/GVCVirtualTables.framework/Resources/Java/gvcvirtualtables.jar
+APPROOT/../../../Frameworks/GVCSMCore.framework/Resources/Java/commons-beanutils.jar
+APPROOT/../../../Frameworks/GVCSMCore.framework/Resources/Java/commons-collections-3.2.jar
+APPROOT/../../../Frameworks/GVCSMCore.framework/Resources/Java/commons-digester-1.7.jar
+APPROOT/../../../Frameworks/GVCSMCore.framework/Resources/Java/commons-logging-1.1.jar
+APPROOT/../../../Frameworks/GVCSMCore.framework/Resources/Java/gvcsmcore.jar
+APPROOT/../../../Frameworks/GVCSMEOPrototypes.framework
+APPROOT/../../../Frameworks/GVCKerberos.framework/Resources/Java/gvckerberos.jar
+APPROOT/../../../Frameworks/GVCKerberos.framework/Resources/Java/jcsi_base.jar
+APPROOT/../../../Frameworks/GVCKerberos.framework/Resources/Java/jcsi_jce.jar
+APPROOT/../../../Frameworks/GVCKerberos.framework/Resources/Java/jcsi_krb.jar
+APPROOT/../../../Frameworks/GVCKerberos.framework/Resources/Java/jcsi_provider.jar
+APPROOT/../../../Frameworks/GVCSMCustom.framework/Resources/Java/gvcsmcustom.jar
+APPROOT/../../../Frameworks/GVCSMCustom.framework/Resources/Java/jcsi_license.jar
+APPROOT/../../../Frameworks/GVCMail.framework/Resources/Java/gvcmail.jar
+APPROOT/../../../Frameworks/GVCMail.framework/Resources/Java/mail.jar
+APPROOT/../../../Frameworks/GVCMail.framework/Resources/Java/activation.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/gvcjars.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/dbunit-2.2.1.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/GVCWOProjectAntTasks.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/jass-rt.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/junit.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/jxl.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/log4j-1.2.14.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/ognl-2.6.7.jar
+APPROOT/../../../Frameworks/GVCJars.framework/Resources/Java/ognl-2.6.7.jar
+APPROOT/../../../Frameworks/GVCJNDIAdditions.framework/Resources/Java/gvcjndiadditions.jar
+APPROOT/../../../Frameworks/JavaWOExtensions.framework/Resources/Java/JavaWOExtensions.jar
+APPROOT/../../../Frameworks/ERExtensions.framework/Resources/Java/ERExtensions.jar
+APPROOT/../../../Frameworks/WOOgnl.framework/Resources/Java/ognl-2.6.7.jar
+APPROOT/../../../Frameworks/WOOgnl.framework/Resources/Java/WOOgnl.jar
+APPROOT/../../../Frameworks/WOOgnl.framework/Resources/Java/WOOgnl54.jar

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ValidUserList" wocomponentcontent="false">
+
+		<binding name="validUserArray"/>
+
+		<validation message="&apos;validUserArray&apos; is a required binding">
+			<unbound name="validUserArray"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,27 @@
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	pageType = "ListOfAllWebsitesPage";
+	isAdmin = false;
+	needsPreviewURLJavaScript = false;
+	hasSite = false;
+    isConfigPage = false;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  //VALID
+}
+
+ViewWebsiteLink: WOHyperlink {
+	href = aWebsite.siteURL;
+	string = aWebsite.banner.bannerText;
+}
+
+WebsiteCount: WOString {
+	value = activeWebsites.count;
+}
+
+WebsiteRepetition: WORepetition {
+	item = aWebsite;
+	list = activeWebsites;
+}

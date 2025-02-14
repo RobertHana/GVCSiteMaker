@@ -1,0 +1,59 @@
+AddMultipleUsers: WOSubmitButton {
+	value = "Add new users";
+	action = createNewUsersFromBatchFile;
+}
+
+AddNewUser: WOSubmitButton {
+	value = "Submit";
+	action = createNewUser;
+}
+
+BatchFileUpload: WOFileUpload {
+	value = "Browse for batch file:";
+	class = "largeEntryBox";
+	data = fileData;
+	filePath = filePath;
+}
+
+CancelButton: WOSubmitButton 
+{
+	action = returnToAdminMainPage;
+	value = "Cancel";
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "User Creation";	
+	isAdmin = true;
+	pageType = "CreateUserPage";
+}
+
+ErrorMessageRepetition: WORepetition {
+	item = anErrorMessage;
+	list = errorMessages;
+}
+
+ErrorMessageString: WOString {
+	value = anErrorMessage;
+}
+
+HasErrorMessagesConditional: WOConditional {
+	condition = hasErrorMessages;
+}
+
+NewUserID: WOTextField {
+	value = newUserID;
+    maxLength = 100;
+	size = "50";
+}
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+UserCreationForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}

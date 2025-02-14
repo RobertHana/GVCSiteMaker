@@ -1,0 +1,95 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.foundation;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import org.apache.log4j.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    /**<a name="line.6"></a>
+<FONT color="green">007</FONT>     * Based on code from Dr Heinz Max Kabutz's The Java Specialists' Newsletter [Issue 137].  Rather than cut and paste<a name="line.7"></a>
+<FONT color="green">008</FONT>     * the standard code:<a name="line.8"></a>
+<FONT color="green">009</FONT>     * &lt;pre&gt;<a name="line.9"></a>
+<FONT color="green">010</FONT>     * private final static Logger logger = Logger.getLogger(Application.class.getName());<a name="line.10"></a>
+<FONT color="green">011</FONT>     * &lt;/pre&gt;<a name="line.11"></a>
+<FONT color="green">012</FONT>     * and risk forgetting to update the classname, use this  cut and paste safe class:<a name="line.12"></a>
+<FONT color="green">013</FONT>     * &lt;pre&gt;<a name="line.13"></a>
+<FONT color="green">014</FONT>     * private final static Logger logger = LoggerFactory.makeLogger();<a name="line.14"></a>
+<FONT color="green">015</FONT>     * &lt;/pre&gt;<a name="line.15"></a>
+<FONT color="green">016</FONT>     * <a name="line.16"></a>
+<FONT color="green">017</FONT>     * @see &lt;a href="http://www.javaspecialists.co.za/archive/newsletter.do?issue=137"&gt;The Java Specialists' Newsletter [Issue 137]&lt;/a&gt;<a name="line.17"></a>
+<FONT color="green">018</FONT>     * @author Copyright (c) 2006-2006 Harte-Hanks Shoppers, Inc.<a name="line.18"></a>
+<FONT color="green">019</FONT>     */<a name="line.19"></a>
+<FONT color="green">020</FONT>    public class LoggerFactory<a name="line.20"></a>
+<FONT color="green">021</FONT>    {<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>          public static Logger makeLogger()<a name="line.23"></a>
+<FONT color="green">024</FONT>        {<a name="line.24"></a>
+<FONT color="green">025</FONT>            Throwable t = new Throwable();<a name="line.25"></a>
+<FONT color="green">026</FONT>            StackTraceElement directCaller = t.getStackTrace()[1];<a name="line.26"></a>
+<FONT color="green">027</FONT>            return Logger.getLogger(directCaller.getClassName());<a name="line.27"></a>
+<FONT color="green">028</FONT>        }<a name="line.28"></a>
+<FONT color="green">029</FONT>    }<a name="line.29"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

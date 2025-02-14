@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {columnName = "APP_NAME"; name = appName; prototypeName = mediumString; }, 
+        {
+            columnName = "COMPONENT_NAME"; 
+            name = componentName; 
+            prototypeName = mediumString; 
+        }, 
+        {columnName = "EVENT_DATE"; name = eventDate; prototypeName = dateTime; }, 
+        {
+            columnName = "EXCEPTION_MESSAGE"; 
+            name = exceptionMessage; 
+            prototypeName = note; 
+        }, 
+        {columnName = "HOST_NAME"; name = hostName; prototypeName = mediumString; }, 
+        {columnName = "LOG_TYPE"; name = logType; prototypeName = mediumString; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {columnName = "PAGE_NAME"; name = pageName; prototypeName = mediumString; }, 
+        {
+            allowsNull = Y; 
+            columnName = REQUEST; 
+            name = request; 
+            prototypeName = Memo; 
+            width = 100000; 
+        }, 
+        {columnName = "STACK_TRACE"; name = stackTrace; prototypeName = largeText; }, 
+        {columnName = "USER_ID"; name = userID; prototypeName = mediumString; }
+    ); 
+    attributesUsedForLocking = (
+        appName, 
+        componentName, 
+        exceptionMessage, 
+        hostName, 
+        logType, 
+        oid, 
+        pageName, 
+        request, 
+        stackTrace, 
+        userID
+    ); 
+    className = "com.gvcsitemaker.core.ErrorLog"; 
+    classProperties = (
+        appName, 
+        componentName, 
+        eventDate, 
+        exceptionMessage, 
+        hostName, 
+        logType, 
+        oid, 
+        pageName, 
+        request, 
+        stackTrace, 
+        userID
+    ); 
+    externalName = "SM_ERROR_LOG"; 
+    fetchSpecificationDictionary = {}; 
+    name = ErrorLog; 
+    primaryKeyAttributes = (oid); 
+}

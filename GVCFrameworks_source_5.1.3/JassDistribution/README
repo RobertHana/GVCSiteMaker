@@ -1,0 +1,71 @@
+***** Jass *****
+
+Jass is copyrighted 1999-2001 by Semantics Group, University of
+Oldenburg.  
+
+The program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation.
+
+The Jass Runtime package (jass-rt.jar) can be redistributed and/or
+modified under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+Jass is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received copies of the GNU General Public License and
+GNU Lesser General Public License along with this package (COPYING and
+COPYING.LIB); if not, write to the Free Software Foundation, Inc., 59
+Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+Please read buglist at end of file.
+
+To run the following examples the CLASSPATH variable must contain
+jass.jar and the directory where jass was extracted.
+
+Examples: Simple example can be run through:
+--------- 
+
+1.) java jass.Jass examples\Buffer.jass
+2.) java jass.Jass examples\UnlimitedBuffer.jass
+3.) java jass.Jass examples\BufferTest.jass
+4.) javac examples\BufferTest.java
+5.) java jass.examples.BufferTest
+
+Modifications of the class BufferTest can easyly produce some
+assertion exceptions.
+
+Another nice examples is the file ProducerConsumer. The result varies
+from the scheduling of the threads.  You can test the interference
+check with:
+
+   java jass.Jass interference examples\BufferTest.jass
+
+A HTML-Description of the Jass grammar can be found in the
+docs/grammars directory.
+
+
+ATTENTION: 
+---------- 
+
+The dataflow option cost a lot of time for big classes with many
+calls. The dataflow option is enabled if the interference mode is
+used, or if the optimize option is set. Optimize is turned of BY
+DEFAULT.
+
+Known Bugs:
+-----------
+
+see BUGS
+
+For further bugs please check out the Jass Homepage at
+ 
+   http://semantik.informatik.uni-oldenburg.de/~jass/
+
+You can send comments, bugs, ideas etc to
+ 
+   jass@informatik.uni-oldenburg.de

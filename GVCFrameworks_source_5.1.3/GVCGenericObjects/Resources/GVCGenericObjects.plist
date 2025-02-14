@@ -1,0 +1,11 @@
+{
+   TestLookup = {
+      defaultName = "defaultTestLookup";
+   };
+   TestKeyedLookup = {
+      defaultName = "defaultTestKeyedLookup";
+   };
+   TestOrderedLookup = {
+      defaultName = "defaultTestOrdredLookup";
+   };
+}

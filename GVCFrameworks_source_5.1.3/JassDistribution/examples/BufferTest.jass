@@ -1,0 +1,15 @@
+package jass.examples;
+
+public class BufferTest {
+					
+	public static void main (String[] as) {
+		UnlimitedBuffer b = new UnlimitedBuffer();
+		b.add(new Integer(1));
+		b.add(new Integer(2));
+		b.add(new Integer(3));
+		System.out.println(b.remove());
+		System.out.println(b.remove());
+		System.out.println(b.remove());
+	}
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="SearchResultPageFlipper" wocomponentcontent="false">
+
+		<binding name="searchResultManager"/>
+
+		<validation message="&apos;searchResultManager&apos; is a required binding">
+			<unbound name="searchResultManager"/>
+		</validation>
+	</wo>
+</wodefinitions>

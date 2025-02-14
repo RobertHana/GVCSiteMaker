@@ -1,0 +1,65 @@
+CalculatedColumnForm: WOForm {
+    multipleSubmit = true;
+    id = "CalculatedColumnForm";
+}
+
+ColumnNameForCalculation: WOString {
+    value = availableColumn.normalizedName;
+}
+
+DACalculatedColumnMessage: WOString {
+    value = application.properties.DACalculatedColumnMessage;  // VALID
+    escapeHTML = false;
+}
+
+Expression: WOText {
+    value = calculatedColumn.expression;
+    cols = 55;
+    rows = 4;
+}
+
+HasInvalidExpressionConditional: WOConditional {
+    condition = invalidExpressionError;
+}
+
+HasTestedConditional : WOConditional {
+  condition = expressionResultType;
+}
+
+InvalidExpressionErrorString: WOString {
+    value = invalidExpressionError;
+}
+
+TableOfFields: ERXTable {
+    list = calculatedColumn.columnsAvailableForCalculation;
+    item = availableColumn;
+    maxColumns = 3;
+    tableWidth = "100%";
+    cellWidth = "33%";
+}
+
+TestFormulaButton: AjaxSubmitButton {
+    action = testExpression;
+    evalScripts = true;
+    value = "Test Formula";
+}
+
+CancelButton: AjaxSubmitButton {
+    action = cancelChanges;
+    evalScripts = true;
+    value = "Cancel Changes";
+}
+
+SaveChangesButton: AjaxSubmitButton {
+    action = saveChanges;
+    evalScripts = true;
+    value = "Save Changes";
+}
+
+TestResult: WOString {
+    value = expressionResult;
+}
+
+TestResultType: WOString {
+    value = expressionResultType;
+}

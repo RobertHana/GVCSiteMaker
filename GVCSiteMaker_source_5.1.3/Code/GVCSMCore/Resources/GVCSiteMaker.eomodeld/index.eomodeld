@@ -1,0 +1,196 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:FrontBase://localhost/GVCSiteMaker"; 
+        driver = ""; 
+        password = SiteMaker; 
+        plugin = ""; 
+        username = SiteMaker; 
+    }; 
+    entities = (
+        {className = "com.gvcsitemaker.core.Banner"; name = Banner; }, 
+        {className = "com.gvcsitemaker.core.ChangeLog"; name = ChangeLog; }, 
+        {
+            className = "com.gvcsitemaker.core.ConfigureGroup"; 
+            name = ConfigureGroup; 
+            parent = LocalGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySectionTask"; 
+            name = CopySectionTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySectionType"; 
+            name = CopySectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySiteTask"; 
+            name = CopySiteTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CreateDataTablePackageTask"; 
+            name = CreateDataTablePackageTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.DataAccessSectionType"; 
+            name = DataAccessSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = DataAccessWebsiteGroupNotification; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.EmbeddedSectionSectionType"; 
+            name = EmbeddedSectionSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.EmbeddedSiteSectionType"; 
+            name = EmbeddedSiteSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.ErrorLog"; name = ErrorLog; }, 
+        {
+            className = "com.gvcsitemaker.core.ExternalURLSectionType"; 
+            name = ExternalURLSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.FilePassword"; name = FilePassword; }, 
+        {className = "com.gvcsitemaker.core.Footer"; name = Footer; }, 
+        {className = "com.gvcsitemaker.core.Group"; name = Group; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = GroupFile; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = GroupSection; }, 
+        {
+            className = "com.gvcsitemaker.core.InstallDataTablePackageTask"; 
+            name = InstallDataTablePackageTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.InternalUsersGroup"; 
+            name = InternalUsersGroup; 
+            parent = Group; 
+        }, 
+        {className = "com.gvcsitemaker.core.LDAPBranch"; name = LDAPBranch; }, 
+        {
+            className = "com.gvcsitemaker.core.LDAPGroup"; 
+            name = LDAPGroup; 
+            parent = WebsiteGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.ListOfLinksSectionType"; 
+            name = ListOfLinksSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.LocalGroup"; 
+            name = LocalGroup; 
+            parent = WebsiteGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.MixedMediaSectionType"; 
+            name = MixedMediaSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.OrgUnit"; name = OrgUnit; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = OrgUnitUser; }, 
+        {
+            className = "com.gvcsitemaker.core.PackageSectionType"; 
+            name = PackageSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.PublicGroup"; 
+            name = PublicGroup; 
+            parent = Group; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.PublicUser"; 
+            name = PublicUser; 
+            parent = User; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.RemoteParticipantGroup"; 
+            name = RemoteParticipantGroup; 
+            parent = WebsiteGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.SMVirtualTable"; 
+            name = SMVirtualTable; 
+            parent = VirtualTable; 
+        }, 
+        {className = "com.gvcsitemaker.core.Section"; name = Section; }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = SectionContributorGroup; 
+        }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = SectionEditorGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.SectionStyle"; 
+            name = SectionStyle; 
+            parent = Style; 
+        }, 
+        {className = "com.gvcsitemaker.core.SectionType"; name = SectionType; }, 
+        {className = "com.gvcsitemaker.core.SectionVersion"; name = SectionVersion; }, 
+        {className = "com.gvcsitemaker.core.SiteFile"; name = SiteFile; }, 
+        {className = "com.gvcsitemaker.core.SiteFileFolder"; name = SiteFileFolder; }, 
+        {className = "com.gvcsitemaker.core.Style"; name = Style; }, 
+        {className = "com.gvcsitemaker.core.Task"; name = Task; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = TaskSection; }, 
+        {
+            className = "com.gvcsitemaker.core.TaskStatus"; 
+            name = TaskStatus; 
+            parent = GVCKeyedLookup; 
+        }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = TaskTable; }, 
+        {
+            className = "com.gvcsitemaker.core.TextImageSectionType"; 
+            name = TextImageSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.UsageLog"; name = UsageLog; }, 
+        {className = "com.gvcsitemaker.core.User"; name = User; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = UserGroup; }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileColumn"; 
+            name = VirtualSiteFileColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileField"; 
+            name = VirtualSiteFileField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualUserColumn"; 
+            name = VirtualUserColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualUserField"; 
+            name = VirtualUserField; 
+            parent = VirtualField; 
+        }, 
+        {className = "com.gvcsitemaker.core.Website"; name = Website; }, 
+        {
+            className = "com.gvcsitemaker.core.WebsiteChangeLog"; 
+            name = WebsiteChangeLog; 
+            parent = ChangeLog; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.WebsiteGroup"; 
+            name = WebsiteGroup; 
+            parent = Group; 
+        }, 
+        {className = "com.gvcsitemaker.core.WebsiteRequest"; name = WebsiteRequest; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = WebsiteTable; }
+    ); 
+}

@@ -1,0 +1,8 @@
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteDataTablesPane";
+}
+
+DataTableSwitchComponent : WOSwitchComponent {
+    WOComponentName = tableViewComponentName;
+    table = table;
+}

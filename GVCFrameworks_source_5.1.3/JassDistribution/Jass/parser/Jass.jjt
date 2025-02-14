@@ -1,0 +1,1762 @@
+/**
+ *
+ * Copyright (C) 1996, 1997, 2000 Sun Microsystems Inc. 
+ * & Detlef Bartetzko & Michael Plath
+ *
+ * This grammar is based on the grammar distributed with JavaCC
+ * (Java1.1.jj) release 0.8Pre2 The grammar was modified by Detlef
+ * Bartetzko to allow the parsing of assertions.  Furthermore Michael
+ * Plath made some modifications to implement a new kind of assertion,
+ * the Trace-assertion.  Java 1.2 has some little changes in the
+ * grammar due to the new keyword 'strictfp'. These changes are
+ * documented in the Java1.2.jj distribution. The actual grammar has
+ * been updated by performing these changes manually (Michael Plath).
+ *
+ * This grammar uses the JJTree front-end to insert node creation
+ * actions in the grammar and the visitor design pattern.
+ *
+ * Author: (Sriram Sankar,) Detlef Bartetzko, Michael Plath
+ * Date: 02/16/2000
+ *
+ * This file contains a Java grammar and actions that implement a
+ * front-end.
+ * 
+ */
+
+options {
+	JAVA_UNICODE_ESCAPE = true;
+	MULTI=true;
+	NODE_PREFIX="Jass";
+	VISITOR=true;
+	NODE_USES_PARSER=true;
+	/*STATIC=false;*/
+}
+
+PARSER_BEGIN(JassParser)
+package jass.parser;
+
+public class JassParser {}
+
+PARSER_END(JassParser)
+
+
+/* WHITE SPACE */
+/* To get the WS back for code-generation they are special token ! */
+ 
+<DEFAULT,ASSERTION>
+SPECIAL_TOKEN :
+{
+  < WhiteSpaceHor: ( [" ", "\t"] )+ >
+| < WhiteSpaceVer: ( ["\n", "\r", "\f"] )+ >
+}
+
+/* COMMENTS */
+
+<DEFAULT>
+TOKEN:
+{
+	< REQUIRE: "/**" ( [" ","\t","\n","\r","\f"] )* "require" > : ASSERTION
+|	< INVARIANT: "/**" ( [" ","\t","\n","\r","\f"] )* "invariant" > : ASSERTION
+|	< ENSURE: "/**" ( [" ","\t","\n","\r","\f"] )* "ensure" > : ASSERTION
+| < VARIANT: "/**" ( [" ","\t","\n","\r","\f"] )* "variant" > : ASSERTION
+| < CHECK: "/**" ( [" ","\t","\n","\r","\f"] )* "check" > : ASSERTION
+| < RESCUE: "/**" ( [" ","\t","\n","\r","\f"] )* "rescue" > : ASSERTION
+}
+
+<DEFAULT>
+MORE :
+{
+  "//" : IN_SINGLE_LINE_COMMENT
+|
+  <"/**" ~["/"]> { input_stream.backup(1); } : IN_FORMAL_COMMENT
+|
+  "/*" : IN_MULTI_LINE_COMMENT
+}
+
+
+<ASSERTION>
+TOKEN:
+{
+	< ASS_END: "**/" > : DEFAULT
+}
+
+<ASSERTION>
+TOKEN:
+{
+	< CHANGEONLY: "changeonly" >
+| < FORALL: "forall" >
+| < EXISTS: "exists" >
+| < RANGE: ".." >
+| < RETRY: "retry" >
+| < FORALL_SEP: "#" >
+| < TRACE: "trace" > // #NEU# Token, fuer den Beginn einer Trace-Zusicherung
+}
+
+<ASSERTION>
+MORE:
+{
+	"/#" : IN_ASSERTION_COMMENT
+}
+
+<IN_ASSERTION_COMMENT>
+SPECIAL_TOKEN:
+{
+	<ASSERTION_COMMENT: "#/" > : ASSERTION
+}
+
+<IN_ASSERTION_COMMENT>
+MORE:
+{
+ < ~[] >
+}
+
+
+<IN_SINGLE_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <SINGLE_LINE_COMMENT: "\n" | "\r" | "\r\n" > : DEFAULT
+}
+
+<IN_FORMAL_COMMENT>
+SPECIAL_TOKEN :
+{
+  <FORMAL_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_MULTI_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <MULTI_LINE_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_SINGLE_LINE_COMMENT,IN_FORMAL_COMMENT,IN_MULTI_LINE_COMMENT>
+MORE :
+{
+  < ~[] >
+}
+
+/* RESERVED WORDS AND LITERALS */
+
+<ASSERTION>
+TOKEN:
+{
+	< TRACE_CALL_OPERATOR: "CALL" >
+	| < TRACE_CHAOS_OPERATOR: "ANY" >
+	| < TRACE_CHOICE_OPERATOR: "<|>" >
+	| < TRACE_COMPLEMENT_OPERATOR: "EXCEPT" >
+	| < TRACE_EXECUTE_OPERATOR: "EXECUTE" >
+	/* | < TRACE_VERIFY_OPERATOR: "VERIFY" > */
+	| < TRACE_CONDITION: "WHERE" >
+	| < TRACE_DEADLOCK_OPERATOR: "STOP" >
+	| < TRACE_ELSE_OPERATOR: "ELSE" >
+	| < TRACE_IF_OPERATOR: "IF" >
+	| < TRACE_PARALLEL_OPERATOR: "|<>|" >
+	| < TRACE_PREFIX_OPERATOR: "->" >
+	| < TRACE_TERMINATION_OPERATOR: "TERM" >
+}
+
+TOKEN_MGR_DECLS :
+{
+  static boolean warned_assert = false;
+}
+
+<DEFAULT,ASSERTION>
+TOKEN :
+{
+  < ABSTRACT: "abstract" >
+| < ASSERT: "assert" >
+  { if (!jass.GlobalFlags.PARSE_ASSERT) {
+        matchedToken.kind = IDENTIFIER;
+	if (!warned_assert) {
+	    System.err.println("Line:"+matchedToken.beginLine+
+		": Warning: `assert' conflicts with Java 1.4 keyword");
+	    System.err.println(
+		"Use the option `-source 1.4' if you use assert statements.");
+	    warned_assert = true;
+	}
+    }
+  }
+| < BOOLEAN: "boolean" >
+| < BREAK: "break" >
+| < BYTE: "byte" >
+| < CASE: "case" >
+| < CATCH: "catch" >
+| < CHAR: "char" >
+| < CLASS: "class" >
+| < CONST: "const" >
+| < CONTINUE: "continue" >
+| < _DEFAULT: "default" >
+| < DO: "do" >
+| < DOUBLE: "double" >
+| < ELSE: "else" >
+| < EXTENDS: "extends" >
+| < FALSE: "false" >
+| < FINAL: "final" >
+| < FINALLY: "finally" >
+| < FLOAT: "float" >
+| < FOR: "for" >
+| < GOTO: "goto" >
+| < IF: "if" >
+| < IMPLEMENTS: "implements" >
+| < IMPORT: "import" >
+| < INSTANCEOF: "instanceof" >
+| < INT: "int" >
+| < INTERFACE: "interface" >
+| < LONG: "long" >
+| < NATIVE: "native" >
+| < NEW: "new" >
+| < NULL: "null" >
+| < PACKAGE: "package">
+| < PRIVATE: "private" >
+| < PROTECTED: "protected" >
+| < PUBLIC: "public" >
+| < RETURN: "return" >
+| < SHORT: "short" >
+| < STATIC: "static" >
+| < SUPER: "super" >
+| < SWITCH: "switch" >
+| < SYNCHRONIZED: "synchronized" >
+| < THIS: "this" >
+| < THROW: "throw" >
+| < THROWS: "throws" >
+| < TRANSIENT: "transient" >
+| < TRUE: "true" >
+| < TRY: "try" >
+| < VOID: "void" >
+| < VOLATILE: "volatile" >
+| < WHILE: "while" >
+| < STRICTFP: "strictfp" >
+}
+
+/* LITERALS */
+
+<DEFAULT,ASSERTION,TRACEASSERTION> // #NEU# Traceassertion
+TOKEN :
+{
+  < INTEGER_LITERAL:
+        <DECIMAL_LITERAL> (["l","L"])?
+      | <HEX_LITERAL> (["l","L"])?
+      | <OCTAL_LITERAL> (["l","L"])?
+  >
+|
+  < #DECIMAL_LITERAL: ["1"-"9"] (["0"-"9"])* >
+|
+  < #HEX_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+ >
+|
+  < #OCTAL_LITERAL: "0" (["0"-"7"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)? (["f","F","d","D"])?
+      | "." (["0"-"9"])+ (<EXPONENT>)? (["f","F","d","D"])?
+      | (["0"-"9"])+ <EXPONENT> (["f","F","d","D"])?
+      | (["0"-"9"])+ (<EXPONENT>)? ["f","F","d","D"]
+  >
+|
+  < #EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < CHARACTER_LITERAL:
+      "'"
+      (   (~["'","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )
+      "'"
+  >
+|
+  < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+}
+
+/* IDENTIFIERS */
+
+<DEFAULT,ASSERTION>
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+|
+  < #LETTER:
+      [
+       "\u0024",
+       "\u0041"-"\u005a",
+       "\u005f",
+       "\u0061"-"\u007a",
+       "\u00c0"-"\u00d6",
+       "\u00d8"-"\u00f6",
+       "\u00f8"-"\u00ff",
+       "\u0100"-"\u1fff",
+       "\u3040"-"\u318f",
+       "\u3300"-"\u337f",
+       "\u3400"-"\u3d2d",
+       "\u4e00"-"\u9fff",
+       "\uf900"-"\ufaff"
+      ]
+  >
+|
+  < #DIGIT:
+      [
+       "\u0030"-"\u0039",
+       "\u0660"-"\u0669",
+       "\u06f0"-"\u06f9",
+       "\u0966"-"\u096f",
+       "\u09e6"-"\u09ef",
+       "\u0a66"-"\u0a6f",
+       "\u0ae6"-"\u0aef",
+       "\u0b66"-"\u0b6f",
+       "\u0be7"-"\u0bef",
+       "\u0c66"-"\u0c6f",
+       "\u0ce6"-"\u0cef",
+       "\u0d66"-"\u0d6f",
+       "\u0e50"-"\u0e59",
+       "\u0ed0"-"\u0ed9",
+       "\u1040"-"\u1049"
+      ]
+  >
+}
+
+
+/* SEPARATORS */
+
+<DEFAULT,ASSERTION>
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+}
+
+/* OPERATORS */
+
+<DEFAULT,ASSERTION>
+TOKEN :
+{
+  < ASSIGN: "=" >
+| < GT: ">" >
+| < LT: "<" >
+| < BANG: "!" >
+| < TILDE: "~" >
+| < HOOK: "?" >
+| < COLON: ":" >
+| < EQ: "==" >
+| < LE: "<=" >
+| < GE: ">=" >
+| < NE: "!=" >
+| < SC_OR: "||" >
+| < SC_AND: "&&" >
+| < INCR: "++" >
+| < DECR: "--" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < STAR: "*" >
+| < SLASH: "/" >
+| < BIT_AND: "&" >
+| < BIT_OR: "|" >
+| < XOR: "^" >
+| < REM: "%" >
+| < LSHIFT: "<<" >
+| < RSIGNEDSHIFT: ">>" >
+| < RUNSIGNEDSHIFT: ">>>" >
+| < PLUSASSIGN: "+=" >
+| < MINUSASSIGN: "-=" >
+| < STARASSIGN: "*=" >
+| < SLASHASSIGN: "/=" >
+| < ANDASSIGN: "&=" >
+| < ORASSIGN: "|=" >
+| < XORASSIGN: "^=" >
+| < REMASSIGN: "%=" >
+| < LSHIFTASSIGN: "<<=" >
+| < RSIGNEDSHIFTASSIGN: ">>=" >
+| < RUNSIGNEDSHIFTASSIGN: ">>>=" >
+}
+
+
+/*****************************************
+ * THE JAVA LANGUAGE GRAMMAR STARTS HERE *
+ *****************************************/
+
+/*
+ * Program structuring syntax follows.
+ */
+
+JassCompilationUnit CompilationUnit() :
+{}
+{
+  [ PackageDeclaration() ]
+  ( ImportDeclaration() )*
+  ( TypeDeclaration() )*
+  <EOF>
+  { return jjtThis; }
+}
+
+void PackageDeclaration() :
+{}
+{
+  "package" Name() ";"
+}
+
+void ImportDeclaration() :
+{}
+{
+  "import" Name() [ "." "*" ] ";"
+}
+
+void TypeDeclaration() :
+{}
+{
+  LOOKAHEAD( ( "abstract" | "final" | "public" | "strictfp" )* "class" )
+  ClassDeclaration()
+|
+  InterfaceDeclaration()
+|
+  ";"
+}
+
+/*
+ * Declaration syntax follows.
+ */
+
+void ClassDeclaration() :
+{}
+{
+  ( "abstract" | "final" | "public" | "strictfp")*
+  UnmodifiedClassDeclaration()
+}
+
+void UnmodifiedClassDeclaration() :
+{}
+{
+  "class" <IDENTIFIER> [ "extends" Name() ] [ "implements" NameList() ]
+  ClassBody()
+}
+
+void ClassBody() :
+{}
+{
+  "{" ( ClassBodyDeclaration() )*  [ ClassInvariantClause() ] "}"
+}
+
+void NestedClassDeclaration() :
+{}
+{
+  ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")*
+  UnmodifiedClassDeclaration()
+}
+
+void ClassBodyDeclaration() :
+{}
+{
+  LOOKAHEAD(2)
+  Initializer()
+|
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "class" )
+  NestedClassDeclaration()
+|
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "interface" )
+  NestedInterfaceDeclaration()
+|
+  LOOKAHEAD( [ "public" | "protected" | "private" ] Name() "(" )
+  ConstructorDeclaration()
+|
+  LOOKAHEAD( MethodDeclarationLookahead() )
+  MethodDeclaration()
+|
+  FieldDeclaration()
+}
+
+// This production is to determine lookahead only.
+void MethodDeclarationLookahead() :
+{}
+{
+  ( "public" | "protected" | "private" | "static" | "abstract" | "final" | "native" | "synchronized" | "strictfp")*
+  ResultType() <IDENTIFIER> "("
+}
+
+void InterfaceDeclaration() :
+{}
+{
+  ( "abstract" | "public" | "strictfp")*
+  UnmodifiedInterfaceDeclaration()
+}
+
+void NestedInterfaceDeclaration() :
+{}
+{
+  ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")*
+  UnmodifiedInterfaceDeclaration()
+}
+
+void UnmodifiedInterfaceDeclaration() :
+{}
+{
+  "interface" <IDENTIFIER> [ "extends" NameList() ]
+  "{" ( InterfaceMemberDeclaration() )* "}"
+}
+
+void InterfaceMemberDeclaration() :
+{}
+{
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "class" )
+  NestedClassDeclaration()
+|
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "interface" )
+  NestedInterfaceDeclaration()
+|
+  LOOKAHEAD( MethodDeclarationLookahead() )
+  MethodDeclaration()
+|
+  FieldDeclaration()
+}
+
+void FieldDeclaration() :
+{}
+{
+  ( "public" | "protected" | "private" | "static" | "final" | "transient" | "volatile" )*
+  Type() VariableDeclarator() ( "," VariableDeclarator() )* ";"
+}
+
+void VariableDeclarator() :
+{}
+{
+  VariableDeclaratorId() [ "=" VariableInitializer() ]
+}
+
+void VariableDeclaratorId() :
+{}
+{
+ 	<IDENTIFIER> ( "[" "]" )*
+}
+
+void VariableInitializer() :
+{}
+{
+  ArrayInitializer()
+|
+  Expression()
+}
+
+void ArrayInitializer() :
+{}
+{
+  "{" [ VariableInitializer() ( LOOKAHEAD(2) "," VariableInitializer() )* ] [ "," ] "}"
+}
+
+/* The ExceptionDeclaration rule was inserted for easy code-generation.
+   The MethodBodyBlock (instead of Body) was inserted to specify the rule for 
+   preconditions, which should not appear in every block 
+*/
+		
+void MethodDeclaration() :
+{}
+{
+  ( "public" | "protected" | "private" | "static" | "abstract" | "final" | "native" | "synchronized" | "strictfp")*
+  ResultType() MethodDeclarator() [ "throws" NameList() ]
+  ( "{" MethodBodyBlock() "}" | ";" )
+}
+
+void MethodDeclarator() :
+{}
+{
+  <IDENTIFIER> FormalParameters() ( "[" "]" )*
+}
+
+void FormalParameters() :
+{}
+{
+  "(" [ FormalParameter() ( "," FormalParameter() )* ] ")"
+}
+
+void FormalParameter() :
+{}
+{
+  [ "final" ] Type() VariableDeclaratorId()
+}
+
+void ConstructorDeclaration() :
+{}
+{
+  [ "public" | "protected" | "private" ] <IDENTIFIER> FormalParameters()  [ "throws" NameList() ]
+  "{"
+    [ LOOKAHEAD(ExplicitConstructorInvocation()) ExplicitConstructorInvocation() ]
+		MethodBodyBlock() 
+  "}"
+}
+
+void ExplicitConstructorInvocation() :
+{}
+{
+  LOOKAHEAD("this" Arguments() ";")
+  "this" Arguments() ";"
+|
+  [ LOOKAHEAD(2) PrimaryExpression() "." ] "super" Arguments() ";"
+}
+
+void Initializer() :
+{}
+{
+  [ "static" ] Block()
+}
+
+
+/*
+ * Type, name and expression syntax follows.
+ */
+
+void Type() :
+{}
+{
+  ( PrimitiveType() | Name() ) ( "[" "]" )*
+}
+
+void PrimitiveType() :
+{}
+{
+  "boolean"
+|
+  "char"
+|
+  "byte"
+|
+  "short"
+|
+  "int"
+|
+  "long"
+|
+  "float"
+|
+  "double"
+}
+
+void ResultType() :
+{}
+{
+  "void"
+|
+  Type()
+}
+
+void Name() :
+/*
+ * A lookahead of 2 is required below since "Name" can be followed
+ * by a ".*" when used in the context of an "ImportDeclaration".
+ */
+{}
+{
+  <IDENTIFIER> 
+  ( LOOKAHEAD(2) "." <IDENTIFIER> )*
+}
+
+void NameList() :
+{}
+{
+  Name()
+  ( "," Name()
+  )*
+}
+
+
+/*
+ * Expression syntax follows.
+ */
+
+void Expression() : 
+/*
+ * This expansion has been written this way instead of:
+ *   Assignment() | ConditionalExpression()
+ * for performance reasons.
+ * However, it is a weakening of the grammar for it allows the LHS of
+ * assignments to be any conditional expression whereas it can only be
+ * a primary expression.  Consider adding a semantic predicate to work
+ * around this.
+ */
+{}
+{
+  ConditionalExpression()
+  [ 
+    AssignmentOperator() Expression()
+  ]
+}
+
+void AssignmentOperator() :
+{}
+{
+  "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | ">>>=" | "&=" | "^=" | "|="
+}
+
+void ConditionalExpression() #ConditionalExpression(>1) :
+{}
+{
+  ConditionalOrExpression() [ "?" Expression() ":" ConditionalExpression() ]
+}
+
+void ConditionalOrExpression() #ConditionalOrExpression(>1) :
+{}
+{
+  ConditionalAndExpression() ( "||" ConditionalAndExpression() )*
+}
+
+void ConditionalAndExpression() #ConditionalAndExpression(>1) :
+{}
+{
+  InclusiveOrExpression() ( "&&" InclusiveOrExpression() )*
+}
+
+void InclusiveOrExpression() #InclusiveOrExpression(>1) :
+{}
+{
+  ExclusiveOrExpression() ( "|" ExclusiveOrExpression() )*
+}
+
+void ExclusiveOrExpression() #ExclusiveOrExpression(>1) :
+{}
+{
+  AndExpression() ( "^" AndExpression() )*
+}
+
+void AndExpression() #AndExpression(>1) :
+{}
+{
+  EqualityExpression() ( "&" EqualityExpression() )*
+}
+
+void EqualityExpression() #EqualityExpression(>1) :
+{}
+{
+  InstanceOfExpression() ( ( "==" | "!=" ) InstanceOfExpression() )*
+}
+
+void InstanceOfExpression() #InstanceOfExpression(>1) :
+{}
+{
+  RelationalExpression() [ "instanceof" Type() ]
+}
+
+void RelationalExpression() #RelationalExpression(>1) :
+{}
+{
+  ShiftExpression() ( ( "<" | ">" | "<=" | ">=" ) ShiftExpression() )*
+}
+
+void ShiftExpression() #ShiftExpression(>1) :
+{}
+{
+  AdditiveExpression() ( ( "<<" | ">>" | ">>>" ) AdditiveExpression() )*
+}
+
+void AdditiveExpression() #AdditiveExpression(>1) :
+{}
+{
+  MultiplicativeExpression() ( ( "+" | "-" ) MultiplicativeExpression() )*
+}
+
+void MultiplicativeExpression() #MultiplicativeExpression(>1) :
+{}
+{
+  UnaryExpression() ( ( "*" | "/" | "%" ) UnaryExpression() )*
+}
+
+void UnaryExpression() #UnaryExpression(>1) :
+{}
+{
+  UnaryPlusMinusOperator() UnaryExpression()
+|
+  PreIncrementExpression()
+|
+  PreDecrementExpression()
+|
+  UnaryExpressionNotPlusMinus()
+}
+
+void PreIncrementExpression() :
+{}
+{
+  "++" PrimaryExpression()
+}
+
+void PreDecrementExpression() :
+{}
+{
+  "--" PrimaryExpression()
+}
+
+void UnaryExpressionNotPlusMinus() #UnaryExpressionNotPlusMinus(>1) :
+{}
+{
+  UnaryNotPlusMinusOperator() UnaryExpression()
+|
+  LOOKAHEAD( CastLookahead() )
+  CastExpression()
+|
+  PostfixExpression()
+}
+
+// This production is to determine lookahead only.  The LOOKAHEAD specifications
+// below are not used, but they are there just to indicate that we know about
+// this.
+void CastLookahead() #void :
+{}
+{
+  LOOKAHEAD(2)
+  "(" PrimitiveType()
+|
+  LOOKAHEAD("(" Name() "[")
+  "(" Name() "[" "]"
+|
+  "(" Name() ")" ( "~" | "!" | "(" | <IDENTIFIER> | "this" | "super" | "new" | Literal() )
+}
+
+void PostfixExpression() #PostfixExpression(>1) :
+{}
+{
+  PrimaryExpression() [ PostfixOperator() ]
+}
+
+void PostfixOperator() :
+{}
+{
+	"++" | "--"
+}
+
+void CastExpression() #CastExpression(>1) :
+{}
+{
+  LOOKAHEAD("(" PrimitiveType())
+  "(" Type() ")" UnaryExpression()
+|
+  "(" Type() ")" UnaryExpressionNotPlusMinus()
+}
+
+void PrimaryExpression() :
+{}
+{
+  PrimaryPrefix() ( LOOKAHEAD(2) PrimarySuffix() )*
+}
+
+void PrimaryPrefix() :
+{}
+{
+  Literal()
+|
+  "this"
+|
+  "super" "." <IDENTIFIER>
+|
+  "(" Expression() ")"
+|
+  AllocationExpression()
+|
+  LOOKAHEAD( ResultType() "." "class" )
+  ResultType() "." "class"
+|
+  Name()
+}
+
+void PrimarySuffix() :
+{}
+{
+  LOOKAHEAD(2)
+  "." "this"
+|
+  LOOKAHEAD(2)
+  "." AllocationExpression()
+|
+  "[" Expression() "]"
+|
+  "." <IDENTIFIER>
+|
+  Arguments()
+}
+
+void Literal() :
+{}
+{
+  <INTEGER_LITERAL>
+|
+  <FLOATING_POINT_LITERAL>
+|
+  <CHARACTER_LITERAL>
+|
+  <STRING_LITERAL>
+|
+  BooleanLiteral()
+|
+  NullLiteral()
+}
+
+void BooleanLiteral() :
+{}
+{
+  "true"
+|
+  "false"
+}
+
+void NullLiteral() :
+{}
+{
+  "null"
+}
+
+void Arguments() :
+{}
+{
+  "(" [ ArgumentList() ] ")"
+}
+
+void ArgumentList() :
+{}
+{
+  Expression() ( "," Expression() )*
+}
+
+void AllocationExpression() :
+{}
+{
+  LOOKAHEAD(2)
+  "new" PrimitiveType() ArrayDimsAndInits()
+|
+  "new" Name()
+    (
+      ArrayDimsAndInits()
+    |
+      Arguments() [ ClassBody() ]
+    )
+}
+
+/*
+ * The third LOOKAHEAD specification below is to parse to PrimarySuffix
+ * if there is an expression between the "[...]".
+ */
+void ArrayDimsAndInits() :
+{}
+{
+  LOOKAHEAD(2)
+  ( LOOKAHEAD(2) "[" Expression() "]" )+ ( LOOKAHEAD(2) "[" "]" )*
+|
+  ( "[" "]" )+ ArrayInitializer()
+}
+
+
+/*
+ * Statement syntax follows.
+ */
+
+void Statement() :
+/*
+ * A semantic check is needed to ensure that the retry statement is only
+ * used in a rescue block.
+ */
+{}
+{
+  LOOKAHEAD(2)
+  LabeledStatement()
+|
+  Block()
+|
+  EmptyStatement()
+|
+  AssertStatement()
+|
+  StatementExpression() ";"
+|
+  SwitchStatement()
+|
+  IfStatement()
+|
+  WhileStatement()
+|
+  DoStatement()
+|
+  ForStatement()
+|
+  BreakStatement()
+|
+  ContinueStatement()
+|
+  ReturnStatement()
+|
+  ThrowStatement()
+|
+  SynchronizedStatement()
+|
+  TryStatement()
+| 
+  CheckClause()
+| 
+  RetryStatement()
+}
+
+void LabeledStatement() :
+{}
+{
+  <IDENTIFIER> ":" Statement()
+}
+
+void Block() :
+{}
+{
+  "{" ( BlockStatement() )* "}"
+}
+
+void BlockStatement() :
+{}
+{
+  LOOKAHEAD([ "final" ] Type() <IDENTIFIER>)
+  LocalVariableDeclaration() ";"
+|
+  Statement()
+|
+  UnmodifiedClassDeclaration()
+|
+  UnmodifiedInterfaceDeclaration()
+}
+
+void LocalVariableDeclaration() :
+{}
+{
+  [ "final" ] Type() VariableDeclarator() ( "," VariableDeclarator() )*
+}
+
+void EmptyStatement() :
+{}
+{
+  ";"
+}
+
+void StatementExpression() :
+/*
+ * The last expansion of this production accepts more than the legal
+ * Java expansions for StatementExpression.  This expansion does not
+ * use PostfixExpression for performance reasons. 
+ * Bartetzko: THIS NEEDS SOME MORE LOGIC TO BE REFLECTED CORRECTLY !
+ */
+{}
+{
+  PreIncrementExpression()
+|
+  PreDecrementExpression()
+|
+  PrimaryExpression() [ "++" | "--" | AssignmentOperator() Expression() ]
+}
+
+/*
+ * The SwitchStatement has been transformed slightly. The ( BlockStatement )* has been moved to 
+ * the SwitchLabel. However this is more like the JLS !
+ * This makes the code generation easier.
+ */
+
+void SwitchStatement() :
+{}
+{
+  "switch" "(" Expression() ")" "{"
+    ( SwitchLabel() )*
+  "}"
+}
+
+void SwitchLabel() :
+{}
+{
+  "case" Expression() ":" ( BlockStatement() )*
+|
+  "default" ":" ( BlockStatement() )*
+}
+
+void IfStatement() :
+/*
+ * The disambiguating algorithm of JavaCC automatically binds dangling
+ * else's to the innermost if statement.  The LOOKAHEAD specification
+ * is to tell JavaCC that we know what we are doing.
+ */
+{}
+{
+  "if" "(" Expression() ")" Statement() [ LOOKAHEAD(1) "else" Statement() ]
+}
+
+void WhileStatement() :
+{}
+{
+  "while" "(" Expression() ")" AssertionClause()
+}
+
+void DoStatement() :
+{}
+{
+  "do" AssertionClause() "while" "(" Expression() ")" ";"
+}
+
+void ForStatement() :
+{}
+{
+  "for" "(" [ ForInit() ] ";" [ Expression() ] ";" [ ForUpdate() ] ")" AssertionClause()
+}
+
+void ForInit() :
+{}
+{
+  LOOKAHEAD( [ "final" ] Type() <IDENTIFIER> )
+  LocalVariableDeclaration()
+|
+  StatementExpressionList()
+}
+
+void StatementExpressionList() :
+{}
+{
+  StatementExpression() ( "," StatementExpression() )*
+}
+
+void ForUpdate() :
+{}
+{
+  StatementExpressionList()
+}
+
+void BreakStatement() :
+{}
+{
+  "break" [ <IDENTIFIER> ] ";"
+}
+
+void ContinueStatement() :
+{}
+{
+  "continue" [ <IDENTIFIER> ] ";"
+}
+
+void ReturnStatement() :
+{}
+{
+  "return" [ Expression() ] ";"
+}
+
+void ThrowStatement() :
+{}
+{
+  "throw" Expression() ";"
+}
+
+void SynchronizedStatement() :
+{}
+{
+  "synchronized" "(" Expression() ")" Block()
+}
+
+void TryStatement() :
+/*
+ * Semantic check required here to make sure that at least one
+ * finally/catch is present.
+ */
+{}
+{
+  "try" Block()
+  ( "catch" "(" FormalParameter() ")" Block() )*
+  [ "finally" Block() ]
+}
+
+/*
+ * New statement from Java 1.4  - JH
+ */
+void AssertStatement() :
+{}
+{
+  "assert" Expression() [ ":" Expression() ] ";"
+}
+
+/**************************************/
+/* New expansion rules for assertions */
+/**************************************/
+
+void MethodBodyBlock() :
+{}
+{
+  [ RequireClause() ] ( BlockStatement() )* [ EnsureClause() ] [ RescueClause() ]
+}
+
+void AssertionClause() :
+{}
+{
+	[ InvariantClause() ] [ VariantClause() ] Statement()
+}
+
+void RequireClause() :
+{}
+{
+	<REQUIRE> ( BooleanAssertion() ";" )+ <ASS_END>
+}
+
+void EnsureClause() :
+{}
+{
+	<ENSURE> ( BooleanChangeAssertion() ";" )+ <ASS_END>
+}
+
+void BooleanAssertion() : //#NEU# AssertionLabel als optional gesetzt, war als Alternative realisiert
+{}
+{
+	[ AssertionLabel() ] AssertionExpression()
+}
+
+void BooleanChangeAssertion() :
+{}
+{
+
+	LOOKAHEAD ( <CHANGEONLY> ) <CHANGEONLY> "{" [ ChangeList() ] "}"
+| BooleanAssertion()
+}
+
+void ChangeList() :
+{}
+{
+	FieldReference() ( "," FieldReference() )*
+}
+
+void FieldReference() :
+{}
+{
+	[ "this" "." ] <IDENTIFIER>
+}
+
+void AssertionLabel() :
+{}
+{
+	// #NEU# frueher: "[" <IDENTIFIER> [ ":" AssertionExpression() ] "]"
+
+	"[" <IDENTIFIER> "]"
+}
+
+void ClassInvariantClause() :
+{}
+{
+	<INVARIANT> ( InvariantAssertion() ";" )+ <ASS_END> // #NEU# BooleanAssertion durch InvariantAssertion ersetzt
+}
+
+
+void InvariantAssertion() :
+{}
+{
+	LOOKAHEAD( [ AssertionLabel() ] <TRACE> )
+	TraceAssertion() 
+	| BooleanAssertion()
+}
+
+
+void InvariantClause() :
+{}
+{
+	<INVARIANT> (  BooleanAssertion() ";" )+ <ASS_END>
+}
+
+void CheckClause() :
+{}
+{
+	<CHECK>	(BooleanAssertion() ";" )+ <ASS_END>
+}
+
+
+void RescueClause() :
+{}
+{
+	<RESCUE> ( RescueCatch() )+ [ ";" ] <ASS_END>
+}
+
+void RescueCatch() :
+{}
+{
+	"catch" "(" FormalParameter() ")" Block()
+}
+
+void VariantClause() :
+{}
+{
+	<VARIANT> AssertionExpression() <ASS_END>
+}
+
+
+void AssertionExpression() :
+{}
+{
+	AssertionForAllExistsExpression()
+| AssertionConditionalExpression()
+}
+
+void AssertionForAllExistsExpression() :
+{}
+{
+ ( <FORALL> | <EXISTS> ) <IDENTIFIER> ":" 
+	( AssertionFiniteEnumerationCreation() | AssertionRangeExpression() ) <FORALL_SEP> AssertionExpression()
+}
+
+void AssertionFiniteEnumerationCreation() :
+{}
+{
+	"new" Name() AssertionArguments()
+}
+
+void AssertionRangeExpression() :
+{}
+{
+	"{" AssertionShiftExpression() <RANGE> AssertionShiftExpression() "}"
+}
+
+void AssertionConditionalExpression() #AssertionConditionalExpression(>1) :
+{}
+{
+  AssertionConditionalOrExpression() [ "?" AssertionExpression() ":" AssertionExpression() ]
+}
+
+void AssertionConditionalOrExpression() #AssertionConditionalOrExpression(>1) :
+{}
+{
+  AssertionConditionalAndExpression() ( "||" AssertionConditionalAndExpression() )*
+}
+
+void AssertionConditionalAndExpression() #AssertionConditionalAndExpression(>1) :
+{}
+{
+  AssertionInclusiveOrExpression() ( "&&" AssertionInclusiveOrExpression() )*
+}
+
+void AssertionInclusiveOrExpression() #AssertionInclusiveOrExpression(>1) :
+{}
+{
+  AssertionExclusiveOrExpression() ( "|" AssertionExclusiveOrExpression() )*
+}
+
+void AssertionExclusiveOrExpression() #AssertionExclusiveOrExpression(>1) :
+{}
+{
+  AssertionAndExpression() ( "^" AssertionAndExpression() )*
+}
+
+void AssertionAndExpression() #AssertionAndExpression(>1) :
+{}
+{
+  AssertionEqualityExpression() ( "&" AssertionEqualityExpression() )*
+}
+
+void AssertionEqualityExpression() #AssertionEqualityExpression(>1) :
+{}
+{
+  AssertionInstanceOfExpression() ( ( "==" | "!=" ) AssertionInstanceOfExpression() )*
+}
+
+void AssertionInstanceOfExpression() #AssertionInstanceOfExpression(>1) :
+{}
+{
+  AssertionRelationalExpression() [ "instanceof" Type() ]
+}
+
+void AssertionRelationalExpression() #AssertionRelationalExpression(>1) :
+{}
+{
+  AssertionShiftExpression() ( ( "<" | ">" | "<=" | ">=" ) AssertionShiftExpression() )*
+}
+
+void AssertionShiftExpression() #AssertionShiftExpression(>1) :
+{}
+{
+  AssertionAdditiveExpression() ( ( "<<" | ">>" | ">>>" ) AssertionAdditiveExpression() )*
+}
+
+void AssertionAdditiveExpression() #AssertionAdditiveExpression(>1) :
+{}
+{
+  AssertionMultiplicativeExpression() ( ( "+" | "-" ) AssertionMultiplicativeExpression() )*
+}
+
+void AssertionMultiplicativeExpression() #AssertionMultiplicativeExpression(>1) :
+{}
+{
+  AssertionUnaryExpression() ( ( "*" | "/" | "%" ) AssertionUnaryExpression() )*
+}
+
+/*
+* Production for UnaryExpressions contain an additive nonterminal AssertionUnaryOperator to make the descission
+* if a node should be produced in parse tree easy !
+*/
+
+void AssertionUnaryExpression() #AssertionUnaryExpression(>1) :
+{}
+{
+  UnaryPlusMinusOperator() AssertionUnaryExpression()
+|
+  AssertionUnaryExpressionNotPlusMinus()
+}
+
+void AssertionUnaryExpressionNotPlusMinus() #AssertionUnaryExpressionNotPlusMinus(>1) :
+{}
+{
+  UnaryNotPlusMinusOperator() AssertionUnaryExpression()
+|
+  LOOKAHEAD( AssertionCastLookahead() )
+  AssertionCastExpression()
+|
+	AssertionPrimaryExpression()
+}
+
+void UnaryPlusMinusOperator() :
+{}
+{
+	"+" | "-"
+}
+
+void UnaryNotPlusMinusOperator() :
+{}
+{
+	"!" | "~"
+}
+
+// This production is to determine lookahead only.  The LOOKAHEAD specifications
+// below are not used, but they are there just to indicate that we know about
+// this.
+void AssertionCastLookahead() :
+{}
+{
+  LOOKAHEAD(2)
+  "(" PrimitiveType()
+|
+  LOOKAHEAD("(" Name() "[")
+  "(" Name() "[" "]"
+|
+  "(" Name() ")" ( "~" | "!" | "(" | <IDENTIFIER> | "this" | "super" | Literal() )
+}
+
+void AssertionCastExpression() :
+{}
+{
+  LOOKAHEAD("(" PrimitiveType())
+  "(" Type() ")" AssertionUnaryExpression()
+|
+  "(" Type() ")" AssertionUnaryExpressionNotPlusMinus()
+}
+
+void AssertionPrimaryExpression() :
+{}
+{
+  AssertionPrimaryPrefix() ( LOOKAHEAD(2) AssertionPrimarySuffix() )*
+}
+
+void AssertionPrimaryPrefix() :
+{}
+{
+  Literal()
+|
+  "this"
+|
+  "super" "." <IDENTIFIER>
+|
+  "(" AssertionExpression() ")"
+|
+  Name()
+}
+
+void AssertionPrimarySuffix() :
+{}
+{
+	LOOKAHEAD(2)
+  "." "this"
+|
+  "[" AssertionExpression() "]"
+|
+  "." <IDENTIFIER>
+|
+  AssertionArguments()
+}
+
+void AssertionArguments() :
+{}
+{
+  "(" [ AssertionArgumentList() ] ")"
+}
+
+void AssertionArgumentList() :
+{}
+{
+  AssertionExpression() ( "," AssertionExpression() )*
+}
+
+void RetryStatement() :
+{}
+{
+	<RETRY> ";"
+}
+
+
+
+
+/* #####################################
+ * production rules for trace assertions
+ * ##################################### */
+ 
+
+void TraceAssertion() :
+{}
+{
+	[ AssertionLabel() ] TraceAssertionDeclaration()
+}
+
+
+void TraceAssertionDeclaration() :
+{}
+{	 
+	<TRACE> [ CommunicationExpressions() ] 
+	<LPAREN> 
+	( LOOKAHEAD(TraceConstant()) TraceConstant() )* 
+	( ProcessDeclaration() )*	
+	<RPAREN>
+}
+
+
+void TraceConstant() :
+{}
+{
+	FieldDeclaration()
+}
+ 
+	
+void ProcessDeclaration() :
+{}
+{
+	// Trace-Prozesse haben eine aehnliche Syntax wie Java-Methoden. Jede Deklaration eines Trace-
+	// Prozesses ist syntaktisch auch eine Deklaration einer Java-Methode.
+	// Siehe MethodDeclaration().
+	
+	LOOKAHEAD(ProcessDeclarator() <LBRACE>) 
+	(
+		ProcessDeclarator() 
+		<LBRACE> 
+		( LOOKAHEAD(FieldDeclaration()) FieldDeclaration())* ProcessExpression() 
+		<RBRACE>
+	)
+	| ( LOOKAHEAD(FieldDeclaration()) FieldDeclaration())* ProcessExpression()
+}
+
+
+void ProcessDeclarator() :
+{}
+{
+	<IDENTIFIER> FormalParameters()
+}
+
+
+void ProcessExpression() :
+{}
+{
+	ProcessParallelExpression()
+}
+
+
+void ProcessParallelExpression() #ProcessParallelExpression(>1) :
+{}
+{
+	ProcessChoiceExpression() ( <TRACE_PARALLEL_OPERATOR> ProcessChoiceExpression() )*
+}
+
+
+void ProcessChoiceExpression() #ProcessChoiceExpression(>1) :
+{}
+{
+	ProcessPrefixExpression() ( <TRACE_CHOICE_OPERATOR> ProcessPrefixExpression() )*
+}
+
+
+void ProcessPrefixExpression() #ProcessPrefixExpression(>1) :
+{}
+{
+	(
+		ProcessPrimaryExpression() 
+	)
+	( 
+		<TRACE_PREFIX_OPERATOR> 
+		(
+			ProcessPrimaryExpression()
+		)
+	)*
+}
+
+
+void ProcessPrimaryExpression() :
+{}
+{
+	LOOKAHEAD(2) ConditionalCommunication() 
+	/* | CheckVerification() */
+	| ProcessCall()
+	|	ProcessJavaBlock()
+	| BasicProcess()
+	| ProcessIfElseExpression()
+	| ( <LPAREN> ProcessExpression() <RPAREN> )
+}
+
+/*
+void CheckVerification() :
+{}
+{
+	<TRACE_VERIFY_OPERATOR> <IDENTIFIER> 
+	<LPAREN> [ CommunicationParameter() ( <COMMA> CommunicationParameter() )* ] <RPAREN>
+}
+*/
+
+
+void ProcessCall() :
+{}
+{
+	<TRACE_CALL_OPERATOR> <IDENTIFIER> Arguments()
+}
+
+
+void ProcessJavaBlock() :
+{}
+{
+	// #SEMANTIK# Ausdruecke werden nur kopiert und duerfen keine Seiteneffekte produzieren
+	
+	<TRACE_EXECUTE_OPERATOR> <LPAREN> ( BlockStatement() )* <RPAREN>
+}
+
+
+
+void ConditionalCommunication() :
+{}
+{
+	[ InputParameter() | OutputParameter() ]
+	CommunicationExpressions() 
+	[ <TRACE_CONDITION> <LPAREN> Expression() <RPAREN>]
+}
+
+void BasicProcess() :
+{}
+{
+	<TRACE_DEADLOCK_OPERATOR>
+	| <TRACE_CHAOS_OPERATOR>
+	| <TRACE_TERMINATION_OPERATOR>
+}
+
+
+void ProcessIfElseExpression() :
+{}
+{
+	<TRACE_IF_OPERATOR> <LPAREN> Expression() <RPAREN> 
+  <LBRACE> ProcessExpression() <RBRACE>
+  <TRACE_ELSE_OPERATOR> 
+  <LBRACE> ProcessExpression() <RBRACE>
+}
+
+
+void CommunicationExpressions() :
+{}
+{
+	(
+		CommunicationExpression() 
+		| <LBRACE> CommunicationExpression() ( <COMMA> CommunicationExpression() )* <RBRACE>
+	)
+	[ <TRACE_COMPLEMENT_OPERATOR> CommunicationExpressions() ]
+}
+
+
+void CommunicationExpression() :
+{}
+{
+	LOOKAHEAD(Communication()) Communication()
+	| CommunicationWithWildcards()
+}
+
+
+void Communication() :
+{}
+{
+	// #SEMANTIK# Als IDENTIFIER am Ende ist erlaubt: "b", "begin", "e", "end"
+
+	[ <THIS> "."] 
+	Name() CommunicationParameterList() [ "." <IDENTIFIER> ]
+}
+
+
+void CommunicationWithWildcards() :
+{}
+{
+	(
+		LOOKAHEAD(2) <STAR> "." <IDENTIFIER> CommunicationParameterList() [ "." <IDENTIFIER> ] // arbitrary class
+		|
+		<STAR> // arbitrary class & method
+		| 
+		[<PRIVATE> | <PACKAGE> | <PROTECTED> | <PUBLIC>] ( <THIS> | Name() ) "." <STAR> // arbitrary method
+	)
+}
+
+/*
+void TraceAssertionKeywordAsIdentifier() :
+{}
+{
+		<TRACE_CALL_OPERATOR>
+	|	<TRACE_CHAOS_OPERATOR>
+	| <TRACE_COMPLEMENT_OPERATOR>
+	| <TRACE_DEADLOCK_OPERATOR>
+	| <TRACE_ELSE_OPERATOR>
+	| <TRACE_IF_OPERATOR>
+	| <TRACE_VERIFY_OPERATOR>
+	| <TRACE_TERMINATION_OPERATOR>
+	| <TRACE_CONDITION>
+}
+*/
+
+void CommunicationParameterList() :
+{}
+{
+	<LPAREN> [ CommunicationParameter() ( <COMMA> CommunicationParameter() )* ] <RPAREN> 
+}
+
+void CommunicationParameter() :
+{}
+{
+	LayedDownParameter()
+	| TypedParameter()
+	| OutputParameter()
+	| LOOKAHEAD(2) InputParameter()
+	| <STAR>
+	| <HOOK>
+}
+
+void LayedDownParameter() :
+{}
+{
+	<FLOATING_POINT_LITERAL>
+	| <INTEGER_LITERAL>
+	| <CHARACTER_LITERAL>
+	| <STRING_LITERAL>
+}
+	
+void TypedParameter() :
+{}
+{
+	Type() [ <IDENTIFIER> ]
+}
+
+void InputParameter() :
+{}
+{
+	<HOOK> <IDENTIFIER>
+}
+
+void OutputParameter() :
+{}
+{
+	<BANG> <IDENTIFIER>
+}

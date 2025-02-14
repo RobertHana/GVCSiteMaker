@@ -1,0 +1,225 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        driver = "jdbc:FrontBase://localhost/GVCSiteMaker"; 
+        password = SiteMaker; 
+        plugin = ""; 
+        username = SiteMaker; 
+    }; 
+    entities = (
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccess"; 
+            name = DataAccess; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessAddMode"; 
+            name = DataAccessAddMode; 
+            parent = DataAccessMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessBooleanColumn"; 
+            name = DataAccessBooleanColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessCalculatedColumn"; 
+            name = DataAccessCalculatedColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessColumn"; 
+            name = DataAccessColumn; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = DataAccessColumnNotification; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessColumnSearchSortOrder"; 
+            name = DataAccessColumnSearchSortOrder; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessColumnSearchValue"; 
+            name = DataAccessColumnSearchValue; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessDisplayMode"; 
+            name = DataAccessDisplayMode; 
+            parent = DataAccessMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessImportMode"; 
+            name = DataAccessImportMode; 
+            parent = DataAccessMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessListMode"; 
+            name = DataAccessListMode; 
+            parent = DataAccessDisplayMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessLookupColumn"; 
+            name = DataAccessLookupColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessMode"; 
+            name = DataAccessMode; 
+            parent = Layout; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessModeTemplate"; 
+            name = DataAccessModeTemplate; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessNumberColumn"; 
+            name = DataAccessNumberColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessRecordIDColumn"; 
+            name = DataAccessRecordIDColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessSearchMode"; 
+            name = DataAccessSearchMode; 
+            parent = DataAccessMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessSingleMode"; 
+            name = DataAccessSingleMode; 
+            parent = DataAccessDisplayMode; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessSiteFileColumn"; 
+            name = DataAccessSiteFileColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessStringColumn"; 
+            name = DataAccessStringColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessTimestampColumn"; 
+            name = DataAccessTimestampColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.DataAccessUserColumn"; 
+            name = DataAccessUserColumn; 
+            parent = DataAccessColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.EmbeddedSection"; 
+            name = EmbeddedSection; 
+            parent = InternalLink; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.EmbeddedSite"; 
+            name = EmbeddedSite; 
+            parent = InternalLink; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.HTML"; 
+            name = HTML; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.Hyperlink"; 
+            name = Hyperlink; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.Image"; 
+            name = Image; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.InternalLink"; 
+            name = InternalLink; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.Layout"; 
+            name = Layout; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.ListLink"; 
+            name = ListLink; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.ListOfLinksLayout"; 
+            name = ListOfLinksLayout; 
+            parent = Layout; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.MixedMediaConfigurableContentPane"; 
+            name = MixedMediaConfigurableContentPane; 
+            parent = MixedMediaPane; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.MixedMediaPane"; 
+            name = MixedMediaPane; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.MixedMediaPaneArrangement"; 
+            name = MixedMediaPaneArrangement; 
+            parent = Layout; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.MixedMediaTextContentPane"; 
+            name = MixedMediaTextContentPane; 
+            parent = MixedMediaPane; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.MixedMediaUnknownPane"; 
+            name = MixedMediaUnknownPane; 
+            parent = MixedMediaPane; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.PageComponent"; 
+            name = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.SectionCopy"; 
+            name = SectionCopy; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.Text"; 
+            name = Text; 
+            parent = PageComponent; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.pagecomponent.TextImageLayout"; 
+            name = TextImageLayout; 
+            parent = Layout; 
+        }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        driver = "jdbc:FrontBase://localhost/GVCSiteMaker"; 
+                        password = SiteMaker; 
+                        plugin = ""; 
+                        username = SiteMaker; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

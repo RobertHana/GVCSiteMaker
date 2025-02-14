@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Builds and collects the packages for the Open Source distribution
+# of GVCSiteMaker and GVC Frameworks on Source Forge.
+#
+# USAGE: ./package-open-source /path/to/Projects version-number
+#        ./package-open-source / 5.1.3
+
+if [  ! -d "$1" ] ; then
+  echo "Project directory missing or invalid"
+  echo "Usage: ./package-open-source /path/to/Projects version-number"
+  echo "       ./package-open-source / 5.1.3"
+  exit 1
+fi
+
+if [ "$2" == '' ] ; then
+  echo "Version number missing"
+  echo "Usage: ./package-open-source /path/to/projects version-number"
+  echo "       ./package-open-source / 5.1.3"
+  exit 1
+fi
+
+
+# Create the packages
+cd $1/Projects/GVCTools/WO5.2Eclipse
+ant OpenSource -Dversion=$2
+
+cd $1/Projects/GVCSiteMaker/Deployment
+ant -f BuildDeploymentPackages.xml OpenSource -Dversion=$2
+
+cd $1/Projects/GVCSiteMaker/Deployment/ClasspathFiles
+./OpenSource/unembed_frameworks_in_classpath.sh
+cd $1/Projects/GVCSiteMaker/Deployment
+ant -f BuildDeploymentPackages.xml build_packages -Dembed.wo.frameworks=false -Dclasspathfiles.path=ClasspathFiles/OpenSource
+
+cd $1/Projects/GVCSiteMaker/Custom/OpenSource
+ant -f BuildInstallPackage.xml build_packages -Dinstallation.version=$2
+
+
+
+# Collect the packages into one spot for easy uploading
+cp $1/Projects/GVCTools/WO5.2Eclipse/GVCFrameworks_binary_$2.tar.gz .
+cp $1/Projects/GVCTools/WO5.2Eclipse/GVCFrameworks_source_$2.tar.gz .
+cp $1/Projects/GVCSiteMaker/GVCSiteMaker_source_$2.tar.gz .
+cp $1/Projects/GVCSiteMaker/Custom/OpenSource/OpenSourceGVCSiteMakerInstall_$2.tar.gz .
+
+echo "Packages are in $1Projects/GVCSiteMaker/Custom/OpenSource:"
+echo "GVCFrameworks_binary_$2.tar.gz"
+echo "GVCFrameworks_source_$2.tar.gz"
+echo "GVCSiteMaker_source_$2.tar.gz"
+echo "OpenSource/OpenSourceGVCSiteMakerInstall_$2.tar.gz"

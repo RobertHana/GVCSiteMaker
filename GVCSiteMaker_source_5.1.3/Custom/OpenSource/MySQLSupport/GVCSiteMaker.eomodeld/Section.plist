@@ -1,0 +1,234 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_ID"; 
+            name = componentId; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            allowsNull = N; 
+            columnName = INDENTATION; 
+            name = indentation; 
+            prototypeName = integer; 
+        }, 
+        {
+            columnName = "IS_NAVIGABLE"; 
+            name = isNavigable; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "IS_VERSIONING"; 
+            name = isVersioning; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {allowsNull = N; columnName = NAME; name = name; prototypeName = shortString; }, 
+        {
+            allowsNull = N; 
+            columnName = "NORMAL_NAME"; 
+            name = normalName; 
+            prototypeName = shortString; 
+        }, 
+        {
+            columnName = "OID_SECTION_STYLE"; 
+            name = oidSectionStyle; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "REQUIRE_HTTPS_ACCESS"; 
+            name = requireHttpsAccessForPublicSections; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_ORDER"; 
+            name = sectionOrder; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_PKEY"; 
+            name = sectionPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TYPE_OID"; 
+            name = typeOID; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        sectionPKey, 
+        websiteFKey, 
+        name, 
+        sectionOrder, 
+        normalName, 
+        details, 
+        componentId, 
+        oidSectionStyle, 
+        typeOID, 
+        isNavigable, 
+        indentation, 
+        isVersioning, 
+        requireHttpsAccessForPublicSections
+    ); 
+    className = "com.gvcsitemaker.core.Section"; 
+    classProperties = (
+        name, 
+        sectionOrder, 
+        website, 
+        normalName, 
+        groups, 
+        details, 
+        component, 
+        sectionStyle, 
+        type, 
+        embeddedSectionComponents, 
+        isNavigable, 
+        indentation, 
+        copySectionSource, 
+        versions, 
+        editorGroups, 
+        contributorGroups, 
+        isVersioning, 
+        requireHttpsAccessForPublicSections
+    ); 
+    externalName = "SM_SECTION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            sectionType, 
+            sectionName, 
+            sectTrans, 
+            sectionOrder, 
+            wsExtSite, 
+            wsFileLists, 
+            wsTextImg, 
+            sectionIsLive, 
+            website, 
+            externalURL, 
+            bannerOn, 
+            navbarOn, 
+            footerOn, 
+            sectionTitle, 
+            internalURL, 
+            groups, 
+            files
+        ); 
+    }; 
+    name = Section; 
+    primaryKeyAttributes = (sectionPKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PageComponent; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = componentId; }); 
+            name = component; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionContributorGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = contributorGroupSections; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "contributorGroupSections.group"; 
+            joinSemantic = EOInnerJoin; 
+            name = contributorGroups; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CopySectionTask; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = relatedSectionId; sourceAttribute = sectionPKey; }); 
+            name = copySectionRelated; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CopySectionTask; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sourceSectionId; sourceAttribute = sectionPKey; }); 
+            name = copySectionSource; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionEditorGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = editorGroupSections; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "editorGroupSections.group"; 
+            joinSemantic = EOInnerJoin; 
+            name = editorGroups; 
+        }, 
+        {
+            destination = EmbeddedSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = embeddedSectionFkey; sourceAttribute = sectionPKey; }); 
+            name = embeddedSectionComponents; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = groupSections; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "groupSections.group"; 
+            joinSemantic = EOInnerJoin; 
+            name = groups; 
+        }, 
+        {
+            destination = SectionStyle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidSectionStyle; }); 
+            name = sectionStyle; 
+        }, 
+        {
+            destination = SectionType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = typeOID; }); 
+            name = type; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionVersion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidSection; sourceAttribute = sectionPKey; }); 
+            name = versions; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = website; 
+        }
+    ); 
+}

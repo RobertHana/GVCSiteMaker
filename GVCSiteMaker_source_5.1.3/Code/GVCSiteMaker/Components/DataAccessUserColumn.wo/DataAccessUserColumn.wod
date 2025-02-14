@@ -1,0 +1,41 @@
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+DefaultComparisonPopUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = componentObject.defaultComparison;  // VALID
+    name = ~"DefaultComparison_" + componentObject.normalizedFieldName();
+}
+
+ValueAsString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}
+

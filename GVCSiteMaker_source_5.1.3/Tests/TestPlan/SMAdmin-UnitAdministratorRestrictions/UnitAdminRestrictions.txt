@@ -1,0 +1,5 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+WebsiteAssociatedWithUnitAdminsUnit	sitemaker10@global-village.net	Faculties	50		
+WebsiteAssociatedWithUnitAdminsChildUnit	sitemaker10@global-village.net	Mathematics	50		
+OutOfScopeAssociatedWithParentUnit	sitemaker10@global-village.net	University of Michigan			
+OutOfScopeAssociatedWithSiblingUnit	sitemaker10@global-village.net	Staff			

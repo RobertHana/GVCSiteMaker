@@ -1,0 +1,7 @@
+OrderingPopUpButton: WOPopUpButton {
+	item = anIndex;
+	list = list;
+	onChange = "this.form.submit();";
+	selection = selectedIndex;
+	style = "width:60px; text-align:center;";
+}

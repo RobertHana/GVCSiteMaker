@@ -1,0 +1,108 @@
+AdminedOrgUnitNameString: WOString {
+	value = user.orgUnitsToAdmin.unitName;
+}
+
+CanChangeUsersSysAdminState: WOConditional {
+	condition = canChangeUsersSysAdminState;
+}
+
+CanDeleteUserConditional: WOConditional {
+	condition = canDeleteUser;
+}
+
+CantChangeUsersSysAdminStateConditional: WOConditional {
+	condition = canChangeUsersSysAdminState;
+	negate = true;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "User Management";
+	isAdmin = true;
+	pageType = "ManageUserPage";
+}
+
+ErrorMessageRepetition: WORepetition {
+	item = anErrorMessage;
+	list = errorMessages;
+}
+
+ErrorMessageString: WOString {
+	value = anErrorMessage;
+}
+
+HasErrorMessagesConditional: WOConditional {
+	condition = hasErrorMessages;
+}
+
+InvalidUserIDErrorMessage: WOString {
+	value = invalidManageUserIDErrorMessage;
+}
+
+IsSystemAdminCheckBox: WOCheckBox {
+	checked = user.isSystemAdmin;
+}
+
+IsUnitAdminConditional: WOConditional {
+	condition = user.isUnitAdmin;
+}
+
+IsUserSysAdminConditional: WOConditional {
+	condition = user.isSystemAdmin;
+}
+
+ManageUnitHyperlink: WOHyperlink {
+	action = manageUnit;
+}
+
+ManageUser: WOSubmitButton {
+	value = "Manage";
+	action = manageUser;
+}
+
+NewUserID: WOTextField {
+	class = "largeEntryBox";
+	value = userID;
+    maxLength = 100;
+}
+
+OrgUnitNameString: WOString {
+	value = anOrgUnit.unitName;
+}
+
+OrgUnitRepetition: WORepetition {
+	item = anOrgUnit;
+	list = adminedOrgUnits;
+}
+
+RemovalButton: RemovalButton {
+	removeButtonName = "Delete";
+	removeButtonActionName = "removeUser";
+	objectToDelete = user;
+}
+
+ShowInvalidManageUserIDErrorMessage: WOConditional {
+	condition = invalidManageUserIDErrorMessage;
+}
+
+UnitChooserWithDefault: UnitChooserWithDefault {
+	noSelectionString = "None";
+	selectedUnit = user.orgUnitToAdminStylesFor;
+	rootOrgUnits = rootUnit;
+	excludeNonSystemWideUnits = false;
+}
+
+UpdateProperties: WOSubmitButton {
+	value = "Update";
+	action = updateProperties;
+}
+
+UserManagementForm: WOForm {
+	multipleSubmit = true;
+}
+
+UserToManage: WOTextField {
+	class = "largeEntryBox";
+	value = userIDToManage;
+    maxLength = 100;
+}

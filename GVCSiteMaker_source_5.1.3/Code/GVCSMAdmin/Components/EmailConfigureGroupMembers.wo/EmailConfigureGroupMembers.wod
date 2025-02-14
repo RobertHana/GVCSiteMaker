@@ -1,0 +1,92 @@
+BodyText: WOText {
+	value = messageBody;
+	rows = "15";
+	cols = 120;
+	class = "largeEntryBox";
+	  // class with a width does not work in NN 4 so redundant columns
+}
+
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Send Message to Users With 'Configure Website' Permission";
+	isAdmin = true;
+	pageType = "EmailConfigureGroupMembers";
+}
+
+HasUserIDsCorrespondingToInvalidAddressesConditional: WOConditional {
+	condition = hasUserIDsCorrespondingToInvalidAddresses;
+}
+
+InvalidAddressesString: WOString {
+	value = invalidAddressesString;
+}
+
+InvalidEmailAddressConditional: WOConditional {
+	condition = hasMalformedToAddresses;
+}
+
+InvalidUserIDsString: WOString {
+	value = invalidAddressesString;
+}
+
+IsConfirmingMessageConditional: WOConditional {
+	condition = isConfirmingMessage;
+}
+
+IsMessageCompleteConditional: WOConditional {
+	condition = isMessageComplete;
+	negate = true;
+}
+
+IsNotTextEntryModeConditional: WOConditional {
+	condition = isTextEntryMode;
+	negate = true;
+}
+
+IsSendingMessageConditional: WOConditional {
+	condition = isConfirmingMessage;
+	negate = true;
+}
+
+IsTextEntryModeConditional: WOConditional {
+	condition = isTextEntryMode;
+}
+
+MessageForm: WOForm {
+	action = sendMessage;
+}
+
+SendMessageSubmitButton: WOSubmitButton {
+	action = sendMessage;
+	value = "Send";
+}
+
+SendToOwnersCheckBox: WOCheckBox {
+	checked = sendToOwners;
+}
+
+SendToStyleAdministratorsCheckBox: WOCheckBox {
+	checked = sendToStyleAdministrators;
+}
+
+SendToSystemAdministratorsCheckBox: WOCheckBox {
+	checked = sendToSystemAdministrators;
+}
+
+SendToText: WOText {
+	value = textEnteredUserIDs;
+	rows = 5;
+	cols = 120;
+	class = "largeEntryBox";
+}
+
+SendToUnitAdministratorsCheckBox: WOCheckBox {
+	checked = sendToUnitAdministrators;
+}
+
+SubjectTextField: WOTextField {
+	value = messageSubject;
+	class = "largeEntryBox";
+	size = 120;
+}

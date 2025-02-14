@@ -1,0 +1,41 @@
+<webobject name="DynamicBody">
+	<!-- Also not an editing page so non standard header -->
+	<h1>Choose a <WEBOBJECT NAME=ProductNameString></WEBOBJECT> website to configure...</h1>
+	<HR class="primaryBarStyle"/>
+	<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="2" class="content">
+		<TR>
+			<TD VALIGN="top" COLSPAN="2">
+				<WEBOBJECT NAME=UserCanConfigureMultipleSitesConditional>
+					<h3>You have permission to configure the following sites:</h3>
+					<WEBOBJECT NAME=SitesUserMayConfigureRepetition>
+						<b>
+						 -
+						<WEBOBJECT NAME=ConfigureWebsiteHyperlink>
+							<WEBOBJECT NAME=BannerTextString></WEBOBJECT>
+						</WEBOBJECT>&nbsp;
+						</b>(SiteID = 
+						<b>
+							<WEBOBJECT NAME=SiteIDString></WEBOBJECT>
+						</b>
+						)&nbsp;owned by&nbsp;
+						<b>
+							<WEBOBJECT NAME=OwnersUserIDString></WEBOBJECT>
+						</b>
+						<br />
+					</WEBOBJECT>
+				</WEBOBJECT>
+				<WEBOBJECT NAME=UserCannotConfigureMultipleSitesConditional>
+					<B>
+						You currently have no websites to configure.
+						<br />
+						Perhaps you would like to <WEBOBJECT NAME=RequestSiteHyperlink>request a new one.</WEBOBJECT>
+					</B>
+				</WEBOBJECT> 
+				<br />
+			</TD>
+		</TR>
+	</TABLE>
+	<HR class="primaryBarStyle"/>
+	<P>or <WEBOBJECT NAME=SiteMakerMainPageLink>return to
+						<WEBOBJECT NAME=ProductNameString></WEBOBJECT> main page</WEBOBJECT>.</p>
+</webobject>			

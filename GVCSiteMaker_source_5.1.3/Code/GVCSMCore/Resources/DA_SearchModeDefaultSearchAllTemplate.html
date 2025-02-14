@@ -1,0 +1,32 @@
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="left" valign="middle">
+        <span class="dataAccessSubtitle">Find Records in Database Table:</span> <span class="dataAccessColoredSubtitle">"<WebObject name=DataAccess_TableName></WebObject>"</span>
+      </td>
+      <td id="dataAccessActions" style="text-align: right;">
+        <WebObject name=DataAccess_SearchWithDefaultTemplateButton></WebObject>
+      </td>
+    </tr>
+  </table>
+
+  <div style="clear: left; padding-top: 20px; padding-bottom: 20px;">
+	Find records where any text field contains:<br /><WebObject name=DataAccess_SearchAllTextInput></WebObject>
+  </div>
+  
+  <div style="clear: left;">
+    <p class="dataAccessInstruction">Show <WebObject name=DataAccess_GroupSizePopup></WebObject> record(s) per page.</p>
+
+    <p class="dataAccessInstruction">Sort found records:<br>
+		<WebObject name=DataAccess_SortOrderings>
+			<WebObject name=DataAccess_IsFirstSortColumnConditional>first by</WebObject>
+			<WebObject name=DataAccess_IsNotFirstSortColumnConditional>then by</WebObject>
+			<WebObject name=DataAccess_SortByColumnsPopUp></WebObject>&nbsp;&nbsp;in: <WebObject name=DataAccess_SortDirectionPopUp></WebObject> order<br>
+		</WebObject name=DataAccess_SortOrderings>
+
+		<WebObject NAME=DataAccess_SortOrderSameColumnTwiceInvalidConditional>
+			<span class="warningText">You cannot choose the same column twice for sorting.</span><br>
+		</WebObject>
+
+		<WebObject NAME=DataAccess_AddSortOrderingButton></WebObject><br>
+    </p>
+  </div>

@@ -1,0 +1,127 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATION_DATE"; 
+            name = creationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "LDAP_GROUP_NAME"; 
+            name = ldapGroupName; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_NAME"; 
+            name = name; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_LDAP_BRANCH"; 
+            name = oidLDAPBranch; 
+            prototypeName = dbKey; 
+        }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = tinySting; }, 
+        {
+            allowsNull = N; 
+            columnName = "PARENT_WEBSITE"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, ldapGroupName, name, oidLDAPBranch, type); 
+    className = "com.gvcsitemaker.core.LDAPGroup"; 
+    classProperties = (
+        creationDate, 
+        dataAccessNotifications, 
+        files, 
+        ldapBranch, 
+        ldapGroupName, 
+        name, 
+        parentWebsite, 
+        sections, 
+        type
+    ); 
+    externalName = "SM_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (creationDate, files, parentWebsite, sections); 
+    }; 
+    maxNumberOfInstancesToBatchFetch = 50; 
+    name = LDAPGroup; 
+    parent = WebsiteGroup; 
+    primaryKeyAttributes = (groupPKey); 
+    relationships = (
+        {
+            definition = "groupDataAccessNotifications.dataAccess"; 
+            internalInfo = {"_nameInObjectStore" = "dataAccessWebsiteGroupNotifications_dataAccess"; }; 
+            name = dataAccessNotifications; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            definition = "groupFiles.file"; 
+            name = files; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = DataAccessWebsiteGroupNotification; 
+            internalInfo = {"_nameInObjectStore" = websiteWebsiteGroups; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupDataAccessNotifications; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupFiles; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupSections; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = LDAPBranch; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidLDAPBranch; }); 
+            name = ldapBranch; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = parentWebsite; 
+        }, 
+        {
+            definition = "groupSections.section"; 
+            name = sections; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }
+    ); 
+    restrictingQualifier = "(type = 'LDAP')"; 
+}

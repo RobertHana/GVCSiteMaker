@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATION_DATE"; 
+            name = creationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_NAME"; 
+            name = name; 
+            prototypeName = shortString; 
+        }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = tinySting; }
+    ); 
+    attributesUsedForLocking = (groupPKey, name, type); 
+    cachesObjects = Y; 
+    className = "com.gvcsitemaker.core.InternalUsersGroup"; 
+    classProperties = (name, creationDate, type); 
+    externalName = "SM_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            groupName, 
+            creationDate, 
+            websites, 
+            parentWebsite, 
+            sections, 
+            files, 
+            accessType, 
+            users
+        ); 
+    }; 
+    name = InternalUsersGroup; 
+    parent = Group; 
+    primaryKeyAttributes = (groupPKey); 
+    restrictingQualifier = "(type = 'InternalUsers')"; 
+}

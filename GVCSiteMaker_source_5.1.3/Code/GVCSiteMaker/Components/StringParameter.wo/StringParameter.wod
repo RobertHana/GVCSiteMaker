@@ -1,0 +1,12 @@
+Conditional1: WOConditional {
+	condition = parameter.isRequired;
+}
+
+NameString: WOString {
+	value = parameter.uiName;
+}
+
+ValueTextField: WOTextField {
+	value = parameterValue;
+	size = "60";
+}

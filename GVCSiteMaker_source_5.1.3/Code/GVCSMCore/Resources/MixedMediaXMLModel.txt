@@ -1,0 +1,32 @@
+<!--
+  This file is used by loadMixedMediaConfigurationFiles() in SMApplication to decode the XML files in
+ the MixedMediaXMLDirectory into com.gvcsitemaker.core.mixedmedia.MixedMediaContentConfiguration objects.
+ -->
+<model>
+   <entity name="com.gvcsitemaker.core.mixedmedia.MixedMediaContentConfiguration" xmlTag="mediaComponent" ignoreUnmappedTags="YES">
+     <property name="title" xmlTag="title" />
+     <property name="usesIFrame" xmlTag="usesIFrame" />	    
+     <property name="requiresIFrame" xmlTag="requiresIFrame" />	        
+     <property name="requiresSource" xmlTag="requiresSource" />
+     <property name="parameterInstructions" xmlTag="parameterInstructions" />	     
+     <property name="template" xmlTag="template" />	        	        
+     <property name="urlPrefixes" xmlTag="urlPrefix" forceList="YES" />
+     <property name="parameters" xmlTag="parameter" forceList="YES" />
+   </entity>
+   
+   <entity name="com.gvcsitemaker.core.mixedmedia.MixedMediaUrlPrefix" xmlTag="urlPrefix"  ignoreUnmappedTags="YES">
+     <property name="prefix" xmlTag="prefix" />
+   </entity>   
+      
+   <entity name="com.gvcsitemaker.core.mixedmedia.MixedMediaParameter" xmlTag="parameter"  ignoreUnmappedTags="YES">
+     <property name="name" xmlTag="name" />
+     <property name="uiName" xmlTag="uiName" />
+     <property name="type" xmlTag="type" />
+     <property name="isRequired" xmlTag="isRequired" />
+     <property name="values" xmlTag="paramValue" forceList="YES" />     
+   </entity>
+    
+   <entity name="com.gvcsitemaker.core.mixedmedia.MixedMediaParameterValues" xmlTag="paramValue"  ignoreUnmappedTags="YES">
+     <property name="value" xmlTag="value" attribute="YES" />
+   </entity>      
+ </model>

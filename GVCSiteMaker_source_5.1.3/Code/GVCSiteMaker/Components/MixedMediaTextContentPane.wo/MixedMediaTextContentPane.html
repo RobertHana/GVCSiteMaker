@@ -1,0 +1,61 @@
+<webobject name = "AjaxUpdateArea">
+  <webobject name = "DisplayMode">
+    <webobject name = "DisplayWithoutIFrameConditional"> <webobject name = "Text" /> </webobject>
+    <webobject name = "DisplayWithIFrameConditional"> <webobject name = "IFrameContainer" /> </webobject>
+
+    <webobject name = "EditLinkConditional">
+      <div id = "editPageLinkContainer">
+        <webobject name = "EditPageHyperlink"><webobject name = "EditPageHyperlinkContent" /></webobject>
+        <webobject name = "DifferentVersionConditional">
+          <br />
+          <webobject name = "EditDiffVersionHyperlink"><webobject name = "EditPageHyperlinkContent2" /></webobject>
+        </webobject>
+      </div>
+    </webobject>
+    <webobject name = "NonCurrentVersionConditional">
+      <br />
+      <div id = "nonCurrentVersionMessageContainer">Note that this is not the current version.</div>
+    </webobject>
+  </webobject>
+
+
+  <webobject name = "EditMode">
+    <webobject name = "EditInPlaceForm">
+      <table border = "0" cellpadding = "2" cellspacing = "2" class = "content" width = "100%">
+        <tr>
+          <td align = "LEFT" valign = "TOP" colspan = "2">
+            <webobject name="Component"/>
+          </td>
+        </tr>
+      </table>
+      <webobject name = "SaveEditsSubmit" />
+      <webobject name = "CancelEditsSubmit" />
+      <webobject name = "ManageFilesSubmitButton"/>
+
+      <webobject name = "IsVersioningConditional">
+        <webobject name = "CanBeAlteredConditional">
+          <webobject name = "CanCreateVersionConditional">
+            <webobject name = "CanManuallyCreateVersion"><br/><webobject name = "CreateNewVersionCheckBox" /> Save as new version</webobject>
+            <webobject name = "CanAutoCreateVersion">A new version will be automatically created when changes are saved.</webobject>
+            <div class = "microText">This 
+              <span style = "color: red;">
+                <b>is 
+                  <webobject name = "IsNotCurrentVersionConditional">not </webobject>
+                </b>
+              </span>the current version.</div>
+          </webobject>
+        </webobject>
+        <webobject name = "AlteringConditional">
+          <div class = "microText">This version can&iacute;t be altered.<br />A new version will be created when saved.</div>
+        </webobject>
+      </webobject>
+
+      <script type = "text/javascript">
+        <webobject name = "CustomJSEditorInitString" />
+      </script>
+    </webobject>
+  </webobject>
+</webobject>
+
+
+  <webobject name = "ChangesSaved">Changes saved</webobject>

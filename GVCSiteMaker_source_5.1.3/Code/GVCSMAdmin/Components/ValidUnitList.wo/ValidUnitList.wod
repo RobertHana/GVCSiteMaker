@@ -1,0 +1,17 @@
+OrgUnitRepetion: WORepetition {
+	item = orgUnitItem;
+	list = validOrgUnitArray;
+}
+
+ParentUnitString: WOString {
+	value = orgUnitItem.parentOrgUnitName;
+}
+
+QuotaInMegsString: WOString {
+	value = orgUnitItem.fileSizeQuota;
+}
+
+UnitNameString: WOString {
+	value = orgUnitItem.unitName;
+}
+

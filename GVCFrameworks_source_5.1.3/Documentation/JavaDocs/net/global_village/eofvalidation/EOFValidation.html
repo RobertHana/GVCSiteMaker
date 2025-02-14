@@ -1,0 +1,896 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+EOFValidation (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="EOFValidation (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOFValidation.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOEntityAdditions.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOFValidationEOEntityClassDescription.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOFValidation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOFValidation.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofvalidation</FONT>
+<BR>
+Class EOFValidation</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofvalidation.EOFValidation</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.73"><B>EOFValidation</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+The main controlling class for EOFValidation.
+ <p>
+ <b>Introduction</b><br>
+ The purpose of the EOFValidation framework is to enhance standard EOF validation to provide:
+ <ul>
+ <li>more extensive validations
+ <li>code-free, customizable, localizable validation messages
+ <li>client code access to customizable, localizable validation messages
+ <li>more accessible information about failures
+ <li>better handling for adaptor level errors (exceptions that the db engine raises).
+ <li>better support for validation in WebObjects (support for GVCWOExtensions framework)
+ </ul>
+ <p>
+ <b>Using the EOFValidation Framework</b><br>
+ The validation framework must be explicitly activated by the client application.  This must be done before the first call to any of the EOF classes.  This is best done in the WOApplication constructor.
+ <p> <pre>
+     import net.global_village.eofvalidation.*;
+
+     public Application()
+     {
+         super();
+         EOFValidation.installValidation();
+         ...
+ </pre> <p>
+ Once this is done, there is no more to do, unless there is a need to trap specific exceptions and handle them.  For most cases, simply showing the exception reason should be sufficient.
+ <p><pre>
+ try {
+     ec.saveChanges();
+ }
+ catch (EOFValidationException e) {
+     addMessages(e.getLocalizedMessageForUnaggregatedExceptions());
+ }
+ </pre><p>
+ <p>
+ <p>
+ <b>Location of Validation Error Messages</b><br>
+ The validation error messages are taken from localized strings files which can be located in several places.  The choice of location depends on the organizational goals of the project, there are no functional differences.  See <a href="net.global_village.eofvalidation#LocalizationEngine#localizedStringFromBundle">LocalizationEngine.localizedStringFromBundle</a> for details.<br>
+ <p>
+ <p>
+ <p>
+ <b>Customzing Message Content</b><br>
+ All of the messages can be customized by adding special substitution tags.  The substitution tags available are documented in <a href="net.global_village.eofvalidation.EOFValidationException#validationFailureDictionary">net.global_village.eofvalidation.EOFValidationException.validationFailureDictionary</a>.
+ <p>Futhermore, the names displayed for entities, attributes and relationships can be customized and localized by defining an entity display name as:
+ <p>&lt;entityName&gt;.&lt;EOFValidation.DisplayName&gt;                                  e.g. WorkOrder.displayName="Work Requisition";
+ <p>&lt;entityName&gt;.&lt;propertyName&gt;.&lt;EOFValidation.DisplayName&gt;     e.g. WorkOrder.orderDate.displayName="order submission date";
+ <p>
+ <p>A more detailed descriptioin can also be added for entities, attributes and relationships can be customized and localized by defining a description as:
+ <p>&lt;entityName&gt;.&lt;EOFValidation.Description&gt;                        e.g. WorkOrder.description="The work requisition issued to perform this task.";
+ <p>&lt;entityName&gt;.&lt;propertyName&gt;.&lt;EOFValidation.Description&gt;     e.g. WorkOrder.orderDate.description="The date that the order requistion was filled out.";
+ <p>
+ <p>
+ <b>Default Validation Messages</b><br>
+ These defaults are supplied in the EOFValidation Framework.  They will be used if you do not provide a corresponding customized message.
+ <ul>
+ <li>Entity.nullNotAllowed = "You must enter a &lt;&lt;propertyName&gt;&gt; for this &lt;&lt;entityName&gt;&gt;";
+ <li>Entity.tooLong = "The value you entered, &lt;&lt;failedValue&gt;&gt;, is longer than the &lt;&lt;attribute.width&gt;&gt; characters allowed for &lt;&lt;propertyName&gt;&gt; on &lt;&lt;entityName&gt;&gt;.";
+ <li>Entity.invalidValue = "&lt;&lt;failedValue&gt;&gt; is not an acceptable &lt;&lt;propertyName&gt;&gt; for &lt;&lt;entityName&gt;&gt;.";
+ <li>Entity.belowMinimum = "&lt;&lt;failedValue&gt;&gt; is below the acceptable limit for &lt;&lt;propertyName&gt;&gt; for &lt;&lt;entityName&gt;&gt;.";
+ <li>Entity.aboveMaximum = "&lt;&lt;failedValue&gt;&gt; is above the acceptable limit for &lt;&lt;propertyName&gt;&gt; for &lt;&lt;entityName&gt;&gt;.";
+ <li>Entity.notUnique = "&lt;&lt;failedValue&gt;&gt; has already been used as a &lt;&lt;propertyName&gt;&gt; for &lt;&lt;entityName&gt;&gt;.";
+ </ul>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.
+ version $Revision: 10$</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#AboveMaximum">AboveMaximum</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Future use message keys for a value above a maximum value validation failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#AttributeFailedOn">AttributeFailedOn</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for the actual attribute of the object which failed to validate or save.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#BelowMinimum">BelowMinimum</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Future use message keys for a value below a minimum value validation failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#DeletionNotAllowed">DeletionNotAllowed</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for deletion validation failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#Description">Description</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for a more detailed description for entities, attributes and relationships.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#DisplayName">DisplayName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for localized display name for entities and properties.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#EntityFailedOn">EntityFailedOn</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for the actual entity of the object which failed to validate or save (for exceptions raised during saveChanges()).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#EntityGenericName">EntityGenericName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String used when forming generic (i.e. without the actual entity name) key paths for localization.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#EntityName">EntityName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for the localized (DisplayName) name of the entity containing the attribute which failed validation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedOnStoredProcedure">FailedOnStoredProcedure</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message keys for a stored procedure failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedToDelete">FailedToDelete</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message keys for delete failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedToInsert">FailedToInsert</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message keys for insertion failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedToLock">FailedToLock</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message keys for failed to lock.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedToUpdate">FailedToUpdate</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message keys for failed to update.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#FailedValue">FailedValue</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for value which failed validation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#hasInstalled">hasInstalled</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#IntegrityConstraintViolation">IntegrityConstraintViolation</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for integrity constraint violation save failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#InvalidValue">InvalidValue</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for an invalid value (type mismatch, formatter failure, but not null) validation failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#NotUnique">NotUnique</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>This functionality is handled by IntegrityConstraintViolation</I></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#NullNotAllowed">NullNotAllowed</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for nullity validation failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#ObjectFailedOn">ObjectFailedOn</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for the actual object which failed to save (for exceptions raised during saveChanges() only).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#OptimisticLockingFailure">OptimisticLockingFailure</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for optimistic locking save failure.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#PropertyName">PropertyName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substitution key for the localized (DisplayName) name of the attribute which failed validation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#setOfAllFailureKeys">setOfAllFailureKeys</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A set of all failure keys.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#shouldTreatEmptyStringsAsNull">shouldTreatEmptyStringsAsNull</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#TooLong">TooLong</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message key for excessive length validation failure.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#installValidation()">installValidation</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main validation method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#setShouldTreatEmptyStringsAsNull(boolean)">setShouldTreatEmptyStringsAsNull</A></B>(boolean&nbsp;treatAsNull)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use to indicate whether empty / all white space strings are to be considered null for the purposes of validation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOFValidation.html#shouldTreatEmptyStringsAsNull()">shouldTreatEmptyStringsAsNull</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if empty / all white space strings are to be considered null for the purposes of validation.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="FailedValue"><!-- --></A><H3>
+FailedValue</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.84"><B>FailedValue</B></A></PRE>
+<DL>
+<DD>Substitution key for value which failed validation.  This can be used in customized validation template messages.  An example: <br>
+ "The value you entered, &lt;&lt;failedValue&gt;&gt;, is longer than the &lt;&lt;attribute.width&gt;&gt; characters allowed for &lt;&lt;propertyName&gt;&gt; on &lt;&lt;entityName&gt;&gt;";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedValue">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="PropertyName"><!-- --></A><H3>
+PropertyName</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.91"><B>PropertyName</B></A></PRE>
+<DL>
+<DD>Substitution key for the localized (DisplayName) name of the attribute which failed validation.  This can be used in customized validation template messages.  An example: <br>
+ "The value you entered, &lt;&lt;failedValue&gt;&gt;, is longer than the &lt;&lt;attribute.width&gt;&gt; characters allowed for &lt;&lt;propertyName&gt;&gt; on &lt;&lt;entityName&gt;&gt;";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.PropertyName">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="EntityName"><!-- --></A><H3>
+EntityName</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.98"><B>EntityName</B></A></PRE>
+<DL>
+<DD>Substitution key for the localized (DisplayName) name of the entity containing the attribute which failed validation.  This can be used in customized validation template messages.  An example: <br>
+ "The value you entered, &lt;&lt;failedValue&gt;&gt;, is longer than the &lt;&lt;attribute.width&gt;&gt; characters allowed for &lt;&lt;propertyName&gt;&gt; on &lt;&lt;entityName&gt;&gt;";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.EntityName">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="EntityFailedOn"><!-- --></A><H3>
+EntityFailedOn</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.106"><B>EntityFailedOn</B></A></PRE>
+<DL>
+<DD>Substitution key for the actual entity of the object which failed to validate or save (for exceptions raised during saveChanges()).  This can be used in customized validation template messages, though it is mostly for locating the template to be customized.  An example: <br>
+ "&lt;&lt;entity.userInfo.couldNotSave&gt;&gt;";
+ <br>This example takes the entire validation failure message from the key couldNotSave in the userInfo dictionary of the entity.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.EntityFailedOn">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="AttributeFailedOn"><!-- --></A><H3>
+AttributeFailedOn</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.113"><B>AttributeFailedOn</B></A></PRE>
+<DL>
+<DD>Substitution key for the actual attribute of the object which failed to validate or save.  This can be used in customized validation template messages.  An example: <br>
+ "The value you entered is longer than &lt;&lt;attribute.width&gt;&gt;";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.AttributeFailedOn">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="ObjectFailedOn"><!-- --></A><H3>
+ObjectFailedOn</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.120"><B>ObjectFailedOn</B></A></PRE>
+<DL>
+<DD>Substitution key for the actual object which failed to save (for exceptions raised during saveChanges() only).  This can be used in customized validation template messages.  An example: <br>
+ "Your changes to the &lt;&lt;entityName&gt;&gt; \"&lt;&lt;object.toString&gt;&gt;\" could not be saved as another user has modified it.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.ObjectFailedOn">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="NullNotAllowed"><!-- --></A><H3>
+NullNotAllowed</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.128"><B>NullNotAllowed</B></A></PRE>
+<DL>
+<DD>Message key for nullity validation failure.  Thes is to be used in localization keys in strings files.  An example: <br>
+ Employee.firstName.nullNotAllowed = "You must enter a &lt;&lt;propertyName&gt;&gt; for this &lt;&lt;entityName&gt;&gt;.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.NullNotAllowed">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="TooLong"><!-- --></A><H3>
+TooLong</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.135"><B>TooLong</B></A></PRE>
+<DL>
+<DD>Message key for excessive length validation failure.  Thes is to be used in localization keys in strings files.  An example: <br>
+ Employee.firstName.tooLong = "The value you entered, &lt;&lt;failedValue&gt;&gt;, is longer than the &lt;&lt;attribute.width&gt;&gt; characters allowed for &lt;&lt;propertyName&gt;&gt; on &lt;&lt;entityName&gt;&gt;";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.TooLong">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="InvalidValue"><!-- --></A><H3>
+InvalidValue</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.142"><B>InvalidValue</B></A></PRE>
+<DL>
+<DD>Message key for an invalid value (type mismatch, formatter failure, but not null) validation failure.  Thes is to be used in localization keys in strings files.  An example: <br>
+ Employee.age.invalidValue = "&lt;&lt;failedValue&gt;&gt; is not an acceptable &lt;&lt;propertyName&gt;&gt; for this &lt;&lt;entityName&gt;&gt;.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.InvalidValue">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="BelowMinimum"><!-- --></A><H3>
+BelowMinimum</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.149"><B>BelowMinimum</B></A></PRE>
+<DL>
+<DD>Future use message keys for a value below a minimum value validation failure.  This is to be used in localization keys in strings files.  It should also be used in any custom code checking for these validation failures.  An example: <br>
+ Employee.age.belowMinimum = "&lt;&lt;entityName&gt;&gt; must be above 16 years of age.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.BelowMinimum">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="AboveMaximum"><!-- --></A><H3>
+AboveMaximum</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.156"><B>AboveMaximum</B></A></PRE>
+<DL>
+<DD>Future use message keys for a value above a maximum value validation failure.  This is to be used in localization keys in strings files.  It should also be used in any custom code checking for these validation failures.  An example: <br>
+ Employee.age.aboveMaximum = "&lt;&lt;entityName&gt;&gt; must be younger than 99 years of age.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.AboveMaximum">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="NotUnique"><!-- --></A><H3>
+NotUnique</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.165"><B>NotUnique</B></A></PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>This functionality is handled by IntegrityConstraintViolation</I><DD>Future use message keys for a value which is a unique validation failure.  This is to be used in localization keys in strings files.  It should also be used in any custom code checking for these validation failures.  An example: <br>
+ Employee.idNumber.notUnique = "The &lt;&lt;entityName&gt;&gt;'s ID number has already been used.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.NotUnique">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DeletionNotAllowed"><!-- --></A><H3>
+DeletionNotAllowed</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.172"><B>DeletionNotAllowed</B></A></PRE>
+<DL>
+<DD>Message key for deletion validation failure.  Thes is to be used in localization keys in strings files.  An example: <br>
+ Employee.deletionNotAllowed = "Current Employeess can't be deleted.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.DeletionNotAllowed">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="OptimisticLockingFailure"><!-- --></A><H3>
+OptimisticLockingFailure</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.179"><B>OptimisticLockingFailure</B></A></PRE>
+<DL>
+<DD>Message key for optimistic locking save failure.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.optimisticLockingFailure = "Another user has changed this &lt;&lt;entityName&gt;&gt;, check your changes and re-submit.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.OptimisticLockingFailure">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="IntegrityConstraintViolation"><!-- --></A><H3>
+IntegrityConstraintViolation</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.187"><B>IntegrityConstraintViolation</B></A></PRE>
+<DL>
+<DD>Message key for integrity constraint violation save failure.  This is to be used in localization keys in strings files.  
+ &lt;&lt;failedValue&gt;&gt; is set to the name of the constraint that failed to validate. An example: <br>
+ Employee.UniqueLoginName.integrityConstraintViolation = "This login name is already in use, please choose a different one.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.IntegrityConstraintViolation">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToDelete"><!-- --></A><H3>
+FailedToDelete</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.194"><B>FailedToDelete</B></A></PRE>
+<DL>
+<DD>Message keys for delete failure.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.failedToDelete = "This &lt;&lt;entityName&gt;&gt; is still employed and can not be deleted.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedToDelete">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToInsert"><!-- --></A><H3>
+FailedToInsert</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.201"><B>FailedToInsert</B></A></PRE>
+<DL>
+<DD>Message keys for insertion failure.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.failedToInsert = "Database has been disconnected.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedToInsert">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToUpdate"><!-- --></A><H3>
+FailedToUpdate</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.208"><B>FailedToUpdate</B></A></PRE>
+<DL>
+<DD>Message keys for failed to update.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.failedToUpdate = "Database has been disconnected.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedToUpdate">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToLock"><!-- --></A><H3>
+FailedToLock</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.215"><B>FailedToLock</B></A></PRE>
+<DL>
+<DD>Message keys for failed to lock.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.failedToLock = "Another user is changing this &lt;&lt;entityName&gt;&gt;, please try again in a few minutes.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedToLock">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedOnStoredProcedure"><!-- --></A><H3>
+FailedOnStoredProcedure</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.222"><B>FailedOnStoredProcedure</B></A></PRE>
+<DL>
+<DD>Message keys for a stored procedure failure.  This is to be used in localization keys in strings files.  An example: <br>
+ Employee.failedOnStoredProcedure = "Call the DBA!  :-).";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.FailedOnStoredProcedure">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DisplayName"><!-- --></A><H3>
+DisplayName</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.230"><B>DisplayName</B></A></PRE>
+<DL>
+<DD>Message key for localized display name for entities and properties.  This are to be used in localization keys in strings files. An example: <br>
+ Employee.firstName.displayName = "given name";<br>
+ Employee.displayName = "client";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.DisplayName">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="Description"><!-- --></A><H3>
+Description</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.239"><B>Description</B></A></PRE>
+<DL>
+<DD>Message key for a more detailed description for entities, attributes and relationships.  This is intended for
+ future use in help dialogs and on screen hints. These are to be used in localization keys in strings files.  An example: <br>
+ <p>WorkOrder.description="The work requisition issued to perform this task.";</p>
+ <p>WorkOrder.orderDate.description="The date that the order requistion was filled out.";</p>
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.Description">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="EntityGenericName"><!-- --></A><H3>
+EntityGenericName</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.246"><B>EntityGenericName</B></A></PRE>
+<DL>
+<DD>String used when forming generic (i.e. without the actual entity name) key paths for localization.  An example: <br>
+ Entity.nullNotAllowed = "You must enter a &lt;&lt;propertyName&gt;&gt; for this &lt;&lt;entityName&gt;&gt;.";
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofvalidation.EOFValidation.EntityGenericName">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="setOfAllFailureKeys"><!-- --></A><H3>
+setOfAllFailureKeys</H3>
+<PRE>
+public static final com.webobjects.foundation.NSSet <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.252"><B>setOfAllFailureKeys</B></A></PRE>
+<DL>
+<DD>A set of all failure keys.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="shouldTreatEmptyStringsAsNull"><!-- --></A><H3>
+shouldTreatEmptyStringsAsNull</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.255"><B>shouldTreatEmptyStringsAsNull</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="hasInstalled"><!-- --></A><H3>
+hasInstalled</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.256"><B>hasInstalled</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="installValidation()"><!-- --></A><H3>
+installValidation</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.263"><B>installValidation</B></A>()</PRE>
+<DL>
+<DD>Main validation method.  Call this once to install validation.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shouldTreatEmptyStringsAsNull()"><!-- --></A><H3>
+shouldTreatEmptyStringsAsNull</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.281"><B>shouldTreatEmptyStringsAsNull</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if empty / all white space strings are to be considered null for the purposes of validation.
+ The default is <code>true</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if empty strings are to be considered null for the purposes of validation</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setShouldTreatEmptyStringsAsNull(boolean)"><!-- --></A><H3>
+setShouldTreatEmptyStringsAsNull</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofvalidation/EOFValidation.html#line.293"><B>setShouldTreatEmptyStringsAsNull</B></A>(boolean&nbsp;treatAsNull)</PRE>
+<DL>
+<DD>Use to indicate whether empty / all white space strings are to be considered null for the purposes of validation.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>treatAsNull</CODE> - <code>true</code> if empty strings are to be considered null when validating.</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOFValidation.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOEntityAdditions.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOFValidationEOEntityClassDescription.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOFValidation.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOFValidation.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Web Page (displayed in frame)</title>
+    <usesIFrame>true</usesIFrame>
+    <requiresIFrame>true</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>        
+    </urlPrefix>   
+    <template><![CDATA[  
+		<IFRAME SRC="<webobject name=SourceURL></webobject>" HEIGHT="<webobject name=Height></webobject>"></IFRAME>      
+    ]]></template>    
+</mediaComponent>

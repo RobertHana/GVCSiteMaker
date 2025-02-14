@@ -1,0 +1,263 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.woextensions;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import com.webobjects.appserver.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import com.webobjects.foundation.*;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    <a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    /**<a name="line.8"></a>
+<FONT color="green">009</FONT>     * Fixes and hacks for WOResponse.<a name="line.9"></a>
+<FONT color="green">010</FONT>     * &lt;p&gt;<a name="line.10"></a>
+<FONT color="green">011</FONT>     * Creates a response configured to use UTF-8 for the &lt;code&gt;defaultFormValueEncoding()&lt;/code&gt;.<a name="line.11"></a>
+<FONT color="green">012</FONT>     * &lt;/p&gt;<a name="line.12"></a>
+<FONT color="green">013</FONT>     * &lt;p&gt;<a name="line.13"></a>
+<FONT color="green">014</FONT>     * Prevents disabling client caching for downloads by IE to fix the bug with IE that causes problems when displaying<a name="line.14"></a>
+<FONT color="green">015</FONT>     * content that cannot be displayed inline in the browswer (pdf files, for example). This was a known bug in IE 4.0 and<a name="line.15"></a>
+<FONT color="green">016</FONT>     * is reported fixed by MS:<a name="line.16"></a>
+<FONT color="green">017</FONT>     * http://support.microsoft.com/support/kb/articles/Q231/2/96.ASP?LN=EN-US&amp;SD=gn&amp;FR=0&amp;qry=Internet%20Explorer%20cannot%20download&amp;rnk=19&amp;src=DHCS_MSPSS_gn_SRCH&amp;SPR=IE<a name="line.17"></a>
+<FONT color="green">018</FONT>     * "When you try to download a .pdf file from a Web site that uses the Hypertext Transfer Protocol (HTTP) "Cache-Control =<a name="line.18"></a>
+<FONT color="green">019</FONT>     * 'no-cache'" directive, Internet Explorer may generate the following error message: Internet Explorer cannot down load<a name="line.19"></a>
+<FONT color="green">020</FONT>     * from the Internet site File_name from Computer_name."<a name="line.20"></a>
+<FONT color="green">021</FONT>     * &lt;/p&gt;<a name="line.21"></a>
+<FONT color="green">022</FONT>     *<a name="line.22"></a>
+<FONT color="green">023</FONT>     * @author Copyright (c) 2001-2008  Global Village Consulting, Inc.  All rights reserved.<a name="line.23"></a>
+<FONT color="green">024</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.24"></a>
+<FONT color="green">025</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.25"></a>
+<FONT color="green">026</FONT>     */<a name="line.26"></a>
+<FONT color="green">027</FONT>    public class Response extends WOResponse<a name="line.27"></a>
+<FONT color="green">028</FONT>    {<a name="line.28"></a>
+<FONT color="green">029</FONT>    <a name="line.29"></a>
+<FONT color="green">030</FONT>        public static final String ContentDispositionHeaderKey = "content-disposition";<a name="line.30"></a>
+<FONT color="green">031</FONT>        public static final String ContentTypeHeaderKey = "content-type";<a name="line.31"></a>
+<FONT color="green">032</FONT>        public static final String DisablePageCachingKey = "com.webobjects.appserver.Response.DisablePageCaching";<a name="line.32"></a>
+<FONT color="green">033</FONT>    <a name="line.33"></a>
+<FONT color="green">034</FONT>        boolean isIE = false;<a name="line.34"></a>
+<FONT color="green">035</FONT>    <a name="line.35"></a>
+<FONT color="green">036</FONT>    <a name="line.36"></a>
+<FONT color="green">037</FONT>        /**<a name="line.37"></a>
+<FONT color="green">038</FONT>         * Creates a response configured to use UTF-8 for the &lt;code&gt;defaultFormValueEncoding()&lt;/code&gt;.<a name="line.38"></a>
+<FONT color="green">039</FONT>         *<a name="line.39"></a>
+<FONT color="green">040</FONT>         * @param context WOContext to create response for<a name="line.40"></a>
+<FONT color="green">041</FONT>         */<a name="line.41"></a>
+<FONT color="green">042</FONT>        public Response(WOContext context)<a name="line.42"></a>
+<FONT color="green">043</FONT>        {<a name="line.43"></a>
+<FONT color="green">044</FONT>            super();<a name="line.44"></a>
+<FONT color="green">045</FONT>            setContentEncoding("UTF-8");<a name="line.45"></a>
+<FONT color="green">046</FONT>            isIE = context != null &amp;&amp; RequestUtilities.isUserAgentInternetExplorer(context.request());<a name="line.46"></a>
+<FONT color="green">047</FONT>        }<a name="line.47"></a>
+<FONT color="green">048</FONT>    <a name="line.48"></a>
+<FONT color="green">049</FONT>    <a name="line.49"></a>
+<FONT color="green">050</FONT>    <a name="line.50"></a>
+<FONT color="green">051</FONT>        /**<a name="line.51"></a>
+<FONT color="green">052</FONT>         * Forces all HTML pages returned to be UTF-8.<a name="line.52"></a>
+<FONT color="green">053</FONT>         *<a name="line.53"></a>
+<FONT color="green">054</FONT>         * @see com.webobjects.appserver.WOResponse#_finalizeInContext(com.webobjects.appserver.WOContext)<a name="line.54"></a>
+<FONT color="green">055</FONT>         * @param aContext the WOContext the request is being finalized in<a name="line.55"></a>
+<FONT color="green">056</FONT>         */<a name="line.56"></a>
+<FONT color="green">057</FONT>        public void _finalizeInContext(WOContext aContext)<a name="line.57"></a>
+<FONT color="green">058</FONT>        {<a name="line.58"></a>
+<FONT color="green">059</FONT>            // Force all HTML pages returned to be UTF-8.<a name="line.59"></a>
+<FONT color="green">060</FONT>            if (isHTML())<a name="line.60"></a>
+<FONT color="green">061</FONT>            {<a name="line.61"></a>
+<FONT color="green">062</FONT>                // This controls the display and is also needed to handle input via forms<a name="line.62"></a>
+<FONT color="green">063</FONT>                setHeader("text/html; charset=UTF-8", ContentTypeHeaderKey);<a name="line.63"></a>
+<FONT color="green">064</FONT>            }<a name="line.64"></a>
+<FONT color="green">065</FONT>    <a name="line.65"></a>
+<FONT color="green">066</FONT>            super._finalizeInContext(aContext);<a name="line.66"></a>
+<FONT color="green">067</FONT>        }<a name="line.67"></a>
+<FONT color="green">068</FONT>    <a name="line.68"></a>
+<FONT color="green">069</FONT>    <a name="line.69"></a>
+<FONT color="green">070</FONT>    <a name="line.70"></a>
+<FONT color="green">071</FONT>        /**<a name="line.71"></a>
+<FONT color="green">072</FONT>         * Overridden to &lt;b&gt;not&lt;/b&gt; call super if trying to download an attachment to IE.<a name="line.72"></a>
+<FONT color="green">073</FONT>         *<a name="line.73"></a>
+<FONT color="green">074</FONT>         * @see com.webobjects.appserver.WOResponse#disableClientCaching()<a name="line.74"></a>
+<FONT color="green">075</FONT>         *<a name="line.75"></a>
+<FONT color="green">076</FONT>         */<a name="line.76"></a>
+<FONT color="green">077</FONT>        public void disableClientCaching()<a name="line.77"></a>
+<FONT color="green">078</FONT>        {<a name="line.78"></a>
+<FONT color="green">079</FONT>            boolean isIEDownloadingAttachment = isIE() &amp;&amp; isAttachment() &amp;&amp; ! isHTML();<a name="line.79"></a>
+<FONT color="green">080</FONT>            if ( ! isIEDownloadingAttachment)<a name="line.80"></a>
+<FONT color="green">081</FONT>            {<a name="line.81"></a>
+<FONT color="green">082</FONT>                NSLog.out.appendln("Disabling client caching");<a name="line.82"></a>
+<FONT color="green">083</FONT>                super.disableClientCaching();<a name="line.83"></a>
+<FONT color="green">084</FONT>            } else NSLog.out.appendln("Allowing IE client caching");<a name="line.84"></a>
+<FONT color="green">085</FONT>        }<a name="line.85"></a>
+<FONT color="green">086</FONT>    <a name="line.86"></a>
+<FONT color="green">087</FONT>    <a name="line.87"></a>
+<FONT color="green">088</FONT>    <a name="line.88"></a>
+<FONT color="green">089</FONT>        /**<a name="line.89"></a>
+<FONT color="green">090</FONT>         * @see #disablePageCaching()<a name="line.90"></a>
+<FONT color="green">091</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if disablePageCaching() has been called for this response<a name="line.91"></a>
+<FONT color="green">092</FONT>         */<a name="line.92"></a>
+<FONT color="green">093</FONT>        public boolean isPageCachingDisabled()<a name="line.93"></a>
+<FONT color="green">094</FONT>        {<a name="line.94"></a>
+<FONT color="green">095</FONT>            return userInfoForKey(DisablePageCachingKey) != null;<a name="line.95"></a>
+<FONT color="green">096</FONT>        }<a name="line.96"></a>
+<FONT color="green">097</FONT>    <a name="line.97"></a>
+<FONT color="green">098</FONT>    <a name="line.98"></a>
+<FONT color="green">099</FONT>    <a name="line.99"></a>
+<FONT color="green">100</FONT>        /**<a name="line.100"></a>
+<FONT color="green">101</FONT>         * Adds a value for DisablePageCachingKey to this response's userInfo().  This can be used later<a name="line.101"></a>
+<FONT color="green">102</FONT>         * to flag that this response should not be cached.<a name="line.102"></a>
+<FONT color="green">103</FONT>         *<a name="line.103"></a>
+<FONT color="green">104</FONT>         * @see WOSession#savePage(WOComponent)<a name="line.104"></a>
+<FONT color="green">105</FONT>         * @see #isPageCachingDisabled()<a name="line.105"></a>
+<FONT color="green">106</FONT>         */<a name="line.106"></a>
+<FONT color="green">107</FONT>        public void disablePageCaching()<a name="line.107"></a>
+<FONT color="green">108</FONT>        {<a name="line.108"></a>
+<FONT color="green">109</FONT>            setUserInfoForKey("dummy value", DisablePageCachingKey);<a name="line.109"></a>
+<FONT color="green">110</FONT>        }<a name="line.110"></a>
+<FONT color="green">111</FONT>    <a name="line.111"></a>
+<FONT color="green">112</FONT>    <a name="line.112"></a>
+<FONT color="green">113</FONT>    <a name="line.113"></a>
+<FONT color="green">114</FONT>        /**<a name="line.114"></a>
+<FONT color="green">115</FONT>         * WO 5.4 API<a name="line.115"></a>
+<FONT color="green">116</FONT>         * Sets the value for key in the user info dictionary.<a name="line.116"></a>
+<FONT color="green">117</FONT>         *<a name="line.117"></a>
+<FONT color="green">118</FONT>         * @param value value to add to userInfo()<a name="line.118"></a>
+<FONT color="green">119</FONT>         * @param key key to add value under<a name="line.119"></a>
+<FONT color="green">120</FONT>         */<a name="line.120"></a>
+<FONT color="green">121</FONT>        public void setUserInfoForKey(Object value, String key)<a name="line.121"></a>
+<FONT color="green">122</FONT>        {<a name="line.122"></a>
+<FONT color="green">123</FONT>            /** require [valid_value] value != null;<a name="line.123"></a>
+<FONT color="green">124</FONT>                        [valid_key] key != null;<a name="line.124"></a>
+<FONT color="green">125</FONT>             **/<a name="line.125"></a>
+<FONT color="green">126</FONT>            NSMutableDictionary newUserInfo = new NSMutableDictionary(value, key);<a name="line.126"></a>
+<FONT color="green">127</FONT>            if (userInfo() != null)<a name="line.127"></a>
+<FONT color="green">128</FONT>            {<a name="line.128"></a>
+<FONT color="green">129</FONT>                newUserInfo.addEntriesFromDictionary(userInfo());<a name="line.129"></a>
+<FONT color="green">130</FONT>            }<a name="line.130"></a>
+<FONT color="green">131</FONT>            setUserInfo(newUserInfo);<a name="line.131"></a>
+<FONT color="green">132</FONT>            /** ensure [value_set] userInfoForKey(key).equals(value);  **/<a name="line.132"></a>
+<FONT color="green">133</FONT>        }<a name="line.133"></a>
+<FONT color="green">134</FONT>    <a name="line.134"></a>
+<FONT color="green">135</FONT>    <a name="line.135"></a>
+<FONT color="green">136</FONT>    <a name="line.136"></a>
+<FONT color="green">137</FONT>        /**<a name="line.137"></a>
+<FONT color="green">138</FONT>         * WO 5.4 API<a name="line.138"></a>
+<FONT color="green">139</FONT>         *<a name="line.139"></a>
+<FONT color="green">140</FONT>         * @param key key to return value from userInfo() for<a name="line.140"></a>
+<FONT color="green">141</FONT>         * @return value from userInfo() for key, or null if not available<a name="line.141"></a>
+<FONT color="green">142</FONT>         */<a name="line.142"></a>
+<FONT color="green">143</FONT>        public Object userInfoForKey(String key)<a name="line.143"></a>
+<FONT color="green">144</FONT>        {<a name="line.144"></a>
+<FONT color="green">145</FONT>            /** require [valid_key] key != null;    **/<a name="line.145"></a>
+<FONT color="green">146</FONT>            return userInfo() != null ? userInfo().objectForKey(key) : null;<a name="line.146"></a>
+<FONT color="green">147</FONT>        }<a name="line.147"></a>
+<FONT color="green">148</FONT>    <a name="line.148"></a>
+<FONT color="green">149</FONT>        public boolean isAttachment()<a name="line.149"></a>
+<FONT color="green">150</FONT>        {<a name="line.150"></a>
+<FONT color="green">151</FONT>            String contentDisposition = contentDisposition();<a name="line.151"></a>
+<FONT color="green">152</FONT>            return contentDisposition != null &amp;&amp;<a name="line.152"></a>
+<FONT color="green">153</FONT>            (contentDisposition.indexOf("inline") &gt; -1 ||<a name="line.153"></a>
+<FONT color="green">154</FONT>                            contentDisposition.indexOf("attachment") &gt; -1);<a name="line.154"></a>
+<FONT color="green">155</FONT>        }<a name="line.155"></a>
+<FONT color="green">156</FONT>    <a name="line.156"></a>
+<FONT color="green">157</FONT>    <a name="line.157"></a>
+<FONT color="green">158</FONT>    <a name="line.158"></a>
+<FONT color="green">159</FONT>        /**<a name="line.159"></a>
+<FONT color="green">160</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if the content type of this response indicates HTML<a name="line.160"></a>
+<FONT color="green">161</FONT>         */<a name="line.161"></a>
+<FONT color="green">162</FONT>        public boolean isHTML()<a name="line.162"></a>
+<FONT color="green">163</FONT>        {<a name="line.163"></a>
+<FONT color="green">164</FONT>            return contentType() != null &amp;&amp; contentType().toLowerCase().indexOf("text/html") &gt; -1;<a name="line.164"></a>
+<FONT color="green">165</FONT>        }<a name="line.165"></a>
+<FONT color="green">166</FONT>    <a name="line.166"></a>
+<FONT color="green">167</FONT>    <a name="line.167"></a>
+<FONT color="green">168</FONT>    <a name="line.168"></a>
+<FONT color="green">169</FONT>        /**<a name="line.169"></a>
+<FONT color="green">170</FONT>         * @return header value for ContentDispositionHeaderKey<a name="line.170"></a>
+<FONT color="green">171</FONT>         */<a name="line.171"></a>
+<FONT color="green">172</FONT>        public String contentDisposition()<a name="line.172"></a>
+<FONT color="green">173</FONT>        {<a name="line.173"></a>
+<FONT color="green">174</FONT>            return headerForKey(ContentDispositionHeaderKey);<a name="line.174"></a>
+<FONT color="green">175</FONT>        }<a name="line.175"></a>
+<FONT color="green">176</FONT>    <a name="line.176"></a>
+<FONT color="green">177</FONT>    <a name="line.177"></a>
+<FONT color="green">178</FONT>    <a name="line.178"></a>
+<FONT color="green">179</FONT>        /**<a name="line.179"></a>
+<FONT color="green">180</FONT>         * @return header value for ContentTypeHeaderKey<a name="line.180"></a>
+<FONT color="green">181</FONT>         */<a name="line.181"></a>
+<FONT color="green">182</FONT>        public String contentType()<a name="line.182"></a>
+<FONT color="green">183</FONT>        {<a name="line.183"></a>
+<FONT color="green">184</FONT>            return headerForKey(ContentTypeHeaderKey);<a name="line.184"></a>
+<FONT color="green">185</FONT>        }<a name="line.185"></a>
+<FONT color="green">186</FONT>    <a name="line.186"></a>
+<FONT color="green">187</FONT>    <a name="line.187"></a>
+<FONT color="green">188</FONT>    <a name="line.188"></a>
+<FONT color="green">189</FONT>        /**<a name="line.189"></a>
+<FONT color="green">190</FONT>         * @return &lt;code&gt;true&lt;/code&gt; if the Request this Response is for has a user agent that indicates and IE browser<a name="line.190"></a>
+<FONT color="green">191</FONT>         */<a name="line.191"></a>
+<FONT color="green">192</FONT>        public boolean isIE()<a name="line.192"></a>
+<FONT color="green">193</FONT>        {<a name="line.193"></a>
+<FONT color="green">194</FONT>            return isIE;<a name="line.194"></a>
+<FONT color="green">195</FONT>        }<a name="line.195"></a>
+<FONT color="green">196</FONT>    <a name="line.196"></a>
+<FONT color="green">197</FONT>    }<a name="line.197"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

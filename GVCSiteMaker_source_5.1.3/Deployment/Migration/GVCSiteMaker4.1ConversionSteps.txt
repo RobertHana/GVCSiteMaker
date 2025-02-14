@@ -1,0 +1,74 @@
+1. Run DataConversionFrom4.0To4.1_Script.sql
+
+2. Drop the check constraint for IS_NAVIGABLE from TASK
+       NAME = _C0000000134
+       DEFERRABLE = NO
+       CHECK TIME = INITIALLY IMMEDIATE
+       COND = \"IS_NAVIGABLE\" IS NOT NULL
+
+
+You will need SQL like this:
+alter table "TASK" drop constraint "_C0000000134" cascade; 
+
+but will need to manually look the constraint name up using
+SHOW TABLE "TASK" FULL;
+
+3. Run conversion steps in GVCSMUtility. Before running GVCSMUtility, please be sure to add extra memory: -Xmx512m
+
+4. Replace the GVCSiteMaker.rules file with the new version, for old configs:
+	Copy the new rewrite rules to each virtual host:
+#
+# The next URLS are special versions of the section handling ruless below them.
+# They are here to match the Location directive in the HTTPS virtual host
+#
+
+# Public, encrypted version of Data Access Section file URLs
+RewriteRule    ^/encrypt/(.+)/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displayDataAccessFile?site=$1&section=$2&record\
+ID=$3&fileColumnName=$4 [last,passthrough]
+
+# Public, encrypted version of direct access to files in a database table URLs
+RewriteRule    ^/encrypt/(.+)/da.data/([0-9]+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/exportDataAccessFile?site=$1&recordID=$2&fileColumnN\
+ame=$3 [last,passthrough]
+
+# Public, encrypted version of /sitename/embeddedsitename/foo
+RewriteRule    ^/encrypt/(.+)/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1&embeddedsite=$2&section=$3    [last,passthroug\
+h]
+
+# Public, encrypted version of /uniqname/foo
+RewriteRule    ^/encrypt/(.+)/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1&section=$2    [last,passthrough]
+
+# Public, encrypted version of /uniqname
+RewriteRule    ^/encrypt/(.+) /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/displaySection?site=$1 [last,passthrough]
+
+
+
+5. Add the following config items (copy from index_ip.address_443_domain.conf) to the SSL virtual host if Cosign is used.  
+
+NOTE: Since the CosignAllowPublicAccess is not available in 1.6.2 (the version that UM is using), note that this config item should only be turned on if installation will be using Cosign version 1.7 or higher.  Therefore for 1.6 and earlier, this item, CosignAllowPublicAccess, needs to be commented out.
+
+    # This, or something like this, is needed for Cosign and other
+    # web single sign on implementations so that unauthenticated yet
+    # secure access can be made to some sections
+    # The /Encrypt/ part can NOT be changed
+
+    <Location /apps/WebObjects/GVCSiteMaker.woa/wa/Encrypt/>
+        CosignProtected Off
+    </Location>
+
+        # These are needed to allow access to document root resources
+        # from unauthenticated, secure requests
+       <Location /GVCSiteMaker/>
+               CosignAllowPublicAccess on
+               CosignProtected Off
+       </Location>
+
+       <Location /tiny_mce/>
+               CosignAllowPublicAccess on
+               CosignProtected Off
+       </Location>
+
+       <Location /WebObjects/>
+               CosignAllowPublicAccess on
+               CosignProtected Off
+       </Location>
+

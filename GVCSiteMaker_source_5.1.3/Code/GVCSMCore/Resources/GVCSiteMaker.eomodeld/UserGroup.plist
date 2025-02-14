@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_PKEY"; 
+            name = userPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, userPKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    externalName = "SM_USER_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 50; 
+    name = UserGroup; 
+    primaryKeyAttributes = (groupPKey, userPKey); 
+    relationships = (
+        {
+            destination = Group; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = group; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = user; 
+        }
+    ); 
+}

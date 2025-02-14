@@ -1,0 +1,84 @@
+<webobject name=DynamicBody>
+	<webobject name=ShowButtonForm>
+	<!-- cell padding removed except around HR -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+		<tr>
+			<td style="padding-left: 2px;">
+				<h1>Manage Website Requests</h1>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" align="right" style="padding-right: 2px;">
+				<webobject name=ShowCompletedRequestsSubmitButton></webobject>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="2" width="100%">
+					<tr>
+						<td>
+							<hr class="primaryBarStyle">
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="2" cellpadding="2" align="center" width="96%">
+		<!-- 95% width is more dynamic in Netscape 4 -->
+		<tr valign="MIDDLE">
+			<td align="left" valign="middle">
+				<font size="4" face="Arial, Helvetica, sans-serif"><b>Pending Requests</b></font><br>
+			</td>
+		</tr>
+		<tr valign="MIDDLE">
+			<td align="left" valign="middle">
+				&nbsp;
+			</td>
+		</tr>
+		<webobject name=HasPendingRequestsConditional>
+			<tr valign="MIDDLE">
+				<td align="left" valign="middle">
+					A <font color="red"><b> red siteID</b></font> indicates the requested siteID is already in use.
+				</td>
+			</tr>
+		</webobject name=HasPendingRequestsConditional>
+		<webobject name= NoPendingRequestsConditional >
+			<tr valign="MIDDLE">
+				<td align="left" valign="middle">
+					There are currently no pending website requests to display.
+				</td>
+			</tr>
+		</webobject name= NoPendingRequestsConditional >
+	</table>
+	<webobject name=HasPendingRequestsConditional>
+	<table border="0" cellspacing="2" cellpadding="4" class="coloredTable" align="center" width="96%">
+		<!-- 95% width is more dynamic in Netscape 4 -->
+		<tr>
+			<th width="200" class="coloredTableHeading">Org. Unit</th>
+			<th width="100" class="coloredTableHeading">Date</th>
+			<th class="coloredTableHeading">OwnerID / SiteID</th>
+			<th width="200" class="coloredTableHeading">Site&nbsp;Request&nbsp;Note</th>
+			<th colspan="2" class="coloredTableHeading">Action</th>
+		</tr>
+		<webobject NAME=WebsiteRequestRepetition>
+		<tr VALIGN=TOP>
+			<td WIDTH=200 ALIGN=left VALIGN=TOP> 
+			<webobject name=OrgUnitNameString></webobject> </td>
+			<td WIDTH=100 ALIGN=LEFT VALIGN=TOP><webobject name=RequestDateString></webobject></td>
+			<td ALIGN=left VALIGN=TOP> <b><webobject name=RequesterUserIDString></webobject></b><br>
+				<WEBOBJECT NAME=SiteIDInUseConditional><font color="red"><i><webobject name=RequestedSiteIDString></webobject></i></font></WEBOBJECT><WEBOBJECT NAME=SiteIDNotInUseConditional><i><webobject name=RequestedSiteIDString></webobject></i></WEBOBJECT>
+			</td>
+			<td WIDTH=200 ALIGN=left VALIGN=TOP><WEBOBJECT NAME=HasRequesterNoteConditional><span CLASS="microText"><I><webobject name=RequestNotesString></webobject></I></span><br/></WEBOBJECT><span  CLASS="microText"><webobject name=AdminNotesString></webobject></span>
+			</td>
+			<td ALIGN=center VALIGN=TOP><webobject name=GrantRequestHyperlink>Grant</webobject><br>
+				<webobject name=DenyRequestHyperlink>Close</webobject> </td>
+			<td ALIGN=center VALIGN=TOP> 
+			<webobject name=QueryRequestHyperlink>Query<br>
+				</webobject><webobject name=ReferRequestHyperlink>Refer</webobject></td>
+		</tr>
+		</webobject>
+	</table>
+	</webobject name=HasPendingRequestsConditional>
+</webobject name=ShowButtonForm>
+</webobject>

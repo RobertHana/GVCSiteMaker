@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ConfirmAction" wocomponentcontent="false">
+		<binding name="confirmString"/>
+		<binding name="denyString"/>
+		<binding name="message"/>
+	</wo>
+</wodefinitions>

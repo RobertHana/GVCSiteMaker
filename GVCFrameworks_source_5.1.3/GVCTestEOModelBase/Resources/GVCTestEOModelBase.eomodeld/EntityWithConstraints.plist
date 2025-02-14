@@ -1,0 +1,19 @@
+{
+    attributes = (
+        {
+            columnName = quantity; 
+            name = quantity; 
+            precision = 6; 
+            prototypeName = Float; 
+            scale = 2; 
+        }, 
+        {columnName = the_id; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, quantity); 
+    className = net.global_village.testeomodelbase.EntityWithConstraints; 
+    classProperties = (quantity); 
+    externalName = ENTITY_WITH_CONSTRAINTS; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityWithConstraints; 
+    primaryKeyAttributes = (theID); 
+}

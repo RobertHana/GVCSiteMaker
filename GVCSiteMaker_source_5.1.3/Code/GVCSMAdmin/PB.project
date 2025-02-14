@@ -1,0 +1,212 @@
+
+{
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    LOCALIZABLE_FILES = 
+    {};
+    PROJECTNAME = GVCSMAdmin;
+    PBPROJECTTYPEVERSION = 4.0;
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+    LANGUAGE = English;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    DYNAMIC_CODE_GEN = YES;
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    PROJECTTYPE = JavaWebObjectsApplication;
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    PROJECTVERSION = 2.8;
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+    FILESTABLE = 
+    {
+        OTHER_LINKED = 
+        ();
+        FRAMEWORKS = 
+        (
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCGenericObjects.framework, 
+           GVCKerberos.framework, 
+           GVCMail.framework, 
+           GVCSMCore.framework, 
+           GVCSMCustom.framework, 
+           GVCSMEOPrototypes.framework, 
+           GVCVirtualTables.framework, 
+           GVCWOExtensions.framework, 
+           FrontBasePlugIn.framework, 
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCGenericObjects.framework, 
+           GVCJNDIAdditions.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCSMCore.framework, 
+           GVCSMCustom.framework, 
+           GVCSMCustom.framework, 
+           GVCSMEOPrototypes.framework, 
+           GVCVirtualTables.framework, 
+           GVCWOExtensions.framework, 
+           JavaEOAccess.framework, 
+           JavaEOControl.framework, 
+           JavaFoundation.framework, 
+           JavaJDBCAdaptor.framework, 
+           JavaJNDIAdaptor.framework, 
+           JavaWebObjects.framework, 
+           JavaWOExtensions.framework, 
+           JavaXML.framework
+        );
+        CLASSES = 
+        (
+           src/com/gvcsitemaker/admin/appserver/Application.java, 
+           src/com/gvcsitemaker/admin/appserver/DirectAction.java, 
+           src/com/gvcsitemaker/admin/appserver/Session.java, 
+           src/com/gvcsitemaker/admin/commonwidgets/BodyTitle.java, 
+           src/com/gvcsitemaker/admin/commonwidgets/RemovalButton.java, 
+           src/com/gvcsitemaker/admin/commonwidgets/SessionRestorationErrorPage.java, 
+           src/com/gvcsitemaker/admin/unit/ConfirmUnitCreationPage.java, 
+           src/com/gvcsitemaker/admin/unit/CreateUnitPage.java, 
+           src/com/gvcsitemaker/admin/unit/InvalidUnitList.java, 
+           src/com/gvcsitemaker/admin/unit/ManageUnitPage.java, 
+           src/com/gvcsitemaker/admin/unit/UnitAdminList.java, 
+           src/com/gvcsitemaker/admin/unit/UnitCreationReportPage.java, 
+           src/com/gvcsitemaker/admin/unit/ValidUnitList.java, 
+           src/com/gvcsitemaker/admin/user/ConfirmUserCreationPage.java, 
+           src/com/gvcsitemaker/admin/user/CreateUserPage.java, 
+           src/com/gvcsitemaker/admin/user/EmailConfigureGroupMembers.java, 
+           src/com/gvcsitemaker/admin/user/InvalidUserList.java, 
+           src/com/gvcsitemaker/admin/user/ManageUserPage.java, 
+           src/com/gvcsitemaker/admin/user/UserCreationReportPage.java, 
+           src/com/gvcsitemaker/admin/user/ValidUserList.java, 
+           src/com/gvcsitemaker/admin/website/ConfirmWebsiteCreationPage.java, 
+           src/com/gvcsitemaker/admin/website/CopyWebsitePage.java, 
+           src/com/gvcsitemaker/admin/website/CreateWebsitePage.java, 
+           src/com/gvcsitemaker/admin/website/InvalidWebsiteList.java, 
+           src/com/gvcsitemaker/admin/website/ManageWebsitePage.java, 
+           src/com/gvcsitemaker/admin/website/ValidWebsiteList.java, 
+           src/com/gvcsitemaker/admin/website/WebsiteCreationReportPage.java, 
+           src/com/gvcsitemaker/admin/commonwidgets/ConfirmDeletePage.java, 
+           src/com/gvcsitemaker/admin/commonwidgets/Main.java, 
+           ContractedSource/com/gvcsitemaker/admin/appserver/Application.java, 
+           ContractedSource/com/gvcsitemaker/admin/appserver/DirectAction.java, 
+           ContractedSource/com/gvcsitemaker/admin/appserver/Session.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/ConfirmUserCreationPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/CreateUserPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/EmailConfigureGroupMembers.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/InvalidUserList.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/ManageUserPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/UserCreationReportPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/user/ValidUserList.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ConfirmWebsiteCreationPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/CopyWebsitePage.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/CreateWebsitePage.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/InvalidWebsiteList.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ManageWebsitePage.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ValidWebsiteList.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/WebsiteCreationReportPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/ConfirmUnitCreationPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/CreateUnitPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/InvalidUnitList.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/ManageUnitPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/UnitAdminList.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/UnitCreationReportPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/unit/ValidUnitList.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/BodyTitle.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/ConfirmDeletePage.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/ErrorPage.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/Main.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/RemovalButton.java, 
+           ContractedSource/com/gvcsitemaker/admin/commonwidgets/SessionRestorationErrorPage.java, 
+           src/com/gvcsitemaker/admin/website/ManagePendingWebsiteRequests.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ManagePendingWebsiteRequests.java, 
+           src/com/gvcsitemaker/admin/website/ManageCompletedWebsiteRequests.java, 
+           src/com/gvcsitemaker/admin/website/QueryDenyWebsiteRequest.java, 
+           src/com/gvcsitemaker/admin/website/ReferWebsiteRequest.java, 
+           src/com/gvcsitemaker/admin/website/WebsiteRequestNotes.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ManageCompletedWebsiteRequests.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/QueryDenyWebsiteRequest.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ReferWebsiteRequest.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/WebsiteRequestNotes.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/ManageWebsitesPage.java, 
+           src/com/gvcsitemaker/admin/website/ManageWebsitesPage.java, 
+           bin/com/gvcsitemaker/admin/user/ConfirmUserCreationPage.class, 
+           bin/com/gvcsitemaker/admin/user/CreateUserPage.class, 
+           bin/com/gvcsitemaker/admin/user/EmailConfigureGroupMembers.class, 
+           bin/com/gvcsitemaker/admin/user/InvalidUserList.class, 
+           bin/com/gvcsitemaker/admin/user/ManageUserPage.class, 
+           bin/com/gvcsitemaker/admin/user/UserCreationReportPage.class, 
+           bin/com/gvcsitemaker/admin/user/ValidUserList.class, 
+           bin/com/gvcsitemaker/admin/commonwidgets/BodyTitle.class, 
+           bin/com/gvcsitemaker/admin/commonwidgets/ConfirmDeletePage.class, 
+           bin/com/gvcsitemaker/admin/commonwidgets/Main.class, 
+           bin/com/gvcsitemaker/admin/commonwidgets/RemovalButton.class, 
+           bin/com/gvcsitemaker/admin/commonwidgets/SessionRestorationErrorPage.class, 
+           bin/com/gvcsitemaker/admin/unit/ConfirmUnitCreationPage.class, 
+           bin/com/gvcsitemaker/admin/unit/CreateUnitPage.class, 
+           bin/com/gvcsitemaker/admin/unit/InvalidUnitList.class, 
+           bin/com/gvcsitemaker/admin/unit/ManageUnitPage.class, 
+           bin/com/gvcsitemaker/admin/unit/UnitAdminList.class, 
+           bin/com/gvcsitemaker/admin/unit/UnitCreationReportPage.class, 
+           bin/com/gvcsitemaker/admin/unit/ValidUnitList.class, 
+           bin/com/gvcsitemaker/admin/website/ConfirmWebsiteCreationPage.class, 
+           bin/com/gvcsitemaker/admin/website/CopyWebsitePage.class, 
+           bin/com/gvcsitemaker/admin/website/CreateWebsitePage.class, 
+           bin/com/gvcsitemaker/admin/website/InvalidWebsiteList.class, 
+           bin/com/gvcsitemaker/admin/website/ManageCompletedWebsiteRequests.class, 
+           bin/com/gvcsitemaker/admin/website/ManagePendingWebsiteRequests.class, 
+           bin/com/gvcsitemaker/admin/website/ManageWebsitePage.class, 
+           bin/com/gvcsitemaker/admin/website/ManageWebsitesPage$ManageWebsiteComparator.class, 
+           bin/com/gvcsitemaker/admin/website/ManageWebsitesPage.class, 
+           bin/com/gvcsitemaker/admin/website/QueryDenyWebsiteRequest.class, 
+           bin/com/gvcsitemaker/admin/website/ReferWebsiteRequest.class, 
+           bin/com/gvcsitemaker/admin/website/ValidWebsiteList.class, 
+           bin/com/gvcsitemaker/admin/website/WebsiteCreationReportPage.class, 
+           bin/com/gvcsitemaker/admin/website/WebsiteRequestNotes.class, 
+           bin/com/gvcsitemaker/admin/appserver/Application.class, 
+           bin/com/gvcsitemaker/admin/appserver/DirectAction.class, 
+           bin/com/gvcsitemaker/admin/appserver/Session.class, 
+           src/com/gvcsitemaker/admin/website/CreateDataTablePackagePage.java, 
+           ContractedSource/com/gvcsitemaker/admin/website/CreateDataTablePackagePage.java
+        );
+        WO_COMPONENTS = 
+        ();
+        OTHER_SOURCES = 
+        (
+           Makefile.preamble, 
+           Makefile, 
+           Makefile.postamble, 
+           CustomInfo.plist
+        );
+        SUBPROJECTS = 
+        (
+           CommonWidgets.subproj, 
+           Unit.subproj, 
+           User.subproj, 
+           Website.subproj
+        );
+        WOAPP_RESOURCES = 
+        (
+           Properties, 
+           Main.wo/Main.html, 
+           Main.wo/Main.wod, 
+           CustomInfo.plist, 
+           ConfirmDeletePage.wo/ConfirmDeletePage.html, 
+           ConfirmDeletePage.wo/ConfirmDeletePage.wod
+        );
+    };
+}

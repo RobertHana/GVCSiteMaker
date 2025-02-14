@@ -1,0 +1,11 @@
+SecureLink: WOHyperlink 
+{
+	class = cssClassName;
+	string = displayText;
+	action = boundAction;
+}
+
+ShowLink: WOConditional 
+{
+	condition = isPermissable;
+}

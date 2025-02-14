@@ -1,0 +1,177 @@
+<webobject name = "DynamicBody">
+  <h1 style = "text-align: center;">Administration Main Page</h1>
+  <webobject name = "AdminForm">
+    <table cellpadding = "2" cellspacing = "2" border = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <h2 style = "text-align: left;">Websites</h2>
+        </td>
+        <td align = "right" valign = "top">
+          <webobject name = "CreateANewWebsiteLink"><img src = "/GVCSiteMaker/Application/createNewWebsite.gif" alt = "Create a New Website" border = "0" /></webobject>
+        </td>
+      </tr>
+      <tr valign = "middle">
+        <td>Find websites meeting these criteria:</td>
+        <td align = "right"><webobject name = "SelectWebsite" /></td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SiteID contains:</td>
+        <td><webobject name = "WebsiteID" /></td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Owner/Co-ownerID contains:</td>
+        <td><webobject name = "OwnerIDString" /></td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Is within unit:</td>
+        <td><webobject name = "WithinUnitChooser" /></td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filespace usage is:</td>
+        <td>
+          <webobject name = "FilespaceUsageOperatorPopup" />
+          <webobject name = "FilespaceUsageString" />
+          <webobject name = "FilespaceUsageUnitsPopup" />
+        </td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last modified date is:</td>
+        <td>
+          <webobject name = "LastModifiedDateOperatorPopup" />
+          <webobject name = "LastModifiedDateString" />
+          <br />
+          <span class = "descriptiveText">(enter date as 
+            <webobject name = "DateInputFormatHintString" />)</span>
+        </td>
+      </tr>
+      <tr valign = "middle">
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publication status is:</td>
+        <td>
+          <webobject name = "PublishedCheckBox" />published&nbsp;&nbsp;&nbsp;<webobject name = "UnpublishedCheckBox" />unpublished</td>
+      </tr>
+      <tr>
+        <td colspan = "2"><!-- spacer --></td>
+      </tr>
+      <webobject name = "ShowFilespaceUsageNegativeErrorMessage">
+        <tr>
+          <td class = "warningText" colspan = "2"><webobject name = "FilespaceUsageNegativeErrorString" /></td>
+        </tr>
+      </webobject>
+      <webobject name = "ShowDateFormatInvalidErrorMessage">
+        <tr>
+          <td class = "warningText" colspan = "2"><webobject name = "DateFormatInvalidErrorString" /></td>
+        </tr>
+      </webobject>
+      <webobject name = "ShowInvalidSiteErrorMessage">
+        <tr>
+          <td class = "warningText" colspan = "2"><webobject name = "InvalidSiteIDErrorString" /></td>
+        </tr>
+      </webobject>
+
+
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+
+
+      <tr>
+        <td valign = "top">
+          <h2 style = "text-align: left;">Units</h2>
+        </td>
+        <td align = "right" valign = "top">
+          <webobject name = "CanCreateUnits">
+            <webobject name = "CreateUnitLink"><img src = "/GVCSiteMaker/Application/createNewUnit.gif" alt = "Create a New Unit" border = "0" /></webobject>
+          </webobject>
+        </td>
+      </tr>
+      <tr valign = "top">
+        <td>
+          To manage an existing unit, select 
+          <b class = "coloredText">UnitID</b>: 
+          <!-- cannot have nobr, Netscape 4 does't resize table correctly -->
+        </td>
+        <td>
+          <webobject name = "OrgUnit" />
+          <webobject name = "SelectUnit" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2"><!-- spacer --></td>
+      </tr>
+
+
+      <webobject name = "CanManageUsers">
+        <tr>
+          <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+        </tr>
+        <tr>
+          <td valign = "top">
+            <h2 style = "text-align: left;">Users</h2>
+          </td>
+          <td align = "right" valign = "top">
+            <webobject name = "CreateUserLink"><img src = "/GVCSiteMaker/Application/createNewUser.gif" alt = "Create a New User" border = "0" /></webobject>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            To manage existing user enter 
+            <b class = "coloredText">UserID</b>: 
+          </td>
+          <td>
+            <webobject name = "UserID" />
+            <webobject name = "SelectUser" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2"><!-- spacer --></td>
+        </tr>
+        <webobject name = "ShowInvalidUserIDErrorMessage">
+          <tr>
+            <td class = "warningText" colspan = "2"> <webobject name = "InvalidUserIDErrorString" /> </td>
+          </tr>
+        </webobject>
+      </webobject>
+    </table>
+  </webobject>
+
+
+  <webobject name = "CanSendEmailConditional">
+    <table cellpadding = "2" cellspacing = "2" border = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <h2 style = "text-align: left;">Email</h2>
+        </td>
+        <td align = "right" valign = "top">
+          <webobject name = "EmailUsersButton"><img src = "/GVCSiteMaker/Application/emailButton.gif" alt = "Email Users with permission to configure a Website" border = "0" /></webobject>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2"> Select and send an email to different user groups (Site Owners/Co-Owners, Style Administrators, Unit Administrators). This is useful for sending such notices as system alerts, upgrade messages, etc. </td>
+      </tr>
+    </table>
+  </webobject>
+
+
+  <table class = "content" cellspacing = "2" cellpadding = "2" border = "0" style = "width: 100%">
+    <tr>
+      <td colspan = "2"><hr class = "alternateBarStyle" /></td>
+    </tr>
+    <tr>
+      <td valign = "top">
+        <h2 style = "text-align: left;">Queued Tasks</h2>
+      </td>
+      <td align = "right" valign = "top" />
+    </tr>
+    <tr>
+      <td colspan = "2">To view and manage all queued tasks. Click 
+        <webobject name = "QueuedTasksHyperlink">here</webobject>
+      </td>
+    </tr>
+  </table>
+</webobject>

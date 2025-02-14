@@ -1,0 +1,41 @@
+<table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+  <tr>
+    <td valign = "top" align = "left">
+      <b>Data Type:</b>
+      <br />
+      <i class = "requiredText">(required)</i>
+    </td>
+    <td valign = "TOP">
+      <p class = "descriptiveText">This cannot be changed after the field is created!</p>
+      <table border = "0" cellpadding = "2" cellspacing = "2">
+        <tr>
+          <td>
+            <webobject name = "TextTypeRadioButton" />
+            <webobject name = "TextColumnDescription" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          </td>
+          <td> <webobject name = "NumberRadioButton" /> Number</td>
+          <td> <webobject name = "DateTypeRadioButton" /> Date/Time </td>
+          <td> <webobject name = "FileRadioButton" /> File </td>
+        </tr>
+        <tr>
+          <td colspan = "4"><webobject name = "CheckboxTypeRadioButton" /> Checkbox (e.g. True/False, values can be customized)</td>
+        </tr>
+        <tr>
+          <td colspan = "4">
+            <webobject name = "LookupRadioButton" />
+            Value list from another Database Table in this site:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "LookupSourceColumns" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "4"> <webobject name = "CalculationRadioButton" />Calculation / Formula</td>
+        </tr>
+        <webobject name = "HasInvalidFieldTypeConditional">
+          <tr>
+            <td colspan = "4" class = "warningText"><webobject name = "InvalidFieldTypeErrorString" /></td>
+          </tr>
+        </webobject>
+      </table>
+    </td>
+  </tr>
+</table>

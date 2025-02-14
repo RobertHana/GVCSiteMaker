@@ -1,0 +1,30 @@
+DoesntHaveRecentlyVisitedSitesConditional: WOConditional {
+	condition = searchResultManager.hasSearchResults;
+	negate = true;
+}
+
+HasMultipleGroupsConditional: WOConditional {
+	condition = searchResultManager.hasMultipleGroups;
+}
+
+HasRecentlyVisitedSitesConditional: WOConditional {
+	condition = searchResultManager.hasSearchResults;
+}
+
+PageFlipper: SearchResultPageFlipper {
+	searchResultManager = searchResultManager;
+}
+
+PageFlipper2: SearchResultPageFlipper {
+	searchResultManager = searchResultManager;
+}
+
+RecentlyVisitedSitesRepetition: WORepetition {
+	item = aWebsite;
+	list = searchResultManager.currentGroup;
+}
+
+WebsiteDescriptionComponent: WebsiteDescriptionComponent {
+	website = aWebsite;
+}
+

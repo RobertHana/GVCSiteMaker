@@ -1,0 +1,12 @@
+SecureButton: WOSubmitButton 
+{
+	action = boundAction;
+	class = cssClassName;
+	value = displayText;
+}
+
+
+ShowButton: WOConditional 
+{
+	condition = isPermissable;
+}

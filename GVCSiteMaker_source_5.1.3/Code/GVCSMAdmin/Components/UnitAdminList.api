@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="UnitAdminList" wocomponentcontent="false">
+
+		<binding name="currentUnit"/>
+
+		<validation message="&apos;currentUnit&apos; is a required binding">
+			<unbound name="currentUnit"/>
+		</validation>
+	</wo>
+</wodefinitions>

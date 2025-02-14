@@ -1,0 +1,5 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+RedirectWithoutHTTP	sitemaker6@global-village.net	Physics		www.google.com	
+QuotaIs123	sitemaker6@global-village.net	Mathematics	123		
+51CharSiteID3456789012345678901234567890123456789z	sitemaker6@global-village.net	Physics			
+CreatesNewUserSiteMaker10	sitemaker10@global-village.net	Mathematics	50		

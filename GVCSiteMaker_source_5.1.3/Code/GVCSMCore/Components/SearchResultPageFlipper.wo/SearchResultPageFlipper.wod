@@ -1,0 +1,14 @@
+ChooseGroupLink: WOHyperlink {
+	action = selectGroup;
+	disabled = isCurrentGroup;
+}
+
+GroupNumberString: WOString {
+	value = aGroupNumber;
+}
+
+PageNumberRepetition: WORepetition {
+	item = aGroupNumber;
+	list = searchResultManager.groupNumbers;
+}
+

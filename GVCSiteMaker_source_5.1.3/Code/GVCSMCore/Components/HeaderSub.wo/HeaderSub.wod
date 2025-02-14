@@ -1,0 +1,9 @@
+MainPageHyperlink: WOHyperlink {
+    href = application.mainPageURL;
+    id = "mainTitle";
+}
+
+NavigationComponent: NavigationComponent
+{
+    pageType = pageType;
+}

@@ -1,0 +1,78 @@
+AllowEdits: WOCheckBox {
+	checked = aColumn.isEditable;
+}
+
+CalculationType: WOString {
+	value = aColumn.column.expressionColumnType.textDescription;  // VALID
+}
+
+SortableColumnList : AjaxSortableList {
+    id = "AddRecordsTableID";
+    list = orderedComponents.ordered;
+    item = aColumn;
+    listItemIDKeyPath = "componentId";
+    action = updateSorting;  // VALID
+    listItemStyle = "list-style-type: none;";
+}
+
+ColumnList: WORepetition {
+	list = orderedComponents.ordered;
+	item = aColumn;
+}
+
+DataAccessColumnComponent: WOSwitchComponent {
+	componentObject = aColumn;
+	WOComponentName = aColumn.componentType;
+	currentMode = "edit";
+	currentDataAccessMode = "search";
+}
+
+FieldName: WOString {
+	value = aColumn.fieldName;
+}
+
+FieldType: WOString {
+	value = aColumn.fieldType;
+}
+
+IsCalculatedColumnConditional: WOConditional {
+	condition = isCalculatedColumn;
+}
+
+IsSystemColumnConditional: WOConditional {
+	condition = aColumn.isSystemColumn;
+}
+
+IsUserColumnConditional: WOConditional {
+	condition = aColumn.isSystemColumn;
+	negate = true;
+}
+
+OrderPopup: ReorderPopup {
+	container = orderedComponents;
+	object = aColumn;
+}
+
+QueryBuilderRadioButton: WORadioButton {
+	value = queryBuilderFormType;
+	selection = searchMode.searchFormType;
+	name = "SearchFormType";
+}
+
+SearchAllRadioButton: WORadioButton {
+	value = searchAllFormType;
+	selection = searchMode.searchFormType;
+	name = "SearchFormType";
+}
+
+ShowField: WOCheckBox {
+	checked = aColumn.showField;
+    name = ~"ShowField_" + aColumn.normalizedFieldName();
+}
+
+SimpleSearchRadioButton: WORadioButton {
+	value = simpleSearchFormType;
+	selection = searchMode.searchFormType;
+	name = "SearchFormType";
+}
+

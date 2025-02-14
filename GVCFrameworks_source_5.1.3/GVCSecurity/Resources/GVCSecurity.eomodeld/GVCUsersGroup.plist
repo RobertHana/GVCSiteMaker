@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {columnName = "GROUP_ID"; name = groupId; prototypeName = Key; }, 
+        {columnName = "USER_ID"; name = userId; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (groupId, userId); 
+    className = EOGenericRecord; 
+    externalName = "GVC_USERS_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCUsersGroup; 
+    primaryKeyAttributes = (groupId, userId); 
+    relationships = (
+        {
+            destination = GVCUserGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupId; sourceAttribute = groupId; }); 
+            name = grpToUsersGrpFk; 
+        }, 
+        {
+            destination = GVCUser; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userId; sourceAttribute = userId; }); 
+            name = userToUserGroupFk; 
+        }
+    ); 
+    userInfo = {modificationDate = "2001-05-29 22:53:24 +0000"; }; 
+}

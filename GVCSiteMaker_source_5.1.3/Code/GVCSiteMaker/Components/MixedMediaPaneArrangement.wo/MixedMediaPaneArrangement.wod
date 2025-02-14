@@ -1,0 +1,120 @@
+
+CSSConditional : WOConditional {
+  condition = hasEditorCSS;
+}
+
+ImageListURL: WOString {
+    value = imageListURL;
+    escapeHTML = false;
+}
+
+LinkListURL: WOString {
+    value = linkListURL;
+    escapeHTML = false;
+}
+
+CSSFile: WOString {
+    value = componentObject.sectionUsedIn.activeSectionStyle.relatedCSSUrl;
+}
+
+Arrangement1Conditional: WOConditional {
+	condition = arrangement.isDisplayedInOnePane;
+}
+
+Arrangement2Conditional: WOConditional {
+	condition = arrangement.isDisplayedInTwoPanesSideBySide;
+}
+
+Arrangement3Conditional: WOConditional {
+	condition = arrangement.isDisplayedInTwoPanesTopAndBottom;
+}
+
+Arrangement4Conditional: WOConditional {
+	condition = arrangement.isDisplayedInThreePanesSideBySideOnBottom;
+}
+
+Arrangement5Conditional: WOConditional {
+	condition = arrangement.isDisplayedInThreePanesSideBySideOnTop;
+}
+
+Arrangement6Conditional: WOConditional {
+	condition = arrangement.isDisplayedInThreePanesTopAndBottomOnLeft;
+}
+
+Arrangement7Conditional: WOConditional {
+	condition = arrangement.isDisplayedInThreePanesTopAndBottomOnRight;
+}
+
+Arrangement8Conditional: WOConditional {
+	condition = arrangement.isDisplayedInFourPanes;
+}
+
+Pane1Component: WOSwitchComponent {
+	pane = 1;
+	componentObject = arrangement.pane1;
+	WOComponentName = arrangement.pane1.componentType;
+	currentMode = "display";
+}
+
+Pane2Component: WOSwitchComponent {
+	pane = 2;
+	componentObject = arrangement.pane2;
+	WOComponentName = arrangement.pane2.componentType;
+	currentMode = "display";
+}
+
+Pane3Component: WOSwitchComponent {
+	pane = 3;
+	componentObject = arrangement.pane3;
+	WOComponentName = arrangement.pane3.componentType;
+	currentMode = "display";
+}
+
+Pane4Component: WOSwitchComponent {
+	pane = 4;
+	componentObject = arrangement.pane4;
+	WOComponentName = arrangement.pane4.componentType;
+	currentMode = "display";
+}
+
+TDPane1: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane1";
+    width = ~arrangement.rootPanelWidth + "%";
+}
+
+TDPane2: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane2";
+    width = ~arrangement.rootPanelWidth + "%";
+}
+
+TDPane3: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane1";
+    width = ~arrangement.rootPanelWidth + "%";
+}
+
+TDPane4: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane1";
+    width = ~arrangement.rootPanelWidth + "%";
+}
+
+TDPane5: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane1";
+    width = ~arrangement.rootPanelWidth + "%";
+    rowspan = "2";
+}
+
+TDPane6: WOGenericContainer {
+    elementName = "td";
+    class = "mixedMediaPane1";
+    width = ~arrangement.rootPanelWidth + "%";
+}
+
+Width: WOString {
+    value= arrangement.rootPanelWidth;
+}
+

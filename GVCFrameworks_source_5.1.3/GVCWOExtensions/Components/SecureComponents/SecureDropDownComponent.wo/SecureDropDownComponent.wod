@@ -1,0 +1,35 @@
+DropDown: WOPopUpButton 
+{
+	name = componentName;
+	class = cssClassName;
+	displayString = displayString;
+	item = anObject;
+	list = objects;
+	selection = ^selection;
+	onChange = onChangeJavascript;
+	noSelectionString = noSelectionString;
+}
+
+ShowModifiable: WOConditional 
+{
+	condition = isPermissable;
+}
+
+ShowUnmodifiable: WOConditional 
+{
+	negate = YES;
+	condition = isPermissable;
+}
+
+SpanTag: WOGenericContainer 
+{
+	name = componentName;
+	class = cssClassName;
+	elementName = "span";
+}
+
+UnmodifiableValue: WOString 
+{
+	value = currentValue;
+	formatter = formatter;
+}

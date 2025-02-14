@@ -1,0 +1,4 @@
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+

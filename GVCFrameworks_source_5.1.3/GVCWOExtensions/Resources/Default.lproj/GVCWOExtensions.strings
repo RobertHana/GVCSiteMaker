@@ -1,0 +1,5 @@
+{
+	// Lookup strings for testing localization
+	"Hello World!" = "Hello Worlds!";
+	"My name is " = "My names are ";
+}

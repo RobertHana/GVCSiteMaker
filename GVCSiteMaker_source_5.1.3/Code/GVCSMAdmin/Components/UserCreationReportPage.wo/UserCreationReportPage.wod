@@ -1,0 +1,69 @@
+BodyTitle: BodyTitle {
+	bodyTitle = "Administration - User Creation Report";
+}
+
+CSSComponent: SMCSSComponent 
+{
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "User Creation Report";
+	isAdmin = true;
+}
+
+HasInvalidData: WOConditional {
+	condition = invalidUserArray.count;
+}
+
+HasNoValidData: WOConditional {
+	negate = true;
+	condition = validUserArray.count;
+}
+
+HasValidData: WOConditional {
+	condition = validUserArray.count;
+}
+
+HasValidUsers: WOConditional {
+	condition = validUserArray.count;
+}
+
+Image1: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	height = 2;
+	width = 24;
+}
+
+Image2: WOImage {
+	src = "/GVCSiteMaker/Images/l_corner_blue.gif";
+	height = 9;
+	width = 8;
+}
+
+InvalidUserArrayCount: WOString {
+	value = invalidUserArray.count;
+}
+
+InvalidUserList: InvalidUserList {
+	invalidUserArray = invalidUserArray;
+}
+
+PageHeader1: PageHeader {
+}
+
+ReportForm: WOForm {
+}
+
+ReturnToUserCreation: WOSubmitButton {
+	value = "Return to User Creation";
+	action = returnToUserCreation;
+}
+
+ValidUserArrayCount: WOString {
+	value = validUserArray.count;
+}
+
+ValidUserList: ValidUserList {
+	validUserArray = validUserArray;
+}

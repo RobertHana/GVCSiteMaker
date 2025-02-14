@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="ConfigPage" wocomponentcontent="true">
+
+	
+        
+        
+        
+    
+        
+    <binding name="hasSite"/>
+        <validation message="'hasSite' is a required binding.">
+            <unbound name="hasSite"/>
+        </validation>
+        <binding name="pageTitle"/>
+        <validation message="'pageTitle' is a required binding.">
+            <unbound name="pageTitle"/>
+        </validation>
+        <binding name="website"/>
+        <validation message="'website' is a required binding.">
+            <unbound name="website"/>
+        </validation>
+    </wo>
+</wodefinitions>

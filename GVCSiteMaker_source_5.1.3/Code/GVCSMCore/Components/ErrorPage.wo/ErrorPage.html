@@ -1,0 +1,62 @@
+<webobject name = "DynamicBody">
+  <webobject name = "DismissForm">
+    <h1><webobject name = "ProductNameString" /> Message</h1>
+    <table border = "0" cellspacing = "2" cellpadding = "2" class = "content">
+      <tr>
+        <td colspan = "2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign = "top" class = "sectionTitle"> Message: </td>
+        <td valign = "top" class = "coloredBoldText"> <webobject name = "MessageString" /> </td>
+      </tr>
+      <tr>
+        <td colspan = "2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign = "top" class = "sectionTitle"> Reason: </td>
+        <td valign = "top" class = "coloredBoldText"> <webobject name = "ReasonString" /> </td>
+      </tr>
+
+      <webobject name = "HasErrorLogConditional">
+        <tr>
+          <td colspan = "2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign = "top" class = "sectionTitle"> Reference Number: </td>
+          <td valign = "top" class = "coloredBoldText"> <webobject name = "ErrorLogNumberString" /> </td>
+        </tr>
+      </webobject>
+    </table>
+
+    <br />
+
+    <webobject name = "DuplicateFileConditional">
+      If you would like to replace the file 
+      <webobject name = "DuplicateFileNameString" />, you should choose &quot;Replace File&quot; and then upload the replacement file there. If you would	like to replace this file now, please 
+      <webobject name = "ModifyFileLink">Click Here</webobject>. 
+      <br />
+    </webobject>
+
+
+    <webobject name = "hasReturnPage">
+      <br />
+      <webobject name = "DismissButton" />
+    </webobject>
+
+
+    <webobject name = "SessionTerminatedConditional">
+      <hr />
+      <p />
+      <div class = "warningText">
+        <font size = "4">Your session has been ended because of this error.</font>
+      </div>
+      <p>
+        <webobject name = "DAUrlConditional">
+          <webobject name = "RetryDAHyperlink">Click Here to Try Again</webobject>
+        </webobject>
+      </p>
+      <webobject name = "RecentlyVisitedSites" />
+      <br />
+    </webobject>
+  </webobject>
+</webobject>

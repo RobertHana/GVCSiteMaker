@@ -1,0 +1,4 @@
+stringColumn	numberColumn	dateColumn	lookupColumn	booleanColumn	expression
+hello	1	2002-01-01	lookup value 1	true	5
+"test	tab"	2	2002-1-10	lookup value 2	false	7
+wave	3	2020-2-2	lookup value 1	true	9

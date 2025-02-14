@@ -1,0 +1,63 @@
+jass-2.0.11
+ - fixed JassDoc to produce output even for the constructors' contracts and
+   the class invariant.
+   (JassDoc works with Java < 1.4 only!  see Documentation -> JavaDoc Support)
+ - new attribute in ant task: docmode = "java" "html" "none" corresponding
+   to the commandline options "-javadoc" "-htmldoc" "-nodoc"
+
+jass-2.0.10
+ - fixed a NullPointerException when invoking Jass on classes in
+   unnamed packages and without specifying a destination directory.
+ - fixed the field lookup (allowing inherited fields to be used in 
+   assertions) 
+ - fixed a problem with "conditional communications" in Jass 
+   Trace Assertions. Howerever, we recommend to not use TAs! They
+   perform bad and are not threadsafe!
+
+jass-2.0.9
+ - direct call to Jass from ant task (same JVM => enormous speed-up!)
+ - destdir option in ant task (to support .java extension)
+ - JavaDoc documentation improved (e.g. for constructors)
+
+jass-2.0.8
+ - fix for parsing compile controls 
+   (Thanks to Joseph R. Kiniry for reporting this bug)
+ - no invariant checking in static methods
+ - genereate compilable code for internal methods that throw exceptions
+
+jass-2.0.7
+ - again a fix for the NameAnalysis
+ - Compile to a different directory ("-d" option).
+   ".java" extension now allowed for Jass-files.
+
+jass-2.0.6
+ - support classes that depend on classes in unnamed packages
+   (Thanks to  Michel Charpentier for reporting this bug)
+ - New ``handwritten'' commandline parsing solves problem
+   with filenames and -help and -version switches work again.
+ - ant task included in distribution (see examples.xml)
+ - Generate HTML code, JavaDoc sections (Doclet included) or nothings 
+   for assertions in formal comments
+
+jass-2.0.5:
+ - The assert statement of Java-1.4 is understood.
+ - Classes in unnamed package are supported again.
+
+jass-2.0.4:
+ - Invariants are always non static and static methods ignore them.
+ - Assignments are now allowed inside expressions.
+
+jass-2.0.3:
+ - Fixed handling of Interfaces.
+ - Skip anonymous classes instead of failing.
+
+jass-2.0.2:
+ - Trace assertion can now be turned off.
+
+jass-2.0.1:
+ - Reformatted code with jindent.
+ - Assertion in constructors are working now.
+
+jass-2:
+ - Trace Assertion added.
+

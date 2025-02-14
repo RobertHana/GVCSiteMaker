@@ -1,0 +1,9 @@
+Library/Java/Extensions/frontbasejdbc.jar
+Library/Java/Extensions/ojdbc14.jar
+Library/Java/Extensions/postgresql-8.2-506.jdbc3.jar
+Library/Frameworks/GVCEOFExtensions.framework
+Library/Frameworks/GVCEOFValidation.framework
+Library/Frameworks/GVCEOPrototypes.framework
+Library/Frameworks/GVCFoundation.framework
+Library/Frameworks/GVCTestEOModelBase.framework
+Library/Frameworks/GVCTestEOModelSubClass.framework

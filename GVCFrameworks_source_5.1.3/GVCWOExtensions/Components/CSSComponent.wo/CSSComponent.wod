@@ -1,0 +1,11 @@
+StyleSheetLink: WOGenericElement {
+	elementName = "link";
+	href = aCSSFile;
+	rel = "stylesheet";
+	type = "text/css";
+}
+
+StyleSheetRepitition: WORepetition {
+	list = cssFiles;
+	item = aCSSFile;
+}

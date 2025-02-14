@@ -1,0 +1,211 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject name = "SectionForm">
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h2>
+            <webobject name = "IsNotModifyingSection">Create New Section</webobject>
+            <webobject name = "IsModifyingSection">Edit Properties: <webobject name = "SectionNameString"/></webobject>
+          </h2>
+        </td>
+        <td align = "right" valign = "top" class = "helpButtonContainer">
+          <webobject name = "Help"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+          Back to Website Sections</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "IsNotModifyingSection">
+            <webobject name = "CancelAddButton" />
+            <webobject name = "AddSectionButton" />
+          </webobject>
+          <webobject name = "IsModifyingSection">
+            <webobject name = "CancelModifyButton" />
+            <webobject name = "SaveChangesButton" />
+            <webobject name = "EditSectionButton" />
+          </webobject>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" colspan = "2" align = "center" class = "warningText"> <webobject name = "MESSAGE" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left">
+          <b>Type:</b>
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td>
+          <webobject name = "IsNotModifyingSection"> <webobject name = "SectionTypes" /> </webobject>
+          <webobject name = "IsModifyingSection">
+            <b class = "coloredText"><webobject name = "ComponentType" /></b>
+          </webobject>
+        </td>
+      </tr>
+
+      <webobject name = "SectionConditional">
+        <tr>
+          <td valign = "top"> &nbsp; </td>
+          <td valign = "top">
+            <b>Select section to copy:</b>
+            <br />
+            <webobject name = "SectionList" />
+          </td>
+        </tr>
+      </webobject>
+
+      <tr>
+        <td valign = "top" colspan = "2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <b>Name:</b>
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td valign = "top">
+          <webobject name = "SectionName" />
+          <br />
+          <span class = "descriptiveText"> This text will appear in your navigation bar, as a link to the section. </span>
+        </td>
+      </tr>
+
+
+      <webobject name = "VersioningConditional">
+        <tr><td colspan = "2" valign = "top">&nbsp;</td></tr>
+        <tr>
+          <td valign = "top">
+            <b>Allow Versioning:</b><br />
+            <span class = "descriptiveText">Allow users to save multiple versions of this section.</span>
+          </td>
+          <td valign = "top" align = "left">
+            <webobject name = "RadioButton1" />
+            <span>Yes</span>&nbsp;&nbsp;<webobject name = "RadioButton2" />
+            <span>No</span>
+            <br />
+            <webobject name = "SectionVersioningConditional">
+              <webobject name = "AutoVersioningCheckBox" />
+              <span class = "descriptiveText">Auto-create a new version on each modification (&quot;act like a wiki&quot;)</span>
+            </webobject>
+          </td>
+        </tr>
+      </webobject>
+
+
+      <tr>
+        <td colspan = "2" valign = "top"> &nbsp; </td>
+      </tr>
+      <webobject name = "CanControlNavigationConditional">
+        <tr>
+          <td valign = "top">
+            <b>Navigation:</b>
+          </td>
+          <td valign = "top">
+            <webobject name = "VisibleSectionButton" />
+            Link to section is shown in navigation 
+            <br />
+            <webobject name = "HiddenSectionButton" />
+            Link to section is hidden from navigation 
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+      </webobject>
+      <webobject name = "CanHaveStyleConditional">
+        <tr>
+          <td valign = "top">
+            <b>Style:</b>
+          </td>
+          <td valign = "top"> <webobject name = "StyleChooser" /> </td>
+        </tr>
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+      </webobject>
+      <tr>
+        <td valign = "top">
+          <b>Description:</b>
+          <br />
+          <img src = "/GVCSiteMaker/Images/spacer.gif" width = "250" height = "1" />
+          <!-- desperation and N4 required a spacer .gif -->
+        </td>
+        <td valign = "top" class = "rightContentColumn">
+          <webobject name = "Details" />
+          <br />
+          <span class = "descriptiveText"> This text will be displayed at the top of List of Links/Files type sections. For all other section types, this text is not displayed. </span>
+        </td>
+      </tr>
+      <webobject name = "UsesAccessProtectionConditional">
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+        <tr>
+          <td valign = "top" colspan = "2"> <webobject name = "GroupPicker" /> </td>
+        </tr>
+      </webobject>
+      <webobject name = "SupportEditorsConditional">
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+        <tr>
+          <td valign = "top" colspan = "2"> <webobject name = "Editors" /> </td>
+        </tr>
+      </webobject>
+      <webobject name = "VersioningConditional">
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+        <tr>
+          <td valign = "top" colspan = "2">
+            <webobject name = "SupportContributorsConditional"><webobject name = "Contributors" /></webobject>
+          </td>
+        </tr>
+      </webobject>
+      <webobject name = "CanRequireHTTPSConditional">
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+        <tr>
+          <td valign = "top">
+            <b>Require HTTPS Access For Public Sections:</b>
+          </td>
+          <td valign = "top" align = "left">
+            <webobject name = "RequireHTTPSRadioButton" />
+            <span>Yes</span>&nbsp;&nbsp;<webobject name = "RequireHTTPSRadioButton2" />
+            <span>No</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2" valign = "top"> &nbsp; </td>
+        </tr>
+        <tr>
+          <td valign = "top">
+            <b>MIME Type:</b>
+          </td>
+          <td valign = "top" align = "left"> <webobject name = "MimeType" /> </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>

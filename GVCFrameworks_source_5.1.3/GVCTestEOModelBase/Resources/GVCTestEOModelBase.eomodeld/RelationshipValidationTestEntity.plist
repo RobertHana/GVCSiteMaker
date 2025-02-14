@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {columnName = bare_id; name = bareID; prototypeName = Key; }, 
+        {columnName = decimal_id; name = decimalID; prototypeName = Key; }, 
+        {columnName = the_id; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, bareID, decimalID); 
+    className = net.global_village.testeomodelbase.RelationshipValidationTestEntity; 
+    classProperties = (
+        theID, 
+        requiredBareEntity, 
+        optionalDecimalEntity, 
+        requiredBareEntities, 
+        optionalDecimalEntities
+    ); 
+    externalName = REL_VALID_TEST_ENTITY; 
+    fetchSpecificationDictionary = {}; 
+    name = RelationshipValidationTestEntity; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            destination = RelationshipToBare; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = relationshipID; sourceAttribute = theID; }); 
+            name = bareEntityRelationships; 
+        }, 
+        {
+            definition = relationshipToDecimals.decimalEntity; 
+            joinSemantic = EOInnerJoin; 
+            name = optionalDecimalEntities; 
+        }, 
+        {
+            destination = EntityWithDecimalPK; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theDecimalPK; sourceAttribute = decimalID; }); 
+            name = optionalDecimalEntity; 
+        }, 
+        {
+            destination = RelationshipToDecimal; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = relationshipID; sourceAttribute = theID; }); 
+            name = relationshipToDecimals; 
+        }, 
+        {
+            definition = bareEntityRelationships.bareEntity; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            name = requiredBareEntities; 
+        }, 
+        {
+            destination = ValidationBareEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = bareID; }); 
+            name = requiredBareEntity; 
+        }
+    ); 
+}

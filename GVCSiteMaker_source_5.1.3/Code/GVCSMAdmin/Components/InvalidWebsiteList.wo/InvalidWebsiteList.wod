@@ -1,0 +1,14 @@
+Reason: WOString {
+	value = errorString;
+	escapeHTML = false;
+}
+
+Repetition: WORepetition {
+	item = currentWebsiteDictionary;
+	list = invalidWebsiteArray;
+}
+
+SiteID: WOString {
+	value = siteID;
+	escapeHTML = false;
+}

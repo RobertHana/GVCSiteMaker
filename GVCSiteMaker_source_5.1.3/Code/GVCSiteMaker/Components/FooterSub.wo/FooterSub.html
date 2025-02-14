@@ -1,0 +1,77 @@
+<webobject name = "HasCustomFooterConditional">
+  <webobject name = "CustomFooterString" />
+</webobject>
+
+
+<webobject name = "HasNoCustomFooterConditional">
+  <table border = "0" width = "100%" cellspacing = "0">
+    <tr>
+      <td width = "20%" valign = "top">
+        <div style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12px; font-weight: bold;">
+          <div class = "footerContactInfoTitle">
+            <webobject name = "HasContactInfoConditional">Contact Information:</webobject>
+          </div>
+        </div>
+        <div style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+          <div class = "footerContactInfoText">
+            <webobject name = "HasContactNameConditional">
+              <webobject name = "ContactNameString"/>
+            </webobject>
+            <webobject name = "HasContactEmailConditional">
+              <br />E-mail: 
+              <webobject name = "ContactEmailLink">
+                <webobject name = "ContactEmailString"/>
+              </webobject>
+            </webobject>
+            <webobject name = "HasContactPhoneConditional">
+              <br />Phone: <webobject name = "ContactPhoneString"/>
+            </webobject>
+            <webobject name = "HasContactFaxConditional">
+              <br />Fax: <webobject name = "ContactFaxString"/>
+            </webobject>
+          </div>
+        </div>
+      </td>
+
+      <td valign = "top">
+        <div align = "center" style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+          <div class = "footerUserLinks">
+            <webobject name = "HasUserLinksConditional">&nbsp;|&nbsp;</webobject>
+            <webobject name = "HasUserLink1Conditional"><webobject name = "UserLink1" />&nbsp;|&nbsp;</webobject>
+            <webobject name = "HasUserLink2Conditional"><webobject name = "UserLink2" />&nbsp;|&nbsp;</webobject>
+            <webobject name = "HasUserLink3Conditional"><webobject name = "UserLink3" />&nbsp;|&nbsp;</webobject>
+            <webobject name = "HasUserLink4Conditional"><webobject name = "UserLink4" />&nbsp;|&nbsp;</webobject>
+            <webobject name = "HasUserLinksConditional"> <hr /></webobject>
+          </div>
+        </div>
+
+
+        <table width = "100%" border = "0" cellspacing = "0">
+          <tr>
+            <td width = "33%">
+              <div align = "center" style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+                <div class = "footerSystemLinks">
+                  <webobject name = "SiteMakerHomeLink"><webobject name = "InstallationNameString" /> Home</webobject>
+                </div>
+              </div>
+            </td>
+            <td width = "33%">
+              <div align = "center" style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+                <div class = "footerSystemLinks">
+                  <webobject name = "ConfigureSiteLink">Configure this Site</webobject>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div align = "CENTER" style = "font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+                <div class = "footerSystemLinks">
+                  <webobject name = "ManageFilesLink">Upload/Manage Files for this Site</webobject>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</webobject>

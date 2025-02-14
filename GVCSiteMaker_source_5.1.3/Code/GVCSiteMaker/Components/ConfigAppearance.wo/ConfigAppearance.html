@@ -1,0 +1,189 @@
+<webobject name = "ConfigAppearanceForm">
+  <!-- cell padding removed except around HR -->
+  <table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+    <tr>
+      <td class = "screenTitleContainer">Overall Appearance</td>
+      <td align = "right" valign = "top" class = "helpButtonContainer">
+        <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+      </td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "right" style = "padding-right: 2px;">
+        <webobject name = "ResetButton" />
+        <webobject name = "SUBMIT_PREVIEW" />
+        <webobject name = "SUBMIT" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+          <tr>
+            <td><hr class = "primaryBarStyle" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <webobject name = "ConfigAppearanceUpdateArea">
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" class = "settingsSingleItemFieldLabel"> Style: </td>
+        <td class = "rightContentColumn"> <webobject name = "StyleChooser" /> </td>
+      </tr>
+      <webobject name = "InvalidBanner">
+        <tr>
+          <td colspan = "2" class = "warningText" valign = "top"> Configure failed: Banner Text cannot be left blank. </td>
+        </tr>
+      </webobject>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel" valign = "top">
+          Banner Text: 
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "descriptiveText">
+          <webobject name = "BannerText" />
+          <br />
+          Maximum 100 characters. This is the name that will appear in the Banner of this site.  It will also be used as the Title of the browser window when the site is viewed. 
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" class = "settingsSingleItemFieldLabel" style = "white-space: nowrap;"> Show Banner Text? </td>
+        <td class = "rightContentColumn">
+          <webobject name = "ShowBannerRadioButton" />Yes 
+          <webobject name = "DoNotShowBannerRadioButton" />No 
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" class = "settingsSingleItemFieldLabel"> Show Navigation Bar? </td>
+        <td class = "rightContentColumn">
+          <webobject name = "ShowNavbarRadioButton" />Yes 
+          <webobject name = "DoNotShowNavbarRadioButton" />No 
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" class = "settingsSingleItemFieldLabel"> Show Login/Logout Links?<!-- nobr causes issues with NN4 --> </td>
+        <td class = "rightContentColumn">
+          <webobject name = "ShowLinksRadioButton" />Yes 
+          <webobject name = "DoNotShowLinksRadioButton" />No</td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel" style = "white-space: nowrap;"> Show Footer? </td>
+        <td class = "rightContentColumn">
+          <webobject name = "ShowFooterRadioButton" />Yes 
+          <webobject name = "DoNotShowFooterRadioButton" />No 
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <h2>Contact Information for Footer:</h2>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Name:</td>
+        <td class = "rightContentColumn"><webobject name = "ContactNameTextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Phone:</td>
+        <td class = "rightContentColumn"><webobject name = "ContactPhoneTextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">E-mail:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "ContactEmailTextField" />
+          <br />
+          <span class = "descriptiveText">Entered text will be displayed as a footer link on the website.</span>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Fax:</td>
+        <td class = "rightContentColumn"><webobject name = "ContactFaxTextField" /></td>
+      </tr>
+      <tr>
+        <td valign = "top" colspan = "2" align = "left">
+          <h2>Links Displayed in Footer:</h2>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Link Text #1:</td>
+        <td class = "rightContentColumn"><webobject name = "LinkText1TextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">URL #1:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "LinkURL1TextField" />
+          <webobject name = "InvalidFooterURL1Conditional">
+            <br />
+            <span class = "warningText"> <webobject name = "InvalidURLMessageString" /> </span>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Link Text #2:</td>
+        <td class = "rightContentColumn"><webobject name = "LinkText2TextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">URL #2:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "LinkURL2TextField" />
+          <webobject name = "InvalidFooterURL2Conditional2">
+            <br />
+            <span class = "warningText"> <webobject name = "InvalidURLMessageString2" /> </span>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Link Text #3:</td>
+        <td class = "rightContentColumn"><webobject name = "LinkText3TextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">URL #3:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "LinkURL3TextField" />
+          <webobject name = "InvalidFooterURL3Conditional3">
+            <br />
+            <span class = "warningText"> <webobject name = "InvalidURLMessageString3" /> </span>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">Link Text #4:</td>
+        <td class = "rightContentColumn"><webobject name = "LinkText4TextField" /></td>
+      </tr>
+      <tr>
+        <td class = "settingsSingleItemFieldLabel">URL #4:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "LinkURL4TextField" />
+          <webobject name = "InvalidFooterURL4Conditional4">
+            <br />
+            <span class = "warningText"> <webobject name = "InvalidURLMessageString4" /> </span>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td align = "left" class = "sectionTitle"> </td>
+        <td class = "rightContentColumn"> </td>
+      </tr>
+      <tr>
+        <th class = "settingsSingleItemFieldLabel">
+          Custom Header:<br />
+          <span class = "descriptiveText">HTML entered here will be inserted into the HEAD portion of all pages in this site,
+            if the "Custom Header" feature is active in the style that you have selected.</span>
+        </th>
+        <td class = "rightContentColumn"> <webobject name = "CustomHeaderText" /></td>
+      </tr>
+      <tr>
+        <th class = "settingsSingleItemFieldLabel">
+          <webobject name = "ShowHideCustomFooterHyperlink">Custom Footer (click to show/hide)</webobject>:<br />
+          <span class = "descriptiveText">HTML entered here will be inserted into the footer of all pages in this site.</span>
+        </th>
+        <td class = "rightContentColumn"><webobject name = "ShowCustomFooterConditional">
+          <webobject name = "CustomFooterText" />
+          <script type = "text/javascript">
+            <webobject name = "CustomJSEditorInitString" />
+          </script>
+        </webobject></td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>

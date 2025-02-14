@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+SQLLoggingAdaptorChannelDelegate (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SQLLoggingAdaptorChannelDelegate (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SQLLoggingAdaptorChannelDelegate.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/PrincipalClass.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SQLLoggingAdaptorChannelDelegate.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class SQLLoggingAdaptorChannelDelegate</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.SQLLoggingAdaptorChannelDelegate</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.18"><B>SQLLoggingAdaptorChannelDelegate</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+Watches the SQL that gets executed and logs out any statements that exceed a threshold in milliseconds.
+ The log message is prefixed by 'Slow Query' and contains the execution time in milliseconds,
+ the number of rows fetched, and the exact SQL used.  Each part is seperated by a tab so that the
+ lines can easily be grepped out and the resulting file parsed as tab delimited.  This makes it easy
+ to analyze with Excel. This delegate was inspired by the Project Wonder class er.extensions.ERXAdaptorChannelDelegate.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html" title="class in net.global_village.eofextensions">SQLLoggingAdaptorChannelDelegate</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#handler">handler</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#LOG_MARKER">LOG_MARKER</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#queryThreshhold">queryThreshhold</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The maximum SQL execution time before the statement is logged.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#rowsFetched">rowsFetched</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#shouldLogFetchedRows">shouldLogFetchedRows</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if the contents of fetched rows should be logged.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#shouldLogSlowQueries">shouldLogSlowQueries</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if queries longer than queryThreshhold should be logged.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#shouldLogSQLSource">shouldLogSQLSource</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if a stack trace of the source of each SQL statement should be logged.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#startTimeMilliseconds">startTimeMilliseconds</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#statement">statement</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#stopTimeMilliseconds">stopTimeMilliseconds</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#SQLLoggingAdaptorChannelDelegate()">SQLLoggingAdaptorChannelDelegate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#adaptorChannelDidEvaluateExpression(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.eoaccess.EOSQLExpression)">adaptorChannelDidEvaluateExpression</A></B>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                                                       com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notes the time when a query has finished executing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#adaptorChannelDidFetchRow(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.foundation.NSMutableDictionary)">adaptorChannelDidFetchRow</A></B>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                                   com.webobjects.foundation.NSMutableDictionary&nbsp;row)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Increments the fetched row count.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#adaptorChannelDidFinishFetching(com.webobjects.eoaccess.EOAdaptorChannel)">adaptorChannelDidFinishFetching</A></B>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compares the difference between stopTimeMilliseconds and startTimeMilliseconds and logs
+ statement if the difference is more than queryThreshhold.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#adaptorChannelShouldEvaluateExpression(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.eoaccess.EOSQLExpression)">adaptorChannelShouldEvaluateExpression</A></B>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                                                             com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notes the time before starting to execute a query, captures the query, and resets the fetched
+ row count.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#dataBaseChannelNeeded(com.webobjects.foundation.NSNotification)">dataBaseChannelNeeded</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Catches the EODatabaseContext.DatabaseChannelNeededNotification and creates a new instance of
+ SQLLoggingAdaptorChannelDelegate to act as a delegate for its EOAdaptorChannel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#installDelegate(boolean, long, boolean, boolean)">installDelegate</A></B>(boolean&nbsp;logSlowQueries,
+                               long&nbsp;threshold,
+                               boolean&nbsp;logFetchedRows,
+                               boolean&nbsp;logSQLSource)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call this method to install the SQL Logging delegate.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="statement"><!-- --></A><H3>
+statement</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.21"><B>statement</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="startTimeMilliseconds"><!-- --></A><H3>
+startTimeMilliseconds</H3>
+<PRE>
+protected long <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.24"><B>startTimeMilliseconds</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="stopTimeMilliseconds"><!-- --></A><H3>
+stopTimeMilliseconds</H3>
+<PRE>
+protected long <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.27"><B>stopTimeMilliseconds</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="rowsFetched"><!-- --></A><H3>
+rowsFetched</H3>
+<PRE>
+protected long <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.30"><B>rowsFetched</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="queryThreshhold"><!-- --></A><H3>
+queryThreshhold</H3>
+<PRE>
+protected static long <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.33"><B>queryThreshhold</B></A></PRE>
+<DL>
+<DD>The maximum SQL execution time before the statement is logged.  Use -1 to log everything.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="shouldLogSlowQueries"><!-- --></A><H3>
+shouldLogSlowQueries</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.36"><B>shouldLogSlowQueries</B></A></PRE>
+<DL>
+<DD>True if queries longer than queryThreshhold should be logged.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="shouldLogFetchedRows"><!-- --></A><H3>
+shouldLogFetchedRows</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.39"><B>shouldLogFetchedRows</B></A></PRE>
+<DL>
+<DD>True if the contents of fetched rows should be logged.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="shouldLogSQLSource"><!-- --></A><H3>
+shouldLogSQLSource</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.42"><B>shouldLogSQLSource</B></A></PRE>
+<DL>
+<DD>True if a stack trace of the source of each SQL statement should be logged.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="handler"><!-- --></A><H3>
+handler</H3>
+<PRE>
+protected static <A HREF="../../../net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html" title="class in net.global_village.eofextensions">SQLLoggingAdaptorChannelDelegate</A> <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.46"><B>handler</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="LOG_MARKER"><!-- --></A><H3>
+LOG_MARKER</H3>
+<PRE>
+protected static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.48"><B>LOG_MARKER</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.eofextensions.SQLLoggingAdaptorChannelDelegate.LOG_MARKER">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="SQLLoggingAdaptorChannelDelegate()"><!-- --></A><H3>
+SQLLoggingAdaptorChannelDelegate</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.18"><B>SQLLoggingAdaptorChannelDelegate</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="installDelegate(boolean, long, boolean, boolean)"><!-- --></A><H3>
+installDelegate</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.60"><B>installDelegate</B></A>(boolean&nbsp;logSlowQueries,
+                                   long&nbsp;threshold,
+                                   boolean&nbsp;logFetchedRows,
+                                   boolean&nbsp;logSQLSource)</PRE>
+<DL>
+<DD>Call this method to install the SQL Logging delegate.  This method has no effect if called a
+ second time.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logSlowQueries</CODE> - <code>true</code> if queries longer than threshold should be logged<DD><CODE>threshold</CODE> - the maximum time, in milliseconds, that an SQL statement can take before it is logged<DD><CODE>logFetchedRows</CODE> - <code>true</code> if the contents of fetched rows should be logged<DD><CODE>logSQLSource</CODE> - <code>true</code> if a stack trace of the source of each fetch should be logged</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="dataBaseChannelNeeded(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+dataBaseChannelNeeded</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.97"><B>dataBaseChannelNeeded</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>Catches the EODatabaseContext.DatabaseChannelNeededNotification and creates a new instance of
+ SQLLoggingAdaptorChannelDelegate to act as a delegate for its EOAdaptorChannel.  Properly, this
+ should be in an inner class.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - EODatabaseContext.DatabaseChannelNeededNotification</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="adaptorChannelShouldEvaluateExpression(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.eoaccess.EOSQLExpression)"><!-- --></A><H3>
+adaptorChannelShouldEvaluateExpression</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.117"><B>adaptorChannelShouldEvaluateExpression</B></A>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                                      com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</PRE>
+<DL>
+<DD>Notes the time before starting to execute a query, captures the query, and resets the fetched
+ row count.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>channel</CODE> - the EOAdaptorChannel this object is a delegate for<DD><CODE>expression</CODE> - The expression to be sent to the database server
+<DT><B>Returns:</B><DD><code>true</code> to permit the adaptor channel to send expression to the database server</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="adaptorChannelDidEvaluateExpression(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.eoaccess.EOSQLExpression)"><!-- --></A><H3>
+adaptorChannelDidEvaluateExpression</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.139"><B>adaptorChannelDidEvaluateExpression</B></A>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                                com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</PRE>
+<DL>
+<DD>Notes the time when a query has finished executing.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>channel</CODE> - the EOAdaptorChannel this object is a delegate for<DD><CODE>expression</CODE> - the expression that was evaluated</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="adaptorChannelDidFetchRow(com.webobjects.eoaccess.EOAdaptorChannel, com.webobjects.foundation.NSMutableDictionary)"><!-- --></A><H3>
+adaptorChannelDidFetchRow</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.152"><B>adaptorChannelDidFetchRow</B></A>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel,
+                                      com.webobjects.foundation.NSMutableDictionary&nbsp;row)</PRE>
+<DL>
+<DD>Increments the fetched row count.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>channel</CODE> - the EOAdaptorChannel this object is a delegate for<DD><CODE>row</CODE> - data in the row just fetched</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="adaptorChannelDidFinishFetching(com.webobjects.eoaccess.EOAdaptorChannel)"><!-- --></A><H3>
+adaptorChannelDidFinishFetching</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html#line.169"><B>adaptorChannelDidFinishFetching</B></A>(com.webobjects.eoaccess.EOAdaptorChannel&nbsp;channel)</PRE>
+<DL>
+<DD>Compares the difference between stopTimeMilliseconds and startTimeMilliseconds and logs
+ statement if the difference is more than queryThreshhold.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>channel</CODE> - the EOAdaptorChannel this object is a delegate for</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SQLLoggingAdaptorChannelDelegate.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/PrincipalClass.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/SQLLoggingAdaptorChannelDelegate.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SQLLoggingAdaptorChannelDelegate.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

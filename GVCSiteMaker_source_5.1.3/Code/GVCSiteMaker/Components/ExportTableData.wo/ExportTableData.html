@@ -1,0 +1,165 @@
+<webobject name = "AjaxUpdateArea">
+  <webobject name = "ExportForm">
+    <table class="screenTitleTable" cellpadding="0" cellspacing="0" style = "width: 100%">
+      <tr>
+        <td class="screenTitleContainer">
+          <div>Export Data: <span class="highlightedText"><webobject name = "TableNameString" /></span></div>
+        </td>
+        <td align="right" valign="top"  class="helpButtonContainer">
+          <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Data Tables" border = "0" style = "position:relative; top:3px;" />
+            Back to Data Tables</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "ExportDownload" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" class = "sectionTitle"> Export to File: <br /></td>
+        <td valign = "top" class = "rightContentColumn"> <webobject name = "ExportFileNameTextField" /> </td>
+      </tr>
+      <tr>
+         <td valign="top" class="sectionTitle">Delimiter: </td>
+         <td valign="top" class="rightContentColumn">
+           <webobject name=CommaDelimiterRadioButton></webobject>Comma <img src="/GVCSiteMaker/Images/spacer.gif" height="2" width="20"/>
+           <webobject name=TabDelimiterRadioButton></webobject>Tab
+           <div class="descriptiveText">
+             Choose the character to separate columns in the exported file.
+           </div>
+         </td>
+      </tr>
+      <tr>
+        <td valign="Top" class="sectionTitle"> Include Header Line? </td>
+        <td valign="top" class="rightContentColumn">
+          <webobject name=InlcudeHeaderLineRadioButton></webobject>Yes <img src="/GVCSiteMaker/Images/spacer.gif" height="2" width="20"/>
+          <webobject name=ExcludeHeaderLineRadioButton></webobject>No
+          <div class="descriptiveText">
+            Should the first line of the exported file contain the names of the fields exported?
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+    <div class="sectionTitle">
+       Records to Export:
+    </div>
+    Specify the criteria to use when selecting records for export.<br/>
+    If you do not enter any criteria all records will be exported.
+    <br/><br/>
+    <span class="coloredBoldText"><webobject name=SelectedRecordCountString></webobject></span> of
+    <span class="coloredBoldText"><webobject name=TotalRecordCountString></webobject></span>
+    records selected for export.  <em>(to update click the Use More Criteria button)</em>
+
+    <table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%">
+      <tr>
+        <th class="coloredTableHeading">Combine Criteria</th>
+        <th class="coloredTableHeading">Field Name</th>
+        <th class="coloredTableHeading">Comparison</th>
+        <th class="coloredTableHeading">Value<br/>Enter dates as <webobject name=ValueDateHintString></webobject></th>
+      </tr>
+
+      <webobject name=SearchCriteriaRepetition>
+        <tr>
+          <td align="Center" valign="Middle">
+            <webobject name=Conditional1><webobject name=JoinConditionsPopUpButton></webobject></webobject>&nbsp;
+          </td>
+          <td align="center">
+            <webobject name=ColumnNamesPopUpButton></webobject>
+          </td>
+          <td valign="Middle" align="Center">
+            <webobject name=ComparisionTypesPopUpButton></webobject>
+          </td>
+          <td align="Center">
+            <webobject name=SearchValueTextField></webobject>
+          </td>
+        </tr>
+
+        <webobject name=HasValidationFailureConditional>
+          <tr>
+            <td colspan=4 valign="Middle" align="Center"><span class="warningText"><webobject name=ValidationFailureString></webobject></span></td>
+          </tr>
+        </webobject name=HasValidationFailureConditional>
+      </webobject name=SearchCriteriaRepetition>
+    </table>
+
+
+    <webobject name=AddCriterionSubmitButton></webobject>
+    <a name="fields"></a>
+    <div class="sectionTitle">
+      <br/>
+      Select and Order Fields to Export:
+    </div>
+    <table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%">
+      <tr>
+        <td style="background-color: #ffffff" colspan="4">
+          <webobject name=IncludeAllFieldsSubmitButton></webobject>
+          <webobject name=ClearAllFieldsSubmitButton></webobject>
+          <webobject name = "ReorderFieldsDialog"><webobject name = "ReorderFieldsLink">Reorder Fields</webobject></webobject>
+          <webobject name = "ReorderFieldsDialogOpener" />
+        </td>
+      </tr>
+      <tr>
+        <th class="daShowFieldListHeading">Include?</th>
+        <th class="daFieldNameListHeading">Name</th>
+        <th class="daFieldTypeListHeading">Type</th>
+      </tr>
+    </table>
+
+    <webobject name=ColumnRepetition>
+      <table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%">
+        <tr>
+          <td align="Center" class = "daShowFieldInList">
+            <webobject name=ColumnIncludedCheckBox></webobject>
+          </td>
+          <td align="left" class="daFieldNameInList">
+            <webobject name=ColumnNameString></webobject>
+            <webobject name=HasTextDescriptionConditional>
+              <div class="descriptiveText">
+                <webobject name=ColumnDescriptionString></webobject>
+              </div>
+            </webobject>
+          </td>
+          <td align="Center" class="daFieldTypeInList">
+            <webobject name=ColumnTypeString></webobject>
+          </td>
+        </tr>
+      </table>
+    </webobject name=ColumnRepetition>
+  </webobject>
+</webobject>
+
+
+
+
+<webobject name = "ReorderFieldsModalDialog">
+  Drag and drop to reorder the fields<br />
+  <webobject name = "ReorderUpdateArea"><webobject name = ReorderForm><webobject name = "ReorderRepetition">
+    <table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%">
+      <tr>
+        <td align="left" class="daFieldNameInList">
+          <webobject name=ReorderColumnNameString></webobject>
+        </td>
+      </tr>
+    </table>
+  </webobject></webobject></webobject>
+  <span style="float:left"><webobject name = "ReorderFieldsModalDialogDoneLink">Done</webobject></span>
+</webobject>

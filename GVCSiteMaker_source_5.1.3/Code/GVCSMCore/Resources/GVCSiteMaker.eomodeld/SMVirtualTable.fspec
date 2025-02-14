@@ -1,0 +1,16 @@
+{
+    cacheTableWithTableID = {
+        class = EOFetchSpecification; 
+        entityName = SMVirtualTable; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        prefetchingRelationshipKeyPaths = (columns, rows, "rows.fields"); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = tableID; 
+            selectorName = isEqualTo; 
+            value = {"_key" = tableID; class = EOQualifierVariable; }; 
+        }; 
+        requiresAllQualifierBindingVariables = YES; 
+    }; 
+}

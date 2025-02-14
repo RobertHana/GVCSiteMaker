@@ -1,0 +1,54 @@
+<table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+  <tr>
+    <td colspan = "2"> <hr cl&aring;ass = "alternateBarStyle" /> </td>
+  </tr>
+  <tr>
+    <td rowspan = "2" align = "LEFT" valign = "TOP" class = "sectionTitle">Pane <webobject name = "PaneOrderString" /> Contents:</td>
+    <td align = "LEFT" valign = "TOP" class = "rightContentColumn">
+      <webobject name = "UnknownContentTypeConditional"><webobject name = "ContentTypesPopUpButton" /></webobject>
+      <webobject name = "KnownContentConditional">
+        <i><webobject name = "TypeString" /></i>
+        <webobject name = "HasDescriptionConditional">:&nbsp;<webobject name = "DescriptionString" /></webobject>
+        <br />
+        <webobject name = "EditPaneSubmitButton" />
+        <webobject name = "DeletePaneSubmitButton" />
+      </webobject>
+    </td>
+  </tr>
+
+  <tr>
+    <td align = "LEFT" valign = "TOP" class = "rightContentColumn">
+      <table width = "100%">
+        <webobject name = "HeightConditional">
+          <tr>
+            <td align = "LEFT" valign = "TOP">Height:&nbsp;<webobject name = "HeightTextField" />Êpixels (longer contents will
+              use scrollbar)<webobject name = "HeightErrorConditional">
+                <br />
+                <span class = "warningText"><webobject name = "WidthError2" /></span>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+        <webobject name = "WidthRequiredConditional">
+          <tr>
+            <td align = "LEFT" valign = "TOP">Width:&nbsp;&nbsp;<webobject name = "WidthTextField" />&nbsp;percent<webobject name = "WidthErrorConditional">
+                <br />
+                <span class = "warningText"><webobject name = "WidthError" /></span>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+        <webobject name = "WidthNoRequiredConditional">
+          <tr>
+            <td align = "LEFT" valign = "TOP">Width:&nbsp;&nbsp;100 percent</td>
+          </tr>
+        </webobject>
+        <webobject name = "WidthDerivedConditional">
+          <tr>
+            <td align = "LEFT" valign = "TOP">Width:&nbsp;&nbsp;<webobject name = "CalculatedWidthString" /></td>
+          </tr>
+        </webobject>
+      </table>
+    </td>
+  </tr>
+</table>

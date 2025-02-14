@@ -1,0 +1,262 @@
+<project name="properties" default="init.all" basedir=".">
+
+    <!-- Source classpaths for contracted and uncontracted builds for this project.
+         This is done here, outside of a task, as a sort of hack to get
+         the project.source.path property set correctly.  Things declared outside of a
+         task are evaluated before any task is performed.               -->
+    <path id="uncontracted.class.path">
+        <dirset dir=".">
+            <include name="Sources"/>
+        	<include name="Tests"/>
+            <include name="GeneratedEOs"/>
+        </dirset>
+    </path>
+
+    <path id="contracted.class.path">
+        <dirset dir=".">
+            <include name="ContractedSource"/>
+            <include name="Tests"/>
+            <include name="GeneratedEOs"/>
+        </dirset>
+    </path>
+
+    <!-- Initialize properties common to multiple targets  -->
+    <target name="init.all" depends="load.project.properties,
+                                     load.properties,
+                                     set.properties,
+                                     create.directories,
+                                     define.paths,
+                                     define.tasks.and.types,
+                                     define.project.paths,
+                                     set_application_properties,
+                                     set_framework_properties" />
+
+
+
+
+     <!-- Load files that contain project specific properties -->
+     <target name="load.project.properties">
+      	<property file="build.properties"/>
+        <echo>Building ${project.name}</echo>
+            
+        <!-- Log out a notice if this project has disabled DBC -->
+        <condition property="contracts.disabled.message" 
+                   value="Design by Contract disabled for this project."
+                   else="">
+            <isset property="contracts.disabled"/>
+        </condition>
+        <echo>${contracts.disabled.message}</echo> 
+     </target>
+    
+    
+
+     <!-- Load files that contain user specific properties -->
+     <target name="load.properties" depends="load.project.properties">
+        <property name="user.library.dir" value="${user.home}${file.separator}Library"/>
+		<property name="wolips.properties" value="${user.home}${file.separator}Library${file.separator}Application Support${file.separator}WOLips${file.separator}wolips.properties" />
+		<property file="${wolips.properties}" />
+		<condition property="wo.properties.check.failed">
+			<not>
+				<and>
+					<isset property="wo.system.frameworks" />
+					<isset property="wo.local.frameworks" />
+				</and>
+			</not>
+		</condition>
+		<fail message="The properties 'wo.system.frameworks' and 'wo.local.frameworks' must be set. Check that your ${wolips.properties} is correct." if="wo.properties.check.failed" />
+    </target>
+
+
+    <!-- Set additional properties that we will use. -->
+    <target name="set.properties" depends="load.properties">
+        
+        <!-- Detect the project type -->
+        <condition property="is.wo.framework">
+            <equals arg1="framework" arg2="${project.type}"/>
+        </condition>
+
+        <condition property="is.wo.app">
+            <equals arg1="application" arg2="${project.type}"/>
+        </condition>
+        
+   		<condition property="wo.project.type.check.failed">
+			<not>
+				<or>
+					<isset property="is.wo.framework" />
+					<isset property="is.wo.app" />
+				</or>
+			</not>
+		</condition>
+		<fail message="The build.properties file needs to have project.type set to 'framework' or 'application'." if="wo.project.type.check.failed" />
+    	
+    	<!-- Opposite value to eclipse.running, true if command line execution. -->
+		<condition property="eclipse.not.running" value="true">
+			<not>
+  				<isset property="eclipse.running"/>
+			</not>
+  		</condition>
+  		<property name="eclipse.not.running" value="false" />
+
+		<condition property="is.framework.or.eclipse.not.running">
+			<or>
+  				<istrue value="${eclipse.not.running}"/>
+  				<isset property="is.wo.framework"/>
+			</or>
+  		</condition> 
+        
+        <!-- Directory to build the .woa or .framework into -->
+        <property name="build.dir" value="dist"/>
+
+        <!-- These can be pre-defined to build optimized distributions -->
+        <property name="wocompile.debug.flag" value="on" />
+        <property name="wocompile.optimize.flag" value="off" />
+    	
+    	<!-- Defaults -->
+        <property name="jass.excluded.files" value="" />
+        <property name="java.target.version" value="1.5" />
+
+    </target>
+
+
+    <!-- Create directories for generated files if they don't already exist.  Also directories that might be empty 
+         as StarTeam will not create them.  -->
+    <target name="create.directories">
+       <mkdir dir="bin"/>
+       <mkdir dir="ContractedSource"/>
+       <mkdir dir="Tests"/>
+       <mkdir dir="dist"/>
+       <mkdir dir="Libraries"/>
+       <mkdir dir="Components"/>
+       <mkdir dir="Resources"/>
+       <mkdir dir="WebServerResources"/>
+    </target>
+
+
+    <!-- Initialize paths used for tools and building  -->
+    <target name="define.paths">
+
+        <property name="frameworks.path" value="${user.home}${file.separator}Library${file.separator}Frameworks"/>
+        <property name="applications.path" value="${user.home}${file.separator}Library${file.separator}WebObjects${file.separator}Applications"/>
+        <dirname property="ant.files.path" file="${ant.file.properties}"/>
+
+        <property name="GVCJars" value="${ant.files.path}${file.separator}..${file.separator}GVCJars${file.separator}Libraries" />
+    	<path id="gvc.jars">
+	    	<fileset dir="${GVCJars}" includes="*.jar" />
+    	</path>	
+
+        <property name="gvc.ant.tasks.path" value="${GVCJars}${file.separator}GVCWOProjectAntTasks.jar" />
+        <property name="woproject.path"     value="${GVCJars}${file.separator}woproject.jar" />
+        <property name="log4j.path"         value="${GVCJars}${file.separator}log4j-1.2.14.jar" />
+        <property name="junit.path"         value="${GVCJars}${file.separator}junit.jar" />
+
+        <!-- This jar not for runtime distribution. Find the jass jar relative to this properties file. -->
+        <property name="jass.path"          value="${ant.files.path}${file.separator}..${file.separator}JassDistribution${file.separator}GVCjass.jar" />
+    </target>
+
+
+
+    <!-- Define extensions to the base Ant Tasks and Types  -->
+    <target name="define.tasks.and.types" depends="define.paths">
+
+        <!-- GVC Ant Tasks and dependancies, used for Jass -->
+        <taskdef resource="taskdef.properties">
+            <classpath>
+                <pathelement path="${gvc.ant.tasks.path}"/>
+                <pathelement path="${woproject.path}"/>
+            </classpath>
+        </taskdef>
+
+        <!-- WOProject tasks and types  -->
+        <typedef resource="typedef.properties" classpath="${woproject.path}"/>
+    	<taskdef name="woapplication" classname="org.objectstyle.woproject.ant.WOApplication"  classpath="${woproject.path}"/>
+    	<taskdef name="woframework"   classname="org.objectstyle.woproject.ant.WOFramework"    classpath="${woproject.path}"/>    	
+    	<taskdef name="wocompile"     classname="org.objectstyle.woproject.ant.WOCompile"      classpath="${woproject.path}"/>    	
+    	
+        <!-- Other Tasks -->
+   
+    </target>
+
+
+
+    <!-- Initialize classpath paths for project  -->
+    <target name="define.project.paths" depends="set.properties">
+    
+        <!-- Non-source Classpath for project -->
+        <wopath id="project.classpath">
+       		<frameworks root="User" eclipse="true" />
+            <frameworks root="Local" eclipse="true" />
+            <frameworks root="System" eclipse="true" />
+        	<path refid="gvc.jars" />
+            <fileset dir="Libraries" includes="*.jar" />
+		</wopath>
+        
+        <!-- use.dbc controls whether this is a contracted build or not.  BUT some projects can't be
+             contracted as they use syntax or features that Jass can't parse.  So each project can define
+             contracts.disabled to override a more general (e.g. when building all projects) setting of use.dbc -->
+             
+        <!-- Selects uncontracted.class.path as project.source.path if use.dbc is not defined
+             or if contracts are disabled.  -->
+        <condition property="project.source.path" value="uncontracted.class.path">
+            <or>
+                <isset property="contracts.disabled" />
+                <not>
+                    <isset property="use.dbc"/>
+                </not>
+            </or>
+        </condition>
+            
+
+        <!-- Selects contracted.class.path as project.source.path if use.dbc is defined
+             and contracts are not disabled.  -->
+        <condition property="project.source.path" value="contracted.class.path">
+            <and>
+                <isset property="use.dbc"/>
+                <not>
+                    <isset property="contracts.disabled" />
+                </not>
+            </and>
+        </condition>
+    
+   		<condition property="project.source.path.not.set">
+            <not>
+                <isset property="project.source.path" />
+            </not>
+		</condition>
+		<fail message="project.source.path not set, use.dbc = ${use.dbc}, contracts.disabled = ${contracts.disabled}." 
+              if="project.source.path.not.set" />
+    </target>
+
+
+        
+    <!-- Initialize properties with values unique to applications  -->
+    <target name="set_application_properties" depends="load.properties" if="is.wo.app" >
+        <property name="product.dir" value="${project.name}.woa"/>
+        <property name="build.product.dir" value="${build.dir}${file.separator}${product.dir}"/>
+        <property name="project.working.directory" value="${build.product.dir}"/>
+        <property name="install.dir" value="${applications.path}"/>
+    </target>
+
+
+    <!-- Initialize properties with values unique to frameworks  -->
+    <target name="set_framework_properties" depends="load.properties" if="is.wo.framework" >
+        <property name="product.dir" value="${project.name}.framework"/>
+        <property name="build.product.dir" value="${build.dir}${file.separator}${product.dir}"/>
+        <property name="project.working.directory" value="${build.product.dir}${file.separator}Resources${file.separator}Java"/>
+        <property name="install.dir" value="${frameworks.path}"/>
+    </target>
+
+
+    <!-- Prepare for install  -->
+    <target name="init.install">
+         <tstamp/>
+        <property name="dest.dir" value="${install.dir}"/>
+    </target>
+
+
+    <!-- Prepare for local build  -->
+    <target name="init.build">
+         <tstamp/>
+        <property name="dest.dir" value="${build.dir}"/>
+    </target>
+
+</project>

@@ -1,0 +1,42 @@
+ActionName: WOString {
+	value = actionName;
+}
+
+ConfirmationForm: WOForm {
+	multipleSubmit = true;
+}
+
+CustomMessage: WOString {
+	value = customMessage;
+	escapeHTML = false;
+}
+
+DefaultMessageConditional: WOConditional {
+	condition = shouldDisplayDefaultMessage;
+}
+DeleteButton: WOSubmitButton {
+	action = doCallerActionIfConfirmed;
+	value = confirmString;
+}
+Descriptor: WOString {
+	value = descriptor;
+}
+
+DisplayCustomMessageConditional: WOConditional {
+	condition = shouldDisplayDefaultMessage;
+	negate = true;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Confirm Action";
+	isAdmin = false;
+	isConfigPage = false;
+}
+Message: WOString {
+	value = message;
+}
+SubmitButton: WOSubmitButton {
+	action = doCallerActionIfDenied;
+	value = denyString;
+}

@@ -1,0 +1,125 @@
+<project name="CommonBuildInstallPackages" default="build_packages">
+
+<!--
+
+This build file is not intended to be called directly.  It is intended to be
+called from the BuildInstallPackage.xml file under each installation's
+directory below Custom/.
+
+This build file creates the custom deployment packages (gzipped tar files) for
+a specific installation of GVC SiteMaker and then packages them and the 
+generic resources into one file.
+ 
+This build file expects some properties to be set (done in the 
+BuildInstallPackage.xml file) before it is called:
+* use.dbc - set to true to use (previously built) contracted GVCSMCustom,
+  leave unset to rebuild a clean version.
+
+* use.kerberos - set to true to include GVCKerberos framework
+
+* installation.name - set to the name of the installation to build.  
+  This should match the end of the path under GVCSiteMaker/Custom where 
+  the installation's files are located
+
+* installation.version - set to the string to include in the package name to 
+  indicate the version of the build.  
+
+Notes:
+- see the init.properties target for path settings
+
+- this script does NOT handle building the shared frameworks and applications.
+
+-->
+
+	<!-- Default target, does a full build and package -->
+	<target name="build_packages" depends="init.properties, build.code, package.files, cleanup"/>
+
+	<!-- Setup properties for building packages -->
+	<target name="init.properties">
+		<!-- This assumes we are building from tbe Deployment directory -->
+		<property name="GVCSiteMaker.path" value="../.."/>
+		<property name="custom.installation.path" value="${GVCSiteMaker.path}/Custom/${installation.name}"/>
+
+		<property name="deployment.path" value="${GVCSiteMaker.path}/Deployment"/>
+		<property name="install.path" value="${deployment.path}/Install"/>
+		<property name="archive.path" value="${install.path}/Archive"/>
+
+		<condition property="installation.version.check.failed">
+			<not>
+				<isset property="installation.version"/>
+    		</not>
+  		</condition>
+  		<fail message="Please run Ant with -Dinstallation.version=X." if="installation.version.check.failed"/>
+
+	</target>
+
+	<!--  Do a clean build of the frameworks and application  -->
+	<target name="build.code" depends="init.properties">
+		<property name="target" value="full.build"/>
+	    <ant dir="${custom.installation.path}/GVCSMCustom" target="clean" inheritAll="true"/>
+	    <ant dir="${custom.installation.path}/GVCSMCustom" target="${target}" inheritAll="true"/>
+	</target>
+
+
+	<!-- Packages up the built products  -->
+	<target name="package.files" depends="init.properties">
+
+		<!-- Clean up any previous build products and create the target directories for the packages and scripts -->
+		<delete>
+			<fileset dir="${custom.installation.path}" includes="GVC*.gz"/>
+			<fileset dir="${custom.installation.path}" includes="GVC*.tar"/>
+			<fileset dir="${custom.installation.path}" includes="${installation.name}*.gz"/>
+			<fileset dir="${custom.installation.path}" includes="${installation.name}*.tar"/>
+		</delete>
+		<mkdir dir="${custom.installation.path}/DocumentRoot"/>
+		<mkdir dir="${custom.installation.path}/GVCSMCustom/StyleTemplates"/>
+
+		<!-- Tar up Framework -->
+		<tar	longfile="gnu"
+				destfile="${custom.installation.path}/GVCSiteMakerCustomFrameworks.tar.gz"
+				compression="gzip">
+			<tarfileset dir="${custom.installation.path}/GVCSMCustom/dist" username="root" group="root">
+				<include name="GVCSMCustom.framework/**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Tar up DocumentRoot -->
+		<tar	longfile="gnu"
+				destfile="${custom.installation.path}/GVCSiteMakerCustomDocumentRoot.tar.gz"
+				compression="gzip">
+			<tarfileset dir="${custom.installation.path}/DocumentRoot" username="root" group="root">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Copy custom stuff to main directory for ease of tarring. -->
+		<copy todir="${archive.path}">
+			<fileset dir="${custom.installation.path}" includes="*.tar.gz"/>
+		</copy>
+
+		<!-- Build final install package -->
+		<tar	longfile="gnu"
+				destfile="${custom.installation.path}/${installation.name}GVCSiteMakerInstall_${installation.version}.tar.gz"
+				compression="gzip">
+			<tarfileset dir="${deployment.path}" username="root" group="root">
+				<include name="ReadMeFirst.html"/>
+				<include name="Install/**"/>
+				<exclude name="Install/**/GVCKerberos.tar.gz" unless="use.kerberos"/>
+				<exclude name="Install/Script/*.sh"/>
+			</tarfileset>
+			<tarfileset dir="${deployment.path}" mode="755" username="root" group="root">
+				<include name="Install/Script/*.sh"/>
+			</tarfileset>
+		</tar>
+	</target>
+
+	<!-- Remove working files -->
+	<target name="cleanup">
+		<delete>
+			<fileset dir="${custom.installation.path}" includes="GVCS*.gz"/>
+			<fileset dir="${custom.installation.path}" includes="GVCS*.tar"/>
+			<fileset dir="${archive.path}" includes="GVCSiteMakerCustom*.tar"/>
+		</delete>
+	</target>
+
+</project>

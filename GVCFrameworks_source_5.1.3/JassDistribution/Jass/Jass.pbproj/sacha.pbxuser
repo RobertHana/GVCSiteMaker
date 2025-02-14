@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	00E6828EFEC88D1A11DB9C8B = {
+		activeBuildStyle = 130F8B95001BDF0A11CA292A;
+		activeExecutable = 130F8B98001BDF0A11CA292A;
+		activeTarget = 130F8B90001BDF0A11CA292A;
+		addToTargets = (
+			130F8B90001BDF0A11CA292A,
+		);
+		breakpoints = (
+			F52A59ED02BD849101E7A569,
+			F52A59EE02BD973F01E7A569,
+			F52A59EF02BD976B01E7A569,
+			F52A59F002BD98AC01E7A569,
+			F52A59F102BD9F0D01E7A569,
+		);
+		executables = (
+			130F8B98001BDF0A11CA292A,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 71537037;
+			PBXWorkspaceContents = (
+				{
+					LeftSlideOut = {
+						Split0 = {
+							Split0 = {
+								NavContent0 = {
+									bookmark = 99B48D2E0443ADB000DAC583;
+									history = (
+										99B48D070443ADB000DAC583,
+										99B48D080443ADB000DAC583,
+										99B48D090443ADB000DAC583,
+										99B48D0A0443ADB000DAC583,
+										99B48D0B0443ADB000DAC583,
+										99B48D0C0443ADB000DAC583,
+										99B48D0D0443ADB000DAC583,
+										99B48D0E0443ADB000DAC583,
+										99B48D0F0443ADB000DAC583,
+										99B48D100443ADB000DAC583,
+										99B48D110443ADB000DAC583,
+										99B48D120443ADB000DAC583,
+										99B48D130443ADB000DAC583,
+										99B48D140443ADB000DAC583,
+										99B48D150443ADB000DAC583,
+										99B48D160443ADB000DAC583,
+										99B48D170443ADB000DAC583,
+										99B48D180443ADB000DAC583,
+										99B48D190443ADB000DAC583,
+										99B48D1A0443ADB000DAC583,
+									);
+									prevStack = (
+										99B48D1B0443ADB000DAC583,
+										99B48D1C0443ADB000DAC583,
+										99B48D1D0443ADB000DAC583,
+										99B48D1E0443ADB000DAC583,
+										99B48D1F0443ADB000DAC583,
+										99B48D200443ADB000DAC583,
+										99B48D210443ADB000DAC583,
+										99B48D220443ADB000DAC583,
+										99B48D230443ADB000DAC583,
+										99B48D240443ADB000DAC583,
+										99B48D250443ADB000DAC583,
+										99B48D260443ADB000DAC583,
+										99B48D270443ADB000DAC583,
+										99B48D280443ADB000DAC583,
+										99B48D290443ADB000DAC583,
+										99B48D2A0443ADB000DAC583,
+										99B48D2B0443ADB000DAC583,
+										99B48D2C0443ADB000DAC583,
+										99B48D2D0443ADB000DAC583,
+									);
+								};
+								NavCount = 1;
+								NavGeometry0 = {
+									Frame = "{{0, 0}, {572, 374}}";
+									NavBarVisible = YES;
+								};
+								NavSplitVertical = NO;
+							};
+							SplitCount = 1;
+							Tab1 = {
+								Debugger = {
+									Split0 = {
+										SplitCount = 2;
+									};
+									SplitCount = 1;
+									TabCount = 2;
+								};
+								LauncherConfigVersion = 7;
+							};
+							Tab2 = {
+								LauncherConfigVersion = 3;
+								Runner = {
+								};
+							};
+							TabCount = 5;
+						};
+						SplitCount = 1;
+						Tab1 = {
+							OptionsSetName = "Hierarchy, all classes";
+						};
+						TabCount = 5;
+					};
+				},
+			);
+			PBXWorkspaceGeometries = (
+				{
+					ContentSize = "{856, 766}";
+					LeftSlideOut = {
+						ActiveTab = 0;
+						ActiveTabName = PBXGroupTreeModule;
+						Collapsed = NO;
+						Frame = "{{0, 23}, {856, 743}}";
+						Split0 = {
+							ActiveTab = 2;
+							ActiveTabName = PBXBuildResultsModule;
+							Collapsed = NO;
+							Frame = "{{284, 0}, {572, 743}}";
+							Split0 = {
+								Frame = "{{0, 369}, {572, 374}}";
+							};
+							SplitCount = 1;
+							Tab0 = {
+								Frame = "{{0, 0}, {572, 214}}";
+							};
+							Tab1 = {
+								Debugger = {
+									Collapsed = NO;
+									Frame = "{{0, 0}, {572, 150}}";
+									Split0 = {
+										Frame = "{{0, 24}, {572, 126}}";
+										Split0 = {
+											Frame = "{{0, 0}, {279, 126}}";
+										};
+										Split1 = {
+											DebugVariablesTableConfiguration = (
+												Name,
+												123,
+												Value,
+												85,
+												Summary,
+												62.123,
+											);
+											Frame = "{{288, 0}, {284, 126}}";
+										};
+										SplitCount = 2;
+									};
+									SplitCount = 1;
+									Tab0 = {
+										Frame = "{{0, 0}, {100, 50}}";
+									};
+									Tab1 = {
+										Frame = "{{0, 0}, {100, 50}}";
+									};
+									TabCount = 2;
+									TabsVisible = YES;
+								};
+								Frame = "{{0, 0}, {572, 125}}";
+								LauncherConfigVersion = 7;
+							};
+							Tab2 = {
+								Frame = "{{0, 0}, {572, 126}}";
+								LauncherConfigVersion = 3;
+								Runner = {
+									Frame = "{{0, 0}, {572, 126}}";
+								};
+							};
+							Tab3 = {
+								BuildMessageFrame = "{{0, 0}, {574, 88}}";
+								BuildTranscriptFrame = "{{0, 97}, {574, 226}}";
+								BuildTranscriptFrameExpanded = YES;
+								Frame = "{{0, 0}, {572, 345}}";
+							};
+							Tab4 = {
+								Frame = "{{0, 0}, {572, 295}}";
+							};
+							TabCount = 5;
+							TabsVisible = YES;
+						};
+						SplitCount = 1;
+						Tab0 = {
+							Frame = "{{0, 0}, {260, 743}}";
+							GroupTreeTableConfiguration = (
+								TargetStatusColumn,
+								18,
+								MainColumn,
+								227,
+							);
+						};
+						Tab1 = {
+							ClassesFrame = "{{0, 0}, {247, 330}}";
+							ClassesTreeTableConfiguration = (
+								PBXBookColumnIdentifier,
+								20,
+								PBXClassColumnIdentifier,
+								204,
+							);
+							Frame = "{{0, 0}, {245, 549}}";
+							MembersFrame = "{{0, 339}, {247, 210}}";
+							MembersTreeTableConfiguration = (
+								PBXBookColumnIdentifier,
+								20,
+								PBXMethodColumnIdentifier,
+								203,
+							);
+						};
+						Tab2 = {
+							Frame = "{{0, 0}, {226, 549}}";
+						};
+						Tab3 = {
+							Frame = "{{0, 0}, {191, 549}}";
+							TargetTableConfiguration = (
+								ActiveObject,
+								16,
+								ObjectNames,
+								202.296,
+							);
+						};
+						Tab4 = {
+							BreakpointsTreeTableConfiguration = (
+								breakpointColumn,
+								138,
+								enabledColumn,
+								31,
+							);
+							Frame = "{{0, 0}, {191, 549}}";
+						};
+						TabCount = 5;
+						TabsVisible = YES;
+					};
+					NavBarShownByDefault = YES;
+					StatusViewVisible = YES;
+					Template = F5F68CF101725D4C0D7A8F4C;
+					ToolbarVisible = YES;
+					WindowLocation = "{427, 4}";
+				},
+			);
+			PBXWorkspaceStateSaveDate = 71537037;
+		};
+		perUserProjectItems = {
+			99B48D070443ADB000DAC583 = 99B48D070443ADB000DAC583;
+			99B48D080443ADB000DAC583 = 99B48D080443ADB000DAC583;
+			99B48D090443ADB000DAC583 = 99B48D090443ADB000DAC583;
+			99B48D0A0443ADB000DAC583 = 99B48D0A0443ADB000DAC583;
+			99B48D0B0443ADB000DAC583 = 99B48D0B0443ADB000DAC583;
+			99B48D0C0443ADB000DAC583 = 99B48D0C0443ADB000DAC583;
+			99B48D0D0443ADB000DAC583 = 99B48D0D0443ADB000DAC583;
+			99B48D0E0443ADB000DAC583 = 99B48D0E0443ADB000DAC583;
+			99B48D0F0443ADB000DAC583 = 99B48D0F0443ADB000DAC583;
+			99B48D100443ADB000DAC583 = 99B48D100443ADB000DAC583;
+			99B48D110443ADB000DAC583 = 99B48D110443ADB000DAC583;
+			99B48D120443ADB000DAC583 = 99B48D120443ADB000DAC583;
+			99B48D130443ADB000DAC583 = 99B48D130443ADB000DAC583;
+			99B48D140443ADB000DAC583 = 99B48D140443ADB000DAC583;
+			99B48D150443ADB000DAC583 = 99B48D150443ADB000DAC583;
+			99B48D160443ADB000DAC583 = 99B48D160443ADB000DAC583;
+			99B48D170443ADB000DAC583 = 99B48D170443ADB000DAC583;
+			99B48D180443ADB000DAC583 = 99B48D180443ADB000DAC583;
+			99B48D190443ADB000DAC583 = 99B48D190443ADB000DAC583;
+			99B48D1A0443ADB000DAC583 = 99B48D1A0443ADB000DAC583;
+			99B48D1B0443ADB000DAC583 = 99B48D1B0443ADB000DAC583;
+			99B48D1C0443ADB000DAC583 = 99B48D1C0443ADB000DAC583;
+			99B48D1D0443ADB000DAC583 = 99B48D1D0443ADB000DAC583;
+			99B48D1E0443ADB000DAC583 = 99B48D1E0443ADB000DAC583;
+			99B48D1F0443ADB000DAC583 = 99B48D1F0443ADB000DAC583;
+			99B48D200443ADB000DAC583 = 99B48D200443ADB000DAC583;
+			99B48D210443ADB000DAC583 = 99B48D210443ADB000DAC583;
+			99B48D220443ADB000DAC583 = 99B48D220443ADB000DAC583;
+			99B48D230443ADB000DAC583 = 99B48D230443ADB000DAC583;
+			99B48D240443ADB000DAC583 = 99B48D240443ADB000DAC583;
+			99B48D250443ADB000DAC583 = 99B48D250443ADB000DAC583;
+			99B48D260443ADB000DAC583 = 99B48D260443ADB000DAC583;
+			99B48D270443ADB000DAC583 = 99B48D270443ADB000DAC583;
+			99B48D280443ADB000DAC583 = 99B48D280443ADB000DAC583;
+			99B48D290443ADB000DAC583 = 99B48D290443ADB000DAC583;
+			99B48D2A0443ADB000DAC583 = 99B48D2A0443ADB000DAC583;
+			99B48D2B0443ADB000DAC583 = 99B48D2B0443ADB000DAC583;
+			99B48D2C0443ADB000DAC583 = 99B48D2C0443ADB000DAC583;
+			99B48D2D0443ADB000DAC583 = 99B48D2D0443ADB000DAC583;
+			99B48D2E0443ADB000DAC583 = 99B48D2E0443ADB000DAC583;
+		};
+		projectwideBuildSettings = {
+			SYMROOT = /Users/Shared/BuildProducts;
+		};
+		wantsIndex = 1;
+		wantsSCM = -1;
+	};
+	130F8B90001BDF0A11CA292A = {
+		activeExec = 0;
+	};
+	130F8B98001BDF0A11CA292A = {
+		activeArgIndex = 0;
+		activeArgIndices = (
+			YES,
+		);
+		argumentStrings = (
+			"jass.Jass -contract [pre,post,inv,loop,check,refine,forall] -verbose -d /Users/Shared/BuildProducts/GVCJEOFValidation.build/ApplicationServer.build/DerivedSources/jass /Users/Shared/BuildProducts/GVCJEOFValidation.build/ApplicationServer.build/DerivedSources/jass/orig/net/global_village/eofvalidation/EOFValidationException.java",
+		);
+		configStateDict = {
+		};
+		debuggerPlugin = JavaDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+			{
+				active = YES;
+				name = CLASSPATH;
+				value = "/Users/Shared/BuildProducts/GVCJEOFValidation.build/ApplicationServer.build/JavaClasses:/Users/Shared/BuildProducts/GVCJFoundation.framework/Resources/Java:/Users/Shared/BuildProducts/JUnit.framework/Resources/Java:/System/Library/Frameworks/JavaJDBCAdaptor.framework/Resources/Java:/System/Library/Frameworks/JavaEOControl.framework/Resources/Java:/System/Library/Frameworks/JavaEOAccess.framework/Resources/Java:/System/Library/Frameworks/JavaXML.framework/Resources/Java:/Users/Shared/BuildProducts/GVCJEOFExtensions.framework/Resources/Java:/System/Library/Frameworks/JavaWebObjects.framework/Resources/Java:/System/Library/Frameworks/JavaFoundation.framework/Resources/Java:/Users/Shared/BuildProducts/GVCJTestEOModelBase.framework/Resources/Java:/Users/Shared/BuildProducts/GVCJTestEOModelSubClass.framework/Resources/Java:/Library/Frameworks/FrontBasePlugIn.framework/Resources/Java:/Users/Shared/BuildProducts/jass.jar:/Users/Shared/BuildProducts/GVCJFoundation.framework/Resources/Java/GVCJFoundation.jar:/Users/Shared/BuildProducts/JUnit.framework/Resources/Java/JUnit.jar:/System/Library/Frameworks/JavaJDBCAdaptor.framework/Resources/Java/javajdbcadaptor.jar:/System/Library/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar:/System/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar:/System/Library/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar:/Users/Shared/BuildProducts/GVCJEOFExtensions.framework/Resources/Java/GVCJEOFExtensions.jar:/System/Library/Frameworks/JavaWebObjects.framework/Resources/Java/javawebobjects.jar:/System/Library/Frameworks/JavaFoundation.framework/Resources/Java/javafoundation.jar:/Users/Shared/BuildProducts/GVCJTestEOModelBase.framework/Resources/Java/GVCJTestEOModelBase.jar:/Users/Shared/BuildProducts/GVCJTestEOModelSubClass.framework/Resources/Java/GVCJTestEOModelSubClass.jar:/Library/Frameworks/FrontBasePlugIn.framework/Resources/Java/FrontBasePlugIn.jar:/Users/Shared/BuildProducts/GVCJEOFValidation.build/ApplicationServer.build/DerivedSources/jass/orig:/Users/sacha/Library/Java:/Library/Java:/System/Library/Java:/Network/Library/Java:/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Classes/ui.jar";
+			},
+		);
+		isa = PBXExecutable;
+		launchableReference = 130F8B99001BDF0A11CA292A;
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	130F8B99001BDF0A11CA292A = {
+		isa = PBXExecutableFileReference;
+		name = java;
+		path = /System/Library/Frameworks/JavaVM.framework/Commands/java;
+		refType = 0;
+	};
+	99B48D070443ADB000DAC583 = {
+		fRef = 65A3FF4802AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassBreakStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	99B48D080443ADB000DAC583 = {
+		fRef = 65A3FF9102AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassReturnStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 0;
+	};
+	99B48D090443ADB000DAC583 = {
+		fRef = 65A3FF9002AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRetryStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	99B48D0A0443ADB000DAC583 = {
+		fRef = 65A3FF8F02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRescueClause.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 437;
+		vrLoc = 0;
+	};
+	99B48D0B0443ADB000DAC583 = {
+		fRef = 65A3FF8E02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRescueCatch.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 433;
+		vrLoc = 0;
+	};
+	99B48D0C0443ADB000DAC583 = {
+		fRef = 65A3FF8D02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRequireClause.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 441;
+		vrLoc = 0;
+	};
+	99B48D0D0443ADB000DAC583 = {
+		fRef = 65A3FF8C02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRelationalExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 469;
+		vrLoc = 0;
+	};
+	99B48D0E0443ADB000DAC583 = {
+		fRef = 65A3FF8B02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessJavaBlock.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 453;
+		vrLoc = 0;
+	};
+	99B48D0F0443ADB000DAC583 = {
+		fRef = 65A3FF8A02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 0;
+	};
+	99B48D100443ADB000DAC583 = {
+		fRef = 65A3FF8902AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessDeclarator.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 0;
+	};
+	99B48D110443ADB000DAC583 = {
+		fRef = 65A3FFA102AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassVariableDeclarator.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	99B48D120443ADB000DAC583 = {
+		fRef = 65A3FFAA02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassUnmodifiedClassDeclaration.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	99B48D130443ADB000DAC583 = {
+		fRef = 65A3FFAD02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassUnmodifiedInterfaceDeclaration.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 509;
+		vrLoc = 0;
+	};
+	99B48D140443ADB000DAC583 = {
+		fRef = 65A3FFB802AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassAssertionRangeExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 0;
+	};
+	99B48D150443ADB000DAC583 = {
+		fRef = 65A3FFBD02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassAssertionExclusiveOrExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 509;
+		vrLoc = 0;
+	};
+	99B48D160443ADB000DAC583 = {
+		fRef = 65A3FFCF02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessIfElseExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 481;
+		vrLoc = 0;
+	};
+	99B48D170443ADB000DAC583 = {
+		fRef = 65A3FEEB02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "Assertion.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 0;
+	};
+	99B48D180443ADB000DAC583 = {
+		fRef = 65A3FF0702AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "FileBounded.java: 33";
+		rLen = 0;
+		rLoc = 475;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 0;
+	};
+	99B48D190443ADB000DAC583 = {
+		fRef = 65A3FFDA02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassClassWriter.java: 7";
+		rLen = 0;
+		rLoc = 166;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	99B48D1A0443ADB000DAC583 = {
+		fRef = 65A3FEBF02AC2ADC0098072B;
+		isa = PBXBookmark;
+	};
+	99B48D1B0443ADB000DAC583 = {
+		fRef = 65A3FF4802AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassBreakStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	99B48D1C0443ADB000DAC583 = {
+		fRef = 65A3FF9102AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassReturnStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 0;
+	};
+	99B48D1D0443ADB000DAC583 = {
+		fRef = 65A3FF9002AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRetryStatement.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	99B48D1E0443ADB000DAC583 = {
+		fRef = 65A3FF8F02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRescueClause.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 437;
+		vrLoc = 0;
+	};
+	99B48D1F0443ADB000DAC583 = {
+		fRef = 65A3FF8E02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRescueCatch.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 433;
+		vrLoc = 0;
+	};
+	99B48D200443ADB000DAC583 = {
+		fRef = 65A3FF8D02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRequireClause.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 441;
+		vrLoc = 0;
+	};
+	99B48D210443ADB000DAC583 = {
+		fRef = 65A3FF8C02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassRelationalExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 469;
+		vrLoc = 0;
+	};
+	99B48D220443ADB000DAC583 = {
+		fRef = 65A3FF8B02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessJavaBlock.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 453;
+		vrLoc = 0;
+	};
+	99B48D230443ADB000DAC583 = {
+		fRef = 65A3FF8A02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 0;
+	};
+	99B48D240443ADB000DAC583 = {
+		fRef = 65A3FF8902AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessDeclarator.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 0;
+	};
+	99B48D250443ADB000DAC583 = {
+		fRef = 65A3FFA102AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassVariableDeclarator.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 0;
+	};
+	99B48D260443ADB000DAC583 = {
+		fRef = 65A3FFAA02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassUnmodifiedClassDeclaration.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	99B48D270443ADB000DAC583 = {
+		fRef = 65A3FFAD02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassUnmodifiedInterfaceDeclaration.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 509;
+		vrLoc = 0;
+	};
+	99B48D280443ADB000DAC583 = {
+		fRef = 65A3FFB802AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassAssertionRangeExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 0;
+	};
+	99B48D290443ADB000DAC583 = {
+		fRef = 65A3FFBD02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassAssertionExclusiveOrExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 509;
+		vrLoc = 0;
+	};
+	99B48D2A0443ADB000DAC583 = {
+		fRef = 65A3FFCF02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassProcessIfElseExpression.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 481;
+		vrLoc = 0;
+	};
+	99B48D2B0443ADB000DAC583 = {
+		fRef = 65A3FEEB02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "Assertion.java: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 0;
+	};
+	99B48D2C0443ADB000DAC583 = {
+		fRef = 65A3FF0702AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "FileBounded.java: 33";
+		rLen = 0;
+		rLoc = 475;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 0;
+	};
+	99B48D2D0443ADB000DAC583 = {
+		fRef = 65A3FFDA02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "JassClassWriter.java: 7";
+		rLen = 0;
+		rLoc = 166;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	99B48D2E0443ADB000DAC583 = {
+		fRef = 65A3FEBF02AC2ADC0098072B;
+		isa = PBXTextBookmark;
+		name = "Jass.java: 36";
+		rLen = 0;
+		rLoc = 1090;
+		rType = 0;
+		vrLen = 1151;
+		vrLoc = 400;
+	};
+	F52A59ED02BD849101E7A569 = {
+		fileReference = 65A3FEF902AC2ADC0098072B;
+		isa = PBXFileBreakpoint;
+		lineNumber = 145;
+		state = 1;
+	};
+	F52A59EE02BD973F01E7A569 = {
+		fileReference = 65A3FF1902AC2ADC0098072B;
+		isa = PBXFileBreakpoint;
+		lineNumber = 428;
+		state = 2;
+	};
+	F52A59EF02BD976B01E7A569 = {
+		fileReference = 65A3FF1902AC2ADC0098072B;
+		isa = PBXFileBreakpoint;
+		lineNumber = 465;
+		state = 1;
+	};
+	F52A59F002BD98AC01E7A569 = {
+		fileReference = 65A3FF1902AC2ADC0098072B;
+		isa = PBXFileBreakpoint;
+		lineNumber = 450;
+		state = 2;
+	};
+	F52A59F102BD9F0D01E7A569 = {
+		fileReference = 65A3FF1902AC2ADC0098072B;
+		isa = PBXFileBreakpoint;
+		lineNumber = 346;
+		state = 1;
+	};
+}

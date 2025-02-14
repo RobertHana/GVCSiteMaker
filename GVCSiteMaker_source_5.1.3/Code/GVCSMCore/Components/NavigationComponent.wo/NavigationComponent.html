@@ -1,0 +1,62 @@
+<ul>
+  <webobject name = "UserIsLoggedInConditional">
+    <li class = "level1InactiveTabContainer">
+      <webobject name = "MyWebsitesHyperlink">My Websites</webobject>
+    </li>
+
+    <webobject name = "IsAdminConditional">
+      <webobject name = "AdministrationNotSelectedConditional">
+        <li class = "level1InactiveTabContainer">
+          <webobject name = "AdministrationHyperlink">Administration</webobject>
+        </li>
+      </webobject>
+      <webobject name = "AdministrationSelectedConditional">
+        <li class = "level1ActiveTabContainer">
+          <span>Administration</span>
+        </li>
+      </webobject>
+    </webobject>
+
+    <webobject name = "UserInfoNotSelectedConditional">
+      <li class = "level1InactiveTabContainer">
+        <webobject name = "UserInfoHyperlink">My User Info</webobject>
+      </li>
+    </webobject>
+    <webobject name = "UserInfoSelectedConditional">
+      <li class = "level1ActiveTabContainer">
+        <span>My User Info</span>
+      </li>
+    </webobject>
+
+    <webobject name = "ShowWebsiteRequestsLinkConditional">
+      <webobject name = "WebsiteRequestsNotSelectedConditional">
+        <li class = "level1InactiveTabContainer">
+          <webobject name = "WebsiteRequestHyperlink">Website Requests</webobject>
+        </li>
+      </webobject>
+      <webobject name = "WebsiteRequestsSelectedConditional">
+        <li class = "level1ActiveTabContainer">
+          <span>Website Requests</span>
+        </li>
+      </webobject>
+    </webobject>
+  </webobject>
+
+  <webobject name = "SupportNotSelectedConditional">
+    <li class = "level1InactiveTabContainer">
+      <webobject name = "SupportHyperlink">Support</webobject>
+    </li>
+  </webobject>
+  <webobject name = "SupportSelectedConditional">
+    <li class = "level1ActiveTabContainer">
+      <span>Support</span>
+    </li>
+  </webobject>
+
+  <li class = "swanLogoContainer"> <img src = "/GVCSiteMaker/Images/swan.png" alt = "origami swan" /> </li>
+  <li class = "currentUserInfoContainer">
+    Current user: 
+    <webobject name = "UserNameString" />
+    <webobject name = "IsLoggedInConditional">(<webobject name = "LogoutHyperlink">Logout</webobject>)</webobject>
+  </li>
+</ul>

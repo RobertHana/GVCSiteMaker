@@ -1,0 +1,34 @@
+{
+    attributes = (
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFkey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (tableID, websiteFkey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (table, website); 
+    externalName = "SM_WEBSITE_TABLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = WebsiteTable; 
+    primaryKeyAttributes = (tableID, websiteFkey); 
+    relationships = (
+        {
+            destination = Table; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = table; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFkey; }); 
+            name = website; 
+        }
+    ); 
+}

@@ -1,0 +1,64 @@
+DAUrlConditional: WOConditional {
+	condition = wasDirectActionUrl;
+}
+
+DismissButton: WOSubmitButton {
+	action = returnPage;
+	value = "Go Back";
+}
+DismissForm: WOForm {
+}
+DuplicateFileConditional: WOConditional {
+	condition = isDuplicateFile;
+}
+DuplicateFileNameString: WOString {
+	value = duplicateFile.uploadedFilename;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = false;
+	pageTitle = pageTitle;
+	isAdmin = false;
+	isConfigPage = false;
+	pageType = "com.gvcsitemaker.core.components.ErrorPage";
+	headerString = robotShouldNotIndexHeaderString;
+}
+
+ErrorLogNumberString: WOString {
+	value = errorLog.oidAsString;
+}
+
+HasErrorLogConditional: WOConditional {
+	condition = errorLog;
+}
+MessageString: WOString {
+	value = message;
+}
+
+ModifyFileLink: WOHyperlink {
+	action = modifyFile;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+ReasonString: WOString {
+	value = reason;
+	escapeHTML = false;
+}
+
+RecentlyVisitedSites: RecentlyVisitedSites {
+}
+
+RetryDAHyperlink: WOHyperlink {
+	href = session.context.request.uri;
+}
+
+SessionTerminatedConditional: WOConditional {
+	condition = shouldTerminateSession;
+}
+
+hasReturnPage: WOConditional {
+    condition = hasReturnPage;
+}

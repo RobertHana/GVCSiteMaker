@@ -1,0 +1,10 @@
+{
+	"AttributeValidationTestSubClass.displayName" = "Test Entity For Attribute Validation";
+	"AttributeValidationTestSubClass.invalidValue" = "Validation Test: Entity level invalid value.";
+
+	// Do not define this:" AttributeValidationTestEntity.failedToLock" = "Validation Test: Entity lock failure.";
+
+	// Strings for localization engine tests
+	"AttributeValidationTestSubClass.localizationTestProperty.invalidValue" = "Localization Test: most derived class invalid value.";
+	// Do not define this: "AttributeValidationTestSubClass.localizationTestProperty.nullNotAllowed";
+}

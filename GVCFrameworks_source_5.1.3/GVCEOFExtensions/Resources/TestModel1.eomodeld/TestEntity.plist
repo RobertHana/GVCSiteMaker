@@ -1,0 +1,13 @@
+{
+    attributes = (
+        {columnName = "the_name"; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, name); 
+    className = "net.global_village.eofextensions.tests.TestEntity"; 
+    classProperties = (name); 
+    externalName = "SIMPLE_TEST_ENTITY"; 
+    fetchSpecificationDictionary = {}; 
+    name = TestEntity; 
+    primaryKeyAttributes = (theID); 
+}

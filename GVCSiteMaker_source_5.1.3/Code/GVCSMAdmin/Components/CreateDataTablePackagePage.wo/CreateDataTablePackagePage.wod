@@ -1,0 +1,250 @@
+CancelButton: WOSubmitButton {
+	value = "Cancel";
+	action = returnToManageWebsitePage;
+}
+
+CheckAllSections: WOSubmitButton {
+	action = checkAllSections;
+	value = "Check All";
+}
+
+CheckAllTablesButton: WOSubmitButton {
+	action = checkAllTables;
+	value = "Check All";
+}
+
+ColumnIncludedCheckBox2: WOCheckBox {
+	checked = isSectionIncluded;
+}
+
+ColumnRepetition: WORepetition {
+	item = currentColumn;
+	list = orderedColumns;
+}
+
+ColumnRepetition2: WORepetition {
+	item = currentColumn;
+	list = orderedColumns;
+}
+
+ColumnTypeString: WOString {
+	value = currentColumn.typeDescription;
+}
+
+Conditional2: WOConditional {
+	condition = aChangeLog.notes;
+}
+
+Conditional3: WOConditional {
+	condition = messageSubjectRequiredErrorMessage;
+}
+
+Conditional4: WOConditional {
+	condition = aChangeLog.changes;
+}
+
+CreateTableForm: WOForm {
+	multipleSubmit = true;
+}
+
+DataIncludedCheckBox: WOCheckBox {
+	checked = isDataIncluded;
+	onClick = "this.form.submit();";
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Website Management";
+	isAdmin = true;
+}
+
+ExportPackageButton: WOSubmitButton {
+	value = "Create Package";
+	action = performPackageCreation;
+}
+
+ExportValidationErrorMessageString: WOString {
+	value = validationErrorMessage;
+}
+
+FilespaceQuota: WOString {
+	value = website.megQuota;
+}
+
+IncludeDataConditional: WOConditional {
+	condition = isRequiredToIncludeData;
+	negate = true;
+}
+
+IsFirstColumnConditional: WOConditional {
+	condition = isFirstColumn;
+}
+
+IsLastColumnConditional: WOConditional {
+	condition = isLastColumn;
+}
+
+IsNotFirstColumnConditional: WOConditional {
+	condition = isFirstColumn;
+	negate = true;
+}
+
+
+IsNotLastColumnConditional: WOConditional {
+	condition = isLastColumn;
+	negate = true;
+}
+
+IsNotRedirected: WOConditional 
+{
+	negate = true;
+	condition = website.isRedirected;
+}
+
+IsRedirected: WOConditional 
+{
+	condition = website.isRedirected;
+}
+
+MainTableConditional: WOConditional {
+	condition = displayMissingMainTableErrorMessage;
+}
+
+MainTextConditional: WOConditional {
+	condition = isMainTable;
+}
+
+ManageSite: WOSubmitButton {
+	value = "Manage";
+	action = manageWebsite;
+}
+
+MessageBodyTextArea: WOText {
+	class = "largeEntryBox";
+	value = messageBody;
+	rows = "4";
+}
+
+MessageSubjectTextField: WOTextField {
+	class = "largeEntryBox";
+	value = messageSubject;
+}
+
+MoveColumnDownHyperlink: WOHyperlink {
+	action = moveColumnDown;
+	fragmentIdentifier = "fields";
+}
+
+MoveColumnFirstHyperlink: WOHyperlink {
+	action = moveColumnFirst;
+	fragmentIdentifier = "fields";
+}
+
+MoveColumnLastHyperlink: WOHyperlink {
+	action = moveColumnLast;
+	fragmentIdentifier = "fields";
+}
+
+MoveColumnUpHyperlink: WOHyperlink {
+	action = moveColumnUp;
+	fragmentIdentifier = "fields";
+}
+
+PackageConditional: WOConditional {
+	condition = displayMissingPackageDestinationErrorMessage;
+}
+
+RelatedSectionsConditional: WOConditional {
+	condition = hasRelatedSections;
+}
+
+Repetition1: WORepetition {
+	item = aChangeLog;
+	list = changeLogs;
+}
+
+SectionNameString: WOString {
+	value = aRelatedSection.name;
+}
+
+SectionRepetition: WORepetition {
+	item = aRelatedSection;
+	list = relatedSections;
+}
+
+SendMessageSubmitButton: WOSubmitButton {
+	action = sendMessageToOwners;
+	value = "Send";
+}
+
+ShouldIncludeDataConditional: WOConditional {
+	condition = isRequiredToIncludeData;
+}
+
+ShowSetupConditional: WOConditional {
+	condition = hasSelectedMainTable;
+}
+
+SiteFoldersPopUpButton: WOPopUpButton {
+	noSelectionString = "Choose a folder...";
+	list = website.orderedUserFolders;
+	selection = packageDestination;
+	displayString = aSiteFileFolder.name;
+	item = aSiteFileFolder;
+}
+
+SiteIDToManage: WOTextField {
+	class = "largeEntryBox";
+	value = websiteIDToManage;
+}
+
+String1: WOString {
+	value = website.siteID;
+}
+
+String2: WOString {
+	value = aTable.name;
+}
+
+String3: WOString {
+	value = aChangeLog.user.userID;
+}
+
+String4: WOString {
+	value = formattedChangeLogNotes;
+	escapeHTML = false;
+}
+
+String5: WOString {
+	escapeHTML = false;
+	value = formattedChangeLogChanges;
+}
+
+String6: WOString {
+	value = aChangeLog.dateRecorded;
+	formatter = application.properties.DateAndTimeFormatter;
+}
+
+TablePopUpButton: WOPopUpButton {
+	noSelectionString = "Choose a Data Table...";
+	list = website.orderedDatabaseTables;
+	selection = mainTable;
+	onChange = "this.form.submit();";
+	displayString = aDatabaseTable.name;
+	item = aDatabaseTable;
+}
+
+TablesRepetition: WORepetition {
+	item = aTable;
+	list = mainAndRelatedTables;
+}
+
+UncheckAllButton: WOSubmitButton {
+	action = uncheckAllTables;
+	value = "Uncheck All";
+}
+
+UncheckAllSections: WOSubmitButton {
+	action = uncheckAllSections;
+	value = "Uncheck All";
+}

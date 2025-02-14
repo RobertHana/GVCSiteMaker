@@ -1,0 +1,156 @@
+<webobject name = "AjaxUpdateArea">
+  <webobject name = "ImportRecordsForm">
+    <table class="screenTitleTable" cellpadding="0" cellspacing="0" style = "width: 100%">
+      <tr>
+        <td class="screenTitleContainer">
+          <div>Import Data: <span class="highlightedText"><webobject name = "DatabaseTableNameString" /></span></div>
+        </td>
+        <td align="right" valign="top"  class="helpButtonContainer">
+          <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Data Tables" border = "0" style = "position:relative; top:3px;" />
+            Back to Data Tables</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "ImportButton" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" class = "sectionTitle"> Select File to Import:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "UploadedFileName" />
+          <webobject name = "UploadFileModalDialogOpener">Click here to select a file to import</webobject>
+        </td>
+      </tr>
+      <webobject name = "HasNoFileConditional">
+        <tr>
+          <td colspan = "2">
+            <span class = "warningText"><webobject name = "NoFileValidationMessageString" /></span>
+          </td>
+        </tr>
+      </webobject>
+      <webobject name = "IsInvalidFileConditional">
+        <tr>
+          <td colspan = "2">
+            <span class = "warningText"><webobject name = "InvalidFileValidationMessageString" /></span>
+          </td>
+        </tr>
+      </webobject>
+
+      <tr>
+        <td valign = "Top" class = "sectionTitle">Delimiter:</td>
+        <td  class="rightContentColumn">
+          <WEBOBJECT NAME=CommaDelimiterRadioButton></WEBOBJECT>Comma
+          <IMG SRC=/GVCSiteMaker/Images/spacer.gif HEIGHT=2 WIDTH=20 />
+          <WEBOBJECT NAME=TabDelimiterRadioButton></WEBOBJECT>Tab
+          <div class="descriptiveText">Choose the character in the file to be imported</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "Top" class = "sectionTitle">Skip First Line?</td>
+        <td class = "rightContentColumn">
+          <WEBOBJECT NAME=SkipFirstLineRadioButton></WEBOBJECT>Yes
+          <IMG SRC=/GVCSiteMaker/Images/spacer.gif HEIGHT=2 WIDTH=20 />
+          <WEBOBJECT NAME=DontSkipFirstLineRadioButton></WEBOBJECT>No
+          <div class="descriptiveText">Does the first line of the imported file contain the names of columns, or other information aside from data?</div>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "Top" class = "sectionTitle">Retain Existing Data in Table?</td>
+        <td class="rightContentColumn">
+          <WEBOBJECT NAME=RetainExistingDataRadioButton></WEBOBJECT>Yes <span class="descriptiveText"> - append the imported data to the existing data</span>
+          <br/>
+          <WEBOBJECT NAME=DontRetainExistingDataRadioButton></WEBOBJECT>No <span class="descriptiveText"> - delete the existing data in this table and replace it with the imported data</span>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "Top" colspan = "2" class = "sectionTitle">Select and Order fields to Import:</td>
+      </tr>
+      <webobject name = "HasNoColumnsConditional">
+        <tr>
+          <td colspan = "2">
+            <span class = "warningText"><webobject name = "NoColumnsValidationMessageString" /></span>
+          </td>
+        </tr>
+      </webobject>
+    </table>
+    <a name = "fields"></a>
+    <webobject name = "IncludeAllFieldsButton" />
+    <webobject name = "ExcludeAllFieldsButton" />
+    <webobject name = "ReorderFieldsDialog"><webobject name = "ReorderFieldsLink">Reorder Fields</webobject></webobject>
+    <webobject name = "ReorderFieldsDialogOpener" />
+
+    <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+      <tr>
+        <th class = "daShowFieldListHeading"> Include? </th>
+        <th class = "daFieldNameListHeading"> Name </th>
+        <th class = "daFieldTypeListHeading"> Type </th>
+      </tr>
+    </table>
+
+    <webobject name = "OrderedColumnsRepetition">
+      <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+        <tr>
+          <td align = "center" class="daShowFieldInList"> <webobject name = "ColumnIncludedCheckBox" /> </td>
+          <td align="center" class="daFieldNameInList">
+            <webobject name = "ColumnNameString" />
+            <webobject name = "HasTextDescriptionConditional">
+              <div class = "descriptiveText"><webobject name = "ColumnDescriptionString" /></div>
+            </webobject>
+          </td>
+          <td align="center" class="daFieldTypeInList"><webobject name = "ColumnTypeString" /></td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+</webobject>
+
+
+<webobject name = "UploadFileModalDialog">
+  <WEBOBJECT NAME="AjaxUploadFile"></WEBOBJECT><br />
+  <span class="descriptiveText">Note that only text files can be imported.<br/>
+  Import files are limited to <WEBOBJECT NAME="MaxImportFieldsString"></WEBOBJECT> fields (rows x columns).</span>
+  <span style="float:right"><webobject name = "UploadFileModalDialogCloseLink">Close</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmImportModalDialog">
+  Import <webobject name = "ConfirmImportMessageString"/>?<br />
+  <span style="float:left"><webobject name = "ConfirmImportModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmImportModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "ImportSuccessModalDialog">
+  Import successful.<br />
+  <span style="float:left"><webobject name = "ImportSuccessModalDialogOkLink">Ok</webobject></span>
+</webobject>
+
+<webobject name = "ReorderFieldsModalDialog">
+  Drag and drop to reorder the fields<br />
+  <webobject name = "ReorderUpdateArea"><webobject name = ReorderForm><webobject name = "ReorderRepetition">
+    <table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%">
+      <tr>
+        <td align="left" class="daFieldNameInList">
+          <webobject name=ReorderColumnNameString></webobject>
+        </td>
+      </tr>
+    </table>
+  </webobject></webobject></webobject>
+  <span style="float:left"><webobject name = "ReorderFieldsModalDialogDoneLink">Done</webobject></span>
+</webobject>

@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = "CAN_CHANGE_PASSWORD"; 
+            name = canChangePassword; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "IS_ACCOUNT_DISABLED"; 
+            name = isAccountDisabled; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "MUST_CHANGE_PASSWORD"; 
+            name = mustChangePassword; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {columnName = PASSWORD; name = password; prototypeName = String; width = 50; }, 
+        {columnName = "USER_ID"; name = userId; prototypeName = Key; }, 
+        {
+            columnName = "USER_NAME"; 
+            name = userName; 
+            prototypeName = String; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        userId, 
+        userName, 
+        password, 
+        mustChangePassword, 
+        canChangePassword, 
+        isAccountDisabled
+    ); 
+    className = "net.global_village.security.User"; 
+    classProperties = (
+        userName, 
+        password, 
+        mustChangePassword, 
+        canChangePassword, 
+        isAccountDisabled, 
+        groups
+    ); 
+    externalName = "GVC_USER"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (userName, password, mustChangePassword, groups); 
+    }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCUser; 
+    primaryKeyAttributes = (userId); 
+    relationships = (
+        {
+            definition = "toUsersGroups.grpToUsersGrpFk"; 
+            name = groups; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = GVCUsersGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userId; sourceAttribute = userId; }); 
+            name = toUsersGroups; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }
+    ); 
+}

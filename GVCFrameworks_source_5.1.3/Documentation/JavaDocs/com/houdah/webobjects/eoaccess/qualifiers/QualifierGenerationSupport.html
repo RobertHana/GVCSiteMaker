@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+QualifierGenerationSupport (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="QualifierGenerationSupport (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/QualifierGenerationSupport.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/PiggybackQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierUtilities.html" title="class in com.houdah.webobjects.eoaccess.qualifiers"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="QualifierGenerationSupport.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.houdah.webobjects.eoaccess.qualifiers</FONT>
+<BR>
+Class QualifierGenerationSupport</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eoaccess.EOQualifierSQLGeneration.Support
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.houdah.webobjects.eoaccess.qualifiers.QualifierGenerationSupport</B>
+</PRE>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/BestMatchQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">BestMatchQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/BestRelationshipMatchesQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">BestRelationshipMatchesQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/ExistsInRelationshipQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">ExistsInRelationshipQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/FalseQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">FalseQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/InSetQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">InSetQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/InSetQualifierSupport.ArrayInSetQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">InSetQualifierSupport.ArrayInSetQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/InSubqueryQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">InSubqueryQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/InSubqueryQualifierSupport.ArrayInSubqueryQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">InSubqueryQualifierSupport.ArrayInSubqueryQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/PeriodQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">PeriodQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/PiggybackQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">PiggybackQualifierSupport</A>, <A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/TrueQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers">TrueQualifierSupport</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.48"><B>QualifierGenerationSupport</B></A><DT>extends com.webobjects.eoaccess.EOQualifierSQLGeneration.Support</DL>
+</PRE>
+
+<P>
+<p>
+ Support methods for SQL generation.
+ </p>
+
+ <p>
+ Provides methods commonly used during in-memory evaluation or SQL generation.
+ Please accept my apologies for the lack of documentation on many of these
+ methods. Hey, you are getting code for free! It should however be
+ straightforward to match these methods with documented methods from
+ EOQualifier, EOQualifierSQLGeneration.Support and EOExpression whose
+ implementation is eased by the provide source code.
+ </p>
+
+ <p>
+ QualifierGenerationSupport also provide support for writing SQL generation
+ support classes generating sub-selects. Some of the code might appear ugly.
+ E.g. sub-queries are generated in their own separate table alias name space.
+ Table aliases are the changed to prevent conflict with enclosing query
+ elements. Yet this approach is likely to be the best available as much of
+ Apple's code in this domain is private and provides no means of customization
+ short of a rewrite.
+ </p>
+
+ <p>
+ This sample code is provided for educational purposes. It is mainly to be
+ considered a source of information and a way to spark off discussion. I make
+ no warranty, expressed or implied, about the quality of this code or its
+ usefulness in any particular situation. Use this code or any code based on it
+ at your own risk. Basically, enjoy the read, but don't blame me for anything.
+ </p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Pierre Bernard http://homepage.mac.com/i_love_my/webobjects.html</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ref/WeakReference.html?is-external=true" title="class or interface in java.lang.ref">WeakReference</A>[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#locks">locks</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#prefixes">prefixes</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/WeakHashMap.html?is-external=true" title="class or interface in java.util">WeakHashMap</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#prefixesByExpression">prefixesByExpression</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#QualifierGenerationSupport()">QualifierGenerationSupport</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#aliasPrefixForExpression(com.webobjects.eoaccess.EOSQLExpression)">aliasPrefixForExpression</A></B>(com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eoaccess.EOAttribute</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#attributeForPath(com.webobjects.eoaccess.EOEntity, java.lang.String)">attributeForPath</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eoaccess.EOSQLExpression</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#expressionForEntity(com.webobjects.eoaccess.EOEntity)">expressionForEntity</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#flattenRelationshipPath(java.lang.String, com.webobjects.eoaccess.EOEntity)">flattenRelationshipPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path,
+                                               com.webobjects.eoaccess.EOEntity&nbsp;entity)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#optimizeQualifierKeyPath(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)">optimizeQualifierKeyPath</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eoaccess.EORelationship</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#relationshipForPath(com.webobjects.eoaccess.EOEntity, java.lang.String)">relationshipForPath</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#replaceTableAliasesInExpressionBuffer(java.lang.StringBuffer, com.webobjects.eoaccess.EOSQLExpression)">replaceTableAliasesInExpressionBuffer</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/StringBuffer.html?is-external=true" title="class or interface in java.lang">StringBuffer</A>&nbsp;buffer,
+                                                                           com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#translateKeyAcrossRelationshipPath(java.lang.String, java.lang.String, com.webobjects.eoaccess.EOEntity)">translateKeyAcrossRelationshipPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;relationshipPath,
+                                                                     com.webobjects.eoaccess.EOEntity&nbsp;entity)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eoaccess.EOQualifierSQLGeneration.Support"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eoaccess.EOQualifierSQLGeneration.Support</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_flattenRelationshipPath, _optimizeQualifierKeyPath, _qualifierMigratedFromEntityRelationshipPath, _qualifierMigratedToSubEntityFromParentEntity, _schemaBasedQualifierWithRootEntity, _sqlStringForSQLExpression, _translateKeyAcrossRelationshipPath, qualifierMigratedFromEntityRelationshipPath, schemaBasedQualifierWithRootEntity, setSupportForClass, sqlStringForSQLExpression, supportForClass</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="prefixesByExpression"><!-- --></A><H3>
+prefixesByExpression</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/WeakHashMap.html?is-external=true" title="class or interface in java.util">WeakHashMap</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.52"><B>prefixesByExpression</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="prefixes"><!-- --></A><H3>
+prefixes</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[] <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.54"><B>prefixes</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="locks"><!-- --></A><H3>
+locks</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ref/WeakReference.html?is-external=true" title="class or interface in java.lang.ref">WeakReference</A>[] <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.56"><B>locks</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="QualifierGenerationSupport()"><!-- --></A><H3>
+QualifierGenerationSupport</H3>
+<PRE>
+public <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.48"><B>QualifierGenerationSupport</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="attributeForPath(com.webobjects.eoaccess.EOEntity, java.lang.String)"><!-- --></A><H3>
+attributeForPath</H3>
+<PRE>
+protected com.webobjects.eoaccess.EOAttribute <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.84"><B>attributeForPath</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="relationshipForPath(com.webobjects.eoaccess.EOEntity, java.lang.String)"><!-- --></A><H3>
+relationshipForPath</H3>
+<PRE>
+protected com.webobjects.eoaccess.EORelationship <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.115"><B>relationshipForPath</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="optimizeQualifierKeyPath(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)"><!-- --></A><H3>
+optimizeQualifierKeyPath</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.141"><B>optimizeQualifierKeyPath</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;attributeName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="translateKeyAcrossRelationshipPath(java.lang.String, java.lang.String, com.webobjects.eoaccess.EOEntity)"><!-- --></A><H3>
+translateKeyAcrossRelationshipPath</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.170"><B>translateKeyAcrossRelationshipPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath,
+                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;relationshipPath,
+                                                    com.webobjects.eoaccess.EOEntity&nbsp;entity)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="flattenRelationshipPath(java.lang.String, com.webobjects.eoaccess.EOEntity)"><!-- --></A><H3>
+flattenRelationshipPath</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.222"><B>flattenRelationshipPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path,
+                                         com.webobjects.eoaccess.EOEntity&nbsp;entity)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="replaceTableAliasesInExpressionBuffer(java.lang.StringBuffer, com.webobjects.eoaccess.EOSQLExpression)"><!-- --></A><H3>
+replaceTableAliasesInExpressionBuffer</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.283"><B>replaceTableAliasesInExpressionBuffer</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/StringBuffer.html?is-external=true" title="class or interface in java.lang">StringBuffer</A>&nbsp;buffer,
+                                                                                              com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="expressionForEntity(com.webobjects.eoaccess.EOEntity)"><!-- --></A><H3>
+expressionForEntity</H3>
+<PRE>
+protected com.webobjects.eoaccess.EOSQLExpression <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.311"><B>expressionForEntity</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="aliasPrefixForExpression(com.webobjects.eoaccess.EOSQLExpression)"><!-- --></A><H3>
+aliasPrefixForExpression</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../../src-html/com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html#line.330"><B>aliasPrefixForExpression</B></A>(com.webobjects.eoaccess.EOSQLExpression&nbsp;expression)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/QualifierGenerationSupport.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/PiggybackQualifierSupport.html" title="class in com.houdah.webobjects.eoaccess.qualifiers"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/houdah/webobjects/eoaccess/qualifiers/QualifierUtilities.html" title="class in com.houdah.webobjects.eoaccess.qualifiers"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/houdah/webobjects/eoaccess/qualifiers/QualifierGenerationSupport.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="QualifierGenerationSupport.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

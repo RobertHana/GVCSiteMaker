@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="SecureButtonComponent" wocomponentcontent="NO">
+
+		<binding name="displayText"/>
+		<binding name="cssClassName"/>
+		<binding name="isPermissable"/>
+		<binding name="action"/>
+		<binding name="name"/>
+
+		<validation message="&apos;action&apos; is a required binding">
+			<unbound name="action"/>
+		</validation>
+
+		<validation message="&apos; isPermissable &apos; is a required binding">
+			<unbound name="isPermissable"/>
+		</validation>
+
+		<validation message="&apos; displayText &apos; is a required binding">
+			<unbound name="displayText"/>
+		</validation>
+	</wo>
+</wodefinitions>

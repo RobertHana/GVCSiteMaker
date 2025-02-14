@@ -1,0 +1,88 @@
+DateRequestedString: WOString {
+	formatter = application.properties.CompressedDateFormatter;
+	value = aWebsiteRequest.dateRequested;
+}
+
+DaysToResolveString: WOString {
+	value = aWebsiteRequest.daysToResolve;
+}
+
+DeleteMarkedRequestsSubmitButton: WOSubmitButton {
+	action = deleteMarkedRequests;
+	name = "Submit";
+	value = "Delete Marked Requests";
+}
+
+DeleteRequestsForm: WOForm {
+	action = deleteMarkedRequests;
+	method = "post";
+	multipleSubmit = true;
+}
+
+DynamicBodyComponent: DynamicBodyComponent {
+	isAdmin = true;
+	pageTitle = "Manage Completed Website Requests";
+}
+
+HasBeenDeniedConditional: WOConditional {
+	condition = aWebsiteRequest.hasBeenDenied;
+}
+
+HasBeenGrantedConditional: WOConditional {
+	condition = aWebsiteRequest.hasBeenGranted;
+}
+
+HasCompletedRequestsConditional: WOConditional {
+	condition = hasCompletedRequests;
+}
+
+Hyperlink1: WOHyperlink {
+	action = manageUser;
+	disabled = isntSysAdmin;
+}
+
+ManageWebsiteHyperlink: WOHyperlink {
+	action = manageWebsite;
+	disabled = aWebsiteRequest.hasBeenDenied;
+}
+
+MarkAllRequestsHyperlink: WOHyperlink {
+	action = markAllRequests;
+}
+
+MarkCheckBox: WOCheckBox {
+	checked = isRequestMarked;
+}
+
+NoCompletedRequestsConditional: WOConditional {
+	condition = hasCompletedRequests;
+	negate = true;
+}
+
+OwnerIDString: WOString {
+	value = aWebsiteRequest.grantedToUserID;
+}
+
+PendingRequestsSubmitButton: WOSubmitButton {
+	action = showPendingRequests;
+	value = "Show Pending Requests";
+}
+
+Repetition1: WORepetition {
+	item = aWebsiteRequest;
+	list = completedRequests;
+}
+
+ShowResolutionHyperlink: WOHyperlink {
+	action = showResolution;
+	target = "popupNotes";
+	onClick = "popupNotes();";
+}
+
+SiteIDString: WOString {
+	value = aWebsiteRequest.grantedSiteID;
+}
+
+UnitNameString: WOString {
+	value = aWebsiteRequest.grantedInUnit.unitName;
+}

@@ -1,0 +1,23 @@
+{
+    EOModelVersion = 2.1; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = ""; 
+        driver = ""; 
+        password = ""; 
+        plugin = ""; 
+        username = ""; 
+    }; 
+    entities = (
+        {
+            className = net.global_village.security.tests.SimpleTestUser; 
+            name = SimpleTestUser; 
+            parent = GVCUser; 
+        }
+    ); 
+    internalInfo = {}; 
+    userInfo = {
+        history = {created = "2001-05-24 23:19:56 +0000 by sacha"; }; 
+        modificationDate = "2001-05-30 19:56:25 +0000"; 
+    }; 
+}

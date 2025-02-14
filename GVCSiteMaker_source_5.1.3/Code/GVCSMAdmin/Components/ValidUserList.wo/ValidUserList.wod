@@ -1,0 +1,8 @@
+UserRepetition: WORepetition {
+	item = currentUserDictionary;
+	list = validUserArray;
+}
+
+UserID: WOString {
+	value = currentUserDictionary.userID;
+}

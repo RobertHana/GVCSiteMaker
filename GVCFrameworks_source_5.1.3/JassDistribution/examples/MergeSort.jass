@@ -1,0 +1,143 @@
+package jass.examples;
+
+public class MergeSort{
+  
+  IntList mergedList;
+
+  public MergeSort(){
+    mergedList = new IntList();
+  }
+
+
+  public IntList merge(IntList list1, IntList list2)
+  {
+  /** require
+    [list1Sorted] isSorted(list1);
+
+    [list2Sorted] isSorted(list2);
+   **/
+
+    int i1 = 0;  int i2 = 0;
+    while(i1 < list1.size() && i2 < list2.size())
+    {
+      int elem1 = list1.elementAt(i1); int elem2 = list2.elementAt(i2);
+
+      if(elem2 < elem1)
+      {
+        mergedList.addElement(elem2);
+        ++i2;
+      } else 
+      {
+        mergedList.addElement(elem1);
+        ++i1;
+      }
+    }
+
+    copyTail(list1, i1);
+    copyTail(list2, i2);
+
+    return mergedList;
+
+  /** ensure
+    [resultIsSorted] isSorted(Result);
+
+    [resultIsRightSize] 
+      Result.size() == list1.size() + list2.size();
+
+    [resultHasAllOfList1] 
+      forall i : {0 .. list1.size() -1} # 
+      Result.contains(list1.elementAt(i));
+
+    [resultHasAllOfList2] 
+      forall i : {0 .. list2.size() -1} # 
+      Result.contains(list2.elementAt(i));
+
+    [resultHasNothingMore] 
+      forall i : {0 .. Result.size() -1} #
+      list1.contains(Result.elementAt(i)) 
+      || list2.contains(Result.elementAt(i));
+  **/
+  }
+
+
+  protected void copyTail(IntList list, int i)
+  {
+    while(i < list.size())
+    {
+      mergedList.addElement(list.elementAt(i));
+      ++i;
+    }
+  }
+
+
+  public boolean isSorted(IntList list)
+  {
+    if(list.size() <= 1){
+      return true;
+    }
+
+    boolean sorted = true; int i = 1;
+    while(sorted && i < list.size()){
+      if(list.elementAt(i-1) > list.elementAt(i)){
+        sorted = false;
+      }
+      ++i;
+    }
+    return sorted;
+  }
+
+
+  public String syntax()
+  {
+    String string = "";
+		
+    string += "Syntax: MergeSort <list> , <list>" 
+	+ System.getProperty("line.separator");
+    string += "where <list> is a enumeration of int values";
+		
+    return string;
+  }
+		
+		
+  public static void main(String[] argv) throws Exception
+  {
+    if(argv.length == 0)
+    {
+      System.out.println("Syntax: <list> , <list>");
+      System.out.println("where <list> is a sequence of integers: 1 2 67");
+
+      System.exit(0);
+    }
+  	
+    int iArgument = 0;
+    
+    IntList list1 = new IntList();
+    
+    String argument = argv[iArgument++];
+    while(!argument.equals(","))
+    {
+      int value = (new Integer(argument)).intValue();
+    	
+      list1.addElement(value);
+      argument = argv[iArgument++];
+    }
+				
+
+    IntList list2 = new IntList();
+		
+    while(iArgument < argv.length)
+    {
+      argument = argv[iArgument++];
+			
+      int value = (new Integer(argument)).intValue();
+      
+      list2.addElement(value);
+    }
+
+
+    IntList mergedList = (new MergeSort()).merge(list1, list2);
+
+    System.out.println(list1 + " and " + list2 + " was merged to\n" 
+		       + mergedList);
+  }
+}

@@ -1,0 +1,9 @@
+AdminNotesString: WOString {
+	value = formattedAdminNotes;
+	escapeHTML = false;
+}
+
+RequestNotesString: WOString {
+	value = websiteRequest.requesterNote;
+	escapeHTML = false;
+}

@@ -1,0 +1,73 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelModifyButton: WOSubmitButton {
+    action = cancelModifySection;
+    value = "Cancel";
+}
+
+Contributors: OptionalGroupPicker {
+    labelDescription = "Which groups have rights as Contributors ?";
+    mainLabel = "Section Contributors";
+    name = "contributors";
+    eo = currentSection;
+    groupsKeyPath = "contributorGroups";
+}
+DynamicBody: DynamicBodyComponent {
+    pageTitle = pageTitle;
+    isAdmin = false;
+    hasSite = true;
+    pageType = "EditMultipleSections";
+}
+
+Editors: OptionalGroupPicker {
+    labelDescription = "Which groups have rights as Editors?";
+    mainLabel = "Section Editors";
+    name = "editors";
+    eo = currentSection;
+    groupsKeyPath = "editorGroups";
+}
+GroupPicker: GroupPicker {
+    accessibleObject = currentSection;
+    typeOfAccess = "Section";
+}
+
+MESSAGE: WOString {
+  value = message;
+}
+
+SaveChangesButton: WOSubmitButton {
+    action = saveChanges;
+    value = "Save Changes";
+}
+
+SectionForm: WOForm { 
+    multipleSubmit = true;
+}
+
+SupportContributorsConditional: WOConditional {
+    condition = atLeastOneSectionSupportsContributors;
+}
+
+SupportEditorsConditional: WOConditional {
+    condition = atLeastOneSectionSupportsEditors;
+}
+
+UsesAccessProtectionConditional: WOConditional {
+    condition = atLeastOneSectionUsesAccessProtection;
+}
+
+VersioningConditional: WOConditional {
+    condition = atLeastOneSectionIsVersionable;
+}
+
+SectionsBeingEditedRepetition: WORepetition {
+    list = sectionsToEdit;
+    item = aSection;
+}
+
+SectionToEditNameString: WOString {
+    value = aSection.name;
+}

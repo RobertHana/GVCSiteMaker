@@ -1,0 +1,16 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+NoQuotaUsed	sitemaker6@global-village.net	Mathematics			
+NoRedirectUsed	sitemaker6@global-village.net	Mathematics	10		
+RedirectsToGoogle	sitemaker6@global-village.nte	Mathematics	50	http://www.google.com	
+RedirectFTP	sitemaker6@global-village.net	University of Michigan	50	FTP://redirectText.com	
+RedirectGOPHER	sitemaker6@global-village.net	University of Michigan	50	GOPHER://redirectText.com	
+RedirectHTTP	sitemaker6@global-village.net	University of Michigan	50	HTTP://redirectText.com	
+RedirectHTTPS	sitemaker6@global-village.net	University of Michigan	50	HTTPS://redirectText.com	
+RedirectIMAP	sitemaker6@global-village.net	University of Michigan	50	IMAP://redirectText.com	
+RedirectIRC	sitemaker6@global-village.net	University of Michigan	50	IRC://redirectText.com	
+RedirectLDAP	sitemaker6@global-village.net	University of Michigan	50	LDAP://redirectText.com	
+RedirectMAILTO	sitemaker6@global-village.net	University of Michigan	50	MAILTO:redirectText.com	
+RedirectNEWS	sitemaker6@global-village.net	University of Michigan	50	NEWS:redirectText.com	
+RedirectNNTP	sitemaker6@global-village.net	University of Michigan	50	NNTP://redirectText.com	
+RedirectRTSP	sitemaker6@global-village.net	University of Michigan	50	RTSP://redirectText.com	
+RedirectWAIS	sitemaker6@global-village.net	University of Michigan	50	WAIS://redirectText.com	

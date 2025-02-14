@@ -1,0 +1,6 @@
+{
+	"AttributeValidationTestEntity.localizationTestProperty.fullyQualifiedKeyTest"="French Localization key for fully qualified key";
+	"AttributeValidationTestEntity.partiallyQualifiedKeyTest"="French Localization key for partially qualified key";
+	"Entity.genericKeyTest"="This should not be found.";
+	"AttributeValidationTestEntity.localizationTestProperty.nullNotAllowed"="French Localization Test: super class null not allowed.";
+}

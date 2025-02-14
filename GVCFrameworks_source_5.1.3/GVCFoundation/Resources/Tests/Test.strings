@@ -1,0 +1,6 @@
+{
+	/* Test string. */
+	"This string is in the Test table" = "YES!";
+	"Test file is not in the main bundle" = "Hello2!";
+	"This is a test string" = "Hello!";
+}

@@ -1,0 +1,107 @@
+<webobject name="DynamicBody">
+	<webobject name="UserManagementForm">
+		<table border="0" cellpadding="0" cellspacing="0" class="content" style = "width: 100%">
+			<tr>
+				<td style="padding-left: 2px;">
+					<h1>User Management</h1>
+				</td>
+			</tr>
+			<tr>
+				<!-- All the extra tables and spacing is need to get it to work on IE 5.2 for Mac among others -->
+				<td valign="top" align="right" style="padding-right: 2px; text-align: right;">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="100%"><!-- spacer -->&nbsp;</td>
+							<td>
+								<webobject name=CanDeleteUserConditional>
+									<webobject name=RemovalButton></webobject>
+								</webobject name=CanDeleteUserConditional>
+							</td>
+							<td><webobject name="UpdateProperties"></webobject></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr>
+							<td>
+								<hr class="primaryBarStyle"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table border="0" cellspacing="2" cellpadding="2" class="content">
+			<tr>
+				<!-- had to force width so table would render better... -->
+				<td class="boldText" valign="top"> UserID: </td>
+				<td class="rightContentColumn">
+					<webobject name=NewUserID></webobject> </td>
+			</tr>
+				<tr>
+					<td class="boldText"> System Administrator: </td>
+					<td class="rightContentColumn">
+					<webobject name=CantChangeUsersSysAdminStateConditional>
+						<webobject name=IsUserSysAdminConditional>
+							User is system administrator.
+						</webobject name=IsUserSysAdminConditional>
+					</webobject name=CantChangeUsersSysAdminStateConditional>
+					<webobject name="CanChangeUsersSysAdminState">
+						<webobject name="IsSystemAdminCheckBox"></webobject>
+					</webobject name="CanChangeUsersSysAdminState">
+					</td>
+				</tr>
+			<tr>
+				<td class="boldText"> Style Administrator for: </td>
+				<td class="rightContentColumn">
+					<webobject name=UnitChooserWithDefault></webobject>
+				</td>
+			</tr>
+			<tr>
+				<td CLASS=boldText VALIGN=TOP> Unit Administrator for: </td>
+				<td class="rightContentColumn">
+					<span class=coloredText>
+						<webobject name=IsUnitAdminConditional>
+							<webobject name=OrgUnitRepetition>
+								<webobject name=ManageUnitHyperlink><webobject name=OrgUnitNameString></webobject></webobject><br/>
+							</webobject>
+						</webobject></span>
+				</td>
+			</tr>
+			<!-- error row -->
+			<tr>
+				<td colspan="2">
+					<webobject name=HasErrorMessagesConditional>
+						<p class=warningText>Failed:
+						<webobject name=ErrorMessageRepetition>
+							<webobject name=ErrorMessageString></webobject><br/>
+						</webobject name=ErrorMessageRepetition></p>
+					</webobject name=HasErrorMessagesConditional>
+				</td>
+			</tr>
+			<!-- end error row -->
+			<tr>
+				<td colspan="2">
+					<hr class="primaryBarStyle"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText"> Manage another user:</td>
+				<td class="rightContentColumn">
+					<webobject name=UserToManage></webobject>
+					<webobject name=ManageUser></webobject>
+				</td>
+			</tr>
+			<webobject name="ShowInvalidManageUserIDErrorMessage">
+				<tr>
+					<td colspan="2" class="warningText">
+						<webobject name="InvalidUserIDErrorMessage"></webobject>
+					</td>
+				</tr>
+			</webobject name="ShowInvalidManageUserIDErrorMessage">
+		</table>
+	</webobject>
+</webobject name="DynamicBody">

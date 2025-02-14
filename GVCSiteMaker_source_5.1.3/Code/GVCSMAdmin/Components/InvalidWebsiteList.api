@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="InvalidWebsiteList" wocomponentcontent="false">
+
+		<binding name="invalidWebsiteArray"/>
+
+		<validation message="&apos;invalidWebsiteArray&apos; is a required binding">
+			<unbound name="invalidWebsiteArray"/>
+		</validation>
+	</wo>
+</wodefinitions>

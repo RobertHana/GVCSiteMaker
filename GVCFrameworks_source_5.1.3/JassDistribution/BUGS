@@ -1,0 +1,140 @@
+############################################################################
+Bug: Not possible to refer to nonstatic methods from within static assertion
+Problem:
+It is not possible to refer to any nonstatic methods from within an 
+assertion in a static method, even if the nonstatic methods are explicitly 
+on an instance of the class. For instance, the following static method in 
+class Moogle:
+
+Example:
+---------------------------------------------------
+   public static void cactaur(Moogle cait_sith) {
+      /** require cait_sith.kupo(); **/
+      ...
+   }
+---------------------------------------------------
+fails when kupo() is a non-static method of Moogle, even though it's being 
+called on an instance of the class.
+############################################################################
+Bug: JassDoc does not work with Java2 SDK/JRE 1.4
+Problem:
+SUN changed some doclet classes that we derive from
+Workaround:
+Use the -tag option of javadoc in 1.4. See the example.xml 
+############################################################################
+Bug: forall and exists do not work in static methods
+Occurence: Compiler
+Problem:
+forall and exists assertions are translated into non-static methods
+jassCheckForAll_... no metter if the method that defines the assertion
+is static or not. These internal methods cannot be used inside a static
+method but the output of jass tries to do so. (Thanks to Bill James Ellis 
+for reporting this - we hope this will be fixed soon)
+
+############################################################################
+Bug: internal Jass methods missing
+Message: Method jassInternal_xxx not found
+Occurence: Compiler
+Problem: 
+If a method 'm' is called within an assertion, Jass calls an internal
+version of this method: 'jassInternal_m'. Jass creates internal
+versions of all methods who appear at the assertions of a
+class. Unfortunately Jass does not take into account yet that
+assertions may refer to external methods as well.
+
+Example:
+---------------------------------------------------
+public class C {
+  public boolean m(){..}
+}
+
+public class D {
+	C c;
+	
+  /** invariant c.m(); **/
+}
+---------------------------------------------------
+
+C.jassInternal_m() does not exists!
+  
+Workaround:
+To lead Jass to create the necessary internal methods, insert dummy
+conditions into the external class which refer to the oppropriate
+methods. The above example works with:
+
+---------------------------------------------------
+public class C {
+  public boolean m(){..}
+	/** invariant m() = m(); **/
+}
+---------------------------------------------------
+
+
+############################################################################
+Bug: Jass creates Java code which may not be reached
+Message: Statement not reached
+Occurence: Compiler
+Problem: 
+Jass inserts code at the exit points of a method (end of method /
+return statements). This code may not be reached.
+
+Example:
+---------------------------------------------------
+while(true)
+{
+	... // something
+}
+jass post condition
+---------------------------------------------------
+
+Workaround:
+Use a dummy statement or a dummy variable to outwit the java mechanism
+to detect unreachable code
+
+############################################################################
+Bug: Anonymous and method scoped classes can not contain assertions.
+Problem:
+Assertions in anonymous and method scoped classes are simply ignored.
+
+############################################################################
+Bug: Inner classes can only be handled at first level. 
+Problem:
+A declaration like
+
+---------------------------------------------------
+public class Outer {
+   public class Test {
+      public class Test2 {
+      }
+   }
+}
+---------------------------------------------------
+    
+can not be handled. ReflectVisitor and OutputVisitor have no problem
+to deal with this!  The only problem is the name look up of the
+NameAnalysis ...
+
+############################################################################
+Bug: Constructors of Inner classes can't be handled.
+Problem:
+idebughc.ServletLogOutput contains an inner class DummyServletContext with 
+no constructor, therefore the default constructor should be just
+
+---------------------------------------------------
+  DummyServletContext() { super(); }
+---------------------------------------------------
+
+Since no constructor was explicitly specified, Jass introduces one but it 
+has signature:
+
+---------------------------------------------------
+  public ServletLogOutput$DummyServletContext()
+---------------------------------------------------
+    
+############################################################################
+Bug: Some constructs are not analysed.
+Problem:
+Not parsed and analysed are:
+ - array initializer
+ - class initializer
+ - anonymous and method scoped classes

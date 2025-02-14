@@ -1,0 +1,21 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+51CharSiteID3456789012345678901234567890123456789z	sitemaker6@global-village.net	Physics			
+OwnerName101	inv@lid890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890z	Physics			
+FilespaceAsString	sitemaker6@global-village.net	Physics	Hello		
+FileSpaceAsDecimal	sitemaker6@global-village.net	Physics	8.94		
+FileSpaceAsNegative	sitemaker6@global-village.net	Physics	-5		
+RedirectWithoutHTTP	sitemaker6@global-village.net	Physics		www.google.com	
+ExampleSiteIDLength101	sitemaker6@global-village.net	Physics	10		a234567890a234567890a234567890a234567890a234567890a234567890a234567890a234567890a234567890a234567890z
+Math100	sitemaker6@global-village.net	Mathematics	50		
+BADRedirectFTP	sitemaker6@global-village.net	University of Michigan	50	FTP://	
+BADRedirectGOPHER	sitemaker6@global-village.net	University of Michigan	50	GOPHER://	
+BADRedirectHTTP	sitemaker6@global-village.net	University of Michigan	50	HTTP://	
+BADRedirectHTTPS	sitemaker6@global-village.net	University of Michigan	50	HTTPS://	
+BADRedirectIMAP	sitemaker6@global-village.net	University of Michigan	50	IMAP://	
+BADRedirectIRC	sitemaker6@global-village.net	University of Michigan	50	IRC://	
+BADRedirectLDAP	sitemaker6@global-village.net	University of Michigan	50	LDAP://	
+BADRedirectMAILTO	sitemaker6@global-village.net	University of Michigan	50	MAILTO:	
+BADRedirectNEWS	sitemaker6@global-village.net	University of Michigan	50	NEWS:	
+BADRedirectNNTP	sitemaker6@global-village.net	University of Michigan	50	NNTP://	
+BADRedirectRTSP	sitemaker6@global-village.net	University of Michigan	50	RTSP://	
+BADRedirectWAIS	sitemaker6@global-village.net	University of Michigan	50	WAIS://

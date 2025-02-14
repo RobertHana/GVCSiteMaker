@@ -1,0 +1,124 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            columnName = "FAILURE_REASON"; 
+            name = failureReason; 
+            prototypeName = longString; 
+            width = 1999; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IS_NAVIGABLE"; 
+            name = isNavigable; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "RELATED_SECTION_ID"; 
+            name = relatedSectionId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "SOURCE_SECTION_ID"; 
+            name = sourceSectionId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STATUS_ID"; 
+            externalType = INTEGER; 
+            name = statusId; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_ID"; 
+            externalType = INTEGER; 
+            name = taskId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_TYPE"; 
+            name = taskType; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        taskId, 
+        statusId, 
+        userId, 
+        taskType, 
+        sourceSectionId, 
+        relatedSectionId, 
+        details, 
+        failureReason, 
+        isNavigable, 
+        bindings
+    ); 
+    className = "com.gvcsitemaker.core.CopySectionTask"; 
+    classProperties = (
+        status, 
+        owner, 
+        taskType, 
+        sourceSection, 
+        relatedSection, 
+        details, 
+        failureReason, 
+        isNavigable, 
+        createdDate, 
+        bindings
+    ); 
+    externalName = TASK; 
+    fetchSpecificationDictionary = {}; 
+    name = CopySectionTask; 
+    parent = Task; 
+    primaryKeyAttributes = (taskId); 
+    relationships = (
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userId; }); 
+            name = owner; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Section; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = relatedSectionId; }); 
+            name = relatedSection; 
+        }, 
+        {
+            destination = Section; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sourceSectionId; }); 
+            name = sourceSection; 
+        }, 
+        {
+            destination = TaskStatus; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = statusId; }); 
+            name = status; 
+        }
+    ); 
+    restrictingQualifier = "(taskType = 'CopySection')"; 
+}

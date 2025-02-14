@@ -1,0 +1,144 @@
+#!/bin/sh
+# Intended to be run from within an xCode build.  This will preprocess all
+# java files (that don't reside in "excludedDirs") with Jass.
+#
+# USAGE:
+# 1) Copy the Application Server target to a new target called Jass.
+# 2) Remove all Java files from this Jass target.
+# 3) Create a new Shell Script build phase in the Jass target (it should run first), pointing to this script.
+# 4) Create a directory to hold the instrumented files (see jassProcessedFilesDirName, below).
+# 5) Create a Group in xCode that will hold your instrumented code.  Something like "Original" for the uninstrumented classes and "Classes" for the instrumented classes is what we use... The Group for instrumented files should point to the same place that jassProcessedFilesDirName goes to.
+# 6) Run a build of this Jass target -- nothing useful will get built, but it will instrument all the Java files into jassProcessedFilesDirName, used in the next step.
+# 7) Add the instrumented files to the Group.
+# 8) Add the files in the Group to the Jass build target
+# You're done!
+#
+# Note that at this time, you will have to separately maintain _two_ targets, the Jass target as outlined above, and the
+# Application Server target.  The Jass target generates the instrumented files and compiles them, as well any uninstrumented
+# files such as unit tests.  The Application server target builds all the java files without jass.  There is probably a
+# more clever way of doing this, but for now this will have to be good enough. Note that you will have to add the Jass
+# target to your project target as a direct dependency when you want Jass, but remove it and use the Application Server Target 
+# as a direct dependency when you don't want jass.
+#
+# To disable, simply add an environment variable called JASS_ENABLED set to "NO".  This must be done in the Expert Settings
+# for the "Jass" Target (double-click on target to pop up the inspector, then choose Expert Settings).  You can also just
+# use the "Application Server" target.  Make sure to Clean the project to clear out instrumented class files.  You may have to do this manually.
+#
+# BUGS:
+# Spaces in any of the paths will cause problems.
+# Cleaning the project does not actually clear out the instrumented files.
+#
+# USER VARIABLES (edit these as necessary):
+jassTempDir="$DERIVED_SOURCES_DIR/jass"  # place for temp files
+jassProcessedFilesDirName="Instrumented"      # directory under the project where the instrumented files will be placed
+jassProcessedFilesPath="$SRCROOT/$jassProcessedFilesDirName"  # full path of previous var
+excludedDirs="Tests $jassProcessedFilesDirName"       # don't instrument tests or already-instrumented files
+
+# OTHER VARIABLES (you probably don't need to touch these)
+export PATH="/usr/local/bin:$PATH"
+javaTool="/usr/bin/javatool"
+
+
+# Do nothing for a clean
+if [ "$ACTION" != "clean" ]; then
+
+
+    # Setup the list of files to process
+    findExclude=""
+    for i in $excludedDirs; do
+        findExclude="$findExclude -name $i -o"
+    done
+    jassFiles=`find $SRCROOT \( \( $findExclude -name build \) -a \! -prune \) -o \( \! -type d -a -name \*java \)`
+
+
+    # Only turn off if set to NO, otherwise run it
+    if [ "$JASS_ENABLED" != "NO" ]; then
+
+
+        # Copy the files to a temp dir
+        mkdir -p "$jassTempDir/orig"
+        echo $javaTool -copy -newer -java_src $jassTempDir/orig $jassFiles
+        $javaTool -copy -newer -java_src $jassTempDir/orig $jassFiles
+        cd "$jassTempDir/orig"
+
+        # Eliminate those files that are older than the processed file...
+        jassProcessFiles=""
+        for i in `find . -name \*java` ; do
+            if [ ! "$jassProcessedFilesPath/`basename $i`" -nt "$i" ]; then
+                jassProcessFiles="$jassProcessFiles $i"
+            fi
+        done
+
+        if [ "$jassProcessFiles" != "" ]; then
+
+            # Generate the classpath by manually adding paths to framework jars
+            frameworkjars=""
+            JAVA_SOURCE_JARS=`find $SRCROOT -name "*.jar"`
+            for i in $JAVA_FRAMEWORK_JARS $JAVA_SOURCE_JARS ; do
+                for j in `echo $i/*.zip $i/*.jar $i`; do
+                    if [ -f "$j" ] ; then
+                        frameworkjars="$frameworkjars":"$j"
+                    fi
+                done
+            done
+
+            # Export the new classpath to avoid quoting issues!
+            export CLASSPATH="$CLASS_FILE_DIR$LINKED_CLASS_ARCHIVES$frameworkjars:$jassTempDir/orig:"`$JAVACONFIG DefaultClasspath`
+
+
+            # The -dataflow option and the "opt" contract option (which
+            # enables dataflow) causes a problem with the <class>.class
+            # construction.  Also, the "trace" contract option causes
+            # hashCode() to be called before the object is fully initialized -
+            # and it is not threadsafe!  So, we don't use those options...
+            jassCommand="java jass.Jass \
+                -contract [pre,post,inv,loop,check,refine,forall] \
+                -d $jassTempDir \
+                $jassProcessFiles"
+
+            echo $jassCommand
+            $jassCommand
+
+            result=$?
+            if [ $result -ne 0 ]; then
+                set  # show environment on fail
+                exit $result
+            fi
+
+            # Copy the processed java files to the processed dir so they get compiled
+            cd "$jassTempDir"
+            jassProcessedFiles=`find * \( -name orig \) -prune \! -type d -o -name \*java`
+
+            # Only copies if the source file is newer than the dest (or dest doesn't exist)
+            echo "Copying PROCESSED java files to $jassProcessedFilesPath"
+            for i in $jassProcessedFiles; do
+                if [ ! "$jassProcessedFilesPath/$i" -nt "$i" ]; then
+                    cp -p "$i" "$jassProcessedFilesPath/`basename $i`"
+                fi
+            done
+
+
+            # Now copy the original source files _if_ they are newer than whats in
+            # $jassProcessedFilesPath.  This can happen when jass fails due to
+            # a compilation or other error.  In that case, the file with the error will be
+            # propogated to the processed files path, where the error will be reported in
+            # the normal course of events.
+            cd "$SRCROOT"
+            echo "Copy newer ORIGINAL source java files to $jassProcessedFilesPath"
+            for i in $jassFiles; do
+                if [ ! "$jassProcessedFilesPath/`basename $i`" -nt "$i" ]; then
+                    cp -p "$i" "$jassProcessedFilesPath"
+                fi
+            done
+    fi
+
+
+    else # if jass enabled != no
+        # Jass is not enabled, so copy the original files to where they will be compiled
+        echo $javaTool -copy -java_src $jassProcessedFilesPath $jassFiles
+        $javaTool -copy -java_src $jassProcessedFilesPath $jassFiles
+
+    fi  # if jass enabled != no
+
+
+fi  # if action != clean

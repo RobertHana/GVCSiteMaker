@@ -1,0 +1,6 @@
+<project name="GVCMail" default="build" basedir=".">
+
+	<import file="../Ant/common.xml"/>
+
+</project>
+

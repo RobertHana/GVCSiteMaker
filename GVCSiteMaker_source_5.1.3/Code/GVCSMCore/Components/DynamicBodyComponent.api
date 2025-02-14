@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="DynamicBodyComponent" wocomponentcontent="false">
+
+		<binding name="pageTitle"/>
+		
+		<binding defaults="Boolean" name="needsPreviewURLJavaScript"/>
+		
+		
+		<binding defaults="Boolean" name="inPlaceEditingMode"/>
+
+		<validation message="'pageTitle' is a required binding">
+			<unbound name="pageTitle"/>
+		</validation>
+	
+        
+    <binding name="pageType"/>
+        <validation message="'pageType' is a required binding.">
+            <unbound name="pageType"/>
+        </validation>
+    <binding name="headerString"/>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,55 @@
+<webobject name=DynamicBodyComponent>
+	<webobject name=ReferralForm>
+		<!-- cell padding removed except around HR -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+			<tr>
+				<td style="padding-left: 2px;">
+					<h1>Website Request Referral</h1>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">
+					<webobject name=CancelButton></webobject>
+					<webobject name=SendButton></webobject>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr>
+							<td>
+								<hr class="primaryBarStyle">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="90%" border="0" cellspacing="4" cellpadding="4" class="contentTable">
+			<tr>
+				<td align="left" valign="top"><b>Refer&nbsp;To&nbsp;Unit:</b> </td>
+				<td align="left" valign="top"><webobject name=UnitChooser></webobject>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><b>Note:</b></td>
+				<td align="left" valign="top"><webobject name=ReferralNotesTextArea></webobject>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><b>Site Request:</b> </td>
+				<td align="left" valign="top"><b>SiteID:</b>
+					<webobject name=SiteIDString></webobject><br>
+					<b>OwnerID:</b>
+					<webobject name=OwnerIDString></webobject><br>
+					<b>Org. Unit:</b>
+					<webobject name=OrgUnitString></webobject><br>
+					<b>Note:</b>
+					<webobject name=RequestNotesString></webobject><br><br>
+					<b>Admin Notes:</b><br>
+					<webobject name=AdminNotesString></webobject>
+				</td>
+			</tr>
+		</table>
+	</webobject>
+</webobject>

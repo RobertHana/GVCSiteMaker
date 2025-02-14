@@ -1,0 +1,17 @@
+Password: WOTextField {
+	size  = 50;
+	maxLength = 255;
+	value = currentGroup.secret;
+}
+
+StyleChooser: WOPopUpButton {
+	list = styles;
+	selection = currentGroup.sectionStyle;
+	item = aStyle;
+	noSelectionString = "<Default Site Style>";
+	displayString = aStyle.name;
+}
+
+AccessURL: WOString {
+	value = siteAccessURL;
+}

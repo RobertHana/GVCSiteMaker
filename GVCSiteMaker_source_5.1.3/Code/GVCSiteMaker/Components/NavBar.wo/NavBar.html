@@ -1,0 +1,29 @@
+<table border="0" cellpadding="4" cellspacing="2" width="158">
+	<webobject NAME=SectionListRepetition>
+		<tr>
+			<td>
+				<div style="font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10px;">
+					<div class="navbarText">
+						<WEBOBJECT NAME=NameSpacers></WEBOBJECT>
+						<webobject name="IsNotExternalURL">
+							<WEBOBJECT NAME=IsNotRedirectedEmbeddedWebSiteConditional>
+								<webobject name="IsNotViewingSection">
+									<webobject NAME=GoToSectionLink><webobject name="SectionName"></webobject></webobject>
+								</webobject>
+								<webobject name="IsViewingSection">
+									<webobject name="SectionName"></webobject>
+								</webobject>
+							</WEBOBJECT>
+							<WEBOBJECT NAME=IsRedirectedEmbeddedWebSite>
+								<WEBOBJECT NAME=RedirectedWebsiteURL></WEBOBJECT>
+							</WEBOBJECT>
+						</webobject>
+						<webobject name="IsExternalURL">
+							<webobject name="ExternalURL"></webobject>
+						</webobject>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</webobject>
+</table>

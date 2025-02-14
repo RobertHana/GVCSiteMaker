@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="MappedListPopUp" wocomponentcontent="false">
+
+		<binding name="formatter"/>
+		<binding name="noSelectionString"/>
+		<binding name="selection"/>
+		<binding name="displayFrom"/>
+		<binding name="selectFrom"/>
+
+		<validation message="&apos;selectFrom&apos; is a required binding">
+			<unbound name="selectFrom"/>
+		</validation>
+
+		<validation message="&apos;displayFrom&apos; is a required binding">
+			<unbound name="displayFrom"/>
+		</validation>
+
+		<validation message="&apos;selection&apos; is a required binding">
+			<unbound name="selection"/>
+		</validation>
+	</wo>
+</wodefinitions>

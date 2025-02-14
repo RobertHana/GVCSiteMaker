@@ -1,0 +1,18 @@
+{
+    attributes = (
+        {columnName = the_name; name = name; prototypeName = String; width = 50; }, 
+        {
+            columnName = the_data_pk; 
+            name = theDataPK; 
+            prototypeName = Data; 
+            width = 24; 
+        }
+    ); 
+    attributesUsedForLocking = (theDataPK, name); 
+    className = net.global_village.testeomodelbase.EntityWithNSDataPK; 
+    classProperties = (theDataPK, name); 
+    externalName = ENTITY_WITH_DATA_PK; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityWithNSDataPK; 
+    primaryKeyAttributes = (theDataPK); 
+}

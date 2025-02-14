@@ -1,0 +1,80 @@
+{
+    attributes = (
+        {columnName = "COLUMN_ID"; name = columnID; prototypeName = Key; }, 
+        {columnName = "COLUMN_TYPE_ID"; name = columnTypeID; prototypeName = Key; }, 
+        {columnName = "DATE_CREATED"; name = dateCreated; prototypeName = DateTime; }, 
+        {
+            columnName = "IS_SYSTEM_COLUMN"; 
+            name = isSystemColumn; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 100; }, 
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEXT_DESCRIPTION"; 
+            name = textDescription; 
+            prototypeName = String; 
+            width = 1999; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        columnID, 
+        name, 
+        textDescription, 
+        tableID, 
+        columnTypeID, 
+        restrictingValue, 
+        isSystemColumn
+    ); 
+    className = "net.global_village.virtualtables.Column"; 
+    classProperties = (
+        name, 
+        textDescription, 
+        dateCreated, 
+        table, 
+        type, 
+        referringColumns, 
+        restrictingValue, 
+        isSystemColumn
+    ); 
+    externalName = "VIRTUAL_COLUMN"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    maxNumberOfInstancesToBatchFetch = 10; 
+    name = Column; 
+    primaryKeyAttributes = (columnID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupColumn; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupColumnID; sourceAttribute = columnID; }); 
+            name = referringColumns; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = Table; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = table; 
+        }, 
+        {
+            destination = ColumnType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = columnTypeID; }); 
+            name = type; 
+        }
+    ); 
+}

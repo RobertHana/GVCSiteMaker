@@ -1,0 +1,16 @@
+{
+    tableWithTableID = {
+        class = EOFetchSpecification; 
+        entityName = Table; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        prefetchingRelationshipKeyPaths = (columns); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = tableID; 
+            selectorName = isEqualTo; 
+            value = {"_key" = tableID; class = EOQualifierVariable; }; 
+        }; 
+        requiresAllQualifierBindingVariables = YES; 
+    }; 
+}

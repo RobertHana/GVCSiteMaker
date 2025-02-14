@@ -1,0 +1,28 @@
+{
+    EOModelVersion = 2.1; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = ""; 
+        driver = ""; 
+        password = ""; 
+        plugin = ""; 
+        username = ""; 
+    }; 
+    entities = (
+        {
+            className = net.global_village.eofextensions.tests.OwnedObject; 
+            name = OwnedObject; 
+        }, 
+        {
+            className = net.global_village.eofextensions.tests.RootObject; 
+            name = RootObject; 
+        }, 
+        {className = EOGenericRecord; name = RootUnOwnedJoin; }, 
+        {className = TestModel1Entity; name = TestModel1Entity; }, 
+        {
+            className = net.global_village.eofextensions.tests.UnOwnedObject; 
+            name = UnOwnedObject; 
+        }
+    ); 
+    internalInfo = {}; 
+}

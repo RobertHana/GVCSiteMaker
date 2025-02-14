@@ -1,0 +1,55 @@
+CopyFilesForm: WOForm {
+	action = copyFiles;
+}
+
+CopyNowSubmitButton: WOSubmitButton {
+	action = copyFiles;
+	value = "Copy Now";
+}
+
+Hyperlink1: WOHyperlink {
+	action = findMissingFiles;
+}
+
+Hyperlink2: WOHyperlink {
+	action = recalculateQuotaUsage;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = refresh;
+}
+
+Repetition2: WORepetition {
+	item = anError;
+	list = errors;
+}
+
+Repetition3: WORepetition {
+	item = aSiteFile;
+	list = missingFiles;
+}
+
+String1: WOString {
+	value = aSiteFile.website.parentOrgUnit.unitName;
+}
+
+String2: WOString {
+	value = anError;
+}
+
+String3: WOString {
+	value = aSiteFile.website.siteID;
+}
+
+String4: WOString {
+	value = aSiteFile.uploadedFilename;
+}
+
+TextField1: WOTextField {
+	value = destinationPath;
+}
+

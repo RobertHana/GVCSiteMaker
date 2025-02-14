@@ -1,0 +1,16 @@
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	isAdmin = false;
+	isConfigPage = false;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+
+RecentlyVisitedSites: RecentlyVisitedSites {
+}
+
+SMWebsiteSearch: SMWebsiteSearch {
+}

@@ -1,0 +1,237 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_ID"; 
+            name = componentId; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            allowsNull = N; 
+            columnName = INDENTATION; 
+            name = indentation; 
+            prototypeName = integer; 
+        }, 
+        {
+            columnName = "IS_AUTO_VERSIONING"; 
+            name = isAutoVersioning; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "IS_NAVIGABLE"; 
+            name = isNavigable; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            columnName = "IS_VERSIONING"; 
+            name = isVersioning; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MIME_TYPE"; 
+            name = mimeType; 
+            prototypeName = shortString; 
+        }, 
+        {allowsNull = N; columnName = NAME; name = name; prototypeName = shortString; }, 
+        {
+            allowsNull = N; 
+            columnName = "NORMAL_NAME"; 
+            name = normalName; 
+            prototypeName = shortString; 
+        }, 
+        {
+            columnName = "OID_SECTION_STYLE"; 
+            name = oidSectionStyle; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "REQUIRE_HTTPS_ACCESS"; 
+            name = requireHttpsAccessForPublicSections; 
+            prototypeName = JavaBoolean; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_ORDER"; 
+            name = sectionOrder; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_PKEY"; 
+            name = sectionPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TYPE_OID"; 
+            name = typeOID; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        componentId, 
+        details, 
+        indentation, 
+        isAutoVersioning, 
+        isNavigable, 
+        isVersioning, 
+        mimeType, 
+        name, 
+        normalName, 
+        oidSectionStyle, 
+        requireHttpsAccessForPublicSections, 
+        sectionOrder, 
+        sectionPKey, 
+        typeOID, 
+        websiteFKey
+    ); 
+    className = "com.gvcsitemaker.core.Section"; 
+    classProperties = (
+        component, 
+        contributorGroups, 
+        copySectionSource, 
+        details, 
+        editorGroups, 
+        embeddedSectionComponents, 
+        groups, 
+        indentation, 
+        isAutoVersioning, 
+        isNavigable, 
+        isVersioning, 
+        mimeType, 
+        name, 
+        normalName, 
+        requireHttpsAccessForPublicSections, 
+        sectionOrder, 
+        sectionStyle, 
+        type, 
+        versions, 
+        website
+    ); 
+    externalName = "SM_SECTION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (groups, mimeType, sectionOrder, website); }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = Section; 
+    primaryKeyAttributes = (sectionPKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PageComponent; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = componentId; }); 
+            name = component; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionContributorGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = contributorGroupSections; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "contributorGroupSections.group"; 
+            name = contributorGroups; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CopySectionTask; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = relatedSectionId; sourceAttribute = sectionPKey; }); 
+            name = copySectionRelated; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CopySectionTask; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sourceSectionId; sourceAttribute = sectionPKey; }); 
+            name = copySectionSource; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionEditorGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = editorGroupSections; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "editorGroupSections.group"; 
+            name = editorGroups; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = EmbeddedSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = embeddedSectionFkey; sourceAttribute = sectionPKey; }); 
+            name = embeddedSectionComponents; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sectionPKey; sourceAttribute = sectionPKey; }); 
+            name = groupSections; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            definition = "groupSections.group"; 
+            name = groups; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = SectionStyle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidSectionStyle; }); 
+            name = sectionStyle; 
+        }, 
+        {
+            destination = SectionType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = typeOID; }); 
+            name = type; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SectionVersion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidSection; sourceAttribute = sectionPKey; }); 
+            name = versions; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = website; 
+        }
+    ); 
+}

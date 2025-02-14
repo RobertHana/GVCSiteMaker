@@ -1,0 +1,104 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATE_USER_FKEY"; 
+            name = creatingUserFkey; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "DATE_CREATED"; name = dateCreated; prototypeName = DateTime; }, 
+        {columnName = "DATE_MODIFIED"; name = dateModified; prototypeName = DateTime; }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 100; }, 
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEXT_DESCRIPTION"; 
+            name = textDescription; 
+            prototypeName = String; 
+            width = 1999; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "UPDATE_USER_FKEY"; 
+            name = updatingUserFkey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (tableID, name, textDescription, creatingUserFkey, updatingUserFkey); 
+    className = "com.gvcsitemaker.core.databasetables.SMVirtualTable"; 
+    classProperties = (
+        name, 
+        textDescription, 
+        dateCreated, 
+        tableID, 
+        columns, 
+        rows, 
+        createdBy, 
+        modifiedBy, 
+        dateModified, 
+        websites
+    ); 
+    externalName = "SM_VIRTUAL_TABLE"; 
+    name = SMVirtualTable; 
+    parent = VirtualTable; 
+    primaryKeyAttributes = (tableID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Column; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = columns; 
+            numberOfToManyFaultsToBatchFetch = 100; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = creatingUserFkey; }); 
+            name = createdBy; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = updatingUserFkey; }); 
+            name = modifiedBy; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = VirtualRow; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualTableID; sourceAttribute = tableID; }); 
+            name = rows; 
+            numberOfToManyFaultsToBatchFetch = 1000; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = WebsiteTable; 
+            internalInfo = {"_nameInObjectStore" = websiteTable; }; 
+            isMandatory = Y; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = websiteTables; 
+            numberOfToManyFaultsToBatchFetch = 0; 
+        }, 
+        {
+            definition = "websiteTables.website"; 
+            internalInfo = {"_nameInObjectStore" = "websiteTables_website"; }; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            name = websites; 
+            numberOfToManyFaultsToBatchFetch = 0; 
+        }
+    ); 
+}

@@ -1,0 +1,31 @@
+<webobject name = "DynamicBody">
+  <script language = "javascript" type = "text/javascript" src = "/tiny_mce/tiny_mce.js"></script>
+  <script type = "text/javascript">
+    function myCustomSetupContent(editor_id, body, doc) {
+    }
+  </script>
+  <script type = "text/javascript">
+    function revealCalInfo()
+    {
+        document.getElementById('calcFieldsAddInfo').style.display = "block";
+        document.getElementById('revealCalInfo').style.display = "none";
+        document.getElementById('hideCalInfo').style.display = "block";
+        Modalbox.resizeToContent('CalculatedColumnModalDialog');
+    }
+
+    function hideCalInfo()
+    {
+        document.getElementById('calcFieldsAddInfo').style.display = "none";
+        document.getElementById('revealCalInfo').style.display = "block";
+        document.getElementById('hideCalInfo').style.display = "none";
+        Modalbox.resizeToContent('CalculatedColumnModalDialog');
+    }
+  </script>
+
+  <webobject name = "CurrentSiteInfoComponent" />
+
+  <webobject name = "Navigation"/>
+
+  <webobject name = "TheContent" />
+
+</webobject>

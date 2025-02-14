@@ -1,0 +1,12 @@
+CheckUsersHyperlink: WOHyperlink {
+	action = checkUsers;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+ResultsMessageString: WOString {
+	value = resultsMessage;
+}
+

@@ -1,0 +1,144 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent" />
+
+
+  <webobject name = "CanUserConfigureWebsite">
+    <webobject name = "UploadModeConditional">
+      <webobject name = "FileUploadForm">
+        <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" width = "100%">
+          <tr>
+            <td colspan = "2" style = "padding-left: 2px;">
+              <h2>Upload New Files</h2>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign = "top" align = "left" style = "padding-right: 2px;">
+              <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+                Back to Manage Files</webobject>
+            </td>
+            <td valign = "top" align = "right" style = "padding-right: 2px;">
+              <webobject name = "CancelButton" />
+              <img height = "2" width = "5" src = "/GVCSiteMaker/Images/spacer.gif" />
+              <webobject name = "UPLOAD_FILE_BUTTON" />
+            </td>
+          </tr>
+ 
+          <tr>
+            <td colspan = "2">
+              <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+                <tr>
+                  <td><hr class = "primaryBarStyle" /></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+ 
+ 
+        <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+          <tr>
+            <td valign = "top" width = "300" class = "leftContentColumn">
+              <b>Upload to:</b>
+            </td>
+            <td valign = "top" class = "rightContentColumn"><webobject name = "FoldersPopUpButton" /></td>
+          </tr>
+          <tr>
+            <td valign = "top" width = "300" class = "leftContentColumn">
+              <b>Show Confirmation Page:</b>
+            </td>
+            <td valign = "top" class = "rightContentColumn">
+              <webobject name = "YesRadioButton" />Yes 
+              <img height = "2" width = "50" src = "/GVCSiteMaker/Images/spacer.gif" />
+              <webobject name = "NoRadioButton" />No</td>
+          </tr>
+          <tr cellpadding = "0" cellspacing = "0">
+            <td colspan = "2" cellpadding = "0" cellspacing = "0"> <webobject name = "GroupPicker" /> </td>
+          </tr>
+          <tr>
+            <td colspan = "2">
+              Browse for up to 
+              <webobject name = "NumberOfUploads" />
+              files to upload. If possible, choose files with a valid file extension (for example .doc .xls .pdf. .gif) so that 
+              <webobject name = "ProductNameString" />
+              can properly use and display the file.<span class = "warningText"> If you are uploading a large file, please be patient.</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan = "2">&nbsp;</td>
+          </tr>
+          <webobject name = "UploadsRepetition">
+            <tr>
+              <td valign = "top" width = "300" class = "leftContentColumn"> Select New File to Upload: </td>
+              <td valign = "top"> <webobject name = "FileUpload" /> </td>
+            </tr>
+          </webobject>
+          <tr>
+            <td colspan = "2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan = "2" class = "microText">
+              <span class = "warningText">Internet Explorer 5.0 Users:</span>
+              IE 5.0 on Windows contains a bug that will prevent your upload from succeeding.  You will need to upgrade your browser to version 5.01 (or later).  This can be downloaded from 
+              <a href = "http://www.microsoft.com/windows/ie/downloads/archive/default.asp">Microsoft</a>. 
+            </td>
+          </tr>
+        </table>
+      </webobject>
+    </webobject>
+    <!-- end of form -->
+    <webobject name = "ConfirmModeConditional">
+      <table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+        <!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+        <tr>
+          <td style = "padding-left: 2px;">
+            <h1> Upload New Files - Upload Confirmation </h1>
+          </td>
+        </tr>
+        <tr>
+          <td valign = "top" align = "right" style = "padding-right: 2px;">
+            <webobject name = "Form1"><webobject name = "DoneButton" /></webobject>
+          </td>
+        </tr>
+        <tr>
+          <td> <hr class = "primaryBarStyle" /> </td>
+        </tr>
+        <tr>
+          <td>
+            <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" align = "center" width = "95%">
+              <!-- 95% width is more dynamic in Netscape 4 -->
+              <tr>
+                <th class = "coloredTableHeading" width = "10%"> Upload </th>
+                <th class = "coloredTableHeading" width = "50%"> Status </th>
+                <th class = "coloredTableHeading" width = "25%"> Name </th>
+                <th class = "coloredTableHeading" width = "15%"> Size </th>
+              </tr>
+              <webobject name = "Repetition1">
+                <tr valign = "TOP">
+                  <td align = "center"><webobject name = "UploadIndexString" /> </td>
+                  <td align = "left">
+                    <b><webobject name = "StatusString" /></b>
+                  </td>
+                  <td align = "left"><webobject name = "FileNameString" /> </td>
+                  <td align = "right"><webobject name = "FileSizeString" /> </td>
+                </tr>
+              </webobject>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+  <!-- end of can user configure part -->
+  <webobject name = "UserCanNotConfigureWebsite">
+    <h1>Sorry, you don't have permission to configure this site!</h1>
+    <webobject name = "SiteURL">Return to the previous page</webobject>
+    <br />
+    or&nbsp;<webobject name = "FrontPage">
+      return to the 
+      <webobject name = "ProductNameString" />
+      Front Page</webobject>? 
+  </webobject>
+  <!-- end of user cannot configure part -->
+</webobject>
+<!-- end of dynamic body -->

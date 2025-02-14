@@ -1,0 +1,48 @@
+  <table border="0" cellpadding="2" cellspacing="2" class="content">
+  	<tr><td colspan="2">&nbsp;</td></tr>
+  	<tr>
+  		<td valign="top"><b>Search&nbsp;Form&nbsp;Type: </b></td>
+  		<td valign="top">
+  			<p> 
+	  			<webobject NAME=QueryBuilderRadioButton></webobject>&nbsp;Build a customized query<br/>
+  				<webobject NAME=SearchAllRadioButton></webobject>&nbsp;Accept one term, search all text fields<br/>
+  				<webobject NAME=SimpleSearchRadioButton></webobject>&nbsp;Accept a search term for each field<br/>
+  			</p>
+			<p>
+				<b>If you have uploaded a custom search form layout, it will be erased if you change the search form type.</b>
+			</p>
+  		</td>
+  	</tr>
+  	<tr><td colspan="2">&nbsp;</td></tr>
+  </table>
+
+
+  <table border=0 cellspacing=2 cellpadding=2 class=coloredTable align=center width=95%>
+  	<tr>
+  		<th align=center class=daListShowFieldHeading>Show<br />Field</th>
+  		<th class=daListFieldNameHeading>Field<br />Name</th>
+  		<th class=daListFieldTypeHeading>Field<br />Type</th>
+  		<th class=daListDefaultComparisonHeading>Default&nbsp;Comparison</th>
+        <th class="daListChangeOrderHeading">
+          Change<br />Order
+        </th>
+  	</tr>
+  </table>
+
+  <webobject name=ColumnList>
+    <table border=0 cellspacing=2 cellpadding=2 class=coloredTable align=center width=95%>
+      <tr>
+  		<td class = "daListShowField" align=center><webobject name=ShowField></webobject></td>
+  		<td class = "daListFieldName" align=center><webobject name=FieldName></webobject></td>
+  		<td class = "daListFieldType" align=center>
+  		  <WEBOBJECT NAME=IsCalculatedColumnConditional><WEBOBJECT NAME=CalculationType/></WEBOBJECT NAME=IsCalculatedColumnConditional>
+  		  <webobject name=FieldType></webobject>
+  		  <webobject name=IsSystemColumnConditional> <i>(System)</i></webobject>
+  		</td>
+  		<td class = "daListDefaultComparison" align=LEFT><webobject name=DataAccessColumnComponent></webobject></td>
+        <td class="daListChangeOrder" align="center">
+          <webobject name="OrderPopup"></webobject>
+        </td>
+  	  </tr>
+    </table>
+  </webobject>

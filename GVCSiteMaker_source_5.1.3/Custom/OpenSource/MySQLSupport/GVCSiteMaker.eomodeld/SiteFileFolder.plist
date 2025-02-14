@@ -1,0 +1,57 @@
+{
+    attributes = (
+        {columnName = NAME; name = name; prototypeName = longString; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            columnName = "OID_PARENT_FOLDER"; 
+            name = oidParentFolder; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (name, oid, oidParentFolder, websiteFKey); 
+    className = "com.gvcsitemaker.core.SiteFileFolder"; 
+    classProperties = (name, oid, parentFolder, website, files, childFolders); 
+    externalName = "SM_SITE_FILE_FOLDER"; 
+    fetchSpecificationDictionary = {}; 
+    name = SiteFileFolder; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SiteFileFolder; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidParentFolder; sourceAttribute = oid; }); 
+            name = childFolders; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = SiteFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidSiteFileFolder; sourceAttribute = oid; }); 
+            name = files; 
+            numberOfToManyFaultsToBatchFetch = 100; 
+        }, 
+        {
+            destination = SiteFileFolder; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidParentFolder; }); 
+            name = parentFolder; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = website; 
+        }
+    ); 
+}

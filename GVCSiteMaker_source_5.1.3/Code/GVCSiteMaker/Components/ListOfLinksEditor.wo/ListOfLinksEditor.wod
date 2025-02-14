@@ -1,0 +1,153 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+Delete: WOHyperlink {
+	string = "Delete";
+	action = deleteLink;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+Description: WOString {
+	value = aLink.description;
+}
+
+Done: WOSubmitButton {
+	action = resetPage;
+	value = "Done";
+}
+
+ExternalHyperlink: WOHyperlink {
+	href = aLink.uri;
+	string = aLink.name;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+FileHyperlink: WOHyperlink {
+	href = linkURI;
+	disabled = aLink.isFileMissing;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+FileInfo: WOString {
+	value = fileInfo;
+	escapeHTML = false;
+}
+
+FileSize: WOString {
+	value = fileSize;
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+}
+
+HasChildren: WOConditional {
+	condition = sectionLayout.hasChildren;
+}
+	
+InsertAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Add & View";
+}
+
+InsertLink: WOSubmitButton {
+	action = updateSettings;
+	value = "Add";
+}
+
+IsAddMode: WOConditional {
+	condition = addMode;
+}
+
+IsFile: WOConditional {
+	condition = aLink.isSiteFileLink;
+}
+
+IsNotAddMode: WOConditional {
+	condition = addMode;
+	negate = true;
+}
+
+IsNotFile: WOConditional {
+	condition = aLink.isSiteFileLink;
+	negate = true;
+}
+
+
+LinkDate: WOString {
+	value = aLink.dateModified;
+   	formatter = application.properties.StandardDateFormatter;  // VALID
+}
+
+LinkList: WORepetition {
+//	list = componentOrder;
+//	item = anIndex;
+	list = orderedComponents.ordered;
+	item = aLink;
+}
+
+Name: WOString {
+	value = aLink.name;
+	escapeHTML = true;
+}
+
+OpenInNewWindowConditional: WOConditional {
+	condition = aLink.shouldOpenInNewWindow;
+}
+
+OpenInSameWindowConditional: WOConditional {
+	condition = aLink.shouldOpenInNewWindow;
+	negate = true;
+}
+
+OrderPopup: ReorderPopup {
+	container = orderedComponents;
+	object = aLink;
+}
+
+PlacementOrder: WOString {
+	value = placementOrder;
+}
+
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURL = previewURL;
+}
+
+Reset: WOSubmitButton {
+	action = cancelChanges;
+	value = "Cancel";
+}
+
+Revise: WOHyperlink {
+	string = "Revise";
+	action = reviseLink;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+SelectedListLink: ListLink {
+	componentObject = selectedListLink;
+	currentMode = "edit";
+}
+
+ShouldShowAdd: WOConditional {
+	condition = addMode;
+}
+
+ShouldShowUpdate: WOConditional {
+	condition = addMode;
+	negate = true;
+}
+
+UpdateAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Update & View";
+}
+
+UpdateLink: WOSubmitButton {
+	action = updateSettings;
+	value = "Update";
+}

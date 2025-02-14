@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="SecureTextAreaComponent" wocomponentcontent="NO">
+
+		<binding name="value"/>
+		<binding name="cols"/>
+		<binding name="rows"/>
+		<binding name="maxLength"/>
+		<binding name="name"/>
+		<binding name="isPermissable"/>
+		<binding name="cssClassName"/>
+
+		<validation message="&apos;value&apos; is a required binding">
+			<unbound name="value"/>
+		</validation>
+
+		<validation message="&apos;isPermissable&apos; is a required binding">
+			<unbound name="isPermissable"/>
+		</validation>
+	</wo>
+</wodefinitions>

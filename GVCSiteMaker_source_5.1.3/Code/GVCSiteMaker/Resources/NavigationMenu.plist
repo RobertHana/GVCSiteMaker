@@ -1,0 +1,26 @@
+(
+    {
+        name = Root; 
+        children = ("Website Sections", "Overall Appearance", "Access Groups", "Manage Files", "Data Tables");
+    }, 
+    {
+        name = "Website Sections";
+        pageName = "ConfigureWebsiteSectionsPane";
+    },
+    {
+        name = "Overall Appearance";
+        pageName = "ConfigAppearance";
+    },
+    {
+        name = "Access Groups";
+        pageName = "ManageAccessGroups";
+    },
+    {
+        name = "Manage Files";
+        pageName = "FileMgmt";
+    },
+    {
+        name = "Data Tables";
+        pageName = "ConfigureDataTablesPane";
+    }
+)

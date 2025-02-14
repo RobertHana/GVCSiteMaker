@@ -1,0 +1,52 @@
+{
+
+
+//***************************************************************
+//
+// Bootstrap only parameters
+// - these are not used again after database initialization and this file can be deleted.
+//
+AdminSiteName   = "Administrator's Site";  // Note that the Administrator Site ID is 'admin'.
+AdminID         = "me@work.com";
+AdminPassword   = "sEcrEt";
+
+// Name to display for the Organizational Unit at the top of the hierarchy.
+RootUnitName = "GVC.SiteMaker Open Source Development";
+
+PublicGroupName = "Everyone";
+InternalUsersGroupName  = "Internal Users";
+
+
+//***************************************************************
+//
+// Site Style related parameters
+//
+// This is a dictionary to correlate Style ID with the English Style Name.  The StyleID must match <style ID>.html in the StyleTemplates directory: <GVCSiteMaker_Root>/Local/Library/Frameworks/GVCSMCore.framework/Resources/StyleTemplates 
+SiteStyles = {
+    blueRobotLeft = "Blue Left Menu";
+    blueRobotRight = "Blue Right Menu";
+    fourBoxes = "Four Boxes";
+    funkyThree = "Nav Item Boxes";
+    topfooter = "Top Footer";
+};
+
+// This Style ID is used to indicate the default style during bootstrap.
+// It *MUST* match one of the above Style IDs in siteStyles
+DefaultStyle = "blueRobotLeft";
+
+
+LDAPServers = (
+    {
+        DisplayName="UM Test Server";
+        GroupSubTree="ou=User Groups,ou=Groups,dc=umich,dc=edu";
+        UserSubTree="ou=People,dc=umich,dc=edu";
+        UserIDAttribute="uid";
+        LDAPEntityName="UMTestGroup";
+        Instructions="This only contains groups on the test server.";
+    }
+);
+
+
+}
+
+

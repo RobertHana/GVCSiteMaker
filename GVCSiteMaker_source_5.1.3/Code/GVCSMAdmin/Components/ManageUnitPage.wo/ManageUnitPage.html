@@ -1,0 +1,263 @@
+<webobject name="DynamicBody">
+	<!-- This page could really use a unified error message scheme -->
+	<WEBOBJECT NAME="UnitManagementForm">
+		<!-- cell padding removed except around HR -->
+		<table border="0" cellpadding="0" cellspacing="0" class="content" style = "width: 100%">
+    		<tr>
+				<td style="padding-left: 2px;">
+    				<h1>Unit Management</h1>
+    			</td>
+			</tr>
+			
+			<tr>
+				<!-- All the extra tables and spacing is need to get it to work on IE 5.2 for Mac among others -->	
+        		<td valign="top" align="right" style="padding-right: 2px; text-align: right;">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="100%"><!-- spacer -->&nbsp;</td>
+							<td>
+								<WEBOBJECT NAME="CanDeleteUnit">
+									<WEBOBJECT NAME=RemovalButton></WEBOBJECT>
+						        </WEBOBJECT>
+							</td>
+							<td><WEBOBJECT NAME=UpdateProperties></WEBOBJECT></td>	
+						</tr>
+					</table>
+				</td>
+    		</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"/></td></tr>
+					</table>
+				</td>
+			</tr>
+    	</table>
+
+
+		<table border="0" cellspacing="2" cellpadding="2" class="content">
+		<!-- Basic Properties -->
+			<tr>
+				<td class="boldText" valign="top">
+					Name:<br />
+					<i class="requiredText">(required)</i> 
+				</td>
+				<td class="rightContentColumn">
+        			<WEBOBJECT NAME="IsSystemAdmin">
+        				<WEBOBJECT NAME=NewUnitName></WEBOBJECT>
+        			</WEBOBJECT>
+        			<WEBOBJECT NAME="IsNotSystemAdmin"> 
+        				<b class="coloredBoldText"><WEBOBJECT NAME="UnitName"></WEBOBJECT></b>
+        				<span class="microText"><br/>(Unit names are changed only by System Administrators)</span>
+        			</WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText" valign="top">
+        			Encompassing Unit:
+				</td>
+				<td class="rightContentColumn">
+        			<WEBOBJECT NAME="IsSystemAdmin">
+                		<WEBOBJECT NAME="IsNotRootUnit">
+                			<WEBOBJECT NAME=NewEncompassingUnit></WEBOBJECT>
+                		</WEBOBJECT>
+                		<WEBOBJECT NAME="IsRootUnit">
+                			Root unit cannot be encompassed by another unit
+                		</WEBOBJECT>
+                	</WEBOBJECT>
+                	<WEBOBJECT NAME="IsNotSystemAdmin">
+        				<b class="coloredBoldText"><WEBOBJECT NAME=EncompassingUnit></WEBOBJECT></b>
+                		<span class="microText"><br/>(Encompassing units are changed only by System Administrators)</span>
+                	</WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText" valign="top">
+					Filespace quota:<br />
+					<i class="requiredText">(required)</i>
+				</td>
+				<td class="rightContentColumn">
+        			<WEBOBJECT NAME="IsSystemAdmin">
+                		<WEBOBJECT NAME=NewFilespaceQuota></WEBOBJECT> (MB)
+						<br />
+                		<span class="descriptiveText">(must be greater than current usage)</span>
+                	</WEBOBJECT NAME="IsSystemAdmin">
+                	<WEBOBJECT NAME="IsNotSystemAdmin">
+        				<span class="coloredBoldText"><WEBOBJECT NAME=FilespaceQuota></WEBOBJECT> MB</span>
+                		<br/><span class="microText">(Unit filespace quotas are changed only by System Administrators)</span>
+                	</WEBOBJECT NAME="IsNotSystemAdmin">
+							<br/>Current usage is:
+                			<span class="coloredBoldText">
+                				<WEBOBJECT NAME=FilespaceUsage></WEBOBJECT>
+                        		(MB) (<WEBOBJECT NAME="PercentageOfQuota"></WEBOBJECT>%)
+                			</span>
+                        	<br />
+                			Available Filespace is:
+                			<span class="coloredBoldText"><WEBOBJECT NAME=AvailableFilespaceString></WEBOBJECT> (MB)</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText" valign="top">
+					Website Creation Message:
+				</td>
+				<td class="rightContentColumn">
+					<webobject name=WebsiteCreationMessageFileUpload></webobject><br />
+					<webobject name=DownloadWebsiteCreationMessageHyperlink>Download Message</webobject>&nbsp;&nbsp;&nbsp;
+					<WEBOBJECT NAME=CanDeleteWebsiteCreationMessageConditional><webobject NAME=DeleteWebsiteCreationMessageHyperlink2>Delete Message</webobject></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText" valign="top">
+					List system wide?
+				</td>
+				<td class="rightContentColumn">
+					<WEBOBJECT NAME="IsSystemAdmin">
+						<webobject name="YesButton"></webobject>Yes
+						<webobject name="NoButton"></webobject>No
+						<br /><span class="descriptiveText">Displaying a unit system wide enables the unit to be selected for website searches and requests.</span>
+					</WEBOBJECT>
+    	    		<WEBOBJECT NAME="IsNotSystemAdmin"><span class="coloredBoldText"><webobject name=DisplaySystemWideString></webobject></span>
+	    			</WEBOBJECT>
+		       		<WEBOBJECT NAME="IsNotSystemAdmin">
+    					<span class="microText"><br/>(Listing status is changed only by System Administrators)</span>
+    				</WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+            		<!-- Errors -->
+                    <WEBOBJECT NAME="ShowNullUnitNameErrorMessage">
+            			<p class="warningText">Update failed:
+            				<WEBOBJECT NAME=NullUnitNameErrorString></WEBOBJECT>
+            			</p>
+            		</WEBOBJECT>
+            		<WEBOBJECT NAME="ShowUnitNameExistsErrorMessage">
+            			<p class="warningText">Update failed:
+            					<WEBOBJECT NAME=UnitNameExistsErrorString></WEBOBJECT>
+            			</p>
+            		</WEBOBJECT>
+            		<WEBOBJECT NAME="ShowNullEncompassingUnitErrorMessage">
+                		<p class="warningText">Update failed:
+                				<WEBOBJECT NAME=NullEncompassingUnitErrorString></WEBOBJECT>
+                		</p>
+                	</WEBOBJECT>
+            		<WEBOBJECT NAME="ShowNewParentIsChildErrorMessage">
+            			<p class="warningText">
+            				Update failed:
+            				<WEBOBJECT NAME=NewParentIsChildErrorString></WEBOBJECT>
+            			</p>
+            		</WEBOBJECT>
+            		<WEBOBJECT NAME="ShowNullFilespaceQuotaErrorMessage">
+            			<p class="warningText">
+            				Update failed:
+            				<WEBOBJECT NAME=NullFilespaceQuotaErrorString></WEBOBJECT>
+            			</p>
+            		</WEBOBJECT>
+            		<WEBOBJECT NAME="ShowInvalidFilespaceQuotaErrorMessage">
+            			<p class="warningText">
+            				Update failed:
+            				<WEBOBJECT NAME=InvalidFilespaceQuotaErrorString></WEBOBJECT>
+            			</p>
+            		</WEBOBJECT>
+            		<WEBOBJECT NAME=InvalidWebsiteCreationTemplateConditional>
+            			<p class="warningText">Update failed: Website Creation Message not uploaded. <WEBOBJECT NAME=invalidWebsiteCreationTemplateMesssageString></WEBOBJECT></p>
+					</WEBOBJECT><!-- End of Errors -->
+				</td>
+			</tr>
+			<!-- End of Basic Properties -->
+			<tr>
+				<td colspan="2">
+        			<hr class="alternateBarStyle"/>
+				</td>
+			</tr>
+			<!-- start of e-mail form -->
+			<tr>
+				<td class="boldText" valign="top">Email Unit Admins:</td>
+				<td valign=TOP><webobject name=IncludeSubUnitAdminsCheckBox></webobject>&nbsp;Include sub-unit administrators&nbsp;&nbsp;<webobject name=SendMessageSubmitButton></webobject></td>
+			</tr>
+			<tr>
+				<td valign="top" align="center">Subject:<br /><i class="requiredText">(required)</i></td>
+				<td valign="top"><webobject name=MessageSubjectTextField></webobject>
+					<webobject name=MissingSubjectConditional>
+						<br /><span class="warningText"><webobject name=MissingSubjectString></webobject></span>
+					</webobject>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="center">Message:</td>
+				<td valign="top"><webobject name=MessageBodyText></webobject></td>
+			</tr>
+			<!-- end of e-mail form -->
+			<tr>
+				<td colspan="2">
+        			<hr class="alternateBarStyle"/>
+				</td>
+			</tr>
+			<!-- Administrators -->
+			<tr>
+				<td class="boldText">
+					New Administrator:
+				</td>
+				<td class="rightContentColumn">
+        			<WEBOBJECT NAME=NewAdminID></WEBOBJECT>
+					<WEBOBJECT NAME=AddAdmin></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td><!-- absolutely nothing --></td>
+				<td><img src="/GVCSiteMaker/Images/spacer.gif" width="250" height="1"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+    				<!-- Admin Errors -->
+        			<WEBOBJECT NAME="ShowAdminIDNotFoundMessage">
+        				<p class="warningText">
+    						Update failed:
+        					<WEBOBJECT NAME=AdminIDNotFoundErrorString></WEBOBJECT>
+    					</p>
+        			</WEBOBJECT>
+        			<WEBOBJECT NAME="ShowAdminIDInUseErrorMessage">
+        				<p class="warningText">
+        					Update failed:
+        					<WEBOBJECT NAME=AdminIDInUseErrorString></WEBOBJECT>
+        				</p>
+        			</WEBOBJECT>
+    			<!-- End of Admin Errors -->
+    			<!-- Existing Administrators -->
+    				<WEBOBJECT NAME="HasAdminUnits">
+    					<h3 style="padding-bottom: 0px; margin-bottom: 0px;">Existing Administrators</h3>
+        				<WEBOBJECT NAME=UnitAdminList></WEBOBJECT>
+        			</WEBOBJECT>
+    			<!-- End of Existing Administrators -->
+				</td>
+			</tr>
+			<!-- End of Administrators -->
+			<tr>
+				<td colspan="2">
+	 				<hr class="alternateBarStyle"/>
+				</td>
+			</tr>
+			<!-- Manage a Different Unit -->
+			<tr>
+				<td class="boldText"> Manage another unit:</td>
+				<td CLASS=rightContentColumn VALIGN=MIDDLE> 
+					<WEBOBJECT NAME=UnitToManage></WEBOBJECT>
+					<WEBOBJECT NAME=ManageUnit></WEBOBJECT>
+				</td>
+			</tr>
+			<!-- End of Manage a Different Unit -->
+    		<!-- Deletion Failed Error -->
+    		<WEBOBJECT NAME="ShowDeleteNotPermittedErrorMessage">
+    			<WEBOBJECT NAME="ErrorRepetition">
+    				<tr>
+    					<td colspan="2" class="warningText">
+            				Delete failed:
+            				<WEBOBJECT NAME="DeleteErrorMessage"></WEBOBJECT>
+    					</td>
+    				</tr>
+    			</WEBOBJECT>
+    		</WEBOBJECT>
+    		<!-- End of Deletion Failed Errors -->
+		</table>
+	</WEBOBJECT>
+</webobject>	

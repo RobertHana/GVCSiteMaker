@@ -1,0 +1,131 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            columnName = "FAILURE_REASON"; 
+            name = failureReason; 
+            prototypeName = longString; 
+            width = 1999; 
+        }, 
+        {
+            columnName = "RELATED_SITE_FILE_FOLDER_ID"; 
+            name = relatedSiteFileFolderId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "RELATED_TABLE_ID"; 
+            name = relatedTableId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STATUS_ID"; 
+            name = statusId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_ID"; 
+            name = taskId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_TYPE"; 
+            name = taskType; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        bindings, 
+        details, 
+        failureReason, 
+        relatedSiteFileFolderId, 
+        relatedTableId, 
+        statusId, 
+        taskId, 
+        taskType, 
+        userId
+    ); 
+    className = "com.gvcsitemaker.core.CreateDataTablePackageTask"; 
+    classProperties = (
+        bindings, 
+        createdDate, 
+        details, 
+        failureReason, 
+        owner, 
+        relatedSiteFileFolder, 
+        relatedTable, 
+        sections, 
+        status, 
+        tables, 
+        taskType
+    ); 
+    externalName = TASK; 
+    fetchSpecificationDictionary = {}; 
+    name = CreateDataTablePackageTask; 
+    parent = Task; 
+    primaryKeyAttributes = (taskId); 
+    relationships = (
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userId; }); 
+            name = owner; 
+        }, 
+        {
+            destination = SiteFileFolder; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = relatedSiteFileFolderId; }); 
+            name = relatedSiteFileFolder; 
+        }, 
+        {
+            destination = Table; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = relatedTableId; }); 
+            name = relatedTable; 
+        }, 
+        {definition = "taskSections.section"; name = sections; }, 
+        {
+            destination = TaskStatus; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = statusId; }); 
+            name = status; 
+        }, 
+        {definition = "taskTables.table"; name = tables; }, 
+        {
+            destination = TaskSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = taskId; sourceAttribute = taskId; }); 
+            name = taskSections; 
+        }, 
+        {
+            destination = TaskTable; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = taskID; sourceAttribute = taskId; }); 
+            name = taskTables; 
+        }
+    ); 
+    restrictingQualifier = "(taskType = 'CreateDataTablePackage')"; 
+}

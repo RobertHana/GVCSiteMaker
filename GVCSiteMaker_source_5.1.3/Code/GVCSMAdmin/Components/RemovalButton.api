@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="RemovalButton" wocomponentcontent="false">
+
+		<binding name="removeButtonActionName"/>
+		<binding name="removeButtonName"/>
+		<binding name="removeWarningMessage"/>
+		<binding name="objectToDelete"/>
+
+		<validation message="&apos;removeButtonActionName&apos; is a required binding">
+			<unbound name="removeButtonActionName"/>
+		</validation>
+
+		<validation message="&apos;removeButtonName&apos; is a required binding">
+			<unbound name="removeButtonName"/>
+		</validation>
+
+		<validation message="&apos;objectToDelete&apos; is a required binding">
+			<unbound name="objectToDelete"/>
+		</validation>
+	</wo>
+</wodefinitions>

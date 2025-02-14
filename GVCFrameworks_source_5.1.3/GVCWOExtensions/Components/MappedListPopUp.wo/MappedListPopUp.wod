@@ -1,0 +1,7 @@
+PopUpButton: WOPopUpButton {
+	selection = selection;
+	list = displayList;
+	item = anItem;
+	displayString = displayString;
+	noSelectionString = noSelectionString;
+}

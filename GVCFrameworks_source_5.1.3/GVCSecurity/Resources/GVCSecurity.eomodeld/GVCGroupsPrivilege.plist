@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {columnName = "GROUP_ID"; name = groupId; prototypeName = Key; }, 
+        {columnName = "PRIVILEGE_ID"; name = privilegeId; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (groupId, privilegeId); 
+    className = EOGenericRecord; 
+    externalName = "GVC_GROUPS_PRIVILEGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_javaClientClassName" = "com.apple.yellow.eocontrol.EOGenericRecord\n\nEOGenericRecord"; 
+    }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCGroupsPrivilege; 
+    primaryKeyAttributes = (groupId, privilegeId); 
+    relationships = (
+        {
+            destination = GVCUserGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupId; sourceAttribute = groupId; }); 
+            name = grpToGrpsPrivFk; 
+        }, 
+        {
+            destination = GVCPrivilege; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = privilegeId; sourceAttribute = privilegeId; }); 
+            name = privToGrpsPrivFk; 
+        }
+    ); 
+    userInfo = {modificationDate = "2001-05-29 22:53:51 +0000"; }; 
+}

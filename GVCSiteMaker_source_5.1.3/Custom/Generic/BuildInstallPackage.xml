@@ -1,0 +1,41 @@
+<project name="BuildGenericInstallPackage" default="build_packages">
+
+<!-- 
+	You *must* define installation.version when running this build file.
+
+	If you want to package for live deployment, use the build_packages target
+	e.g.
+	ant build_packages -f BuildInstallPackage.xml -Dinstallation.version=3.1.0
+
+	If you want to package for a test deployment with DBC enabled, use the 
+    test_build_packages target to process the source files through Jass and to 
+    include the jass.jar in the built packages 
+	e.g.
+	ant test_build_packages -f BuildInstallPackage.xml -Dinstallation.version=3.1.test
+ -->
+
+	<target name="build_packages">
+		<!-- Set properties needed by CommonBuildInstallPackage.xml -->
+
+		<!-- installation.name is the name of the installation.  
+             This should match the end of the path under GVCSiteMaker/Custom 
+             where the installation's files are located                    -->
+		<property name="installation.name" value="Generic"/>
+
+		<!-- Remove this next line if the installation does NOT use Kerberos authentication -->
+		<property name="use.kerberos" value="true"/>
+
+		<!--  Call the common packaging script -->
+		 <ant antfile="../CommonBuildInstallPackage.xml" inheritAll="true"/>
+	</target>
+
+
+	<!-- Alternate target, does a full build and package but with DBC enabled -->
+	<target name="test_build_packages" depends="use.dbc, build_packages"/>
+
+	<!-- Defines use.dbc flag -->
+	<target name="use.dbc">
+		<property name="use.dbc" value="true"/>
+	</target>
+
+</project>

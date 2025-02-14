@@ -1,0 +1,12 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = create;
+}
+
+String1: WOString {
+	value = creationMessage;
+}
+

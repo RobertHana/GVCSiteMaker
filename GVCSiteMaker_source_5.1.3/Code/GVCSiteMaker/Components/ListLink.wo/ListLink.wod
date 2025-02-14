@@ -1,0 +1,107 @@
+// *** DISPLAY MODE ***
+
+Description: WOString {
+	value = componentObject.description; // VALID
+	escapeHTML = false;
+}
+
+
+// *** MODE STUFF ***
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+
+// *** Edit MODE ***
+
+FileButton: WORadioButton {
+	name = "URLType";
+	value = "file";
+	selection = componentObject.linkType; // VALID
+}
+
+FileList: WOPopUpButton {
+	list = website.uploadedFiles;
+	item = aFile;
+	name = "fileList";
+    displayString = aFile.displayName;
+	selection = componentObject.toRelatedFile;
+	noSelectionString = "Select a file ...";
+	onChange="\"this.form.URLType[1].checked=true;\"";
+}
+
+HasDescriptionConditional: WOConditional {
+	condition = componentObject.description; // VALID
+}
+
+HasSelectedFileConditional: WOConditional {
+	condition = shouldShowReplaceLink;
+}
+
+Hyperlink: WOHyperlink {
+	href = linkURI;
+	disabled = componentObject.isFileMissing; // VALID
+	target = linkTarget;
+}
+
+Link: WOTextField {
+	value = componentObject.uri; // VALID
+	size = "30";
+	onKeyDown="\"this.form.URLType[0].checked=true;\"";
+}
+
+LinkDate: WOString {
+	value = componentObject.dateModified;
+   formatter = application.properties.StandardDateFormatter; // VALID
+}
+
+LinkDescription: WOText {
+	value  = componentObject.description; // VALID
+	rows = 4;
+	cols = "36";
+}
+
+LinkInfo: WOString {
+	value = componentObject.linkInfo; // VALID
+}
+
+LinkName: WOTextField {
+	value = componentObject.name; // VALID
+	size = "36";
+}
+
+
+Name: WOString {
+	value = componentObject.name; // VALID
+}
+
+RadioButton2: WORadioButton {
+	name = "WhichWindow";
+	selection = componentObject.shouldOpenInNewWindow; // VALID
+	value = true;
+}
+
+ReplaceFileHyperlink2: WOHyperlink {
+	action = replaceFile;
+}
+
+SameWIndowRationButton: WORadioButton {
+	name = "WhichWindow";
+	selection = componentObject.shouldOpenInNewWindow; // VALID
+	value = false;
+}
+
+URLButton: WORadioButton {
+	name = "URLType";
+	value = "external";
+	selection = componentObject.linkType; // VALID
+}
+
+UploadFileHyperlink: WOHyperlink {
+	pageName = "FileUpload";
+}

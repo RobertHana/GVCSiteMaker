@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            columnName = "DETAILED_DESCRIPTION"; 
+            name = detailedDescription; 
+            prototypeName = String; 
+            width = 255; 
+        }, 
+        {columnName = "GROUP_ID"; name = groupId; prototypeName = Key; }, 
+        {columnName = NAME; name = name; prototypeName = String; width = 50; }
+    ); 
+    attributesUsedForLocking = (groupId, name); 
+    className = "net.global_village.security.UserGroup"; 
+    classProperties = (name, detailedDescription, privileges); 
+    externalName = "GVC_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (name, detailedDescription, users, privileges); 
+    }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCUserGroup; 
+    primaryKeyAttributes = (groupId); 
+    relationships = (
+        {
+            definition = "toGroupsPrivilege.privToGrpsPrivFk"; 
+            name = privileges; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = GVCGroupsPrivilege; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupId; sourceAttribute = groupId; }); 
+            name = toGroupsPrivilege; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            destination = GVCUsersGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupId; sourceAttribute = groupId; }); 
+            name = toUsersGroup; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }, 
+        {
+            definition = "toUsersGroup.userToUserGroupFk"; 
+            name = users; 
+            numberOfToManyFaultsToBatchFetch = 20; 
+        }
+    ); 
+}

@@ -1,0 +1,6 @@
+{
+    stringProperty = "This a customized string value";
+  	booleanProperty = "false";
+  	customProperty = "This property does not exist in the core plist";
+}  	
+

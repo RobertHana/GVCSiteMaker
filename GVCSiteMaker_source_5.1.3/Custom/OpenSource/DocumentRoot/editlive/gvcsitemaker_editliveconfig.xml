@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editliveforjava xmlns="http://www.ephox.com/product/editliveforjava/configuration/3.5">
+    <document>
+        <html>
+            <head/>
+            <body/>
+        </html>
+    </document>
+    <ephoxLicenses/>
+    <spellCheck jar="/editlive/dictionaries/en_us_4_0.jar" showOnDownload="true" useNotModified="true"/>
+    <htmlFilter allowUnknownTags="true" encloseText="true"
+        indentContent="false" logicalEmphasis="false" outputXHTML="true"
+        outputXML="false" quoteMarks="false" removeFontTags="false"
+        uppercaseAttributes="false" uppercaseTags="false" wrapLength="0"/>
+    <wysiwygEditor brOnEnter="false" showDocumentNavigator="true"
+        showTableGridlines="true" tabPlacement="bottom"/>
+    <sourceEditor enabled="true" showBodyOnly="true"/>
+    <wordImport styleOption="user_prompt"/>
+    <htmlImport styleOption="merge_embedded_styles"/>
+    <mediaSettings>
+        <images allowLocalImages="false" allowUserSpecified="true">
+            <imageList>
+            </imageList>
+        </images>
+        <multimedia>
+            <types>
+                <type allowCustomParams="true" extension="swf"
+                    name="Macromedia Flash"
+                    type="application/x-shockwave-flash" urlParam="movie">
+                    <param name="movie"/>
+                    <param name="quality"/>
+                    <param name="bgcolor"/>
+                </type>
+                <type allowCustomParams="true" extension="mov"
+                    name="QuickTime Movie" type="video/quicktime">
+                    <param name="autoplay"/>
+                    <param name="bgcolor"/>
+                    <param name="cache"/>
+                    <param name="controller"/>
+                    <param name="enablejavascript"/>
+                    <param name="endtime"/>
+                    <param name="height"/>
+                    <param name="href"/>
+                    <param name="kioskmode"/>
+                    <param name="loop"/>
+                    <param name="starttime"/>
+                    <param name="volume"/>
+                </type>
+                <type allowCustomParams="true" extension="asf"
+                    name="Window Media" type="application/x-mplayer2" urlParam="fileName">
+                    <param name="animationAtStart"/>
+                    <param name="autoStart"/>
+                    <param name="showControls"/>
+                    <param name="clickToPlay"/>
+                    <param name="transparentAtStart"/>
+                </type>
+                <type allowCustomParams="true" extension="asx"
+                    name="Window Media (Streaming)"
+                    type="application/x-mplayer2" urlParam="fileName">
+                    <param name="animationAtStart"/>
+                    <param name="autoStart"/>
+                    <param name="showControls"/>
+                    <param name="clickToPlay"/>
+                    <param name="transparentAtStart"/>
+                </type>
+                <type allowCustomParams="true" extension="wav"
+                    name="WAV Audio" type="application/x-mplayer2"/>
+                <type allowCustomParams="true" extension="mp3"
+                    name="MP3 Audio" type="application/x-mplayer2"/>
+                <type allowCustomParams="true" extension="avi"
+                    name="AVI" type="application/x-mplayer2"/>
+            </types>
+        </multimedia>
+    </mediaSettings>
+    <hyperlinks>
+        <hyperlinkList>
+        </hyperlinkList>
+        <mailtoList>
+        </mailtoList>
+    </hyperlinks>
+    <menubar showAboutMenu="true">
+        <menu name="&amp;File">
+            <menuItem name="new"/>
+            <menuItem name="open"/>
+            <menuSeparator/>
+            <menuItem name="save"/>
+            <menuItem name="saveas"/>
+        </menu>
+        <menu name="&amp;Edit">
+            <menuItem name="undo"/>
+            <menuItem name="redo"/>
+            <menuSeparator/>
+            <menuItem name="cut"/>
+            <menuItem name="copy"/>
+            <menuItem name="paste"/>
+            <menuItem name="pastespecial"/>
+            <menuSeparator/>
+            <menuItem name="select"/>
+            <menuItem name="selectall"/>
+            <menuSeparator/>
+            <menuItem name="find"/>
+            <menuSeparator/>
+        </menu>
+        <menu name="&amp;View">
+            <menuItemGroup name="sourceview"/>
+            <menuSeparator/>
+            <menuItemGroup name="frameview"/>
+            <menuSeparator/>
+            <menuItem name="showdocumentnavigator"/>
+            <menuSeparator/>
+            <menuItem name="paragraphmarker"/>
+        </menu>
+        <menu name="&amp;Insert">
+            <menuItem name="instable"/>
+            <menuSeparator/>
+            <menuItem name="hlink"/>
+            <menuItem name="bookmark"/>
+            <menuItem name="removehyperlink"/>
+            <menuSeparator/>
+            <menuItem name="imageserver"/>
+            <menuItem name="insertobject"/>
+            <menuSeparator/>
+            <menuItem name="symbol"/>
+            <menuItem name="hrule"/>
+        </menu>
+        <menu name="F&amp;ormat">
+            <submenu name="style"/>
+            <submenu name="face"/>
+            <submenu name="size"/>
+            <menuSeparator/>
+            <menuItem name="bold"/>
+            <menuItem name="italic"/>
+            <menuItem name="underline"/>
+            <menuSeparator/>
+            <menuItemGroup name="align"/>
+            <menuSeparator/>
+            <menuItemGroup name="list"/>
+            <menuItem name="decreaseindent"/>
+            <menuItem name="increaseindent"/>
+            <menuItem name="proplist"/>
+            <menuSeparator/>
+            <menuItem name="highlightcolor"/>
+            <menuItem name="color"/>
+            <menuSeparator/>
+            <menuItemGroup name="script"/>
+            <menuItem name="strike"/>
+            <menuSeparator/>
+            <menuItem name="removeformatting"/>
+            <menuItem name="formatpainter"/>
+        </menu>
+        <menu name="&amp;Tools">
+            <menuItem name="spelling"/>
+            <menuItem name="backgroundspellchecking"/>
+            <menuSeparator/>
+            <menuItem name="wordcount"/>
+        </menu>
+        <menu name="T&amp;able">
+            <menuItem name="instable"/>
+            <menuItem name="insrowcol"/>
+            <menuItem name="inscell"/>
+            <menuSeparator/>
+            <menuItem name="delrow"/>
+            <menuItem name="delcol"/>
+            <menuItem name="delcell"/>
+            <menuSeparator/>
+            <menuItem name="split"/>
+            <menuItem name="merge"/>
+            <menuSeparator/>
+            <menuItem name="propcell"/>
+            <menuItem name="proprow"/>
+            <menuItem name="propcol"/>
+            <menuItem name="proptable"/>
+            <menuSeparator/>
+            <menuItem name="gridlines"/>
+        </menu>
+    </menubar>
+    <toolbars>
+        <toolbar name="Command">
+            <toolbarButton name="new"/>
+            <toolbarButton name="open"/>
+            <toolbarButton name="save"/>
+            <toolbarSeparator/>
+            <toolbarButton name="spelling"/>
+            <toolbarButton name="backgroundspellchecking"/>
+            <toolbarButton name="find"/>
+            <toolbarButton name="wordcount"/>
+            <toolbarSeparator/>
+            <toolbarButton name="cut"/>
+            <toolbarButton name="copy"/>
+            <toolbarButton name="paste"/>
+            <toolbarSeparator/>
+            <toolbarButton name="removeformatting"/>
+            <toolbarButton name="formatpainter"/>
+            <toolbarSeparator/>
+            <toolbarButton name="undo"/>
+            <toolbarButton name="redo"/>
+            <toolbarSeparator/>
+            <toolbarButton name="hlink"/>
+            <toolbarButton name="removehyperlink"/>
+            <toolbarButton name="bookmark"/>
+            <toolbarButton name="imageserver"/>
+            <toolbarButton name="symbol"/>
+            <toolbarButton name="hrule"/>
+            <toolbarSeparator/>
+            <toolbarButton name="instablewizard"/>
+            <toolbarButton name="insrow"/>
+            <toolbarButton name="inscol"/>
+            <toolbarButton name="delrow"/>
+            <toolbarButton name="delcol"/>
+            <toolbarButton name="split"/>
+            <toolbarButton name="merge"/>
+            <toolbarButton name="gridlines"/>
+            <toolbarSeparator/>
+            <toolbarButton name="paragraphmarker"/>
+        </toolbar>
+        <toolbar name="Format">
+            <toolbarComboBox name="style">
+                <comboBoxItem name="P" text="Normal"/>
+                <comboBoxItem name="H1" text="Heading 1"/>
+                <comboBoxItem name="H2" text="Heading 2"/>
+                <comboBoxItem name="H3" text="Heading 3"/>
+                <comboBoxItem name="H4" text="Heading 4"/>
+                <comboBoxItem name="H5" text="Heading 5"/>
+                <comboBoxItem name="H6" text="Heading 6"/>
+                <comboBoxItem name="PRE" text="Formatted"/>
+                <comboBoxItem name="ADDRESS" text="Address"/>
+            </toolbarComboBox>
+            <toolbarComboBox name="face">
+                <comboBoxItem name="Arial" text="Arial"/>
+                <comboBoxItem name="Arial Black" text="Arial Black"/>
+                <comboBoxItem name="Arial Narrow" text="Arial Narrow"/>
+                <comboBoxItem name="Comic Sans MS" text="Comic Sans MS"/>
+                <comboBoxItem name="Courier New" text="Courier New"/>
+                <comboBoxItem name="Georgia" text="Georgia"/>
+                <comboBoxItem name="Impact" text="Impact"/>
+                <comboBoxItem name="Times New Roman" text="Times New Roman"/>
+                <comboBoxItem name="Trebuchet MS" text="Trebuchet MS"/>
+                <comboBoxItem name="Verdana" text="Verdana"/>
+                <comboBoxItem name="Webdings" text="Webdings"/>
+            </toolbarComboBox>
+            <toolbarComboBox name="size">
+                <comboBoxItem name="1" text="8pt"/>
+                <comboBoxItem name="2" text="10pt"/>
+                <comboBoxItem name="3" text="12pt"/>
+                <comboBoxItem name="4" text="14pt"/>
+                <comboBoxItem name="5" text="18pt"/>
+                <comboBoxItem name="6" text="24pt"/>
+                <comboBoxItem name="7" text="36pt"/>
+            </toolbarComboBox>
+            <toolbarSeparator/>
+            <toolbarButton name="bold"/>
+            <toolbarButton name="italic"/>
+            <toolbarButton name="underline"/>
+            <toolbarButton name="strike"/>
+            <toolbarSeparator/>
+            <toolbarButtonGroup name="align"/>
+            <toolbarSeparator/>
+            <toolbarButtonGroup name="list"/>
+            <toolbarButton name="decreaseindent"/>
+            <toolbarButton name="increaseindent"/>
+            <toolbarSeparator/>
+            <toolbarButton name="highlightcolor"/>
+            <toolbarButton name="color"/>
+            <toolbarSeparator/>
+            <toolbarButtonGroup name="script"/>
+        </toolbar>
+    </toolbars>
+    <shortcutMenu>
+        <shrtMenu>
+            <shrtMenuItem name="undo"/>
+            <shrtMenuItem name="redo"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="cut"/>
+            <shrtMenuItem name="copy"/>
+            <shrtMenuItem name="paste"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="select"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="removeformatting"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="hyperlink"/>
+            <shrtMenuItem name="removehyperlink"/>
+            <shrtMenuItem name="propimage"/>
+            <shrtMenuItem name="propobject"/>
+            <shrtMenuItem name="proplist"/>
+            <shrtMenuItem name="prophr"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="split"/>
+            <shrtMenuItem name="merge"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="proptable"/>
+            <shrtMenuItem name="proprow"/>
+            <shrtMenuItem name="propcol"/>
+            <shrtMenuItem name="propcell"/>
+            <shrtMenuSeparator/>
+            <shrtMenuItem name="edittag"/>
+        </shrtMenu>
+    </shortcutMenu>
+</editliveforjava>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title><webobject name="Banner"></webobject>: <webobject name="SectionName"></webobject></title>
+<style type="text/css">
+<!--
+  body {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #ccc;
+  background-color: #333;
+  }
+  a {
+  text-decoration: none;
+  font-weight: bold;
+  color:  #5CACEE;
+  outline: none;
+  }
+  a:visited {
+  color:  #5CACEE;
+  }
+  a:active {
+  color:  #5CACEE;
+  }
+  a:hover {
+  color: #5CACEE;
+  text-decoration: underline;
+  }
+  .ahem {
+  display: none;
+  }
+  strong, b {
+  font-weight: bold;
+  }
+  p {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+  
+  /* weird ie5win bug: all line-height to font-size ratios must agree or box gets pushed around. 
+	UPDATE: this has turned out to be very rare. my current recommendation is IGNORE this warning. 
+	at the moment i'm leaving it in only in case the issue turns up again. possibly the original 
+	bug in march 2001 was caused by an unusual combination of factors, although this solved it at the time.*/
+  
+  h1 {
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  h2 {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  h3, .dataAccessSubtitle, .dataAccessColoredSubtitle {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  .dataAccessColoredSubtitle {
+      color: #CDAA7D;
+  }
+  h4 {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  h5 {
+  font-size: 12px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  h6 {
+  font-size: 10px;
+  line-height: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+  img {
+  border: 0;
+  }
+  small {
+  font-size: 9px;
+  line-height: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  }
+  #banner {
+  margin: 20px 20px 0px 20px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  background: #666;
+  height: 100px; /* ie5win fudge begins */
+  voice-family: "\"}\"";
+  voice-family:inherit;
+  height: 70px;
+  }
+  html>body #banner {
+  height: 70px; /* ie5win fudge ends */
+  }
+  #menu {
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  margin: 20px 20px 0px 20px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  background: #666;
+  width: 200px; 
+  voice-family: "\"}\"";
+  voice-family:inherit;
+  width: 170px;
+  }
+  html>body #menu {
+  width: 170px; 
+  }
+
+  #content {
+  margin: 20px 20px 20px 240px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  background: #666;
+  }
+
+  #footer {
+	float: right;
+	vertical-align: bottom;
+  margin: 40px 20px 20px 240px;
+  padding: 10px;
+  border: 5px solid #ccc;
+  background: #666;
+	}
+	
+  pre {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+
+/* should be noted that the version in the Style Gallery / Demo site is much more tweaked, nonethe less the database specific tags were added here
+before eventually being added to style gallery / demo site.  */
+
+.dataAccessAlternateText {
+  color: #CDAA7D;
+}
+
+.dataAccessNavigation td {
+
+}
+
+#dataAccessActions {
+
+}
+
+#dataAccessTable {
+  width: 100%;
+	border-color: #333;
+}
+
+.dataAccessTableHeading {
+  color: black;
+  background-color: #ccc;
+	border-color: #333;
+	width: 30%;
+}
+
+.dataAccessTableCell  {
+ /* just regular text in this development style */
+  color: white;
+	border-color: #333;
+}
+
+.dataAccessException {
+  color: red;
+	font-weight: bold;
+}
+
+.dataAccessCaution {
+  color: red;
+	font-weight: bold;
+}
+
+.dataAccessInstruction {
+  font-size: 9px;
+	font-decoration: italic;
+}
+
+-->
+</style>
+</head>
+<body>
+
+<webobject name="ShowBanner">
+  <div id="banner">
+    <webobject name="Banner"></webobject>
+  </div>
+</webobject name="ShowBanner">
+
+<webobject name="ShowNavBar">
+  <div id="menu">
+   <webobject name="NavBar"></webobject>
+  </div>
+</webobject name="ShowNavBar">
+
+<div id="content">
+	<webobject name="SectionContents"></webobject>
+	
+	<webobject name="ShowFooter">
+    <div id="footer">
+      <webobject name="Footer"></webobject>
+    </div>
+	</webobject>
+</div> 
+</body>
+</html>

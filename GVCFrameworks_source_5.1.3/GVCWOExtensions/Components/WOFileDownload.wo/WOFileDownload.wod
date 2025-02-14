@@ -1,0 +1,22 @@
+DoDownloadButton: WOSubmitButton {
+	action = doDownload;
+	value = downloadTitleText;
+}
+
+DownloadLink: WOHyperlink {
+action=doDownload;
+}
+DownloadTitleString: WOString {
+	value = downloadTitleText;
+	escapeHTML = false;
+}
+
+ShouldUseButtonConditional: WOConditional {
+	condition = displayAsButton;
+}
+
+ShouldUseLinkConditional: WOConditional {
+	condition = displayAsButton;
+	negate = true;
+}
+

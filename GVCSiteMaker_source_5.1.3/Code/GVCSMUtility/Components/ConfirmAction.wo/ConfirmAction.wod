@@ -1,0 +1,29 @@
+Form1: WOForm {
+	multipleSubmit = true;
+}
+Form2: WOForm {
+	multipleSubmit = true;
+}
+HeaderSub: HeaderSub {
+	isModal = true;
+}
+Hyperlink6: WOHyperlink {
+	pageName = "Main";
+}
+String1: WOString {
+	value = message;
+}
+String2: WOString {
+	value = descriptor;
+}
+String3: WOString {
+	value = actionName;
+}
+SubmitButton1: WOSubmitButton {
+	action = doCallerActionIfConfirmed;
+	value = confirmString;
+}
+SubmitButton2: WOSubmitButton {
+	action = doCallerActionIfDenied;
+	value = denyString;
+}

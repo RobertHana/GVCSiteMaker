@@ -1,0 +1,232 @@
+AddMultipleWebsites: WOSubmitButton {
+	value = "Add new websites";  // this is currently not displayed so I didn't shorten button length
+	action = createNewWebsitesFromBatchFile;
+}
+
+AddWebsite: WOSubmitButton {
+	value = "Submit";
+	action = createNewWebsite;
+}
+
+AdminNoteTextArea: WOText {
+	cols = 60;
+	rows = 5;
+	value = adminNote;
+}
+
+AssociatedUnit: UnitChooser {
+	size = 1;
+	selectedUnit = associatedUnit;
+	rootOrgUnits = rootOrgUnits;
+	excludeNonSystemWideUnits = false;
+	onChange = "this.form.submit();return false;";
+}
+
+BatchFileUpload: WOFileUpload {
+	value = "Browse for batch file:";
+	class = "largeEntryBox";
+	data = fileData;
+	filePath = filePath;
+}
+
+CancelButton: WOSubmitButton 
+{
+	action = returnToAdminMainPage;
+	value = "Cancel";
+}
+
+Conditional6: WOConditional {
+	condition = displayInvalidBatchFileErrorMessage;
+}
+
+DefaultQuotaString: WOString {
+	value = application.properties.DefaultQuotaInMegabytes;  // VALID
+}
+
+DisplayInvalidRedirectURLErrorMessageConditional: WOConditional {
+	condition = displayInvalidRedirectURLErrorMessage;
+}
+
+DontSendMessageCheckBox: WOCheckBox {
+	checked = dontSendMessage;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Website Creation";
+	isAdmin = true;
+	pageType = "CreateWebsitePage";
+}
+
+ExampleSiteID: WOTextField {
+	class = "largeEntryBox";
+	value = exampleSiteID;
+}
+
+ExampleSiteIDNotFoundErrorString: WOString {
+	value = exampleSiteIDNotFoundErrorMessage;
+}
+
+FilespaceQuota: WOTextField {
+	size = 8;
+	value = quota;
+	numberformat = "0";
+}
+
+HasAdminNotesConditional: WOConditional {
+	condition = websiteRequest.administrativeNotes;
+}
+
+HasTemplateErrorConditional: WOConditional {
+	condition = templateError;
+}
+
+HasWebsiteRequestConditional: WOConditional {
+	condition = websiteRequest;
+}
+
+InsufficientFilespaceQuotaErrorMessage: WOString {
+	value = insufficientFilespaceQuotaErrorMessage;
+}
+
+InsufficientFilespaceQuotaErrorMessageConditional: WOConditional {
+	condition = displayInsufficientFilespaceQuotaErrorMessage;
+}
+
+InvalidBatchFileErrorString: WOString {
+	value = invalidBatchFileErrorMessage;
+}
+
+InvalidFilespaceQuotaErrorString: WOString {
+	value = invalidFilespaceQuotaErrorMessage;
+}
+
+InvalidRedirectURLErrorMessageString: WOString {
+	value = invalidRedirectUrlErrorMessage;
+}
+
+InvalidSiteIDErrorString: WOString {
+	value = invalidSiteIDErrorMessage;
+}
+
+MessageBodyTextArea: WOText {
+	cols = 60;
+	rows = 5;
+	value = messageBody;
+}
+
+MessageSubjectTextField: WOTextField {
+	class = "largeEntryBox";
+	size = 60;
+	value = messageSubject;
+}
+
+MissingRequiredSubjectConditional: WOConditional {
+	condition = isMissingRequiredSubject;
+}
+
+NewOwnerID: WOTextField {
+	class = "largeEntryBox";
+	value = ownerID;
+    maxLength = 100;
+}
+
+NewSiteID: WOTextField {
+	class = "largeEntryBox";
+	value = siteID;
+}
+
+NullAssociatedUnitErrorString: WOString {
+	value = nullAssociatedUnitErrorMessage;
+}
+
+NullOwnerErrorString: WOString {
+	value = nullOwnerIDErrorMessage;
+}
+
+NullSiteIDErrorString: WOString {
+	value = nullSiteIDErrorMessage;
+}
+
+RedirectURL: WOTextField {
+	class = "largeEntryBox";
+	value = redirectUrl;
+}
+
+RequestAdminNotesString: WOString {
+	escapeHTML = false;
+	value = formattedAdminNotes;
+}
+
+RequestNotesString: WOString {
+	value = websiteRequest.requesterNote;
+}
+
+SaveFailureMessageConditional: WOConditional {
+	condition = saveFailureMessage;
+}
+
+SaveFailureMessageString: WOString {
+	value = saveFailureMessage;
+}
+
+ShowExampleSiteIDNotFoundErrorMessage: WOConditional {
+	condition = displayExampleSiteIDNotFoundErrorMessage;
+}
+
+ShowInvalidCharsInOwnerIDErrorMessage: WOConditional {
+	condition = displayInvalidCharsInOwnerIDErrorMessage;
+}
+
+ShowInvalidFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayInvalidFilespaceQuotaErrorMessage;
+}
+
+ShowInvalidSiteIDErrorMessage: WOConditional {
+	condition = displayInvalidSiteIDErrorMessage;
+}
+
+ShowNullAssociatedUnitErrorMessage: WOConditional {
+	condition = displayNullAssociatedUnitErrorMessage;
+}
+
+ShowNullOwnerIDErrorMessage: WOConditional {
+	condition = displayNullOwnerIDErrorMessage;
+}
+
+ShowNullSiteIDErrorMessage: WOConditional {
+	condition = displayNullSiteIDErrorMessage;
+}
+
+ShowSiteIDExistsErrorMessage: WOConditional {
+	condition = displaySiteIDExistsErrorMessage;
+}
+SiteCanNotBeReplicatedErrorConditional: WOConditional {
+	condition = displaySiteCanNotBeReplicatedErrorMessage;
+}
+SiteCanNotBeReplicatedErrorString: WOString {
+	value = siteCanNotBeReplicatedErrorMessage;
+}
+
+SiteIDExistsErrorString: WOString {
+	value = siteIDExistsErrorMessage;
+}
+
+SpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	width = 20;
+	height = 2;
+}
+
+String1: WOString {
+	value = invalidCharsInOwnerIDErrorMessage;
+}
+
+TemplateErrorString: WOString {
+	value = templateError;
+}
+
+UnitCreationForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}

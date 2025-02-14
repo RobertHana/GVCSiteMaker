@@ -1,0 +1,71 @@
+ComponentContent1: WOComponentContent {
+}
+
+DateString: WOString {
+	value = errorLogItem.eventDate;
+	dateformat = "%I:%M %p on %m/%d/%Y";
+}
+
+ErrorLogRepetition: WORepetition {
+	item = errorLogItem;
+	list = errorLogList;
+}
+
+Hyperlink1: WOHyperlink {
+	pageName = "Main";
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+RequestString: WOString {
+	value = errorLogItem.request;
+    escapeHTML = true;
+}
+
+String1: WOString {
+	value = errorLogItem.oidAsString;
+    escapeHTML = true;
+}
+
+String10: WOString {
+	value = stackTrace;
+	escapeHTML = false;
+}
+
+String3: WOString {
+	value = errorLogItem.userID;
+	escapeHTML = true;
+}
+
+String4: WOString {
+	value = errorLogItem.hostName;
+    escapeHTML = true;
+}
+
+String5: WOString {
+	value = errorLogItem.appName;
+    escapeHTML = true;
+}
+
+String6: WOString {
+	value = errorLogItem.logType;
+    escapeHTML = true;
+}
+
+String7: WOString {
+	value = errorLogItem.pageName;
+    escapeHTML = true;
+}
+
+String8: WOString {
+	value = errorLogItem.componentName;
+    escapeHTML = true;
+}
+
+String9: WOString {
+	value = errorLogItem.exceptionMessage;
+    escapeHTML = true;
+}
+

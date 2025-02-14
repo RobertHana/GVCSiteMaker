@@ -1,0 +1,286 @@
+{
+//***************************************************************
+//
+// N O T E
+//
+// - This file contains default configuration values which are unlikely to be changed on a per installation basis.  
+//   They can be overriden by defining the same value in GVCSiteMakerCustom.plist in the GVCSMCustom framework for an installation.
+//
+// - All documentation for these items is in StarTeam as GVCSiteMaker\Deployment\ConfigurationInstructions.doc.  If you change
+//   anything be certain to update the documentation.  Do not document in this file unless it is developer specific comments.
+//
+// - If you add required configuration items, add code in perfromConfigurationDiagnostics() in SMApplication to check for them.
+//
+//***************************************************************
+
+
+// 
+// Database Configuration
+//
+JDBCDriver = "";
+EOFPlugin = "";
+
+
+//
+// e-mail Configuration
+//
+MailSenderQueueSize = 0;   // Unlimited
+WebsiteCreationSubject = "Your GVC.SiteMaker Website is Ready!";
+UserCreationSubject = "Welcome to GVC.SiteMaker! (Account information enclosed)";
+ 
+
+//
+// Domain and URL Configuration
+//
+AdaptorPath = "/apps/WebObjects";
+InsecureProtocol    = "http://";
+SecureProtocol      = "https://";
+DirectActionFragment = "/wa/";
+ApplicationName = "GVCSiteMaker";
+AdministrationName = "GVCSMAdmin";
+FilePath            = "/files/";
+
+RedirectPath 	= "encrypt";
+RequireHTTPSAccessForPublicSections  = "false";
+
+//
+// Uploaded Files Configuration
+//
+PasswordChars = "abcdefghijkmnopqrstuvwxyz23456789";
+FileBufferMegaBytes = "8";
+NumberOfFileUploadWidgets = 8;
+WebsiteFileUsageWarningLevelPercent = 20;
+
+
+
+//
+// Kerberos and Internal User Configuration
+//
+Defaults=here;
+
+// External Authentication Configuration
+UsesExternalAuthentication = "false";
+ExternalAuthenticationUserHeader = "remote_user";
+//ExternalAuthenticationCookie = "optional";
+//ExternalAuthenticationLogoutURL = "optional";
+
+
+//
+// Display Configuration
+//
+ProductName = "GVC.SiteMaker";
+HitsDisplayedPerPageInDirectory = 10;
+NumberOfVisitedSitesToList = 5;
+LongDateFormat = "%B %e, %Y";    			// %B %e, %Y formats as March 3, 2002
+StandardDateFormat = "%m-%d-%Y"; 			// %m/%d/%Y formats as 03/03/2002
+CompressedDateFormat = "%m-%d-%Y"; 			// %m/%d/%Y formats as 03/03/2002
+DateAndTimeFormat = "%m/%d/%Y %I:%M %p";	// %m/%d/%Y - %I:%M %p formats as 03/03/2002 09:07 PM
+InputDateFormat = "MM/dd/yyyy h:mm aa";     // 03/21/2003 5:14 AM
+InputDateFormatHint = "MM/DD/YYYY HH:MM AM";
+DefaultInputTime = "12:00 PM";              // Used with InputDateFormat when time not entered.  Format MUST match.
+InputDateOnlyFormat = "MM/dd/yyyy";         // 03/21/2003
+InputDateOnlyFormatHint = "MM/DD/YYYY";
+StandardNumberFormat = "#,##0.00";
+InputNumberFormat = "##############.##############";
+ShowPoweredByLink="true";
+PoweredByLink="<hr id=\"poweredByBar\"><div style=\"font-size: x-small; color: silver; font-face: arial, sans-serif; text-align: center; vertical-align: top;\"><div id=\"poweredByText\">Powered By <a target=\"_blank\" href=\"http://www.GVCSiteMaker.com\" style=\"text-decoration: underline; font-size: x-small; color: silver;\"><span id=\"gvcSiteMakerLink\">GVC.SiteMaker</span></a></div></div><br/>";
+FontFaceList = ("Arial", "Times", "Helvetica", "Courier");
+FontSizeList = ("1", "2", "3", "4", "5");
+FallbackFontFaceList = "Arial, Verdana, Helvetica, sans-serif";
+StyleSheets = {
+   ie/win/7 = "/GVCSiteMaker/StyleSheets/ie7.css";  
+   default = "/GVCSiteMaker/StyleSheets/gvcSiteMaker.css";
+};
+ShowSectionSourceNotice = "false";
+ConvertCarriageReturnsToLineBreaks="false";  // false for use with WYSIWYG editor
+EditThisPageText = "Edit...";   // For Edit Page link on T/I sections
+EditThisPageTitle = "This link is seen only by site owners/co-owners";   // Title for Edit Page link on T/I sections
+EditDifferentVersionText = "Manage versions"; // For Edit Page link on T/I sections to view a different version  
+
+
+//
+// WYSIWYG Configuration
+//
+WYSIWYGEditorEnabled = "true";
+WYSIWYGInstallDirectory = "/editlive";   // From Docroot, start with /
+RichTextEditor = "TinyMCEComponent";
+RichTextEditorInstructions = "TinyMCEInstructions";
+
+CheckBrowserCompliance = "true";
+CompliantBrowsers = ("ie/win/5+", "mozilla/win", "mozilla/mac", "firefox/win", "firefox/mac", "opera/win/9", "opera/mac/9", "safari");
+
+// WYSIWIG pick lists
+URLLinkScript = "TinyMCEURLLinkScript";
+ImageListVariableName = "tinyMCEImageList";
+LinkListVariableName = "tinyMCELinkList";
+RTEAdditionalLinks = ();
+
+//
+// Mixed Media Section related parameters
+//
+
+// This is the default layout when a new MixedMedia section is created
+DefaultMixedMediaLayoutName = "Two panes, side by side";
+
+// The connection time out when validating a souce URL, in seconds
+ConnectionRequestTimeOut = 10; 
+
+
+//
+// Application Message Configuration
+//
+LoginPageMessage = "";
+SendPasswordPageMessage = "";
+ChangePasswordPageMessage = "";
+UserIDNotEmailAddressMessage = "You did not enter a valid GVC.SiteMaker userID (which *must* be an email address).";
+CantChangeInternalUserPasswordMessage="This can only be used to change the password for GVC.SiteMaker managed users.  It cannot be used to change your password.";
+CantSendInternalUserPasswordMessage = "This can only be used to send the password for GVC.SiteMaker managed users.  It cannot be used to send your password.";
+IE5UploadFailureMessage = "If you are using Internet Explorer 5.0 on Windows, this could be cause of the problem.  Please update to IE  5.01 (or later), which can be downloaded from <a href=\"http://www.microsoft.com/windows/ie/downloads/archive/default.asp\">Microsoft</a>.  If this problem occurs with a browser other than IE 5.0 on Windows, please notify support staff.";
+
+
+//
+// Miscellaneous Configuration
+//
+RestrictedSiteIDs = ("");
+SectionStyleResourcePath = "/GVCSiteMaker/Styles/";
+ImageMimeTypes = ("image/gif", 
+                  "image/jpeg", 
+                  "image/bmp", 
+                  "image/png");
+SectionMimeTypes = ("text/html",
+				   "text/xml",
+				   "text/plain");                 
+URLPrefixes = (	"ftp://", 
+				"gopher://", 
+				"http://", 
+				"https://", 
+				"imap://", 
+				"irc://", 
+				"ldap://", 
+				"mailto:", 
+				"news:", 
+				"nntp://", 
+				"rtsp://", 
+				"wais://",
+				"/");
+PublicUserID = "unauthenticateduser";
+CanEditUserID = "false";
+
+// See http://www.imsglobal.org/toolsinteroperability2.cfm
+// Added for UM Sakai
+IMSLTIRemoteParticipationEnabled = false;
+
+//
+// Versioning Configuration
+//
+VersioningEnabled = "true";
+AutoVersioningEnabled = "false";
+
+//
+// Data Access Section Configuration
+//
+DataAccessReservedNames = ();
+
+DataAccessReservedPrefixes = ("DataAccess_");
+
+DataAccessReservedSuffixes = ("_IsEmpty", "_IsNotEmpty", "_ComparisonPopup", "_CriterionHasError", "_CriterionErrorMessage");
+
+
+
+DataAccessDateFormats = (
+	"%I:%M %p",           // 12:27 PM
+	"%m/%d/%y",           // 11/05/01
+	"%m/%d/%Y",           // 11/05/2001
+	"%b %e %Y",           // Nov 5 2001
+	"%e %b %Y",           // 5 Nov 2001
+	"%B %e %Y",           // November 5 2001
+	"%e %B %Y",           // 5 November 2001
+	"%m/%d/%y %I:%M %p",  // 11/05/01 12:27 PM
+	"%m/%d/%Y %I:%M %p",  // 11/05/2001 12:27 PM
+	"%b %e %Y %I:%M %p",  // Nov 5 2001 12:27 PM
+	"%e %b %Y %I:%M %p",  // 5 Nov 2001 12:27 PM
+	"%B %e %Y %I:%M %p",  // November 1 2001 12:27 PM
+	"%e %B %Y %I:%M %p"   // 5 November 2001 12:27 PM
+);
+
+DataAccessNumberFormats = (
+	"#",
+	"#,##0",
+	"#,##0.0",
+	"#,##0.00",
+	"#,##0.000",
+	"#,##0.0000",
+	"#,##0.000000",
+	"#,##0.00000000",
+	"#,##0.0000000000",
+	"$#,##0.00",
+);
+
+DataAccessListSearchResultGroupSizes = ("5", "10", "20", "50", "100");
+DataAccessMaximumNumberOfFieldsInTable = "30000";
+DataAccessMaximumNumberOfFieldsInImport = "5000";
+
+//
+// Application Server Configuration
+//
+PublicUserSessionTimeOutInMinutes = "15";
+AuthenticatedUserSessionTimeOutInMinutes = "60";
+SessionTerminateTimeOutInSeconds = "1";
+CachingEnabled = "true";
+PageCacheSize = "15";
+PermanentPageCacheSize = "10";
+DirectConnectEnabled = "false";
+DefaultFetchTimestampLag = "2000";
+EditableDAModesUseSessionsTimestamp = "true";
+EditingContextClassName="net.global_village.eofvalidation.NotifyingEditingContext";
+DispatchRequestsConcurrently = "true";
+
+
+//
+// Queued Tasks parameters
+//
+// The interval in seconds for checking for pending tasks to process in queue
+TaskQueueTimerInterval = 10;
+
+
+//
+// Help/support params
+//
+SupportURL = "http://sitemaker.umich.edu/sitemaker.resources/support_and_training";
+PageClassToHelpURLMap = {
+   "com.gvcsitemaker.pages.ConfigureWebsiteSectionsPane" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Website+Sections";
+   "com.gvcsitemaker.pages.EditSection" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Edit+Section";
+   "com.gvcsitemaker.pages.AddSection" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Edit+Properties";
+   "com.gvcsitemaker.editors.DataAccessNotificationEditor" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Email+Notification";
+   "com.gvcsitemaker.pages.VersionMgtPage" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Overall+Appearance";
+
+   "com.gvcsitemaker.pages.ConfigAppearance" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Overall+Appearance";
+
+   "com.gvcsitemaker.pages.ManageAccessGroups" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Access+Groups";
+   "com.gvcsitemaker.pages.ConfigAccessGroup" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Remote+Participants";
+
+   "com.gvcsitemaker.pages.FileMgmt" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Uploaded+Files";
+
+   "com.gvcsitemaker.pages.AddEditDatabaseTable" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Data+Tables";
+   "com.gvcsitemaker.pages.AddEditDatabaseTableColumn" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Modify+Fields";
+   "com.gvcsitemaker.pages.ImportTableData" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Import+Data";
+   "com.gvcsitemaker.pages.ExportTableData" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=Export+Data";
+
+   "com.gvcsitemaker.pages.ListMySitesPane" = "http://sitemaker.umich.edu/docs/view&mode=list&column0=subsection&comparisonType0=contains+%28text+only%29&value0=List+My+Sites";
+};
+
+
+//
+// Debugging and development items
+//
+DebugRequestResponseLoop = "false";
+DevelopmentMode = "false";
+EOAdaptorDebugging = "false";
+LogFetchedRows = "false";
+LogSlowQueries = false;
+LogSlowQueryThesholdInMilliseconds = 10000;
+LogSQLSource = false;
+DebugLevel = 0;
+DebugEditingContextLocking = "false";
+DebugLDAP = "false";
+}

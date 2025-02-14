@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_ID"; 
+            name = componentId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (componentId, groupPKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    externalName = "SM_DA_WEBSITE_GRP_NOTIFICATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "DATA_ACCESS_WEBSITE_GROUP_NOTIFICATION"; }; 
+    name = DataAccessWebsiteGroupNotification; 
+    primaryKeyAttributes = (componentId, groupPKey); 
+    relationships = (
+        {
+            destination = DataAccess; 
+            internalInfo = {"_nameInObjectStore" = website; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = componentId; }); 
+            name = dataAccess; 
+        }, 
+        {
+            destination = WebsiteGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = websiteGroup; 
+        }
+    ); 
+}

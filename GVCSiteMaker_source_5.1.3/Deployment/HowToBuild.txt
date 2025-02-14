@@ -1,0 +1,44 @@
+This is a rough guide to how to build GVC.SiteMaker 4.6 for deployment.
+
+Building the Generic Code
+1. Make sure that you have the desired version of the GVCSiteMaker project 
+   checked out and that all the files under Code, Custom, DocumentRoot and
+   Deployment are Current.  
+
+2. Make sure that you have the GVC.SiteMaker labeled versions of 
+   the GVCTools frameworks checked out.
+
+3. Run the build file to create the packages.  For example:
+   cd u:/Projects/GVCSiteMaker/Deployment
+   ant build_packages -f BuildDeploymentPackages.xml
+
+   Use the test_build_packages target to generate a build that includes Jass 
+   and other testing support:    
+   ant test_build_packages -f BuildDeploymentPackages.xml
+
+   This will create these files:
+      GVCSiteMakerApplications.tar.gz    
+      GVCSiteMakerDocumentRoot.tar.gz
+      GVCSiteMakerFrameworks.tar.gz
+      GVCSiteMakerMisc.tar.gz
+   in .../Projects/GVCSiteMaker/Deployment/Install/Archive and
+   add some other files to 
+   .../Projects/GVCSiteMaker/Deployment/Install/Script
+
+4. Run the build file to create the custom install package for an 
+   installation.  You must define installation.version. For example:
+   cd c:/Projects/GVCSiteMaker/Custom/UMich
+   ant build_packages -f BuildInstallPackage.xml -Dinstallation.version=3.1.0 
+
+   Use the test_build_packages target to generate a build that includes Jass 
+   and other testing support:    
+   ant test_build_packages -f BuildInstallPackage.xml -Dinstallation.version=3.1.test
+   
+   There are no command line parameres for this.  Inclusion of Kerberos support 
+   is controlled by the BuildInstallPackage.sh script.
+
+   This will create this file:
+   <NAME>GVCSiteMakerInstall<version>.tar.gz
+   in .../Projects/GVCSiteMaker/Custom/<NAME>
+
+The end.

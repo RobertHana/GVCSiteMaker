@@ -1,0 +1,84 @@
+{
+    attributes = (
+        {
+            columnName = "ORG_UNIT_FOR_STYLES"; 
+            name = oidOrgUnitForStyleAdmin; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = PASSWORD; name = password; prototypeName = mediumString; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userID; 
+            prototypeName = mediumString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_PKEY"; 
+            name = userPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (userID, userPKey, password, oidOrgUnitForStyleAdmin); 
+    cachesObjects = Y; 
+    className = "com.gvcsitemaker.core.PublicUser"; 
+    classProperties = (password, userID, groups, websites, orgUnitToAdminStylesFor, orgUnitsToAdmin); 
+    externalName = "SM_USER"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fullName, 
+            isUmich, 
+            password, 
+            phone, 
+            userID, 
+            websiteFKey, 
+            groups, 
+            logins, 
+            websites
+        ); 
+    }; 
+    name = PublicUser; 
+    parent = User; 
+    primaryKeyAttributes = (userPKey); 
+    relationships = (
+        {definition = "userGroups.group"; joinSemantic = EOInnerJoin; name = groups; }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOrgUnitForStyleAdmin; }); 
+            name = orgUnitToAdminStylesFor; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = OrgUnitUser; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = orgUnitUsers; 
+        }, 
+        {
+            definition = "orgUnitUsers.orgUnit"; 
+            internalInfo = {"_nameInObjectStore" = "orgUnitUsers_orgUnit"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = orgUnitsToAdmin; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = UserGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = userGroups; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userFKey; sourceAttribute = userPKey; }); 
+            name = websites; 
+        }
+    ); 
+    restrictingQualifier = "(userID = 'unauthenticateduser')"; 
+}

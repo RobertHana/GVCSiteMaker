@@ -1,0 +1,7 @@
+1) Quit Eclipse, copy the appropriate prototypes file from GVCSiteMaker/Deployment/Migration to GVCSiteMaker/Code/GVCSMEOPrototypes/Resources/GVCSMEOPrototypes.eomodeld
+
+2) Start Eclipse, refresh the view, then Generate EOs… for GVCVirtualTables, GVCSMCore.
+
+3) Quit Eclipse, run the command line build (might be able to skip this step by doing a Clean… before building)
+
+4) Start Eclipse, refresh the view, optionally update the connection dictionary to a database using the correct PKs, and finally start a build

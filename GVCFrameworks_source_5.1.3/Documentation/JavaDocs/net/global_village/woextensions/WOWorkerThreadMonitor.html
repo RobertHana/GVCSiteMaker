@@ -1,0 +1,844 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+WOWorkerThreadMonitor (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="WOWorkerThreadMonitor (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOWorkerThreadMonitor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOSnapshotErrorFix.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOWorkerThreadMonitor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOWorkerThreadMonitor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class WOWorkerThreadMonitor</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true" title="class or interface in java.util">java.util.TimerTask</A>
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.WOWorkerThreadMonitor</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.52"><B>WOWorkerThreadMonitor</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true" title="class or interface in java.util">TimerTask</A></DL>
+</PRE>
+
+<P>
+This class is a poor substitute for better ways of fixing deadlocking problems.  It is for use only
+ in desperate times, like when you need a few hours of sleep while fixing the real problem or while
+ you are waiting for Apple to release a patch.  OK, consider yourself warned!<br/>
+ <br/>
+ What this class does is to watch the requests as they are dispatched and keep track of the ones
+ that have not yet returned a response.  Periodically it examines these as yet unfinished requests
+ and calculates how long each has been running.  If one has been running more than a set amount of time
+ then it is assumed that the thread has deadlocked.  As there is no recovery for this, the application
+ terminates immediately.  In a nut shell, this is an automated way of doing kill -9 on the instance.<br/>
+ <br/>
+ The WOWorkerThreadMonitor is configured via values in the system properties:<br/>
+ <b>WOWorkerThreadMonitor.MonitorForDeadlock</b><br/>
+ Default: true<br/>
+ Set to true to enable deadlock checking, anything else to disable.<br/>
+ <br/>
+ <b>WOWorkerThreadMonitor.SecondsForDeadlock</b><br/>
+ Default: 180<br/>
+ The number of seconds that a request can be working before it is assumed that it has deadlocked.<br/>
+ <br/>
+ <b>WOWorkerThreadMonitor.SecondsBetweenChecks</b><br/>
+ Default: 60<br/>
+ The number of seconds between checks for deadlocks.  This should be kept lower than
+ WOWorkerThreadMonitor.SecondsForDeadlock.<br/>
+ <br/>
+ <b>WOWorkerThreadMonitor.DeadlockWatchWindowStart</b><br/>
+ Default: 00:00<br/>
+ The time of day, in 24 hour format, when deadlock detection should be started.  This, along with
+ WOWorkerThreadMonitor.DeadlockWatchWindowEnd can be used to restrict deadlock detection to certain
+ hours of the day, like when you are sleeping for instance.  The rest of the time you can let them
+ happen normally and examine the thread dumps etc. when the application is in a deadlocked state.
+ The time format must be HH:MM, no spaces allowed and always five characters.<br/>
+ <br/>
+ <b>WOWorkerThreadMonitor.DeadlockWatchWindowEnd</b><br/>
+ Default: 23:59<br/>
+ See WOWorkerThreadMonitor.DeadlockWatchWindowStart for a description<br/>
+ <br/>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEADLOCK_WATCH_WINDOW_END">DEADLOCK_WATCH_WINDOW_END</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEADLOCK_WATCH_WINDOW_START">DEADLOCK_WATCH_WINDOW_START</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Timer.html?is-external=true" title="class or interface in java.util">Timer</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#deadlockCheckTimer">deadlockCheckTimer</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEAFULT_SECONDS_BETWEEN_CHECKS">DEAFULT_SECONDS_BETWEEN_CHECKS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEAFULT_SECONDS_FOR_DEADLOCK">DEAFULT_SECONDS_FOR_DEADLOCK</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEFAULT_DEADLOCK_WATCH_WINDOW_END">DEFAULT_DEADLOCK_WATCH_WINDOW_END</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEFAULT_DEADLOCK_WATCH_WINDOW_START">DEFAULT_DEADLOCK_WATCH_WINDOW_START</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#DEFAULT_MONITOR_FOR_DEADLOCK">DEFAULT_MONITOR_FOR_DEADLOCK</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#maximumMilliSecondsToWait">maximumMilliSecondsToWait</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#MONITOR_FOR_DEADLOCK">MONITOR_FOR_DEADLOCK</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#RUN_AS_DAEMON">RUN_AS_DAEMON</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#runningThreads">runningThreads</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#SECONDS_BETWEEN_CHECKS">SECONDS_BETWEEN_CHECKS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#SECONDS_FOR_DEADLOCK">SECONDS_FOR_DEADLOCK</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#STARTUP_DELAY">STARTUP_DELAY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#watchWindowEndHours">watchWindowEndHours</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#watchWindowEndMinutes">watchWindowEndMinutes</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#watchWindowStartHours">watchWindowStartHours</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#watchWindowStartMinutes">watchWindowStartMinutes</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#WOWorkerThreadMonitor()">WOWorkerThreadMonitor</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#hasExceededCutoff(long, com.webobjects.foundation.NSTimestamp)">hasExceededCutoff</A></B>(long&nbsp;now,
+                                   com.webobjects.foundation.NSTimestamp&nbsp;startTime)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the difference between now and the start time is greater than
+ the number of seconds before deadock is assumed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#recordDispatchCompletion(com.webobjects.foundation.NSNotification)">recordDispatchCompletion</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is called when a request has been dispatched.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#recordDispatchStart(com.webobjects.foundation.NSNotification)">recordDispatchStart</A></B>(com.webobjects.foundation.NSNotification&nbsp;notification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is called when a new request is dispatched.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#run()">run</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is the core of the deadlock check.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#runningThreads()">runningThreads</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the dictionary, keyed on thread name, of the WOWorkerThreads actively dispatching
+ requests.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#shouldCheckForDeadlock()">shouldCheckForDeadlock</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the current time is in the window of when deadlocks should be detected.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#validated24HourTimeProperty(java.lang.String, java.lang.String)">validated24HourTimeProperty</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultTimeString)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility method for dealing with properties in 24 hour time format.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOWorkerThreadMonitor.html#validatedIntegerProperty(java.lang.String, java.lang.String)">validatedIntegerProperty</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility method for dealing with integer properties.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.util.TimerTask"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.util.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true" title="class or interface in java.util">TimerTask</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true#cancel()" title="class or interface in java.util">cancel</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true#scheduledExecutionTime()" title="class or interface in java.util">scheduledExecutionTime</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="MONITOR_FOR_DEADLOCK"><!-- --></A><H3>
+MONITOR_FOR_DEADLOCK</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.54"><B>MONITOR_FOR_DEADLOCK</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.MONITOR_FOR_DEADLOCK">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEFAULT_MONITOR_FOR_DEADLOCK"><!-- --></A><H3>
+DEFAULT_MONITOR_FOR_DEADLOCK</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.55"><B>DEFAULT_MONITOR_FOR_DEADLOCK</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEFAULT_MONITOR_FOR_DEADLOCK">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SECONDS_FOR_DEADLOCK"><!-- --></A><H3>
+SECONDS_FOR_DEADLOCK</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.57"><B>SECONDS_FOR_DEADLOCK</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.SECONDS_FOR_DEADLOCK">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEAFULT_SECONDS_FOR_DEADLOCK"><!-- --></A><H3>
+DEAFULT_SECONDS_FOR_DEADLOCK</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.58"><B>DEAFULT_SECONDS_FOR_DEADLOCK</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEAFULT_SECONDS_FOR_DEADLOCK">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SECONDS_BETWEEN_CHECKS"><!-- --></A><H3>
+SECONDS_BETWEEN_CHECKS</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.60"><B>SECONDS_BETWEEN_CHECKS</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.SECONDS_BETWEEN_CHECKS">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEAFULT_SECONDS_BETWEEN_CHECKS"><!-- --></A><H3>
+DEAFULT_SECONDS_BETWEEN_CHECKS</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.61"><B>DEAFULT_SECONDS_BETWEEN_CHECKS</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEAFULT_SECONDS_BETWEEN_CHECKS">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEADLOCK_WATCH_WINDOW_START"><!-- --></A><H3>
+DEADLOCK_WATCH_WINDOW_START</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.63"><B>DEADLOCK_WATCH_WINDOW_START</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEADLOCK_WATCH_WINDOW_START">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEFAULT_DEADLOCK_WATCH_WINDOW_START"><!-- --></A><H3>
+DEFAULT_DEADLOCK_WATCH_WINDOW_START</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.64"><B>DEFAULT_DEADLOCK_WATCH_WINDOW_START</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEFAULT_DEADLOCK_WATCH_WINDOW_START">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEADLOCK_WATCH_WINDOW_END"><!-- --></A><H3>
+DEADLOCK_WATCH_WINDOW_END</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.66"><B>DEADLOCK_WATCH_WINDOW_END</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEADLOCK_WATCH_WINDOW_END">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="DEFAULT_DEADLOCK_WATCH_WINDOW_END"><!-- --></A><H3>
+DEFAULT_DEADLOCK_WATCH_WINDOW_END</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.67"><B>DEFAULT_DEADLOCK_WATCH_WINDOW_END</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.DEFAULT_DEADLOCK_WATCH_WINDOW_END">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="RUN_AS_DAEMON"><!-- --></A><H3>
+RUN_AS_DAEMON</H3>
+<PRE>
+protected static final boolean <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.69"><B>RUN_AS_DAEMON</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.RUN_AS_DAEMON">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="STARTUP_DELAY"><!-- --></A><H3>
+STARTUP_DELAY</H3>
+<PRE>
+protected static final long <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.70"><B>STARTUP_DELAY</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.woextensions.WOWorkerThreadMonitor.STARTUP_DELAY">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="watchWindowStartHours"><!-- --></A><H3>
+watchWindowStartHours</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.72"><B>watchWindowStartHours</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="watchWindowStartMinutes"><!-- --></A><H3>
+watchWindowStartMinutes</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.73"><B>watchWindowStartMinutes</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="watchWindowEndHours"><!-- --></A><H3>
+watchWindowEndHours</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.74"><B>watchWindowEndHours</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="watchWindowEndMinutes"><!-- --></A><H3>
+watchWindowEndMinutes</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.75"><B>watchWindowEndMinutes</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="maximumMilliSecondsToWait"><!-- --></A><H3>
+maximumMilliSecondsToWait</H3>
+<PRE>
+protected long <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.76"><B>maximumMilliSecondsToWait</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="runningThreads"><!-- --></A><H3>
+runningThreads</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.77"><B>runningThreads</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="deadlockCheckTimer"><!-- --></A><H3>
+deadlockCheckTimer</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Timer.html?is-external=true" title="class or interface in java.util">Timer</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.78"><B>deadlockCheckTimer</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="WOWorkerThreadMonitor()"><!-- --></A><H3>
+WOWorkerThreadMonitor</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.84"><B>WOWorkerThreadMonitor</B></A>()</PRE>
+<DL>
+<DD>Designated constructor
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="recordDispatchStart(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+recordDispatchStart</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.141"><B>recordDispatchStart</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>This method is called when a new request is dispatched.  The name of the WOWorkerThread is
+ recorded along with the starting time.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - NSNotification with WORequest as notification object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="recordDispatchCompletion(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+recordDispatchCompletion</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.154"><B>recordDispatchCompletion</B></A>(com.webobjects.foundation.NSNotification&nbsp;notification)</PRE>
+<DL>
+<DD>This method is called when a request has been dispatched.  The record for this WOWorkerThread is
+ discarded.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>notification</CODE> - NSNotification with WORequest as notification object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runningThreads()"><!-- --></A><H3>
+runningThreads</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.169"><B>runningThreads</B></A>()</PRE>
+<DL>
+<DD>Returns the dictionary, keyed on thread name, of the WOWorkerThreads actively dispatching
+ requests.  This is synchronized as both the thread running the WOWorkerThread monitor and
+ WOWorkerThreads can call this method.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the dictionary, keyed on thread name, of the WOWorkerThreads actively dispatching
+ requests</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="run()"><!-- --></A><H3>
+run</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.181"><B>run</B></A>()</PRE>
+<DL>
+<DD>This method is the core of the deadlock check.  It enumerates all the active threads in
+ runningThreads() and if one has gone on too long the application is terminated.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true#run()" title="class or interface in java.lang">run</A></CODE> in interface <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true#run()" title="class or interface in java.util">run</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/util/TimerTask.html?is-external=true" title="class or interface in java.util">TimerTask</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shouldCheckForDeadlock()"><!-- --></A><H3>
+shouldCheckForDeadlock</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.212"><B>shouldCheckForDeadlock</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if the current time is in the window of when deadlocks should be detected.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if the current time is in the window of when deadlocks should be detected</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasExceededCutoff(long, com.webobjects.foundation.NSTimestamp)"><!-- --></A><H3>
+hasExceededCutoff</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.237"><B>hasExceededCutoff</B></A>(long&nbsp;now,
+                                    com.webobjects.foundation.NSTimestamp&nbsp;startTime)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the difference between now and the start time is greater than
+ the number of seconds before deadock is assumed.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>now</CODE> - the current time or a close approximation of it<DD><CODE>startTime</CODE> - the time that a request was dispatched
+<DT><B>Returns:</B><DD><code>true</code> if startTime - now > the number of seconds before deadock is assumed</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validated24HourTimeProperty(java.lang.String, java.lang.String)"><!-- --></A><H3>
+validated24HourTimeProperty</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.255"><B>validated24HourTimeProperty</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                          <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultTimeString)</PRE>
+<DL>
+<DD>Utility method for dealing with properties in 24 hour time format.  If the named property is
+ not present or malformed the default is returned.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>propertyName</CODE> - the name of the system property to look for<DD><CODE>defaultTimeString</CODE> - the default to use if the named property is not present or malformed
+<DT><B>Returns:</B><DD>either the value for the property or the default</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validatedIntegerProperty(java.lang.String, java.lang.String)"><!-- --></A><H3>
+validatedIntegerProperty</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOWorkerThreadMonitor.html#line.276"><B>validatedIntegerProperty</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultValue)</PRE>
+<DL>
+<DD>Utility method for dealing with integer properties.  If the named property is  not present or
+ malformed the default is returned.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>propertyName</CODE> - the name of the system property to look for<DD><CODE>defaultValue</CODE> - the default to use if the named property is not present or malformed
+<DT><B>Returns:</B><DD>either the value for the property or the default</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOWorkerThreadMonitor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOSnapshotErrorFix.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;NEXT CLASS</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOWorkerThreadMonitor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOWorkerThreadMonitor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

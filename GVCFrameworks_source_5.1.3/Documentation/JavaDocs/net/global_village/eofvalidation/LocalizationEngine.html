@@ -1,0 +1,836 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+LocalizationEngine (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="LocalizationEngine (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LocalizationEngine.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/KeyValueCodingProtectedAccessor.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/LocalizationEngine.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="LocalizationEngine.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofvalidation</FONT>
+<BR>
+Class LocalizationEngine</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofvalidation.LocalizationEngine</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.22"><B>LocalizationEngine</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+Implements search location order and key manipulation for EOFValidation used when localizing strings.  See <a href="#localizedStringFromBundle">localizedStringFromBundle</a><br>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 8$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#LocalizationEngine()">LocalizationEngine</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String)">findLocalizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>findLocalizedString(String, String, String, Locale.getDefault().getDisplayLanguage())</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">findLocalizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                       com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if there is a localized string in any of the string tables for any of the languages.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">findLocalizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primary localization method for EOFValidation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)">localizedString</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">localizedString</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                               com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, java.lang.String)">localizedString</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String)">localizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization method for EOFValidation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">localizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                               com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">localizedString</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Primary localization method for EOFValidation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)">localizedStringExists</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a localized string for the given params exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">localizedStringExists</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                           com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization existance method for EOFValidation (<a href="#localizedStringExists(String, String, String, String)">localizedStringExists(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, java.lang.String)">localizedStringExists</A></B>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a localized string for the given params exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String)">localizedStringExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a localized string for the given params exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">localizedStringExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                           com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cover method for the primary localization existance method for EOFValidation (<a href="#localizedStringExists(String, String, String, String)">localizedStringExists(String, String, String, String)</a>).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">localizedStringExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a localized string for the given params exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringFromBundle(com.webobjects.foundation.NSBundle, java.lang.String, java.lang.String, java.lang.String)">localizedStringFromBundle</A></B>(com.webobjects.foundation.NSBundle&nbsp;bundle,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringFromBundle(com.webobjects.foundation.NSBundle, java.lang.String, java.lang.String, java.lang.String, java.lang.String)">localizedStringFromBundle</A></B>(com.webobjects.foundation.NSBundle&nbsp;bundle,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#resourceStringExistsForKey(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)">resourceStringExistsForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;tableName,
+                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;frameworkName,
+                                                     com.webobjects.foundation.NSArray&nbsp;languages)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the given key exists in the given table in the given framework for the given language.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="LocalizationEngine()"><!-- --></A><H3>
+LocalizationEngine</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.22"><B>LocalizationEngine</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="resourceStringExistsForKey(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+resourceStringExistsForKey</H3>
+<PRE>
+protected static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.36"><B>resourceStringExistsForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;tableName,
+                                                    <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;frameworkName,
+                                                    com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the given key exists in the given table in the given framework for the given language.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key whose existance we are checking<DD><CODE>tableName</CODE> - the name of the table (without the .strings extension) to search<DD><CODE>frameworkName</CODE> - the name of the framework to check<DD><CODE>languages</CODE> - the preferred language array
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key, or null if not found.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringFromBundle(com.webobjects.foundation.NSBundle, java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringFromBundle</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.59"><B>localizedStringFromBundle</B></A>(com.webobjects.foundation.NSBundle&nbsp;bundle,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.  See class description for details on how the localized string is located.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - NSBundle to look up this localized string in<DD><CODE>entityName</CODE> - name of the entity to look up this localized string for (<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to look for
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key, or null if not found.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringFromBundle(com.webobjects.foundation.NSBundle, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringFromBundle</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.125"><B>localizedStringFromBundle</B></A>(com.webobjects.foundation.NSBundle&nbsp;bundle,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                               <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Checks for the localized string in one bundle, implementing the order that keys are tried in, and the order that strings files are checked.  See class description for details on how the localized string is located.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - NSBundle to look up this localized string in<DD><CODE>entityName</CODE> - name of the entity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key, or null if not found<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringFromBundle(com.webobjects.foundation.NSBundle, java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringFromBundle(NSBundle, String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="findLocalizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+findLocalizedString</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.240"><B>findLocalizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Primary localization method for EOFValidation.
+ <p>The string to localize is indicated by giving the entity, an optional property name, and a key to uniquely identify the localized string.  These three items are used to form a variety of keys which are tried in order from the most specific to the least specific.  The keys, and the order they are tried are as follows:
+ <p>
+ <TABLE BORDER="1">
+   <TR>
+     <TD><b>Type</b></TD><TD><b>Format</b></TD><TD><b>Example</b></TD>
+   </TR>
+   <TR>
+     <TD>Fully qualified</TD><TD>&lt;entityName&gt;.&lt;propertyName&gt;.&lt;key&gt;</TD><TD>Customer.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Partially qualified</TD><TD>&lt;entityName&gt;.&lt;key&gt;</TD><TD>Customer.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Generic</TD><TD>&lt;Entity&gt;.&lt;key&gt;</TD><TD>Entity.nullNotAllowed</TD>
+   </TR>
+ </TABLE>
+ The fully qualified key is not used if the property name is null or an empty string.
+ <p>These keys are looked up in a series of bundles as follows:
+ <ul>
+ <li>The main bundle.  This allows the application to have the ultimate say in localization.
+ <li>The bundle that this entity is implemented in.  This allows domain specific defaults to be recorded and allows sub-classes to override the localized strings of super classes.
+ <li>The bundle that this entity's super entity (note <b>not</b> super class) is implemented in.  This is repeated until there is no super entity.
+ </ul>
+ <p>Within each bundle, two string resources are checked:
+ <ul>
+ <li>First, the entity level resource named <b>&lt;entityName&gt;.strings</b> (e.g. Customer.strings) which is searched for the fully and partially qualified keys
+ <li>Then, the bundle level resource named <b>&lt;bundleName&gt;.strings</b> (e.g. StoreEO.strings) which is searched for the fully qualified, partially qualified, and generic keys
+ </ul>
+ <p>If this still fails to locate a localized string, the Generic key is searched for in the GVCEOFValidation bundle, in the GVCEOFValidation.strings resource.
+ <br>
+ <p>An example will be useful in understanding the full search order.  Here are three components of a mythical eCommerce store site:
+ <ul>
+ <li><b>GenericObjects</b> - a framework that implements generic base classes for common entities.  We are interested in <I>GenericPerson</I>, and in particular their attribute <I>firstName</I>.
+ <li><b>StoreEO</b> - a framework that implements the enterprise and domain objects that we will use to implement the store.  <I>Customer</I> is implemented here as a sub-class of <I>GenericPerson</I>.
+ <li><b>Store</b> - a WebObjects application that implments the UI part of our little on-line store.
+ </ul>
+ <p>Now imagine that while registering on the site, that a customer forgets to type in their first name.  This is a required field in the EOModel in StoreEO and so EOF flags this as a validation error.  GVCEOFValidation then steps in to provide a localized message.  Here is the order the search would occur in if there were no matches.  A match at any point stops the search.
+ <p>
+ <DIV ALIGN="CENTER"><TABLE BORDER="1">
+   <TR>
+     <TD><b>Bundle Examined</b></TD><TD WIDTH="120"><b>Strings File</b></TD><TD><b>Key Used</b></TD>
+   </TR>
+   <TR>
+     <TD>Store.woa</TD>  <TD>Customer.strings</TD>  <TD>Customer.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Store.woa</TD>  <TD>Customer.strings</TD>  <TD>Customer.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Store.woa</TD>  <TD>Store.strings</TD>  <TD>Customer.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Store.woa</TD>  <TD>Store.strings</TD>  <TD>Customer.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>Store.woa</TD>  <TD>Store.strings</TD>  <TD>Entity.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>StoreEO.framework</TD>  <TD>Customer.strings</TD>  <TD>Customer.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>StoreEO.framework</TD>  <TD>Customer.strings</TD>  <TD>Customer.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>StoreEO.framework</TD>  <TD>StoreEO.strings</TD>  <TD>Customer.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>StoreEO.framework</TD>  <TD>StoreEO.strings</TD>  <TD>Customer.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>StoreEO.framework</TD>  <TD>StoreEO.strings</TD>  <TD>Entity.nullNotAllowed</TD>
+   </TR>
+
+   <TR>
+     <TD>GenericObjects.framework</TD>  <TD>GenericPerson.strings</TD>  <TD>GenericPerson.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>GenericObjects.framework</TD>  <TD>GenericPerson.strings</TD>  <TD>GenericPerson.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>GenericObjects.framework</TD>  <TD>GenericObjects.strings</TD>  <TD>GenericPerson.firstName.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>GenericObjects.framework</TD>  <TD>GenericObjects.strings</TD>  <TD>GenericPerson.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>GenericObjects.framework</TD>  <TD>GenericObjects.strings</TD>  <TD>Entity.nullNotAllowed</TD>
+   </TR>
+   <TR>
+     <TD>GVCEOFValidation.framework</TD>  <TD>GVCEOFValidation.strings</TD>  <TD>Entity.nullNotAllowed</TD>
+   </TR>
+ </TABLE></DIV>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - name of the EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to use when looking up the string
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="findLocalizedString(java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+findLocalizedString</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.303"><B>findLocalizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Returns <code>findLocalizedString(String, String, String, Locale.getDefault().getDisplayLanguage())</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - name of the EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>findLocalizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.323"><B>localizedStringExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a localized string for the given params exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to use when looking for the string
+<DT><B>Returns:</B><DD><code>true</code> if a localized string exists for these params</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.344"><B>localizedStringExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a localized string for the given params exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD><code>true</code> if a localized string exists for these params<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringExists(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.366"><B>localizedStringExists</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a localized string for the given params exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to use when looking for the string
+<DT><B>Returns:</B><DD><code>true</code> if a localized string exists for these params<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringExists(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.387"><B>localizedStringExists</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a localized string for the given params exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD><code>true</code> if a localized string exists for these params<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringExists(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.409"><B>localizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Primary localization method for EOFValidation. See #findLocalizedString(String, String, String, String) for more info.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to use when looking up the string
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>findLocalizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.433"><B>localizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Cover method for the primary localization method for EOFValidation.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.456"><B>localizedString</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;language)</PRE>
+<DL>
+<DD>Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>language</CODE> - the language to use when looking up the string
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.479"><B>localizedString</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+findLocalizedString</H3>
+<PRE>
+protected static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.503"><B>findLocalizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Returns <code>true</code> if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - the name of the entity to lookup<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>languages</CODE> - an array of languages to lookup in language order
+<DT><B>Returns:</B><DD><code>true</code> if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.536"><B>localizedStringExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Cover method for the primary localization existance method for EOFValidation (<a href="#localizedStringExists(String, String, String, String)">localizedStringExists(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - name of the entity to lookup<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>languages</CODE> - an array of languages to lookup in language order
+<DT><B>Returns:</B><DD><code>true</code> if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><CODE>findLocalizedString(String, String, String, NSArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringExists(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringExists(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+localizedStringExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.560"><B>localizedStringExists</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                            com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Cover method for the primary localization existance method for EOFValidation (<a href="#localizedStringExists(String, String, String, String)">localizedStringExists(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>languages</CODE> - an array of languages to lookup in language order
+<DT><B>Returns:</B><DD><code>true</code> if there is a localized string in any of the string tables for any of the languages. Languages are searched depth first.<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><CODE>findLocalizedString(String, String, String, NSArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedStringExists(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedStringExists(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.584"><B>localizedString</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                     com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityName</CODE> - name of the entity to lookup<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>languages</CODE> - an array of languages to lookup in language order
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><CODE>findLocalizedString(String, String, String, NSArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedString(com.webobjects.eoaccess.EOEntity, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+localizedString</H3>
+<PRE>
+public static <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofvalidation/LocalizationEngine.html#line.612"><B>localizedString</B></A>(com.webobjects.eoaccess.EOEntity&nbsp;entity,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                                     com.webobjects.foundation.NSArray&nbsp;languages)</PRE>
+<DL>
+<DD>Cover method for the primary localization method for EOFValidation (<a href="#localizedString(String, String, String, String)">localizedString(String, String, String, String)</a>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entity</CODE> - EOEntity to look up this localized string for<DD><CODE>propertyName</CODE> - property name to look up this localized string for.  Ignored if it is null or an empty string<DD><CODE>key</CODE> - key to look up this localized string for<DD><CODE>languages</CODE> - an array of languages to lookup in language order
+<DT><B>Returns:</B><DD>localized string on entity for propertyName and key<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#findLocalizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><CODE>findLocalizedString(String, String, String, NSArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, com.webobjects.foundation.NSArray)"><CODE>localizedString(String, String, String, NSArray)</CODE></A>, 
+<A HREF="../../../net/global_village/eofvalidation/LocalizationEngine.html#localizedString(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><CODE>localizedString(String, String, String, String)</CODE></A></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LocalizationEngine.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/KeyValueCodingProtectedAccessor.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/LocalizationEngine.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="LocalizationEngine.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

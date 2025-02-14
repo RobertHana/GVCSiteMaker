@@ -1,0 +1,9 @@
+<project name="GVCJass" default="package" basedir=".">
+
+
+	<target name="package">
+		<jar destfile="../GVCjass.jar" basedir="bin"/>
+		<copy file="../GVCjass.jar" tofile="U:/Programs/apache-ant-1.5.4/lib/GVCjass.jar"/>
+	</target>
+
+</project>

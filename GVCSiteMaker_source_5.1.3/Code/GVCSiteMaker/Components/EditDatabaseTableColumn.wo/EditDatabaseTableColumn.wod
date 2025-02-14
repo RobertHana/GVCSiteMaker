@@ -1,0 +1,62 @@
+CalculationRadioButton: WORadioButton {
+    name = "FieldTypeGroup";
+    selection = selectedFieldTypeName;
+    value = calculatedColumnType.name;
+}
+
+CheckboxTypeRadioButton: WORadioButton {
+    name = "FieldTypeGroup";
+    selection = selectedFieldTypeName;
+    value = booleanColumnType.name;
+}
+
+DateTypeRadioButton: WORadioButton {
+    name = "FieldTypeGroup";
+    selection = selectedFieldTypeName;
+    value = dateColumnType.name;
+}
+
+FileRadioButton: WORadioButton {
+    name = "FieldTypeGroup";
+    selection = selectedFieldTypeName;
+    value = fileColumnType.name;
+}
+
+HasInvalidFieldTypeConditional: WOConditional {
+    condition = fieldTypeError;
+}
+
+InvalidFieldTypeErrorString: WOString {
+    value = fieldTypeError;
+}
+
+LookupRadioButton: WORadioButton {
+    name = "FieldTypeGroup";
+    selection = selectedFieldTypeName;
+    value = lookupColumnType.name;
+}
+
+LookupSourceColumns: WOPopUpButton {
+    displayString = aColumn.longDescription;
+    item = aColumn;
+    list = lookupSourceColumns;
+    noSelectionString = "Choose table and field...";
+    selection = selectedLookupSourceColumn;
+    onChange="form. FieldTypeGroup [5].checked=true;";
+}
+
+NumberRadioButton: WORadioButton {
+    selection = selectedFieldTypeName;
+    value = numberColumnType.name;
+    name = "FieldTypeGroup";
+}
+
+TextColumnDescription: WOString {
+    value = textColumnType.textDescription;
+}
+
+TextTypeRadioButton: WORadioButton {
+    selection = selectedFieldTypeName;
+    value = textColumnType.name;
+    name = "FieldTypeGroup";
+}

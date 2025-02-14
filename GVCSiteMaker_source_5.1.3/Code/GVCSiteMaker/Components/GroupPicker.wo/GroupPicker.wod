@@ -1,0 +1,36 @@
+AccessGroupCheckBox: WOCheckBox {
+	checked = isGroupSelected;
+	onChange="form.access[1].checked=true;";
+}
+AccessGroupsRadioButton: WORadioButton {
+	name = "access";
+	selection = selectedButton;
+	value = "Groups";
+}
+GroupNameString: WOString {
+	value = aGroup.name;
+}
+
+GroupsTable: WOTable {
+	item = aGroup;
+	list = allGroups;
+	maxColumns = 2;
+	cellVAlign = "top";
+}
+
+PluralConditional: WOConditional {
+	condition = isPlural;
+}
+PublicAccessRadioButton: WORadioButton {
+	name = "access";
+	selection = selectedButton;
+	value = "Public";
+}
+
+SingularConditional: WOConditional {
+	condition = isPlural;
+	negate = true;
+}
+TypeOfAccessString: WOString {
+	value = typeOfAccess;
+}

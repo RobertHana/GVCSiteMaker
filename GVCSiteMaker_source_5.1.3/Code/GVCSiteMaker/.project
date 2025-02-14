@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>GVCSiteMaker</name>
+	<comment></comment>
+	<projects>
+		<project>GVCEOFExtensions</project>
+		<project>GVCEOFValidation</project>
+		<project>GVCFoundation</project>
+		<project>GVCGenericObjects</project>
+		<project>GVCKerberos</project>
+		<project>GVCMail</project>
+		<project>GVCSMCore</project>
+		<project>GVCSMCustom</project>
+		<project>GVCSMEOPrototypes</project>
+		<project>GVCVirtualTables</project>
+		<project>GVCWOExtensions</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>LaunchConfigHandle</key>
+					<value>&lt;project&gt;/.externalToolBuilders/org.objectstyle.wolips.antbuilder (16).launch</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>LaunchConfigHandle</key>
+					<value>&lt;project&gt;/.externalToolBuilders/GVCSiteMaker Jass Builder.launch</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.objectstyle.wolips.antapplicationnature</nature>
+	</natures>
+</projectDescription>

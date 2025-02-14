@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {columnName = DEPTH; name = depth; prototypeName = integer; }, 
+        {
+            columnName = "FILE_SIZE_QUOTA"; 
+            name = fileSizeQuota; 
+            prototypeName = integer; 
+        }, 
+        {columnName = "FILE_SIZE_USAGE"; name = fileSizeUsage; prototypeName = long; }, 
+        {
+            allowsNull = N; 
+            columnName = "IN_PUBLIC_LIST"; 
+            name = inPublicList; 
+            prototypeName = charBoolean; 
+        }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            columnName = "OID_PARENT_ORG_UNIT"; 
+            name = oidParentOrgUnit; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "UNIT_NAME"; name = unitName; prototypeName = longString; }, 
+        {
+            columnName = "WEBSITE_CREATION_MESSAGE"; 
+            name = websiteCreationMessage; 
+            prototypeName = largeText; 
+        }
+    ); 
+    attributesUsedForLocking = (depth, unitName, inPublicList, websiteCreationMessage); 
+    className = "com.gvcsitemaker.core.OrgUnit"; 
+    classProperties = (
+        fileSizeQuota, 
+        fileSizeUsage, 
+        parentOrgUnit, 
+        childOrgUnits, 
+        websites, 
+        unitName, 
+        depth, 
+        inPublicList, 
+        orgUnitUsers, 
+        admins, 
+        websiteCreationMessage
+    ); 
+    externalName = "SM_ORG_UNIT"; 
+    name = OrgUnit; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            definition = "orgUnitUsers.user"; 
+            deleteRule = EODeleteRuleNoAction; 
+            internalInfo = {"_nameInObjectStore" = "orgUnitUsers_user"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = admins; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidParentOrgUnit; sourceAttribute = oid; }); 
+            name = childOrgUnits; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = OrgUnitUser; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = orgUnitOid; sourceAttribute = oid; }); 
+            name = orgUnitUsers; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidParentOrgUnit; }); 
+            name = parentOrgUnit; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidParentOrgUnit; sourceAttribute = oid; }); 
+            name = websites; 
+        }
+    ); 
+}

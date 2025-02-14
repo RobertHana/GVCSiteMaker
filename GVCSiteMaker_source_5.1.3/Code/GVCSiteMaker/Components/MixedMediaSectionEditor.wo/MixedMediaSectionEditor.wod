@@ -1,0 +1,68 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+ComponentList: WORepetition {
+	item = aComponent;
+	list = layout.orderedPanes;
+}
+
+Done: WOSubmitButton {
+	action = updateAndClose;
+	value = "Done";
+	name = "DoneButton";
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+	name = "MixedMediaForm";
+}
+
+LayoutTable: WOTable {
+	item = aLayout;
+	list = layouts;
+	maxColumns = 4;
+}
+
+PaneSummary: MixedMediaPaneSummary {
+	arrangement = layout;
+	componentObject = aComponent;
+}
+
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURL = previewURL;
+}
+
+Reset: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+SectionTypeImage: WOImage {
+	src = imageURLForLayout;
+}
+
+SectionTypeRadioButton: WORadioButton {
+	name = "subType";
+	selection = layout.subType;
+	value = aLayout;
+	onClick = "this.form.submit()";
+}
+
+ShowPaneConditional: WOConditional {
+	condition = aComponent.isVisible;
+}
+
+Update: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+	name = "SubmitButton";
+}
+
+UpdateAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Save & View";
+}

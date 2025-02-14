@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DataAccessSearchComponent" wocomponentcontent="false">
+
+		<binding name="searchMode"/>
+		<binding name="showSearchOptions" defaults="Boolean"/>
+
+		<validation message="&apos;searchMode&apos; is a required binding">
+			<unbound name="searchMode"/>
+		</validation>
+
+		<validation message="&apos;showSearchOptions&apos; is a required binding">
+			<unbound name="showSearchOptions"/>
+		</validation>
+	</wo>
+</wodefinitions>

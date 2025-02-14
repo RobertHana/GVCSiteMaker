@@ -1,0 +1,95 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:FrontBase://localhost/GVCTest"; 
+        driver = ""; 
+        password = ""; 
+        plugin = ""; 
+        username = ""; 
+    }; 
+    entities = (
+        {className = "net.global_village.virtualtables.Column"; name = Column; }, 
+        {
+            className = "net.global_village.virtualtables.ColumnType"; 
+            name = ColumnType; 
+            parent = GVCLookup; 
+        }, 
+        {className = "net.global_village.virtualtables.Table"; name = Table; }, 
+        {
+            className = "net.global_village.virtualtables.VirtualBooleanField"; 
+            name = VirtualBooleanField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualCalculatedColumn"; 
+            name = VirtualCalculatedColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualColumn"; 
+            name = VirtualColumn; 
+            parent = Column; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualField"; 
+            name = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualLookupColumn"; 
+            name = VirtualLookupColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualLookupField"; 
+            name = VirtualLookupField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualMemoField"; 
+            name = VirtualMemoField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualNumberField"; 
+            name = VirtualNumberField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualRow"; 
+            name = VirtualRow; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualStringField"; 
+            name = VirtualStringField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualTable"; 
+            name = VirtualTable; 
+            parent = Table; 
+        }, 
+        {
+            className = "net.global_village.virtualtables.VirtualTimestampField"; 
+            name = VirtualTimestampField; 
+            parent = VirtualField; 
+        }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:FrontBase://localhost/GVCTest"; 
+                        driver = ""; 
+                        password = ""; 
+                        plugin = ""; 
+                        username = ""; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

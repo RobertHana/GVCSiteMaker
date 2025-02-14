@@ -1,0 +1,7 @@
+HelpHyperlink : WOHyperlink {
+    href = helpHref;
+    target = "_new";
+}
+
+Content : WOComponentContent {
+}

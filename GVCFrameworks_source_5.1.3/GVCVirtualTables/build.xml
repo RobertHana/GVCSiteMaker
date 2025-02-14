@@ -1,0 +1,45 @@
+<project name="GVCVirtualTables" default="build" basedir=".">
+
+	<import file="../Ant/common.xml"/>
+		
+	<!-- Targets init datbase for testing and to add performance indexes -->
+	<target name="init_tests" depends="init.all,db.drop.tables,db.create.tables,db.test.setup,db.add.indexes" />
+	<target name="init_tests_on_new_db" depends="init.all,db.create.tables,db.test.setup,db.add.indexes" />
+	
+	<target name="db.test.setup" depends="init.all">
+		<sql
+			driver="${gvc.test.driver}"
+			url="${gvc.test.url}"
+			userid="${gvc.test.userid}"
+			password="${gvc.test.password}"
+			src="VTInitialLoadFrontbase.sql"/>
+	</target>
+
+	<target name="db.add.indexes" depends="init.all">
+		<sql
+			driver="${gvc.test.driver}"
+			url="${gvc.test.url}"
+			userid="${gvc.test.userid}"
+			password="${gvc.test.password}"
+			src="PerformanceIndexes.sql"/>
+	</target>
+
+	<target name="db.drop.tables" depends="init.all">
+		<sql
+			driver="${gvc.test.driver}"
+			url="${gvc.test.url}"
+			userid="${gvc.test.userid}"
+			password="${gvc.test.password}"
+			src="DropVTTables.sql"/>
+	</target>
+	
+	<target name="db.create.tables" depends="init.all">
+		<sql
+			driver="${gvc.test.driver}"
+			url="${gvc.test.url}"
+			userid="${gvc.test.userid}"
+			password="${gvc.test.password}"
+			src="CreateVTTables.sql"/>
+	</target>
+	
+</project>

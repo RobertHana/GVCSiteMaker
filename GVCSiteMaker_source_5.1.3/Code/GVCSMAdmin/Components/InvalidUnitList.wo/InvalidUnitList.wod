@@ -1,0 +1,15 @@
+ErrorMessageString: WOString {
+	value = errorString;
+	escapeHTML = false;
+}
+
+OrgUnitRep: WORepetition {
+	item = orgUnitItem;
+	list = invalidOrgUnitArray;
+}
+
+UnitNameString: WOString {
+	value = unitName;
+	escapeHTML = false;
+}
+

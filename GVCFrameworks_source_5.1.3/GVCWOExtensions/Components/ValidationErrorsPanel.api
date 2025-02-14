@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ValidationErrorsPanel" wocomponentcontent="false">
+
+		<binding name="errors"/>
+		<binding name="errorsTitle"/>
+		<binding name="errorsTitleCSSClass"/>
+		<binding name="errorsCSSClass"/>
+
+		<validation message="&apos;errors&apos; is a required binding">
+			<unbound name="errors"/>
+		</validation>
+	</wo>
+</wodefinitions>

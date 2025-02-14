@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+
+	
+  
+  <title>How to Use Eclipse At GVC</title>
+</head>
+
+
+<body>
+
+
+
+
+<h1>Introduction</h1>
+
+
+<p>This document describes how to install and configure Eclipse for use at GVC.  It 
+will not teach you the specifics of how to use Eclipse, or cover the details of
+our Java coding standard.</p>
+
+
+
+
+<h1>Installing <img src="http://www.eclipse.org/images/EclipseBannerPic.jpg"></h1>
+
+
+<p>The Eclipse <a href="http://www.eclipse.org">Home Page</a>.<br>
+
+<br>
+
+
+You can download it from <a href="http://download.eclipse.org/downloads/">here</a>.  
+You want version 3.2.1<br>
+
+<br>
+
+
+On <b>Win2K</b>, install Eclipse to a path with no spaces, e.g. C:\Programs<br>
+
+<br>
+
+
+On <b>OS X</b>, Eclipse will unpack to the desktop.  Move it to&nbsp;/Developer/Applications/eclipse.<br>
+
+<br>
+
+</p>
+
+
+
+
+<h1>Getting the Basics Down</h1>
+
+
+<p>Before you go further, it is a good idea to go through the tutorials and get familiar with 
+the terminology and mechanics of the Eclipse IDE.  Launch Eclipse and read the
+Welcome page.  Then open the Help system (<i>Help Contents</i> option on the <i>Help</i> menu).</p>
+
+
+<p>The first thing to do is to get familiar with the contents of the Workbench (
+the IDE).  Open the <b>Workbench User Guide</b> and follow the <b>Basic Tutorial</b> part of the
+<b>Getting Started</b> chapter.  Don't worry about the <b>Team CVS</b> and <b>Ant</b> tutorials.
+We don't use CVS and leaning Ant should wait.</p>
+
+
+<p>Notice the <b>Concepts</b>, <b>Tasks</b>, and <b>Tips and Tricks</b> sections of this user guide.  
+You will find these useful later on.  Try learning a new tip each day until you
+have mastered them all.</p>
+
+ 
+<p>Now that you are familiar with the Workbench it is time to move on to Java specific
+functionality.  Open the <b>Java Development User Guide</b> and follow the <b>Basic Tutorial</b> 
+part of the <b>Getting Started</b> chapter.  Don't worry about the <b>Project Configuration
+Tutorial</b>.  Again, notice the <b>Concepts</b>, <b>Tasks</b>, and <b>Tips and Tricks</b> 
+sections of this user guide.<br>
+
+<br>
+
+</p>
+
+
+
+
+
+
+<h1>Extending Eclipse with Plug-ins</h1>
+
+
+<p>One of the great strengths of the Eclipse platform is that it is easy to extend
+it through the use of plug-in modules.</p>
+
+
+
+<h2>WOLips / WOProject <img src="http://objectstyle.org/woproject/images/wolips_logo.gif"></h2>
+
+  
+<p>The most important of these plug-in modules to the work that we do is 
+<a href="http://www.objectstyle.org/confluence/display/WOL/Home">WOLips/WOProject</a>. WOLips provides 
+excellent support for WebObjects development in Eclipse.  The easiest way to install
+(or update) WOLips is via the Eclipse Update Manager. Here are <a href="http://www.objectstyle.org/confluence/display/WOL/Install+WOLips+with+Eclipse+Update+Manager">instructions</a>.</p>
+WOLips is controlled by the settings in the file&nbsp;<code>Library/wobuild.properties</code>
+which is found in your home directory (~/ on OS X, or C:\Documents and Settings\UserID on Win2K.  
+Take a minute to look at this and verify that it is correct.  An example of this file:
+
+<pre>#This file stores the wo specific properties<br>#Wed Oct 11 19:51:09 PDT 2006<br>wo.dir.root=/<br>wo.woroot=/System<br>wo.dir.user.home.library.frameworks=/Users/chuck/Library/Frameworks<br>wo.dir.local=/<br>wo.wosystemroot=/System<br>wo.dir.library=/System/Library<br>wo.dir.user.home.library=/Users/chuck/Library<br>wo.dir.local.library=/Library<br>wo.dir.library.frameworks=/System/Library/Frameworks<br>wo.dir.local.library.frameworks=/Library/Frameworks<br>wo.wolocalroot=/<br>wo.dir.system=/System<br>wo.dir.reference.api=/Developer/ADC%20Reference%20Library/documentation/WebObjects/Reference/API/</pre>
+
+
+
+
+
+<p>Support for <a href="http://csd.informatik.uni-oldenburg.de/%7Ejass/">Jass</a> 
+Design by Contract (DBC) is provided by special tasks in GVC's version of build.xml.
+Details on the integration can be found <a href="AntReadMe.html">here</a>.<br>
+
+ You can use the same technique to turn on any of the other features of the Tab
+Navigator that you want to use.</p>
+
+<br>
+
+
+
+
+<h1>Configuring Eclipse the GVC Way</h1>
+
+
+<p>Here are a few things that you need to do so that your projects will compile and 
+so that your fellow team members will not lynch you.</p>
+
+<br>
+
+<br>
+
+
+
+
+<h2>jUnit Support</h2>
+
+
+<p>Support for running <a href="http://www.junit.org">jUnit</a> tests is built into Eclipse.  
+However; in order to compile sub-classes of jUnit classes, <code>junit.jar</code> needs to be on the
+class path.  We do this by defining a special class path variable, <code><b>JUNIT</b></code>.  The easiest thing to
+point it to is the <code>junit.jar</code> in the jUnit plug-in that comes with Eclipse:</p>
+
+
+<img src="images/JUnitVariable.jpg" border="0"><br>
+
+<br>
+
+
+
+<h2>log4j Support</h2>
+
+
+<p>In order to compile classes using <a href="http://logging.apache.org/log4j/docs/">log4j</a>, a 
+<code>log4j*.jar</code> needs to be in the class path.  We do this by defining a special class path variable, 
+<code><b>LOG4J</b></code>.  The easiest thing to point it to is the log4j jar file in 
+<code>/Library/WebObjects/Extesions</code>.  See jUnit support above for GUI example.
+
+
+</p>
+
+<h2>Jass Support</h2>
+
+
+<h3>Locate the jass-rt.jar</h3>
+
+
+In order to run contracted code, <code>jass-rt.jar</code> needs to be on the
+class path.  We do this by defining a special class path variable, <code><b>JASS</b></code>.  
+The easiest thing to point it to is the <code>jass-rt.jar</code> in the GVC's Jass Plugin for Eclipse:<br>
+
+<br>
+
+
+<img src="images/JassVariable.jpg" border="0"><br>
+
+<br>
+
+
+
+<h3>Add a Builder for Jass</h3>
+
+
+<font color="red">After you do this, be certain to add the new <b>.externalToolBuilders</b> folder to StarTeam!</font><br>
+
+<br>
+
+
+Go to the project's properties, and select Builders.  Uncheck the <b>WOLips Ant Builder</b> (the Jass builder does this step too).  
+Leave the <b>Java Builder</b> checked.  This builder is not required, but helps to provide better error feedback in Eclipse for things
+like method references that become invalid when a method is renamed (instead of refactoring).  After unchecking the <b>WOLips Ant Builder</b>, 
+click New... and select Ant Build:<br>
+
+<br>
+
+
+<img src="images/CreateJassAntBuilderStep1.jpg"><br>
+
+<br>
+
+
+<p>Give it a <b>Name</b> like <i>ProjectName</i> Jass Builder.  This name needs to be unqiue in the workspace.  You can't just name it
+Jass Builder.  Next to <b>Buildfile</b>, click <b>Browse Workspace...</b> and select the build.xml file from the project:</p>
+
+
+<img src="images/CreateJassAntBuilderStep2.jpg"><br>
+
+<br>
+
+
+<p>Next to <b>Base Directory</b>, click <b>Browse Workspace...</b> and select the project:</p>
+
+
+<img src="images/CreateJassAntBuilderStep3.jpg"><br>
+
+<br>
+
+
+<p>Go to the <b>Refresh</b> tab, click <b>Refresh resources upon completion</b> and check off <b>The project containing the selected 
+resource</b>:</p>
+
+
+<img src="images/CreateJassAntBuilderStep4.jpg"><br>
+
+<br>
+
+
+<p>Go to the <b>Targets</b> tab, uncheck <b>build (default target)</b> and check off <b>jass.builder</b>:</p>
+
+
+<img src="images/CreateJassAntBuilderStep5.jpg"><br>
+
+<br>
+
+
+<p>Go to the <b>Build Options</b> tab, and check off <b>During Auto Builds</b>:</p>
+
+
+<img src="images/CreateJassAntBuilderStep6.jpg"><br>
+
+<br>
+
+
+
+<h3>Turing Jass Off and On</h3>
+
+
+To turn Jass off, go to the project's properties, and select Builders.  Check <b>Java Builder</b> and <b>WOLips Ant Builder</b> 
+then uncheck the Jass Builder.  To turn Jass on, unheck <b>Java Builder</b> and <b>WOLips Ant Builder</b> 
+then check off the Jass Builder.<br>
+
+<br>
+
+
+<h2>Standard Code Formatting</h2>
+
+
+
+<p>There are some things you must configure on your workbench so that we all
+produce consistently formatted code.  If you fail to do this we will be forever
+tripping over formatting differences when checking in code.  You are required to 
+make these configuration settings, they are not a matter of personal preference.</p>
+
+
+
+<p>Open the <b>Preferences</b> window and select the <b>Java</b> - <b>Code Formatter</b> option.  
+Set the <b>New Line</b> tab options like this:</p>
+
+
+<img src="images/CodeFormatterNewLines.jpg" border="0">
+
+
+<p>On the <b>Line Splitting</b> tab, set the <b>Maximum Line Length</b> to 100.
+This number only takes effect if you tell Eclipse to reformat your source.  The results
+of doing this are not always pleasing.  You can set the editor's Print Margin to 100
+and ask it to display the print margin so that you can see where lines will break.</p>
+
+
+
+<p>Set the <b>Style</b> tab options like this:</p>
+
+
+<img src="images/CodeFormatterStyle.jpg" border="0">
+
+<p>Select the <b>Java</b> - <b>Code Generation</b> option and select the <b>Code and Comments</b> tab. 
+Import the file <code>GVCCodeAndComments.xml</code> from the same directory as this file:</p>
+
+
+<img src="images/ImportCodeGenerationComments.jpg" border="0">
+
+
+
+<p>Select the <b>Java</b> - <b>Compiler</b> option. 
+Set the <b>Problems</b> tab options like this:</p>
+
+
+<img src="images/CompilerProblems.jpg" border="0">
+
+<p>Set the <b>Style</b> tab options like this:</p>
+
+
+<img src="images/CompilerStyle.jpg" border="0">
+
+
+<p>Select the <b>Java</b> - <b>Installed JREs</b> option. 
+Remove any versions (anything other than 1.3.1) that you will not be using:</p>
+
+
+<img src="images/InstalledJRE.jpg" border="0">
+
+<p>Select the <b>Java</b> - <b>Organize Imports</b> option. 
+Set the number of ipmortes needed for <b>.*</b> to <b>5</b> and load the file 
+<code>GVCTools.importorder</code> from the same directory as this file:</p>
+
+
+<img src="images/ImportOrder.jpg" border="0">
+
+
+<h1>Organization Through Multiple Workspaces</h1>
+
+
+<p>One way to organize your work is to have every framework and every application for 
+every project you've ever worked on open in your workspace.  You can open and close the
+projects as needed.</p>
+
+
+
+<p>An alternative is to have one workspace per project.  This reduces the clutter in your
+workspace at the expense of requiring more configuration time.  You will need to
+re-do all the configuration in the previous section (not the plugins) for each 
+workspace that you create.  It is a personal choice.</p>
+
+
+
+<p>If you decide to with multiple workspaces, here is what to do.  Create a short cut / 
+alias to eclipse.  Pass it a data parameter to where you want to the workspace information 
+stored.  This does not have to be where the code is stored, it is just configuration information.
+Just be sure that it is not the same place that you have already used for another workspace.  
+The shortcut will look like this in Windows:<br>
+
+
+<code>U:\Programs\eclipse\eclipse.exe -data "U:\Projects\GVCSiteMaker\Code\Workspace"</code></p>
+
+
+
+
+</body>
+</html>

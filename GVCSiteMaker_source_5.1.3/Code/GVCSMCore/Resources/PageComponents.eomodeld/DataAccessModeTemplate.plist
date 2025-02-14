@@ -1,0 +1,23 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = HTML; name = html; prototypeName = largeText; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }
+    ); 
+    attributesUsedForLocking = (oid, html); 
+    className = "com.gvcsitemaker.core.pagecomponent.DataAccessModeTemplate"; 
+    classProperties = (html, dataAccessModes); 
+    externalName = "SM_DA_MODE_TEMPLATE"; 
+    fetchSpecificationDictionary = {}; 
+    name = DataAccessModeTemplate; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = DataAccessMode; 
+            internalInfo = {"_nameInObjectStore" = dataAccessMode; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = templateOID; sourceAttribute = oid; }); 
+            name = dataAccessModes; 
+        }
+    ); 
+}

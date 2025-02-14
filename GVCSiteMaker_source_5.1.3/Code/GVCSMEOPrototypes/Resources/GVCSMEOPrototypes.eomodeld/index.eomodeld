@@ -1,0 +1,10 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    entities = (
+        {className = EOGenericRecord; name = EOFrontBasePrototypes; }, 
+        {className = EOGenericRecord; name = EOJDBCPrototypes; }, 
+        {className = EOGenericRecord; name = EOMySQLPrototypes; }, 
+        {className = EOGenericRecord; name = EOOraclePrototypes; }
+    ); 
+}

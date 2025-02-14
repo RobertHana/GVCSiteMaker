@@ -1,0 +1,981 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+WOComponent (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="WOComponent (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOComponent.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOApplication.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/WODirectAction.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOComponent.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOComponent.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions</FONT>
+<BR>
+Class WOComponent</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOElement
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.appserver.WOComponent
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">er.extensions.components.ERXComponent
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.WOComponent</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.appserver.WOActionResults, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/woextensions/components/BreadCrumb.html" title="class in net.global_village.woextensions.components">BreadCrumb</A>, <A HREF="../../../net/global_village/woextensions/components/CSSComponent.html" title="class in net.global_village.woextensions.components">CSSComponent</A>, <A HREF="../../../net/global_village/woextensions/components/DrillDownTable.html" title="class in net.global_village.woextensions.components">DrillDownTable</A>, <A HREF="../../../net/global_village/woextensions/dynamicmenu/DynamicMenuComponent.html" title="class in net.global_village.woextensions.dynamicmenu">DynamicMenuComponent</A>, <A HREF="../../../net/global_village/woextensions/EditingPage.html" title="class in net.global_village.woextensions">EditingPage</A>, <A HREF="../../../net/global_village/woextensions/EditingPageComponent.html" title="class in net.global_village.woextensions">EditingPageComponent</A>, <A HREF="../../../net/global_village/woextensions/LoginPage.html" title="class in net.global_village.woextensions">LoginPage</A>, <A HREF="../../../net/global_village/woextensions/navbar/NavBarComponent.html" title="class in net.global_village.woextensions.navbar">NavBarComponent</A>, <A HREF="../../../net/global_village/woextensions/securecomponents/SecureComponent.html" title="class in net.global_village.woextensions.securecomponents">SecureComponent</A>, <A HREF="../../../net/global_village/woextensions/tests/resources/TestComponent.html" title="class in net.global_village.woextensions.tests.resources">TestComponent</A>, <A HREF="../../../net/global_village/woextensions/tests/resources/TestSubcomponent.html" title="class in net.global_village.woextensions.tests.resources">TestSubcomponent</A>, <A HREF="../../../net/global_village/woextensions/ValidatingComponent.html" title="class in net.global_village.woextensions">ValidatingComponent</A>, <A HREF="../../../net/global_village/woextensions/ValidationErrorsPanel.html" title="class in net.global_village.woextensions">ValidationErrorsPanel</A>, <A HREF="../../../net/global_village/woextensions/WOFileDownload.html" title="class in net.global_village.woextensions">WOFileDownload</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.33"><B>WOComponent</B></A><DT>extends er.extensions.components.ERXComponent</DL>
+</PRE>
+
+<P>
+Contains additions: <br>
+ <ul><li>nicely cast accessor methods</li>
+ <li>enhanced binding access and checking</li>
+ <li>information related to the associations for the bindings, rather than the value of the bindings themselves.  <i>Most of these methods access private data and thus are subject to breaking in the future</i></li>
+ <li>access to the contents of the .api file associated with this component</li>
+ <li>assistance with formatting HTML for output</li>
+ <li>access to web application resources from a <code>WOComponent</code></li>
+ <li>method to prevent client caching</li>
+ <li>public NSMutableDictionary instance variable as alternative to individual instance variables</li>
+ <li>binding localization: @localize.key in a binding looks up key and returns the localized version</li>
+ <li>binding localization: @@localize.key in a binding looks up value for key on this component and returns the localized value</li>
+ </ul>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 14$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.woextensions.WOComponent">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.appserver.WOComponent._EventLoggingEnabler, com.webobjects.appserver.WOComponent.Event</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCodingAdditions.DefaultImplementation, com.webobjects.foundation.NSKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanFieldBinding, com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._FieldBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberFieldBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.DefaultImplementation, com.webobjects.foundation.NSValidation.Utility, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#dynamic">dynamic</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience for rapid prototyping or for bindings that are never referenced in code.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#trueInteger">trueInteger</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_er.extensions.components.ERXComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class er.extensions.components.ERXComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_dynamicBindings</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_Extension, _IsEventLoggingEnabled, _keyAssociations</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding.ErrorHandling"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding.ErrorHandling</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#WOComponent(com.webobjects.appserver.WOContext)">WOComponent</A></B>(com.webobjects.appserver.WOContext&nbsp;aContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constuctor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#allAPIBindings()">allAPIBindings</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return all bindings, Optional and Required, from in the api file.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#apiDictionary()">apiDictionary</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the contents of the api file as a dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOAssociation</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#associationForBinding(java.lang.String)">associationForBinding</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the <code>WOAssociation</code> for this binding, or nil if it is not bound.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#associations()">associations</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the array of the values bound to bindings.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#booleanValueForBinding(java.lang.String, boolean)">booleanValueForBinding</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBinding,
+                                             boolean&nbsp;defaultValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the boolean result of evaluating what <code>aBinding</code> is bound to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#editingContext()">editingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to access the editing context for this component.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#hasBindingForAction(java.lang.String)">hasBindingForAction</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;actionBindingName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the named binding is bound to an action WITHOUT invoking the action.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#hasNonNullBindingFor(java.lang.String)">hasNonNullBindingFor</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the named binding is present and evaluates to a non-null value</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#htmlValue(java.lang.String, com.webobjects.foundation.NSSelector)">htmlValue</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey,
+                   com.webobjects.foundation.NSSelector&nbsp;withSelector)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method supports creating HTML key-value pairs (width="150") from bindings.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOElement</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#inheritTemplateFrom(java.lang.String, java.lang.String)">inheritTemplateFrom</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName,
+                                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;frameworkName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows a component to "inherit" the template (.html and .wod files) from another component.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#keyPathForBinding(java.lang.String)">keyPathForBinding</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the string for this binding, as represented in the WOD file, rather than the value it is bound to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#keys()">keys</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>Use bindingKeys()</I></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#localizedStringForKey(java.lang.String)">localizedStringForKey</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#objectParameter(java.lang.String, com.webobjects.foundation.NSSelector)">objectParameter</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey,
+                               com.webobjects.foundation.NSSelector&nbsp;withSelector)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method supports creating HTML &ltparam ...</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#optionalAPIBindings()">optionalAPIBindings</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the array of of optional bindings as determined by the Optional entry in the api file.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#preventClientCaching()">preventClientCaching</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call this to prevent this page from being cached on the client.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#reportError(boolean, java.lang.String)">reportError</A></B>(boolean&nbsp;condition,
+                       <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;message)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Error reporting function.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#requiredAPIBindings()">requiredAPIBindings</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the array of of required bindings as determined by the Required=(); entry in the api file.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#reset()">reset</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resets <code>dynamic</code> in stateless sub-classes.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.appserver.WOComponent</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#topLevelComponent()">topLevelComponent</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the top-level ("page") component.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#urlForResource(java.lang.String)">urlForResource</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aResourceName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the URL for the named resource if it is to be dynamically served by the WebObjects application, or simply returns <code>aResouceName</code> if the web server will serve it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#userDefinedBindings()">userDefinedBindings</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of this component's bindings which are not listed in the api file.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/woextensions/WOComponent.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to provide special handling for keypaths starting with "@localize" and "@@localize".</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_er.extensions.components.ERXComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class er.extensions.components.ERXComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_awakeInContext, _checkAccess, _frameworkName, _includeCSSResources, _includeJavascriptResources, additionalCSSFiles, additionalJavascriptFiles, appendToResponse, booleanValueForBinding, booleanValueForBinding, checkAccess, clickToOpenEnabled, componentName, defaultCSSPath, defaultJavascriptPath, dynamicBindings, floatValueForBinding, intValueForBinding, invokeAction, isPageAccessAllowed, localizer, objectValueForBinding, objectValueForBinding, pageWithName, postAppendToResponse, preAppendToResponse, primaryCSSFile, primaryJavascriptFile, stringValueForBinding, stringValueForBinding, takeValuesFromRequest, useDefaultComponentCSS, useDefaultComponentJavascript</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.appserver.WOComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.appserver.WOComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__valueForBinding, _associationWithName, _childTemplate, _cleanUpStatelessComponent, _componentDefinition, _componentUnroll, _isPage, _setContext, _setIsPage, _setParent, _setSubcomponent, _sleepInContext, _subcomponentForElementWithID, _templateNameForClass, _unroll, application, awake, baseURL, bindingKeys, canAccessFieldsDirectly, canGetValueForBinding, canSetValueForBinding, clone, context, debugString, descriptionForResponse, ensureAwakeInContext, frameworkName, generateResponse, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hasBinding, hasSession, isCachingEnabled, isEventLoggingEnabled, isStateless, logString, name, pageWithName, parent, path, pathURL, performParentAction, pullValuesFromParent, pushValuesToParent, session, set_componentUnroll, set_unroll, setCachingEnabled, setValueForBinding, setVariableValueForName, sleep, synchronizesVariablesWithBindings, takeValueForKey, takeValueForKeyPath, template, templateWithHTMLString, templateWithHTMLString, templateWithHTMLString, templateWithName, toString, unableToSetNullForKey, validateTakeValueForKeyPath, validateValueForKey, validationFailedWithException, valueForBinding, valueForBooleanBinding, valueForIntegerBinding, valueForKey, valueForNSArrayBindings, valueForNSDictionaryBindings, valueForNumberBinding, valueForStringBinding, variableValueForName, variableWithName</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="trueInteger"><!-- --></A><H3>
+trueInteger</H3>
+<PRE>
+protected static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.35"><B>trueInteger</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="dynamic"><!-- --></A><H3>
+dynamic</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.41"><B>dynamic</B></A></PRE>
+<DL>
+<DD>Convenience for rapid prototyping or for bindings that are never referenced in code.
+ This allows you to use dynamic.variableName in bindings instead of declaring specific instance variables.
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="WOComponent(com.webobjects.appserver.WOContext)"><!-- --></A><H3>
+WOComponent</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.47"><B>WOComponent</B></A>(com.webobjects.appserver.WOContext&nbsp;aContext)</PRE>
+<DL>
+<DD>Designated constuctor.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="reset()"><!-- --></A><H3>
+reset</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.57"><B>reset</B></A>()</PRE>
+<DL>
+<DD>Resets <code>dynamic</code> in stateless sub-classes.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>reset</CODE> in class <CODE>er.extensions.components.ERXComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasNonNullBindingFor(java.lang.String)"><!-- --></A><H3>
+hasNonNullBindingFor</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.71"><B>hasNonNullBindingFor</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the named binding is present and evaluates to a non-null value
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bindingName</CODE> - the name of the binding to be evaluated
+<DT><B>Returns:</B><DD>the boolean result of evaluating the passed binding</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="booleanValueForBinding(java.lang.String, boolean)"><!-- --></A><H3>
+booleanValueForBinding</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.87"><B>booleanValueForBinding</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aBinding,
+                                      boolean&nbsp;defaultValue)</PRE>
+<DL>
+<DD>Returns the boolean result of evaluating what <code>aBinding</code> is bound to.  If <code>aBinding</code> is not bound to anything, returns the default value.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>booleanValueForBinding</CODE> in class <CODE>er.extensions.components.ERXComponent</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aBinding</CODE> - the name of the binding to be evaluated<DD><CODE>defaultValue</CODE> - the defaultValue
+<DT><B>Returns:</B><DD>the boolean result of evaluating the passed binding</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="keys()"><!-- --></A><H3>
+keys</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.129"><B>keys</B></A>()</PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>Use bindingKeys()</I>
+<P>
+<DD>Returns the array of bindings which have values bound to them.  Each element in this array has a corresponding entry in associations.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the array of keys</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="associations()"><!-- --></A><H3>
+associations</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.146"><B>associations</B></A>()</PRE>
+<DL>
+<DD>Returns the array of the values bound to bindings.  Each element in this array has a corresponding entry in keys.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the array of associations</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="associationForBinding(java.lang.String)"><!-- --></A><H3>
+associationForBinding</H3>
+<PRE>
+public com.webobjects.appserver.WOAssociation <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.163"><B>associationForBinding</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</PRE>
+<DL>
+<DD>Returns the <code>WOAssociation</code> for this binding, or nil if it is not bound.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bindingName</CODE> - the binding name to be evaluated
+<DT><B>Returns:</B><DD>the <code>WOAssociation</code> for this binding, or nil if it is not bound.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="keyPathForBinding(java.lang.String)"><!-- --></A><H3>
+keyPathForBinding</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.186"><B>keyPathForBinding</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;bindingName)</PRE>
+<DL>
+<DD>Returns the string for this binding, as represented in the WOD file, rather than the value it is bound to.  For example if the WOD file has value=message; this method returns "message" rather than the value that message returns when used as a key in <code>valueForKey</code>.  <b>WARNING:</b> This method is implemented using object rape of <code>WOComponent</code> and may break in the future.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bindingName</CODE> - the binding name to be evaluated
+<DT><B>Returns:</B><DD>the string for this binding</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasBindingForAction(java.lang.String)"><!-- --></A><H3>
+hasBindingForAction</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.207"><B>hasBindingForAction</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;actionBindingName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the named binding is bound to an action WITHOUT invoking the action.  <code>hasBinding()</code> invokes the action so is often not suitable.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>actionBindingName</CODE> - name of the action
+<DT><B>Returns:</B><DD>boolean result of comparison</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="apiDictionary()"><!-- --></A><H3>
+apiDictionary</H3>
+<PRE>
+public com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.221"><B>apiDictionary</B></A>()</PRE>
+<DL>
+<DD>Returns the contents of the api file as a dictionary.  Returns an empty dictionary if the file can not be located.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>dictionary created from the api</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="requiredAPIBindings()"><!-- --></A><H3>
+requiredAPIBindings</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.251"><B>requiredAPIBindings</B></A>()</PRE>
+<DL>
+<DD>Returns the array of of required bindings as determined by the Required=(); entry in the api file.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>array of required bindings</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="optionalAPIBindings()"><!-- --></A><H3>
+optionalAPIBindings</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.265"><B>optionalAPIBindings</B></A>()</PRE>
+<DL>
+<DD>Returns the array of of optional bindings as determined by the Optional entry in the api file.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>array of optional bindings</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="allAPIBindings()"><!-- --></A><H3>
+allAPIBindings</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.279"><B>allAPIBindings</B></A>()</PRE>
+<DL>
+<DD>Return all bindings, Optional and Required, from in the api file.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>array of all bindings in api dictionary</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userDefinedBindings()"><!-- --></A><H3>
+userDefinedBindings</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.293"><B>userDefinedBindings</B></A>()</PRE>
+<DL>
+<DD>Returns the list of this component's bindings which are not listed in the api file.  The user has added these in WOBuilder.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>user added bindings</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="htmlValue(java.lang.String, com.webobjects.foundation.NSSelector)"><!-- --></A><H3>
+htmlValue</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.313"><B>htmlValue</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey,
+                        com.webobjects.foundation.NSSelector&nbsp;withSelector)</PRE>
+<DL>
+<DD>This method supports creating HTML key-value pairs (width="150") from bindings.  Given a key and a selector, returns a string formatted by <code>htmlKeyValueFormat()</code> where the key is <code>aKey</code> and the value is the return value of <code>aSelector</code>.  <code>aSelector</code> should indicate a method that returns the value of the relevant binding.  If the return value of <code>aSelector</code> is nil or an empty string, this method returns an empty string.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aKey</CODE> - the key to look up<DD><CODE>withSelector</CODE> - the selector to use
+<DT><B>Returns:</B><DD>the HTML key value pair
+<DT><B>Throws:</B>
+<DD><CODE>RunTimeException</CODE> - if invoke() fails</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="objectParameter(java.lang.String, com.webobjects.foundation.NSSelector)"><!-- --></A><H3>
+objectParameter</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.366"><B>objectParameter</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKey,
+                              com.webobjects.foundation.NSSelector&nbsp;withSelector)</PRE>
+<DL>
+<DD>This method supports creating HTML &ltparam ...&gt elements for an &ltobject ...&gt element (i.e. &ltparam name=movie value="sunset.swf"&gt). Given a key and a selector, returns a string formatted where the key is <code>aKey</code> and the value is the return value of <code>aSelector</code>.  <code>aSelector</code> should indicate a method that returns the value of the relevant binding.  If the return value of <code>aSelector</code> is nil or an empty string, this method returns an empty string.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aKey</CODE> - the key to look up<DD><CODE>withSelector</CODE> - the selector to use
+<DT><B>Returns:</B><DD>the Object Parameter
+<DT><B>Throws:</B>
+<DD><CODE>RunTimeException</CODE> - if invoke() fails</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="urlForResource(java.lang.String)"><!-- --></A><H3>
+urlForResource</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.417"><B>urlForResource</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aResourceName)</PRE>
+<DL>
+<DD>Return the URL for the named resource if it is to be dynamically served by the WebObjects application, or simply returns <code>aResouceName</code> if the web server will serve it.  If <code>aResouceName</code> contains either of the directory delimiters "\" or "/", it is considered to be served by the web server and returned un-altered.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aResourceName</CODE> - the resource you want the URL for
+<DT><B>Returns:</B><DD>the resulting URL</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="preventClientCaching()"><!-- --></A><H3>
+preventClientCaching</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.451"><B>preventClientCaching</B></A>()</PRE>
+<DL>
+<DD>Call this to prevent this page from being cached on the client.  This will (or should) force the browser to request a new page when the back / forward arrows or refresh buttons are used.  WO 4.5 provides <code>disableClientCaching()</code> which should be used in preference to this method when developing under WO 4.5 or greater.  Client caching is controlled by setting these headers: pragma,  expires, and cache-control.  See MS KB Article Q199805 for a discussion of client caching and IE 5.  <b>Does not work in IE currently!</b>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="topLevelComponent()"><!-- --></A><H3>
+topLevelComponent</H3>
+<PRE>
+public com.webobjects.appserver.WOComponent <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.474"><B>topLevelComponent</B></A>()</PRE>
+<DL>
+<DD>Returns the top-level ("page") component.  For page components, returns <code>this</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the top-level component</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localizedStringForKey(java.lang.String)"><!-- --></A><H3>
+localizedStringForKey</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.487"><B>localizedStringForKey</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key of the string to localize
+<DT><B>Returns:</B><DD>locallized string for key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="editingContext()"><!-- --></A><H3>
+editingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.501"><B>editingContext</B></A>()</PRE>
+<DL>
+<DD>Convenience method to access the editing context for this component.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this implementation returns session().defaultEditingContext()</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="valueForKeyPath(java.lang.String)"><!-- --></A><H3>
+valueForKeyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.512"><B>valueForKeyPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyPath)</PRE>
+<DL>
+<DD>Overridden to provide special handling for keypaths starting with "@localize" and "@@localize".
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>valueForKeyPath</CODE> in interface <CODE>com.webobjects.foundation.NSKeyValueCodingAdditions</CODE><DT><B>Overrides:</B><DD><CODE>valueForKeyPath</CODE> in class <CODE>com.webobjects.appserver.WOComponent</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="reportError(boolean, java.lang.String)"><!-- --></A><H3>
+reportError</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.543"><B>reportError</B></A>(boolean&nbsp;condition,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;message)</PRE>
+<DL>
+<DD>Error reporting function.  If <code>condition</code>, throws a RuntimeException with
+ message and the trail of components from this one up to the page.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="inheritTemplateFrom(java.lang.String, java.lang.String)"><!-- --></A><H3>
+inheritTemplateFrom</H3>
+<PRE>
+public com.webobjects.appserver.WOElement <A HREF="../../../src-html/net/global_village/woextensions/WOComponent.html#line.585"><B>inheritTemplateFrom</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;componentName,
+                                                              <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;frameworkName)</PRE>
+<DL>
+<DD>Allows a component to "inherit" the template (.html and .wod files) from another component.
+ <p>Usage:</p>
+ <pre>
+ public WOElement template() {
+     return inheritTemplateFrom("AddAddress", "CoreUI");
+ }
+ </pre>
+ This very simple implementation does have some limitations:
+ <ol>
+ <li>It can't he used to inherit the template of another component inheriting a template.</li>
+ <li>It can't handle having two components with the same name in different packages</li>
+ <li>It does not use WO template caching</li>
+ </ol>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>componentName</CODE> - the name of the component whose template will be inherited<DD><CODE>frameworkName</CODE> - name of the framework the component is in, or null if in the application
+<DT><B>Returns:</B><DD>the template form the indicated component<DT><B>See Also:</B><DD><CODE>WOComponent.template()</CODE></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/WOComponent.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/woextensions/WOApplication.html" title="class in net.global_village.woextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/woextensions/WODirectAction.html" title="class in net.global_village.woextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/woextensions/WOComponent.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="WOComponent.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.appserver.WOComponent">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

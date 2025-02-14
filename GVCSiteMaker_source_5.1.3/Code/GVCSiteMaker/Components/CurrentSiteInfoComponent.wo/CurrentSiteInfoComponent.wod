@@ -1,0 +1,39 @@
+WebsiteSelectedConditional: WOConditional 
+{
+    condition = ~website != null;
+}
+
+ConfigureSiteURLHyperlink : WOHyperlink {
+    href = website.siteURL;
+    class = "previewURL";
+    target = "_preview";
+}
+
+ConfiguringSiteURLString : WOString {
+    value = website.siteURL;
+}
+
+PublishedString : WOString {
+  value = publishedString;
+}
+
+PublishedToggleString : WOString {
+  value = publishedToggleString;
+}
+
+PublishToggleHyperlink : AjaxUpdateLink {
+    updateContainerID = "PublishedID";
+    action = togglePublished;
+}
+
+PublishedUpdateContainer : AjaxUpdateContainer {
+    id = "PublishedID";
+}
+
+SiteOwnerString : WOString {
+  value = website.owner.userID;
+}
+
+AssociatedUnitString : WOString {
+  value = website.parentOrgUnit.unitName;
+}

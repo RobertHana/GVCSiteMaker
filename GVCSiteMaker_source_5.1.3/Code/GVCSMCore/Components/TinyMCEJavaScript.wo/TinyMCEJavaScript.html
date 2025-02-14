@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript" src="/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript" src="/tiny_mce/editorSelectors/tinymce-init-simple.js"></script>
+<script language="javascript" type="text/javascript" src="/tiny_mce/editorSelectors/tinymce-init-advanced.js"></script>
+<script language="javascript" type="text/javascript">
+function myCustomSetupContent(editor_id, body, doc) {
+      <webobject name = "CSSConditional">tinyMCE.getInstanceById(editor_id).dom.loadCSS("<webobject name="CSSFile"></webobject>");</webobject>
+      tinyMCE.getInstanceById(editor_id).settings['external_link_list_url'] = "<webobject name="LinkListURL"></webobject>";
+      tinyMCE.getInstanceById(editor_id).settings['external_image_list_url'] = "<webobject name="ImageListURL"></webobject>";
+}
+</script>

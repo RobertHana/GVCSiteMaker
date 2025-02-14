@@ -1,0 +1,128 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CREATION_DATE"; 
+            name = creationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "LDAP_GROUP_NAME"; 
+            name = ldapGroupName; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_NAME"; 
+            name = name; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_LDAP_BRANCH"; 
+            name = oidLDAPBranch; 
+            prototypeName = dbKey; 
+        }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = tinySting; }, 
+        {
+            allowsNull = N; 
+            columnName = "PARENT_WEBSITE"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, name, type, oidLDAPBranch, ldapGroupName); 
+    className = "com.gvcsitemaker.core.LDAPGroup"; 
+    classProperties = (
+        name, 
+        creationDate, 
+        type, 
+        ldapBranch, 
+        ldapGroupName, 
+        dataAccessNotifications, 
+        files, 
+        sections, 
+        parentWebsite
+    ); 
+    externalName = "SM_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            groupName, 
+            creationDate, 
+            websites, 
+            parentWebsite, 
+            sections, 
+            files, 
+            accessType, 
+            users
+        ); 
+    }; 
+    name = LDAPGroup; 
+    parent = WebsiteGroup; 
+    primaryKeyAttributes = (groupPKey); 
+    relationships = (
+        {
+            definition = "groupDataAccessNotifications.dataAccess"; 
+            internalInfo = {"_nameInObjectStore" = "dataAccessWebsiteGroupNotifications_dataAccess"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = dataAccessNotifications; 
+        }, 
+        {definition = "groupFiles.file"; joinSemantic = EOInnerJoin; name = files; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = DataAccessWebsiteGroupNotification; 
+            internalInfo = {"_nameInObjectStore" = websiteWebsiteGroups; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupDataAccessNotifications; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupFiles; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GroupSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = groupSections; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = LDAPBranch; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidLDAPBranch; }); 
+            name = ldapBranch; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websitePKey; sourceAttribute = websiteFKey; }); 
+            name = parentWebsite; 
+        }, 
+        {
+            definition = "groupSections.section"; 
+            joinSemantic = EOInnerJoin; 
+            name = sections; 
+        }
+    ); 
+    restrictingQualifier = "(type = 'LDAP')"; 
+}

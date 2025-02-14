@@ -1,0 +1,118 @@
+AddMultipleUnits: WOSubmitButton {
+	value = "Add new units";
+	action = createNewUnitsFromBatchFile;
+}
+
+AddNewUnit: WOSubmitButton {
+	value = "Submit";
+	action = createNewUnit;
+}
+
+BatchFilePath: WOFileUpload {
+	value = "Browse for batch file:";
+	size = 30;
+	data = fileData;
+	filePath = filePath;
+}
+
+CSSComponent: SMCSSComponent 
+{
+}
+
+CancelButton: WOSubmitButton 
+{
+	action = returnToAdminMainPage;
+	value = "Cancel";
+}
+
+Conditional6: WOConditional {
+	condition = displayInvalidBatchFileErrorMessage;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Unit Creation";
+	isAdmin = true;
+	pageType = "CreateUnitPage";
+}
+
+EncompassingUnit: UnitChooser {
+	size = 1;
+	selectedUnit = parentOrgUnit;
+	rootOrgUnits = session.currentUser.orgUnitsToAdmin;
+	excludeNonSystemWideUnits = false;
+}
+
+FilespaceQuota: WOTextField {
+	size = 8;
+	value = unit.fileSizeQuota;
+}
+
+InvalidFilespaceUsageErrorString: WOString {
+	value = invalidFilespaceQuotaErrorMessage;
+}
+
+NewUnitName: WOTextField {
+	class = "largeEntryBox";
+	maxLength = 255;
+	value = unit.unitName;
+}
+
+NoRadioButton: WORadioButton 
+{
+	value = "N";
+	name = "SystemWide";
+	selection = unit.inPublicList;
+}
+
+NullEncompassingUnitErrorString: WOString {
+	value = nullEncompassingUnitErrorMessage;
+}
+
+NullFilespaceQuotaErrorString: WOString {
+	value = nullFilespaceQuotaErrorMessage;
+}
+
+NullUnitNameErrorString: WOString {
+	value = nullUnitNameErrorMessage;
+}
+
+ShowInvalidFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayInvalidFilespaceQuotaErrorMessage;
+}
+
+ShowNullEncompassingUnitErrorMessage: WOConditional {
+	condition = displayNullEncompassingUnitErrorMessage;
+}
+
+ShowNullFilespaceQuotaErrorMessage: WOConditional {
+	condition = displayNullFilespaceQuotaErrorMessage;
+}
+
+ShowNullUnitErrorMessage: WOConditional {
+	condition = displayNullUnitNameErrorMessage;
+}
+
+ShowUnitNameExistsErrorMessage: WOConditional {
+	condition = displayUnitNameExistsErrorMessage;
+}
+
+String1: WOString {
+	value = invalidBatchFileErrorMessage;
+}
+
+UnitCreationForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = true;
+}
+
+UnitNameExistsErrorString: WOString {
+	value = unitNameExistsErrorMessage;
+}
+
+YesRadioButton: WORadioButton 
+{
+	value = "Y";
+	selection = unit.inPublicList;
+	name = "SystemWide";
+}

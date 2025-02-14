@@ -1,0 +1,25 @@
+{
+	"AttributeValidationTestEntity.displayName" = "Test Entity For Attribute Validation";
+	"AttributeValidationTestEntity.invalidValue" = "Validation Test: Entity level invalid value.";
+
+	// Do not define AttributeValidationTestEntity.failedToLock 
+
+	"AttributeValidationTestEntity.requiredMemo.nullNotAllowed" = "Validation Test: requiredMemo nullNotAllowed.";
+	// Do not define AttributeValidationTestEntity.requiredMemo.invalidValue"
+
+	"Entity.belowMinimum" = "Validation Test: Generic Entity level below minimum.";
+	// Do not define Entity.aboveMaximum 
+	// Do not define AttributeValidationTestEntity.aboveMaximum 
+	// Do not define AttributeValidationTestEntity. requiredMemo.aboveMaximum 
+
+	// Strings for validation localization engine test
+	"AttributeValidationTestEntity.localizationTestProperty.nullNotAllowed"="Localization Test: super class null not allowed.";
+
+	// Strings for EOFValidationException test 
+	"AttributeValidationTestEntity.requiredString.nullNotAllowed"="The <<propertyName>> must be entered for this <<entityName>>.";
+	"AttributeValidationTestEntity.requiredString.displayName"="mandatory string";
+	"AttributeValidationTestEntity.requiredString.tooLong"="The <<propertyName>> you entered, '<<failedValue>>', is longer than the <<attribute.width>> characters permitted.";
+	// Don't define AttributeValidationTestEntity.optionalString.displayName 
+
+	"AttributeValidationTestEntity.optimisticLockingFailure"="This data has been changed by another user.  You will need to repeat your changes and save again.";
+}

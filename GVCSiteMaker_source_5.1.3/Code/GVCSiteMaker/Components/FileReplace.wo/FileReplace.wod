@@ -1,0 +1,101 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelButton: WOSubmitButton {
+	action = cancelUpload;
+	value = "Cancel";
+}
+
+ConfirmModeConditional: WOConditional {
+	condition = isConfirmMode;
+}
+
+DoneButton: WOSubmitButton {
+	action = cancelUpload;
+	value = "Done";
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = canUserConfigureWebsite;
+	isConfigPage = canUserConfigureWebsite;
+	pageTitle = pageTitle;
+	isAdmin = false;
+	pageType = "FileReplace";
+}
+
+FILE_UPLOAD: WOFileUpload {
+
+	filePath = fileUploadBindings.uploadedFileName;
+	maxlength = 255;
+	size = "25";
+
+	bufferSize = 8192;
+	streamToFilePath = fileUploadBindings.streamToFilePath;
+	finalFilePath = fileUploadBindings.finalFilePath;
+	mimeType = fileUploadBindings.mimeType;
+	overwrite = true;
+}
+
+FileNameString: WOString {
+	value = fileUploadBindings.uploadedFileName;
+}
+
+FileSizeString: WOString {
+	value = formattedFileSize;
+}
+
+FileUploadForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = 1;
+}
+
+Form1: WOForm {
+}
+
+GroupPicker: GroupPicker {
+	accessibleObject = currentFile;
+	typeOfAccess = "File";
+}
+
+NoRadioButton: WORadioButton {
+	name = "ShowConfirmationPage";
+	selection = showConfirmationPage;
+	value = false;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+ReplaceModeConditional: WOConditional {
+	condition = isConfirmMode;
+	negate = true;
+}
+
+StatusString: WOString {
+	value = fileUploadBindings.statusMessage;
+}
+
+
+UPLOAD_FILE_BUTTON: WOSubmitButton {
+    value = "Save";
+	action = saveUpload;
+}
+
+UploadFileName : WOString {
+	value = currentFile.uploadedFilename;
+}
+
+YesRadioButton: WORadioButton {
+	name = "ShowConfirmationPage";
+	selection = showConfirmationPage;
+	value = true;
+}

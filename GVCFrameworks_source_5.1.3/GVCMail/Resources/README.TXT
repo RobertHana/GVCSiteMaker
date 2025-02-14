@@ -1,0 +1,1 @@
+Set the mail server and account information in TestConfiguration.plist before running unit tests.

@@ -1,0 +1,13 @@
+(
+	// Add the fully qualified class names here of classes that can be accessed
+	// in calculated column expressions
+	java.lang.Math,
+	java.lang.String,
+	java.lang.Integer,
+	java.lang.Long,
+	java.lang.Double,
+	java.lang.Boolean,
+	java.math.BigDecimal,
+	java.math.BigInteger,
+	com.webobjects.foundation.NSTimestamp
+)

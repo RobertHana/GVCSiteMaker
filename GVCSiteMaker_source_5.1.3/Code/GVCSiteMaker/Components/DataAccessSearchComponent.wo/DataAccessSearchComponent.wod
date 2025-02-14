@@ -1,0 +1,109 @@
+AddMoreCriteriaButton: WOSubmitButton {
+	action = addMoreCriteria;
+	value = "Add More Criteria";
+}
+
+AdditionalSortSubmitButton: WOSubmitButton {
+	action = addSortOrder;
+	value = "Additional Sort";
+}
+
+ColumnSearchValueInvalidationConditional: WOConditional {
+	condition = columnSearchValueHasValidationFailures;
+}
+
+ColumnSearchValueValidationFailureString: WOString {
+	value = validationFailureForColumnSearchValue;
+}
+
+ComparisonTypesPopup: WOPopUpButton {
+	list = comparisonTypes;
+	noSelectionString = "Choose comparison...";
+	selection = aColumnSearchValue.comparisonType;
+}
+
+DataAccessColumnSearchValueRepetition: WORepetition {
+	item = aColumnSearchValue;
+	list = localSearchMode.orderedCriteria;
+	index = columnSearchValuesIndex;
+}
+
+FieldNamePopup: WOPopUpButton {
+	displayString = aColumn.name;
+	item = aColumn;
+	list = table.searchableColumns;
+	noSelectionString = "Choose field...";
+	selection = aColumnSearchValue.column;
+}
+
+GroupCountPopUp: WOPopUpButton {
+	list = application.properties.DataAccessListSearchResultGroupSizes;
+	selection = searchMode.toParent.groupSize;
+}
+
+IsFirstSortColumnConditional: WOConditional {
+	condition = isFirstSortColumn;
+}
+
+IsNotFirstSortColumnConditional: WOConditional {
+	condition = isFirstSortColumn;
+	negate = true;
+}
+
+IsRestrictSetWithUseDefaultNotSetConditional: WOConditional {
+	condition = isRestrictSetWithUseDefaultNotSet;
+}
+
+JoinConditionsPopUp: WOPopUpButton {
+	list = joinConditions;
+	noSelectionString = "(unused)";
+	selection = aColumnSearchValue.joinCondition;
+}
+
+RestrictToDefaultResultsCheckBox: WOCheckBox {
+	checked = searchMode.toParent.restrictToDefaultResults;
+}
+
+RestrictToDefaultResultsInvalidConditional: WOConditional {
+	condition = isRestrictToDefaultResultsInvalid;
+}
+
+ShouldDisplayJoinConditionConditional: WOConditional {
+	condition = shouldDisplayJoinConditionPopup;
+}
+
+ShowSearchOptionsConditional: WOConditional {
+	condition = showSearchOptions;
+}
+
+SortByColumnsPopUp: WOPopUpButton {
+	selection = aSortOrdering.column;
+	list = table.orderableColumns;
+	item = aColumn;
+	displayString = aColumn.name;
+	noSelectionString = sortOrderingColumnNoSelectionString;
+}
+
+SortDirectionPopUp: WOPopUpButton {
+	list = orderDirections;
+	selection = aSortOrdering.sortDirection;
+	noSelectionString = sortOrderingDirectionNoSelectionString;
+}
+
+SortOrderSameColumnTwiceInvalidConditional: WOConditional {
+	condition = hasSortColumnTwice;
+}
+
+SortOrderingRepetition: WORepetition {
+	list = localSearchMode.orderedSortOrders;
+	item = aSortOrdering;
+	index = aSortOrderIndex;
+}
+
+ValueDateHintString: WOString {
+	value = application.properties.InputDateFormatHint;
+}
+
+ValueField: WOTextField {
+	value = aColumnSearchValue.value;
+}

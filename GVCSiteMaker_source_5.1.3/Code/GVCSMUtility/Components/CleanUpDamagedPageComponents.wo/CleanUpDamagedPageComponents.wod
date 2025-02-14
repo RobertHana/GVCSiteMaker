@@ -1,0 +1,55 @@
+Conditional1: WOConditional {
+	condition = hasDanglingSiteFileReferences;
+	negate = true;
+}
+
+Hyperlink1: WOHyperlink {
+	action = fixDanglingSiteFileReferences;
+}
+
+Hyperlink2: WOHyperlink {
+	action = fixOrphanedPageComponents;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+Repetition1: WORepetition {
+	item = aComponent;
+	list = componentsWithDanglingSiteFileReferences;
+}
+
+Repetition2: WORepetition {
+	item = aComponent;
+	list = orphanedPageComponents;
+}
+
+String1: WOString {
+	value = aComponent.componentType;
+}
+
+String2: WOString {
+	value = componentsWithDanglingSiteFileReferences.@count;
+}
+
+String3: WOString {
+	value = componentsSection.name;
+}
+
+String4: WOString {
+	value = aComponent.relatedFileId;
+}
+
+String5: WOString {
+	value = aComponent.componentType;
+}
+
+String6: WOString {
+	value = orphanedPageComponents.@count;
+}
+
+String7: WOString {
+	value = componentsSection.website.siteID;
+}
+

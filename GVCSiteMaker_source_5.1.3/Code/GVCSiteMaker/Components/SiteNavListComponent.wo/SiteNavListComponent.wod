@@ -1,0 +1,50 @@
+GoToSectionHyperlink: WOHyperlink {
+	href = urlForSection;
+}
+
+HasNodesConditional: WOConditional {
+	condition = hasNodesToDisplay;
+}
+
+IdConditional: WOConditional {
+	condition = shouldIncludeId;
+}
+
+LinkClass: WOString {
+	value = linkClass;
+}
+
+ListIdString: WOString {
+	value = listId;
+}
+
+ListPathClass: WOString {
+	value = listPathClass;
+}
+
+ListRepetition: WORepetition {
+	list = sectionNodeList;
+	item = aSectionNode;
+}
+
+NameString: WOString {
+	value = aSectionNode.section.name;
+}
+
+NavigableConditional: WOConditional {
+	condition = aSectionNode.isNavigable;
+}
+
+PathClass: WOString {
+	value = pathClass;
+}
+
+SiteNavListComponent: SiteNavListComponent {
+	sectionNodeList = aSectionNode.sectionNodes;
+	website = website;
+	parentNode = aSectionNode;
+}
+
+SubMenuString: WOString {
+	value = subMenuClass;
+}

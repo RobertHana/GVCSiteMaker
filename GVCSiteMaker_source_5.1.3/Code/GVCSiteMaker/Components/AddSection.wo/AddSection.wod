@@ -1,0 +1,206 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+Help: HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.AddSection";
+}
+
+SectionNameString: WOString
+{
+    value = currentSection.name;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+AddSectionButton: WOSubmitButton { 
+	action = createSection;
+	value = "Save"; 
+}
+
+CanControlNavigationConditional: WOConditional {
+	condition = canControlNavigation;
+	negate = false;
+}
+
+CanHaveStyleConditional: WOConditional {
+	condition = canHaveOwnStyle;
+}
+
+CanRequireHTTPSConditional: WOConditional {
+	condition = canRequireHTTPS;
+}
+
+CancelAddButton: WOSubmitButton {
+	action = cancelAddSection;
+	value = "Cancel";
+}
+
+CancelModifyButton: WOSubmitButton {
+	action = cancelModifySection;
+	value = "Cancel";
+}
+
+ComponentType: WOString {
+    value = currentSection.type.name; 
+}
+
+Contributors: OptionalGroupPicker {
+	labelDescription = "Which groups have rights as Contributors ?";
+	mainLabel = "Section Contributors";
+	name = "contributors";
+	eo = currentSection;
+    groupsKeyPath = "contributorGroups";
+}
+Details: WOText { 
+  value = currentSection.details;
+  rows = 2;
+  cols = 40;
+}
+
+DynamicBody: DynamicBodyComponent {
+	pageTitle = pageTitle;
+	isAdmin = false;
+	hasSite = true;
+	pageType = "AddSection";
+}
+
+EditSectionButton: WOSubmitButton {
+	action = editSection;
+	value = "Edit Section";  // By Alann's request this button contains the word Section.
+}
+
+Editors: OptionalGroupPicker {
+	labelDescription = "Which groups have rights as Editors?";
+	mainLabel = "Section Editors";
+	name = "editors";
+	eo = currentSection;
+    groupsKeyPath = "editorGroups";
+}
+GroupPicker: GroupPicker {
+	accessibleObject = currentSection;
+	typeOfAccess = "Section";
+}
+
+HiddenSectionButton: WORadioButton {
+	name = "NavigationButtons";
+	selection = currentSection.isNavigable;
+	value = falseValue;
+}
+
+IsModifyingSection: WOConditional {
+	condition = isModifyingSection;
+}
+
+IsNotModifyingSection: WOConditional {
+	condition = isModifyingSection;
+	negate = true;
+}
+
+MESSAGE: WOString {
+  value = message;
+}
+
+MimeType: WOPopUpButton {
+	selection = currentSection.mimeType;
+	list = application.properties.SectionMimeTypes;  //VALID
+}
+
+RadioButton1: WORadioButton {
+	value = trueValue;
+	name = "AllowVersioning";
+	onClick = "this.form.submit()";
+	selection = currentSection.isVersioning;
+}
+
+RadioButton2: WORadioButton {
+	value = falseValue;
+	name = "AllowVersioning";
+	onClick = "this.form.submit()";
+	selection = currentSection.isVersioning;
+}
+
+RequireHTTPSRadioButton: WORadioButton {
+	value = trueValue;
+	name = "RequireHTTPS";
+	selection = currentSection.requireHttpsAccessForPublicSections;
+}
+
+RequireHTTPSRadioButton2: WORadioButton {
+	value = falseValue;
+	name = "RequireHTTPS";
+	selection = currentSection.requireHttpsAccessForPublicSections;
+}
+
+SaveChangesButton: WOSubmitButton {
+	action = saveChanges;
+	value = "Save";
+}
+
+SectionConditional: WOConditional {
+	condition = showSections;
+}
+
+SectionForm: WOForm { 
+	multipleSubmit = true;
+}
+
+SectionList: WOPopUpButton {
+	list = website.orderedSections;
+	item = aSection;
+	name = "sectionList";
+    displayString = aSection.name;
+	selection = sectionToCopy;
+}
+SectionName: WOTextField { size = "40"; value = currentSection.name; maxLength = 50;}
+
+SectionTypes: WOPopUpButton { 
+    list = sectionTypes;
+    item = aSectionType;
+    noSelectionString = "Select a type of section..."; 
+    selection = currentSection.type;
+	displayString = aSectionType.name;
+	onChange = "this.form.submit();";
+}
+
+StyleChooser: WOPopUpButton {
+	list = styles;
+	selection = currentSection.sectionStyle;
+	item = aStyle;
+	displayString = aStyle.name;
+	noSelectionString = "Use style specified in Overall Appearance";
+}
+
+SupportContributorsConditional: WOConditional {
+	condition = supportsContributors;
+}
+
+SupportEditorsConditional: WOConditional {
+	condition = supportsEditors;
+}
+
+UsesAccessProtectionConditional: WOConditional {
+	condition = usesAccessProtection;
+}
+
+VersioningConditional: WOConditional {
+	condition = showVersioningOptions;
+}
+
+SectionVersioningConditional: WOConditional {
+	condition = currentSection.isVersioning.booleanValue;
+}
+
+VisibleSectionButton: WORadioButton {
+	name = "NavigationButtons";
+	selection = currentSection.isNavigable;
+	value = trueValue;
+}
+
+AutoVersioningCheckBox : WOCheckBox {
+	checked = isAutoVersioning;
+}

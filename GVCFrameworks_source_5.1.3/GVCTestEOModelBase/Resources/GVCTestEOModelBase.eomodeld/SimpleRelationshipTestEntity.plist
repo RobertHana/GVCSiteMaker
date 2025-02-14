@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {columnName = id; name = id; prototypeName = Key; }, 
+        {columnName = the_name; name = name; prototypeName = String; width = 50; }
+    ); 
+    attributesUsedForLocking = (id, name); 
+    className = net.global_village.testeomodelbase.SimpleRelationshipTestEntity; 
+    classProperties = (name, mandatoryToMany, mandatoryToOne, optionalToMany, optionalToOne); 
+    externalName = SIMPLE_REL_TEST_ENTITY; 
+    fetchSpecificationDictionary = {}; 
+    name = SimpleRelationshipTestEntity; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ToManyEntity; 
+            isMandatory = Y; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = id; }); 
+            name = mandatoryToMany; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ToOneEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = id; }); 
+            name = mandatoryToOne; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ToManyEntity; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = id; }); 
+            name = optionalToMany; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ToOneEntity; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = id; }); 
+            name = optionalToOne; 
+        }
+    ); 
+}

@@ -1,0 +1,11 @@
+AComponent: WOSwitchComponent {
+	componentObject = aComponent;
+	WOComponentName = aComponent.componentType;
+	currentMode = currentMode;
+}
+
+ComponentList: WORepetition {
+	item = aComponent;
+	list = orderedComponents;
+}
+

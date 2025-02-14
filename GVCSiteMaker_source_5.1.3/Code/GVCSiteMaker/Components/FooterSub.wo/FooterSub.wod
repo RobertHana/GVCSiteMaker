@@ -1,0 +1,109 @@
+ConfigureSiteLink: WOHyperlink {
+	href = configURL;
+}
+
+ContactNameString: WOString {
+	value = website.contactName;
+}
+
+HasContactEmailConditional: WOConditional {
+	condition = hasEmail;
+}
+
+HasContactFaxConditional: WOConditional {
+	condition = hasFax;
+}
+
+HasContactInfoConditional: WOConditional {
+	condition = hasSomeContactInfo;
+}
+
+HasContactNameConditional: WOConditional {
+	condition = hasName;
+}
+
+HasContactPhoneConditional: WOConditional {
+	condition = hasPhone;
+}
+
+ContactPhoneString: WOString {
+    value = website.contactPhone;
+}
+
+ContactEmailLink: WOHyperlink {
+    href = mailtoURL;
+}
+
+ContactEmailString: WOString {
+    value = website.contactEmail;
+}
+
+ContactFaxString: WOString {
+    value = website.contactFax;
+}
+
+HasUserLink1Conditional: WOConditional {
+	condition = website.footer.isLink1Visible;
+}
+
+HasUserLink2Conditional: WOConditional {
+	condition = website.footer.isLink2Visible;
+}
+
+HasUserLink3Conditional: WOConditional {
+	condition = website.footer.isLink3Visible;
+}
+
+HasUserLink4Conditional: WOConditional {
+	condition = website.footer.isLink4Visible;
+}
+
+HasUserLinksConditional: WOConditional {
+	condition = hasLinks;
+}
+
+InstallationNameString: WOString {
+	value = application.properties.InstallationName;  //VALID
+}
+
+ManageFilesLink: WOHyperlink {
+	href = configSiteFileMgmtURL;
+}
+
+SiteMakerHomeLink: WOHyperlink {
+	href = application.mainPageURL;
+}
+
+UserLink1: WOHyperlink {
+	href = website.footer.linkURL1;
+	string = website.footer.linkText1;
+}
+
+UserLink2: WOHyperlink {
+	href = website.footer.linkURL2;
+	string = website.footer.linkText2;
+}
+
+UserLink3: WOHyperlink {
+	href = website.footer.linkURL3;
+	string = website.footer.linkText3;
+}
+
+UserLink4: WOHyperlink {
+	href = website.footer.linkURL4;
+	string = website.footer.linkText4;
+}
+
+HasCustomFooterConditional : WOConditional {
+    condition = website.footer.hasCustomFooter;
+}
+
+HasNoCustomFooterConditional : WOConditional {
+    condition = website.footer.hasCustomFooter;
+    negate = true;
+}
+
+CustomFooterString : WOString {
+    value = website.footer.customFooter;
+    escapeHTML = false;
+}

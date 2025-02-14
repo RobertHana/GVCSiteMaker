@@ -1,0 +1,95 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+ACCEPT_CHANGES: WOSubmitButton {
+	action = saveChanges;
+	value = "Save";
+}
+CANCEL: WOSubmitButton {
+	action = cancelUpload;
+	value = "Cancel";
+}
+CanUserConfigureWebsite: WOConditional {
+	condition = canUserConfigureWebsite;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	isConfigPage = canUserConfigureWebsite;  // sometimes not configuring at all
+	isAdmin = false;
+	hasSite = canUserConfigureWebsite;  // when configuring it has site
+	pageType = "com.gvcsitemaker.pages.FileEdit";
+}
+
+EmailFileSubmitButton: WOSubmitButton {
+	action = sendEmail;
+	value = "e-mail File";
+}
+FILE_DESCRIPTION_INPUT: WOText {
+	cols = "40";  // must be under 450 pixels wide now...
+	rows = 4;
+	value = currentFile.fileDescription;
+}
+FileManagementForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = 1;
+}
+
+FileNameString: WOString {
+	value = currentFile.uploadedFilename;
+}
+
+FileSize: WOString {
+	value = formattedFileSize;
+}
+FoldersPopUpButton: WOPopUpButton {
+	item = aFolder;
+	list = website.orderedUserFolders;
+	selection = filesFolder;
+	displayString = aFolder.name;
+}
+
+GroupPicker: GroupPicker {
+	accessibleObject = currentFile;
+	typeOfAccess = "File";
+}
+MimeType: WOString {
+	value = currentFile.mimeType;
+}
+
+MimeTypesPopUpButton: WOPopUpButton {
+	item = aMimeType;
+	list = mimeTypes;
+	selection = currentFile.mimeType;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+ReplaceFileSubmitButton: WOSubmitButton {
+	action = replaceFile;
+	value = "Replace File";
+}
+
+ShortNameTextField: WOTextField {
+	size = 50;
+	value = currentFile.shortName;
+}
+
+String2: WOString {
+	formatter = application.properties.DateAndTimeFormatter;  // VALID
+	value = currentFile.uploadDate;
+}
+UserCanNotConfigureWebsite: WOConditional {
+	condition = canUserConfigureWebsite;
+	negate = true;
+}

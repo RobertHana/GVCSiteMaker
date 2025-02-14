@@ -1,0 +1,32 @@
+{
+//***************************************************************
+//
+// N O T E
+//
+// - This file contains default debugging configuration values which are unlikely to be changed on a per installation basis.  
+//   They can be overriden by defining the same value in GVCSiteMakerCustom.plist in the GVCSMCustom framework for an installation.
+//
+// - All documentation for these items is in StarTeam as GVCSiteMaker\Deployment\ConfigurationGuide.doc.  If you change
+//   anything be certain to update the documentation.  Do not document in this file unless it is developer specific comments.
+//
+// - If you add required configuration items, add code in perfromConfigurationDiagnostics() in SMApplication to check for them.
+//
+//***************************************************************
+
+
+DebugLevel = 3;
+EOAdaptorDebugging = "false";
+// LogFetchedRows and LogSlowQueries can't both be used at the same time.
+LogFetchedRows = "false";
+LogSlowQueries = "false";
+LogSlowQueryTheshholdInMilliseconds = "500";
+DebugKerberos = "false";
+DebugRequestResponseLoop = "false";
+HandleInvalidCookies = "true";
+DevelopmentMode = "false";
+DebugLDAP = "false";
+DebugEditingContextLocking = "false";
+DebuggingEditingContextClassName="net.global_village.eofvalidation.NotifyingLockErrorScreamerEditingContext";
+EventLogging = "false";
+EventLogPassword = "mAInEvEnt";
+}

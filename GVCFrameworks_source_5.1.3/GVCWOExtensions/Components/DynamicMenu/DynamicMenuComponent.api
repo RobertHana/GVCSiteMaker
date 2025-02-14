@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DynamicMenuComponent" wocomponentcontent="false">
+
+		<binding name="menu"/>
+
+		<validation message="&apos;menu&apos; is a required binding">
+			<unbound name="menu"/>
+		</validation>
+	</wo>
+</wodefinitions>

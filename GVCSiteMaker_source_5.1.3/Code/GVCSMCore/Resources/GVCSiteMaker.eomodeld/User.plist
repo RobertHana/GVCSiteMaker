@@ -1,0 +1,78 @@
+{
+    attributes = (
+        {
+            columnName = "ORG_UNIT_FOR_STYLES"; 
+            name = oidOrgUnitForStyleAdmin; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = PASSWORD; name = password; prototypeName = mediumString; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userID; 
+            prototypeName = mediumString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_PKEY"; 
+            name = userPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (oidOrgUnitForStyleAdmin, password, userID, userPKey); 
+    className = "com.gvcsitemaker.core.User"; 
+    classProperties = (groups, orgUnitToAdminStylesFor, orgUnitsToAdmin, password, userID, websites); 
+    externalName = "SM_USER"; 
+    internalInfo = {"_clientClassPropertyNames" = (groups, password, userID, websites); }; 
+    maxNumberOfInstancesToBatchFetch = 50; 
+    name = User; 
+    primaryKeyAttributes = (userPKey); 
+    relationships = (
+        {
+            definition = "userGroups.group"; 
+            name = groups; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOrgUnitForStyleAdmin; }); 
+            name = orgUnitToAdminStylesFor; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = OrgUnitUser; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = orgUnitUsers; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            definition = "orgUnitUsers.orgUnit"; 
+            internalInfo = {"_nameInObjectStore" = "orgUnitUsers_orgUnit"; }; 
+            name = orgUnitsToAdmin; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = UserGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = userGroups; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Website; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userFKey; sourceAttribute = userPKey; }); 
+            name = websites; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }
+    ); 
+    restrictingQualifier = "(userID <> 'unauthenticateduser')"; 
+}

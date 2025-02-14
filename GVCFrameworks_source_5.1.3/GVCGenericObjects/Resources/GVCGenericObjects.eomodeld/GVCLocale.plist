@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, name); 
+    className = "net.global_village.genericobjects.Locale"; 
+    classProperties = (name, localizations); 
+    externalName = "GVC_LOCALE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (name); }; 
+    name = GVCLocale; 
+    parent = GVCLookup; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupID; sourceAttribute = theID; }); 
+            name = localizations; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = localeID; sourceAttribute = theID; }); 
+            name = lookupLocalizations; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,17 @@
+CSSConditional : WOConditional {
+  condition = hasEditorCSS;
+}
+
+ImageListURL: WOString {
+    value = imageListURL;
+    escapeHTML = false;
+}
+
+LinkListURL: WOString {
+    value = linkListURL;
+    escapeHTML = false;
+}
+
+CSSFile: WOString {
+    value = editorCSS;
+}

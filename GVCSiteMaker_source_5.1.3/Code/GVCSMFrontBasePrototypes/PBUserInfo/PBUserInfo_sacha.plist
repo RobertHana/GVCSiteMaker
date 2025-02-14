@@ -1,0 +1,7 @@
+{
+    NSWindowsNTOperatingSystem = {
+        Archs = ""; 
+        Target = install; 
+        WindowFrame = {"{1280, 1024}" = "{{387, 142}, {521, 527}}"; }; 
+    }; 
+}

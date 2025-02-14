@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+DataGroup (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DataGroup (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DataGroup.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../net/global_village/woextensions/components/CSSComponent.html" title="class in net.global_village.woextensions.components"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/woextensions/components/DrillDownTable.html" title="class in net.global_village.woextensions.components"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/woextensions/components/DataGroup.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DataGroup.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.woextensions.components</FONT>
+<BR>
+Class DataGroup</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.woextensions.components.DataGroup</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.46"><B>DataGroup</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+A <code>DataGroup</code> organizes a sorted group of similar Enterprise Objects and is able to split it into sub-subgroups to model a hierarchy of EOs.  It is intended to be used as the model for drill down components.  Representative or aggregate values from the contained EOs of the <code>DataGroup</code> are accessed through Key-Value coding. Note that a <code>DataGroup</code> object only handles one level of hierarchy (other level are handled by other <code>DataGroups</code>).
+
+ To create a <code>DataGroup</code>, you need to pass in the following:
+ <ul>
+ <li>data - an array of EOs to be managed by this <code>DataGroup</code>; all the <code>EOs</code> must be of the same type family, which means that all these EOs must respond to the same keypaths and compare methods passed during its creation)
+ <li>groupAttributeKeyPath - the attribute keyPath used for grouping this data; if you want to perform calculations for a specific attribute, use this format "@<aggregate function>.attribute", ie "@sum.hours", "@avg.hours"
+ <li>attributeKeyPaths - the ordered array of attribute keyPaths that will determine the groupAttributeKeyPath to be used to generate its subGroups; groupAttributeKeyPath of this DataGroup must also belong to attributeKeyPaths;
+ <li>comparators - the ordered array of NSComparator instances that will be used when generating the subGroups; it is expected that the NSComparator at a particular index will result in objects which are ordered in a sensible way with respect to the attributeKeyPath at the matching index. (WHAT DOES THIS MEAN? - ch: If they do not match, more than one group with the same title will be created.)
+ </ul>
+
+ Below is an example that creates a <code>DataGroup</code> for the array of EOCustomObjects, the arrayOfWorkDetails().  It is created for the attribute key path "project.name" which is the first level of the hiearchy. From these param values, this <code>DataGroup's subGroup</code> will contain dataGroups for "taskArea.area.name", which is the next attribute key path from the <code>attributeKeyPaths</code> array.:<br>
+ <code>
+     DataGroup newDataGroup = new DataGroup("project.name",
+                                             arrayOfWorkDetails(),
+                                             new Array(new Object[] {"project.name", "taskArea.area.name", "taskArea.task.name", "user.fullName", "@sum.hours"}),
+                                             new Array(new Object[] {"compareByProject", "compareByArea", "compareByTask", "compareByUser", "compareByHours"})),
+ </code>
+
+ Note that a DataGroup does not require valid attributeKeyPaths for it to function properly, you can pass in a dummy attribute key path like "$dummyAttribute" to initialize your DataGroups. For example, if you want to create the root DataGroup for an array of workDetails with the "project.name" as the first level, you can create it using this...
+
+ <code>
+     DataGroup newDataGroup = new DataGroup("$dummyAttribute%",
+                                             arrayOfWorkDetails(),
+                                             new Array(new Object[] {"$dummyAttribute%", "project.name", "taskArea.area.name", "taskArea.task.name", "user.fullName", "@sum.hours"}),
+                                             new Array(new Object[] {"$dummyCompare%", "compareByProject", "compareByArea", "compareByTask", "compareByUser", "compareByHours"})),
+ </code>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 6$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#attributeKeyPaths">attributeKeyPaths</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#cachedSubGroups">cachedSubGroups</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#cachedValues">cachedValues</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#comparators">comparators</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#data">data</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#groupAttributeKeyPath">groupAttributeKeyPath</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#isExpanded">isExpanded</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#DataGroup(java.lang.String, com.webobjects.foundation.NSArray, com.webobjects.foundation.NSArray, com.webobjects.foundation.NSArray)">DataGroup</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theGroupAttributeKeyPath,
+                   com.webobjects.foundation.NSArray&nbsp;theData,
+                   com.webobjects.foundation.NSArray&nbsp;theAttributeKeyPaths,
+                   com.webobjects.foundation.NSArray&nbsp;theComparators)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#allSubGroups()">allSubGroups</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recurse through all the data group's subGroups and return them in a one-level array.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#attributeKeyPaths()">attributeKeyPaths</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#cachedSubGroups()">cachedSubGroups</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#cachedValues()">cachedValues</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the dictionary that contains the keys and values derived from the data.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#comparators()">comparators</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#data()">data</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The array that contains the data for this group.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#expandAll()">expandAll</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#groupAttributeKeyPath()">groupAttributeKeyPath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the keyPath to be displayed by this group.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#hasSubGroups()">hasSubGroups</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this data group contains subGroups, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#isExpanded()">isExpanded</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this data group is displayed as expanded or collapsed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#isLastGroup()">isLastGroup</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this data group is the last group, <code>false</code> otherwise.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#nextAttributeKeyPath()">nextAttributeKeyPath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the group attribute key path for this <code>datagroup's subGroup</code></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setAttributeKeyPaths(com.webobjects.foundation.NSArray)">setAttributeKeyPaths</A></B>(com.webobjects.foundation.NSArray&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setCachedSubGroups(com.webobjects.foundation.NSMutableArray)">setCachedSubGroups</A></B>(com.webobjects.foundation.NSMutableArray&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setCachedValues(com.webobjects.foundation.NSMutableDictionary)">setCachedValues</A></B>(com.webobjects.foundation.NSMutableDictionary&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setComparators(com.webobjects.foundation.NSArray)">setComparators</A></B>(com.webobjects.foundation.NSArray&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setData(com.webobjects.foundation.NSArray)">setData</A></B>(com.webobjects.foundation.NSArray&nbsp;newData)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets this group's data with the newData.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#setGroupAttributeKeyPath(java.lang.String)">setGroupAttributeKeyPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the group key path with aValue</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#subGroups()">subGroups</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An accessor for cachedSubGroups.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#toggleExpansion()">toggleExpansion</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toggles the value of <code>isExpanded</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/woextensions/components/DataGroup.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKeyPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the object that corresponds to <code>aKeyPath</code> in the <code>data</code> array if aKeyPath is in attributeKeyPaths(), or from the <code>dataGroup</code> otherwise.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="groupAttributeKeyPath"><!-- --></A><H3>
+groupAttributeKeyPath</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.48"><B>groupAttributeKeyPath</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="data"><!-- --></A><H3>
+data</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.49"><B>data</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="attributeKeyPaths"><!-- --></A><H3>
+attributeKeyPaths</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.50"><B>attributeKeyPaths</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="comparators"><!-- --></A><H3>
+comparators</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.51"><B>comparators</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="cachedValues"><!-- --></A><H3>
+cachedValues</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.52"><B>cachedValues</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="cachedSubGroups"><!-- --></A><H3>
+cachedSubGroups</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.53"><B>cachedSubGroups</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="isExpanded"><!-- --></A><H3>
+isExpanded</H3>
+<PRE>
+protected boolean <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.54"><B>isExpanded</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DataGroup(java.lang.String, com.webobjects.foundation.NSArray, com.webobjects.foundation.NSArray, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+DataGroup</H3>
+<PRE>
+public <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.65"><B>DataGroup</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theGroupAttributeKeyPath,
+                 com.webobjects.foundation.NSArray&nbsp;theData,
+                 com.webobjects.foundation.NSArray&nbsp;theAttributeKeyPaths,
+                 com.webobjects.foundation.NSArray&nbsp;theComparators)</PRE>
+<DL>
+<DD>Designated constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>theGroupAttributeKeyPath</CODE> - the attribute keyPath used for grouping this data<DD><CODE>theData</CODE> - the EOCustomObjects to be managed by this DataGroup<DD><CODE>theAttributeKeyPaths</CODE> - the ordered array of attribute keyPaths that will determine the groupAttributeKeyPath to be used to generate its subGroups<DD><CODE>theComparators</CODE> - the ordered array of NSComparators that will be used when generating the subGroups</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="data()"><!-- --></A><H3>
+data</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.96"><B>data</B></A>()</PRE>
+<DL>
+<DD>The array that contains the data for this group.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setData(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setData</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.108"><B>setData</B></A>(com.webobjects.foundation.NSArray&nbsp;newData)</PRE>
+<DL>
+<DD>Sets this group's data with the newData.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="groupAttributeKeyPath()"><!-- --></A><H3>
+groupAttributeKeyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.129"><B>groupAttributeKeyPath</B></A>()</PRE>
+<DL>
+<DD>Returns the keyPath to be displayed by this group.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setGroupAttributeKeyPath(java.lang.String)"><!-- --></A><H3>
+setGroupAttributeKeyPath</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.139"><B>setGroupAttributeKeyPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aValue)</PRE>
+<DL>
+<DD>Sets the group key path with aValue
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cachedValues()"><!-- --></A><H3>
+cachedValues</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableDictionary <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.153"><B>cachedValues</B></A>()</PRE>
+<DL>
+<DD>Returns the dictionary that contains the keys and values derived from the data.  The key contains the keyPath and the value contains is corresponding value from data.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setCachedValues(com.webobjects.foundation.NSMutableDictionary)"><!-- --></A><H3>
+setCachedValues</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.162"><B>setCachedValues</B></A>(com.webobjects.foundation.NSMutableDictionary&nbsp;aValue)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="valueForKeyPath(java.lang.String)"><!-- --></A><H3>
+valueForKeyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.175"><B>valueForKeyPath</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aKeyPath)</PRE>
+<DL>
+<DD>Returns the object that corresponds to <code>aKeyPath</code> in the <code>data</code> array if aKeyPath is in attributeKeyPaths(), or from the <code>dataGroup</code> otherwise.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aKeyPath</CODE> - the attribute key path of the value to look for
+<DT><B>Returns:</B><DD>the object that corresponds to <code>aKeyPath</code> in the <code>data</code> array.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasSubGroups()"><!-- --></A><H3>
+hasSubGroups</H3>
+<PRE>
+public boolean <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.218"><B>hasSubGroups</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if this data group contains subGroups, <code>false</code> otherwise.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if this data group contains subGroups, <code>false</code> otherwise.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isLastGroup()"><!-- --></A><H3>
+isLastGroup</H3>
+<PRE>
+public boolean <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.230"><B>isLastGroup</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if this data group is the last group, <code>false</code> otherwise.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if this data group is the last group, <code>false</code> otherwise.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="nextAttributeKeyPath()"><!-- --></A><H3>
+nextAttributeKeyPath</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.240"><B>nextAttributeKeyPath</B></A>()</PRE>
+<DL>
+<DD>Returns the group attribute key path for this <code>datagroup's subGroup</code>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="subGroups()"><!-- --></A><H3>
+subGroups</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.256"><B>subGroups</B></A>()</PRE>
+<DL>
+<DD>An accessor for cachedSubGroups.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an array of dataGroups</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isExpanded()"><!-- --></A><H3>
+isExpanded</H3>
+<PRE>
+public boolean <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.270"><B>isExpanded</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if this data group is displayed as expanded or collapsed.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toggleExpansion()"><!-- --></A><H3>
+toggleExpansion</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.280"><B>toggleExpansion</B></A>()</PRE>
+<DL>
+<DD>Toggles the value of <code>isExpanded</code>.  It generates the <code>cachedSubGroups</code> if necessary.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="allSubGroups()"><!-- --></A><H3>
+allSubGroups</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.341"><B>allSubGroups</B></A>()</PRE>
+<DL>
+<DD>Recurse through all the data group's subGroups and return them in a one-level array.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="attributeKeyPaths()"><!-- --></A><H3>
+attributeKeyPaths</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.365"><B>attributeKeyPaths</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAttributeKeyPaths(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setAttributeKeyPaths</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.372"><B>setAttributeKeyPaths</B></A>(com.webobjects.foundation.NSArray&nbsp;aValue)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="comparators()"><!-- --></A><H3>
+comparators</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.379"><B>comparators</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setComparators(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+setComparators</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.386"><B>setComparators</B></A>(com.webobjects.foundation.NSArray&nbsp;aValue)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cachedSubGroups()"><!-- --></A><H3>
+cachedSubGroups</H3>
+<PRE>
+public com.webobjects.foundation.NSMutableArray <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.393"><B>cachedSubGroups</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setCachedSubGroups(com.webobjects.foundation.NSMutableArray)"><!-- --></A><H3>
+setCachedSubGroups</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.400"><B>setCachedSubGroups</B></A>(com.webobjects.foundation.NSMutableArray&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="expandAll()"><!-- --></A><H3>
+expandAll</H3>
+<PRE>
+public void <A HREF="../../../../src-html/net/global_village/woextensions/components/DataGroup.html#line.407"><B>expandAll</B></A>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DataGroup.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../net/global_village/woextensions/components/CSSComponent.html" title="class in net.global_village.woextensions.components"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/woextensions/components/DrillDownTable.html" title="class in net.global_village.woextensions.components"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/woextensions/components/DataGroup.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DataGroup.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

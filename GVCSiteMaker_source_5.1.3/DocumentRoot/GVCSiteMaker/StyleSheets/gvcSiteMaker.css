@@ -1,0 +1,2139 @@
+@charset "UTF-8";
+
+/* CSS Document */
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	background-image:url(/GVCSiteMaker/Images/Gradient_background.jpg);
+}
+
+p {
+margin:0;
+padding:0;
+}
+
+a {
+font-weight:normal;
+text-decoration:none;
+color:#003366;
+}
+
+a:hover, a:active {
+border-bottom: 1px dotted #003366; 
+}
+
+.outerContainer {
+padding: 0px;
+border-left: 4px solid #003366;
+border-right: 4px solid #003366;
+border-bottom: 4px solid #003366;
+margin-top:-8px;
+min-width: 1045px;
+}
+
+.constantHeader {
+width:100%;
+margin-bottom:6px;
+}
+
+#mainTitle {
+
+}
+
+.logoContainer {
+float:left;
+margin-right:10px;
+}
+
+.logoContainer img {
+border:none;
+}
+
+.logoContainer a:hover{
+float:left;
+border:none;
+padding:none;
+}
+
+.swanLogoContainer {
+float:left;
+margin:0px 20px 0px 10px;
+}
+
+.currentUserInfoContainer {
+color: #FFFFFF;
+font-size:.8em;
+}
+
+.currentUserInfoContainer a {
+color: #FFFFFF;
+border-width: 0 0 1px 0;
+border-style: dotted;
+border-color: #FFFFFF;
+}
+
+.previewURL {
+	font-size:1.2em;
+	font-weight:normal;
+}
+
+
+.pageWithTabsContents {
+background-color: #FFFFFF
+}
+
+.pageWithoutTabsContents {
+background-color: #FFFFFF
+}
+
+.level1TabSetContainer {
+width:100%;
+font-weight:normal;
+margin: 0px 0px 0px 0px;
+background-image:url(/GVCSiteMaker/Images/nav_background.jpg);
+height:55px;
+
+}
+
+.level1TabSetContainer ul {
+font-weight:normal;
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.level1TabSetContainer li {
+float: left;
+padding: 0px;
+margin:0;
+
+}
+
+.level1ActiveTabContainer {
+display: block;
+text-align: center;
+vertical-align:text-top;
+color:#FFFFFF;
+background-image:url(/GVCSiteMaker/Images/level1_active.png);
+background-position:top;
+background-repeat:no-repeat;
+width: 157px;
+height: 55px;
+}
+
+.level1ActiveTabContainer a {
+border:none;
+}
+.level1ActiveTabContainer a:hover, .level1InactiveTabContainer a:hover {
+border:none;
+}
+
+.level1ActiveTabContainer span {
+border:none;
+}
+
+.level1InactiveTabContainer {
+border:none;
+	
+}
+
+.level1InactiveTabContainer a {
+display: block;
+text-align: center;
+vertical-align:text-top;
+color:#efefef;
+background-image: url(/GVCSiteMaker/Images/level1_tab.png);
+background-position:top;
+background-repeat:no-repeat;
+width: 157px;
+height: 55px;
+}
+
+.level1InactiveTabContainer a:hover, .level1InactiveTabContainer a:active {
+color:#FFFFFF;
+background-image:url(/GVCSiteMaker/Images/level1_active.png);
+
+}
+
+.level1TabContentsContainer {
+padding: 3px;
+}
+
+.level2TabSetContainer {
+width: 100%;
+min-width: 940px;
+clear:both;
+padding-right:6px;
+}
+
+.level2TabSetContainer ul {
+list-style-type: none;
+padding: 0px ;
+margin: 0px;
+}
+
+.ajaxTabbedPanelTab-selected {
+width:171px;
+height:23px;
+color: #FFFFFF;
+float:left;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-size:.9em;
+font-weight:bold;
+padding:9px 0px 0px 0px;
+background-image:url(/GVCSiteMaker/Images/tabbedPanel_active.png);
+background-repeat:no-repeat;
+background-position:right top;
+border:none;
+margin: 0px 0px 0px 0px;
+text-align:center;
+position:relative;
+top:0px;
+}
+.ajaxTabbedPanelTab-selected a {
+color: #FFFFFF;
+border:none;
+}
+
+.ajaxTabbedPanelTab-unselected {
+
+}
+
+.ajaxTabbedPanelTab-unselected a {
+color:#4277aa;
+width:171px;
+height:20px;
+float:left;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-size:.9em;
+font-weight:bold;
+padding:9px 0px 0px 0px;
+background-image:url(/GVCSiteMaker/Images/tabbedPanel_unselected.png);
+background-repeat:no-repeat;
+background-position:right top;
+margin: 0px;
+text-align:center;
+position:relative;
+top:3px;
+
+}
+
+.ajaxTabbedPanelTab-unselected a:hover, .ajaxTabbedPanelTab-unselected a:active {
+width:171px;
+height:20px;
+color: #FFFFFF;
+float:left;
+background-image:url(/GVCSiteMaker/Images/tabbedPanel_active.png);
+background-repeat:no-repeat;
+background-position:right top;
+margin: 0px 0px 0px 0px;
+text-align:center;
+position:relative;
+border:none;
+top:3px;
+}
+
+.ajaxTabbedPanelPanes {
+padding: 3px;
+background-color: #FFFFFF;
+border: solid 3px #4277aa;
+clear:both;
+width: 100%;
+}
+
+.ajaxTabbedPanelPane-selected {
+  list-style-type: none;
+  display: block;
+  padding: 10px;
+}
+.ajaxTabbedPanelPane-unselected {
+  list-style-type: none;
+  display: none;
+}
+
+#tabbedPanel_tab_5 a {
+background-image:none;
+font-size:.8em;
+width:100px;
+color:#4277aa;
+margin:3px 0px 0px 20px;
+height:15px;
+top:-1px;
+border:1px solid #ffffff;
+}
+
+#tabbedPanel_tab_5 a:hover {
+color:#4277aa;
+border-bottom:1px dotted #4277aa;
+}
+
+#tabbedPanel_tab_5.ajaxTabbedPanelTab-selected {
+background-image:none;
+font-weight:bold;
+
+}
+
+#tabbedPanel_tab_5.ajaxTabbedPanelTab-selected a {
+background-image:none;
+font-size:1.1em;
+width:100px;
+color:#4277aa;
+font-weight:bold;
+margin:3px 0px 0px 10px;
+height:15px;
+top:-1px;
+border-bottom:1px dotted #4277aa;
+}
+
+.inProgressTask {
+  /* display for tasks that are in progress */
+  color: red;
+  font-weight: bold;
+}
+
+.level3TabSetContainer {
+width: 100%;
+min-width: 940px;
+clear:both;
+}
+
+.level3TabSetContainer td {
+text-align: center;
+}
+
+.level3TabSetContainer ul {
+list-style-type: none;
+padding: 0;
+margin: 6px 0 0 48px;
+}
+
+.level3ActiveTabContainer {
+color: #CC3300;
+float:left;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-size:1.0em;
+font-weight:bold;
+padding: 1px 2px;
+border-width: 1px 1px 0 1px;
+border-style:solid;
+border-color:#000000;
+border-bottom: 3px solid #FFFFFF;
+background-color:#FFFFFF;
+margin: 0 9px;
+position:relative;
+top:2px;
+}
+
+.level3InactiveTabContainer {
+float:left;
+font:Verdana, Arial, Helvetica, sans-serif;
+color: #666666;
+padding: 1px 2px;
+border-width: 1px 1px 0px 1px;
+border-style:solid;
+border-color:#666666;
+background-color:#DDDDDD;
+margin: 0 9px;
+position:relative;
+top:2px;
+}
+
+.level3InactiveTabContainer a {
+color:#888888;
+font:Verdana, Arial, Helvetica, sans-serif;
+font-size:1.0em;
+font-weight:bold;
+margin: 0;
+}
+
+.level3InactiveTabContainer a:hover, .level3InactiveTabContainer a:active {
+color:#000000;
+border: 0;
+}
+
+.level3TabContentsContainer {
+padding: 3px;
+background-color: #FFFFFF;
+border: solid 1px #333333;
+clear:both;
+width: 100%;
+}
+
+.helpButtonContainer a:hover, .helpButtonContainer a:active {
+border-bottom: 0;
+}
+
+.helpButtonContainer img {
+width: 1.5em;
+}
+
+.inactiveButton {
+opacity: 0.4;
+}
+
+.currentSiteInfoContainer {
+width:100%;
+margin:0px 0px 20px 0px;
+font-size:0.8em;
+color: #002244;
+background-color:#DFE8EF;
+border-bottom:1px solid #003366;
+padding:3px 0px 3px 3px;
+font-weight:bold;
+}
+
+#PublishedID {
+font-weight:bold;
+}
+
+.screenTitleTable {
+width:100%;
+min-width: 900px;
+margin-bottom: 6px;
+}
+
+.screenTitleContainer {
+font-size:1.2em;
+font-weight:bold;
+padding:10px 0px 12px 20px;
+}
+
+.createNewItemLinkContainer {
+font-size: 0.85em;
+margin:10px 0px 10px 0px;
+}
+
+
+.expandCollapseAccessGroupLists {
+font-size:0.85em;
+}
+
+.settingsTableSingleItem {
+width: 100%;
+padding:3px;
+}
+
+.spacerTableRow td {
+height: 6px;
+}
+
+.settingsTableSingleItemHeader {
+width:100%;
+border-bottom:2px solid #000066;
+padding:4px 0;
+margin-bottom:4px 0;
+font-weight:bold;
+}
+
+.settingsTableSingleItemHeader a {
+font-weight:bold;
+}
+
+.settingsTableListHeader {
+
+}
+
+.requiredSettingFlag {
+color: #FF0000;
+font-weight: bold;
+text-align: right;
+}
+
+.settingsSingleItemFieldLabel {
+width: 300px;
+font-weight:bold;
+padding-left:6px;
+text-align: left;
+}
+
+.accessGroupTable {
+font-weight: normal;
+text-align: left;
+margin: 0 0 0 24px;
+}
+
+.accessGroupTable td {
+padding: 0 48px 0 0;
+}
+
+.editableInPlaceField {
+color:#000000;
+padding:2px;
+background-image:url(/GVCSiteMaker/Images/orange-upper-right.gif);
+background-repeat:no-repeat;
+background-position:top right;
+border: 1px solid #CCCCCC;
+}
+
+.editableInPlaceFieldScrolling {
+color:#000000;
+padding:2px;
+background-image:url(/GVCSiteMaker/Images/orange-upper-right.gif);
+background-repeat:no-repeat;
+background-position:top right;
+border: 1px solid #CCCCCC;
+height: 60px;
+overflow: auto;
+}
+
+.editableInPlaceField:hover {
+border: 1px solid #333333;
+background-color:#FFFF99;
+}
+
+.confirmDeleteTable {
+padding: 80px;
+margin: auto;
+}
+
+.confirmDeleteMessageTitle {
+font-size: 1.2em;
+font-weight: bold;
+text-align: center;
+padding: 12px;
+}
+
+.confirmDeleteMessage {
+font-size: 1.0em;
+font-weight: normal;
+text-align: center;
+}
+
+.confirmDeleteYesButtonContainer {
+width: 50%;
+padding: 24px;
+text-align: center;
+}
+
+.confirmDeleteYesButtonContainer input {
+color: #FF0000;
+}
+
+.confirmDeleteNoButtonContainer {
+width: 50%;
+padding: 24px;
+text-align: center;
+}
+
+.highlightedText {
+color: #000080;
+font-weight: bold;
+}
+
+.boldText {
+font-weight:bold;
+}
+
+.coloredBoldText {
+font-weight:bold;
+color: #000080;
+}
+
+.microText {
+font-size: 0.8em;
+font-weight: normal;
+}
+
+.descriptiveText {
+font-style: normal;
+font-weight: normal;
+font-size: 0.85em;
+}
+
+.descriptiveText input:hover, .rightContentColumn input:hover{
+background:#FFFF99;
+}
+
+.requiredText {
+color: #990000;
+}
+
+.warningText {
+color: red;
+}
+
+
+
+/* ------------------------------ */
+/* Rules for Website Sections Tab */
+
+.sectionListHeadingsTable {
+width:100%;
+margin: 0 0 3px 0;
+padding: 0 0 3px 0;
+border-bottom: 2px solid #003366;
+}
+
+.sectionListHeadings {
+width: 100%;
+}
+
+.sectionExpandCollapseLinks {
+font-size:0.85em;
+width:100px;
+text-align:left;
+}
+
+.sectionIndentHeading {
+text-align: left;
+font-weight:bold;
+width:80px;
+}
+
+.sectionTwistyHeading {
+text-align: left;
+font-weight:bold;
+width:20px;
+}
+
+.sectionOrderHeading {
+font-weight:bold;
+width:80px;
+}
+
+.sectionNameHeading {
+font-weight:bold;
+}
+
+.sectionTypeHeading {
+font-weight:bold;
+width:120px;
+text-align:left;
+}
+
+.sectionAccessGroupsHeading {
+font-weight:bold;
+width:200px;
+text-align:left;
+padding-left:30px;
+}
+
+.sectionActionsHeading {
+font-weight:bold;
+width:160px;
+text-align:left;
+}
+
+.sectionMarkHeading {
+width:160px;
+text-align:center;
+font-size:0.8em;
+}
+
+.sectionMarkHeading select {
+font-size:0.8em;
+}
+
+.sectionListContainer {
+clear:both;
+}
+
+.sectionListContainer table {
+width: 100%;
+}
+
+.sectionListContainer ul {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+.sectionListContainer a:hover, .sectionListContainer a:active {
+color:#3366CC;
+}
+
+.sectionListContainer table:hover {
+background-color:#FFFFCC;
+}
+
+.sectionListContainer ul li {
+clear:both;
+margin: 1px 0;
+}
+
+.sectionListContainer ul ul td.sectionName {
+padding-left:13px;
+}
+
+.sectionListContainer ul ul ul td.sectionName {
+padding-left:26px;
+}
+
+.sectionListContainer ul li table {
+padding: 1px 0 1px 0;
+border-bottom: 1px dotted #999999;
+}
+
+.selectedSection {
+background-color:#silver;
+}
+
+.sectionOrder {
+width:80px;
+font-size:0.85em;
+text-align:left;
+}
+
+.sectionIndent {
+width:80px;
+font-size:0.85em;
+text-align:left;
+}
+
+.sectionTwisty {
+width:20px;
+font-size:0.85em;
+text-align:left;
+}
+
+.sectionName, .sectionName a {
+font-weight:bold;
+font-size:1em;
+text-align:left;
+}
+
+.sectionName img {
+	position:relative;
+	top:2px;
+	width:13px;
+}
+
+.sectionNameHidden {
+color:#999999;
+}
+
+.sectionNameHidden a {
+color:#999999;
+font-weight:bold;
+}
+
+.sectionType {
+width:120px;
+font-size:0.85em;
+text-align:left;
+}
+
+.sectionAccessGroups {
+width:200px;
+font-size:0.85em;
+font-style:normal;
+text-align:left;
+padding-left:30px;
+}
+.sectionAccessGroupList {}
+
+.sectionAccessGroupListHeading a {
+font-weight:bold;
+}
+
+.sectionAccessGroupListItem {}
+
+.sectionActions {
+width:160px;
+text-align:left;
+}
+
+.sectionMark {
+width:160px;
+text-align:center;
+}
+
+.sectionCheckbox {
+width:10px;
+height:10px;
+clear:both;
+}
+
+.sectionConfigSubmitButtonsTable {
+width: 940px;
+margin-top: 12px;
+}
+
+
+
+/* ----------------------------- */
+/* Rules for Text/Image sections */
+
+.configTextImageTable {
+width: 940px;
+}
+
+.versionListHeader {
+width: 940px;
+}
+
+.versionNumberListHeading {
+font-weight:bold;
+width:160px;
+text-align:center;
+border-bottom: 2px solid #000000;
+border-top: 2px solid #000000;
+}
+
+.versionNameDetailsListHeading {
+font-weight:bold;
+width:360px;
+text-align:center;
+border-bottom: 2px solid #000000;
+border-top: 2px solid #000000;
+}
+
+.versionLockedListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+border-top: 2px solid #000000;
+}
+
+.versionModifyListHeading {
+font-weight:bold;
+width:160px;
+text-align:center;
+border-bottom: 2px solid #000000;
+border-top: 2px solid #000000;
+}
+
+.versionDeleteListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+border-top: 2px solid #000000;
+}
+
+.versionNumberInList {
+width:160px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.versionNameDetailsInList {
+width:360px;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.versionLockedInList {
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.versionModifyInList {
+width:160px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.versionDeleteInList {
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+
+
+/* ------------------------------ */
+/* Rules for Data Access sections */
+
+.SelectionSettingsTab, .ListOfRecordsTab, .SingleRecordTab, .AddFormTab, .SearchFormTab {
+	text-align:left;
+	width: 171px;
+}
+
+.LayoutTemplatesTab {
+	text-align:left;
+}
+
+.coloredBackground{
+background-color:#d3dee8;
+height:8px;
+} /* this is the bar under the DA section tabs */
+
+.primaryTextArea{
+width:100%;
+} /*width of DA section tabs */
+
+.daSectionSettingsAllowedActionsTable, .daSectionSettingsDefaultSearchRadioButtonsTable, .daSectionSettingsDefaultSearchCriteriaTable, .daSectionSettingsListDisplayOptionsTable, daSectionSettingsDefaultModeTable {
+width: 940px;
+}
+
+.daShowFieldListHeading {
+font-weight:bold;
+width:80px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daFieldNameListHeading {
+font-weight:bold;
+width:180px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daFieldTypeListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daAllowEditsListHeading {
+font-weight:bold;
+width:80px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daFieldOptionsListHeading {
+font-weight:bold;
+width:540px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daDefaultComparisonListHeading {
+font-weight:bold;
+width:240px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daCustomLayoutDisplayModeListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daCustomLayoutTemplateInUseListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daCustomLayoutCustomTemplateActionsListHeading {
+font-weight:bold;
+width:700px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daCustomLayoutSendEmailCheckboxListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daCustomLayoutSendEmailActionListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.daShowFieldInList {
+width:80px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.daFieldNameInList {
+font-size: 0.90em;
+font-weight: bold;
+width:180px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daFieldTypeInList {
+font-size: 0.90em;
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daAllowEditsInList {
+font-size: 0.90em;
+width:80px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daFieldOptionsInList {
+font-size: 0.90em;
+width:540px;
+text-align:left;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daDefaultComparisonInList {
+font-size: 0.90em;
+width:240px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutDisplayModeInList {
+font-size: 0.90em;
+font-weight: bold;
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutTemplateInUseInList {
+font-size: 0.90em;
+width:120px;
+text-align:left;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutDownloadTemplateInList {
+font-size: 0.90em;
+font-weight: bold;
+width:100px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutReplaceTemplateInList {
+font-size: 0.90em;
+font-weight: bold;
+width:500px;
+text-align:left;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutDeleteTemplateInList {
+font-size: 0.90em;
+font-weight: bold;
+width:100px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutSendEmailCheckboxInList {
+font-size: 0.90em;
+font-weight: bold;
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daCustomLayoutSendEmailActionInList {
+font-size: 0.90em;
+font-weight: bold;
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.daSectionSettingsContainer {
+width: 940px;
+}
+
+.daSectionSettingsAllowedActionsTable {
+margin: 12px 0 0 12px;
+padding-bottom: 6px;
+border-bottom: 2px solid #000000;
+text-align: left;
+}
+
+.daSectionSettingsAllowedActionsTable td {
+padding-right: 48px;
+}
+
+.daSectionSettingsDefaultSearchRadioButtonsTable {
+margin: 0 0 0 12px;
+padding: 6px 0 0 0;
+}
+
+.daSectionSettingsDefaultSearchCriteriaTable {
+margin: 3px 0 0 12px;
+padding: 0 0 6px 0;
+border-bottom: 2px solid #000000;
+}
+
+.daSectionSettingsDefaultSearchCriteriaHeaderRow th {
+font-size: 0.9em;
+border-top: 2px solid #000000;
+border-bottom: 1px dotted #000000;
+text-align: center;
+}
+
+.daSectionSettingsDefaultSearchCriteriaItemRow td {
+border-bottom: 1px dotted #000000;
+}
+
+.daSectionSettingsListDisplayOptionsTable {
+margin: 0 0 0 12px;
+padding: 6px 0;
+border-bottom: 2px solid #000000;
+}
+
+.daSectionSettingsDefaultModeTable {
+margin: 0 0 0 12px;
+padding: 6px 0;
+}
+
+.daSearchFormTypeTable {
+margin: 12px auto;
+}
+
+.daSearchFieldOrderTable {
+margin: 12px auto;
+}
+
+.daCustomLayoutsTable {
+margin: 12px auto;
+}
+
+
+
+/* --------------------------------------- */
+/* Rules specific to List of Links section */
+
+.listOfLinksTable {
+margin: 12px auto;
+}
+
+.listOfLinksOrderListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.listOfLinksItemNameListHeading {
+font-weight:bold;
+width:520px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.listOfLinksSizeListHeading {
+font-weight:bold;
+width:80px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.listOfLinksActionListHeading {
+font-weight:bold;
+width:80px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.listOfLinksDeleteListHeading {
+font-weight:bold;
+width:80px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.listOfLinksOrderInList {
+font-size: 0.90em;
+font-weight: normal;
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.listOfLinksItemNameInList {
+font-size: 0.90em;
+font-weight: normal;
+width:520px;
+text-align:left;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.listOfLinksSizeInList {
+font-size: 0.90em;
+font-weight: normal;
+width:80px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.listOfLinksActionInList {
+font-size: 0.90em;
+font-weight: normal;
+width:80px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+.listOfLinksDeleteInList {
+font-size: 0.90em;
+font-weight: normal;
+width:80px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+padding: 2px;
+}
+
+
+
+/* ----------------------------------- */
+/* Rules specific to Access Groups tab */
+
+.accessGroupNameListHeading {
+font-weight:bold;
+width:240px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.accessGroupTypeListHeading {
+font-weight:bold;
+width:240px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.accessGroupMembershipListHeading {
+font-weight:bold;
+width:240px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.accessGroupActionListHeading {
+font-weight:bold;
+width:120px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.accessGroupNameInList {
+width:240px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.accessGroupTypeInList {
+width:240px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.accessGroupMembershipInList {
+width:240px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.accessGroupActionInList {
+width:120px;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+
+
+/* ------------------------------------ */
+/* Rules specific to Uploaded Files tab */
+
+.uploadedFilesListContainer {
+clear:both;
+}
+
+.uploadedFilesListContainer ul {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+.uploadedFilesListContainer a:hover, .uploadedFilesListContainer a:active {
+color:#3366CC;
+}
+
+.uploadedFilesListContainer table:hover {
+background-color:#FFFFCC;
+}
+
+.uploadedFilesListContainer ul li {
+clear:both;
+margin: 1px 0;
+}
+
+.uploadedFilesListContainer ul li table {
+padding: 3px 0 4px 0;
+border-bottom: 1px dotted #999999;
+}
+
+.uploadedFilesListHeadingsTable {
+margin: 0 0 3px 0;
+padding: 0 0 3px 0;
+border-top: 2px solid #003366;
+border-bottom: 2px solid #003366;
+}
+
+.uploadedFilesNameHeading {
+font-weight:bold;
+width:360px;
+text-align:left;
+}
+
+.uploadedFilesNameHeading, .uploadedFilesNameHeading a {
+font-weight:bold;
+}
+
+.uploadedFilesSizeHeading, .uploadedFilesSizeHeading a {
+font-weight:bold;
+width:120px;
+text-align:center;
+}
+
+.uploadedFilesAccessGroupsHeading {
+font-weight:bold;
+width:200px;
+text-align:center;
+}
+
+.uploadedFilesActionsHeading {
+font-weight:bold;
+width:160px;
+text-align:center;
+}
+
+.uploadedFilesMarkHeading {
+width:160px;
+text-align:center;
+font-size:0.8em;
+}
+
+.uploadedFilesSimpleFileListHeaderTable {
+margin: 9px 0 0 9px;
+}
+
+.uploadedFilesSimpleFolderHeading {
+font-weight:bold;
+width:200px;
+text-align:left;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.uploadedFilesSimpleFileHeading {
+font-weight:bold;
+width:360px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.uploadedFilesSimpleFileListItemsTable {
+margin: 0 0 0 9px;
+}
+
+.uploadedFilesNameInList {
+width:360px;
+font-size:0.85em;
+text-align:left;
+}
+
+.uploadedFilesNameInList, .uploadedFilesNameInList a {
+font-weight:normal;
+font-size:1em;
+}
+
+.uploadedFilesNameInList img {
+	position:relative;
+	top:2px;
+}
+
+.uploadedFilesNameInList span {
+margin: 3px;
+font-weight: bold;
+}
+
+.uploadedFilesSizeInList {
+width:120px;
+font-size:0.85em;
+text-align:center;
+}
+
+.uploadedFilesAccessGroupsInList {
+width:200px;
+font-size:0.85em;
+font-style:normal;
+text-align:center;
+}
+
+.uploadedFilesSimpleFolderInList {
+width:200px;
+font-size:0.85em;
+font-style:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.uploadedFilesSimpleFileInList {
+width:360px;
+font-size:0.85em;
+font-style:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.uploadedFilesAccessGroupInList {}
+
+.uploadedFilesActionsInList {
+width:160px;
+text-align:center;
+}
+
+.uploadedFilesMarkInList {
+width:160px;
+text-align:center;
+}
+
+.uploadedFilesCheckbox {
+width:10px;
+height:10px;
+clear:both;
+}
+
+.emailFileLinkTable .accessGroupTable {
+margin-left: 0;
+}
+
+
+
+/* --------------------------------- */
+/* Rules specific to Data Tables Tab */
+
+.dtNameListHeading {
+font-weight:bold;
+width:200px;
+text-align:left;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.dtDescriptionListHeading {
+font-weight:bold;
+width:400px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.dtActionListHeading {
+font-weight:bold;
+width:200px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.dtNameInList {
+width:200px;
+font-size:0.85em;
+font-weight:bold;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.dtDescriptionInList {
+width:400px;
+font-size:0.85em;
+font-style:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.dtActionInList {
+width:200px;
+font-size:0.85em;
+font-style:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.dtFieldNameListHeading {
+font-weight:bold;
+width:180px;
+text-align:left;
+border-bottom: 2px solid #000000;
+}
+
+.dtFieldTypeListHeading {
+font-weight:bold;
+width:240px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.dtFieldDescriptionListHeading {
+font-weight:bold;
+width:360px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.dtFieldActionListHeading {
+font-weight:bold;
+width:180px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.dtFieldNameInList {
+width:180px;
+font-size:0.85em;
+font-weight:bold;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.dtFieldTypeInList {
+width:240px;
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.dtFieldDescriptionInList {
+width:360px;
+font-size:0.85em;
+font-style:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.dtFieldActionInList {
+width:180px;
+font-size:0.85em;
+font-style:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.installPackageNameListHeading {
+font-weight:bold;
+width:240px;
+text-align:left;
+border-bottom: 2px solid #000000;
+}
+
+.installPackageOptionsListHeading {
+font-weight:bold;
+width:480px;
+text-align:center;
+border-bottom: 2px solid #000000;
+}
+
+.installPackageNameInList {
+width:240px;
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.installPackageOptionsInList {
+width:480px;
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.dtFieldsTab .settingsTableSingleItemHeader {
+width:976px;
+}
+
+
+
+/* ----------------------------------- */
+/* Rules specific to List My Sites Tab */
+
+.mySitesSiteIDListHeading {
+font-weight:bold;
+width:180px;
+text-align:left;
+border-bottom: 2px solid #000000;
+}
+
+.mySitesBannerListHeading {
+font-weight:bold;
+width:480px;
+text-align:left;
+border-bottom: 2px solid #000000;
+}
+
+.mySitesOwnerListHeading {
+font-weight:bold;
+width:240px;
+text-align:left;
+border-bottom: 2px solid #000000;
+}
+
+.mySitesSiteIDInList {
+width:180px;
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #A1BADC;
+color:#A1BADC;
+}
+
+.mySitesBannerInList {
+width:480px;
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.mySitesOwnerInList {
+width:240px;
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.listMySitesTab .settingsTableSingleItemHeader {
+width:912px;
+}
+
+.mySitesQuotaInList, .mySitesFreeInList, .mySitesCreatedInList, .mySitesModifiedInList {
+border-bottom:1px dotted;
+padding-right:20px;
+}
+
+.mySitesQuotaListHeading, .mySitesFreeListHeading, .mySitesCreatedListHeading, .mySitesModifiedListHeading {
+border-bottom: 2px solid;
+padding-right:20px;
+}
+
+
+
+/* ------------------------------------ */
+/* Rules specific to Admin-Websites Tab */
+
+.adminWebsitesTab .filterTable {
+margin:6px 0;
+padding:3px 0;
+border-width:1px 0;
+border-style:solid;
+border-color:#000066;
+background-color: #dedede;
+}
+
+.adminWebsitesTab .filterTable td {
+font-size:0.9em;
+font-weight:normal;
+}
+
+.adminWebsitesTab .filterTable input {
+font-size:0.9em;
+}
+
+.adminWebsitesTab .filterTable select {
+font-size:0.9em;
+}
+
+.adminWebsitesTab .navigationTable {
+width:100%;
+margin: 6px 0;
+}
+
+.adminWebsitesSiteIDListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:280px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesOwnerListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:200px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesUnitListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:200px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesQuotaListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:60px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesUsedListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:60px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesFreeListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:60px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesDateCreatedListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:80px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesLastConfigListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:80px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesActionListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:120px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesSelectedSitesListHeading {
+font-size:0.85em;
+font-weight:bold;
+width:120px;
+text-align:center;
+border-top: 2px solid #000000;
+border-bottom: 2px solid #000000;
+}
+
+.adminWebsitesSiteIDInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesOwnerInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesUnitInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:left;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesQuotaInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesUsedInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesFreeInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesDateCreatedInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesLastConfigInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesActionInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+.adminWebsitesSelectedSitesInList {
+font-size:0.85em;
+font-weight:normal;
+text-align:center;
+border-bottom: 1px dotted #000000;
+}
+
+
+
+/* ---------------------------------- */
+/* Rules specific to Admint-Units Tab */
+
+.unitListHeadingsTable {
+font-size: 0.95em;
+margin: 0;
+padding: 0;
+border-bottom: 2px solid #003366;
+}
+
+.unitNameListHeading {
+width: 280px;
+text-align: left;
+font-weight: bold;
+}
+
+.unitFilespaceListHeading {
+width: 210px;
+text-align: center;
+font-weight: bold;
+}
+
+.unitFilespaceQuotaListHeading {
+width: 70px;
+text-align: center;
+font-weight: bold;
+border-top: 1px solid #000000;
+}
+
+.unitFilespaceUsedListHeading {
+width: 70px;
+text-align: center;
+font-weight: bold;
+border-top: 1px solid #000000;
+}
+
+.unitFilespaceFreeListHeading {
+width: 70px;
+text-align: center;
+font-weight: bold;
+border-top: 1px solid #000000;
+}
+
+.unitAdminsListHeading {
+width: 190px;
+text-align: center;
+font-weight: bold;
+}
+
+.styleAdminsListHeading {
+width: 190px;
+text-align: center;
+font-weight: bold;
+}
+
+.unitActionsListHeading {
+width: 170px;
+text-align: center;
+font-weight: bold;
+}
+
+.unitListContainer {
+clear:both;
+font-size: 0.85em;
+}
+
+.unitListContainer table:hover {
+background-color:#FFFFCC;
+}
+
+.unitListContainer ul {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+.unitListContainer a:hover, .unitListContainer a:active {
+color:#3366CC;
+}
+
+.unitListContainer ul ul .unitNameInListContainer img {
+padding-left:13px;
+}
+
+.unitListContainer ul ul ul .unitNameInListContainer img {
+padding-left:26px;
+}
+
+.unitListContainer ul li {
+padding: 1px 0 1px 0;
+}
+
+.unitListContainer table {
+border-bottom: 1px dotted #000000;
+}
+
+.unitNameInListContainer {
+width: 280px;
+text-align: left;
+}
+
+.unitNameInListContainer img {
+float: left;
+}
+
+.unitNameInList {
+float: left;
+width: 260px;
+}
+
+ul ul .unitNameInList {
+float: left;
+width: 247px;
+}
+
+ul ul ul .unitNameInList {
+float: left;
+width: 234px;
+}
+
+.unitNameHidden {
+color: #888888;
+font-style: italic;
+}
+
+.unitFilespaceQuotaInListContainer {
+width: 70px;
+text-align: center;
+}
+
+.unitFilespaceQuotaInList {
+width: 60px;
+text-align: center;
+margin: auto;
+}
+
+.unitFilespaceUsedInListContainer {
+width: 70px;
+text-align: center;
+}
+
+.unitFilespaceUsedInList {
+width: 60px;
+text-align: center;
+margin: auto;
+}
+
+.unitFilespaceFreeInListContainer {
+width: 70px;
+text-align: center;
+}
+
+.unitFilespaceFreeInList {
+width: 60px;
+text-align: center;
+margin: 0 5px;
+padding: 2px;
+}
+
+.unitAdminsInListContainer {
+width: 190px;
+text-align: center;
+}
+
+.unitAdminsInList {
+width: 180px;
+text-align: left;
+margin: auto;
+}
+
+.styleAdminsInListContainer {
+width: 190px;
+text-align: center;
+}
+
+.styleAdminsInList {
+width: 180px;
+text-align: left;
+margin: auto;
+}
+
+.unitActionsInListContainer {
+width: 170px;
+text-align: center;
+}
+
+.unitActionsInList {
+width: 160px;
+text-align: center;
+margin: auto;
+}
+
+.unitActionsInList select {
+font-size: 0.85em;
+}
+
+.unitAdminGroupMembers, .styleAdminGroupMembers {
+font-size: 0.9em;
+width: 300px;
+height: 180px;
+overflow: auto;
+margin: 3px;
+padding: 2px;
+border: 1px solid #333333;
+}
+
+/* ------------------------------------------- */
+/* Data Access Sections */
+
+.coloredTable td{
+border:1px solid #efefef;
+}
+
+.coloredTable th{
+border:1px solid #ffffff;
+background-color:#f3f3f3;
+}
+
+.coloredTable tr:hover {
+	background-color:#FFFFCC;
+}
+
+#ListOfRecordsTableID, #SingleRecordsTableID, #AddRecordsTableID {
+	margin:0px;
+	padding:0px;
+}
+
+#daListShowFieldHeading, .daListShowFieldHeading {
+	width:106px;
+}
+#daListFieldNameHeading, .daListFieldNameHeading {
+	width:146px;
+}
+#daListFieldTypeHeading, .daListFieldTypeHeading {
+	width:126px;
+}
+#daListAllowEditsHeading, .daListAllowEditsHeading {
+	width:126px;
+}
+#daListOptionsHeading {
+	
+}
+.daListChangeOrderHeading {
+	width:120px;
+}
+
+
+td.daListShowField, td.daListFieldName, td.daListFieldType, td.daListAllowEdits, td.daListOptions {
+border:1px dotted #efefef;
+padding:5px;
+margin:0px;
+}
+
+.daListShowField {
+	width:100px;
+	
+}
+
+.daListFieldName {
+	width:140px;
+	text-align:left;
+}
+.daListFieldType {
+	width:120px;
+	text-align:left;
+}
+.daListAllowEdits {
+	width:120px;
+}
+	
+.daListOptions {
+	text-align:left;
+}
+
+.daListChangeOrder {
+	width:120px;
+	text-align:center;
+}
+
+/* ------------------------------------------------ */
+/* -------- fading confirmation message ----------- */
+
+#FolderAdded, #AccessGroupAdded, #TableAdded, #ChangesSaved {
+	color:#4277aa;
+	background-color:#E0EBF8;
+	width:400px;
+	font-weight:bold;
+	border:1px solid #aaaaaa;
+	text-align:center;
+	padding:2px;
+	font-size:1.2em;
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------------------------------- */
+/* Rules below may be obsolete - need to check */
+
+#actionsArea {
+padding: 6px 0 0 0;
+}
+.batchActions {
+	font-size:0.9em;
+	font-weight:bold;
+}
+#listHeadings {
+clear:both;
+margin: 6px 0 0 0;
+font-weight:bold;
+}

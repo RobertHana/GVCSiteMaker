@@ -1,0 +1,83 @@
+Conditional1: WOConditional {
+	condition = component.toParent;
+}
+
+Form1: WOForm {
+	action = findComponent;
+}
+
+Form2: WOForm {
+	action = saveBindings;
+}
+
+Form3: WOForm {
+	action = showSQL;
+}
+
+HasComponentConditional: WOConditional {
+	condition = component;
+}
+
+Hyperlink1: WOHyperlink {
+	action = editChild;
+}
+
+Hyperlink2: WOHyperlink {
+	action = editParent;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+Repetition1: WORepetition {
+	item = aChild;
+	list = component.toChildren;
+}
+
+String1: WOString {
+	value = component.componentId;
+}
+
+String2: WOString {
+	value = component.toParent.componentType;
+}
+
+String3: WOString {
+	value = aChild.componentType;
+}
+
+String4: WOString {
+	escapeHTML = false;
+	value = sqlString;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = findComponent;
+}
+
+SubmitButton2: WOSubmitButton {
+	action = saveBindings;
+	value = "Save Changes";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = showSQL;
+	value = "Show SQL";
+}
+
+Text1: WOText {
+	cols = 60;
+	rows = 10;
+	value = component.bindings;
+}
+
+Text2: WOText {
+	cols = 50;
+	rows = 10;
+	value = shadowBindings;
+}
+
+TextField1: WOTextField {
+	value = componentID;
+}

@@ -1,0 +1,8 @@
+LoadLDAPServersHyperlink: WOHyperlink {
+	action = loadLDAPServers;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+

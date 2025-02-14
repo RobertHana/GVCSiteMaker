@@ -1,0 +1,129 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.testeomodelbase;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import com.webobjects.eoaccess.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import com.webobjects.eocontrol.*;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    import net.global_village.foundation.*;<a name="line.6"></a>
+<FONT color="green">007</FONT>    <a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    /**<a name="line.9"></a>
+<FONT color="green">010</FONT>     * Work around for bug (?) in EOF where validateValueForKey does not call into the class description.  Either inherit from this class, or implement this method in your base class for EO objects:<a name="line.10"></a>
+<FONT color="green">011</FONT>     * &lt;pre&gt;<a name="line.11"></a>
+<FONT color="green">012</FONT>     *     public Object validateValueForKey( Object value, String key)<a name="line.12"></a>
+<FONT color="green">013</FONT>     * {<a name="line.13"></a>
+<FONT color="green">014</FONT>     *     return classDescription().validateValueForKey(value, key);<a name="line.14"></a>
+<FONT color="green">015</FONT>     * }<a name="line.15"></a>
+<FONT color="green">016</FONT>     * &lt;/pre&gt;<a name="line.16"></a>
+<FONT color="green">017</FONT>    <a name="line.17"></a>
+<FONT color="green">018</FONT>     *<a name="line.18"></a>
+<FONT color="green">019</FONT>     * @author Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.<a name="line.19"></a>
+<FONT color="green">020</FONT>     * This software is published under the terms of the Educational Community License (ECL) version 1.0,<a name="line.20"></a>
+<FONT color="green">021</FONT>     * a copy of which has been included with this distribution in the LICENSE.TXT file.<a name="line.21"></a>
+<FONT color="green">022</FONT>     * @version $Revision: 3$<a name="line.22"></a>
+<FONT color="green">023</FONT>     */<a name="line.23"></a>
+<FONT color="green">024</FONT>    public class EOGenericRecord extends com.webobjects.eocontrol.EOGenericRecord<a name="line.24"></a>
+<FONT color="green">025</FONT>    {<a name="line.25"></a>
+<FONT color="green">026</FONT>    <a name="line.26"></a>
+<FONT color="green">027</FONT>        /**<a name="line.27"></a>
+<FONT color="green">028</FONT>         * Checks to ensure that the passed classDescription class is not equal to EOEntityClassDescription class.  If it is not, it returns an instance of the correct class for the passed entity name.  <a name="line.28"></a>
+<FONT color="green">029</FONT>         * CHECKME not sure if we need this any more.<a name="line.29"></a>
+<FONT color="green">030</FONT>         *<a name="line.30"></a>
+<FONT color="green">031</FONT>         * @param classDescription the EOClassDescription that is being used to create this EO object.  Its class should not be EOEntityClassDescription class, but due to a bug in EOF it may be.<a name="line.31"></a>
+<FONT color="green">032</FONT>         * @param entityName the name of the entity for this object.<a name="line.32"></a>
+<FONT color="green">033</FONT>         */<a name="line.33"></a>
+<FONT color="green">034</FONT>        public static EOClassDescription classDescriptionForEntityNamed(EOClassDescription classDescription, String entityName)<a name="line.34"></a>
+<FONT color="green">035</FONT>        {<a name="line.35"></a>
+<FONT color="green">036</FONT>            /** require<a name="line.36"></a>
+<FONT color="green">037</FONT>                [classDescription_not_null] classDescription != null;<a name="line.37"></a>
+<FONT color="green">038</FONT>                [entityName_not_null] entityName != null; **/<a name="line.38"></a>
+<FONT color="green">039</FONT>            <a name="line.39"></a>
+<FONT color="green">040</FONT>            boolean isBadClassDescription = (classDescription.getClass().equals(EOEntityClassDescription.class));<a name="line.40"></a>
+<FONT color="green">041</FONT>    <a name="line.41"></a>
+<FONT color="green">042</FONT>            EOClassDescription theClassDescription = isBadClassDescription ? EOClassDescription.classDescriptionForEntityName(entityName) :  classDescription;<a name="line.42"></a>
+<FONT color="green">043</FONT>    <a name="line.43"></a>
+<FONT color="green">044</FONT>            JassAdditions.post("EOGenericRecord", "classDescriptionForEntityNamed", ( ! theClassDescription.getClass().equals(EOEntityClassDescription.class)));<a name="line.44"></a>
+<FONT color="green">045</FONT>            return theClassDescription;<a name="line.45"></a>
+<FONT color="green">046</FONT>    <a name="line.46"></a>
+<FONT color="green">047</FONT>            /** ensure<a name="line.47"></a>
+<FONT color="green">048</FONT>                [result_not_null] Result != null;  **/<a name="line.48"></a>
+<FONT color="green">049</FONT>        }<a name="line.49"></a>
+<FONT color="green">050</FONT>    <a name="line.50"></a>
+<FONT color="green">051</FONT>    <a name="line.51"></a>
+<FONT color="green">052</FONT>        <a name="line.52"></a>
+<FONT color="green">053</FONT>        /**<a name="line.53"></a>
+<FONT color="green">054</FONT>         * Standard EOF constuctor.<a name="line.54"></a>
+<FONT color="green">055</FONT>         */<a name="line.55"></a>
+<FONT color="green">056</FONT>        public EOGenericRecord()<a name="line.56"></a>
+<FONT color="green">057</FONT>        {<a name="line.57"></a>
+<FONT color="green">058</FONT>            super();<a name="line.58"></a>
+<FONT color="green">059</FONT>        }<a name="line.59"></a>
+<FONT color="green">060</FONT>    <a name="line.60"></a>
+<FONT color="green">061</FONT>    <a name="line.61"></a>
+<FONT color="green">062</FONT>    <a name="line.62"></a>
+<FONT color="green">063</FONT>    }<a name="line.63"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

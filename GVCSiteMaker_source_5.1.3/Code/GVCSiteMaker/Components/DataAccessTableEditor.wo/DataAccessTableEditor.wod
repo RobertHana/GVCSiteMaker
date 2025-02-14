@@ -1,0 +1,42 @@
+AddTableHyperlink: WOHyperlink {
+	action = gotoAddTable;
+}
+
+CancelButton: WOSubmitButton {
+	action = cancelSection;
+	value = "Cancel";
+}
+
+ErrorMessageString: WOString {
+	value = errorMessage;
+}
+
+HasDatabaseTablesConditional: WOConditional {
+	condition = website.databaseTables.count;
+}
+
+HasErrorMessageConditional: WOConditional {
+	condition = errorMessage;
+}
+
+HasNoDatabaseTablesConditional: WOConditional {
+	condition = website.databaseTables.count;
+	negate = true;
+}
+
+PopUpButton1: WOPopUpButton {
+	displayString = aDatabaseTable.name;
+	item = aDatabaseTable;
+	list = website.orderedDatabaseTables;
+	noSelectionString = "Choose a Database Table...";
+	selection = selectedTable;
+}
+
+SelectTableButton: WOSubmitButton {
+	action = selectTable;
+	value = "Save";
+}
+
+SelectTableForm: WOForm {
+	multipleSubmit = true;
+}

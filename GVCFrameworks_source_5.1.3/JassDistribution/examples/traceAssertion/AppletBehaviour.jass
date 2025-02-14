@@ -1,0 +1,43 @@
+package jass.examples.traceAssertion;
+
+import java.applet.Applet;
+
+public class AppletBehaviour extends Applet
+{		
+    public final static void main(String[] argv)
+    {
+	AppletBehaviour test = new AppletBehaviour();
+		
+	test.init();
+	test.start();
+	test.stop();
+	test.destroy();
+    }		
+	
+	
+    /** invariant
+	[AppletBehaviour] trace (
+	  MAIN() {
+	    init().b 
+	    -> EXECUTE(System.out.println("Applet initialized");  ) 
+	      -> init().e 
+	    -> CALL Stopped() 
+	  }
+					
+	  Stopped() {
+	    start().b 
+	    -> EXECUTE(System.out.println("Applet started");) 
+	      -> start().e
+	    -> stop().b 
+	    -> EXECUTE(System.out.println("Applet stopped");) 
+	      -> stop().e
+	    -> ( CALL Stopped() 
+	         <|> destroy().b 
+		     -> EXECUTE(System.out.println("Applet destroyed");) 
+		       -> destroy().e 
+		     -> TERM 
+	       ) 
+	  }
+	);
+    **/
+}

@@ -1,0 +1,211 @@
+{
+    attributes = (
+        {
+            columnName = ""; 
+            externalType = DATE; 
+            name = Date; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "date_time"; 
+            externalType = DATETIME; 
+            name = DateTime; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = DECIMAL; 
+            name = Decimal; 
+            precision = 30; 
+            scale = 10; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = integer; 
+            externalType = INT; 
+            name = Integer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            adaptorValueConversionMethodName = stringValue; 
+            columnName = "java_Boolean"; 
+            externalType = CHAR; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = JavaBoolean; 
+            valueClassName = "net.global_village.foundation.GVCBoolean"; 
+            valueFactoryMethodName = "objectWithArchiveData:"; 
+            width = 1; 
+        }, 
+        {
+            columnName = key; 
+            externalType = BIGINT; 
+            name = Key; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = memo; 
+            externalType = LONGTEXT; 
+            name = Memo; 
+            valueClassName = NSString; 
+            valueType = C; 
+        }, 
+        {
+            columnName = string; 
+            externalType = VARCHAR; 
+            name = String; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = INT; 
+            name = bitField; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = CHAR; 
+            name = charBoolean; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = DATETIME; 
+            name = dateTime; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = BIGINT; 
+            name = dbKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = INT; 
+            name = integer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = LONGTEXT; 
+            name = largeText; 
+            valueClassName = NSString; 
+            valueType = C; 
+            width = 1000000000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = BIGINT; 
+            name = long; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = longString; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = mediumString; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = note; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1999; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = shortString; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = tinySting; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        Date, 
+        DateTime, 
+        Decimal, 
+        Integer, 
+        JavaBoolean, 
+        Key, 
+        Memo, 
+        String, 
+        bitField, 
+        charBoolean, 
+        dateTime, 
+        dbKey, 
+        integer, 
+        largeText, 
+        long, 
+        longString, 
+        mediumString, 
+        note, 
+        shortString, 
+        tinySting
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        Date, 
+        DateTime, 
+        Decimal, 
+        Integer, 
+        JavaBoolean, 
+        Memo, 
+        String, 
+        bitField, 
+        charBoolean, 
+        dateTime, 
+        dbKey, 
+        integer, 
+        largeText, 
+        long, 
+        longString, 
+        mediumString, 
+        note, 
+        shortString, 
+        tinySting
+    ); 
+    fetchSpecificationDictionary = {}; 
+    name = EOMySQLPrototypes; 
+    primaryKeyAttributes = (Key); 
+}

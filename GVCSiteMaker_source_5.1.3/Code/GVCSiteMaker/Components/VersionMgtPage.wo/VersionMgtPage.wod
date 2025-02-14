@@ -1,0 +1,177 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+CanAlterVersionConditional: WOConditional {
+	condition = canAlterVersion;
+}
+
+CanChangeLockStatusConditional: WOConditional {
+	condition = canChangeLockStatus;
+}
+
+CanDeleteVersionsConditional: WOConditional {
+	condition = canDeleteVersions;
+}
+
+CannotDeleteConditional: WOConditional {
+	condition = canDelete;
+	negate = true;
+}
+
+CreateNewVersionHyperlink: WOHyperlink {
+	action = createNewVersion;
+}
+
+CreatedByString: WOString {
+	value = aVersion.createdBy.userID;
+}
+
+CreatedDateString: WOString {
+	value = aVersion.createdDate;
+	formatter = application.properties.DateAndTimeFormatter;  //VALID
+}
+
+DeleteButton: WOSubmitButton {
+	action = deleteSelectedVersions;
+	value = "Delete Selected Versions";
+}
+
+DeleteCheckBox: WOCheckBox {
+	checked = shouldDelete;
+}
+
+DescriptionString: WOString {
+	value = aVersion.details;
+}
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Versions";
+	isAdmin = false;
+	hasSite = true;
+	inPlaceEditingMode = inPlaceEditingMode;
+	pageType = "VersionMgtPage";
+}
+
+EditHyperlink: WOHyperlink {
+	action = editVersion;
+}
+
+EditNewVersionHyperlink: WOHyperlink {
+	action = editNewVersion;
+}
+
+HasDetailsConditional: WOConditional {
+	condition = hasDetails;
+}
+
+Hyperlink1: WOHyperlink {
+	action = lock;
+}
+
+Hyperlink2: WOHyperlink {
+	action = unlock;
+}
+
+Hyperlink3: WOHyperlink {
+	action = editProperties;
+}
+
+Hyperlink4: WOHyperlink {
+	href = urlForVersion;
+	target = "_blank";
+}
+
+IsCurrentConditional: WOConditional {
+	condition = aVersion.isCurrent;
+}
+
+IsLockedString: WOString {
+	value = aVersion.isLocked.toString;
+}
+
+IsNotCurrentConditional: WOConditional {
+	condition = canDelete;
+}
+
+LockedConditional: WOConditional {
+	condition = aVersion.isLocked.booleanValue;
+}
+
+MailIconImage: WOImage {
+	src = "/GVCSiteMaker/Application/mailicon.gif";
+	border = "0";
+}
+
+MailLink: WOHyperlink {
+	href = mailVersionUrl;
+}
+
+MakeCurrentConditional: WOConditional {
+	condition = canMakeVersionCurrent;
+}
+
+MakeCurrentHyperlink: WOHyperlink {
+	action = makeVersionCurrent;
+}
+
+ModifiedByString: WOString {
+	value = aVersion.modifiedBy.userID;
+}
+
+ModifiedDateString: WOString {
+	value = aVersion.modifiedDate;
+	formatter = application.properties.DateAndTimeFormatter;  //VALID
+}
+
+NameString: WOString {
+	value = aVersion.name;
+}
+
+NumberString: WOString {
+	value = aVersion.versionNumber;
+}
+
+CancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+SectionForm: WOForm { 
+	multipleSubmit = true;
+}
+
+SectionString: WOString {
+	value = section.name;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+ShowCopyConditional: WOConditional {
+    condition = shouldShowUneditableWarning;
+}
+
+ShowBackToWebsiteSectionsHyperlinkConditional: WOConditional {
+    condition = shouldShowUneditableWarning;
+    negate = true;
+}
+
+SortingsPopup: WOPopUpButton {
+	list = sortings;
+	onChange = "this.form.submit();";
+	selection = selectedSorting;
+}
+
+VersionRepetition: WORepetition {
+	item = aVersion;
+	list = sortedVersionList;
+}
+
+VersionUnlockedConditional: WOConditional {
+	condition = aVersion.isLocked.booleanValue;
+	negate = true;
+}

@@ -1,0 +1,41 @@
+<webobject name = "DynamicBody">
+  <script language = "javascript" type = "text/javascript" src = "/tiny_mce/tiny_mce.js"></script>
+  <script type = "text/javascript">
+    function myCustomSetupContent(editor_id, body, doc) {
+    }
+
+    function blurOnEnter(myfield,e)
+    {
+      var keycode;
+      if (window.event) keycode = window.event.keyCode;
+      else if (e) keycode = e.which;
+      else return true;
+
+      if (keycode == 13)
+      {
+        myfield.blur();
+        return false;
+      }
+      else
+        return true;
+    }
+  </script>
+
+
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <table class = "level2TabSetContainer" cellpadding = "0" cellspacing = "0" border = "0">
+    <tr>
+      <td>
+        <webobject name = "TabbedPanel">
+          <webobject name = "Tab1"><webobject name = "ConfigureWebsiteSectionsPane" /></webobject>
+          <webobject name = "Tab2"><webobject name = "ConfigAppearance" /></webobject>
+          <webobject name = "Tab3"><webobject name = "ManageAccessGroups" /></webobject>
+          <webobject name = "Tab4"><webobject name = "UploadedFiles" /></webobject>
+          <webobject name = "Tab5"><webobject name = "DataTables" /></webobject>
+        </webobject>
+      </td>
+    </tr>
+  </table>
+  <div id = "busydiv" style = "display: none;"> <webobject name = "BusyImage" /> Loading... </div>
+</webobject>

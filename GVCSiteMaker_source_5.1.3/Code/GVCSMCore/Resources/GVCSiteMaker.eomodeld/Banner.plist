@@ -1,0 +1,19 @@
+{
+    attributes = (
+        {columnName = "BANNER_TEXT"; name = bannerText; prototypeName = mediumString; }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_FKEY"; 
+            name = websiteFKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (bannerText, websiteFKey); 
+    className = "com.gvcsitemaker.core.Banner"; 
+    classProperties = (bannerText); 
+    externalName = "SM_BANNER"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (bannerText); }; 
+    name = Banner; 
+    primaryKeyAttributes = (websiteFKey); 
+}

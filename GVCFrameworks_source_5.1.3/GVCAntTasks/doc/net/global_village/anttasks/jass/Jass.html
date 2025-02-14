@@ -1,0 +1,626 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Jass
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Jass";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/anttasks/jass/WOProjectJass.html" title="class in net.global_village.anttasks.jass"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/anttasks/jass/Jass.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Jass.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.anttasks.jass</FONT>
+<BR>
+Class Jass</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by ">org.apache.tools.ant.ProjectComponent
+      <IMG SRC="../../../../resources/inherit.gif" ALT="extended by ">org.apache.tools.ant.Task
+          <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../net/global_village/anttasks/Task.html" title="class in net.global_village.anttasks">net.global_village.anttasks.Task</A>
+              <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.anttasks.jass.Jass</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>java.lang.Cloneable</DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../net/global_village/anttasks/jass/WOProjectJass.html" title="class in net.global_village.anttasks.jass">WOProjectJass</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <B>Jass</B><DT>extends <A HREF="../../../../net/global_village/anttasks/Task.html" title="class in net.global_village.anttasks">Task</A></DL>
+</PRE>
+
+<P>
+<p>An Ant Task facilitating the use of <a href="http://csd.informatik.uni-oldenburg.de/~jass/">
+ Jass</a> to generate contracted Java source files.  See the Jass documentation for details on the
+ contracting process.</p>
+
+ <p>Here is an example usage of the task:
+ <pre>
+   &lt;target name="dist.jass" depends="setProps" if="use.jass"&gt;
+
+        &lt;!-- Define this for use when compiling contracted source --&gt;
+        &lt;path id="contracted.class.path"&gt;
+            &lt;pathelement location="ContractedSource"/&gt;
+        &lt;/path&gt;
+        &lt;property name="project.source.path" value="contracted.class.path"/&gt;
+
+        &lt;jass contract="pre,post,inv,loop,check,forall"
+            isDebugging="${jass.debug}"
+            destination="ContractedSource"&gt;
+            &lt;source dir="src"&gt;
+                &lt;include name="**&#47;*.java"/&gt;
+            &lt;/source&gt;
+            &lt;source dir="GeneratedEOs"&gt;
+                &lt;include name="**&#47;*.java"/&gt;
+            &lt;/source&gt;
+             &lt;classpath&gt;
+                &lt;path location="${junit.path}"/&gt;
+                &lt;path location="${jass.path}"/&gt;
+            &lt;/classpath&gt;
+       &lt;/jass&gt;
+   &lt;/target&gt;
+ </pre>
+ </p>
+ <p><code>depends="setProps"</code> is there to load any property definitions before starting the
+ contrating process.</p>
+ <p><code>if="use.jass"</code> is used to make this target optional</p>
+ <p><b>Note</b>: the example above references several properties that are assumed to have been set
+ before executing the task.</p>
+ <p>This section is used to set up a classpath that can be used by wocompile to later compile the
+ contracted source:
+ <pre>
+        &lt;!-- Define this for use when compiling contracted source --&gt;
+       &lt;path id="contracted.class.path"&gt;
+            &lt;pathelement location="ContractedSource"/&gt;
+        &lt;/path&gt;
+        &lt;property name="project.source.path" value="contracted.class.path"/&gt;
+ </pre></p>
+ <p>These attributes are recognized by the jass task:<br/>
+ <table border="1">
+   <tr align="left">
+     <th>Name</th><th>Type</th><th>Use</th>
+   </tr>
+   <tr>
+     <td>contract</td><td>String</td><td>Comma separated list of contract checks to generate as
+         described in the Jass documentation.</td>
+   </tr>
+   <tr>
+     <td>isDebugging</td><td>boolean</td><td><code>on</code> or <code>off</code> to control output
+         of verbose debugging information.</td>
+   </tr>
+   <tr>
+     <td>destination</td><td>Path</td><td>The location to generate contracted source at, not
+         including package names.</td>
+   </tr>
+   <tr>
+     <td>source</td><td>FileSet</td><td>One or more FileSets defining the locations to read source
+         file from, not including package names.</td>
+   </tr>
+   <tr>
+     <td>classpath</td><td>Path</td><td>The classpath to use when running Jass.</td>
+   </tr>
+ </table>
+ </p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#Jass()">Jass</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#addSource(org.apache.tools.ant.types.FileSet)">addSource</A></B>(org.apache.tools.ant.types.FileSet&nbsp;newPath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;org.apache.tools.ant.types.Path</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#classpath()">classpath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#contract()">contract</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;org.apache.tools.ant.types.Path</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#createClasspath()">createClasspath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;org.apache.tools.ant.types.Path</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#destination()">destination</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#execute()">execute</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runs Jass task.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#isDebugging()">isDebugging</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#setClasspath(org.apache.tools.ant.types.Path)">setClasspath</A></B>(org.apache.tools.ant.types.Path&nbsp;newClasspath)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#setClasspathRef(org.apache.tools.ant.taskdefs.Ant.Reference)">setClasspathRef</A></B>(org.apache.tools.ant.taskdefs.Ant.Reference&nbsp;r)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#setContract(java.lang.String)">setContract</A></B>(java.lang.String&nbsp;string)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#setDestination(org.apache.tools.ant.types.Path)">setDestination</A></B>(org.apache.tools.ant.types.Path&nbsp;path)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#setIsDebugging(boolean)">setIsDebugging</A></B>(boolean&nbsp;aBoolean)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.Vector</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../net/global_village/anttasks/jass/Jass.html#sourcePaths()">sourcePaths</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jass task attribute.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.anttasks.Task"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.anttasks.<A HREF="../../../../net/global_village/anttasks/Task.html" title="class in net.global_village.anttasks">Task</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../net/global_village/anttasks/Task.html#isPropertyDefined(java.lang.String)">isPropertyDefined</A>, <A HREF="../../../../net/global_village/anttasks/Task.html#propertyNamed(java.lang.String)">propertyNamed</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_org.apache.tools.ant.Task"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class org.apache.tools.ant.Task</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>bindToOwner, getOwningTarget, getRuntimeConfigurableWrapper, getTaskName, getTaskType, init, log, log, log, log, maybeConfigure, perform, reconfigure, setOwningTarget, setRuntimeConfigurableWrapper, setTaskName, setTaskType</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_org.apache.tools.ant.ProjectComponent"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class org.apache.tools.ant.ProjectComponent</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, getDescription, getLocation, getProject, setDescription, setLocation, setProject</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Jass()"><!-- --></A><H3>
+Jass</H3>
+<PRE>
+public <B>Jass</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="execute()"><!-- --></A><H3>
+execute</H3>
+<PRE>
+public void <B>execute</B>()
+             throws org.apache.tools.ant.BuildException</PRE>
+<DL>
+<DD>Runs Jass task.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>execute</CODE> in class <CODE>org.apache.tools.ant.Task</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>org.apache.tools.ant.BuildException</CODE><DT><B>See Also:</B><DD><CODE>Task.execute()</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isDebugging()"><!-- --></A><H3>
+isDebugging</H3>
+<PRE>
+public boolean <B>isDebugging</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns <code>true</code> if debugging mode is enabled
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if debugging mode is enabled</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setIsDebugging(boolean)"><!-- --></A><H3>
+setIsDebugging</H3>
+<PRE>
+public void <B>setIsDebugging</B>(boolean&nbsp;aBoolean)</PRE>
+<DL>
+<DD>Jass task attribute.  Turns debug mode on and off.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aBoolean</CODE> - <code>true</code> if debugging mode is enabled</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="contract()"><!-- --></A><H3>
+contract</H3>
+<PRE>
+public java.lang.String <B>contract</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns a comma separated string of the contracts enabled for generation.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a comma separated string of the contracts enabled for generation</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setContract(java.lang.String)"><!-- --></A><H3>
+setContract</H3>
+<PRE>
+public void <B>setContract</B>(java.lang.String&nbsp;string)</PRE>
+<DL>
+<DD>Jass task attribute.  Sets the contracts enabled for generation.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>string</CODE> - comma separated string of the contracts enabled for generation</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createClasspath()"><!-- --></A><H3>
+createClasspath</H3>
+<PRE>
+public org.apache.tools.ant.types.Path <B>createClasspath</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns a new portion of the classpath to be used to run Jass.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new portion of the classpath to be used to run Jass</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setClasspath(org.apache.tools.ant.types.Path)"><!-- --></A><H3>
+setClasspath</H3>
+<PRE>
+public void <B>setClasspath</B>(org.apache.tools.ant.types.Path&nbsp;newClasspath)</PRE>
+<DL>
+<DD>Jass task attribute.  Adds to the classpath to be used to run Jass.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newClasspath</CODE> - the new path to add to the existing classpath</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setClasspathRef(org.apache.tools.ant.taskdefs.Ant.Reference)"><!-- --></A><H3>
+setClasspathRef</H3>
+<PRE>
+public void <B>setClasspathRef</B>(org.apache.tools.ant.taskdefs.Ant.Reference&nbsp;r)</PRE>
+<DL>
+<DD>Jass task attribute.  Adds, by reference, to the classpath to be used to run Jass.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>r</CODE> - the refererence to the classpath to be added</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="classpath()"><!-- --></A><H3>
+classpath</H3>
+<PRE>
+public org.apache.tools.ant.types.Path <B>classpath</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns the classpath to be used to run Jass.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the classpath to be used to run Jass</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addSource(org.apache.tools.ant.types.FileSet)"><!-- --></A><H3>
+addSource</H3>
+<PRE>
+public void <B>addSource</B>(org.apache.tools.ant.types.FileSet&nbsp;newPath)</PRE>
+<DL>
+<DD>Jass task attribute.  Adds to the list of FileSets to take source files from.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newPath</CODE> - the new FileSet to add</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sourcePaths()"><!-- --></A><H3>
+sourcePaths</H3>
+<PRE>
+public java.util.Vector <B>sourcePaths</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns the list of FileSets to take source files from.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the list of FileSets to take source files from</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="destination()"><!-- --></A><H3>
+destination</H3>
+<PRE>
+public org.apache.tools.ant.types.Path <B>destination</B>()</PRE>
+<DL>
+<DD>Jass task attribute.  Returns the Path to write the contracted source files to.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the Path to write the contracted source files to</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDestination(org.apache.tools.ant.types.Path)"><!-- --></A><H3>
+setDestination</H3>
+<PRE>
+public void <B>setDestination</B>(org.apache.tools.ant.types.Path&nbsp;path)</PRE>
+<DL>
+<DD>Jass task attribute.  Sets the Path to write the contracted source files to.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>path</CODE> - the Path to write the contracted source files to.</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../net/global_village/anttasks/jass/WOProjectJass.html" title="class in net.global_village.anttasks.jass"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?net/global_village/anttasks/jass/Jass.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Jass.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

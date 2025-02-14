@@ -1,0 +1,29 @@
+HasNoVersionConditional: WOConditional {
+	condition = shouldShowVersion;
+	negate = true;
+}
+
+HasVersionConditional: WOConditional {
+	condition = shouldShowVersion;
+	negate = false;
+}
+
+PageComponent: WOSwitchComponent {
+	componentObject = currentSection.component;
+	currentMode = "display";
+	WOComponentName = currentSection.component.componentType;
+}
+
+PageComponent2: WOSwitchComponent {
+	componentObject = currentVersionComponent;
+	currentMode = "display";
+	WOComponentName = currentSection.component.componentType;
+}
+
+SectionSourceNotification: SectionSourceNotification {
+	website = currentSection.website;
+}
+
+ShouldShowSectionSourceNotificationConditional: WOConditional {
+	condition = showSectionSourceNotification;
+}

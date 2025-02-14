@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="SecureDropDownComponent" wocomponentcontent="NO">
+
+		<binding name="cssClassName"/>
+		<binding name="displayStringPath"/>
+		<binding name="formatter"/>
+		<binding name="isPermissable"/>
+		<binding name="name"/>
+		<binding name="list"/>
+		<binding name="selection"/>
+		<binding name="onChangeJavascript"/>
+		<binding name="noSelectionString"/>
+
+		<validation message="&apos;selection&apos; is a required binding">
+			<unbound name="selection"/>
+		</validation>
+
+		<validation message="&apos; isPermissable &apos; is a required binding">
+			<unbound name="isPermissable"/>
+		</validation>
+	</wo>
+</wodefinitions>

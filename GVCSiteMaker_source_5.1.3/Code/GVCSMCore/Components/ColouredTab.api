@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ColouredTab" wocomponentcontent="false">
+
+		<binding name="image"/>
+		<binding name="selected" defaults="Boolean"/>
+		<binding name="action"/>
+
+		<validation message="&apos;image&apos; is a required binding">
+			<unbound name="image"/>
+		</validation>
+
+		<validation message="&apos;selected&apos; is a required binding">
+			<unbound name="selected"/>
+		</validation>
+
+		<validation message="&apos;action&apos; is a required binding">
+			<unbound name="action"/>
+		</validation>
+	</wo>
+</wodefinitions>

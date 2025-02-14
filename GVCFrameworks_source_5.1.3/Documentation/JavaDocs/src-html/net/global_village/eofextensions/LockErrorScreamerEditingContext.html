@@ -1,0 +1,262 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    // LockErrorScreamerEditingContext.java<a name="line.1"></a>
+<FONT color="green">002</FONT>    //<a name="line.2"></a>
+<FONT color="green">003</FONT>    // Copyright (c) 2002 Red Shed Software. All rights reserved.<a name="line.3"></a>
+<FONT color="green">004</FONT>    // by Jonathan 'Wolf' Rentzsch (jon at redshed dot net)<a name="line.4"></a>
+<FONT color="green">005</FONT>    // enchanced by Anthony Ingraldi (a.m.ingraldi at larc.nasa.gov)<a name="line.5"></a>
+<FONT color="green">006</FONT>    //<a name="line.6"></a>
+<FONT color="green">007</FONT>    // Thu Mar 28 2002 wolf: Created.<a name="line.7"></a>
+<FONT color="green">008</FONT>    // Thu Apr 04 2002 wolf: Made NSRecursiveLock-aware by Anthony.<a name="line.8"></a>
+<FONT color="green">009</FONT>    <a name="line.9"></a>
+<FONT color="green">010</FONT>    package net.global_village.eofextensions;<a name="line.10"></a>
+<FONT color="green">011</FONT>    <a name="line.11"></a>
+<FONT color="green">012</FONT>    import java.io.*;<a name="line.12"></a>
+<FONT color="green">013</FONT>    <a name="line.13"></a>
+<FONT color="green">014</FONT>    import com.webobjects.eocontrol.*;<a name="line.14"></a>
+<FONT color="green">015</FONT>    import com.webobjects.foundation.*;<a name="line.15"></a>
+<FONT color="green">016</FONT>    <a name="line.16"></a>
+<FONT color="green">017</FONT>    <a name="line.17"></a>
+<FONT color="green">018</FONT>    public class LockErrorScreamerEditingContext extends EOEditingContext <a name="line.18"></a>
+<FONT color="green">019</FONT>    {<a name="line.19"></a>
+<FONT color="green">020</FONT>    <a name="line.20"></a>
+<FONT color="green">021</FONT>         private String _nameOfLockingThread = null;<a name="line.21"></a>
+<FONT color="green">022</FONT>         private NSMutableArray _stackTraces = new NSMutableArray();<a name="line.22"></a>
+<FONT color="green">023</FONT>    <a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>        /**<a name="line.25"></a>
+<FONT color="green">026</FONT>         * Standard constructor.<a name="line.26"></a>
+<FONT color="green">027</FONT>         *<a name="line.27"></a>
+<FONT color="green">028</FONT>         */<a name="line.28"></a>
+<FONT color="green">029</FONT>         public LockErrorScreamerEditingContext() <a name="line.29"></a>
+<FONT color="green">030</FONT>         {<a name="line.30"></a>
+<FONT color="green">031</FONT>             super();<a name="line.31"></a>
+<FONT color="green">032</FONT>         }<a name="line.32"></a>
+<FONT color="green">033</FONT>    <a name="line.33"></a>
+<FONT color="green">034</FONT>    <a name="line.34"></a>
+<FONT color="green">035</FONT>    <a name="line.35"></a>
+<FONT color="green">036</FONT>        /**<a name="line.36"></a>
+<FONT color="green">037</FONT>         * Constructor for nested editing contexts.<a name="line.37"></a>
+<FONT color="green">038</FONT>         * <a name="line.38"></a>
+<FONT color="green">039</FONT>         * @param parent EOEditingContext that this editing context is a child of<a name="line.39"></a>
+<FONT color="green">040</FONT>         */<a name="line.40"></a>
+<FONT color="green">041</FONT>        public LockErrorScreamerEditingContext(EOObjectStore parent) <a name="line.41"></a>
+<FONT color="green">042</FONT>        {<a name="line.42"></a>
+<FONT color="green">043</FONT>             super(parent);<a name="line.43"></a>
+<FONT color="green">044</FONT>         }<a name="line.44"></a>
+<FONT color="green">045</FONT>    <a name="line.45"></a>
+<FONT color="green">046</FONT>    <a name="line.46"></a>
+<FONT color="green">047</FONT>    <a name="line.47"></a>
+<FONT color="green">048</FONT>        /**<a name="line.48"></a>
+<FONT color="green">049</FONT>         * Overridden to capture trace of where lock was taken and to show error and <a name="line.49"></a>
+<FONT color="green">050</FONT>         * trace if the editing context is already lock by by a thread other than the<a name="line.50"></a>
+<FONT color="green">051</FONT>         * one asking for the lock.  For editing contexts associated with sessions<a name="line.51"></a>
+<FONT color="green">052</FONT>         * this usually results in deadlock for the session and also for the application<a name="line.52"></a>
+<FONT color="green">053</FONT>         * if requrests are not being dispatched concurrently.<a name="line.53"></a>
+<FONT color="green">054</FONT>         */<a name="line.54"></a>
+<FONT color="green">055</FONT>        public void lock() <a name="line.55"></a>
+<FONT color="green">056</FONT>        {<a name="line.56"></a>
+<FONT color="green">057</FONT>            String nameOfCurrentThread = Thread.currentThread().getName();<a name="line.57"></a>
+<FONT color="green">058</FONT>            <a name="line.58"></a>
+<FONT color="green">059</FONT>            // If we have not recorded any traces this editing context is not currently<a name="line.59"></a>
+<FONT color="green">060</FONT>            // locked and this results in a the lock being taken by a new thread.<a name="line.60"></a>
+<FONT color="green">061</FONT>            if (_stackTraces.count() == 0) <a name="line.61"></a>
+<FONT color="green">062</FONT>            {<a name="line.62"></a>
+<FONT color="green">063</FONT>                _stackTraces.addObject(_trace());<a name="line.63"></a>
+<FONT color="green">064</FONT>                _nameOfLockingThread = nameOfCurrentThread;<a name="line.64"></a>
+<FONT color="green">065</FONT>                NSLog.err.appendln("+++ Lock number (" +  _stackTraces.count() + ") for " + this +<a name="line.65"></a>
+<FONT color="green">066</FONT>                    " in " + nameOfCurrentThread);<a name="line.66"></a>
+<FONT color="green">067</FONT>            } <a name="line.67"></a>
+<FONT color="green">068</FONT>            else // This editing context has already been locked.<a name="line.68"></a>
+<FONT color="green">069</FONT>            {<a name="line.69"></a>
+<FONT color="green">070</FONT>                // If the thread is the same then this is a secondary call that <a name="line.70"></a>
+<FONT color="green">071</FONT>                // results in an increased recursionCount() for the NSRecursiveLock.<a name="line.71"></a>
+<FONT color="green">072</FONT>                if (nameOfCurrentThread.equals(_nameOfLockingThread)) <a name="line.72"></a>
+<FONT color="green">073</FONT>                {<a name="line.73"></a>
+<FONT color="green">074</FONT>                    _stackTraces.addObject(_trace());<a name="line.74"></a>
+<FONT color="green">075</FONT>                    NSLog.err.appendln("+++ Lock number (" + _stackTraces.count() + ") for " + this +<a name="line.75"></a>
+<FONT color="green">076</FONT>                        " in " + nameOfCurrentThread);<a name="line.76"></a>
+<FONT color="green">077</FONT>                } <a name="line.77"></a>
+<FONT color="green">078</FONT>                // If the thread is not the same it will block.  For editing contexts<a name="line.78"></a>
+<FONT color="green">079</FONT>                // in a session this results in deadlock so an error message is output.<a name="line.79"></a>
+<FONT color="green">080</FONT>                // The error includes the trace of the most recent lock taken which is<a name="line.80"></a>
+<FONT color="green">081</FONT>                // probably the offending unreleased lock.  It might not be if your <a name="line.81"></a>
+<FONT color="green">082</FONT>                // lock and unlocks are not cleanly nested.  In that case you might <a name="line.82"></a>
+<FONT color="green">083</FONT>                // need to capture and display traces of all the lock and unlock calls<a name="line.83"></a>
+<FONT color="green">084</FONT>                // to find what is not nested correctly.<a name="line.84"></a>
+<FONT color="green">085</FONT>                else <a name="line.85"></a>
+<FONT color="green">086</FONT>                {<a name="line.86"></a>
+<FONT color="green">087</FONT>                    NSLog.err.appendln("!!! Attempting to lock editing context " + this + " from " + <a name="line.87"></a>
+<FONT color="green">088</FONT>                        nameOfCurrentThread + " that was previously locked in " + _nameOfLockingThread);<a name="line.88"></a>
+<FONT color="green">089</FONT>                    NSLog.err.appendln("!!! Current stack trace: \n" + _trace());<a name="line.89"></a>
+<FONT color="green">090</FONT>                    NSLog.err.appendln("!!! Stack trace for most recent lock: \n" + _stackTraces.lastObject());<a name="line.90"></a>
+<FONT color="green">091</FONT>                }<a name="line.91"></a>
+<FONT color="green">092</FONT>            }<a name="line.92"></a>
+<FONT color="green">093</FONT>            super.lock();<a name="line.93"></a>
+<FONT color="green">094</FONT>        }<a name="line.94"></a>
+<FONT color="green">095</FONT>        <a name="line.95"></a>
+<FONT color="green">096</FONT>    <a name="line.96"></a>
+<FONT color="green">097</FONT>    <a name="line.97"></a>
+<FONT color="green">098</FONT>        /**<a name="line.98"></a>
+<FONT color="green">099</FONT>         * Overridden to capture trace of where lock was taken and to show error and <a name="line.99"></a>
+<FONT color="green">100</FONT>         * trace if the editing context is already lock by by a thread other than the<a name="line.100"></a>
+<FONT color="green">101</FONT>         * one asking for the lock.<a name="line.101"></a>
+<FONT color="green">102</FONT>         */<a name="line.102"></a>
+<FONT color="green">103</FONT>         public void unlock() <a name="line.103"></a>
+<FONT color="green">104</FONT>         {<a name="line.104"></a>
+<FONT color="green">105</FONT>             // This will throw an IllegalStateException if the editing context is<a name="line.105"></a>
+<FONT color="green">106</FONT>             // not locked, or if the unlocking thread is not the thread with the lock.  <a name="line.106"></a>
+<FONT color="green">107</FONT>             super.unlock();<a name="line.107"></a>
+<FONT color="green">108</FONT>             <a name="line.108"></a>
+<FONT color="green">109</FONT>             // This editing context is already locked, so remove the trace for the <a name="line.109"></a>
+<FONT color="green">110</FONT>             // latest lock(), assuming that it corresponds to this unlock().<a name="line.110"></a>
+<FONT color="green">111</FONT>             if (_stackTraces.count() &gt; 0)<a name="line.111"></a>
+<FONT color="green">112</FONT>                 _stackTraces.removeLastObject();<a name="line.112"></a>
+<FONT color="green">113</FONT>                 <a name="line.113"></a>
+<FONT color="green">114</FONT>                 // No more traces means that we are no longer locked so dis-associate <a name="line.114"></a>
+<FONT color="green">115</FONT>                 // ourselves with the thread that had us locked.<a name="line.115"></a>
+<FONT color="green">116</FONT>             if (_stackTraces.count() == 0)<a name="line.116"></a>
+<FONT color="green">117</FONT>                 _nameOfLockingThread = null;<a name="line.117"></a>
+<FONT color="green">118</FONT>                 <a name="line.118"></a>
+<FONT color="green">119</FONT>             String nameOfCurrentThread = Thread.currentThread().getName();<a name="line.119"></a>
+<FONT color="green">120</FONT>             NSLog.err.appendln("--- Unlocked in " +  nameOfCurrentThread + " (" + _stackTraces.count() + " remaining) for " + this);<a name="line.120"></a>
+<FONT color="green">121</FONT>         }<a name="line.121"></a>
+<FONT color="green">122</FONT>    <a name="line.122"></a>
+<FONT color="green">123</FONT>    <a name="line.123"></a>
+<FONT color="green">124</FONT>    <a name="line.124"></a>
+<FONT color="green">125</FONT>        /**<a name="line.125"></a>
+<FONT color="green">126</FONT>         * Allowing locked editing contexts to be disposed is not a good practice.  <a name="line.126"></a>
+<FONT color="green">127</FONT>         * This method calls goodbye() to outputs a warning message if this happens.  <a name="line.127"></a>
+<FONT color="green">128</FONT>         */<a name="line.128"></a>
+<FONT color="green">129</FONT>         public void dispose() <a name="line.129"></a>
+<FONT color="green">130</FONT>         {<a name="line.130"></a>
+<FONT color="green">131</FONT>             try <a name="line.131"></a>
+<FONT color="green">132</FONT>             {<a name="line.132"></a>
+<FONT color="green">133</FONT>                 goodbye();<a name="line.133"></a>
+<FONT color="green">134</FONT>             } <a name="line.134"></a>
+<FONT color="green">135</FONT>             finally <a name="line.135"></a>
+<FONT color="green">136</FONT>             {<a name="line.136"></a>
+<FONT color="green">137</FONT>                 super.dispose();<a name="line.137"></a>
+<FONT color="green">138</FONT>             }<a name="line.138"></a>
+<FONT color="green">139</FONT>         }<a name="line.139"></a>
+<FONT color="green">140</FONT>    <a name="line.140"></a>
+<FONT color="green">141</FONT>    <a name="line.141"></a>
+<FONT color="green">142</FONT>         <a name="line.142"></a>
+<FONT color="green">143</FONT>        /**<a name="line.143"></a>
+<FONT color="green">144</FONT>         * Allowing locked editing contexts to be garbage collected is not a good <a name="line.144"></a>
+<FONT color="green">145</FONT>         * practice.  This method calls goodbye() to outputs a warning message if <a name="line.145"></a>
+<FONT color="green">146</FONT>         * this happens.  <a name="line.146"></a>
+<FONT color="green">147</FONT>         */<a name="line.147"></a>
+<FONT color="green">148</FONT>        protected void finalize() throws Throwable <a name="line.148"></a>
+<FONT color="green">149</FONT>        {<a name="line.149"></a>
+<FONT color="green">150</FONT>           try <a name="line.150"></a>
+<FONT color="green">151</FONT>           {<a name="line.151"></a>
+<FONT color="green">152</FONT>               goodbye();<a name="line.152"></a>
+<FONT color="green">153</FONT>           } <a name="line.153"></a>
+<FONT color="green">154</FONT>           finally <a name="line.154"></a>
+<FONT color="green">155</FONT>           {<a name="line.155"></a>
+<FONT color="green">156</FONT>               super.finalize();<a name="line.156"></a>
+<FONT color="green">157</FONT>           }<a name="line.157"></a>
+<FONT color="green">158</FONT>        }<a name="line.158"></a>
+<FONT color="green">159</FONT>    <a name="line.159"></a>
+<FONT color="green">160</FONT>    <a name="line.160"></a>
+<FONT color="green">161</FONT>    <a name="line.161"></a>
+<FONT color="green">162</FONT>        /**<a name="line.162"></a>
+<FONT color="green">163</FONT>         * Support method with check common to dispose() and finalize().  Allowing <a name="line.163"></a>
+<FONT color="green">164</FONT>         * locked editing contexts to be garbage collected or disposed is not a good <a name="line.164"></a>
+<FONT color="green">165</FONT>         * practice.  It is probably OK for peer editing contexts, but this is not a <a name="line.165"></a>
+<FONT color="green">166</FONT>         * really good coding practice.  This method outputs a warning message if this<a name="line.166"></a>
+<FONT color="green">167</FONT>         * happens.  If you want to follow this bad practice, change the test below to:&lt;br&gt;<a name="line.167"></a>
+<FONT color="green">168</FONT>         * &lt;code&gt;((_stackTraces.count() != 0) &amp;&amp; (parent() instanceof EOEditingContext))&lt;/code&gt;<a name="line.168"></a>
+<FONT color="green">169</FONT>         */<a name="line.169"></a>
+<FONT color="green">170</FONT>        public void goodbye() <a name="line.170"></a>
+<FONT color="green">171</FONT>        {<a name="line.171"></a>
+<FONT color="green">172</FONT>            if (_stackTraces.count() != 0) <a name="line.172"></a>
+<FONT color="green">173</FONT>            {<a name="line.173"></a>
+<FONT color="green">174</FONT>                NSLog.err.appendln("!!! editing context " + this + " being disposed with " + _stackTraces.count() + " locks.");<a name="line.174"></a>
+<FONT color="green">175</FONT>                NSLog.err.appendln("!!! Most recently locked by: \n"<a name="line.175"></a>
+<FONT color="green">176</FONT>                                   + _stackTraces.lastObject());<a name="line.176"></a>
+<FONT color="green">177</FONT>                NSLog.err.appendln("!!! Current stack trace: \n" + _trace());<a name="line.177"></a>
+<FONT color="green">178</FONT>            }<a name="line.178"></a>
+<FONT color="green">179</FONT>        }<a name="line.179"></a>
+<FONT color="green">180</FONT>    <a name="line.180"></a>
+<FONT color="green">181</FONT>    <a name="line.181"></a>
+<FONT color="green">182</FONT>    <a name="line.182"></a>
+<FONT color="green">183</FONT>        /**<a name="line.183"></a>
+<FONT color="green">184</FONT>         * Utility method to return the stack trace from the current location as a string.<a name="line.184"></a>
+<FONT color="green">185</FONT>         * <a name="line.185"></a>
+<FONT color="green">186</FONT>         * @return the stack trace from the current location as a string<a name="line.186"></a>
+<FONT color="green">187</FONT>         */<a name="line.187"></a>
+<FONT color="green">188</FONT>         private String _trace() <a name="line.188"></a>
+<FONT color="green">189</FONT>         {<a name="line.189"></a>
+<FONT color="green">190</FONT>             StringWriter stringWriter = new StringWriter();<a name="line.190"></a>
+<FONT color="green">191</FONT>             PrintWriter printWriter = new PrintWriter(stringWriter);<a name="line.191"></a>
+<FONT color="green">192</FONT>             (new Throwable()).printStackTrace(printWriter);<a name="line.192"></a>
+<FONT color="green">193</FONT>        <a name="line.193"></a>
+<FONT color="green">194</FONT>             return stringWriter.toString();<a name="line.194"></a>
+<FONT color="green">195</FONT>         }<a name="line.195"></a>
+<FONT color="green">196</FONT>    }<a name="line.196"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

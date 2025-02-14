@@ -1,0 +1,473 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:FrontBase://localhost/GVCSiteMaker"; 
+        driver = ""; 
+        jdbc2Info = {
+            "ANSI92_CONFORMANCE" = ANSI92Full; 
+            "DBMS_NAME" = FrontBase; 
+            "DRIVER_NAME" = FBJDriver; 
+            "DRIVER_VER" = "2.4.0"; 
+            "IDENTIFIER_QUOTE_STRING" = "\""; 
+            "NON_NULLABLE_COLUMNS" = T; 
+            "STRING_FUNCTIONS" = "SUBSTRING, UPPER, LOWER, CONVERT, TRANSLATE, TRIM, COLLATE FROM"; 
+            typeInfo = {
+                BIT = {
+                    createParams = 1; 
+                    defaultJDBCType = (BIT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                "BIT VARYING" = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARBINARY); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                BLOB = {
+                    createParams = 0; 
+                    defaultJDBCType = (BLOB); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                BOOLEAN = {
+                    createParams = 0; 
+                    defaultJDBCType = (TINYINT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 1; 
+                }; 
+                BYTE = {
+                    createParams = 1; 
+                    defaultJDBCType = (BIT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                "BYTE VARYING" = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARBINARY); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                CHAR = {
+                    createParams = 1; 
+                    defaultJDBCType = (CHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                "CHAR VARYING" = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARCHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                CHARACTER = {
+                    createParams = 1; 
+                    defaultJDBCType = (CHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                "CHARACTER VARYING" = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARCHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                CLOB = {
+                    createParams = 0; 
+                    defaultJDBCType = (CLOB); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+                DATE = {
+                    createParams = 0; 
+                    defaultJDBCType = (DATE); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                DECIMAL = {
+                    createParams = 2; 
+                    defaultJDBCType = (DECIMAL); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 128; 
+                    minScale = 0; 
+                    precision = 38; 
+                }; 
+                "DOUBLE PRECISION" = {
+                    createParams = 0; 
+                    defaultJDBCType = (DOUBLE); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 128; 
+                    minScale = 0; 
+                    precision = 38; 
+                }; 
+                FLOAT = {
+                    createParams = 1; 
+                    defaultJDBCType = (FLOAT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 128; 
+                    minScale = 0; 
+                    precision = 19; 
+                }; 
+                INTEGER = {
+                    createParams = 0; 
+                    defaultJDBCType = (INTEGER); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 31; 
+                }; 
+                INTERVAL = {
+                    createParams = 0; 
+                    defaultJDBCType = (OTHER); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                LONGINT = {
+                    createParams = 0; 
+                    defaultJDBCType = (BIGINT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 63; 
+                }; 
+                NUMERIC = {
+                    createParams = 2; 
+                    defaultJDBCType = (NUMERIC); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 128; 
+                    minScale = 0; 
+                    precision = 19; 
+                }; 
+                REAL = {
+                    createParams = 0; 
+                    defaultJDBCType = (REAL); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 128; 
+                    minScale = 0; 
+                    precision = 19; 
+                }; 
+                SMALLINT = {
+                    createParams = 0; 
+                    defaultJDBCType = (SMALLINT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 15; 
+                }; 
+                TIME = {
+                    createParams = 0; 
+                    defaultJDBCType = (TIME); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                "TIME WITH TIME ZONE" = {
+                    createParams = 0; 
+                    defaultJDBCType = (TIME); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                TIMESTAMP = {
+                    createParams = 0; 
+                    defaultJDBCType = (TIMESTAMP); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                "TIMESTAMP WITH TIME ZONE" = {
+                    createParams = 0; 
+                    defaultJDBCType = (TIMESTAMP); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 6; 
+                }; 
+                TINYINT = {
+                    createParams = 0; 
+                    defaultJDBCType = (TINYINT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 7; 
+                }; 
+                VARCHAR = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARCHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483646; 
+                }; 
+            }; 
+        }; 
+        password = SiteMaker; 
+        plugin = ""; 
+        username = SiteMaker; 
+    }; 
+    entities = (
+        {className = "com.gvcsitemaker.core.Banner"; name = Banner; }, 
+        {className = "com.gvcsitemaker.core.ChangeLog"; name = ChangeLog; }, 
+        {
+            className = "com.gvcsitemaker.core.ConfigureGroup"; 
+            name = ConfigureGroup; 
+            parent = LocalGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySectionTask"; 
+            name = CopySectionTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySectionType"; 
+            name = CopySectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CopySiteTask"; 
+            name = CopySiteTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.CreateDataTablePackageTask"; 
+            name = CreateDataTablePackageTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.DataAccessSectionType"; 
+            name = DataAccessSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = DataAccessWebsiteGroupNotification; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.EmbeddedSectionSectionType"; 
+            name = EmbeddedSectionSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.EmbeddedSiteSectionType"; 
+            name = EmbeddedSiteSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.ErrorLog"; name = ErrorLog; }, 
+        {
+            className = "com.gvcsitemaker.core.ExternalURLSectionType"; 
+            name = ExternalURLSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.FilePassword"; name = FilePassword; }, 
+        {className = "com.gvcsitemaker.core.Footer"; name = Footer; }, 
+        {className = "com.gvcsitemaker.core.Group"; name = Group; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = GroupFile; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = GroupSection; }, 
+        {
+            className = "com.gvcsitemaker.core.InstallDataTablePackageTask"; 
+            name = InstallDataTablePackageTask; 
+            parent = Task; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.InternalUsersGroup"; 
+            name = InternalUsersGroup; 
+            parent = Group; 
+        }, 
+        {className = "com.gvcsitemaker.core.LDAPBranch"; name = LDAPBranch; }, 
+        {
+            className = "com.gvcsitemaker.core.LDAPGroup"; 
+            name = LDAPGroup; 
+            parent = WebsiteGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.ListOfLinksSectionType"; 
+            name = ListOfLinksSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.LocalGroup"; 
+            name = LocalGroup; 
+            parent = WebsiteGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.MixedMediaSectionType"; 
+            name = MixedMediaSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.OrgUnit"; name = OrgUnit; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = OrgUnitUser; }, 
+        {
+            className = "com.gvcsitemaker.core.PackageSectionType"; 
+            name = PackageSectionType; 
+            parent = SectionType; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.PublicGroup"; 
+            name = PublicGroup; 
+            parent = Group; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.PublicUser"; 
+            name = PublicUser; 
+            parent = User; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.SMVirtualTable"; 
+            name = SMVirtualTable; 
+            parent = VirtualTable; 
+        }, 
+        {className = "com.gvcsitemaker.core.Section"; name = Section; }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = SectionContributorGroup; 
+        }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = SectionEditorGroup; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.SectionStyle"; 
+            name = SectionStyle; 
+            parent = Style; 
+        }, 
+        {className = "com.gvcsitemaker.core.SectionType"; name = SectionType; }, 
+        {className = "com.gvcsitemaker.core.SectionVersion"; name = SectionVersion; }, 
+        {className = "com.gvcsitemaker.core.SiteFile"; name = SiteFile; }, 
+        {className = "com.gvcsitemaker.core.SiteFileFolder"; name = SiteFileFolder; }, 
+        {className = "com.gvcsitemaker.core.Style"; name = Style; }, 
+        {className = "com.gvcsitemaker.core.Task"; name = Task; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = TaskSection; }, 
+        {
+            className = "com.gvcsitemaker.core.TaskStatus"; 
+            name = TaskStatus; 
+            parent = GVCKeyedLookup; 
+        }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = TaskTable; }, 
+        {
+            className = "com.gvcsitemaker.core.TextImageSectionType"; 
+            name = TextImageSectionType; 
+            parent = SectionType; 
+        }, 
+        {className = "com.gvcsitemaker.core.UsageLog"; name = UsageLog; }, 
+        {className = "com.gvcsitemaker.core.User"; name = User; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = UserGroup; }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileColumn"; 
+            name = VirtualSiteFileColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualSiteFileField"; 
+            name = VirtualSiteFileField; 
+            parent = VirtualField; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualUserColumn"; 
+            name = VirtualUserColumn; 
+            parent = VirtualColumn; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.databasetables.VirtualUserField"; 
+            name = VirtualUserField; 
+            parent = VirtualField; 
+        }, 
+        {className = "com.gvcsitemaker.core.Website"; name = Website; }, 
+        {
+            className = "com.gvcsitemaker.core.WebsiteChangeLog"; 
+            name = WebsiteChangeLog; 
+            parent = ChangeLog; 
+        }, 
+        {
+            className = "com.gvcsitemaker.core.WebsiteGroup"; 
+            name = WebsiteGroup; 
+            parent = Group; 
+        }, 
+        {className = "com.gvcsitemaker.core.WebsiteRequest"; name = WebsiteRequest; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = WebsiteTable; }
+    ); 
+    internalInfo = {
+        "_deletedEntityNamesInObjectStore" = (
+            "SM_TEXTIMG", 
+            "SM_FILELIST", 
+            "SM_EXTSITE", 
+            "SM_SITE_TYPE_TRANS", 
+            "SM_STYLE_TRANS", 
+            "SM_SECTION_TYPE_TRANS", 
+            "SM_WEBSITE_IMAGE", 
+            "SM_FILE_SECTION", 
+            "SM_COMPONENT_TEMPLATE", 
+            "SM_GROUP_WEBSITE", 
+            "SM_COMP_FACT", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_PAGE_COMP", 
+            "SM_SITE_CHANGE_LOG"
+        ); 
+    }; 
+}

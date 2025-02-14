@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="BreadCrumb" wocomponentcontent="false">
+
+		<binding name="trail"/>
+		<binding name="separator"/>
+
+		<validation message="&apos;trail&apos; is a required binding">
+			<unbound name="trail"/>
+		</validation>
+	</wo>
+</wodefinitions>

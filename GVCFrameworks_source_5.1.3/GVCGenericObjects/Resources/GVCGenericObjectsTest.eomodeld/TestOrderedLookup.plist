@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = ORDERING; name = ordering; prototypeName = Integer; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (name, theID, ordering); 
+    className = "net.global_village.genericobjects.tests.TestOrderedLookup"; 
+    classProperties = (name, ordering, localizations); 
+    externalName = "TEST_ORDERED_LOOKUP"; 
+    fetchSpecificationDictionary = {}; 
+    name = TestOrderedLookup; 
+    parent = GVCOrderedLookup; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupID; sourceAttribute = theID; }); 
+            name = localizations; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+    userInfo = {defaultName = ""; }; 
+}

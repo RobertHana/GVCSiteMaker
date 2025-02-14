@@ -1,0 +1,1 @@
+ -destination src -java -model VirtualTables.eomodeld -packagedirs -refmodel ../GVCEOPrototypes/GVCEOPrototypes.eomodeld -refmodel ../GVCGenericObjects/GVCGenericObjects.eomodeld -subclassDestination src -verbose

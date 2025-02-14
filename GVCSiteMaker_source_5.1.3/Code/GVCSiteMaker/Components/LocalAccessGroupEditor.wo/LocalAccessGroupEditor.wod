@@ -1,0 +1,64 @@
+CanRemoveUserConditional: WOConditional {
+	condition = canRemoveUser;
+}
+
+CantRemoveUserConditional: WOConditional {
+	negate = true;
+	condition = canRemoveUser;
+}
+
+CurrentGroupHasUsers: WOConditional {
+	condition = currentGroupHasUsers;
+}
+
+ModifyingGroupConditional: WOConditional {
+	condition = isNewGroup;
+	negate = true;
+}
+
+NewGroupConditional: WOConditional {
+	condition = isNewGroup;
+}
+
+NewUserIDString: WOText {
+	value = newUserIDs;
+    maxLength = 100;
+	cols = "40";
+	rows = "10";
+}
+
+RemoveUserFromCurrentGroupLink: WOHyperlink {
+	action = removeUserFromCurrentGroup;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+SMUserInstructions: WOSwitchComponent {
+    WOComponentName = "SMUserInstructions";
+}
+
+SortedUserList: WORepetition {
+	item = aUser;
+	list = sortedUsers;
+}
+
+UserActionsPopUpButton: WOPopUpButton {
+	list = USER_ACTIONS;
+	selection = selectedAction;
+}
+
+UserID: WOString {
+	value = aUser.userID;
+}
+
+UserValidationErrorConditional: WOConditional {
+	condition = userValidationErrors;
+}
+
+UserValidationErrorString: WOString {
+	value = anError;
+}
+
+UserValidationErrorsRepetition: WORepetition {
+	item = anError;
+	list = userValidationErrors;
+}

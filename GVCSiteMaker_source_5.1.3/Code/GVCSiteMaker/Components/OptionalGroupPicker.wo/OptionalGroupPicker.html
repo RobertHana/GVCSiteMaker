@@ -1,0 +1,31 @@
+<TABLE class="content" border="0">
+	<TR>
+		<TD VALIGN="top" class="leftContentColumn">
+			<B><webobject name="MainLabelString"></webobject>:</B>
+			<br />
+			<span class="microText"><webobject name="SubLabelString"></webobject></span> 
+		</TD>
+		<TD VALIGN="top" class="rightContentColumn"><!-- Must match width of other table in FileEdit.html -->
+			<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="2" WIDTH="100%">
+				<TR VALIGN="top">
+					<TD><WEBOBJECT NAME=NoneRadioButton></WEBOBJECT>&nbsp;None
+					</TD>
+					<TD><WEBOBJECT NAME=PublicAccessRadioButton></WEBOBJECT>&nbsp;Everyone
+					</TD>
+					<TD>
+						<WEBOBJECT NAME=AccessGroupsRadioButton></WEBOBJECT NAME=AccessGroupsRadioButton>&nbsp;Access Groups Only<br />(select from groups listed below)
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD colspan="2" VALIGN="top" class="rightContentColumn">
+			<webobject name="Conditional1"><webobject name=GroupsTable>
+				<IMG HEIGHT="2" WIDTH="24" SRC="/GVCSiteMaker/Images/spacer.gif">
+				<WEBOBJECT NAME=AccessGroupCheckBox></WEBOBJECT>
+				<WEBOBJECT NAME=GroupNameString></WEBOBJECT>
+			</webobject></webobject>
+		</TD>
+	</TR>
+</TABLE>

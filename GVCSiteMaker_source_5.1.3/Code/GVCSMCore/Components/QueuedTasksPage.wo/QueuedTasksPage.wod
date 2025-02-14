@@ -1,0 +1,78 @@
+CanCancel: WOConditional {
+	condition = aTask.isWaiting;
+}
+
+CanDelete: WOConditional {
+	condition = aTask.isActive;
+	negate = true;
+}
+
+CancelTaskHyperlink: WOHyperlink {
+	action = cancelTask;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+CannotDelete: WOConditional {
+	condition = aTask.isInProgress;
+}
+
+Conditional1: WOConditional {
+	condition = hasNewRequest;
+}
+
+DateString: WOString {
+	value = aTask.createdDate;
+	formatter = application.properties.DateAndTimeFormatter;  // VALID
+}
+
+DeleteSectionHyperlink: WOHyperlink {
+	action = deleteTask;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+Details: WOString {
+	value = aTask.details;
+}
+
+DetailsString: WOString {
+	value = newRequest.details;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = false;  // when info is shown then there is a site
+	isConfigPage = false;  // when unable to configure less info is shown
+	pageTitle = pageTitle;
+	isAdmin = false;
+	pageType = "QueuedTasksPage";
+}
+
+IsInProgressConditional: WOConditional {
+	condition = aTask.isInProgress;
+}
+
+IsInWaitingConditional: WOConditional {
+	condition = aTask.isWaiting;
+}
+
+QueuedTasksForm: WOForm {
+}
+
+RegularDisplayConditional: WOConditional {
+	condition = aTask.isActive;
+	negate = true;
+}
+
+Status: WOString {
+	value = aTask.status.name;
+}
+
+TaskRepetition: WORepetition {
+	item = aTask;
+	list = tasks;
+}
+
+UploadNewFileButton: WOSubmitButton {
+    action = showNextPage;
+	value = "Done";
+}

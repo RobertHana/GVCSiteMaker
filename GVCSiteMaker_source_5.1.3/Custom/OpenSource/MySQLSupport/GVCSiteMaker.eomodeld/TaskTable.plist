@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {columnName = "TABLE_ID"; name = tableID; prototypeName = Key; }, 
+        {columnName = "TASK_ID"; name = taskID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (tableID, taskID); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (table, task); 
+    externalName = "TASK_TABLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TaskTable; 
+    primaryKeyAttributes = (tableID, taskID); 
+    relationships = (
+        {
+            destination = SMVirtualTable; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = tableID; }); 
+            name = table; 
+        }, 
+        {
+            destination = Task; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = taskId; sourceAttribute = taskID; }); 
+            name = task; 
+        }
+    ); 
+}

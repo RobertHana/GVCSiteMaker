@@ -1,0 +1,822 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+_VirtualTable (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="_VirtualTable (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/_VirtualTable.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/virtualtables/_VirtualStringField.html" title="class in net.global_village.virtualtables"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/virtualtables/_VirtualTimestampField.html" title="class in net.global_village.virtualtables"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/virtualtables/_VirtualTable.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="_VirtualTable.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_net.global_village.virtualtables.Table">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.virtualtables</FONT>
+<BR>
+Class _VirtualTable</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOCustomObject
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOGenericRecord
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.GenericRecord</A>
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/_Table.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables._Table</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/virtualtables/Table.html" title="class in net.global_village.virtualtables">net.global_village.virtualtables.Table</A>
+                      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.virtualtables._VirtualTable</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol._EOPrivateMemento, com.webobjects.eocontrol.EODeferredFaulting, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOFaulting, com.webobjects.eocontrol.EOKeyValueCoding, com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation._ForwardingBindingCheck, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCodingAdditions, com.webobjects.eocontrol.EORelationshipManipulation, com.webobjects.eocontrol.EOValidation, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation.Callback, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.23"><B>_VirtualTable</B></A><DT>extends <A HREF="../../../net/global_village/virtualtables/Table.html" title="class in net.global_village.virtualtables">Table</A></DL>
+</PRE>
+
+<P>
+Created by Velocity Generator.<br>
+ DO NOT EDIT.  Make changes to VirtualTable.java instead.
+<p>
+ Copyright (c) ${copyrightYear} ${copyrightBy}   All rights reserved.
+</p>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision$</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.virtualtables._VirtualTable">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_net.global_village.virtualtables.Table"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Table.html" title="class in net.global_village.virtualtables">Table</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Table.NameComparator.html" title="class in net.global_village.virtualtables">Table.NameComparator</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOGenericRecord._DictionaryBinding, com.webobjects.eocontrol.EOGenericRecord._LazyDictionaryBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOCustomObject._BooleanFieldBinding, com.webobjects.eocontrol.EOCustomObject._FieldBinding, com.webobjects.eocontrol.EOCustomObject._LazyFieldBinding, com.webobjects.eocontrol.EOCustomObject._NumberFieldBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions">EOCopying.DefaultImplementation</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html" title="class in net.global_village.eofextensions">EOCopying.Utility</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCodingAdditions.DefaultImplementation, com.webobjects.eocontrol.EOKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._StoredForwardingBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol._EOPrivateMemento"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol._EOPrivateMemento</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol._EOPrivateMemento.DefaultImplementation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#ROWS">ROWS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#VIRTUALTABLE_ENTITY_NAME">VIRTUALTABLE_ENTITY_NAME</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables.Table"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Table.html" title="class in net.global_village.virtualtables">Table</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Table.html#columnNameMapping">columnNameMapping</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#invalidColumnNames">invalidColumnNames</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#NameComparator">NameComparator</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.virtualtables._Table"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_Table.html" title="class in net.global_village.virtualtables">_Table</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_Table.html#COLUMNS">COLUMNS</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#DATECREATED">DATECREATED</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#DATEMODIFIED">DATEMODIFIED</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#NAME">NAME</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#TABLE_ENTITY_NAME">TABLE_ENTITY_NAME</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#TABLEID">TABLEID</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#TEXTDESCRIPTION">TEXTDESCRIPTION</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__readOnly</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#COPY_CONTEXT">COPY_CONTEXT</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#_VirtualTable()">_VirtualTable</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#addToRows(net.global_village.virtualtables.VirtualRow)">addToRows</A></B>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.eoaccess.EOEntity</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#entity(com.webobjects.eocontrol.EOEditingContext)">entity</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchAllVirtualTables(com.webobjects.eocontrol.EOEditingContext)">fetchAllVirtualTables</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchAllVirtualTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)">fetchAllVirtualTables</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                           com.webobjects.foundation.NSArray&nbsp;sortOrderings)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchRequiredVirtualTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchRequiredVirtualTable</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                   com.webobjects.eocontrol.EOQualifier&nbsp;qualifier)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchRequiredVirtualTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchRequiredVirtualTable</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyName,
+                                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchVirtualTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchVirtualTable</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                   com.webobjects.eocontrol.EOQualifier&nbsp;qualifier)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchVirtualTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchVirtualTable</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyName,
+                                   <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#fetchVirtualTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">fetchVirtualTables</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                     com.webobjects.eocontrol.EOQualifier&nbsp;qualifier,
+                                     com.webobjects.foundation.NSArray&nbsp;sortOrderings)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#localInstance(com.webobjects.eocontrol.EOEditingContext)">localInstance</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#removeFromRows(net.global_village.virtualtables.VirtualRow)">removeFromRows</A></B>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#rows()">rows</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#rows(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, boolean)">rows</A></B>(com.webobjects.eocontrol.EOQualifier&nbsp;qualifier,
+         com.webobjects.foundation.NSArray&nbsp;sortOrderings,
+         boolean&nbsp;fetch)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/virtualtables/_VirtualTable.html#setRows(com.webobjects.foundation.NSMutableArray)">setRows</A></B>(com.webobjects.foundation.NSMutableArray&nbsp;aValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables.Table"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/Table.html" title="class in net.global_village.virtualtables">Table</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/Table.html#addInvalidColumnName(java.lang.String)">addInvalidColumnName</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#addInvalidColumnNames(com.webobjects.foundation.NSSet)">addInvalidColumnNames</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#addToColumns(net.global_village.virtualtables.VirtualColumn)">addToColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#awakeFromFetch(com.webobjects.eocontrol.EOEditingContext)">awakeFromFetch</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)">awakeFromInsertion</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#calculationContext()">calculationContext</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#clearColumnNameMapping()">clearColumnNameMapping</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#columnNamed(java.lang.String)">columnNamed</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#columnNameMapping()">columnNameMapping</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#columnsOrderedBy(com.webobjects.foundation.NSArray, com.webobjects.foundation.NSComparator)">columnsOrderedBy</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#columnsOrderedBy(com.webobjects.foundation.NSComparator)">columnsOrderedBy</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#columnsWithQualfier(com.webobjects.eocontrol.EOQualifier)">columnsWithQualfier</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#createAndInsertColumn(net.global_village.virtualtables.ColumnType)">createAndInsertColumn</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#defaultInvalidColumnNames()">defaultInvalidColumnNames</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#editableColumns()">editableColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#exportTable(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, java.io.OutputStream, com.webobjects.foundation.NSArray, java.lang.String, boolean)">exportTable</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#findColumnNamed(java.lang.String)">findColumnNamed</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#hasColumnNamed(java.lang.String)">hasColumnNamed</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#hasObjects()">hasObjects</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#hasReferringTables()">hasReferringTables</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#importableColumns()">importableColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#importTable(java.io.InputStream, java.lang.Object, com.webobjects.foundation.NSArray, com.webobjects.foundation.NSDictionary, java.lang.String, boolean, boolean)">importTable</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#invalidColumnNames()">invalidColumnNames</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#isUsingIntegerPKs()">isUsingIntegerPKs</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#isValidColumnName(java.lang.String)">isValidColumnName</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#isValidNewColumnName(java.lang.String)">isValidNewColumnName</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#newColumn(java.lang.String, net.global_village.virtualtables.ColumnType)">newColumn</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#newColumn(java.lang.String, java.lang.String)">newColumn</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#objectsWithQualifier(com.webobjects.eocontrol.EOQualifier)">objectsWithQualifier</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#objectWithIntegerPrimaryKey(java.lang.Integer)">objectWithIntegerPrimaryKey</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#objectWithPrimaryKey(java.lang.Object)">objectWithPrimaryKey</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#orderedColumns()">orderedColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#orderedSystemColumns()">orderedSystemColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#orderedUserColumns()">orderedUserColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#referringTables()">referringTables</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#removeFromColumns(net.global_village.virtualtables.VirtualColumn)">removeFromColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#setCalculationContext(java.util.Map)">setCalculationContext</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#setColumns(com.webobjects.foundation.NSMutableArray)">setColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#systemColumns()">systemColumns</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#tableWithTableID(com.webobjects.eocontrol.EOEditingContext, java.lang.Object)">tableWithTableID</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#uniqueColumnName(java.lang.String)">uniqueColumnName</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#updateFromSnapshot(com.webobjects.foundation.NSDictionary)">updateFromSnapshot</A>, <A HREF="../../../net/global_village/virtualtables/Table.html#userColumns()">userColumns</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.virtualtables._Table"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.virtualtables.<A HREF="../../../net/global_village/virtualtables/_Table.html" title="class in net.global_village.virtualtables">_Table</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/virtualtables/_Table.html#addToColumns(net.global_village.virtualtables.Column)">addToColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#columns()">columns</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#columns(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, boolean)">columns</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#dateCreated()">dateCreated</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#dateModified()">dateModified</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchAllTables(com.webobjects.eocontrol.EOEditingContext)">fetchAllTables</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchAllTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)">fetchAllTables</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchRequiredTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchRequiredTable</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchRequiredTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchRequiredTable</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)">fetchTable</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)">fetchTable</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#fetchTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)">fetchTables</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#name()">name</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#removeFromColumns(net.global_village.virtualtables.Column)">removeFromColumns</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#setDateCreated(com.webobjects.foundation.NSTimestamp)">setDateCreated</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#setDateModified(com.webobjects.foundation.NSTimestamp)">setDateModified</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#setName(java.lang.String)">setName</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#setTableID(java.lang.Number)">setTableID</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#setTextDescription(java.lang.String)">setTextDescription</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#tableID()">tableID</A>, <A HREF="../../../net/global_village/virtualtables/_Table.html#textDescription()">textDescription</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofextensions.GenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">GenericRecord</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#attributeNamed(java.lang.String)">attributeNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#clearCachedValues()">clearCachedValues</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedSnapshot()">committedSnapshot</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedValueFor(java.lang.String)">committedValueFor</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy()">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy(com.webobjects.foundation.NSMutableDictionary)">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#duplicate(com.webobjects.foundation.NSMutableDictionary)">duplicate</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#entity()">entity</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#equals(java.lang.Object, java.lang.Object)">equals</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#globalID()">globalID</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#hasChanged(java.lang.String)">hasChanged</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isDummyFaultEO()">isDummyFaultEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isNewEO()">isNewEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#objectMatchingKeyAndValue(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.String, java.lang.Object)">objectMatchingKeyAndValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue()">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue(com.webobjects.eocontrol.EOGenericRecord)">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#propertyNamed(java.lang.String)">propertyNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshObject()">refreshObject</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshRelationshipNamed(java.lang.String)">refreshRelationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#relationshipNamed(java.lang.String)">relationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#revertToSaved()">revertToSaved</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#turnIntoFault(com.webobjects.eocontrol.EOFaultHandler)">turnIntoFault</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()">validateForSave</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)">validateForSave</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__setClassDescription, _keyGetBindingForKey, _keySetBindingForKey, _otherStorageBinding, _storedKeyGetBindingForKey, _storedKeySetBindingForKey, classDescription, usesDeferredFaultCreation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__classDescription, __clearPendingChanges, __editingContext, __globalID, __hasAuxillaryObservers, __hasPendingChanges, __hasPendingUpdate, __isInitialized, __isPendingDeletion, __isPendingInsertion, __isShared, __lastSnapshot, __originalSnapshot, __retainCount, __setAuxillaryObservers, __setEditingContext, __setGlobalID, __setInitialized, __setLastSnapshot, __setOriginalSnapshot, __setPendingDeletion, __setPendingInsertion, __setPendingUpdate, __setRetainCount, __setShared, _createKeyGetBindingForKey, _createKeySetBindingForKey, _createStoredKeyGetBindingForKey, _createStoredKeySetBindingForKey, _fieldKeyBinding, _forwardingBindingNeededForClass, _methodKeyGetBinding, _methodKeySetBinding, addObjectToBothSidesOfRelationshipWithKey, addObjectToPropertyWithKey, allPropertyKeys, attributeKeys, awakeFromClientUpdate, canAccessFieldsDirectly, changesFromSnapshot, classDescriptionForDestinationKey, clearFault, clearProperties, deleteRuleForRelationshipKey, editingContext, entityName, eoDescription, eoShallowDescription, equals, excludeObjectFromPropertyWithKey, faultHandler, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hashCode, includeObjectIntoPropertyWithKey, inverseForRelationshipKey, invokeRemoteMethod, isFault, isReadOnly, isToManyKey, opaqueState, ownsDestinationObjectsForRelationshipKey, prepareValuesForClient, propagateDeleteWithEditingContext, readResolve, reapplyChangesFromDictionary, removeObjectFromBothSidesOfRelationshipWithKey, removeObjectFromPropertyWithKey, shouldUseStoredAccessors, snapshot, storedValueForKey, takeStoredValueForKey, takeValueForKey, takeValueForKeyPath, takeValuesFromDictionary, takeValuesFromDictionaryWithMapping, toManyRelationshipKeys, toOneRelationshipKeys, toString, unableToSetNullForKey, userPresentableDescription, validateClientUpdate, validateForDelete, validateForInsert, validateForUpdate, validateTakeValueForKeyPath, validateValueForKey, valueForKey, valuesForKeys, valuesForKeysWithMapping, willChange, willRead, willReadRelationship</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="VIRTUALTABLE_ENTITY_NAME"><!-- --></A><H3>
+VIRTUALTABLE_ENTITY_NAME</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.27"><B>VIRTUALTABLE_ENTITY_NAME</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.virtualtables._VirtualTable.VIRTUALTABLE_ENTITY_NAME">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="ROWS"><!-- --></A><H3>
+ROWS</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.30"><B>ROWS</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.virtualtables._VirtualTable.ROWS">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="_VirtualTable()"><!-- --></A><H3>
+_VirtualTable</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.23"><B>_VirtualTable</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="entity(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+entity</H3>
+<PRE>
+public static com.webobjects.eoaccess.EOEntity <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.33"><B>entity</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="localInstance(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+localInstance</H3>
+<PRE>
+public <A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.41"><B>localInstance</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/virtualtables/_Table.html#localInstance(com.webobjects.eocontrol.EOEditingContext)">localInstance</A></CODE> in class <CODE><A HREF="../../../net/global_village/virtualtables/_Table.html" title="class in net.global_village.virtualtables">_Table</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="rows()"><!-- --></A><H3>
+rows</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.56"><B>rows</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>net.global_village.virtualtables.VirtualRow</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setRows(com.webobjects.foundation.NSMutableArray)"><!-- --></A><H3>
+setRows</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.63"><B>setRows</B></A>(com.webobjects.foundation.NSMutableArray&nbsp;aValue)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addToRows(net.global_village.virtualtables.VirtualRow)"><!-- --></A><H3>
+addToRows</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.73"><B>addToRows</B></A>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;object)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeFromRows(net.global_village.virtualtables.VirtualRow)"><!-- --></A><H3>
+removeFromRows</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.88"><B>removeFromRows</B></A>(<A HREF="../../../net/global_village/virtualtables/VirtualRow.html" title="class in net.global_village.virtualtables">VirtualRow</A>&nbsp;object)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="rows(com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray, boolean)"><!-- --></A><H3>
+rows</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.109"><B>rows</B></A>(com.webobjects.eocontrol.EOQualifier&nbsp;qualifier,
+                                              com.webobjects.foundation.NSArray&nbsp;sortOrderings,
+                                              boolean&nbsp;fetch)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>qualifier</CODE> - optional EOQualifier restricting the ${relationship.pluralName} to return<DD><CODE>sortOrderings</CODE> - optional list of EOSortOrdering to order the returned ${relationship.pluralName} by<DD><CODE>fetch</CODE> - true if fresh objects should be fetched from the database
+<DT><B>Returns:</B><DD>${relationship.pluralName} matching qualifier, ordered by sortOrderings</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchAllVirtualTables(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+fetchAllVirtualTables</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.154"><B>fetchAllVirtualTables</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in
+<DT><B>Returns:</B><DD>all instances of VirtualTables in editingContext</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchAllVirtualTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+fetchAllVirtualTables</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.168"><B>fetchAllVirtualTables</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                                      com.webobjects.foundation.NSArray&nbsp;sortOrderings)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>sortOrderings</CODE> - list of EOSortOrdering giving the order
+<DT><B>Returns:</B><DD>all instances of VirtualTables, ordered by sortOrderings in editingContext</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchVirtualTables(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+fetchVirtualTables</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.183"><B>fetchVirtualTables</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                                   com.webobjects.eocontrol.EOQualifier&nbsp;qualifier,
+                                                                   com.webobjects.foundation.NSArray&nbsp;sortOrderings)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>qualifier</CODE> - EOQualfier selecting the objects to return<DD><CODE>sortOrderings</CODE> - list of EOSortOrdering giving the order
+<DT><B>Returns:</B><DD>all instances of VirtualTables matching qualifier, ordered by sortOrderings in editingContext</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchVirtualTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+fetchVirtualTable</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.201"><B>fetchVirtualTable</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyName,
+                                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>keyName</CODE> - key for EOKeyValueQualifier<DD><CODE>value</CODE> - value for EOKeyValueQualifier
+<DT><B>Returns:</B><DD>all instances of VirtualTables where keyName.equals(value), ordered by sortOrderings in editingContext</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchVirtualTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)"><!-- --></A><H3>
+fetchVirtualTable</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.217"><B>fetchVirtualTable</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                             com.webobjects.eocontrol.EOQualifier&nbsp;qualifier)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>qualifier</CODE> - EOQualfier selecting the objects to return
+<DT><B>Returns:</B><DD>single instance of VirtualTables matching qualifier, null if no objects match
+<DT><B>Throws:</B>
+<DD><CODE>EOUtilities.MoreThanOneException</CODE> - if multiple objects matched qualifier</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchRequiredVirtualTable(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+fetchRequiredVirtualTable</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.247"><B>fetchRequiredVirtualTable</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;keyName,
+                                                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>keyName</CODE> - key for EOKeyValueQualifier<DD><CODE>value</CODE> - value for EOKeyValueQualifier
+<DT><B>Returns:</B><DD>single instance of VirtualTables where keyName.equals(value), ordered by sortOrderings in editingContext
+<DT><B>Throws:</B>
+<DD><CODE>EOUtilities.MoreThanOneException</CODE> - if multiple objects matched qualifier</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fetchRequiredVirtualTable(com.webobjects.eocontrol.EOEditingContext, com.webobjects.eocontrol.EOQualifier)"><!-- --></A><H3>
+fetchRequiredVirtualTable</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/virtualtables/VirtualTable.html" title="class in net.global_village.virtualtables">VirtualTable</A> <A HREF="../../../src-html/net/global_village/virtualtables/_VirtualTable.html#line.263"><B>fetchRequiredVirtualTable</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;editingContext,
+                                                     com.webobjects.eocontrol.EOQualifier&nbsp;qualifier)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>editingContext</CODE> - EC to return objects in<DD><CODE>qualifier</CODE> - EOQualfier selecting the objects to return
+<DT><B>Returns:</B><DD>single instance of VirtualTables matching qualifier
+<DT><B>Throws:</B>
+<DD><CODE>com.webobjects.eoaccess.EOObjectNotAvailableException</CODE> - if no objects matchr
+<DD><CODE>EOUtilities.MoreThanOneException</CODE> - if multiple objects matched qualifier</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/_VirtualTable.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/virtualtables/_VirtualStringField.html" title="class in net.global_village.virtualtables"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/virtualtables/_VirtualTimestampField.html" title="class in net.global_village.virtualtables"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/virtualtables/_VirtualTable.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="_VirtualTable.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_net.global_village.virtualtables.Table">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

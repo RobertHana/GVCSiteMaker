@@ -1,0 +1,20 @@
+ParentOrgUnitString: WOString {
+	value = ^website.parentOrgUnit.unitName;
+}
+
+SiteBanner: WOString {
+	value = ^website.banner.bannerText;
+}
+
+SiteLink: WOHyperlink {
+	href = ^website.siteURL;
+}
+
+SiteOwnerString: WOString {
+	value = ^website.owner.userID;
+}
+
+SiteURL: WOString {
+	value = ^website.siteURL;
+}
+

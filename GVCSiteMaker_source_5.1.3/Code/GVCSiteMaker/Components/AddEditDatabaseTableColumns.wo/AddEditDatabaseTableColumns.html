@@ -1,0 +1,172 @@
+<webobject name = "AjaxUpdateArea">
+  <table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+    <tr>
+      <td class = "screenTitleContainer">
+        <div>
+          Modify Fields: <span class = "highlightedText"><webobject name = "TableNameString"/></span>
+          <div class = "createNewItemLinkContainer">
+            <webobject name = "CreateNewFieldDialogOpener">
+              <img src = "/GVCSiteMaker/Images/add.png" alt = "Add Data Table Column" border = "0" style = "position:relative; top:3px;" />
+              <b>Create New Field</b>
+            </webobject>
+          </div>
+        </div>
+      </td>
+      <td align = "right" valign = "top" class = "helpButtonContainer">
+        <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+      </td>
+    </tr>
+  </table>
+
+
+  <webobject name = "ConfigPageForm">
+    <table class = "settingsTableSingleItemHeader">
+      <tr>
+        <td valign = "top" align = "left">
+          <webobject name="DataTableListHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Data Tables" border = "0" style = "position:relative; top:3px;" />Back to Data Tables</webobject>
+        </td>
+        <td align = "right" valign = "top">
+          <webobject name = "CountOfUserDefinedFieldsString" /> User-Defined Fields<br />
+        </td>
+      </tr>
+    </table>
+
+    <table cellpadding = "2" cellspacing = "0" border = "0">
+      <tr>
+        <td valign = "bottom" class = "dtFieldNameListHeading">Name</td>
+        <td valign = "bottom" class = "dtFieldTypeListHeading">Type</td>
+        <td valign = "bottom" class = "dtFieldDescriptionListHeading">Description</td>
+        <td valign = "bottom" class = "dtFieldActionListHeading">Action</td>
+      </tr>
+    </table>
+
+    <webobject name = "ObserveContainer">
+      <webobject Name = "ColumnRepetition">
+        <table cellpadding = "2" cellspacing = "0" border = "0">
+          <tr>
+            <td valign = "middle" class = "dtFieldNameInList">
+              <strong>
+                <webobject name = "ColumnNameEditor">
+                  <webobject name = "EditColumnNameView">
+                    <webobject name = "EditColumnNameAction">
+                      <webobject name="ColumnNameString"/>
+                    </webobject>
+                  </webobject>
+                  <webobject name = "EditColumnNameEdit">
+                    <webobject name = "ColumnNameTextField"/>
+                    <script>$('<webobject name = "ColumnNameTextFieldID"/>').focus();</script>
+                  </webobject>
+                </webobject>
+              </strong>
+            </td>
+
+            <td valign = "middle" class = "dtFieldTypeInList">
+              <webobject name="IsNotCalculatedColumn"><WEBOBJECT NAME="ColumnTypeString"/></webobject name="IsNotCalculatedColumn">
+              <webobject name="IsCalculatedColumn">
+                <webobject name = "CalculatedColumnModalDialogOpener">Edit Calculation</webobject> <br/>
+                <span class="descriptiveText"><WEBOBJECT NAME="ExpressionString"/></span>
+              </webobject name="IsCalculatedColumn">
+            </td>
+
+            <td valign = "middle" class = "dtFieldDescriptionInList">
+              <webobject name = "ColumnDescriptionEditor">
+                <webobject name = "EditColumnDescriptionView">
+                  <webobject name = "EditColumnDescriptionAction">
+                    <webobject name = "ColumnDescriptionString" />
+                  </webobject>
+                </webobject>
+                <webobject name = "EditColumnDescriptionEdit">
+                  <webobject name = "ColumnDescriptionTextField"/>
+                  <script>$('<webobject name = "ColumnDescriptionTextFieldID"/>').focus();</script>
+                </webobject>
+              </webobject>
+            </td>
+
+            <td valign = "middle" class = "dtFieldActionInList">
+              <webobject name="DeleteFieldModalDialogOpener">Delete</webobject>
+            </td>
+          </tr>
+        </table>
+      </webobject>
+    </webobject>
+  </webobject>
+</webobject>
+
+
+<webobject name = "DeleteColumnErrorModalDialog">
+  This field could not be deleted as it is used as the source for these Lookup fields:<br />
+  <webobject name = "DeleteColumnErrorMessageString"/><br/>
+  <span style="float:left"><webobject name = "DeleteColumnErrorModalDialogOkLink">Ok</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteColumnModalDialog">
+  Are you sure you want to delete the field?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteColumnModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteColumnModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "AddColumnModalDialog">
+  Select a type for the new field<br />
+  <webobject name = "NewFieldForm">
+    <webobject name = "ColumnTypeSelector"/>
+    <webobject name = "ColumnTypeRequiredString"/>
+    <span style="float:left"><webobject name = "AddColumnModalDialogCancelLink">Cancel</webobject></span>
+    <span style="float:right"><webobject name = "AddColumnModalDialogOkLink">Ok</webobject></span>
+  </webobject>
+</webobject>
+
+
+<webobject name = "CalculatedColumnModalDialog">
+<webobject name = "CalculatedColumnForm"><webobject name = "CalculatedColumnModalDialogUpdateContainer">
+  <table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+    <tr>
+      <td valign = "top" align = "left">
+        <b>Formula:</b>
+      </td>
+      <td>
+        <webobject name = "Expression" />
+        <webobject name = "HasInvalidExpressionConditional">
+          <p class = "warningText"><webobject name = "InvalidExpressionErrorString" /></p>
+          Check for these common errors: 
+          <ul class = "descriptiveText">
+            <li>Field name doesn't exist, or is misspelled (field names are case sensitive and must appear 
+              <em>exactly</em>
+              as shown below)</li>
+            <li>Numeric operators (+, -, *, /) can only be used with fields that have numeric values (not text, dates or checkboxes)</li>
+          </ul>
+        </webobject>
+
+        <webobject name = "HasTestedConditional">
+          <br />
+          <br />
+          <span class = "successText">The formula can be calculated.</span>
+          <br />
+          <span class = "descriptiveText">Example Result:</span>
+          <webobject name = "TestResult" />
+          <br />
+          <span class = "descriptiveText">Result Data Type:</span>
+          <webobject name = "TestResultType" />
+        </webobject>
+      </td>
+    </tr>
+    <tr>
+      <td valign = "top" colspan = "2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "left">
+        <b>Formula Hints:</b>
+      </td>
+      <td> <webobject name = "DACalculatedColumnMessage" /> </td>
+    </tr>
+    <tr>
+      <td>
+        <webobject name = "CancelCalculatedFieldChangesButton" />
+      </td>
+      <td align=right>
+        <webobject name = "TestFormulaButton" />
+        <webobject name = "SaveCalculatedFieldChangesButton" />
+      </td>
+    </tr>
+  </table>
+</webobject></webobject>
+</webobject>

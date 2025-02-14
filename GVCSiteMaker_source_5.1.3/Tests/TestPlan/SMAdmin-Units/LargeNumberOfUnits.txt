@@ -1,0 +1,15 @@
+UnitName	Encompassing Unit	Filespace Quota	Display In List Of Org Units
+AddAWebsiteToMe 	University of Michigan	100	0	
+DeleteMe 	University of Michigan	100	0	
+Quota10	University of Michigan	10	0	
+Quota20	University of Michigan	20	0	
+ChildOfQuota20	Quota20	20	0	
+AnotherChildOfQuota20	Quota20	20	0	
+Quota100	University of Michigan	100	0	
+Testa	University of Michigan	100	0	
+Testb	University of Michigan	100	0	
+Testc	University of Michigan	100	0	
+Testd	University of Michigan	100	0	
+Teste	University of Michigan	100	0	
+Testf	University of Michigan	100	0	
+Testg	University of Michigan	100	0	

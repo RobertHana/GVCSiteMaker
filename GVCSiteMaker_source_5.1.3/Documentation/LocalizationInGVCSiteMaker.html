@@ -1,0 +1,1381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+  
+  
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+
+
+  
+  
+  
+  <title>Localization in GVC.SiteMaker</title>
+</head>
+
+
+<body>
+
+
+
+
+<h1>Component Localization in GVC.SiteMaker</h1>
+
+
+
+
+<p>The localization used in GVC.SiteMaker does not follow the
+standard
+WebObjects way of having a different .wo resource for each language.
+Instead, all static text is moved from the .java, .html, and .wod files
+into a .strings file. &nbsp;The .java, .html, and .wod files
+contain keys into these .strings files. Each page / component has a
+.strings
+file for each language that is supported.&nbsp;</p>
+
+
+
+
+<p>Language variants are also
+supported, for example English with British English and American
+English variants.</p>
+
+
+
+
+<p>Another important aspect of the localization is support
+for default localizations at the component and page level.
+&nbsp;These default localization can be overridden where the
+component
+or page is used.
+&nbsp;This allows a component to provide&nbsp;default
+localizations while allowing a page that uses that component to provide
+text specific to that page. &nbsp;This also allows applications and
+frameworks to override the localizations in the frameworks that they
+use.</p>
+
+
+
+
+<h2>
+How to Localize a Component</h2>
+
+
+
+
+<p>The steps below&nbsp;will take care of the majority of localization tasks.
+&nbsp;There will be some cases where the strings to be localized are not in
+components. &nbsp;These strings will need to be moved to components so that
+they can be localized.&nbsp; &nbsp;In most cases this will require refactoring
+the code, sometimes extensively.</p>
+<p>To convert a component into a localized component, these
+steps needs to be followed: </p>
+
+
+
+
+<ol>
+
+
+
+
+  <li>Create a language project (.proj folder)</li>
+
+
+
+
+  <li>Create a .strings file with the same name
+as the component.</li>
+  <li>Change the parent of the class</li>
+
+
+
+
+  <li>Move all static strings from the .html file&nbsp;to the
+.strings
+file and replace them&nbsp;with WOStrings that reference the value
+in
+the .strings file.</li>
+
+
+
+
+  <li>Move all static strings&nbsp;from the .wod
+file&nbsp;to the .strings file
+and replace them&nbsp;with bindings that reference the value in the
+.strings file.</li>
+
+
+
+
+  <li>Move all static strings&nbsp;from the .java
+file&nbsp;to the .strings file
+and replace them&nbsp;with method calls that reference the value in
+the
+.strings file. Sometimes this is more easily done by adding a WOString
+to the .html.</li>
+
+
+
+
+  <li>Handle localization of variable strings.</li>
+
+
+
+
+  <li>Move&nbsp;static resource paths&nbsp;from the .html file&nbsp;to the
+.strings
+file and replace them&nbsp;with dynamic elements&nbsp;that reference the value
+in
+the .strings file.</li>
+
+  <li>Move&nbsp;static&nbsp;esource paths&nbsp;from the .wod
+file&nbsp;to the .strings file
+and replace them&nbsp;with bindings that reference the value in the
+.strings file.</li>
+
+
+
+
+</ol>
+
+
+
+
+<h3>Step 1. Creating a Language Project</h3>
+
+
+
+
+<p>The .strings file needs to live in a Language Project (.lproj
+directory). &nbsp;If one does not already exist for the language
+you
+are localizing to, you will need to create it. &nbsp;The first step
+in
+this is to determine the name that GVC.SiteMaker uses for that
+language. &nbsp;This can be determined by looking in the <span style="font-family: monospace;">CountriesISO3166.plist</span>
+and&nbsp;<span style="font-family: monospace;">LanguagesISO639.plist</span>
+files in the GVCWOExtensions framework. &nbsp;</p>
+
+
+
+
+<p>We will use Portuguese as an example. &nbsp;In the
+languages list we find:</p>
+
+
+
+
+<pre>"pt" = "Portuguese";</pre>
+
+
+
+
+<p>and in the countries list we find</p>
+
+
+
+
+<pre>&nbsp;&nbsp;&nbsp; "BR" = "BRAZIL";<br>&nbsp;&nbsp;&nbsp; "PT" = "PORTUGAL";</pre>
+
+
+
+
+<p>We would create a Portuguese.proj directory for the main
+localizations. &nbsp;To handle the cases where the language use in
+Brazil and Portugal is different, we would
+create&nbsp;Portuguese-BRAZIL.proj
+and&nbsp;Portuguese-PORTUGAL.proj
+for localizations specific to those countries.</p>
+
+
+
+
+<p>The next step is to create the language projects.
+&nbsp;These are simply folders whose name ends in .lproj.
+&nbsp;If this is the first .lproj directory in a project you will
+need to indicate to WOLips that it is a resource. &nbsp;To do
+this,&nbsp;right click on the folder, select WOLips Tools and then
+Include as Resource. &nbsp;Select the option to add all files with
+this extensions. &nbsp;A small R should appear on the icon in the
+Package Explorer.</p>
+
+
+
+
+<p>Sub-projects make project organization easier. &nbsp;It is
+OK to have more than one&nbsp;Portuguese.lproj
+directory in a <span style="font-weight: bold;">project</span>
+provided that each contains different .strings
+files. &nbsp;In GVC.SiteMaker, components are usually organized
+into subprojects (.subproj). &nbsp;Maintenance is easier if each
+sub-project has .lproj files for the components that it contains.</p>
+
+
+
+
+<h3>Step 2. Creating a .strings File</h3>
+
+
+
+
+<p>A strings file is just an ordinary text file that has a name
+that ends in .strings. &nbsp;Inside each language project, create a
+.strings file with the same name
+as the component. Go to the Properties for the file and change the encoding to&nbsp;<span style="font-weight: bold;">UTF-16</span>.
+It must be UTF-16 not UTF-8. &nbsp;With UTF-8, the WOResourceManager
+will not be able to determine the encoding and will likely produce
+strange characters instead of what you desire.</p>
+<p>The format of .strings files is</p>
+
+
+
+
+<pre>{<br>&nbsp; &nbsp; key = "localized string";<br>&nbsp; &nbsp; ...<br>}<br><br></pre>
+
+
+
+
+<h3>Step 3. Change the Parent of the Class</h3>
+
+
+
+
+<p>Components need to inherit directly or indirectly from <span style="font-family: monospace;">net.global_village.woextensions.WOComponent</span>. &nbsp;For example, change</p>
+<pre>public class ChangePasswordPanel extends WOComponent<br><br></pre>
+<pre>to<br></pre>
+<br>
+public class ChangePasswordPanel extends net.global_village.woextensions.WOComponent<br>
+<h3>Step 4. Change Static Strings to WOString</h3>
+
+
+
+
+Now that the language projects and .strings files have been created,
+all static strings in the .html file need to be replaced with WOStrings
+that reference values in the .strings file. <br>
+
+
+
+
+<br>
+
+
+
+
+Static strings like this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">&lt;b&gt;User
+Name:&lt;/b&gt;<br>
+
+
+
+
+<br>
+
+
+
+
+</span>need to be converted into WOStrings that lookup the
+localized
+verison of "User Name". &nbsp;The converted .html would look like
+this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">&lt;b&gt;&lt;WebObject
+name="UserNameTitle"&gt;&lt;/WebObject&gt;:&lt;/b&gt;
+<br>
+
+
+
+
+<br>
+
+
+
+
+</span>The .wod file will have a new entry for this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">UserNameTitle:
+WOString {</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; value = @localize.userName;</span> &nbsp;<br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}<br>
+
+
+
+
+<br>
+
+
+
+
+</span>and the .strings file (for English) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; userName = "User Name";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+The .strings file for Portuguese (please excuse my BableFish
+translation) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+userName = "Nome Do Usu&aacute;rio";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}<br>
+
+
+
+
+</span>
+<h3>Step 5. Move Static Strings&nbsp;From .wod to .strings
+File</h3>
+
+
+
+
+All static strings in the .wod file need to be moved&nbsp;to the
+.strings file and
+replaced with bindings that reference the value in the .strings
+file.<br>
+
+
+
+
+<br>
+
+
+
+
+Bindings like this value binding:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">SubmitButton:
+WOSubmitButton {</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+action = changePassword;</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+value = "Submit";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+Need to be converted into bindings that lookup the localized verison of
+"Submit". &nbsp;The converted .wod would look like this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">SubmitButton:
+WOSubmitButton {</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+action = changePassword;</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+value = @localize.submit;</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+and the .strings file (for English) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; userName = "User Name";<br>
+
+
+
+
+&nbsp; &nbsp; submit = "Submit";<br style="font-family: monospace;">
+
+
+
+
+</span><span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+The .strings file for Portuguese will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+userName = "Nome Do Usu&aacute;rio";<br>
+
+
+
+
+&nbsp; &nbsp; submit = "Sustento";<br style="font-family: monospace;">
+
+
+
+
+</span><span style="font-family: monospace;">}<br>
+
+
+
+
+</span>
+<h3>Step 6. Move Static Strings&nbsp;From java to .strings
+File</h3>
+
+
+
+
+All static strings from the .java file need to me moved to the .strings
+file and replaced them with method calls that reference the value in
+the .strings file. Sometimes this is more easily done by adding a
+WOString to the .html.<br>
+
+
+
+
+<br>
+
+
+
+
+Strings like this call to setMessage():<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">if ((password() ==
+null) || (password().length() &lt; 1) ||</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; (secondPassword() == null) || (secondPassword().length()
+&lt; 1) )</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+setMessage("You cannot use a blank password.");</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+Need to be converted into method calls that lookup the localized
+verison of&nbsp;"You cannot use a blank password." &nbsp;The
+converted
+.java would look like this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">if ((password() ==
+null) || (password().length() &lt; 1) ||</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; (secondPassword() == null) || (secondPassword().length()
+&lt; 1) )</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: monospace;">setMessage(((SMSession)session()).localizedStringInContext(<br>
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; "blankPasswordNotAllowed",
+context()));</span><span style="font-family: monospace;"></span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><span style="font-family: monospace;"></span><br>
+
+
+
+
+<br>
+
+
+
+
+If you have sub-classed net.global_village.woextensions.WOComponent
+this can be written as:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">if ((password() ==
+null) || (password().length() &lt; 1) ||</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; (secondPassword() == null) || (secondPassword().length()
+&lt; 1) )</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: monospace;">setMessage(localizedStringForKey("blankPasswordNotAllowed"));</span><span style="font-family: monospace;"></span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><span style="font-family: monospace;"></span><br>
+
+
+
+
+<br>
+
+
+
+
+and the .strings file (for English) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; userName = "User Name";<br>
+
+
+
+
+&nbsp; &nbsp; submit = "Submit";<br>
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+&nbsp; blankPasswordNotAllowed = "</span><span style="font-family: monospace;">You cannot use a blank
+password.</span><span style="font-family: monospace;">";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+The .strings file for Portuguese will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+userName = "Nome Do Usu&aacute;rio";<br>
+
+
+
+
+&nbsp; &nbsp; submit = "Sustento";<br>
+
+
+
+
+</span><span style="font-family: monospace;">&nbsp;
+&nbsp; blankPasswordNotAllowed</span><span style="font-family: monospace;">&nbsp;= "Voc&ecirc;
+n&atilde;o pode usar uma senha em branco.";<br>
+
+
+
+
+}<br>
+
+<br>
+
+</span>
+<h3>Step 7. Handle Localization of&nbsp;Variable Strings</h3>
+
+This one is easier to demonstrate with an example than to explain. &nbsp;This is from <span style="font-family: monospace;">com.gvcsitemaker.pages.ManageAccessGroups</span>. &nbsp;Here is the binding, it does not look like anything special:<br>
+
+<br>
+
+<span style="font-family: monospace;">GroupTypeStringString: WOString {</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; value =&nbsp;</span><span style="font-family: monospace;">selectedGroup.typeDescription</span><span style="font-family: monospace;">;</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">}</span><br>
+
+<br>
+
+The problem lies in the definition of typeDescription:<br>
+
+<br>
+
+<span style="font-family: monospace;">/**</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;* Convenience method to display user presentable version of Group type.</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;*</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;* @return description of the Group type</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;*/</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">public String typeDescription()</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; return type();</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">}</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;"></span><br>
+
+<span style="font-family: monospace;">type()</span> is a constant used
+by EOF to distinguish between subclasses of the Group entity. &nbsp;As
+such, it is hard coded in English. &nbsp;Because the value of the
+binding needs to be localized and also varies with the data, we can't
+use the standard <span style="font-family: monospace;">@localize</span> method. &nbsp;What we need to do is to first find the value of <span style="font-family: monospace;">selectedGroup.typeDescription</span> and then localize that.<br>
+
+<br>
+
+There is a special syntax that indicates this, <span style="font-family: monospace;">@@localize</span>:<br>
+
+<br>
+
+<span style="font-family: monospace;">GroupTypeStringString: WOString {</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; value =&nbsp;</span><span style="font-family: monospace;">@@localize.</span><span style="font-family: monospace;">selectedGroup.typeDescription</span><span style="font-family: monospace;">;</span><br style="font-family: monospace;">
+
+<span style="font-family: monospace;">}<br>
+
+<br>
+
+We then need to find all of the possible values for </span><span style="font-family: monospace;">selectedGroup.typeDescription</span><span style="font-family: monospace;">&nbsp;and provide localization keys for them:<br>
+
+<br>
+
+&nbsp; &nbsp; LDAP = LDAP;<br>
+
+&nbsp; &nbsp; Configure = Configuration;<br>
+
+&nbsp; &nbsp; etc.<br>
+
+<br>
+
+</span>
+<h3>Step 8. Change Static Resource Paths to Dynamic Elements</h3>
+Static resource paths that reference resource that need to be localized
+(e.g. buttons with English text on them) need to be localized.
+&nbsp;All such static resource paths in the .html file need to be
+replaced with dynamic elements
+that reference values in the .strings file. <br>
+
+
+
+
+<br>
+
+
+
+
+Static resource paths like this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">&lt;img alt="add a new section" border="0" name="html_button_text3" src="<span style="font-weight: bold;">/GVCSiteMaker/Application/addNewSectionButton.jpg</span>" align="right"&gt;<br>
+
+
+
+
+<br>
+
+
+
+
+</span>need to be converted into dynamic elements. &nbsp;The converted .html would look like
+this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">&lt;WebObject
+name="AddNewSectionButton"&gt;&lt;/WebObject&gt;
+<br>
+
+
+
+
+<br>
+
+
+
+
+</span>The .wod file will have a new entry for this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">AddNewSectionButton</span><span style="font-family: monospace;">: WOImage {<br>
+
+</span><span style="font-family: monospace;">&nbsp; &nbsp; alt = @localize.addNewSection;<br>
+
+&nbsp; &nbsp; border = "0";<br>
+
+&nbsp; &nbsp; name = "html_button_text3";<br>
+
+&nbsp; &nbsp; <span style="font-weight: bold;">src = @localize.addNewSectionButton;</span><br>
+
+&nbsp; &nbsp; align = "right";<br>
+
+</span><span style="font-family: monospace;"></span><span style="font-family: monospace;">}<br>
+
+
+
+
+<br>
+
+
+
+
+</span>and the .strings file (for English) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp;&nbsp;</span><span style="font-family: monospace;">addNewSection</span><span style="font-family: monospace;"> = "</span><span style="font-family: monospace;">add a new section</span><span style="font-family: monospace;">";<br>
+
+</span><span style="font-family: monospace;">&nbsp; &nbsp; <span style="font-weight: bold;">addNewSectionButton = "</span></span><span style="font-family: monospace; font-weight: bold;">/GVCSiteMaker/Application/addNewSectionButton.jpg";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+The .strings file for Portuguese (please excuse my BableFish
+translation) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: monospace;">addNewSection</span><span style="font-family: monospace;"> = "adicione uma se&ccedil;&atilde;o nova";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">&nbsp; &nbsp; <span style="font-weight: bold;">addNewSectionButton = "</span></span><span style="font-family: monospace;"><span style="font-weight: bold;">/GVCSiteMaker/Portuguese/Application/addNewSectionButton.jpg</span>";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">}<br>
+
+
+
+
+</span>
+<span style="font-weight: bold;"><br>
+
+Note</span>: The path for English is not changed so that we can avoid
+breaking any existing references to these resources. &nbsp;For other
+languages, the language name is added after <span style="font-family: monospace;"><span style="font-weight: bold;"></span></span><span style="font-family: monospace;"><span style="font-weight: bold;">/GVCSiteMaker/</span></span>&nbsp;in
+the path. &nbsp;These localized resources will need to be created and
+placed in the DocumentRoot folder under the GVCSiteMaker project.<br>
+
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>
+<h3>Step 9.&nbsp;Move Static Paths From .wod to .strings
+File</h3>
+
+These will be handled the same way as static strings in the .wod file. &nbsp;
+
+
+The binding will be replaced with&nbsp;<span style="font-family: monospace;">@localize.key</span> and the path will be moved to the .strings file. &nbsp;Bindings like this <span style="font-family: monospace;">src</span> binding:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">EditHomePage: WOActiveImage <br>
+
+{<br>
+
+&nbsp;&nbsp;&nbsp; src =&nbsp;</span><span style="font-family: monospace;"><span style="font-weight: bold;">"</span></span><span style="font-family: monospace; font-weight: bold;">/GVCSiteMaker/Application/addNewSectionButton.jpg";</span><br>
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; action = addNewSection;<br>
+
+}</span><span style="font-family: monospace;"></span><br>
+
+
+
+
+<br>
+
+
+
+
+Need to be converted into bindings that lookup the localized path to the "configureverison of
+"Submit". &nbsp;The converted .wod would look like this:<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">EditHomePage: WOActiveImage <br>
+
+{<br>
+
+&nbsp;&nbsp;&nbsp; src =&nbsp;</span><span style="font-family: monospace;"><span style="font-weight: bold;"></span></span><span style="font-family: monospace;"><span style="font-weight: bold;">@localize.addNewSectionButton;</span></span><br>
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; action =&nbsp;</span><span style="font-family: monospace;">addNewSection</span><span style="font-family: monospace;">;<br>
+
+}</span><span style="font-family: monospace;"></span><br>
+
+
+
+<span style="font-family: monospace;"></span><br>
+
+
+
+
+<br>
+
+and the .strings file (for English) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp; &nbsp; <span style="font-weight: bold;">addNewSectionButton = "</span></span><span style="font-family: monospace; font-weight: bold;">/GVCSiteMaker/Application/addNewSectionButton.jpg";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;">}</span><br>
+
+
+
+
+<br>
+
+
+
+
+The .strings file for Portuguese (please excuse my BableFish
+translation) will have<br>
+
+
+
+
+<br>
+
+
+
+
+<span style="font-family: monospace;">{</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">&nbsp; &nbsp; <span style="font-weight: bold;">addNewSectionButton = "</span></span><span style="font-family: monospace;"><span style="font-weight: bold;">/GVCSiteMaker/Portuguese/Application/addNewSectionButton.jpg</span>";</span><br style="font-family: monospace;">
+
+
+
+
+<span style="font-family: monospace;"></span><span style="font-family: monospace;">}<br>
+<br>
+</span>
+<h2>Implementation of Localization </h2>
+For some advanced localization tasks, you may need to connect into the
+localization code. &nbsp;This section provides a brief overview of the
+functionality and where it is.<br>
+<br>
+
+
+<h3>Session Based Localization</h3>
+Localization takes places at the user session (WOSession) level. The
+reason for this is that the session knows the user's language
+preferences. This allows it to combine the string to be localized with
+the language preferences to determine the best match.
+
+
+<p>
+The methods providing localization are:
+</p>
+
+<p>
+<strong><tt>public String localizedString(String string, String table, String framework)</tt></strong>
+</p>
+
+<ul>
+  <li>Returns the given string from the indicated <tt>.strings</tt>
+table and framework , localized in the session's language order. If the
+strings table for the current locale does not contain the given string,
+the next locale is tried, and so on. If no locale's contain the given
+string, the string itself is returned.
+  </li>
+  <li>Uses WOResourceManager for localization
+  </li>
+</ul>
+<p>
+<strong><tt>public String localizedString(String string)</tt></strong>
+</p>
+
+<ul>
+  <li>Returns the given string from the file named <i><tt>&lt;Main Bundle Name&gt;</tt></i><tt>.strings</tt>
+in the main (.woa) bundle, localized in the session's language order.
+If the strings table for the current locale does not contain the given
+string, the next locale is tried, and so on. If no locale's contain the
+given string, the string itself is returned.
+  </li>
+  <li>Uses WOResourceManager for localization
+  </li>
+</ul>
+<p>
+<strong><tt>public String localizedStringInContext(String string, WOContext context)</tt></strong><br>
+
+</p>
+
+<ul>
+  <li>Used with <span style="font-family: monospace;">@localize</span> and <span style="font-family: monospace;">@@localize bindings</span>&nbsp;</li>
+  <li>See Localization and Components below</li>
+</ul>
+<p>
+<strong><tt>public String localizedMessage(Throwable exception)</tt></strong>
+</p>
+
+<ul>
+  <li>Returns a localized error message from on the passed exception
+  </li>
+  <li>Works best with EOFValidationException
+  </li>
+  <li>Uses the EOFValidation framework to localize the message for EOFValidationException
+  </li>
+  <li>Uses <tt>Throwable.getLocalizedMessage()</tt> for other types of exceptions
+  </li>
+</ul>
+<p>
+<strong><tt>public boolean localizedEOStringExists(String entityName, String propertyName, String key)</tt></strong>
+</p>
+
+<ul>
+  <li>Returns true if there is a localized string in any of the
+string tables for any of the languages. Languages are searched depth
+first.
+  </li>
+  <li>Cover method for the primary localization existance method for EOFValidation, LocalizationEngine.localizedStringExists(entityName, propertyName, key, languages());
+  </li>
+</ul>
+<p>
+<strong><tt>public boolean localizedEOStringExists(EOEntity entity, String propertyName, String key)</tt></strong>
+</p>
+
+<ul>
+  <li>Returns true if there is a localized string in any of the
+string tables for any of the languages. Languages are searched depth
+first.
+  </li>
+  <li>Cover method for the primary localization existance method for EOFValidation, LocalizationEngine.localizedStringExists(entityName, propertyName, key, languages());
+  </li>
+</ul>
+<p>
+<strong><tt>public String localizedEOString(String entityName, String propertyName, String key)</tt><i>
+</i></strong></p>
+
+<ul>
+  <li>Convenience method
+  </li>
+  <li>Returns localized string on entity for propertyName and key, e.g. Person.firstName.nullNotAllowed
+  </li>
+  <li>Cover method for the primary localization method for EOFValidation LocalizationEngine.localizedString(entityName, propertyName, key, languages());
+  </li>
+</ul>
+<p>
+<strong><tt>public String localizedEOString(EOEntity entity, String propertyName, String key)</tt><i>
+</i></strong></p>
+
+<ul>
+  <li>Convenience method
+  </li>
+  <li>Returns localized string on entity for propertyName and key, e.g. Person.firstName.nullNotAllowed
+  </li>
+  <li>Cover method for the primary localization method for EOFValidation LocalizationEngine.localizedString(entityName, propertyName, key, languages());
+  </li>
+</ul>
+
+
+
+<h3>Localization and Components</h3>
+WOComponent in GVCWOExtensions provides the method <tt>localizedStringForKey(String)</tt> as the primary method for localization. This method delegates the task to <tt>localizedStringInContext(String key, WOContext context)</tt> in WOSession in GVCWOExtensions. localizedStringInContext returns <tt>key</tt>
+localized in the session's language order. The WOContext parameter is
+used to determine the names of the current page and component. 
+
+<p>
+The localized version of <tt>key</tt> is sought under several names in multiple <tt>.strings</tt>
+files. This was done to allow both default translations and highly
+specific overrides. For the example below, think of a page
+(WOComponent) named SearchPage that contains a reusable component
+(WOComponent) named SearchForm. In this SearchForm component, there is
+a WOString that wants to localize the key <tt>firstName</tt>.
+</p>
+
+<p>
+The order of names for the key and the files which are examined are:
+</p>
+
+<p>
+<strong>1. ConfigurationFramework version of a <span class="underline">component specific</span> string defined by the page the component is used on</strong><br>
+Looks for <i>&lt;ComponentName&gt;.&lt;key&gt;</i> in the file <i>&lt;PageName&gt;</i>.strings in the configuration framework's bundle.<br>
+
+e.g. Looks for SearchForm.firstName in the file SearchPage.strings in the configuration framework's bundle.<br>
+
+This allows the configuration framework to provide an override for a
+string that would otherwise be defined in the application, page, or
+component. &nbsp;The configuration framework is specified in &nbsp;our method
+configurationFrameworkName() in WOApplication. &nbsp;For GVC.SiteMaker this
+is GVSMCuston.</p>
+
+<p>
+<strong>2. ConfigurationFramework version of a <span class="underline">generic</span> string defined by the component</strong><br>
+
+Looks for <i>&lt;key&gt;</i> in <i>&lt;ComponentName&gt;</i>.strings in the configuration framework's bundle.<br>
+
+e.g. Looks for firstName in SearchForm.strings in the configuration framework's bundle.<br>
+This
+allows the configuration framework to provide an override for a string
+that would otherwise be defined in the application, page, or component.
+</p>
+
+<p>
+<strong>3. Application version of a <span class="underline">component specific</span> string defined by the page the component is used on</strong><br>
+
+Looks for <i>&lt;ComponentName&gt;.&lt;key&gt;</i> in <i>&lt;PageName&gt;</i>.strings in the main (.woa) bundle.<br>
+
+e.g. Looks for SearchForm.firstName in the file SearchPage.strings in the main (.woa) bundle.<br>
+
+This allows the application to override the default string specified on a page.
+</p>
+
+<p>
+<strong>4. Page version of a <span class="underline">component specific</span> string defined by the page the component is used on</strong><br>
+
+Looks for <i>&lt;ComponentName&gt;.&lt;key&gt;</i> in <i>&lt;PageName&gt;</i>.strings in the page's bundle.<br>
+
+e.g. Looks for SearchForm.firstName in the file SearchPage.strings in the bundle (.woa or .framework) containing <tt>SearchPage.java</tt>.<br>
+
+This allows the page to override the default string specified on a component.
+</p>
+
+<p>
+<strong>5. Application version of a <span class="underline">generic</span> string defined by the component</strong><br>
+
+Looks for <i>&lt;key&gt;</i> in <i>&lt;ComponentName&gt;</i>.strings in the main (.woa) bundle.<br>
+
+e.g. Looks for firstName in SearchForm.strings in the main (.woa) bundle.<br>
+
+This allows the application to override the default string specified on a component.
+</p>
+
+<p>
+<strong>6. Component version of a <span class="underline">generic</span> string defined by the component</strong><br>
+
+Looks for <i>&lt;key&gt;</i> in <i>&lt;ComponentName&gt;</i>.strings in the component's bundle.<br>
+
+e.g. Looks for firstName in SearchForm.strings in the bundle (.woa or .framework) containing <tt>SearchForm.java</tt>.<br>
+
+This allows the component to specify defaults for the localized strings on it.
+</p>
+
+<p>
+<strong>7. If none of the files contain a match, <tt>key</tt> itself is returned.</strong><br>
+
+</p>
+
+
+<br>
+<br>
+<span style="font-family: monospace;">
+</span>
+
+
+</body>
+</html>

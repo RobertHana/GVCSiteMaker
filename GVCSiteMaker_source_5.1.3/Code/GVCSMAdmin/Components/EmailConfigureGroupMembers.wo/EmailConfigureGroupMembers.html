@@ -1,0 +1,104 @@
+<webobject name = "DynamicBody">
+  <webobject name = "MessageForm">
+    <!-- cell padding removed except around HR -->
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h1>Send Message</h1>
+        </td>
+      </tr>
+      <webobject name = "IsSendingMessageConditional">
+        <tr>
+          <td valign = "top" align = "right" style = "padding-right: 2px;"> <webobject name = "SendMessageSubmitButton" /> </td>
+        </tr>
+      </webobject>
+      <tr>
+        <td>
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <webobject name = "IsSendingMessageConditional">
+      <table border = "0" cellspacing = "2" cellpadding = "2" class = "contentTable" style = "width: 100%">
+        <webobject name = "IsMessageCompleteConditional">
+          <tr>
+            <td colspan = "2" align = "CENTER" class = "warningText">Email Failed: Both To: and Subject: are required.</td>
+          </tr>
+        </webobject>
+
+        <webobject name = "IsTextEntryModeConditional">
+          <tr>
+            <td valign = "TOP">
+              <b>To:</b>
+              <br />
+              <i class = "requiredText">(required)</i>
+            </td>
+            <td valign = "TOP">
+              <webobject name = "SendToText" />
+              <webobject name = "InvalidEmailAddressConditional">
+                <br />
+                <span class = "warningText">Error: 
+                  <webobject name = "InvalidAddressesString" />
+                  is not a valid userID format!</span>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+
+        <webobject name = "IsNotTextEntryModeConditional">
+          <tr>
+            <td valign = "TOP">
+              <b>To:</b>
+              <br />
+              <i class = "requiredText">(required)</i>
+            </td>
+            <td align = "left" valign = "middle"> <webobject name = "SendToOwnersCheckBox" />All Site Owners/Co-owners </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align = "left" valign = "middle"> <webobject name = "SendToStyleAdministratorsCheckBox" />All Style Administrators </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align = "left" valign = "middle"> <webobject name = "SendToUnitAdministratorsCheckBox" />All Unit Administrators </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align = "left" valign = "middle"> <webobject name = "SendToSystemAdministratorsCheckBox" />All System Administrators </td>
+          </tr>
+        </webobject>
+
+        <tr>
+          <td valign = "MIDDLE">
+            <b>Subject:</b>
+            <br />
+            <i class = "requiredText">(required)</i>
+          </td>
+          <td valign = "MIDDLE"><webobject name = "SubjectTextField" /></td>
+        </tr>
+        <tr>
+          <td valign = "TOP">
+            <b>Message:</b>
+          </td>
+          <td valign = "TOP"><webobject name = "BodyText" /></td>
+        </tr>
+      </table>
+    </webobject>
+  </webobject>
+  <webobject name = "IsConfirmingMessageConditional">
+    <p class = "coloredBoldText"> Message successfully sent. </p>
+    <webobject name = "HasUserIDsCorrespondingToInvalidAddressesConditional">
+      <p>
+        But the following user IDs were found to be invalid: 
+        <webobject name = "InvalidUserIDsString" />.
+        No message was sent to these users.
+      </p>
+    </webobject>
+  </webobject>
+</webobject>

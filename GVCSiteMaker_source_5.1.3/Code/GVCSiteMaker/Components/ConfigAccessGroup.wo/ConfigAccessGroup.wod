@@ -1,0 +1,71 @@
+DynamicBody: DynamicBodyComponent {
+    pageTitle = pageTitle;
+    isAdmin = false;
+    hasSite = true;
+    pageType = "com.gvcsitemaker.pages.ConfigAccessGroup";
+}
+
+AddButton: WOSubmitButton {
+	action = doneModifyingGroup;
+	value = "Add";
+}
+
+CancelRevisionButton: WOSubmitButton {
+	action = cancelRevision;
+	value = "Cancel";
+}
+
+ConfigurationForm: WOForm {
+	multipleSubmit = true;
+}
+
+CurrentGroupNameString: WOString {
+	value = currentGroup.name;
+}
+
+CurrentGroupNameTextField: WOTextField {
+	value = currentGroup.name;
+	maxLength = 50;
+	size = "50";
+}
+
+GroupEditor: WOSwitchComponent {
+	WOComponentName = groupEditorComponent;
+	currentGroup = currentGroup;
+}
+
+HasValidationErrorConditional: WOConditional {
+	condition = hasValidationErrors;
+}
+
+IsConfigureGroupConditional: WOConditional {
+	condition = canEditGroupName;
+	negate = true;
+}
+
+
+IsExistingGroupConditional: WOConditional {
+	condition = isNewGroup;
+	negate = true;
+}
+
+IsNewGroupConditional: WOConditional {
+	condition = isNewGroup;
+}
+
+IsntConfigureGroupConditional: WOConditional {
+	condition = canEditGroupName;
+}
+
+SaveAndFinishButton: WOSubmitButton {
+	action = doneModifyingGroup;
+	value = "Save & Done";
+}
+
+SaveChangesButton: WOSubmitButton {
+	action = saveChangesToGroup;
+	value = "Save";
+}
+ValidationErrorMessageString: WOString {
+	value = validationErrorMessage;
+}

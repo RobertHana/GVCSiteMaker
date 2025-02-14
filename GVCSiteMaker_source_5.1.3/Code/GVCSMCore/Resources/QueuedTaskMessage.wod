@@ -1,0 +1,22 @@
+details : WOString {
+    value = task.details;
+	escapeHTML = false;    
+}
+
+failureReason : WOString {
+    value = task.failureReason;
+	escapeHTML = false;
+}	
+
+taskType : WOString {
+    value = task.taskType;
+}
+
+owner : WOString {
+    value = task.owner.userID;
+}
+
+createdDate  : WOString {
+    value = task.createdDate;
+    formatter = dateFormatter;
+}

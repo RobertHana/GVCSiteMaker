@@ -1,0 +1,230 @@
+<!--
+  This file is used by to decode the XML packages of Data Access Functionality.
+ -->
+<model>
+	<entity name="com.gvcsitemaker.core.datatablepackage.DataTablePackageAdaptor" xmlTag="package" ignoreUnmappedTags="YES">
+   		<property name="mainTableAdaptor" xmlTag="mainTable" attribute="NO"/>
+   		<property name="relatedTableAdaptors" xmlTag="relatedTable" attribute="NO"/>
+    		<property name="relatedSections" xmlTag="relatedSection" attribute="NO"/>  		
+   	</entity>
+   	
+	<entity name="com.gvcsitemaker.core.datatablepackage.SMVirtualTableAdaptor" xmlTag="mainTable" ignoreUnmappedTags="YES">
+   		<property name="table.name" xmlTag="name" attribute="YES"/>
+   		<property name="table.textDescription" xmlTag="textDescription" attribute="YES"/>   		
+   		<property name="table.userColumns" xmlTag="column" attribute="NO"/>
+   		<property name="packagedRows" xmlTag="rowData" attribute="NO"/>   		
+   	</entity>
+   	
+ 	<entity name="com.gvcsitemaker.core.datatablepackage.SMVirtualTableAdaptor" xmlTag="relatedTable" ignoreUnmappedTags="YES">
+   		<property name="table.name" xmlTag="name" attribute="YES"/>
+   		<property name="table.textDescription" xmlTag="textDescription" attribute="YES"/>   		
+   		<property name="table.userColumns" xmlTag="column" attribute="NO"/>
+   		<property name="packagedRows" xmlTag="rowData" attribute="NO"/>   		
+   	</entity>  
+   	  	
+   	<!-- FOR COLUMNS -->
+    <entity name="net.global_village.virtualtables.VirtualColumn" xmlTag="column" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="textDescription" xmlTag="textDescription" attribute="YES"/>
+     	<property name="restrictingValue" xmlTag="restrictingValue" attribute="YES"/>
+       	<property name="type.name" xmlTag="type" attribute="YES"/>
+   	</entity>	
+    <entity name="net.global_village.virtualtables.VirtualLookupColumn" xmlTag="column" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="textDescription" xmlTag="textDescription" attribute="YES"/>
+     	<property name="restrictingValue" xmlTag="restrictingValue" attribute="YES"/>
+       	<property name="type.name" xmlTag="type" attribute="YES"/>
+     	<property name="lookupColumn.table.name" xmlTag="lookupTable" attribute="YES"/>      	  	
+     	<property name="lookupColumn.name" xmlTag="lookupColumn" attribute="YES"/>
+     	<property name="lookupColumn.type.name" xmlTag="lookupColumnType" attribute="YES"/>     
+   	</entity>   	
+    <entity name="net.global_village.virtualtables.VirtualCalculatedColumn" xmlTag="column" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="textDescription" xmlTag="textDescription" attribute="YES"/>
+     	<property name="restrictingValue" xmlTag="restrictingValue" attribute="YES"/>
+       	<property name="type.name" xmlTag="type" attribute="YES"/>
+     	<property name="expression" xmlTag="expression" attribute="YES"/>      	  	
+   	</entity>
+    <entity name="com.gvcsitemaker.core.databasetables.VirtualUserColumn" xmlTag="column" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="textDescription" xmlTag="textDescription" attribute="YES"/>
+     	<property name="restrictingValue" xmlTag="restrictingValue" attribute="YES"/>
+       	<property name="type.name" xmlTag="type" attribute="YES"/>
+   	</entity>   
+    <entity name="com.gvcsitemaker.core.databasetables.VirtualSiteFileColumn" xmlTag="column" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="textDescription" xmlTag="textDescription" attribute="YES"/>
+     	<property name="restrictingValue" xmlTag="restrictingValue" attribute="YES"/>
+       	<property name="type.name" xmlTag="type" attribute="YES"/>
+   	</entity>     		   	
+ 	
+   	   	
+   	<!-- FOR SECTIONS -->
+     <entity name="com.gvcsitemaker.core.Section" xmlTag="relatedSection" ignoreUnmappedTags="YES">
+     	<property name="name" xmlTag="name" attribute="YES"/>
+     	<property name="details" xmlTag="details" attribute="YES"/>     	
+     	<property name="normalName" xmlTag="normalName" attribute="YES"/>
+     	<property name="mimeType" xmlTag="mimeType" attribute="YES"/>
+     	<property name="isNavigable.booleanValue" xmlTag="isNavigable" attribute="YES"/>
+     	<property name="type.key" xmlTag="typeKey" attribute="YES"/>
+        	<property name="sectionOrder" xmlTag="sectionOrder" attribute="YES"/>	
+    		<property name="component" xmlTag="component" attribute="NO"/>     	
+   	</entity>	  	
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccess" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>  
+   	
+    <!-- DATA ACCESS MODES -->  	
+    <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessAddMode" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="canEdit" xmlTag="canEdit" attribute="YES"/>
+     	<property name="useCustomTemplate" xmlTag="useCustomTemplate" attribute="YES"/>     	
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="template" xmlTag="template" attribute="NO"/>
+         <property name="orderedComponents" xmlTag="component" attribute="NO"/>	
+   	</entity>   
+	<entity name="com.gvcsitemaker.core.pagecomponent.DataAccessSingleMode" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="canEdit" xmlTag="canEdit" attribute="YES"/>
+     	<property name="useCustomTemplate" xmlTag="useCustomTemplate" attribute="YES"/>     	
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="template" xmlTag="template" attribute="NO"/>    	
+         <property name="orderedComponents" xmlTag="component" attribute="NO"/>	
+   	</entity>    
+	<entity name="com.gvcsitemaker.core.pagecomponent.DataAccessListMode" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="canEdit" xmlTag="canEdit" attribute="YES"/>
+     	<property name="useCustomTemplate" xmlTag="useCustomTemplate" attribute="YES"/>     	
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="template" xmlTag="template" attribute="NO"/>    	
+         <property name="orderedComponents" xmlTag="component" attribute="NO"/>	
+   	</entity> 
+	<entity name="com.gvcsitemaker.core.pagecomponent.DataAccessSearchMode" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="canEdit" xmlTag="canEdit" attribute="YES"/>
+     	<property name="useCustomTemplate" xmlTag="useCustomTemplate" attribute="YES"/>  
+     	<property name="searchFormType" xmlTag="searchFormType" attribute="YES"/>  
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="template" xmlTag="template" attribute="NO"/>    	
+         <property name="orderedComponents" xmlTag="component" attribute="NO"/>	
+   	</entity> 
+	<entity name="com.gvcsitemaker.core.pagecomponent.DataAccessImportMode" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="canEdit" xmlTag="canEdit" attribute="YES"/>
+     	<property name="useCustomTemplate" xmlTag="useCustomTemplate" attribute="YES"/>  
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="databaseTable.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="template" xmlTag="template" attribute="NO"/>    	
+         <property name="orderedComponents" xmlTag="component" attribute="NO"/>	
+   	</entity>  
+   	
+    <!-- DATA ACCESS COLUMNS -->  	
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessBooleanColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>   	 
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessCalculatedColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>
+    <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessLookupColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+       	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+     	<property name="defaultField.value" xmlTag="defaultFieldValue" attribute="YES"/>      	
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>  
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessNumberColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+       	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>  
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessRecordIDColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity> 
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessSiteFileColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>    	    	
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessStringColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>     
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessUserColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>    	
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessTimestampColumn" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>    
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessColumnSearchSortOrder" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity>
+     <entity name="com.gvcsitemaker.core.pagecomponent.DataAccessColumnSearchValue" xmlTag="component" ignoreUnmappedTags="YES">
+     	<property name="bindings" xmlTag="bindings" attribute="YES"/>
+     	<property name="componentType" xmlTag="componentType" attribute="YES"/>
+     	<property name="subType" xmlTag="subType" attribute="YES"/>
+     	<property name="column.table.name" xmlTag="databaseTableName" attribute="YES"/>
+     	<property name="column.name" xmlTag="columnName" attribute="YES"/>
+     	<property name="componentOrder" xmlTag="componentOrder" attribute="YES"/>
+         <property name="toChildren" xmlTag="component" attribute="NO"/>	
+   	</entity> 
+ </model>

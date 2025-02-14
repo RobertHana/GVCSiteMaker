@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+  
+  <title>Building GVC Frameworks From Source</title>
+</head>
+
+
+<body>
+
+
+<h1>Introduction</h1>
+
+
+<p>
+This document describes how to use Ant and / or Eclipse to build the
+Open Source Global Village Consulting, Inc. (GVC) frameworks from
+source. The easiest way to do this is by using Ant at the command line.
+Setting these up in Eclipse, so that you can work on the source code,
+requires more effort.
+<br>
+
+
+<br>
+
+
+<font color="red"><b>Note: </b></font>Some
+of the documents referenced are for our
+own internal use and may have references that you are unfamiliar with
+or which are not
+publicly available. We will try to note where this happens. In
+particular, you will see references to StarTeam. StarTeam
+is the revision control system that we use internally. &nbsp;There
+is no public access. It is like CVS. When you see StarTeam just think
+"CVS" or "source repository".
+</p>
+
+
+<h1>Requirements</h1>
+
+
+These frameworks have the following requirements.
+<h2>Java <a target="_new" href="http://java.sun.com/javase/downloads/index_jdk5.jsp">1.5.0</a>
+or More Recent Runtime</h2>
+
+
+These frameworks will not run with prior verions but at present they do not use any new syntatic features from Java 5.
+<h2>Licensed version of <a target="_new" href="http://www.webobjects.com">WebObjects</a> 5.3.3
+or More Recent</h2>
+
+
+A deployment installation of WebObjects will work for Ant builds (and
+for Eclipse builds, but you won't have any of the other development
+tools such as WOBuilder and EOModeler). &nbsp;Apple now provides
+WebObjects free with the Xcode developer tools. &nbsp;That is the
+reccomended way to get a copy for OS X. &nbsp;Windows user are
+pretty
+much left to their own devices. &nbsp;It is possible, but not easy,
+to
+extract the OS X install and get it to run on Windows. &nbsp;Join
+the
+Apple Developer Connection and&nbsp;<a href="http://developer.apple.com/tools/xcode/">Download the
+Xcode Developer Tools</a>.
+<ul>
+
+
+</ul>
+
+
+<h2>SQL Database with JDBC connectivity (not required for all
+frameworks)</h2>
+The frameworks will work with any SQL database with JDCB connectivity.
+&nbsp;That said, using FrontBase as we do will make your life easier.
+&nbsp;The frameworks are most often tested with <a target="_new" href="http://www.FrontBase.com">FrontBase</a>
+and only SQL scripts for that database are provided. <br>
+<br>
+<a target="_new" href="http://developer.apple.com/documentation/WebObjects/UsingEOModeler/4WorkingWithAttributes/chapter_4_section_4.html">EOPrototypes</a> are provided for MySQL, DB2, and Oracle. These
+may not be fully up to date and / or tested. If not using FrontBase,
+you will need to generate your
+own SQL scripts to use in place of the FrontBase ones.&nbsp; Other
+databases
+can be supported by
+the addition &nbsp;(updating) of a database specific set of
+EOPrototypes to the
+GVCEOPrototypes project.
+<h2>eoGenerator</h2>
+
+
+If you want to regenerate the Java files from the models, you will need
+<a target="_new" href="http://www.rubicode.com/Software/EOGenerator/">eoGenerator</a>,
+otherwise it is not required.
+<h2>Project Wonder</h2>
+
+
+The GVCWOExtensions framework relys on the Ajax and ERExtensions
+frameworks from&nbsp;<a href="http://wonder.sourceforge.net/">Project
+Wonder</a>.
+Copies of the needed frameworks are included in source form with the
+GVC frameworks. &nbsp;This is not all of Project Wonder, just the bits
+that we require. &nbsp;We ship the versions that we have been using.
+&nbsp;Can you install more up to date versions if you wish but there
+exists the possibility of this causing problems.
+<h1>Installation</h1>
+
+
+<h2>Download and Unpack the Source</h2>
+
+
+<p>
+If you are reading this, you have probably already done this. If not,
+the tar balls
+of the source can be found on <a target="_blank" href="http://sourceforge.net/projects/gvcsitemaker/">SourceForge</a>.
+At this time we are not putting the individual files into CVS on
+SourceForge. We are making available tarballs of the source projects
+and also pre-built versions.
+<br>
+
+
+<br>
+
+
+<font color="red"><b>Hint: </b></font>Don't
+use paths with spaces in them.
+</p>
+
+
+<h2>Install and Configure Ant</h2>
+
+
+<p>
+We use Ant for deployment builds so even if you are planning on using
+Eclipse you
+probably want to do this step. Our <a target="_blank" href="UsingEclipse/AntReadMe.html">
+internal instructions</a> on installing and configuring Ant will
+help you. There is
+more in that document that you strictly need, but if you are curious
+about how it
+all works, or if you want to set up your own projects like this, it is
+all in there.
+You will need to follow the <b>Installing</b> and <b>Configuring
+Your Installation</b>
+sections at the top. Where it talks about <i>JassDistribution
+and GVCAntTasks projects checked out from StarTeam</i> you will
+need to get the jar files from the pre-built
+versions supplied with the source code.
+<br>
+
+
+<br>
+
+
+<font color="red"><b>Hint: </b></font>There
+is useful information on building and
+debugging at the bottom of the internal instructions.
+</p>
+
+
+<h2>Install and Configure Eclipse</h2>
+
+
+<p>
+You can skip this step if you won't be using Eclipse. If you want to
+make code changes or run the unit tests then you probably want to use
+Eclipse. Our <a target="_blank" href="UsingEclipse/EclipseReadMe.html">
+internal instructions</a> on installing and configuring Eclipse
+will help you. Again, there is more in that document that you strictly
+need. You can skip the
+standard formatting part and the Jass builders are already in these
+projects.
+You will need to do pretty much everything else.
+</p>
+
+
+<h1>Building With Ant</h1>
+
+
+<p>
+Once everything is installed, this is easy. Just cd into the directory
+above
+the framework projects and type:<br>
+
+
+<code>ant build</code><br>
+
+
+<br>
+
+
+You can build contracted (with Design by Contract enabled) versions
+with :<br>
+
+
+<code>ant build_dbc</code><br>
+
+
+<br>
+
+
+You can do a deep clean on the projects with:<br>
+
+
+<code>ant clean</code>
+<br>
+
+
+<br>
+
+
+<font color="red"><b>Note: </b></font>
+Building the frameworks
+will install them into /Library/Frameworks
+($NEXT_ROOT/Local/Library/Frameworks on Windows).
+</p>
+
+
+<h1>Building With Eclipse</h1>
+
+
+<p>
+The frameworks are build order dependent. &nbsp;You wll need to do
+a full
+build with Ant (see above) so that there are installed versions before
+you being
+importing the projects into your workspace. </p>
+
+
+<p>
+You will need to import, refresh, build, and refresh again each project
+in this order:
+</p>
+
+
+<ul>
+  <li>GVCJars</li>
+
+  <li>GVCFoundation</li>
+
+  <li>GVCThreadedTasks</li>
+
+  <li>GVCEOPrototypes</li>
+
+  <li>GVCTestEOModelBase</li>
+
+  <li>GVCTestEOModelSubClass</li>
+
+
+  <li>GVCEOFExtensions</li>
+
+
+  <li>GVCEOFValidation</li>
+
+
+  <li>GVCGenericObjects</li>
+
+
+  <li>GVCSecurity</li>
+
+
+  <li>GVCVirtualTables</li>
+
+
+  <li>GVCKerberos - <b>see README.TXT file!</b></li>
+
+
+  <li>GVCMail</li>
+
+
+  <li>WOOgnl</li>
+
+
+  <li>GVCWOExtensions</li>
+
+
+  <li>GVCJNDIAdditions</li>
+
+
+</ul>
+
+
+If you have build problems, verify that you have the <a target="_blank" href="UsingEclipse/EclipseReadMe.html">
+classpath variables set</a>, the referenced jar files are
+present, try refreshing the projects, and restarting Eclipse.
+<p></p>
+
+
+<h1>Running Unit Tests With Eclipse</h1>
+
+
+<p>
+There is some one time setup to do before starting to run any of the
+tests:
+</p>
+
+
+<ul>
+
+
+  <li>Update the test configuration in <a target="_blank" href="GVCEOFExtensions/TestConfiguration.plist">TestConfiguration.plist</a>
+in the GVCEOFExtensions project.</li>
+
+
+  
+
+  <li>Use FrontBaseManager to run the&nbsp;script GVCTest.sql to
+create and populate the database.</li>
+
+
+  <li>Follow the instructions in the README.TXT file in each
+project (if any) to create and special conditions needed.</li>
+
+
+</ul>
+
+
+<p><font color="red"><b>NOTE:</b></font>
+some of the tests will fail unless the code has been built with DBC. If
+the tests are failing, do a clean from Ant (the Eclipse clean is not as
+thorough) and then build with DBC, either from Ant or Eclipse.</p>
+
+
+There are some special things that need to be done when setting up the
+jUnit launcher
+for these frameworks. Here is a quick How To:
+<ol>
+
+
+  <li>Select the project in the Navigator or Package Explorer
+panel.</li>
+
+
+  <li>Pull down the <i>Run</i> menu and pick <i>Run...</i></li>
+
+
+  <li>Select the <i>JUnit</i> node under <i>Configurations</i>
+and click <i>New</i> at the bottom</li>
+
+
+  <li>Select <i>Run a Single Test</i> and then click
+the <i>Search</i> button</li>
+
+
+  <li>Find the <i>AllTestsSuite</i> class, <b>make
+sure you select it from the correct project!</b></li>
+
+
+  <li>On the <i>Arguments</i> tab, deselect the <i>Use
+default working directory</i> option</li>
+
+
+  <li>Click the <i>Workspace</i> button and navigate
+to the Java directory under ProjectName.framework. e.g. <b>${workspace_loc:GVCMail/GVCMail.framework/Resources/Java}</b></li>
+
+
+</ol>
+
+
+<p></p>
+
+
+</body>
+</html>

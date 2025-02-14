@@ -1,0 +1,11 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = setTemplate;
+}
+
+TemplateExistsConditional: WOConditional {
+	condition = rootOrgUnit.websiteCreationMessage;
+}

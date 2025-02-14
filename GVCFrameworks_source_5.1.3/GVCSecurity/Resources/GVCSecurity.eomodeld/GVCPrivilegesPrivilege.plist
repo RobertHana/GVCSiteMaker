@@ -1,0 +1,36 @@
+{
+    attributes = (
+        {
+            columnName = "INCLUDED_PRIVILEGE_ID"; 
+            name = includedPrivilegeId; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "PRIVILEGE_ID"; name = privilegeId; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (privilegeId, includedPrivilegeId); 
+    className = EOGenericRecord; 
+    classProperties = (includedPrivilege, includingPrivilege); 
+    externalName = "GVC_PRIVILEGES_PRIVILEGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (includedPrivilege, includingPrivilege); }; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = GVCPrivilegesPrivilege; 
+    primaryKeyAttributes = (privilegeId, includedPrivilegeId); 
+    relationships = (
+        {
+            destination = GVCPrivilege; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = privilegeId; sourceAttribute = includedPrivilegeId; }); 
+            name = includedPrivilege; 
+        }, 
+        {
+            destination = GVCPrivilege; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = privilegeId; sourceAttribute = privilegeId; }); 
+            name = includingPrivilege; 
+        }
+    ); 
+    userInfo = {modificationDate = "2001-05-29 22:53:33 +0000"; }; 
+}

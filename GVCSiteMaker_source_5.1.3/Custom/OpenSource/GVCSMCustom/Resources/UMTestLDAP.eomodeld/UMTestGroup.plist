@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = mail; 
+            externalType = "Directory String"; 
+            name = externalMembers; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = member; 
+            externalType = DN; 
+            name = members; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = cn; 
+            externalType = "Directory String"; 
+            name = name; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = relativeDistinguishedName; 
+            externalType = relativeDistinguishedName; 
+            name = relativeDistinguishedName; 
+            valueClassName = NSString; 
+            writeFormat = "cn=<name>"; 
+        }
+    ); 
+    attributesUsedForLocking = (name, relativeDistinguishedName, members, externalMembers); 
+    className = com.gvcsitemaker.core.LDAPGroupRecord; 
+    classProperties = (name, members, externalMembers); 
+    externalName = rfc822MailGroup; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {_nameInObjectStore = group; }; 
+    name = UMTestGroup; 
+    primaryKeyAttributes = (relativeDistinguishedName); 
+}

@@ -1,0 +1,391 @@
+#macro( genericClass $specificClass )
+#if($specificClass == "Integer" || $specificClass == "Long")Number#else$specificClass#end
+#end
+
+#if ($entity.superclassPackageName)
+package $entity.superclassPackageName;
+#end
+
+
+import java.util.*;
+
+import com.webobjects.eoaccess.*;
+import com.webobjects.eocontrol.*;
+import com.webobjects.foundation.*;
+
+import net.global_village.foundation.*;
+
+
+/**
+#if ($entity.documentation) * ${entity.documentation}
+#end
+ *
+ * Created by Velocity Generator.<br>
+ * DO NOT EDIT.  Make changes to ${entity.classNameWithOptionalPackage}.java instead.
+ *<p>
+ * Copyright (c) ${copyrightYear} ${copyrightBy}   All rights reserved.
+ *</p> 
+ * @version $Revision$
+ */  
+public abstract class ${entity.prefixClassNameWithoutPackage} extends #if ($entity.parentSet)${entity.parent.classNameWithDefault}#elseif ($EOSuperClass)${EOSuperClass}#else EOGenericRecord#end 
+
+{
+
+
+    public static final String ${entity.name.toUpperCase()}_ENTITY_NAME = "${entity.name}";
+
+#foreach ($attribute in $entity.sortedClassAttributes)
+#if (!$attribute.inherited)
+    public static final String ${attribute.name.toUpperCase()} = "$attribute.name";
+#end
+#end
+
+#foreach ($relationship in $entity.sortedClassRelationships)
+#if (!$relationship.inherited)
+    public static final String ${relationship.name.toUpperCase()} = "$relationship.name";
+#end
+#end  
+
+
+     public static EOEntity entity(EOEditingContext editingContext) 
+    {
+        /** require [valid_ec] editingContext != null;   **/
+        return EOUtilities.entityNamed(editingContext, "${entity.name}");
+        /** ensure [valid_result] Result != null;  **/
+    }
+   
+
+#if (!$entity.partialEntitySet)
+    public $entity.classNameWithOptionalPackage localInstance(EOEditingContext editingContext) 
+    {
+        /** require [valid_ec] editingContext != null;  
+                    [saved_eo] ! globalID().isTemporary();
+         **/
+        return ($entity.classNameWithOptionalPackage)EOUtilities.localInstanceOfObject(editingContext, this);
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+
+
+#end
+#foreach ($attribute in $entity.sortedClassAttributes)
+#if (!$attribute.inherited)
+#if ($attribute.userInfo.ERXConstantClassName)
+    /**
+#if ($attribute.documentation)     * ${attribute.documentation}
+#end
+     *
+     * @return $attribute.userInfo.ERXConstantClassName
+     
+     */
+    public $attribute.userInfo.ERXConstantClassName ${attribute.name}() 
+    {
+        Number value = (Number)storedValueForKey("$attribute.name");
+        return ($attribute.userInfo.ERXConstantClassName)value;
+    }
+
+
+
+    public void set${attribute.capitalizedName}($attribute.userInfo.ERXConstantClassName value) 
+    {
+        takeStoredValueForKey(value, "$attribute.name");
+    }
+    
+    
+#else
+    /**
+#if ($attribute.documentation)     * ${attribute.documentation}
+#end
+     *
+     * @return #genericClass($attribute.javaClassName)
+     
+     */
+    public #genericClass($attribute.javaClassName) ${attribute.name}() {
+        return (#genericClass($attribute.javaClassName)) storedValueForKey("$attribute.name");
+    }
+
+
+
+    public void set${attribute.capitalizedName}(#genericClass($attribute.javaClassName) value) 
+    {
+        takeStoredValueForKey(value, "$attribute.name");
+    }
+    
+    
+#end
+
+#end
+#end
+#foreach ($relationship in $entity.sortedClassToOneRelationships)
+#if (!$relationship.inherited) 
+    /**
+#if ($relationship.documentation)     * ${relationship.documentation}
+#end
+     *
+     * @return $relationship.actualDestination.classNameWithDefault
+     
+     */
+    public $relationship.actualDestination.classNameWithDefault ${relationship.name}() 
+    {
+        return ($relationship.actualDestination.classNameWithDefault)storedValueForKey("$relationship.name");
+    }
+
+
+
+    public void set${relationship.capitalizedName}($relationship.actualDestination.classNameWithDefault value) 
+    {
+        /** require [same_ec] value == null || editingContext() == value.editingContext();  **/
+        takeStoredValueForKey(value, "$relationship.name");
+    }
+  
+  
+  
+#end
+#end
+#foreach ($relationship in $entity.sortedClassToManyRelationships)
+#if (!$relationship.inherited) 
+    /**
+#if ($relationship.documentation)     * ${relationship.documentation}
+#end
+     *
+     * @return $relationship.actualDestination.classNameWithDefault
+     */
+    public NSArray ${relationship.name}() 
+    {
+        return (NSArray)storedValueForKey("${relationship.name}");
+    }
+
+
+
+    public void set${relationship.capitalizedName}(NSMutableArray aValue) 
+    {
+        /** require [valid_value] aValue != null;
+                    [same_ec] (forall i : {0 .. aValue.count()-1} # editingContext() == (($relationship.actualDestination.classNameWithDefault)aValue.objectAtIndex(i)).editingContext());  
+         **/
+        takeStoredValueForKey(aValue, "${relationship.name}");
+    }
+
+
+
+    public void addTo${relationship.capitalizedName}($relationship.actualDestination.classNameWithDefault object) 
+    {
+        /** require [same_ec] editingContext() == object.editingContext();  
+                    [valid_object] object != null;
+                    [not_in_${relationship.name}] ! ${relationship.name}().containsObject(object);     
+         **/
+        NSMutableArray array = (NSMutableArray)${relationship.name}();
+
+        willChange();
+        array.addObject(object);
+        /** ensure [added_to_${relationship.name}] ${relationship.name}().containsObject(object);        **/
+    }
+
+
+
+    public void removeFrom${relationship.capitalizedName}($relationship.actualDestination.classNameWithDefault object) 
+    {
+        /** require [same_ec] editingContext() == object.editingContext();  
+                    [valid_object] object != null;
+                    [in_${relationship.name}] ${relationship.name}().containsObject(object);     
+         **/
+        NSMutableArray array = (NSMutableArray)${relationship.name}();
+
+        willChange();
+        array.removeObject(object);
+        /** ensure [removed_from_${relationship.name}] ! ${relationship.name}().containsObject(object);        **/
+    }
+
+
+
+	/**
+	 * @param qualifier optional EOQualifier restricting the ${relationship.pluralName} to return
+	 * @param sortOrderings optional list of EOSortOrdering to order the returned ${relationship.pluralName} by
+#if ($relationship.inverseRelationship && !$relationship.flattened && $relationship.inverseRelationship.classProperty)	 * @param fetch true if fresh objects should be fetched from the database#end
+
+	 * @return ${relationship.pluralName} matching qualifier, ordered by sortOrderings
+     */
+    public NSArray ${relationship.name}(EOQualifier qualifier, NSArray sortOrderings#if ($relationship.inverseRelationship && !$relationship.flattened && $relationship.inverseRelationship.classProperty), boolean fetch#end) 
+    {
+        NSArray results;
+#if ($relationship.inverseRelationship && !$relationship.flattened && $relationship.inverseRelationship.classProperty)
+        if (fetch) 
+        {
+            EOQualifier fullQualifier;
+#if (${relationship.actualDestination.genericRecord})
+            EOQualifier inverseQualifier = new EOKeyValueQualifier("${relationship.inverseRelationship.name}", EOQualifier.QualifierOperatorEqual, this);
+#else
+            EOQualifier inverseQualifier = new EOKeyValueQualifier(${relationship.actualDestination.classNameWithDefault}.${relationship.inverseRelationship.name.toUpperCase()}, EOQualifier.QualifierOperatorEqual, this);
+#end
+    	
+          if (qualifier == null) 
+          {
+              fullQualifier = inverseQualifier;
+          }
+          else 
+          {
+              NSMutableArray qualifiers = new NSMutableArray();
+              qualifiers.addObject(qualifier);
+              qualifiers.addObject(inverseQualifier);
+              fullQualifier = new EOAndQualifier(qualifiers);
+          }
+
+#if (${relationship.actualDestination.genericRecord})
+          EOFetchSpecification fetchSpec = new EOFetchSpecification("${relationship.actualDestination.name}", qualifier, sortOrderings);
+          fetchSpec.setIsDeep(true);
+          results = editingContext().objectsWithFetchSpecification(fetchSpec);
+#else
+          results = ${relationship.actualDestination.classNameWithDefault}.fetch${relationship.actualDestination.pluralName}(editingContext(), fullQualifier, sortOrderings);
+#end
+      }
+      else 
+      {
+#end
+          results = ${relationship.name}();
+          if (qualifier != null) 
+          {
+              results = EOQualifier.filteredArrayWithQualifier(results, qualifier);
+          }
+          if (sortOrderings != null) 
+          {
+               results = EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+          }
+#if ($relationship.inverseRelationship && !$relationship.flattened && $relationship.inverseRelationship.classProperty)
+       }
+#end
+       return results;
+       /** ensure [valid_result] Result != null;  **/
+    }
+  
+
+
+#end
+#end
+#if (!$entity.partialEntitySet)
+
+	/**
+	 * @param editingContext EC to return objects in
+	 * @return all instances of ${entity.pluralName} in editingContext
+	 */
+    public static NSArray fetchAll${entity.pluralName}(EOEditingContext editingContext) 
+    {
+        /** require [valid_ec] editingContext != null; **/
+        return ${entity.prefixClassNameWithoutPackage}.fetchAll${entity.pluralName}(editingContext, null);
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+
+
+	/**
+	 * @param editingContext EC to return objects in
+	 * @param sortOrderings list of EOSortOrdering giving the order
+	 * @return all instances of ${entity.pluralName}, ordered by sortOrderings in editingContext
+	 */
+    public static NSArray fetchAll${entity.pluralName}(EOEditingContext editingContext, NSArray sortOrderings) 
+    {
+        /** require [valid_ec] editingContext != null; **/
+        return ${entity.prefixClassNameWithoutPackage}.fetch${entity.pluralName}(editingContext, null, sortOrderings);
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+
+
+	/**
+	 * @param editingContext EC to return objects in
+	 * @param qualifier EOQualfier selecting the objects to return
+	 * @param sortOrderings list of EOSortOrdering giving the order
+	 * @return all instances of ${entity.pluralName} matching qualifier, ordered by sortOrderings in editingContext
+	 */
+    public static NSArray fetch${entity.pluralName}(EOEditingContext editingContext, EOQualifier qualifier, NSArray sortOrderings) 
+    {
+        /** require [valid_ec] editingContext != null; **/
+        EOFetchSpecification fetchSpec = new EOFetchSpecification(${entity.classNameWithoutPackage.toUpperCase()}_ENTITY_NAME, qualifier, sortOrderings);
+        fetchSpec.setIsDeep(true);
+        fetchSpec.setRefreshesRefetchedObjects(true);
+        return editingContext.objectsWithFetchSpecification(fetchSpec);
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+
+
+	/** 
+	 * @param editingContext EC to return objects in
+	 * @param keyName key for EOKeyValueQualifier
+	 * @param value value for EOKeyValueQualifier
+	 * @return all instances of ${entity.pluralName} where keyName.equals(value), ordered by sortOrderings in editingContext
+     */
+    public static ${entity.classNameWithOptionalPackage} fetch${entity.name}(EOEditingContext editingContext, String keyName, Object value) 
+    {
+        /** require [valid_ec] editingContext != null; 
+                    [valid_keyName] keyName != null;   **/
+        return ${entity.prefixClassNameWithoutPackage}.fetch${entity.name}(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+
+
+	/**
+	 * @param editingContext EC to return objects in
+	 * @param qualifier EOQualfier selecting the objects to return
+	 * @return single instance of ${entity.pluralName} matching qualifier, null if no objects match
+	 * @throws EOUtilities.MoreThanOneException if multiple objects matched qualifier
+	 */
+    public static ${entity.classNameWithOptionalPackage} fetch${entity.name}(EOEditingContext editingContext, EOQualifier qualifier) 
+    {
+        /** require [valid_ec] editingContext != null; **/
+        NSArray eoObjects = ${entity.prefixClassNameWithoutPackage}.fetch${entity.pluralName}(editingContext, qualifier, null);
+        ${entity.classNameWithOptionalPackage} eoObject;
+        int count = eoObjects.count();
+        if (count == 0) 
+        {
+            eoObject = null;
+        }
+        else if (count == 1) 
+        {
+            eoObject = (${entity.classNameWithOptionalPackage})eoObjects.objectAtIndex(0);
+        }
+        else {
+            throw new EOUtilities.MoreThanOneException("There was more than one ${entity.name} that matched the qualifier '" + qualifier + "'.");
+        }
+    
+        return eoObject;
+    }
+
+
+
+	/** 
+	 * @param editingContext EC to return objects in
+	 * @param keyName key for EOKeyValueQualifier
+	 * @param value value for EOKeyValueQualifier
+	 * @return single instance of ${entity.pluralName} where keyName.equals(value), ordered by sortOrderings in editingContext
+	 * @throws EOUtilities.MoreThanOneException if multiple objects matched qualifier
+     */
+    public static ${entity.classNameWithOptionalPackage} fetchRequired${entity.name}(EOEditingContext editingContext, String keyName, Object value) 
+    {
+        /** require [valid_ec] editingContext != null; 
+                    [valid_keyName] keyName != null;   **/
+        return ${entity.prefixClassNameWithoutPackage}.fetchRequired${entity.name}(editingContext, new EOKeyValueQualifier(keyName, EOQualifier.QualifierOperatorEqual, value));
+    }
+
+
+
+	/**
+	 * @param editingContext EC to return objects in
+	 * @param qualifier EOQualfier selecting the objects to return
+	 * @return single instance of ${entity.pluralName} matching qualifier
+	 * @throws EOObjectNotAvailableException if no objects matchr
+	 * @throws EOUtilities.MoreThanOneException if multiple objects matched qualifier
+	 */
+	public static ${entity.classNameWithOptionalPackage} fetchRequired${entity.name}(EOEditingContext editingContext, EOQualifier qualifier) 
+    {
+        /** require [valid_ec] editingContext != null; **/
+        ${entity.classNameWithOptionalPackage} eoObject = ${entity.prefixClassNameWithoutPackage}.fetch${entity.name}(editingContext, qualifier);
+        if (eoObject == null) 
+        {
+            throw new EOObjectNotAvailableException("There was no ${entity.name} that matched the qualifier '" + qualifier + "'.");
+        }
+        return eoObject;
+        /** ensure [valid_result] Result != null;  **/
+    }
+
+#end
+}

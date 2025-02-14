@@ -1,0 +1,19 @@
+productName : WOString {
+    value = productName;
+}
+
+createdUserID : WOString {
+    value = createdUser.userID;
+}
+
+createdUserPassword : WOString {
+    value = createdUser.password;
+}
+
+changePasswordURL  : WOString {
+    value = changePasswordURL;
+}
+
+mainPageURL  : WOString {
+    value = mainPageURL;
+}

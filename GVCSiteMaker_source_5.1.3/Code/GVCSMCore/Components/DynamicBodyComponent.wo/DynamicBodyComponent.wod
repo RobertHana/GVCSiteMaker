@@ -1,0 +1,28 @@
+CSSComponent: SMCSSComponent 
+{
+}
+
+Header: HeaderSub
+{
+    pageType = pageType;
+}
+
+NeedsPreviewURLJavaScript: WOConditional 
+{
+    condition = needsPreviewURLJavaScript;
+}
+
+PageTitle: WOString 
+{
+    value = pageTitle;
+}
+
+HeaderString: WOString 
+{
+    value = headerString;
+    escapeHTML = false;
+}
+
+TheContent: WOComponentContent 
+{
+}

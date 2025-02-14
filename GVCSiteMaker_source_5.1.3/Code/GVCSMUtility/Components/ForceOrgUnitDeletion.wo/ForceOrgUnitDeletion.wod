@@ -1,0 +1,22 @@
+DeleteUnitSubmitButton: WOSubmitButton {
+	action = deleteSelectedUnit;
+}
+
+Form1: WOForm {
+	action = deleteSelectedUnit;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+String1: WOString {
+	value = errorMessage;
+}
+
+UnitChooser: UnitChooserWithDefault {
+	noSelectionString = "Choose OrgUnit to Delete...";
+	selectedUnit = selectedOrgUnit;
+	rootOrgUnits = rootOrgUnits;
+}
+

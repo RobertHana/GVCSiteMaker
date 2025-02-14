@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+        <wo wocomponentcontent="false" class="RichTextComponent">
+			<binding name="editorCSS"/>
+			<binding name="cols"/>
+			<binding name="rows"/>	
+			<binding name="name"/>
+			<binding name="shouldUseRichTextEditor"/>
+			<binding name="value"/>	
+			<binding name="index"/>		
+
+			<validation message="&apos;index&apos; is a required binding">
+				<unbound name="index"/>
+			</validation>
+			<validation message="&apos;value&apos; is a required binding">
+				<unbound name="value"/>
+			</validation>	
+        </wo>
+</wodefinitions>

@@ -1,0 +1,47 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+EmbeddedForm: WOForm {
+	action = updateDoneAction;
+	method = "post";  // is this needed we usually don't do this.
+	multipleSubmit = true;
+}
+
+EmbeddedSiteIDField: WOTextField {
+	size = "40";
+	value = embeddedSiteID;
+}
+
+EmbeddedSiteNameField: WOTextField {
+	size = "40";
+	value = section.name;
+}
+
+HasSectionNameErrorMessageConditional: WOConditional {
+	condition = sectionNameErrorMessage;
+}
+
+HasSiteIDErrorConditional: WOConditional {
+	condition = siteIDErrorMessage;
+}
+
+SectionNameErrorMessageString: WOString {
+	value = sectionNameErrorMessage;
+}
+
+SiteIDErrorMessageString: WOString {
+	value = siteIDErrorMessage;
+}
+
+UpdateAndDoneButton: WOSubmitButton {
+	action = updateDoneAction;
+	value = "Save & Done";
+}
+

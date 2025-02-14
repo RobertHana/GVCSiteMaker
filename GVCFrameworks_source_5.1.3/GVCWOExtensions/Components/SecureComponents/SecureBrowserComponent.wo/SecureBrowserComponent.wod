@@ -1,0 +1,57 @@
+Browser: WOBrowser 
+{
+	class = cssClassName;
+	name = componentName;
+	displayString = displayString;
+	list = objects;
+	selections = ^selections;
+	multiple = isMultiple;
+	item = anObject;
+}
+
+
+NoSelectionString: WOString 
+{
+	value = noSelectionString;
+}
+
+Repetition: WORepetition 
+{
+	item = anObject;
+	list = selections;
+}
+
+
+ShowModifiable: WOConditional 
+{
+	condition = isPermissable;
+}
+
+ShowNoSelectionString: WOConditional 
+{
+	negate = YES;
+	condition = hasSelectedObjects;
+}
+
+ShowRepetition: WOConditional 
+{
+	condition = hasSelectedObjects;
+}
+
+ShowUnmodifiable: WOConditional 
+{
+	negate = YES;
+	condition = isPermissable;
+}
+
+SpanTag: WOGenericContainer 
+{
+	class = cssClassName;
+	elementName = "span";
+}
+
+UnmodifiableValue: WOString 
+{
+	formatter = formatter;
+	value = displayString;
+}

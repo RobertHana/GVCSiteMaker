@@ -1,0 +1,13 @@
+{
+    attributes = (
+        {columnName = the_name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = the_id; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (name, theID); 
+    className = TestModel1Entity; 
+    classProperties = (name); 
+    externalName = Test_Model1_Entity; 
+    fetchSpecificationDictionary = {}; 
+    name = TestModel1Entity; 
+    primaryKeyAttributes = (theID); 
+}

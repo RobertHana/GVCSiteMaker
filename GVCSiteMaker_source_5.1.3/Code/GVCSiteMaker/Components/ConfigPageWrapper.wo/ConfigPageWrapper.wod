@@ -1,0 +1,22 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageType = "My Websites";
+    hasSite = hasSite;
+    pageTitle = pageTitle;
+    isAdmin = false;
+    needsPreviewURLJavaScript = false;
+}
+
+CurrentSiteInfoComponent: CurrentSiteInfoComponent
+{
+    website = website;
+}
+
+Navigation: ERXNavigationMenu
+{
+    context = navigationContext;
+}
+
+TheContent: WOComponentContent 
+{
+}

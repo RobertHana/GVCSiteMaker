@@ -1,0 +1,49 @@
+ConfigureStyle: WOHyperlink {
+	action = configureStyle;
+}
+
+CreateNewStyleButton: WOSubmitButton {
+    action = createNewStyle;
+	value = "Create New Style";
+}
+
+CreateNewStyleForm: WOForm {
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = false;
+	pageTitle = "Site Style Management";
+	isAdmin = false;
+	isConfigPage = false;
+}
+
+IsDefaultConditional: WOConditional {
+	condition = aStyle.isDefaultStyle;
+}
+
+IsPublishedString: WOString {
+	value = isPublishedString;
+}
+
+LastModifiedDate: WOString {
+	value = aStyle.dateModified;
+	formatter = application.properties.StandardDateFormatter;
+}
+
+OrgUnitName: WOString {
+	value = aStyle.owningOrgUnit.unitName;
+}
+
+StyleDetailList: WORepetition {
+	item = aStyle;
+	list = allStyles;
+}
+
+StyleID: WOString {
+	value = aStyle.styleID;
+}
+
+StyleName: WOString {
+	value = aStyle.name;
+}

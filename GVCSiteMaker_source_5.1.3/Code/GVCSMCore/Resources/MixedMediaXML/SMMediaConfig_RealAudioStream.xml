@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Real Audio Stream</title>
+    <usesIFrame>false</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>   
+    <urlPrefix>
+        <prefix>rtsp://</prefix>
+    </urlPrefix>    
+    <parameterInstructions>The settings below apply to the Real Audio Stream, not to the pane containing it.</parameterInstructions>
+	<parameter>
+		<name>width</name>
+		<uiName>Width</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>
+	<parameter>
+		<name>height</name>
+		<uiName>Height</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>
+	</parameter>	
+	<parameter>
+		<name>border</name>
+		<uiName>Border</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>
+	</parameter>
+	<parameter>
+		<name>align</name>
+		<uiName>Alignment</uiName>
+		<type>valueList</type>
+		<paramValue>
+			<value>Left</value>
+		</paramValue>	
+		<paramValue>
+			<value>Top</value>
+		</paramValue>	
+		<paramValue>
+			<value>Right</value>
+		</paramValue>	
+		<paramValue>
+			<value>Bottom</value>
+		</paramValue>			
+	</parameter>
+	<parameter>
+		<name>controls</name>
+		<uiName>Controls</uiName>
+		<type>valueList</type>
+		<paramValue>
+			<value>All</value>
+		</paramValue>	
+		<paramValue>
+			<value>InfoVolumePanel</value>
+		</paramValue>	
+		<paramValue>
+			<value>InfoPanel</value>
+		</paramValue>	
+		<paramValue>
+			<value>ControlPanel</value>
+		</paramValue>			
+		<paramValue>
+			<value>StatusPanel</value>
+		</paramValue>	
+		<paramValue>
+			<value>PlayButton</value>
+		</paramValue>	
+		<paramValue>
+			<value>StopButton</value>
+		</paramValue>	
+		<paramValue>
+			<value>VolumeSlider</value>
+		</paramValue>			
+		<paramValue>
+			<value>PositionField</value>
+		</paramValue>	
+		<paramValue>
+			<value>StatusField</value>
+		</paramValue>	
+		<paramValue>
+			<value>ImageWindow</value>
+		</paramValue>			
+		<paramValue>
+			<value>StatusBar</value>
+		</paramValue>			
+	</parameter>	
+	<parameter>
+		<name>autoStart</name>
+		<uiName>AutoStart</uiName>
+		<type>boolean</type>
+	</parameter>	
+    <template><![CDATA[
+ <object  id="RAOCX"
+ classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA"
+ align="baseline" border="<webobject name=border></webobject>"  width="<webobject name=width></webobject>" height="<webobject name=height></webobject>">
+ <param name="controls"  value="<webobject name=controls></webobject>">
+ <param name="autostart" value="<webobject name=autoStart></webobject>">
+ <param name="src" value="<webobject name=SourceURL></webobject>">
+ <embed src="<webobject name=SourceURL></webobject>" align="<webobject name=align></webobject>" border="<webobject name=border></webobject>"  width="<webobject name=width></webobject>" height="<webobject name=height></webobject>" controls="<webobject name=controls></webobject>" autostart="<webobject name=autoStart></webobject>"></object> 
+    ]]></template>
+</mediaComponent>
+
+

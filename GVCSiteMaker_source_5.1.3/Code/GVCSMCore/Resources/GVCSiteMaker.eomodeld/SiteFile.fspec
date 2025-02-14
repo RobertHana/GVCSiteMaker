@@ -1,0 +1,48 @@
+{
+    inlineContent = {
+        class = EOFetchSpecification; 
+        entityName = SiteFile; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = mimeType; 
+                            selectorName = isLike; 
+                            value = "image/gif "; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = mimeType; 
+                            selectorName = isLike; 
+                            value = "image/jpeg"; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = mimeType; 
+                            selectorName = isLike; 
+                            value = "image/bmp"; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = mimeType; 
+                            selectorName = isLike; 
+                            value = "image/png"; 
+                        }
+                    ); 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = websiteFkey; 
+                    selectorName = isLike; 
+                    value = {"_key" = websitePKey; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

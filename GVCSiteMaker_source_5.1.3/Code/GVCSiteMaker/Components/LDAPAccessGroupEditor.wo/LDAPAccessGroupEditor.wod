@@ -1,0 +1,18 @@
+ErrorMessageString: WOString {
+	value = validationErrorMessage;
+}
+
+LDAPGroupNameTextField: WOTextField {
+	size  = 50;
+	maxLength = 255;
+	value = currentGroup.ldapGroupName;
+}
+
+ServerDescriptionString: WOString {
+	value = currentGroup.ldapBranch.instructions;
+	escapeHTML = false;
+}
+
+ValidationErrorConditional: WOConditional {
+	condition = validationErrorMessage;
+}

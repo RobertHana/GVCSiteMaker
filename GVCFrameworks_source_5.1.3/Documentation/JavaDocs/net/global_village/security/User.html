@@ -1,0 +1,1067 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+User (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="User (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/User.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/security/Privilege.html" title="class in net.global_village.security"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/security/User.NameComparator.html" title="class in net.global_village.security"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/security/User.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="User.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.security</FONT>
+<BR>
+Class User</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOCustomObject
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOGenericRecord
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.GenericRecord</A>
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/security/_User.html" title="class in net.global_village.security">net.global_village.security._User</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.security.User</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol._EOPrivateMemento, com.webobjects.eocontrol.EODeferredFaulting, com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eocontrol.EOFaulting, com.webobjects.eocontrol.EOKeyValueCoding, com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation._ForwardingBindingCheck, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCodingAdditions, com.webobjects.eocontrol.EORelationshipManipulation, com.webobjects.eocontrol.EOValidation, com.webobjects.foundation.NSKeyValueCoding, com.webobjects.foundation.NSKeyValueCoding._KeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation.Callback, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCodingAdditions, com.webobjects.foundation.NSValidation, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/security/tests/SimpleTestUser.html" title="class in net.global_village.security.tests">SimpleTestUser</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/security/User.html#line.22"><B>User</B></A><DT>extends <A HREF="../../../net/global_village/security/_User.html" title="class in net.global_village.security">_User</A></DL>
+</PRE>
+
+<P>
+<code>User</code> represents the users of a system.  It is used to record access status and related information. A User can be a member of a Group. Usernames must be unique and this is enforced in <code>validateForSave</code>.
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 11$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-6  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.security.User">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.NameComparator.html" title="class in net.global_village.security">User.NameComparator</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comparator to sort Users by userName, case insensitively.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOGenericRecord._DictionaryBinding, com.webobjects.eocontrol.EOGenericRecord._LazyDictionaryBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOCustomObject._BooleanFieldBinding, com.webobjects.eocontrol.EOCustomObject._FieldBinding, com.webobjects.eocontrol.EOCustomObject._LazyFieldBinding, com.webobjects.eocontrol.EOCustomObject._NumberFieldBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.DefaultImplementation.html" title="class in net.global_village.eofextensions">EOCopying.DefaultImplementation</A>, <A HREF="../../../net/global_village/eofextensions/EOCopying.Utility.html" title="class in net.global_village.eofextensions">EOCopying.Utility</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCodingAdditions.DefaultImplementation, com.webobjects.eocontrol.EOKeyValueCodingAdditions.Utility</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueCoding._BestBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._KeyBindingCreation, com.webobjects.eocontrol.EOKeyValueCoding._StoredForwardingBinding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSKeyValueCoding._BooleanMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ForwardingBinding, com.webobjects.foundation.NSKeyValueCoding._KeyBinding, com.webobjects.foundation.NSKeyValueCoding._MethodBinding, com.webobjects.foundation.NSKeyValueCoding._NumberMethodBinding, com.webobjects.foundation.NSKeyValueCoding._ReflectionKeyBindingCreation, com.webobjects.foundation.NSKeyValueCoding.ErrorHandling, com.webobjects.foundation.NSKeyValueCoding.MapImplementation, com.webobjects.foundation.NSKeyValueCoding.Null&lt;T&gt;, com.webobjects.foundation.NSKeyValueCoding.UnknownKeyException, com.webobjects.foundation.NSKeyValueCoding.ValueAccessor</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.foundation.NSValidation"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.foundation.NSValidation</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.foundation.NSValidation._MethodBinding, com.webobjects.foundation.NSValidation._ValidationBinding, com.webobjects.foundation.NSValidation.ValidationException</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol._EOPrivateMemento"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol._EOPrivateMemento</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol._EOPrivateMemento.DefaultImplementation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#allPrivilegesAndIncludedPrivileges">allPrivilegesAndIncludedPrivileges</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#allPrivilegesAndIncludedPrivilegesNames">allPrivilegesAndIncludedPrivilegesNames</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSComparator</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#DefaultComparator">DefaultComparator</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default comparator to be used when sorting Users.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__readOnly</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_net.global_village.eofextensions.EOCopying"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/EOCopying.html" title="interface in net.global_village.eofextensions">EOCopying</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/EOCopying.html#COPY_CONTEXT">COPY_CONTEXT</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCodingAdditions"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCodingAdditions</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_KeyPathSeparatorChar, KeyPathSeparator</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSKeyValueCoding"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSKeyValueCoding</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>NullValue</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#User()">User</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#_user(java.lang.String, com.webobjects.eocontrol.EOEditingContext)">_user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+           com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected method that returns the <code>User</code> with this user name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#_user(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">_user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+           com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected method that returns the <code>User</code> with this user name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#_user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)">_user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+           com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected method that returns the <code>User</code> with this user name and password.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#_user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">_user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+           com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+           <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected method that returns the <code>User</code> with this user name and password.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#activeUsers(com.webobjects.foundation.NSArray)">activeUsers</A></B>(com.webobjects.foundation.NSArray&nbsp;incomingUsers)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the list of users past in returns all those who are active.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)">awakeFromInsertion</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overriden to initialize some values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#changePasswordTo(java.lang.String)">changePasswordTo</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newPassword)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method changes the users password and removes the flag to ask the user to change their password</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#determineCurrentPrivileges()">determineCurrentPrivileges</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examines the groups the <code>User</code> is a member of to determine which privileges they have.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#determinePrivilegesIfNeeded()">determinePrivilegesIfNeeded</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#hasPrivilege(net.global_village.security.Privilege)">hasPrivilege</A></B>(<A HREF="../../../net/global_village/security/Privilege.html" title="class in net.global_village.security">Privilege</A>&nbsp;thePrivilege)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this <code>User</code> is granted the indicated privilege.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#hasPrivilegeNamed(java.lang.String)">hasPrivilegeNamed</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;thePrivilegeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this <code>User</code> is granted the privilege with the passed name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;com.webobjects.eocontrol.EOQualifier</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#isAccountDisabledQualifier()">isAccountDisabledQualifier</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns an EOQualifier to select Users whose account is disabled.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to obtain a test description of the <code>User</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#user(java.lang.String, com.webobjects.eocontrol.EOEditingContext)">user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+         com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the <code>User</code> with this user name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#user(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+         com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the <code>User</code> with this user name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)">user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+         com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the <code>User</code> with this user name and password.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">user</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+         com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+         <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the <code>User</code> with this user name and password.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#userExists(java.lang.String, com.webobjects.eocontrol.EOEditingContext)">userExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                     com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a <code>User</code> with this user name exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#userExists(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">userExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                     com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a <code>User</code> with this user name exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#userExists(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)">userExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                     com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a <code>User</code> with this user name and password exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#userExists(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)">userExists</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                     com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                     <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if a <code>User</code> with this user name and password exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#usersInGroups(com.webobjects.foundation.NSArray)">usersInGroups</A></B>(com.webobjects.foundation.NSArray&nbsp;groups)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns all the users in the array of <code>UserGroups</code> passed in with no duplicates.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/security/User.html#validateForSave()">validateForSave</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Validate the user.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.security._User"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.security.<A HREF="../../../net/global_village/security/_User.html" title="class in net.global_village.security">_User</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/security/_User.html#addToGroups(net.global_village.security.UserGroup)">addToGroups</A>, <A HREF="../../../net/global_village/security/_User.html#canChangePassword()">canChangePassword</A>, <A HREF="../../../net/global_village/security/_User.html#groups()">groups</A>, <A HREF="../../../net/global_village/security/_User.html#isAccountDisabled()">isAccountDisabled</A>, <A HREF="../../../net/global_village/security/_User.html#mustChangePassword()">mustChangePassword</A>, <A HREF="../../../net/global_village/security/_User.html#password()">password</A>, <A HREF="../../../net/global_village/security/_User.html#removeFromGroups(net.global_village.security.UserGroup)">removeFromGroups</A>, <A HREF="../../../net/global_village/security/_User.html#setCanChangePassword(net.global_village.foundation.GVCBoolean)">setCanChangePassword</A>, <A HREF="../../../net/global_village/security/_User.html#setGroups(com.webobjects.foundation.NSMutableArray)">setGroups</A>, <A HREF="../../../net/global_village/security/_User.html#setIsAccountDisabled(net.global_village.foundation.GVCBoolean)">setIsAccountDisabled</A>, <A HREF="../../../net/global_village/security/_User.html#setMustChangePassword(net.global_village.foundation.GVCBoolean)">setMustChangePassword</A>, <A HREF="../../../net/global_village/security/_User.html#setPassword(java.lang.String)">setPassword</A>, <A HREF="../../../net/global_village/security/_User.html#setUserName(java.lang.String)">setUserName</A>, <A HREF="../../../net/global_village/security/_User.html#userName()">userName</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofextensions.GenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">GenericRecord</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#attributeNamed(java.lang.String)">attributeNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#clearCachedValues()">clearCachedValues</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedSnapshot()">committedSnapshot</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#committedValueFor(java.lang.String)">committedValueFor</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy()">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#copy(com.webobjects.foundation.NSMutableDictionary)">copy</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#duplicate(com.webobjects.foundation.NSMutableDictionary)">duplicate</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#entity()">entity</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#equals(java.lang.Object, java.lang.Object)">equals</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#globalID()">globalID</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#hasChanged(java.lang.String)">hasChanged</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isDummyFaultEO()">isDummyFaultEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#isNewEO()">isNewEO</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#objectMatchingKeyAndValue(com.webobjects.eocontrol.EOEditingContext, java.lang.String, java.lang.String, java.lang.Object)">objectMatchingKeyAndValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue()">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#primaryKeyValue(com.webobjects.eocontrol.EOGenericRecord)">primaryKeyValue</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#propertyNamed(java.lang.String)">propertyNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshObject()">refreshObject</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#refreshRelationshipNamed(java.lang.String)">refreshRelationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#relationshipNamed(java.lang.String)">relationshipNamed</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#revertToSaved()">revertToSaved</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#turnIntoFault(com.webobjects.eocontrol.EOFaultHandler)">turnIntoFault</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#updateFromSnapshot(com.webobjects.foundation.NSDictionary)">updateFromSnapshot</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)">validateForSave</A>, <A HREF="../../../net/global_village/eofextensions/GenericRecord.html#valueForKeyPath(java.lang.String)">valueForKeyPath</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOGenericRecord"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOGenericRecord</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__setClassDescription, _keyGetBindingForKey, _keySetBindingForKey, _otherStorageBinding, _storedKeyGetBindingForKey, _storedKeySetBindingForKey, classDescription, usesDeferredFaultCreation</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOCustomObject"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOCustomObject</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>__classDescription, __clearPendingChanges, __editingContext, __globalID, __hasAuxillaryObservers, __hasPendingChanges, __hasPendingUpdate, __isInitialized, __isPendingDeletion, __isPendingInsertion, __isShared, __lastSnapshot, __originalSnapshot, __retainCount, __setAuxillaryObservers, __setEditingContext, __setGlobalID, __setInitialized, __setLastSnapshot, __setOriginalSnapshot, __setPendingDeletion, __setPendingInsertion, __setPendingUpdate, __setRetainCount, __setShared, _createKeyGetBindingForKey, _createKeySetBindingForKey, _createStoredKeyGetBindingForKey, _createStoredKeySetBindingForKey, _fieldKeyBinding, _forwardingBindingNeededForClass, _methodKeyGetBinding, _methodKeySetBinding, addObjectToBothSidesOfRelationshipWithKey, addObjectToPropertyWithKey, allPropertyKeys, attributeKeys, awakeFromClientUpdate, awakeFromFetch, canAccessFieldsDirectly, changesFromSnapshot, classDescriptionForDestinationKey, clearFault, clearProperties, deleteRuleForRelationshipKey, editingContext, entityName, eoDescription, eoShallowDescription, equals, excludeObjectFromPropertyWithKey, faultHandler, handleQueryWithUnboundKey, handleTakeValueForUnboundKey, hashCode, includeObjectIntoPropertyWithKey, inverseForRelationshipKey, invokeRemoteMethod, isFault, isReadOnly, isToManyKey, opaqueState, ownsDestinationObjectsForRelationshipKey, prepareValuesForClient, propagateDeleteWithEditingContext, readResolve, reapplyChangesFromDictionary, removeObjectFromBothSidesOfRelationshipWithKey, removeObjectFromPropertyWithKey, shouldUseStoredAccessors, snapshot, storedValueForKey, takeStoredValueForKey, takeValueForKey, takeValueForKeyPath, takeValuesFromDictionary, takeValuesFromDictionaryWithMapping, toManyRelationshipKeys, toOneRelationshipKeys, unableToSetNullForKey, userPresentableDescription, validateClientUpdate, validateForDelete, validateForInsert, validateForUpdate, validateTakeValueForKeyPath, validateValueForKey, valueForKey, valuesForKeys, valuesForKeysWithMapping, willChange, willRead, willReadRelationship</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DefaultComparator"><!-- --></A><H3>
+DefaultComparator</H3>
+<PRE>
+public static final com.webobjects.foundation.NSComparator <A HREF="../../../src-html/net/global_village/security/User.html#line.30"><B>DefaultComparator</B></A></PRE>
+<DL>
+<DD>Default comparator to be used when sorting Users.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="allPrivilegesAndIncludedPrivileges"><!-- --></A><H3>
+allPrivilegesAndIncludedPrivileges</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/security/User.html#line.32"><B>allPrivilegesAndIncludedPrivileges</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="allPrivilegesAndIncludedPrivilegesNames"><!-- --></A><H3>
+allPrivilegesAndIncludedPrivilegesNames</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/security/User.html#line.33"><B>allPrivilegesAndIncludedPrivilegesNames</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="User()"><!-- --></A><H3>
+User</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/security/User.html#line.22"><B>User</B></A>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="_user(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+_user</H3>
+<PRE>
+protected static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.63"><B>_user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                            com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Protected method that returns the <code>User</code> with this user name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name, <code>null</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_user(java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+_user</H3>
+<PRE>
+protected static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.101"><B>_user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                            com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Protected method that returns the <code>User</code> with this user name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name, <code>null</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+_user</H3>
+<PRE>
+protected static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.122"><B>_user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                            com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Protected method that returns the <code>User</code> with this user name and password.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name and password, <code>null</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+_user</H3>
+<PRE>
+protected static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.160"><B>_user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                            <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                            com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Protected method that returns the <code>User</code> with this user name and password.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name and password, <code>null</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userExists(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+userExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.184"><B>userExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                                 com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a <code>User</code> with this user name exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the <code>editingContext</code> to be used for evaluation<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD><code>true</code> if a user with this user name exists, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userExists(java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+userExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.205"><B>userExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                                 com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a <code>User</code> with this user name exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the <code>editingContext</code> to be used for evaluation
+<DT><B>Returns:</B><DD><code>true</code> if a user with this user name exists, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userExists(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+userExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.227"><B>userExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                                 com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a <code>User</code> with this user name and password exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the <code>editingContext</code> to be used for evaluation<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD><code>true</code> if a user with this user name exists, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="userExists(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+userExists</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.254"><B>userExists</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                                 <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                                 com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Returns <code>true</code> if a <code>User</code> with this user name and password exists.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the <code>editingContext</code> to be used for evaluation
+<DT><B>Returns:</B><DD><code>true</code> if a user with this user name exists, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="usersInGroups(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+usersInGroups</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/security/User.html#line.277"><B>usersInGroups</B></A>(com.webobjects.foundation.NSArray&nbsp;groups)</PRE>
+<DL>
+<DD>Returns all the users in the array of <code>UserGroups</code> passed in with no duplicates.  (Union)
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>groups</CODE> - array of <code>UserGroups</code>
+<DT><B>Returns:</B><DD>array of <code>Users</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="user(java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+user</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.306"><B>user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                        com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Returns the <code>User</code> with this user name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="user(java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+user</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.335"><B>user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                        com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Returns the <code>User</code> with this user name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext, java.lang.String)"><!-- --></A><H3>
+user</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.365"><B>user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                        com.webobjects.eocontrol.EOEditingContext&nbsp;ec,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityName)</PRE>
+<DL>
+<DD>Returns the <code>User</code> with this user name and password.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating<DD><CODE>entityName</CODE> - the entity name of the user entity to search
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name and password.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="user(java.lang.String, java.lang.String, com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+user</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/security/User.html" title="class in net.global_village.security">User</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.399"><B>user</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aUserName,
+                        <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;aPassword,
+                        com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Returns the <code>User</code> with this user name and password.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aUserName</CODE> - the user name of the user to check<DD><CODE>aPassword</CODE> - the password of the user to check<DD><CODE>ec</CODE> - the editingContext to be used for evaluating
+<DT><B>Returns:</B><DD>the <code>User</code> with this user name and password.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="activeUsers(com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+activeUsers</H3>
+<PRE>
+public static com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/security/User.html#line.429"><B>activeUsers</B></A>(com.webobjects.foundation.NSArray&nbsp;incomingUsers)</PRE>
+<DL>
+<DD>From the list of users past in returns all those who are active.  No sorting is performed.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>incomingUsers</CODE> - of users to cull active users from
+<DT><B>Returns:</B><DD>all active users in array</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isAccountDisabledQualifier()"><!-- --></A><H3>
+isAccountDisabledQualifier</H3>
+<PRE>
+protected static com.webobjects.eocontrol.EOQualifier <A HREF="../../../src-html/net/global_village/security/User.html#line.445"><B>isAccountDisabledQualifier</B></A>()</PRE>
+<DL>
+<DD>Returns an EOQualifier to select Users whose account is disabled.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an EOQualifier to select Users whose account is disabled.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="awakeFromInsertion(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+awakeFromInsertion</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/security/User.html#line.461"><B>awakeFromInsertion</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Overriden to initialize some values.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>awakeFromInsertion</CODE> in interface <CODE>com.webobjects.eocontrol.EOEnterpriseObject</CODE><DT><B>Overrides:</B><DD><CODE>awakeFromInsertion</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>ec</CODE> - the editing context this object is being inserted into</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasPrivilege(net.global_village.security.Privilege)"><!-- --></A><H3>
+hasPrivilege</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.485"><B>hasPrivilege</B></A>(<A HREF="../../../net/global_village/security/Privilege.html" title="class in net.global_village.security">Privilege</A>&nbsp;thePrivilege)</PRE>
+<DL>
+<DD>Returns <code>true</code> if this <code>User</code> is granted the indicated privilege.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>thePrivilege</CODE> - the <code>Privilege</code> to check
+<DT><B>Returns:</B><DD><code>true</code> if this <code>User</code> is granted the <code>thePrivilege</code> argument, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hasPrivilegeNamed(java.lang.String)"><!-- --></A><H3>
+hasPrivilegeNamed</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/security/User.html#line.501"><B>hasPrivilegeNamed</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;thePrivilegeName)</PRE>
+<DL>
+<DD>Returns <code>true</code> if this <code>User</code> is granted the privilege with the passed name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>thePrivilegeName</CODE> - the privilege name to be evaluated
+<DT><B>Returns:</B><DD><code>true</code> if this <code>User</code> is granted the privilege with the passed name, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="determineCurrentPrivileges()"><!-- --></A><H3>
+determineCurrentPrivileges</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/security/User.html#line.517"><B>determineCurrentPrivileges</B></A>()</PRE>
+<DL>
+<DD>Examines the groups the <code>User</code> is a member of to determine which privileges they have.  Caches the privileges to speed subsequent queries.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="determinePrivilegesIfNeeded()"><!-- --></A><H3>
+determinePrivilegesIfNeeded</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/security/User.html#line.548"><B>determinePrivilegesIfNeeded</B></A>()</PRE>
+<DL>
+<DD>Protected method.  Supports lazy creation of privilege cache.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"><!-- --></A><H3>
+toString</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/security/User.html#line.566"><B>toString</B></A>()</PRE>
+<DL>
+<DD>Convenience method to obtain a test description of the <code>User</code>.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>toString</CODE> in class <CODE>com.webobjects.eocontrol.EOCustomObject</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a text description (its name) of the <code>User</code>.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="validateForSave()"><!-- --></A><H3>
+validateForSave</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/security/User.html#line.577"><B>validateForSave</B></A>()
+                     throws com.webobjects.foundation.NSValidation.ValidationException</PRE>
+<DL>
+<DD>Validate the user.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>validateForSave</CODE> in interface <CODE>com.webobjects.eocontrol.EOValidation</CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave()">validateForSave</A></CODE> in class <CODE><A HREF="../../../net/global_village/eofextensions/GenericRecord.html" title="class in net.global_village.eofextensions">GenericRecord</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>com.webobjects.foundation.NSValidation.ValidationException</CODE><DT><B>See Also:</B><DD><CODE>EOCustomObject.validateForSave()</CODE>, 
+<A HREF="../../../net/global_village/eofextensions/GenericRecord.html#validateForSave(com.webobjects.foundation.NSMutableArray)"><CODE>GenericRecord.validateForSave(NSMutableArray)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="changePasswordTo(java.lang.String)"><!-- --></A><H3>
+changePasswordTo</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/security/User.html#line.633"><B>changePasswordTo</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newPassword)</PRE>
+<DL>
+<DD>This method changes the users password and removes the flag to ask the user to change their password
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>newPassword</CODE> - the password to replace the existing one.</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/User.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/security/Privilege.html" title="class in net.global_village.security"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/security/User.NameComparator.html" title="class in net.global_village.security"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/security/User.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="User.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

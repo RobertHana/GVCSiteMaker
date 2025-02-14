@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="SectionContents" wocomponentcontent="false">
+
+		<binding name="currentSection"/>
+
+		<validation message="&apos;currentSection&apos; is a required binding">
+			<unbound name="currentSection"/>
+		</validation>
+	</wo>
+</wodefinitions>

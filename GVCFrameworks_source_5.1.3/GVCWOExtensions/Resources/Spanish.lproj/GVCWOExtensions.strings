@@ -1,0 +1,5 @@
+{
+	// Spanish lookup strings for testing localization
+	"Hello World!" = "Hola Ustedas!";
+	"My name is " = "Yo soy ";
+}

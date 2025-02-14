@@ -1,0 +1,166 @@
+
+{
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    LOCALIZABLE_FILES = 
+    {};
+    PROJECTNAME = GVCSMUtility;
+    PBPROJECTTYPEVERSION = 4.0;
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    LANGUAGE = English;
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    DYNAMIC_CODE_GEN = YES;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    PROJECTTYPE = JavaWebObjectsApplication;
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    PROJECTVERSION = 2.8;
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+    FILESTABLE = 
+    {
+        OTHER_LINKED = 
+        ();
+        CLASSES = 
+        (
+           src/com/gvcsitemaker/utility/pages/CleanUpDamagedPageComponents.java, 
+           src/com/gvcsitemaker/utility/pages/ConfirmAction.java, 
+           src/com/gvcsitemaker/utility/pages/ForceOrgUnitDeletion.java, 
+           src/com/gvcsitemaker/utility/pages/Main.java, 
+           src/com/gvcsitemaker/utility/pages/ReloadStyles.java, 
+           src/com/gvcsitemaker/utility/pages/RemoveWebsitePieces.java, 
+           src/com/gvcsitemaker/utility/pages/SiteFileCleanupHack.java, 
+           src/com/gvcsitemaker/utility/appserver/Application.java, 
+           src/com/gvcsitemaker/utility/appserver/DirectAction.java, 
+           src/com/gvcsitemaker/utility/appserver/Session.java, 
+           src/com/gvcsitemaker/utility/pages/LoadLDAPServers.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/LoadLDAPServers.java, 
+           src/com/gvcsitemaker/utility/conversion/SetCRConversionDefaults.java, 
+           ContractedSource/com/gvcsitemaker/core/pagecomponent/ConversionDataAccess.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/ChangeHomeSection.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/CleanUpDamagedPageComponents.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/ConfirmAction.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/CreateMissingHomeSections.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/ForceOrgUnitDeletion.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/Main.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/ReloadStyles.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/RemoveWebsitePieces.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/SiteFileCleanupHack.java, 
+           ContractedSource/com/gvcsitemaker/utility/appserver/Application.java, 
+           ContractedSource/com/gvcsitemaker/utility/appserver/DirectAction.java, 
+           ContractedSource/com/gvcsitemaker/utility/appserver/Session.java, 
+           src/com/gvcsitemaker/utility/conversion/SetSiteCreationTemplate.java, 
+           src/com/gvcsitemaker/utility/pages/BindingEditor.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/BindingEditor.java, 
+           src/com/gvcsitemaker/utility/pages/MessageToUsers.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/MessageToUsers.java, 
+           src/com/gvcsitemaker/utility/conversion/ConversionWebsite.java, 
+           src/com/gvcsitemaker/utility/conversion/CleanupPreviousHomePage.java, 
+           src/com/gvcsitemaker/utility/conversion/CreateImportMode.java, 
+           src/com/gvcsitemaker/utility/conversion/ConfigureSearchModeDefault.java, 
+           src/com/gvcsitemaker/utility/conversion/ConvertExternalURL.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/CleanupPreviousHomePage.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/ConfigureSearchModeDefault.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/ConversionWebsite.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/ConvertExternalURL.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/CreateImportMode.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/LoadColumnTypes.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/LoadSectionTypes.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/SetCRConversionDefaults.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/SetSiteCreationTemplate.java, 
+           src/com/gvcsitemaker/utility/pages/RemoveDuplicateColumns.java, 
+           ContractedSource/com/gvcsitemaker/utility/pages/RemoveDuplicateColumns.java, 
+           bin/com/gvcsitemaker/utility/conversion/CleanupPreviousHomePage.class, 
+           bin/com/gvcsitemaker/utility/conversion/ConfigureSearchModeDefault.class, 
+           bin/com/gvcsitemaker/utility/conversion/ConversionWebsite$OwnerComparator.class, 
+           bin/com/gvcsitemaker/utility/conversion/ConversionWebsite$SiteIDComparator.class, 
+           bin/com/gvcsitemaker/utility/conversion/ConversionWebsite.class, 
+           bin/com/gvcsitemaker/utility/conversion/ConvertExternalURL.class, 
+           bin/com/gvcsitemaker/utility/conversion/CreateImportMode.class, 
+           bin/com/gvcsitemaker/utility/conversion/LoadColumnTypes.class, 
+           bin/com/gvcsitemaker/utility/conversion/LoadSectionTypes.class, 
+           bin/com/gvcsitemaker/utility/conversion/SetCRConversionDefaults.class, 
+           bin/com/gvcsitemaker/utility/conversion/SetSiteCreationTemplate.class, 
+           bin/com/gvcsitemaker/utility/appserver/Application.class, 
+           bin/com/gvcsitemaker/utility/appserver/DirectAction.class, 
+           bin/com/gvcsitemaker/utility/appserver/Session.class, 
+           bin/com/gvcsitemaker/utility/pages/BindingEditor.class, 
+           bin/com/gvcsitemaker/utility/pages/CleanUpDamagedPageComponents.class, 
+           bin/com/gvcsitemaker/utility/pages/ConfirmAction.class, 
+           bin/com/gvcsitemaker/utility/pages/ForceOrgUnitDeletion.class, 
+           bin/com/gvcsitemaker/utility/pages/LoadLDAPServers.class, 
+           bin/com/gvcsitemaker/utility/pages/Main.class, 
+           bin/com/gvcsitemaker/utility/pages/MessageToUsers.class, 
+           bin/com/gvcsitemaker/utility/pages/ReloadStyles.class, 
+           bin/com/gvcsitemaker/utility/pages/RemoveDuplicateColumns.class, 
+           bin/com/gvcsitemaker/utility/pages/RemoveWebsitePieces.class, 
+           bin/com/gvcsitemaker/utility/pages/SiteFileCleanupHack.class, 
+           src/com/gvcsitemaker/utility/conversion/RemoveObsoleteAccessGroups.java, 
+           bin/com/gvcsitemaker/utility/conversion/RemoveObsoleteAccessGroups.class, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/RemoveObsoleteAccessGroups.java, 
+           src/com/gvcsitemaker/utility/conversion/VersioningPage.java, 
+           ContractedSource/com/gvcsitemaker/utility/conversion/VersioningPage.java
+        );
+        FRAMEWORKS = 
+        (
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCGenericObjects.framework, 
+           GVCMail.framework, 
+           GVCSMCore.framework, 
+           GVCSMCustom.framework, 
+           GVCVirtualTables.framework, 
+           GVCWOExtensions.framework, 
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCGenericObjects.framework, 
+           GVCJNDIAdditions.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCSMCore.framework, 
+           GVCSMCustom.framework, 
+           GVCSMCustom.framework, 
+           GVCSMEOPrototypes.framework, 
+           GVCVirtualTables.framework, 
+           GVCWOExtensions.framework, 
+           JavaEOAccess.framework, 
+           JavaEOControl.framework, 
+           JavaFoundation.framework, 
+           JavaJDBCAdaptor.framework, 
+           JavaJNDIAdaptor.framework, 
+           JavaWebObjects.framework, 
+           JavaWOExtensions.framework, 
+           JavaXML.framework
+        );
+        WO_COMPONENTS = 
+        ();
+        SUBPROJECTS = 
+        (
+           Conversion.subproj, 
+           Pages.subproj
+        );
+        OTHER_SOURCES = 
+        (
+           Makefile.preamble, 
+           Makefile, 
+           Makefile.postamble, 
+           CustomInfo.plist
+        );
+        WOAPP_RESOURCES = 
+        (
+           CustomInfo.plist, 
+           Properties
+        );
+    };
+}

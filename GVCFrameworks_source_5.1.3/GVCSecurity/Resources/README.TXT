@@ -1,0 +1,2 @@
+Run FrontBase.sql to create the schema and then run FrontBaseTestData.sql to create the data for unit tests.
+In order to run the tests, the GVCTestEOModelBase framework must be linked into the app, as that framework contains the EOModel for the SimpleTestUser.

@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "FILE_PKEY"; 
+            name = filePKey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_PKEY"; 
+            name = groupPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (groupPKey, filePKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    externalName = "SM_GROUP_FILE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (); }; 
+    name = GroupFile; 
+    primaryKeyAttributes = (groupPKey, filePKey); 
+    relationships = (
+        {
+            destination = SiteFile; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filePKey; sourceAttribute = filePKey; }); 
+            name = file; 
+        }, 
+        {
+            destination = Group; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupPKey; }); 
+            name = group; 
+        }
+    ); 
+}

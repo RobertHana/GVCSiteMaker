@@ -1,0 +1,34 @@
+ModifiableValue: WOTextField 
+{
+
+	value = ^value;
+	formatter = formatter;
+	name = componentName;
+	class = cssClassName;
+	size = size;
+	maxlength = maxLength;
+}
+
+ShowModifiable: WOConditional 
+{
+	condition = isPermissable;
+}
+
+ShowUnmodifiable: WOConditional 
+{
+	negate = YES;
+	condition = isPermissable;
+}
+
+SpanTag: WOGenericContainer
+{
+	class = cssClassName;
+	elementName = "span";
+	name = componentName;
+}
+
+UnmodifiableValue: WOString 
+{
+	formatter = formatter;
+	value = value;
+}

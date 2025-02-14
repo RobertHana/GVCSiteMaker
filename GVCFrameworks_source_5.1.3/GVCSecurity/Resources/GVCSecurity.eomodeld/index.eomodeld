@@ -1,0 +1,41 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:FrontBase://london/GVCTest"; 
+        driver = ""; 
+        password = tester; 
+        plugin = ""; 
+        username = tester; 
+    }; 
+    entities = (
+        {className = EOGenericRecord; name = GVCGroupsPrivilege; }, 
+        {className = "net.global_village.security.Privilege"; name = GVCPrivilege; }, 
+        {className = EOGenericRecord; name = GVCPrivilegesPrivilege; }, 
+        {className = "net.global_village.security.User"; name = GVCUser; }, 
+        {className = "net.global_village.security.UserGroup"; name = GVCUserGroup; }, 
+        {className = EOGenericRecord; name = GVCUsersGroup; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:FrontBase://london/GVCTest"; 
+                        driver = ""; 
+                        password = tester; 
+                        plugin = ""; 
+                        username = tester; 
+                    }; 
+                }; 
+            }; 
+        }; 
+        history = {
+            created = "2001-05-29 22:53:54 +0000 by sacha"; 
+            lastSaved = "2001-05-29 22:53:54 +0000 by sacha"; 
+        }; 
+        modificationDate = "2001-05-29 22:53:54 +0000"; 
+    }; 
+}

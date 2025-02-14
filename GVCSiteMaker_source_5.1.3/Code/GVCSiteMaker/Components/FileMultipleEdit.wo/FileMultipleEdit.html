@@ -1,0 +1,76 @@
+<webobject name = "DynamicBody">
+  <webobject name = "FileManagementForm">
+    <table border = "0" cellpadding = "0" cellspacing = "0" style = "width: 100%">
+      <tr>
+        <td colspan = "2" style = "padding-left: 2px;">
+          <h2>
+            <webobject name = "DeletingConditional">Delete</webobject>
+            <webobject name = "ChangeGroupsConditional">Change Access to</webobject>
+            <webobject name = "MovingFilesConditional">Move</webobject>
+            Multiple Files</h2>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+            Back to Manage Files</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "NotDeletingConditional"> <webobject name = "SaveButton" /> </webobject>
+          <webobject name = "DeletingConditional"> <webobject name = "DeleteButton" /> </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td> <hr class = "primaryBarStyle" /> </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2">
+      <webobject name = "MovingFilesConditional">
+        <tr>
+          <td valign = "top" width = "300" class = "leftContentColumn">
+            <b>Move to folder:</b>
+          </td>
+          <td valign = "top" class = "rightContentColumn"><webobject name = "FoldersPopUpButton" /></td>
+        </tr>
+      </webobject>
+      <webobject name = "ChangeGroupsConditional">
+        <tr>
+          <td colspan = "2" align = "top"><webobject name = "GroupPicker" /></td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+
+
+
+  <webobject name = "DeletingConditional">
+    <b>These files will be deleted:</b>
+  </webobject>
+  <webobject name = "ChangeGroupsConditional">
+    <b>These files will be protected with the access group(s) selected above:</b>
+  </webobject>
+  <webobject name = "MovingFilesConditional">
+    <b>These files will be moved to the folder selected above:</b>
+  </webobject>
+  <table border = "0" cellspacing = "2" cellpadding = "2" class = "coloredTable" width = "95%">
+    <tr>
+      <th align = "center" valign = "middle" class = "coloredTableHeading">Folder</th>
+      <th align = "center" valign = "middle" class = "coloredTableHeading">File</th>
+    </tr>
+    <webobject name = "Repetition1">
+      <tr>
+        <td align = "left" valign = "middle"><webobject name = "FolderNameString" /></td>
+        <td align = "left" valign = "middle"><webobject name = "FileNameString" /></td>
+      </tr>
+    </webobject>
+  </table>
+</webobject>

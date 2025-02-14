@@ -1,0 +1,727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+EOEditingContext (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="EOEditingContext (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOEditingContext.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOAttributeValidator.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOEntityAdditions.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOEditingContext.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOEditingContext.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofvalidation</FONT>
+<BR>
+Class EOEditingContext</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOObjectStore
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by ">com.webobjects.eocontrol.EOEditingContext
+          <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/ForgetfulEC.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.ForgetfulEC</A>
+              <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">net.global_village.eofextensions.DeleteFiresFaultWorkAroundEditingContext</A>
+                  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofvalidation.EOEditingContext</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.webobjects.eocontrol.EOKeyValueArchiving, com.webobjects.eocontrol.EOObserving, com.webobjects.foundation.NSDisposable, com.webobjects.foundation.NSLocking, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</A></DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../net/global_village/eofvalidation/NotifyingEditingContext.html" title="class in net.global_village.eofvalidation">NotifyingEditingContext</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.49"><B>EOEditingContext</B></A><DT>extends <A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">DeleteFiresFaultWorkAroundEditingContext</A></DL>
+</PRE>
+
+<P>
+EOEditingContext overrides the saveChanges method of com.apple.yellow.eocontrol.EOEditingContext so that custom, localized validation messages can be produced for adaptor level exceptions.
+ <br>
+  TODO:
+  - consider if this functionality could be better (or more consistently) handled by subclassing one of the EOAdaptor... or EODatabase... classes.  The problem with this EOEditingContext approach is that not all adpators raise the proper exceptions, and that the exceptions raised may not have the needed information in them.  Subclassing at a lower level may get around this.
+ <br>
+    Notes:
+      (1) Violations of width / scale / precision limits (assuming EOModel does not match db)
+          generate a NSInternalInconsistencyException which is not caught by this poser.  Observed with FrontBase.
+ <br>
+      (2) An object having a FK reference that does not exist causes EOF to attempt to fetch that object which results
+          in an EOAdaptorOptimisticLockingFailure or an NSInternalInconsistencyException.  Observed with FrontBase
+ <br>
+      (3) Oracle returns the proper type of exception, but with an ORA error code rather than a more standard and
+          useful SQLSTATE code.  This will make interpreting the exceptions more difficult.
+ <br>
+      (4) FrontBase raises an NSInternalInconsistencyException instead of an EOGeneralAdaptorException for everything
+          other than optimistic locking failures.  These exceptions contain very little in the way of useful information,
+          other than the name and reason.  The userInfo consists of a list of EODatabaseOperation and EODatabaseContext
+          which give no indication of what has failed.  The exception reason contains the actual exception as SQLSTATE
+          values.  For example a reason will look like:
+              Exception <FrontBase exception #> (SQLSTATE class:SQLSTATE code). <Text message>
+          For example:
+              Exception 357 (23:000). Integrity constraint violation...
+          The (23:000) indicates that is it an integrity constraint violation and could be used to manufacture a more
+          explicit exception.  FrontBase has promised to address this issue in a future release.
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 23$
+
+ TODO: Add a delegate to interpret exceptions?</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+<DT><B>See Also:</B><DD><A HREF="../../../serialized-form.html#net.global_village.eofvalidation.EOEditingContext">Serialized Form</A></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOEditingContext._EventLoggingEnabler, com.webobjects.eocontrol.EOEditingContext.Delegate, com.webobjects.eocontrol.EOEditingContext.EditingContextEvent, com.webobjects.eocontrol.EOEditingContext.Editor, com.webobjects.eocontrol.EOEditingContext.MessageHandler</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<A NAME="nested_classes_inherited_from_class_com.webobjects.eocontrol.EOKeyValueArchiving"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from interface com.webobjects.eocontrol.EOKeyValueArchiving</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>com.webobjects.eocontrol.EOKeyValueArchiving._NullValueSupport, com.webobjects.eocontrol.EOKeyValueArchiving._NumberSupport, com.webobjects.eocontrol.EOKeyValueArchiving._TimestampSupport, com.webobjects.eocontrol.EOKeyValueArchiving.Awaking, com.webobjects.eocontrol.EOKeyValueArchiving.FinishInitialization, com.webobjects.eocontrol.EOKeyValueArchiving.Support</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html" title="class in net.global_village.eofextensions">DeletePrefetcher</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#deletePrefetcher">deletePrefetcher</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect">Field</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#private_processingChanges">private_processingChanges</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#shouldInstanceUseDeletePrefetcher">shouldInstanceUseDeletePrefetcher</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#useDeletePrefetcher">useDeletePrefetcher</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This can be set to false to disable use of the DeletePrefetcher.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_CLASS, _EditingContextDidChangeSharedEditingContextNotification, _EditingContextEditorHasChangesNotification, _IsEventLoggingEnabled, EditingContextDidSaveChangesNotification, EditingContextFlushChangesRunLoopOrdering, ObjectsChangedInEditingContextNotification</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.eocontrol.EOObjectStore"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.webobjects.eocontrol.EOObjectStore</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_doAssertLock, _doAssertLockInitialized, _userInfo, _wasDisposed, DeletedKey, InsertedKey, InvalidatedAllObjectsInStoreNotification, InvalidatedKey, ObjectsChangedInStoreNotification, UpdatedKey</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.webobjects.foundation.NSLocking"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface com.webobjects.foundation.NSLocking</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>OneCentury, OneDay, OneHour, OneMinute, OneSecond, OneWeek, OneYear</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#EOEditingContext()">EOEditingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creates a new EOEditingContext object with the default parent object store as its parent object store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#EOEditingContext(com.webobjects.eocontrol.EOObjectStore)">EOEditingContext</A></B>(com.webobjects.eocontrol.EOObjectStore&nbsp;anObjectStore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#_processObjectStoreChanges(com.webobjects.foundation.NSDictionary)">_processObjectStoreChanges</A></B>(com.webobjects.foundation.NSDictionary&nbsp;changes)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throws an exception if a specific, dangerous situation is present.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#deleteObject(com.webobjects.eocontrol.EOEnterpriseObject)">deleteObject</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to hack around bug in EOF.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#initializePrivateFieldAccess()">initializePrivateFieldAccess</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets instance variables to access private fields of of
+ <code>com.webobjects.eocontrol.EOEditingContext</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretEOGeneralAdaptorException(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretEOGeneralAdaptorException</A></B>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examines the exception and dispatches it to one of the more specific interpret...Exception methods.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretInsertFailureFromException(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretInsertFailureFromException</A></B>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interprets the passed exception as an insertion failure and returns an exception with a localized error message and a customized userInfo dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretIntegrityConstraintViolation(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretIntegrityConstraintViolation</A></B>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interprets the passed exception as an optimistic locking failure (concurrent update error) and returns an exception with a localized error message and a customized userInfo dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#interpretOptimisticLockingFailure(com.webobjects.eoaccess.EOGeneralAdaptorException)">interpretOptimisticLockingFailure</A></B>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interprets the passed exception as an optimistic locking failure (concurrent update error) and returns an exception with a localized error message and a customized userInfo dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofvalidation/EOEditingContext.html#saveChanges()">saveChanges</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calls super.saveChanges() and interprets any exceptions raised.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_net.global_village.eofextensions.DeleteFiresFaultWorkAroundEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class net.global_village.eofextensions.<A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">DeleteFiresFaultWorkAroundEditingContext</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#_objectsChangedInStore(com.webobjects.foundation.NSNotification)">_objectsChangedInStore</A>, <A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#setThreadSavingEditingContext(java.lang.Thread)">setThreadSavingEditingContext</A>, <A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#threadSavingEditingContext()">threadSavingEditingContext</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOEditingContext"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOEditingContext</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_clearChangedThisTransaction, _clearOriginalSnapshotAndInitializeRec, _clearOriginalSnapshotForObject, _defaultEditingContextNowInitialized, _defaultSharedEditingContextWasInitialized, _editorHasChanges, _EOAssertSafeMultiThreadedAccess, _EOAssertSafeMultiThreadedAccess, _EOAssertSafeMultiThreadedReadAccess, _globalIDChanged, _globalIDsForObjects, _initWithParentObjectStore, _insertObjectWithGlobalID, _invalidatedAllObjectsInStore, _invalidateObjectsDuringSave, _noop, _objectBasedChangeInfoForGIDInfo, _objectsInitializedInSharedContext, _processEndOfEventNotification, _processGlobalIDChanges, _processInitializedObjectsInSharedContext, _processNotificationQueue, _processRecentChanges, _resetAllChanges, _resetAllChanges, _retainCountForObjectWithGlobalID, _undoDelete, _undoManagerCheckpoint, _undoUpdate, addEditor, arrayFaultWithSourceGlobalID, committedSnapshotForObject, currentEventSnapshotForObject, decodeWithKeyValueUnarchiver, defaultFetchTimestampLag, defaultParentObjectStore, delegate, deletedObjects, dispose, editingContextDidForgetObjectWithGlobalID, editors, editorsHaveChanges, encodeObjectWithCoder, encodeWithKeyValueArchiver, faultForGlobalID, faultForRawRow, faultForRawRow, fetchTimestamp, finalize, forgetObject, globalIDForObject, hasChanges, initializeObject, initObjectWithCoder, insertedObjects, insertObject, insertObjectWithGlobalID, instancesRetainRegisteredObjects, invalidateAllObjects, invalidateObjectsWithGlobalIDs, invalidatesObjectsWhenFinalized, invokeRemoteMethod, isObjectLockedWithGlobalID, lock, lockObject, lockObjectStore, lockObjectWithGlobalID, locksObjectsBeforeFirstModification, messageHandler, objectForGlobalID, objectsForSourceGlobalID, objectsWithFetchSpecification, objectsWithFetchSpecification, objectWillChange, parentObjectStore, processRecentChanges, propagatesDeletesAtEndOfEvent, readResolve, recordObject, redo, refaultAllObjects, refaultObject, refaultObject, refaultObjects, refetch, refreshAllObjects, refreshObject, registeredObjects, removeEditor, reset, retainsRegisteredObjects, revert, rootObjectStore, saveChanges, saveChangesInEditingContext, setDefaultFetchTimestampLag, setDefaultParentObjectStore, setDelegate, setFetchTimestamp, setInstancesRetainRegisteredObjects, setInvalidatesObjectsWhenFinalized, setLocksObjectsBeforeFirstModification, setMessageHandler, setPropagatesDeletesAtEndOfEvent, setRetainsRegisteredObjects, setSharedEditingContext, setStopsValidationAfterFirstError, setSubstitutionEditingContext, setUndoManager, setUsesContextRelativeEncoding, sharedEditingContext, stopsValidationAfterFirstError, substitutionEditingContext, tryLock, tryToSaveChanges, undo, undoManager, unlock, unlockObjectStore, updatedObjects, usesContextRelativeEncoding</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.webobjects.eocontrol.EOObjectStore"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.webobjects.eocontrol.EOObjectStore</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>_checkAssertLock, _resetAssertLock, _suppressAssertLock, setUserInfo, setUserInfoForKey, userInfo, userInfoForKey</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="useDeletePrefetcher"><!-- --></A><H3>
+useDeletePrefetcher</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.52"><B>useDeletePrefetcher</B></A></PRE>
+<DL>
+<DD>This can be set to false to disable use of the DeletePrefetcher.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="shouldInstanceUseDeletePrefetcher"><!-- --></A><H3>
+shouldInstanceUseDeletePrefetcher</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.53"><B>shouldInstanceUseDeletePrefetcher</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="private_processingChanges"><!-- --></A><H3>
+private_processingChanges</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/reflect/Field.html?is-external=true" title="class or interface in java.lang.reflect">Field</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.57"><B>private_processingChanges</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="deletePrefetcher"><!-- --></A><H3>
+deletePrefetcher</H3>
+<PRE>
+protected <A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html" title="class in net.global_village.eofextensions">DeletePrefetcher</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.60"><B>deletePrefetcher</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="EOEditingContext(com.webobjects.eocontrol.EOObjectStore)"><!-- --></A><H3>
+EOEditingContext</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.70"><B>EOEditingContext</B></A>(com.webobjects.eocontrol.EOObjectStore&nbsp;anObjectStore)</PRE>
+<DL>
+<DD>Designated constructor.  Creates a new EOEditingContext object with anObjectStore as its parent object store.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>anObjectStore</CODE> - parent object store</DL>
+</DL>
+<HR>
+
+<A NAME="EOEditingContext()"><!-- --></A><H3>
+EOEditingContext</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.82"><B>EOEditingContext</B></A>()</PRE>
+<DL>
+<DD>Creates a new EOEditingContext object with the default parent object store as its parent object store.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="deleteObject(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+deleteObject</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.96"><B>deleteObject</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;object)</PRE>
+<DL>
+<DD>Overridden to hack around bug in EOF.  If processing delete rules while saving fires a fault
+ that requires a trip to the DB, firing this fault scrambles the editing context's internal
+ state. This methods ensures that all faults are pre-fired.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>deleteObject</CODE> in class <CODE>com.webobjects.eocontrol.EOEditingContext</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saveChanges()"><!-- --></A><H3>
+saveChanges</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.124"><B>saveChanges</B></A>()</PRE>
+<DL>
+<DD>Calls super.saveChanges() and interprets any exceptions raised.<br><br>
+ This EOEditingContext also clears the undo stack after a successful save.  This is done as a work around for a bug in EOF. There is a rather serious bug when validateForDelete() fails to allow a deletion.  This will occur if you are using the Deny delete rule, the relationship is mandatory, or you have a custom validateForDelete() method.  The error occurs in this scenario:<br>
+ 1. The editing context has multiple generations, meaning that saveChanges() has been called one or more times after one or more EOs has been created / inserted / updated.<br>
+ 2. An EO is deleted from the editing context by deleteObject().<br>
+ 3. saveChanges() fails due to an NSValidation.ValidationException raised in validateForDelete.<br>
+
+ This result of this appears to be that undo() is called on the editing context's undo manager too many times.  Instead of rolling back to the state when saveChanges() was called it rolls back past several of previous saveChanges()!  The result of this is that the editing context shows a historical state that does not match the object store or the database.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html#saveChanges()">saveChanges</A></CODE> in class <CODE><A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions">DeleteFiresFaultWorkAroundEditingContext</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="interpretEOGeneralAdaptorException(com.webobjects.eoaccess.EOGeneralAdaptorException)"><!-- --></A><H3>
+interpretEOGeneralAdaptorException</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.165"><B>interpretEOGeneralAdaptorException</B></A>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</PRE>
+<DL>
+<DD>Examines the exception and dispatches it to one of the more specific interpret...Exception methods.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theException</CODE> - the exception as raised from saveChanges()
+<DT><B>Returns:</B><DD>an exception with a localized error message and a customized userInfo dictionary</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="interpretOptimisticLockingFailure(com.webobjects.eoaccess.EOGeneralAdaptorException)"><!-- --></A><H3>
+interpretOptimisticLockingFailure</H3>
+<PRE>
+public <A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.221"><B>interpretOptimisticLockingFailure</B></A>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</PRE>
+<DL>
+<DD>Interprets the passed exception as an optimistic locking failure (concurrent update error) and returns an exception with a localized error message and a customized userInfo dictionary.  Note that the operation which caused the exception could have been an update or a delete.  The same message is returned in either case.  If you need to customize the message, look at <code>NSExceptionAdditions.failedAdaptorOperation(exception)</code> to determine if it is an EOAdaptorUpdateOperator or an EOAdaptorDeleteOperator.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theException</CODE> - the exception as raised from saveChanges()
+<DT><B>Returns:</B><DD>an exception with a localized error message and a customized userInfo dictionary</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="interpretIntegrityConstraintViolation(com.webobjects.eoaccess.EOGeneralAdaptorException)"><!-- --></A><H3>
+interpretIntegrityConstraintViolation</H3>
+<PRE>
+public <A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.240"><B>interpretIntegrityConstraintViolation</B></A>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</PRE>
+<DL>
+<DD>Interprets the passed exception as an optimistic locking failure (concurrent update error) and returns an exception with a localized error message and a customized userInfo dictionary.  Note that the operation which caused the exception could have been an update or a delete.  The same message is returned in either case.  If you need to customize the message, look at <code>NSExceptionAdditions.failedAdaptorOperation(exception)</code> to determine if it is an EOAdaptorUpdateOperator or an EOAdaptorDeleteOperator.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theException</CODE> - the exception as raised from saveChanges()
+<DT><B>Returns:</B><DD>an exception with a localized error message and a customized userInfo dictionary</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="interpretInsertFailureFromException(com.webobjects.eoaccess.EOGeneralAdaptorException)"><!-- --></A><H3>
+interpretInsertFailureFromException</H3>
+<PRE>
+public <A HREF="../../../net/global_village/eofvalidation/EOFValidationException.html" title="class in net.global_village.eofvalidation">EOFValidationException</A> <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.261"><B>interpretInsertFailureFromException</B></A>(com.webobjects.eoaccess.EOGeneralAdaptorException&nbsp;theException)</PRE>
+<DL>
+<DD>Interprets the passed exception as an insertion failure and returns an exception with a localized error message and a customized userInfo dictionary.  If specific handling is needed for specific failures, this is the place to return a customized exception.  Inserts may fail due to a duplicated a unique column, violation of a nullity or other check constraint, etc.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theException</CODE> - the exception as raised from saveChanges()
+<DT><B>Returns:</B><DD>an exception with a localized error message and a customized userInfo dictionary</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_processObjectStoreChanges(com.webobjects.foundation.NSDictionary)"><!-- --></A><H3>
+_processObjectStoreChanges</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.340"><B>_processObjectStoreChanges</B></A>(com.webobjects.foundation.NSDictionary&nbsp;changes)</PRE>
+<DL>
+<DD><p>Throws an exception if a specific, dangerous situation is present. The problematic
+ situation occurs when ObjectStore changes for registered objects are processed while the
+ method <code>processRecentChanges()</code> is running. If this happens, the editing context state
+ for inserted, deleted, and updated objects is lost.  This has unpredictable results including
+ attempting to save as updates those records being deleted which then fails validateForSave.</p>
+
+ <p>The request to process ObjectStore changes can come as a result of faults firing during
+ processRecentChanged() (see stack trace below), and triggering a refetch of data as the
+ snapshot is older than what the editing context permits and the fetched row being different
+ that what was in the ObjectStore.  To get around this bug pre-fire any faults which may get
+ fired in this manner.  For example, using net.global_village.eofextensions.DeletePrefetcher.</p>
+
+ <p>This situation is detected by checking if the instance variable <code>_processingChanges</code>
+ of <code>com.webobjects.eocontrol.EOEditingContext</code> is set and if the changes in the
+ notification affect the objects registered in this editing context.</p>
+ <pre>
+ Stack Trace from 5.1.3
+ at net.global_village.eofvalidation.EOEditingContext._processObjectStoreChanges(EOEditingContext.java:221)
+ at java.lang.reflect.Method.invoke(Native Method)
+ at com.webobjects.foundation.NSSelector.invoke(NSSelector.java:296)
+ at com.webobjects.foundation.NSSelector._safeInvokeSelector(NSSelector.java:59)
+ at com.webobjects.eocontrol.EOEditingContext._sendOrEnqueueNotification(EOEditingContext.java:2904)
+ at com.webobjects.eocontrol.EOEditingContext._objectsChangedInStore(EOEditingContext.java:2196)
+ at java.lang.reflect.Method.invoke(Native Method)
+ at com.webobjects.foundation.NSSelector._safeInvokeMethod(NSSelector.java:71)
+ at com.webobjects.foundation.NSNotificationCenter$_Entry.invokeMethod(NSNotificationCenter.java:580)
+ at com.webobjects.foundation.NSNotificationCenter.postNotification(NSNotificationCenter.java:522)
+ at com.webobjects.foundation.NSNotificationCenter.postNotification(NSNotificationCenter.java:554)
+ at com.webobjects.eocontrol.EOObjectStoreCoordinator._objectsChangedInSubStore(EOObjectStoreCoordinator.java:642)
+ at java.lang.reflect.Method.invoke(Native Method)
+ at com.webobjects.foundation.NSSelector._safeInvokeMethod(NSSelector.java:71)
+ at com.webobjects.foundation.NSNotificationCenter$_Entry.invokeMethod(NSNotificationCenter.java:580)
+ at com.webobjects.foundation.NSNotificationCenter.postNotification(NSNotificationCenter.java:522)
+ at com.webobjects.foundation.NSNotificationCenter.postNotification(NSNotificationCenter.java:554)
+ at com.webobjects.eoaccess.EODatabaseChannel.cancelFetch(EODatabaseChannel.java:577)
+ at com.webobjects.eoaccess.EODatabaseContext._objectsWithFetchSpecificationEditingContext(EODatabaseContext.java:3037)
+ at com.webobjects.eoaccess.EODatabaseContext.objectsWithFetchSpecification(EODatabaseContext.java:3148)
+ at com.webobjects.eoaccess.EODatabaseContext._followToManyRelationshipWithFetchSpecification(EODatabaseContext.java:2501)
+ at com.webobjects.eoaccess.EODatabaseContext._followFetchSpecification(EODatabaseContext.java:2643)
+ at com.webobjects.eoaccess.EODatabaseContext._batchFetchRelationshipForSourceObjectsEditingContext(EODatabaseContext.java:3758)
+ at com.webobjects.eoaccess.EODatabaseContext.objectsForSourceGlobalID(EODatabaseContext.java:4042)
+ at com.webobjects.eocontrol.EOObjectStoreCoordinator.objectsForSourceGlobalID(EOObjectStoreCoordinator.java:588)
+ at com.webobjects.eocontrol.EOEditingContext.objectsForSourceGlobalID(EOEditingContext.java:2428)
+ at com.webobjects.eoaccess.EODatabaseContext._fireArrayFault(EODatabaseContext.java:4286)
+ at com.webobjects.eoaccess.EOAccessArrayFaultHandler.completeInitializationOfObject(EOAccessArrayFaultHandler.java:60)
+ at com.webobjects.eocontrol._EOCheapCopyMutableArray.willRead(_EOCheapCopyMutableArray.java:37)
+ at com.webobjects.eocontrol._EOCheapCopyMutableArray.count(_EOCheapCopyMutableArray.java:87)
+ at com.webobjects.foundation.NSMutableArray.removeObject(NSMutableArray.java:493)
+ at net.global_village.virtualtables._VirtualRow.removeFromFields(_VirtualRow.java:106)
+ at java.lang.reflect.Method.invoke(Native Method)
+ at com.webobjects.foundation.NSSelector._safeInvokeMethod(NSSelector.java:71)
+ at com.webobjects.eocontrol.EOCustomObject.removeObjectFromPropertyWithKey(EOCustomObject.java:687)
+ at com.webobjects.eocontrol.EOClassDescription.propagateDeleteForObject(EOClassDescription.java:419)
+ at com.webobjects.eocontrol.EOCustomObject.propagateDeleteWithEditingContext(EOCustomObject.java:435)
+ at com.webobjects.eocontrol.EOClassDescription.propagateDeleteForObject(EOClassDescription.java:464)
+ at com.webobjects.eocontrol.EOCustomObject.propagateDeleteWithEditingContext(EOCustomObject.java:435)
+ at com.webobjects.eocontrol.EOEditingContext.propagateDeletesUsingTable(EOEditingContext.java:1331)
+ at com.webobjects.eocontrol.EOEditingContext._processDeletedObjects(EOEditingContext.java:1296)
+ at com.webobjects.eocontrol.EOEditingContext._processRecentChanges(EOEditingContext.java:917)
+ at com.webobjects.eocontrol.EOEditingContext.processRecentChanges(EOEditingContext.java:1089)
+ </pre>
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>_processObjectStoreChanges</CODE> in class <CODE>com.webobjects.eocontrol.EOEditingContext</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</A></CODE> - if the instance variable <code>_processingChanges</code> of <code>com.webobjects.eocontrol.EOEditingContext</code> is set</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="initializePrivateFieldAccess()"><!-- --></A><H3>
+initializePrivateFieldAccess</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofvalidation/EOEditingContext.html#line.374"><B>initializePrivateFieldAccess</B></A>()</PRE>
+<DL>
+<DD>Sets instance variables to access private fields of of
+ <code>com.webobjects.eocontrol.EOEditingContext</code>.  This flag is set while the method processRecentChanges() is running.  We need access to this to detect a bug in EOF in WO 5.1.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/EOEditingContext.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOAttributeValidator.html" title="class in net.global_village.eofvalidation"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofvalidation/EOEntityAdditions.html" title="class in net.global_village.eofvalidation"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofvalidation/EOEditingContext.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="EOEditingContext.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_classes_inherited_from_class_com.webobjects.eocontrol.EOEditingContext">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

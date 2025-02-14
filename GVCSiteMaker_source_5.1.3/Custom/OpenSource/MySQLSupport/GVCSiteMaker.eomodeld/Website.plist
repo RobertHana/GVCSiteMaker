@@ -1,0 +1,263 @@
+{
+    attributes = (
+        {
+            columnName = "CAN_REPLICATE"; 
+            name = canReplicate; 
+            prototypeName = charBoolean; 
+        }, 
+        {
+            columnName = "CONTACT_EMAIL"; 
+            name = contactEmail; 
+            prototypeName = mediumString; 
+            width = 300; 
+        }, 
+        {
+            columnName = "CONTACT_FAX"; 
+            name = contactFax; 
+            prototypeName = tinySting; 
+            width = 75; 
+        }, 
+        {
+            columnName = "CONTACT_NAME"; 
+            name = contactName; 
+            prototypeName = mediumString; 
+            width = 300; 
+        }, 
+        {
+            columnName = "CONTACT_PHONE"; 
+            name = contactPhone; 
+            prototypeName = tinySting; 
+            width = 75; 
+        }, 
+        {
+            columnName = "CUSTOM_HEADER_CONTENT"; 
+            name = customHeaderContent; 
+            prototypeName = largeText; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "DATE_CREATED"; 
+            name = dateCreated; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "DATE_LAST_MODIFIED"; 
+            name = dateLastModified; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = "FILE_SIZE_USAGE"; name = fileSizeUsage; prototypeName = long; }, 
+        {columnName = "GROUP_PKEY"; name = groupFKey; prototypeName = dbKey; }, 
+        {columnName = "MEG_QUOTA"; name = megQuota; prototypeName = integer; }, 
+        {
+            columnName = "OID_PARENT_ORG_UNIT"; 
+            name = oidParentOrgUnit; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_SECTION_STYLE"; 
+            name = oidSectionStyle; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "PUBLICATION_PERMITTED"; 
+            name = publicationPermitted; 
+            prototypeName = charBoolean; 
+        }, 
+        {columnName = PUBLISHED; name = published; prototypeName = charBoolean; }, 
+        {columnName = "REDIRECT_URL"; name = redirectURL; prototypeName = longString; }, 
+        {columnName = "SHOW_BANNER"; name = showBanner; prototypeName = charBoolean; }, 
+        {columnName = "SHOW_FOOTER"; name = showFooter; prototypeName = charBoolean; }, 
+        {
+            columnName = "SHOW_LOGIN_LOGOUT_LINKS"; 
+            name = showLoginLogoutLinks; 
+            prototypeName = charBoolean; 
+        }, 
+        {columnName = "SHOW_NAVBAR"; name = showNavbar; prototypeName = charBoolean; }, 
+        {
+            columnName = "SITE_ID"; 
+            name = siteID; 
+            prototypeName = shortString; 
+            width = 150; 
+        }, 
+        {columnName = "USER_FKEY"; name = userFKey; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "WEBSITE_PKEY"; 
+            name = websitePKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (websitePKey, publicationPermitted, published, canReplicate, oidSectionStyle); 
+    className = "com.gvcsitemaker.core.Website"; 
+    classProperties = (
+        showBanner, 
+        showNavbar, 
+        showFooter, 
+        megQuota, 
+        dateLastModified, 
+        banner, 
+        contactName, 
+        contactEmail, 
+        contactPhone, 
+        files, 
+        footer, 
+        sections, 
+        contactFax, 
+        childGroups, 
+        owner, 
+        configureGroup, 
+        parentOrgUnit, 
+        fileSizeUsage, 
+        siteID, 
+        redirectURL, 
+        publicationPermitted, 
+        published, 
+        canReplicate, 
+        sectionStyle, 
+        folders, 
+        databaseTables, 
+        embeddedSiteComponents, 
+        dateCreated, 
+        showLoginLogoutLinks, 
+        customHeaderContent
+    ); 
+    externalName = "SM_WEBSITE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ownerUniqname, 
+            siteName, 
+            showBanner, 
+            showNavbar, 
+            showFooter, 
+            megQuota, 
+            siteTypeId, 
+            orgCode, 
+            dateLastModified, 
+            styleTemplateId, 
+            banner, 
+            siteTypeTrans, 
+            contactName, 
+            contactEmail, 
+            contactPhone, 
+            styleTrans, 
+            files, 
+            footers, 
+            sections, 
+            websiteImages, 
+            contactFax, 
+            groups, 
+            childGroups, 
+            owner
+        ); 
+    }; 
+    name = Website; 
+    primaryKeyAttributes = (websitePKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Banner; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = banner; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = WebsiteGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = childGroups; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ConfigureGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupPKey; sourceAttribute = groupFKey; }); 
+            name = configureGroup; 
+        }, 
+        {
+            definition = "websiteTables.table"; 
+            deleteRule = EODeleteRuleCascade; 
+            joinSemantic = EOInnerJoin; 
+            name = databaseTables; 
+        }, 
+        {
+            destination = EmbeddedSite; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = embeddedWebsiteFkey; sourceAttribute = websitePKey; }); 
+            name = embeddedSiteComponents; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SiteFile; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = files; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SiteFileFolder; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = folders; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Footer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = footer; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userFKey; }); 
+            name = owner; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidParentOrgUnit; }); 
+            name = parentOrgUnit; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = SectionStyle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidSectionStyle; }); 
+            name = sectionStyle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Section; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFKey; sourceAttribute = websitePKey; }); 
+            name = sections; 
+        }, 
+        {
+            destination = WebsiteTable; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = websiteFkey; sourceAttribute = websitePKey; }); 
+            name = websiteTables; 
+        }
+    ); 
+}

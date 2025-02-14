@@ -1,0 +1,46 @@
+AnotherSpacerImage: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	height = 2;
+	width = 30;
+}
+
+CSSComponent: SMCSSComponent 
+{
+}
+
+CancelButton: WOSubmitButton {
+	value = "No";
+	action = cancel;
+}
+
+ConfirmationForm: WOForm {
+	multipleSubmit = true;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	isAdmin = true;
+}
+
+MessageString: WOString {
+	value = message;
+}
+
+PageHeader: PageHeader {
+}
+
+ProceedButton: WOSubmitButton {
+	value = "Yes";
+	action = proceed;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+
+Spacer: WOImage {
+	src = "/GVCSiteMaker/Images/spacer.gif";
+	height = 2;
+	width = 24;
+}

@@ -1,0 +1,4 @@
+DataAccessMode: WOSwitchComponent {
+	componentObject = dataAccessParameters.modeComponentForMode;
+	WOComponentName = dataAccessParameters.modeComponentForMode.componentType;
+}

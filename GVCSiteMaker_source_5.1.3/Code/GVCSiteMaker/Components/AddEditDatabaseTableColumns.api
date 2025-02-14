@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="AddEditDatabaseTableColumns" wocomponentcontent="false">
+
+        <binding name="databaseTable"/>
+        <validation message="'databaseTable' is a required binding.">
+            <unbound name="databaseTable"/>
+        </validation>
+        <binding name="selectedColumnType"/>
+        <validation message="'selectedColumnType' is a required binding.">
+            <unbound name="selectedColumnType"/>
+        </validation>
+        <validation message="'selectedColumnType' must be bound to a settable value">
+            <unsettable name="selectedColumnType"/>
+        </validation>
+    <binding name="selectedLookupSourceColumn"/>
+        <validation message="'selectedLookupSourceColumn' is a required binding.">
+            <unbound name="selectedLookupSourceColumn"/>
+        </validation>
+        <validation message="'selectedLookupSourceColumn' must be bound to a settable value">
+            <unsettable name="selectedLookupSourceColumn"/>
+        </validation>
+    </wo>
+</wodefinitions>

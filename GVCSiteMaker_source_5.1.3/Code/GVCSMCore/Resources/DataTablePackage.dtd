@@ -1,0 +1,56 @@
+<!DOCTYPE package [
+<!ELEMENT package  ( mainTable | relatedTable | relatedSection )*>
+
+<!ELEMENT mainTable  ( column | rowData )*>
+<!ATTLIST mainTable
+name CDATA #REQUIRED
+textDescription CDATA #REQUIRED
+>
+
+<!ELEMENT column  EMPTY>
+<!ATTLIST column
+restrictingValue CDATA #REQUIRED
+name CDATA #REQUIRED
+type CDATA #REQUIRED
+textDescription CDATA #REQUIRED
+lookupColumnType CDATA #IMPLIED
+lookupTable CDATA #IMPLIED
+lookupColumn CDATA #IMPLIED
+expression CDATA #IMPLIED
+>
+
+<!ELEMENT rowData  ( #PCDATA )>
+
+<!ELEMENT relatedTable  ( column | rowData )*>
+<!ATTLIST relatedTable
+name CDATA #REQUIRED
+textDescription CDATA #REQUIRED
+>
+
+<!ELEMENT relatedSection  ( component )*>
+<!ATTLIST relatedSection
+name CDATA #REQUIRED
+details CDATA #REQUIRED
+normalName CDATA #REQUIRED
+mimeType CDATA #REQUIRED
+isNavigable CDATA #REQUIRED
+typeKey CDATA #REQUIRED
+sectionOrder CDATA #REQUIRED
+>
+
+<!ELEMENT component  ( component | template )*>
+<!ATTLIST component
+databaseTableName CDATA #REQUIRED
+subType CDATA #REQUIRED
+bindings CDATA #IMPLIED
+componentType CDATA #REQUIRED
+useCustomTemplate CDATA #IMPLIED
+canEdit CDATA #IMPLIED
+columnName CDATA #IMPLIED
+componentOrder CDATA #IMPLIED
+defaultFieldValue CDATA #IMPLIED
+searchFormType CDATA #IMPLIED
+>
+
+<!ELEMENT template  ( #PCDATA )>
+]>

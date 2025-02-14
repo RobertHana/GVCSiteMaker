@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Using Ant to Build WebObjects Frameworks and Application
+At GVC</title>
+
+
+</head>
+
+
+
+<body>
+
+<h1>Introduction</h1>
+
+<p>This document describes how to use Ant to Build WebObjects
+Frameworks and Applications. Tne build process was devised at, and is
+particular to, GVC. This document will look at the build process at the
+<a href="#project">project</a>, <a href="#module">module</a>,
+and <a href="#releasePackage">release
+package</a> level. A few notes on <a href="#debugging">debugging</a>
+classpath related problems are also included.
+</p>
+
+<h1>Installing <img src="http://ant.apache.org/images/ant_logo_large.gif"></h1>
+
+On <b>OS X</b>, Ant comes as part of the Xcode tools.  If you have the Xcode tools
+installed, there is nothing else for you to do.  Skip ahead to <a href="#configure">Install WOProject or WOLips</a>.
+
+<p>The Ant <a href="http://ant.apache.org">Home Page</a>.<br>
+
+<br>
+
+You can download it from <a href="http://ant.apache.org/bindownload.cgi">here</a>.
+You want the latest version, 1.7.0<br>
+
+<br>
+
+On <b>Win2K</b>, unzip Ant to a path with no spaces, e.g.
+C:\Programs\<br>
+
+<br>
+
+On <b>OS X</b>, it comes as part of the Xcode tools.  If you don't want to install that, 
+download and untar Ant to&nbsp;/Developer/Applications/.<br>
+
+<br>
+
+</p>
+
+<a name="configure">
+</a>
+<h1><a name="configure">Configuring Your Installation</a></h1>
+
+<h2><a name="configure">Put Ant on the Path</a></h2>
+
+<p><a name="configure">Your life will be a lot
+easier if you add Ant's bin directory to your path so
+that you can just type <code>ant</code> to run it. The
+rest of this document assumes that you have done so.</a></p>
+
+<h2><a name="configure">Install WOProject or WOLips</a></h2>
+
+<a name="configure">Either </a><a target="_new" href="http://www.objectstyle.org/confluence/display/WOL/Home">WOProject
+or WOLips</a> needs to be installed. WOProject alone will
+suffice, but if you will be using Eclipse, WOLips will take care of both.
+
+<h2>Install and Configure Property Files</h2>
+
+<p>You will need to put two files in your home library directory:
+<br>
+
+<br>
+
+On <b>Win2K</b> this is C:\Documents and Settings\[user_id]\Library<br>
+
+<br>
+
+On <b>OS X</b> this is ~/Library<br>
+
+</p>
+
+<p>The first one, <a target="_blank" href="gvc.properties">gvc.properties</a>, defines Ant
+properties specific to our build process. You will probably need to
+edit some of the paths to match the configuration of your machine.</p>
+
+<p>The second one, <a target="_blank" href="woproject_tasks.properties">woproject_tasks.properties</a>,
+defines Ant tasks supplied by WOProject. You don't need to edit this
+file.</p>
+
+<p>The WOLips/WOProject install should have created the
+properties file <a target="_blank" href="wobuild.properties">wobuild.properties</a>.
+If not, create that manually and edit the paths as needed.  e.g.</p>
+<pre>
+#This file stores the wo specific properties
+#Thu Feb 28 17:16:26 PST 2008
+wo.wosystemroot=/System
+wo.wolocalroot=/
+wo.woroot=/
+wo.dir.reference.api=/Developer/Documentation/DocSets/com.apple.ADC_Reference_Library.WebObjectsReference.docset/Contents/Resources/Documents/documentation/MacOSXServer/Reference/WO54_Reference
+</pre>
+
+<a name="project"></a>
+<h1>Configuring build.xml in a WOLips Project</h1>
+
+<p>We use common build files, so the default build.xml file
+generated for a new project by WOLips can be mostly discarded.
+
+<pre>
+&lt;project name="GVCThreadedTasks" default="build" basedir="."&gt;
+    &lt;import file="../Ant/common.xml"/&gt;
+&lt;/project&gt;
+</pre>
+
+<p>You will also need to edit the <b>build.properties</b> file.  Add
+<b>is.wo.framework=true</b> if it is a framework project, or
+<b>is.wo.app=true</b> if it is an applicaion project.</p>
+
+<p>If the project requires other GVC frameworks, define <b>gvc.frameworks</b>.   
+If the project requires other third party frameworks, define <b>extra.frameworks</b>.  
+These need to be kept in synch with what is in Eclipse.</p>
+
+<p>Here is an example:</p>
+<pre>
+classes.dir = bin
+project.name=GVCThreadedTasks
+project.name.lowercase=gvcthreadedtasks
+principalClass = 
+customInfoPListContent =
+eoAdaptorClassName =
+cfBundleVersion =
+cfBundleShortVersion =
+cfBundleID = org.mywoapp
+javaVersion = 1.5+
+<b>is.wo.framework=true</b> (or is.wo.app=true)
+<b>gvc.frameworks=GVCFoundation</b>
+</pre>
+
+
+<a name="module"></a>
+<h2>Building a Module (set of projects)</h2>
+
+<p>Building a set of projects amounts to executing a target in
+the build.xml file
+of each project. This <a target="_blank" href="../build.xml">build.xml</a>
+builds all of the GVC frameworks. This is accomplished by using a
+property to hold the
+target name and use of the <code>ant</code> and <code>antcall</code>
+tasks to
+invoke the target on multiple build files.</p>
+
+<p>This snippet show how the <code>dist
+</code> target uses the <code>target</code> property
+and <code>antcall</code> to call the <code>build.all</code>
+target which in turn passes the target onto each of the GVC framework
+projects using the <code>ant</code> task:</p>
+
+<pre> &lt;target name="build"&gt;<br> &lt;antcall target="build.all" inheritAll="true"&gt;<br> &lt;param name="target" value="build"/&gt;<br> &lt;/antcall&gt;<br> &lt;/target&gt;<br><br> <b>&lt;!-- Target to distribute target over all frameworks --&gt;</b><br>&lt;target name="build.all" depends="init.properties, check.optimize.code"&gt;<br>&lt;ant dir="GVCFoundation" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCEOPrototypes" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCTestEOModelBase" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCTestEOModelSubClass" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCEOFExtensions" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCEOFValidation" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCGenericObjects" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCSecurity" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCVirtualTables" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCKerberos" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCMail" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCWOExtensions" target="${target}" inheritAll="true"/&gt;<br>&lt;ant dir="GVCReportMill" target="${target}" inheritAll="true"/&gt;<br>&lt;/target&gt;<br></pre>
+
+<p>The build process can be controlled by passing different
+targets in the <code>target</code> property or by defining
+other properties used in the other build files called. For example the
+property <code>use.dbc</code> is used to conditionally
+contract the source files before compilation. Here is how a contracted
+source build (calling the target build_dbc instead of build) is done:</p>
+
+<pre> &lt;!-- Build all products with DBC --&gt;<br> &lt;target name="build_dbc" depends="use.dbc, build"/&gt;<br><br> &lt;!-- Define DBC activation flag --&gt;<br> &lt;target name="use.dbc"&gt;<br> &lt;property name="use.dbc" value="true"/&gt;<br> &lt;/target&gt;<br> </pre>
+
+<a name="releasePackage">
+</a>
+<h2>Building a Release Package</h2>
+
+<p>Building a release package consists of building projects,
+building modules,
+and packaging them using <code>tar, jar</code>, or <code>zip</code>.
+Every
+package is different so there is little useful to say about the general
+process. </p>
+
+<p>As Ant has tasks that closely mimic shell commands, converting
+existing shell scripts for packaging is a straightforward process. The
+main difference is that shell scripts are executed sequentially while
+Ant scripts consist of many targets.
+The Ant targets are executed in an order defined by dependencies
+between the targets. The usual practice is to define a task whose only
+purpose is to define
+the target execution order to produce a specific build product. It does
+this by
+listing the targets in the desired order in its <code>depends</code>
+attribute. The targets may not be executed in exact order defined by
+this task if the dependent tasks also have dependencies. Any only
+guarantees that they won't be executed <b>later</b> than
+specified. Here is an example showing two top level
+tasks whose only purpose is to define the relative order of task
+execution. The second task executes the <code>use.dbc</code>
+task before proceeding with tasks
+in the first target. </p>
+
+<pre>	&lt;!-- Default target, does a full build and package --&gt;<br>	&lt;target name="build_packages" depends="init.properties, build.code, update.classpath, package.files, copy.jass"/&gt;<br><br>	&lt;!-- Alternate target, does a full build and package but with DBC contracts enabled --&gt;<br>	&lt;target name="test_build_packages" depends="use.dbc, build_packages"/&gt;<br>	</pre>
+
+<p>The file <a target="_blank" href="../../../GVCSiteMaker/Deployment/BuildDeploymentPackages.xml">GVCSiteMaker/Deployment/BuildDeploymentPackages.xml
+</a> is a good example of a partial packaging process. The finish
+of the process can be found in <a target="_blank" href="../../../GVCSiteMaker/Custom/CommonBuildInstallPackage.xml">
+GVCSiteMaker/Custom/CommonBuildInstallPackage.xml</a>.</p>
+
+<a name="debugging"></a>
+<h2>Debugging Classpath Problems</h2>
+
+<h3>Missing Jar</h3>
+
+If the project includes external jar files, check the project's <b>build.properties</b> file and
+adjust <b>gvc.frameworks</b> and <b>extra.frameworks</b> if needed.
+
+<h3>Missing Project Dependancy</h3>
+
+If jass or wocompile complains about not finding classes that you think
+should be on the classpath, check the Projects tab on the Java Build
+Path propery inspector. The project needs to be indicated here and have
+its jar file on the libraries tab. An easier way to do this is to use
+the new WOLips WebObjects Frameowrk library:<br>
+
+<br>
+
+<img style="width: 646px; height: 533px;" alt="WebObjects Frameworks" src="images/WOLipsWebObjectsFrameworks.jpg">
+<h3>Jass debugging flag.</h3>
+
+If none of this fixes the problem, try setting the Jass debug flag in <a href="#configure">gvc.properties</a>:<br>
+
+<br>
+
+<pre># Turns Jass debugging on and off<br>jass.debug=on<br></pre>
+<br>
+
+<br>
+
+This will show the classpath that Jass is using and also the source
+paths. That should help in tracking down the missing or incorrect path.
+</body>
+</html>

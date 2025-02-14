@@ -1,0 +1,47 @@
+<webobject name = "DynamicBody">
+  <webobject name = "ConfigurationForm">
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content" width = "100%">
+      <tr>
+        <td style = "padding-left: 2px;" colspan = "2">
+          <h2>
+            <webobject name = "IsNewGroupConditional">Add</webobject>
+            <webobject name = "IsExistingGroupConditional">Revise</webobject>
+            Access Group</h2>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "right" colspan = "2" style = "padding-right: 2px;">
+          <webobject name = "CancelRevisionButton" />
+          <webobject name = "IsExistingGroupConditional">
+            <webobject name = "SaveChangesButton" />
+            <webobject name = "SaveAndFinishButton" />
+          </webobject>
+          <webobject name = "IsNewGroupConditional"> <webobject name = "AddButton" /> </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2"> <hr class = "primaryBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td class = "leftContentColumn">
+          <b>Group Name:</b>
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn">
+          <webobject name = "IsntConfigureGroupConditional"> <webobject name = "CurrentGroupNameTextField" /> </webobject>
+          <webobject name = "IsConfigureGroupConditional">
+            <b class = "coloredText"><webobject name = "CurrentGroupNameString" /></b>
+          </webobject>
+        </td>
+      </tr>
+      <webobject name = "HasValidationErrorConditional">
+        <tr>
+          <td>&nbsp;</td>
+          <td class = "warningText" aligh = "left"><webobject name = "ValidationErrorMessageString" /></td>
+        </tr>
+      </webobject>
+    </table>
+    <webobject name = "GroupEditor" />
+  </webobject>
+</webobject>

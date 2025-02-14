@@ -1,0 +1,193 @@
+<project name="targets" default="full.build" basedir=".">
+
+	<target name="build" depends="init.all,init.build,build.woframework,build.woapp"/>
+
+	<target name="install" depends="init.all,init.install,build.woframework,build.woapp" />
+
+    <!-- Target for command line builds, also used by Jass contracted builds from within Eclipse -->
+    <target name="full.build" depends="init.all, contract, compile, build, copy.install" />
+
+
+    <!-- Clean out any generated build products -->
+    <target name="clean" depends="set.properties">
+        <mkdir dir="${build.dir}" />
+        <delete includeemptydirs="true">
+            <fileset dir="${build.dir}" includes="**/*"/>
+        </delete>
+        <delete includeemptydirs="true">
+            <fileset dir="ContractedSource" includes="**/*"/>
+        </delete>
+
+        <delete includeemptydirs="true">
+            <fileset dir="bin" includes="**/*"/>
+        </delete>
+    </target>
+
+
+    <!-- Target used by jass.builder and full.build to copy the built product to the installed location.
+    This is done as the classpaths generated for
+    the jass and wocompile tasks expect to find the frameworks in the installed
+    location. Framework embedding probably also expects this. -->
+    <target name="copy.install" depends="init.all" if="is.framework.or.eclipse.not.running">
+    	<echo>install.dir ${install.dir} </echo>
+    	<echo>build.dir ${build.dir} </echo>
+        	<echo>product.dir ${product.dir} </echo>
+        <copy todir="${install.dir}" >
+            <fileset dir="${build.dir}" includes="${product.dir}/**"/>
+        </copy>
+    </target>
+
+
+    <!-- Target for Jass contracted builds from within Eclipse -->
+    <target name="jass.builder" depends="use.dbc, full.build" />
+
+
+    <!-- Enable Design by Contract.  This can be overridden on each project by defining 
+         contracts.disabled in the project's build.properties file. -->
+    <target name="use.dbc">
+        <property name="use.dbc" value="true"/>
+    </target>
+
+
+    <!-- Jass Design By Contract Generation -->
+    <target name="contract" depends="init.all" if="use.dbc" unless="contracts.disabled">
+        <jass contract="pre,post,inv,loop,check,forall"
+            isDebugging="${jass.debug}"
+            destination="ContractedSource">
+
+            <source dir="Sources">
+                <depend targetdir="ContractedSource"/>
+                <include name="**/*.java"/>
+            	<exclude name="${jass.excluded.files}"/>
+            </source>
+        	<classpath refid="project.classpath"/>
+            <classpath>
+                <pathelement path="${jass.path}"/>
+            </classpath>
+            <!-- Need this so that Jass sees the classes in GeneratedEOs -->
+            <classpath refid="uncontracted.class.path"/>
+        </jass>
+    	
+    	<!-- Now copy any files that were excluded from contracting -->
+		<copy todir="ContractedSource">
+			<fileset dir="Sources">
+				<include name="${jass.excluded.files}"/>
+			</fileset>
+		</copy>
+    </target>
+
+
+    <!-- Distribution WOProject compilation -->
+    <target name="compile" depends="init.all">
+        <wocompile  destdir="bin"
+                    debug="${wocompile.debug.flag}"
+                    optimize="${wocompile.optimize.flag}"
+                    target="${java.target.version}"
+                    deprecation="on">
+            <src refid="${project.source.path}"/>
+            <classpath refid="project.classpath"/>
+        </wocompile>
+    </target>
+
+
+	<!-- Task to create a WO framework -->
+	<target name="build.woframework" if="is.wo.framework">
+
+		<woframework name="${project.name}" 
+			         destDir="${dest.dir}" 
+			         customInfoPListContent="${customInfoPListContent}" 
+			         principalClass="${principalClass}" 
+			         eoAdaptorClassName="${eoAdaptorClassName}" 
+			         javaVersion="${javaVersion}" 
+			         cfbundleversion="${cfBundleVersion}" 
+			         cfbundleshortversion="${cfBundleShortVersion}" 
+			         cfbundleID="${cfBundleID}">
+			
+			<classes dir="${classes.dir}">
+				<patternset>
+					<includesfile name="woproject${file.separator}classes.include.patternset" />
+					<excludesfile name="woproject${file.separator}classes.exclude.patternset" />
+				</patternset>
+			</classes>
+			
+			<wsresources dir=".">
+				<patternset>
+					<includesfile name="woproject${file.separator}wsresources.include.patternset" />
+					<exclude name="CVS" />
+					<exclude name=".svn" />
+					<excludesfile name="woproject${file.separator}wsresources.exclude.patternset" />
+				</patternset>
+			</wsresources>
+
+			<resources dir="Components">
+				<include name="**/*.wo/**/*" />
+				<include name="**/*.api" />
+				<excludesfile name="woproject/resources.exclude.patternset" />
+			</resources>
+
+			<resources dir="Resources">
+				<include name="**/*" />
+				<excludesfile name="woproject/resources.exclude.patternset" />
+			</resources>
+			
+			<lib dir="Libraries">
+				<include name="*" />
+			</lib>
+		</woframework>
+	</target>
+	
+	
+	<!-- Task to create a WO framework -->
+    <target name="build.woapp" if="is.wo.app">
+        <!-- Remove Properties file so we can generate a new one  -->
+        <property name="java.properties.file" value="${build.product.dir}/Contents/Resources/Properties"/>
+        <delete file="${java.properties.file}"/>
+
+        <!-- add webXML="true" to generate a web.xml file -->
+        <woapplication name="${project.name}"
+                       destDir="${dest.dir}"
+                       customInfoPListContent="${customInfoPListContent}"
+                       principalClass="${principalClass}"
+                       webXML="${webXML}"
+                       webXML_CustomContent="${webXML_CustomContent}">
+            <classes dir="${classes.dir}">
+                <patternset>
+                    <includesfile name="woproject/classes.include.patternset"/>
+                    <excludesfile name="woproject/classes.exclude.patternset"/>
+                </patternset>
+            </classes>
+
+        	<resources dir="Components">
+				<include name="**/*.wo/**/*" />
+				<include name="**/*.api" />
+				<excludesfile name="woproject/resources.exclude.patternset" />
+			</resources>
+
+			<resources dir="Resources">
+				<include name="**/*" />
+				<excludesfile name="woproject/resources.exclude.patternset" />
+			</resources>
+               
+            <frameworks root="User"
+        				embed="${embed.wo.frameworks}" 
+            	        eclipse="true" 
+            	        bundles="${gvc.frameworks}/${wonder.frameworks}" />
+        	<frameworks root="Local" 
+        		        embed="{embed.wo.frameworks}" 
+        		        eclipse="true"  
+            	        bundles="${library.frameworks}" />
+        	<frameworks root="System" 
+        		        embed="${embed.wo.frameworks}" 
+        		        eclipse="true"  
+            	        bundles="${system.frameworks}" />
+            	        
+            <lib dir=".">
+                <include name="Add .jar's that should be copied in the woa."/>
+                <exclude name="**/*.woa/**"/>
+            </lib>
+
+       </woapplication>
+       <chmod file="${dest.dir}${file.separator}${project.name}.woa${file.separator}${project.name}" perm="755"/>
+	</target>
+
+</project>

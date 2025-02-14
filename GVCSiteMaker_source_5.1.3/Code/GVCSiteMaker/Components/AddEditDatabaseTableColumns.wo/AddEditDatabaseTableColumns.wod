@@ -1,0 +1,334 @@
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ConfigureWebsiteDataTablesColumnsPane";
+}
+
+TableNameString: WOString {
+    value = table.name;
+}
+
+CreateNewFieldDialogOpener: AjaxModalDialogOpener {
+    dialogId = "AddColumnModalDialog";
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.AddEditDatabaseTableColumn";
+}
+
+DataTableListHyperlink: AjaxUpdateLink {
+    action = returnToDataTables;
+    updateContainerID = "ConfigureWebsiteDataTablesPane";
+    id = "BackHyperlink";
+}
+
+ConfigPageForm: WOForm {
+    multipleSubmit = true;
+}
+
+CountOfUserDefinedFieldsString: WOString {
+    value = table.userColumns.count;
+}
+
+ObserveContainer: AjaxObserveField {
+    updateContainerID = "ConfigureWebsiteDataTablesColumnsPane";
+    fullSubmit = true;
+}
+
+ColumnRepetition: WORepetition {
+    item = aColumn;
+    list = table.orderedUserColumns;
+    index = aColumnIndex;
+}
+
+ColumnNameEditor : AjaxInPlace {
+    id = editColumnNameInPlaceID;
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+}
+
+EditColumnNameView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditColumnNameAction : WOGenericContainer {
+    elementName = "div";
+    onclick = editColumnNameInPlaceEdit;
+    class = "editableInPlaceField";
+    title = "Click to edit";
+}
+
+ColumnNameString: WOString {
+    value = aColumn.name;
+}
+
+EditColumnNameEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+ColumnNameTextField : WOTextField {
+    value = aColumn.name;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = editColumnNameInPlaceSave;
+    id = columnNameTextFieldID;
+}
+
+ColumnNameTextFieldID: WOString {
+    value = columnNameTextFieldID;
+}
+
+IsNotCalculatedColumn : WOConditional {
+    condition = isCalculatedColumn;
+    negate = true;
+}
+
+ColumnTypeString: WOString {
+    value = aColumn.typeDescription;
+}
+
+IsCalculatedColumn : WOConditional {
+    condition = isCalculatedColumn;
+}
+
+CalculatedColumnModalDialogOpener: AjaxModalDialogOpener {
+    dialogId = "CalculatedColumnModalDialog";
+    action = editCalculatedField;
+}
+
+ExpressionString: WOString {
+    value = aColumn.expression;  // VALID
+}
+
+ColumnDescriptionEditor : AjaxInPlace {
+    id = editColumnDescriptionInPlaceID;
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+}
+
+EditColumnDescriptionView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditColumnDescriptionAction : WOGenericContainer {
+    elementName = "div";
+    onclick = editColumnDescriptionInPlaceEdit;
+    class = "editableInPlaceField";
+    title = "Click to edit";
+}
+
+ColumnDescriptionString: WOString {
+    value = aColumn.textDescription;
+    valueWhenEmpty = "<i>(none - click to edit)</i>";
+}
+
+EditColumnDescriptionEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+ColumnDescriptionTextField : WOTextField {
+    value = aColumn.textDescription;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = editColumnDescriptionInPlaceSave;
+    id = columnDescriptionTextFieldID;
+}
+
+ColumnDescriptionTextFieldID: WOString {
+    value = columnDescriptionTextFieldID;
+}
+
+DeleteColumnErrorModalDialog: AjaxModalDialog {
+    id = "DeleteColumnErrorModalDialog";
+    title = "Deletion Failed";
+    label = "Deletion Failed";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "DeleteColumnErrorModalDialogOkLink";
+    clickOnEscId = "DeleteColumnErrorModalDialogOkLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesColumnsPane";
+}
+
+DeleteColumnErrorMessageString: WOString {
+    value = columnDescriptionTextFieldID;
+}
+
+DeleteColumnErrorModalDialogOkLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "DeleteColumnErrorModalDialogOkLink";
+}
+
+DeleteFieldModalDialogOpener: AjaxModalDialogOpener {
+    dialogId = "ConfirmDeleteColumnModalDialog";
+    action = setColumnToDelete;
+}
+
+ConfirmDeleteColumnModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteColumnModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Column";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteColumnModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteColumnModalDialogNoLink";
+    onClose = conditionallyOpenDeleteErrorDialog;
+}
+
+ConfirmDeleteColumnModalDialogYesLink: AjaxHyperlink {
+    action = deleteColumn;
+    onSuccess = "function() { AMD.close(); }";
+    id = "ConfirmDeleteColumnModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteColumnModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteColumnModalDialogNoLink";
+}
+
+AddColumnModalDialog: AjaxModalDialog {
+    id = "AddColumnModalDialog";
+    title = "Create New Field";
+    label = "Create New Field";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 400;
+    clickOnReturnId = "AddColumnModalDialogOkLink";
+    clickOnEscId = "AddColumnModalDialogCancelLink";
+    closeUpdateContainerID = "ConfigureWebsiteDataTablesColumnsPane";
+}
+
+NewFieldForm: WOForm {
+    name = "NewFieldForm";
+    multipleSubmit = true;
+}
+
+ColumnTypeSelector : EditDatabaseTableColumn {
+    databaseTable = table;
+    selectedFieldType = newColumnType;
+    selectedLookupSourceColumn = newColumnTypeSelectedLookupSourceColumn;
+}
+
+ColumnTypeRequiredString : WOString {
+    value = columnTypeRequiredString;
+    escapeHTML = false;
+}
+
+AddColumnModalDialogOkLink: AjaxSubmitButton {
+    value = "New Field";
+    formName = "NewFieldForm";
+    elementName = "a";
+    action = createColumn;
+    //onSuccess = "function() { Modalbox.hide(); }";
+    id = "AddColumnModalDialogOkLink";
+    evalScripts = true;
+    updateContainerID = "ConfigureWebsiteDataTablesColumnsPane";
+}
+
+AddColumnModalDialogCancelLink: AjaxSubmitButton {
+    value = "Cancel";
+    formName = "NewFieldForm";
+    elementName = "a";
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "AddColumnModalDialogCancelLink";
+}
+
+CalculatedColumnModalDialog: AjaxModalDialog {
+    id = "CalculatedColumnModalDialog";
+    title = "Edit Calculation";
+    width = 600;
+    height = -1;
+    overlayOpacity = "0.5";
+    overlayDuration = "0.0";
+    slideDownDuration = "0.0";
+    slideUpDuration = "0.0";
+    afterHide = "function() { ConfigureWebsiteDataTablesColumnsPaneUpdate(); }";
+    clickOnEscId = "CancelCalculatedFieldChangesButton";
+}
+
+CalculatedColumnModalDialogUpdateContainer: AjaxUpdateContainer {
+    id = "CalculatedColumnModalDialogUpdateContainer";
+}
+
+CalculatedColumnForm: WOForm {
+    multipleSubmit = true;
+    id = "CalculatedColumnForm";
+}
+
+DACalculatedColumnMessage: WOString {
+    value = application.properties.DACalculatedColumnMessage;  // VALID
+    escapeHTML = false;
+}
+
+Expression: WOText {
+    value = calculatedColumn.expression;
+    cols = 55;
+    rows = 4;
+}
+
+HasInvalidExpressionConditional: WOConditional {
+    condition = invalidExpressionError;
+}
+
+HasTestedConditional : WOConditional {
+  condition = expressionResultType;
+}
+
+InvalidExpressionErrorString: WOString {
+    value = invalidExpressionError;
+}
+
+TestFormulaButton: AjaxSubmitButton {
+    action = testExpression;
+    evalScripts = true;
+    value = "Validate";
+    updateContainerID = "CalculatedColumnModalDialogUpdateContainer";
+}
+
+CancelCalculatedFieldChangesButton: AjaxSubmitButton {
+    action = cancelChanges;
+    evalScripts = true;
+    value = "Cancel";
+    //onClick = "Modalbox.hide();";
+    id = "CancelCalculatedFieldChangesButton";
+    updateContainerID = "CalculatedColumnModalDialogUpdateContainer";
+}
+
+SaveCalculatedFieldChangesButton: AjaxSubmitButton {
+    action = saveCalculation;
+    evalScripts = true;
+    value = "Save";
+    //onSuccess = "function() { Modalbox.hide(); }";
+    id = "SaveCalculatedFieldChangesButton";
+    updateContainerID = "CalculatedColumnModalDialogUpdateContainer";
+}
+
+TestResult: WOString {
+    value = expressionResult;
+}
+
+TestResultType: WOString {
+    value = expressionResultType;
+}

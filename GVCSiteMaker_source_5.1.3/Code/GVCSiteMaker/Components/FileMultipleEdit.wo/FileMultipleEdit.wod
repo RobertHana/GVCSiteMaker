@@ -1,0 +1,75 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+}
+
+CancelButton: WOSubmitButton {
+	action = cancelUpload;
+	value = "Cancel";
+}
+
+ChangeGroupsConditional: WOConditional {
+	condition = isChangingGroups;
+}
+
+
+DeleteButton: WOSubmitButton {
+	action = saveChanges;
+	value = "Delete";
+}
+
+DeletingConditional: WOConditional {
+	condition = isDeleting;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+	pageType = "FileMultipleEdit";
+	isConfigPage = canUserConfigureWebsite;  // sometimes not configuring at all
+	isAdmin = false;
+	hasSite = canUserConfigureWebsite;  // when configuring it has site
+}
+
+FileManagementForm: WOForm {
+	enctype = "multipart/form-data";
+	multipleSubmit = 1;
+}
+
+FileNameString: WOString {
+	value = aFile.uploadedFilename;
+}
+
+FolderNameString: WOString {
+	value = aFile.folder.name;
+}
+
+FoldersPopUpButton: WOPopUpButton {
+	item = aFolder;
+	list = website.orderedUserFolders;
+	selection = selectedFolder;
+	displayString = aFolder.name;
+}
+
+GroupPicker: GroupPicker {
+	accessibleObject = selectedGroups;
+	typeOfAccess = "Files";
+}
+
+MovingFilesConditional: WOConditional {
+	condition = isMovingFiles;
+}
+
+NotDeletingConditional: WOConditional {
+	condition = isDeleting;
+	negate = true;
+}
+
+Repetition1: WORepetition {
+	item = aFile;
+	list = files;
+}
+
+SaveButton: WOSubmitButton {
+	action = saveChanges;
+	value = "Update";
+}

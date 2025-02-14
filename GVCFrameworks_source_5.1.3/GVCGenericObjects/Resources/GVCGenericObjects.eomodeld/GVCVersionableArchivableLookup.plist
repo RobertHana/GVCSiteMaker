@@ -1,0 +1,15 @@
+{
+    attributes = (
+        {columnName = "is_active"; name = isActive; prototypeName = JavaBoolean; }, 
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, name, isActive); 
+    className = "net.global_village.genericobjects.VersionableArchivableLookup"; 
+    classProperties = (name, isActive); 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = GVCVersionableArchivableLookup; 
+    parent = GVCVersionableArchivableObject; 
+    primaryKeyAttributes = (theID); 
+}

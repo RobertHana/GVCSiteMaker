@@ -1,0 +1,29 @@
+CanDisplaySectionConditional: WOConditional {
+	condition = canDisplaySection;
+	negate = false;
+}
+
+EmbeddedSiteBanner: WOString {
+	value = internalLinkComponent.linkedWebsite.banner.bannerText;
+}
+
+EmbeddedSectionComponent: WOSwitchComponent {
+	componentObject = internalLinkComponent.linkedSection.component; //VALID
+	currentMode = "display";
+	WOComponentName = internalLinkComponent.linkedSection.component.componentType; //VALID
+}
+
+IsDeletedEmbeddedSiteConditional: WOConditional {
+	condition = hasTargetBeenDeleted;
+}
+
+IsUnpublishedSiteConditional: WOConditional {
+	condition = isUnpublishedSite;
+}
+
+SectionSourceNotification: SectionSourceNotification {
+	website = internalLinkComponent.linkedWebsite;
+}
+
+
+

@@ -1,0 +1,27 @@
+{
+    styleAdministrators = {
+        class = EOFetchSpecification; 
+        entityName = PublicUser; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = oidOrgUnitForStyleAdmin; 
+            selectorName = isNotEqualTo; 
+            value = {class = EONull; }; 
+        }; 
+    }; 
+    usersForGroup = {
+        class = EOFetchSpecification; 
+        entityName = PublicUser; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = groups; 
+            selectorName = isEqualTo; 
+            value = {"_key" = group; class = EOQualifierVariable; }; 
+        }; 
+        requiresAllQualifierBindingVariables = YES; 
+    }; 
+}

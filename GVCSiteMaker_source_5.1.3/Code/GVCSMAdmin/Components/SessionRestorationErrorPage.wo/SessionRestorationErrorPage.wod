@@ -1,0 +1,18 @@
+CSSComponent: SMCSSComponent 
+{
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;	
+	isAdmin = true;
+}
+
+LoginLink: WOHyperlink {
+	href = frontPageUrl;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+

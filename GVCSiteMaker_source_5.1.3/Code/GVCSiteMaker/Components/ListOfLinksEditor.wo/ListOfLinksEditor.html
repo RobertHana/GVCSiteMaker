@@ -1,0 +1,82 @@
+<webobject name="PreviewJavaScript"></webobject>
+<WEBOBJECT NAME=Form> <!-- removed padding and spaccing too -->
+	<table border="0" cellpadding="2" cellspacing="2" class="content" style = "width: 100%">
+		<!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+		<tr>
+			<td style="padding-left: 2px;" align = "left">
+        		<h3><WEBOBJECT NAME="IsAddMode">Add New Link</WEBOBJECT><WEBOBJECT NAME="IsNotAddMode">Modify Link</WEBOBJECT></h3>
+                <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+                Back to Website Sections</webobject>
+			</td>
+			<td valign="top" align="right" style="padding-right: 2px;">		
+                <WEBOBJECT NAME=Reset></WEBOBJECT>
+				<WEBOBJECT NAME=ShouldShowAdd>
+					<WEBOBJECT NAME=InsertAndPreview></WEBOBJECT>
+					<WEBOBJECT NAME=InsertLink></WEBOBJECT>
+				</WEBOBJECT>
+				<WEBOBJECT NAME=ShouldShowUpdate>
+					<WEBOBJECT NAME=UpdateAndPreview></WEBOBJECT>
+					<WEBOBJECT NAME=UpdateLink></WEBOBJECT>
+				</WEBOBJECT>
+				<WEBOBJECT NAME=Done></WEBOBJECT>
+			</td>
+		</tr>
+		<!-- END ROW WITH TITLE AND BUTTONS -->
+		<tr>
+			<td colspan="2">
+				<table border="0" cellpadding="2" cellspacing="2" width="100%">
+					<tr><td><hr class="primaryBarStyle"/></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<WEBOBJECT NAME=SelectedListLink></WEBOBJECT>
+	<HR class="alternateBarStyle"/>
+
+
+<WEBOBJECT NAME="IsAddMode">
+	<WEBOBJECT NAME=HasChildren>
+	
+   <TABLE BORDER="0" CELLSPACING="2" cellpadding="2" class="coloredTable" align="center" width="95%"><!-- 95% width is more dynamic in Netscape 4 -->
+    <TR> 
+      <th class="coloredTableHeading">
+			Order
+		</th>
+      <th ALIGN="LEFT" class="coloredTableHeading">
+		Item name, date modified, source &amp; description
+	  </th>
+      <th class="coloredTableHeading">
+		Size (KB)
+      </th>
+      <th class="coloredTableHeading">
+		Action</th>
+	  <th class="coloredTableHeading">
+		Delete</th>
+    </TR>
+    <WEBOBJECT NAME=LinkList> 
+    <TR> 
+      <TD ALIGN="CENTER">
+		<webobject name="OrderPopup"></webobject>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP"> 
+        <WEBOBJECT NAME=IsNotFile><WEBOBJECT NAME=ExternalHyperlink></WEBOBJECT></WEBOBJECT> 
+        <WEBOBJECT NAME=IsFile><WEBOBJECT NAME=FileHyperlink><WEBOBJECT NAME=Name></WEBOBJECT></WEBOBJECT></WEBOBJECT> 
+        <span class="microText"><I>(<WEBOBJECT NAME=LinkDate></WEBOBJECT>)</I>
+		--<WEBOBJECT NAME=OpenInSameWindowConditional>same</WEBOBJECT><WEBOBJECT NAME=OpenInNewWindowConditional>new</WEBOBJECT> window--</span><BR/>
+        <span class="microText"><WEBOBJECT NAME=FileInfo></WEBOBJECT></span><BR/>
+        <span class="microText"><WEBOBJECT NAME=Description></WEBOBJECT></span></TD>
+      <TD ALIGN="CENTER"><!-- ideally should be centered when not known right aligned when known -->
+		<WEBOBJECT NAME=FileSize></WEBOBJECT>
+      </TD>
+      <TD ALIGN="center"> 
+		<WEBOBJECT NAME=Revise></WEBOBJECT>
+	  </td>
+	  <td align="center">
+		<WEBOBJECT NAME=Delete></WEBOBJECT>
+      </TD>
+    </TR>
+    </WEBOBJECT> 
+  </TABLE>
+</WEBOBJECT>
+</WEBOBJECT>
+</WEBOBJECT>

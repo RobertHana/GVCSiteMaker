@@ -1,0 +1,27 @@
+ConfirmButton: WOSubmitButton {
+	action = doCallerActionIfConfirmed;
+	value = confirmString;
+}
+ConfirmForm: WOForm {
+	multipleSubmit = true;
+}
+DenyButton: WOSubmitButton {
+	action = doCallerActionIfDenied;
+	value = denyString;
+}
+
+DynamicBodyComponent: DynamicBodyComponent {
+	pageTitle = "Confirm Action";
+	hasSite = false;
+	isAdmin = false;
+	isConfigPage = false;
+	needsPreviewURLJavaScript = false;
+}
+Message: WOString {
+	value = message;
+	escapeHTML = false;
+}
+
+String1: WOString {
+	value = actionString;
+}

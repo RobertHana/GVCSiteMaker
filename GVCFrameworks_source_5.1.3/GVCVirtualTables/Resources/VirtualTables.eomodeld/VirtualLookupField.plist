@@ -1,0 +1,81 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "LOOKUP_VALUE_ID"; 
+            name = lookupValueID; 
+            prototypeName = Key; 
+        }, 
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            columnName = "VIRTUAL_COLUMN_ID"; 
+            name = virtualColumnID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "VIRTUAL_FIELD_ID"; name = virtualFieldID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (
+        virtualFieldID, 
+        virtualRowID, 
+        virtualColumnID, 
+        lookupValueID, 
+        restrictingValue
+    ); 
+    className = "net.global_village.virtualtables.VirtualLookupField"; 
+    classProperties = (
+        virtualFieldID, 
+        row, 
+        column, 
+        lookupValue, 
+        restrictingValue, 
+        lookupValueID, 
+        referringFields
+    ); 
+    externalName = "VIRTUAL_FIELD"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = VirtualLookupField; 
+    parent = VirtualField; 
+    primaryKeyAttributes = (virtualFieldID); 
+    relationships = (
+        {
+            destination = VirtualColumn; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = virtualColumnID; }); 
+            name = column; 
+        }, 
+        {
+            destination = VirtualField; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualFieldID; sourceAttribute = lookupValueID; }); 
+            name = lookupValue; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupValueID; sourceAttribute = virtualFieldID; }); 
+            name = referringFields; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = VirtualRow; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = row; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'Lookup')"; 
+}

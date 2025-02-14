@@ -1,0 +1,121 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject name = "InstallPackageForm">
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" width = "100%">
+      <tr>
+        <td style = "padding-left: 2px;" colspan = "2">
+          <h1>Install Data Package</h1>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+            Back to Website Sections</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "ImportButton" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" class = "boldText"> Select Package File to Install:<br /></td>
+        <td class = "rightContentColumn">
+          <webobject name = "PopUpButton1" />
+          <div class = "descriptiveText">If the package file you want to install is not in the list above, you will need to upload it. Click 
+            <webobject name = "FileUploadHyperlink">here</webobject>
+            to upload the package file.</div>
+          <webobject name = "SelectedPackageConditional2">
+            <br />
+            <webobject name = "EasyInstallRadioButton" />Easy Install&nbsp;<webobject name = "CustomInstallRadioButton" />Custom Install<br />
+            <span class = "descriptiveText">To change install options, click Custom&nbsp;Install.</span>
+          </webobject>
+        </td>
+      </tr>
+      <webobject name = "PackageConditional">
+        <tr>
+          <td>&nbsp;</td>
+          <td class = "rightContentColumn">
+            <span class = "warningText">You need to select a package to install.</span>
+            <span class = "warningText"></span>
+          </td>
+        </tr>
+      </webobject>
+      <webobject name = "InstallConditional">
+        <tr>
+          <td>&nbsp;</td>
+          <td class = "rightContentColumn">
+            <span class = "warningText">You need to choose the type of installation to perform, either Easy Install or Custom Install.</span>
+            <span class = "warningText"></span>
+          </td>
+        </tr>
+      </webobject>
+      <webobject name = "ErrorConditional">
+        <tr>
+          <td>&nbsp;</td>
+          <td class = "rightContentColumn">
+            <span class = "warningText"><webobject name = "ErrorString" /></span>
+          </td>
+        </tr>
+      </webobject>
+      <tr> <td valign = "Top" colspan = "2" class = "sectionTitle" /> </tr>
+    </table>
+    <a name = "fields"></a>
+    <webobject name = "SelectedPackageConditional">
+      <span class = "boldText">Main and Related Tables to Install</span>
+      <table border = "0" class = "coloredTable" cellspacing = "2" cellpadding = "2" align = "center" width = "95%">
+        <tr>
+          <th class = "coloredTableHeading" width = "300">Table Name</th>
+          <th class = "coloredTableHeading">Install Options</th>
+        </tr>
+        <webobject name = "TablesRepetition">
+          <tr>
+            <td align = "Left">
+              <webobject name = "String2" />
+              <webobject name = "MainTextConditional">
+                <em>(Main)</em>
+              </webobject>
+            </td>
+            <td align = "Center">
+              <webobject name = "EasyInstallConditional2">
+                <webobject name = "Conditional4">Install table from package, including data</webobject>
+                <webobject name = "Conditional5">Install table from package</webobject>
+              </webobject>
+              <webobject name = "CustomInstallConditional">
+                <webobject name = "EasyInstallConditional">
+                  <webobject name = "Conditional2">Install table from package, including data</webobject>
+                  <webobject name = "Conditional3">Install table from package</webobject>
+                </webobject>
+                <webobject name = "MultipleOptionsConditional"><webobject name = "InstallOptionPopUpButton" /></webobject>
+                <webobject name = "ShowExistingConditional"><webobject name = "ExistingTableString" /></webobject>
+              </webobject>
+            </td>
+          </tr>
+        </webobject>
+      </table>
+      <br />
+      <br />
+      <webobject name = "RelatedSectionsConditional">
+        <span class = "boldText">Related Sections to Install</span>
+        <br / = "" />
+      </webobject>
+    </webobject>
+  </webobject>
+  <hr />
+  <div class = "coloredText">
+    1. Select a package (XML file) to install. If the package file you want to install is not in the list above, you will need to upload it. Click 
+    <webobject name = "FileUploadHyperlink2">here</webobject>
+    to upload the package file.<br />
+  </div>
+</webobject>

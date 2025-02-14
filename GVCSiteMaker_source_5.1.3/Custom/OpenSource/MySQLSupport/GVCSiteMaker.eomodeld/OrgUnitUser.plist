@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "ORG_UNIT_OID"; 
+            name = orgUnitOid; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_PKEY"; 
+            name = userPKey; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (orgUnitOid, userPKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (orgUnit, user); 
+    externalName = "SM_ORG_UNIT_USER"; 
+    fetchSpecificationDictionary = {}; 
+    name = OrgUnitUser; 
+    primaryKeyAttributes = (orgUnitOid, userPKey); 
+    relationships = (
+        {
+            destination = OrgUnit; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = orgUnitOid; }); 
+            name = orgUnit; 
+        }, 
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userPKey; }); 
+            name = user; 
+        }
+    ); 
+}

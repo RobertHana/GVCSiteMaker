@@ -1,0 +1,21 @@
+DataAccess_ShowDetails : WOString {
+	value = url;
+	escapeHTML = false;
+}
+
+
+DataAccess_FieldName : WOString {
+	value = aColumn.name;
+}
+
+
+DataAccess_FieldValue : WOString {
+	value = fieldValue;
+	escapeHTML = false;
+}
+
+
+DataAccess_VisibleFields : WORepetition {
+	list = columns;
+	item = aColumn;
+}

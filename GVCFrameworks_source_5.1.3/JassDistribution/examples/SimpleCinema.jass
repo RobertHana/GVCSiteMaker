@@ -1,0 +1,64 @@
+package jass.examples;
+
+/**
+* The cinema example. 
+**/
+public class SimpleCinema {
+
+	// seats are "true" if reserved, "false" if free.
+	private boolean[] seats;
+	// counts the number of seats that are reserved AND already used.
+	private int seatCount;
+
+	/**
+	* Constructs a cinema of given size. All seat are free after initialisation.
+	* @param n size of cinema
+	**/	
+	public SimpleCinema (int n) {
+	/** require n > 0; **/
+		seats = new boolean[n]; // false by default
+  /** ensure forall i : {0 .. seats.length-1} # !seats[i]; **/
+	}
+	
+	/**
+	* Returns if there are free seats in the cinema.
+	* @return true if there are free seats, false otherwise
+	**/
+	public boolean hasFreeSeats () {
+		for (int i = 0; i < seats.length; i++)
+		/** invariant 0 <= i && i <= seats.length; **/
+		/** variant seats.length-i **/
+			if (!seats[i]) return true;
+		return false;
+		/** ensure Result == (exists i : {0 .. seats.length-1} # !seats[i]); **/
+	}
+	
+	/**
+	* Reserves a seat in the cinema und returns a handle for the reservation.
+	* @return the reservation handle
+	**/
+	public int reserveSeat() {
+	/** require hasFreeSeats(); **/
+	 	// Simple strategie: Return the first free seat number. This number is not used later.
+	 	for (int i = 0; i < seats.length; i++) 
+		/** invariant 0 <= i && i <= seats.length; **/
+		/** variant seats.length-i **/
+			if (!seats[i]) {
+				seats[i] = true; // reserve the seat
+				return i; // return seat number
+			}
+		return -1;
+	}
+	
+	/**
+	* Returns the seat number for a reservation handle.
+	* @param handle the reservation handle
+	* @return the reserved seat
+	**/
+	public int getReservedSeat(int handle) {
+		// Simple strategie: Discard the handle, return first free seat.
+		return ++seatCount;
+		/** ensure seatCount <= seats.length; **/
+	}
+	
+}

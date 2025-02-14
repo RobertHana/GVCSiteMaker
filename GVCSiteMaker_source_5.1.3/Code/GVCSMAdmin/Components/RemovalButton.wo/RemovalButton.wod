@@ -1,0 +1,9 @@
+MessageString: WOString {
+	escapeHTML = false;
+	value = removeWarningMessage;
+}
+
+RemovalButton: WOSubmitButton {
+	value = removeButtonName;
+	action = confirmDelete;
+}

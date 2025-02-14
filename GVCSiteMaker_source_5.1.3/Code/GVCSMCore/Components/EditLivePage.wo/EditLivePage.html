@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>EditLive! Editor Window</title>
+		<script language=javascript>
+		<!--
+			var shouldSave = 'no';
+			function submitToParent() {
+				var parentWindow = window.opener;
+				if (shouldSave == 'yes') {
+					parentWindow.document.<webobject name="TextAreaIdentifier"></webobject>.value = document.editLiveForm.EditLiveApplet.value;
+                    <webobject name="SaveParentFormOnClose">
+					parentWindow.document.<webobject name="SaveParentFormAction"></webobject>;
+                    </webobject>
+				}
+
+				window.close(); // Trying this in case it is just my machine
+				parentWindow.focus();
+				return false;
+			} //submitToParent
+		-->
+		</script>
+	</head>
+	<body>
+		<form name="editLiveForm" onsubmit='return submitToParent();'>
+			<div align="right">
+				<input type="submit" value="Save" onclick="shouldSave='yes'; return true">&nbsp;&nbsp;
+				<input type="submit" value="Cancel">
+			<p></p>
+			<!--Create instance of EditLive! for Java-->
+			<script src="<webobject name=EditLiveJavaScript></webobject>"></script>
+			<script language="JavaScript">
+				var editlivejava1;
+				editlivejava1 = new EditLiveJava("EditLiveApplet", "700", "450");
+				//editlivejava1.setDebugLevel("http");
+				editlivejava1.setXMLURL("<webobject name=EditLiveXMLConfig></webobject>");
+				var parentWindow = window.opener;
+				editlivejava1.setBody(escape(parentWindow.document.<webobject name="TextAreaIdentifier"></webobject>.value));
+				editlivejava1.setDownloadDirectory("<webobject name=EditLiveDownloadDirectory></webobject>");
+				editlivejava1.setLocalDeployment(false);
+				editlivejava1.show();
+			</script>
+			</div>
+		</form>
+	</body>
+</html>

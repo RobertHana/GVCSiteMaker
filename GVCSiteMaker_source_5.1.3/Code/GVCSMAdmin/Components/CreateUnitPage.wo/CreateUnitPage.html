@@ -1,0 +1,97 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME="UnitCreationForm">
+		<table border="0" cellpadding="0" cellspacing="0" class="content" style = "width: 100%">
+    		<tr>
+				<td style="padding-left: 2px;">
+    				<h1>Unit Creation</h1>
+    			</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">	
+					<webobject name="CancelButton"></webobject>&nbsp;<WEBOBJECT NAME=AddNewUnit></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"/></td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+		<table border="0" cellspacing="2" cellpadding="2" class="content">
+			<tr>
+				<td class="boldText">
+    				Name: 
+                    <br />
+                    <i class="requiredText">(required)</i>  
+				</td>
+				<td class="rightContentColumn">
+    				<WEBOBJECT NAME=NewUnitName></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText">
+    				Encompassing unit: 
+                    <br />
+                    <i class="requiredText">(required)</i> 
+				</td>
+				<td class="rightContentColumn">
+    				<WEBOBJECT NAME=EncompassingUnit></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td class="boldText" valign="top">			
+					Filespace quota: 
+                    <br />
+                    <i class="requiredText">(required)</i>  
+				</td>
+				<td class="rightContentColumn">
+					<WEBOBJECT NAME=FilespaceQuota></WEBOBJECT> <span>(MB)</span>
+					<br />
+					<span class="descriptiveText">
+						Must be a positive integer.
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<!-- width here, but would prefer the browser to determine appropriate cell size... -->
+				<td class="boldText" width="300">
+    				Display system-wide? 
+				</td>
+				<td class="rightContentColumn">
+    				<webobject name="YesRadioButton"></webobject><span>Yes</span>
+    				<webobject name="NoRadioButton"></webobject><span>No</span>
+				</td>
+			</tr>
+		</table>
+		<!-- errors -->
+		<WEBOBJECT NAME="ShowNullUnitErrorMessage">
+		 	<p class="warningText">
+				Create failed: <WEBOBJECT NAME=NullUnitNameErrorString></WEBOBJECT>
+			</p>
+		</WEBOBJECT>
+        <WEBOBJECT NAME="ShowUnitNameExistsErrorMessage">
+			<p class="warningText">
+			 	Create failed: <WEBOBJECT NAME= UnitNameExistsErrorString></WEBOBJECT>
+			</p>
+        </WEBOBJECT>
+		<WEBOBJECT NAME="ShowNullEncompassingUnitErrorMessage">
+			<p class="warningText">
+				Create failed: <WEBOBJECT NAME= NullEncompassingUnitErrorString></WEBOBJECT>
+			</p>
+        </WEBOBJECT>
+		<WEBOBJECT NAME="ShowNullFilespaceQuotaErrorMessage">
+			<p class="warningText">
+				Create failed: <WEBOBJECT NAME= NullFilespaceQuotaErrorString></WEBOBJECT>
+			</p>
+		</WEBOBJECT>
+		<WEBOBJECT NAME="ShowInvalidFilespaceQuotaErrorMessage">
+			<p class="warningText">
+				Create failed: <WEBOBJECT NAME= InvalidFilespaceUsageErrorString></WEBOBJECT>
+			</p>
+        </WEBOBJECT>
+      </WEBOBJECT>
+</webobject>

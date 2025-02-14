@@ -1,0 +1,27 @@
+JavaScriptNavigationPopUpButton: WOString {
+	escapeHTML = false;
+	value = javaScriptNavigationPopUp;
+}
+
+NavForm: WOForm {
+	name = "NavForm";
+	style = "display: inline;";
+	href = displaySectionDAUrl;
+	method = "GET";
+}
+
+ScriptlessNavigationPopUpButton: WOPopUpButton {
+	escapeHTML = false;
+	list = sectionHierarchy.navigableSectionsInHierarchy;
+	item = aSection;
+	displayString = paddedSectionName;
+	value = aSection.section.normalName;
+	name = "section";
+	class = "navigationPopup";
+	selectedValue = currentSection.normalName;
+}
+
+SiteIDHiddenField: WOHiddenField {
+	name = "site";
+	value = website.siteID;
+}

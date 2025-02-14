@@ -1,0 +1,455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+DeletePrefetcher (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DeletePrefetcher (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DeletePrefetcher.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EOAdaptorChannelAdditions.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/DeletePrefetcher.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DeletePrefetcher.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class DeletePrefetcher</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.DeletePrefetcher</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.35"><B>DeletePrefetcher</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+<p>This class works around a bug in the 5.1.x and 5.2.x versions of WebObjects.  There is a bug
+ in EOEditingContext that causes problems when a fetch is performed while processing a saveChanges
+ messge.  When a fetch occurs a notification is sent to the editing context which causes it to
+ discard some cached information regarding inserted, updated, and deleted objects.  When this
+ happens during certain phases of the save it causes the editing context to lose track of what it
+ is doing.  This is a particular problem when processing delete rules.  This results in things
+ such as updates being sent instead of deletes and validation being performed after deletion
+ resulting in null required attributes where key fields have been set to null.</p>
+
+ <p>The work around for this is to pre-process the delete rules for all obejcts being deleted to
+ ensure that all affected or referenced objects have been fetched before the save process is
+ allowed to start.  This does not fix the problem but it avoids the symptoms.</p>
+
+ <p>It was originally thought that this problem would also be solved by using DeleteFiresFaultWorkAroundEditingContext.
+ However, when working on release 4.6 of GVC.SiteMaker, it was discovered that this does not address
+ all of the issues.  Delete operations get changed into updates, or deletes fail EOF update validation
+ if this class is not used.  This problem may be specific to some oddity in the EOModels used by GVC.SiteMaker.
+ </p>
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2005  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#DeletePrefetcher()">DeletePrefetcher</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#deleteRuleAffectsToMany(int)">deleteRuleAffectsToMany</A></B>(int&nbsp;deleteRule)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the passed delete rule requires to-many relationships to be
+ faulted in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#deleteRuleAffectsToOne(int)">deleteRuleAffectsToOne</A></B>(int&nbsp;deleteRule)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the passed delete rule requires to-one relationships to be
+ faulted in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#prefetchDeletionPathsFrom(com.webobjects.eocontrol.EOEnterpriseObject)">prefetchDeletionPathsFrom</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;rootEO)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensures that all eo objects that are the target of delete rules from rootEO are not faults
+ and also ensure this for any objects that will be deleted as a result of cascade delete rules.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#processedObjects()">processedObjects</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the objects that have been processed so far.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#processInverseRelationship(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eoaccess.EORelationship)">processInverseRelationship</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;relatedObject,
+                                                     com.webobjects.eoaccess.EORelationship&nbsp;relationship)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the relationship being fetched has an inverse to-many relationships we need to fetch all
+ the objects in that relationship so that those faults are not fired when this object is removed
+ from that relationship.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#processToManyRelationships(com.webobjects.eocontrol.EOEnterpriseObject)">processToManyRelationships</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Follows all the to-many relationships out of eo, bulk fetching the target of any delete rules
+ and restarting the cycle of prefetching along deletion paths for any that are the target of a
+ cascade rule.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#processToOneRelationships(com.webobjects.eocontrol.EOEnterpriseObject)">processToOneRelationships</A></B>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Follows all the to-one relationships out of eo, ensuring the targets of any delete rules are
+ not faults, and continues the cycle of prefetching along deletion paths for any that are the
+ target of a cascade rule.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/DeletePrefetcher.html#reset()">reset</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resets the state of DeletePrefetcher after a round of prefetching deletion paths.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DeletePrefetcher()"><!-- --></A><H3>
+DeletePrefetcher</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.44"><B>DeletePrefetcher</B></A>()</PRE>
+<DL>
+<DD>Designated constructor.  Creates a new DeletePrefetcher and resets it.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="prefetchDeletionPathsFrom(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+prefetchDeletionPathsFrom</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.60"><B>prefetchDeletionPathsFrom</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;rootEO)</PRE>
+<DL>
+<DD>Ensures that all eo objects that are the target of delete rules from rootEO are not faults
+ and also ensure this for any objects that will be deleted as a result of cascade delete rules.
+ This is the main method to call.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>rootEO</CODE> - the EOEnterpriseObject that will be deleted</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="reset()"><!-- --></A><H3>
+reset</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.81"><B>reset</B></A>()</PRE>
+<DL>
+<DD>Resets the state of DeletePrefetcher after a round of prefetching deletion paths.  This
+ should be called before or after calling prefetchDeletionPathsFrom(EOEnterpriseObject).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processToManyRelationships(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+processToManyRelationships</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.96"><B>processToManyRelationships</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Follows all the to-many relationships out of eo, bulk fetching the target of any delete rules
+ and restarting the cycle of prefetching along deletion paths for any that are the target of a
+ cascade rule.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the EOEnterpriseObject to process to-many relationships on</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processToOneRelationships(com.webobjects.eocontrol.EOEnterpriseObject)"><!-- --></A><H3>
+processToOneRelationships</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.148"><B>processToOneRelationships</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;eo)</PRE>
+<DL>
+<DD>Follows all the to-one relationships out of eo, ensuring the targets of any delete rules are
+ not faults, and continues the cycle of prefetching along deletion paths for any that are the
+ target of a cascade rule.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>eo</CODE> - the EOEnterpriseObject to process to-many relationships on</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processInverseRelationship(com.webobjects.eocontrol.EOEnterpriseObject, com.webobjects.eoaccess.EORelationship)"><!-- --></A><H3>
+processInverseRelationship</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.194"><B>processInverseRelationship</B></A>(com.webobjects.eocontrol.EOEnterpriseObject&nbsp;relatedObject,
+                                          com.webobjects.eoaccess.EORelationship&nbsp;relationship)</PRE>
+<DL>
+<DD>If the relationship being fetched has an inverse to-many relationships we need to fetch all
+ the objects in that relationship so that those faults are not fired when this object is removed
+ from that relationship.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>relatedObject</CODE> - the target of the relationship<DD><CODE>relationship</CODE> - the relationship to relatedObject, the relationship to check the inverse of</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deleteRuleAffectsToMany(int)"><!-- --></A><H3>
+deleteRuleAffectsToMany</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.227"><B>deleteRuleAffectsToMany</B></A>(int&nbsp;deleteRule)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the passed delete rule requires to-many relationships to be
+ faulted in.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>deleteRule</CODE> - the delete rule to check
+<DT><B>Returns:</B><DD><code>true</code> if the passed delete rule requires to-many relationships to be
+ faulted in<DT><B>See Also:</B><DD><CODE>EOClassDescription</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="deleteRuleAffectsToOne(int)"><!-- --></A><H3>
+deleteRuleAffectsToOne</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.249"><B>deleteRuleAffectsToOne</B></A>(int&nbsp;deleteRule)</PRE>
+<DL>
+<DD>Returns <code>true</code> if the passed delete rule requires to-one relationships to be
+ faulted in.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>deleteRule</CODE> - the delete rule to check
+<DT><B>Returns:</B><DD><code>true</code> if the passed delete rule requires to-one relationships to be
+ faulted in<DT><B>See Also:</B><DD><CODE>EOClassDescription</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processedObjects()"><!-- --></A><H3>
+processedObjects</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableArray <A HREF="../../../src-html/net/global_village/eofextensions/DeletePrefetcher.html#line.267"><B>processedObjects</B></A>()</PRE>
+<DL>
+<DD>Returns the objects that have been processed so far.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the objects that have been processed so far</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DeletePrefetcher.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/DeleteFiresFaultWorkAroundEditingContext.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/EOAdaptorChannelAdditions.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/DeletePrefetcher.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DeletePrefetcher.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

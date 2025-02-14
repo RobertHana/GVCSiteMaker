@@ -1,0 +1,396 @@
+<project name="BuildGVCSiteMakerDeploymentPackages" default="build.packages" basedir=".">
+
+<!--
+
+Creates the common deployment packages (gzipped tar files) for GVC SiteMaker
+Usage
+  ant build_packages -f BuildDeploymentPackages.xml
+
+For an open source build, run the above, then:
+  ant OpenSource -f BuildDeploymentPackages.xml
+
+Notes:
+
+- this script does NOT package any of the installation specific custom stuff!
+  The BuildInstallPackage.xml in the installation's directory under Custom
+  does that.  This scipt just builds and packages the common stuff.  The 
+  products of this build file are used by BuildInstallPackage.xml to create the
+  final install package for an installation.
+  
+- see ~/library/gvc.properties, ~/library/wobuild.properties, and the 
+  init.properties target for path and property settings
+
+- if you want to package the DBC contracted version of the source, use the 
+  test.build.packages target (or otherwise define use.dbc=true).  This will 
+  contract the source and include runtime support (e.g. the jass-rt.jar) in the 
+  built packages.
+  e.g.
+      ant test_build_packages -f BuildDeploymentPackages.xml
+
+	You can produce an optimized build by defining optimize.code:
+	 ant build_packages -f BuildDeploymentPackages.xml -Doptimize.code=true
+
+- in order to build with a different set of WO frameworks, edit
+  ~/Library/wobuild.properties to change the wo.wosystemroot and wo.wolocalroot
+  properties.  Also edit ~/Library/gvc.properties if you need to use a different
+  version of the GVC frameworks.  Change gvc.tools.path.
+-->
+
+
+	<!-- Default target, does a full build and package -->
+	<target name="build_packages" depends="init.properties, build.code, update.classpath, package.files"/>
+
+	<!-- Alternate target, does a full build and package but with DBC contracts 
+	     enabled                                                             -->
+	<target name="test_build_packages" depends="use.dbc, build_packages"/>
+
+	<!-- Setup properties for building packages -->
+	<target name="init.properties">
+		<property name="user.library.dir" value="${user.home}/Library"/>
+		<property file="${user.library.dir}/wobuild.properties"/>
+		<property file="${user.library.dir}/gvc.properties"/>
+
+		<!-- This assumes we are building from tbe Deployment directory -->
+		<property name="GVCSiteMaker.path" value=".."/>
+		<property name="deployment.path" value="${GVCSiteMaker.path}/Deployment"/>
+		<property name="documentation.path" value="${GVCSiteMaker.path}/Documentation"/>
+		<property name="install.path" value="${deployment.path}/Install"/>
+		<property name="code.path" value="${GVCSiteMaker.path}/Code"/>
+		<property name="archive.path" value="${install.path}/Archive"/>
+		<property name="script.path" value="${install.path}/Script"/>
+		<property name="installed.documentation.path" value="${install.path}/Documentation"/>
+		<property name="examples.path" value="${install.path}/ConfigurationExamples"/>
+		<property name="custom.path" value="${GVCSiteMaker.path}/Custom"/>
+
+		<!-- These will already be set for OpenSource builds, these are the defaults -->
+		<property name="embed.wo.frameworks" value="true"/>
+		<property name="classpathfiles.path" value="ClasspathFiles"/>
+	</target>
+
+	<!-- Defines use.dbc flag -->
+	<target name="use.dbc">
+		<property name="use.dbc" value="true"/>
+	</target>
+
+	<!-- Define Optimized build targets -->
+	<target name="check.optimize.code" if="${optimize.code}">
+		<property name="wocompile.debug.flag" value="off" />
+		<property name="wocompile.optimize.flag" value="on" />
+	</target>
+	
+	<!--  Do a clean build of the frameworks and application  -->
+	<target name="build.code" depends="init.properties, check.optimize.code">
+		<property name="target" value="build"/>
+	    <ant dir="${gvc.frameworks.path}" target="clean" inheritAll="true"/>
+	    <ant dir="${gvc.frameworks.path}" target="${target}" inheritAll="true"/>
+	    <ant dir="${code.path}" target="clean" inheritAll="true"/>
+	    <ant dir="${code.path}" target="${target}" inheritAll="true"/>
+	</target>
+
+	<!-- Replace the generated classpath files with our hand crafted versions -->
+	<target name="update.classpath" depends="init.properties" >
+		<copy 	file="${classpathfiles.path}/GVCSiteMaker/CLSSPATH.TXT"
+				tofile="${code.path}/GVCSiteMaker/dist/GVCSiteMaker.woa/Contents/Windows/CLSSPATH.TXT"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSiteMaker/MacOSClassPath.txt"
+				tofile="${code.path}/GVCSiteMaker/dist/GVCSiteMaker.woa/Contents/MacOS/MacOSClassPath.txt"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSiteMaker/UNIXClassPath.txt"
+				tofile="${code.path}/GVCSiteMaker/dist/GVCSiteMaker.woa/Contents/UNIX/UNIXClassPath.txt"
+				overwrite="true"/>
+
+		<copy 	file="${classpathfiles.path}/GVCSMAdmin/CLSSPATH.TXT"
+				tofile="${code.path}/GVCSMAdmin/dist/GVCSMAdmin.woa/Contents/Windows/CLSSPATH.TXT"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMAdmin/MacOSClassPath.txt"
+				tofile="${code.path}/GVCSMAdmin/dist/GVCSMAdmin.woa/Contents/MacOS/MacOSClassPath.txt"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMAdmin/UNIXClassPath.txt"
+				tofile="${code.path}/GVCSMAdmin/dist/GVCSMAdmin.woa/Contents/UNIX/UNIXClassPath.txt"
+				overwrite="true"/>
+
+		<copy 	file="${classpathfiles.path}/GVCSMUtility/CLSSPATH.TXT"
+				tofile="${code.path}/GVCSMUtility/dist/GVCSMUtility.woa/Contents/Windows/CLSSPATH.TXT"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMUtility/MacOSClassPath.txt"
+				tofile="${code.path}/GVCSMUtility/dist/GVCSMUtility.woa/Contents/MacOS/MacOSClassPath.txt"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMUtility/UNIXClassPath.txt"
+				tofile="${code.path}/GVCSMUtility/dist/GVCSMUtility.woa/Contents/UNIX/UNIXClassPath.txt"
+				overwrite="true"/>
+
+		<copy 	file="${classpathfiles.path}/GVCSMQueuedTasks/CLSSPATH.TXT"
+				tofile="${code.path}/GVCSMQueuedTasks/dist/GVCSMQueuedTasks.woa/Contents/Windows/CLSSPATH.TXT"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMQueuedTasks/MacOSClassPath.txt"
+				tofile="${code.path}/GVCSMQueuedTasks/dist/GVCSMQueuedTasks.woa/Contents/MacOS/MacOSClassPath.txt"
+				overwrite="true"/>
+		<copy 	file="${classpathfiles.path}/GVCSMQueuedTasks/UNIXClassPath.txt"
+				tofile="${code.path}/GVCSMQueuedTasks/dist/GVCSMQueuedTasks.woa/Contents/UNIX/UNIXClassPath.txt"
+				overwrite="true"/>
+	</target>
+
+	<!-- Packages up the built products  -->
+	<target name="package.files" depends="init.properties">
+
+		<!-- Clean up any previous build products and create the target 
+		     directories for the packages and scripts                        -->
+		<delete dir="${install.path}"/>
+		<mkdir dir="${archive.path}"/>
+		<mkdir dir="${script.path}"/>
+		<mkdir dir="${installed.documentation.path}"/>
+		<mkdir dir="${examples.path}"/>
+		
+		<!-- Tar up applications -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/GVCSiteMakerApplications.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="${code.path}/GVCSiteMaker/dist" mode="755" username="root" group="root">
+				<include name="GVCSiteMaker.woa/GVCSiteMaker"/>
+			</tarfileset>
+			<tarfileset dir="${code.path}/GVCSiteMaker/dist" username="root" group="root">
+				<include name="GVCSiteMaker.woa/**"/>
+				<exclude name="GVCSiteMaker.woa/GVCSiteMaker"/>
+			</tarfileset>	
+
+			<tarfileset dir="${code.path}/GVCSMAdmin/dist" mode="755" username="root" group="root">
+				<include name="GVCSMAdmin.woa/GVCSMAdmin"/>
+			</tarfileset>
+			<tarfileset dir="${code.path}/GVCSMAdmin/dist" username="root" group="root">
+				<include name="GVCSMAdmin.woa/**"/>
+				<exclude name="GVCSMAdmin.woa/GVCSMAdmin"/>
+			</tarfileset>	
+
+			<tarfileset dir="${code.path}/GVCSMUtility/dist" mode="755" username="root" group="root">
+				<include name="GVCSMUtility.woa/GVCSMUtility"/>
+			</tarfileset>
+			<tarfileset dir="${code.path}/GVCSMUtility/dist" username="root" group="root">
+				<include name="GVCSMUtility.woa/**"/>
+				<exclude name="GVCSMUtility.woa/GVCSMUtility"/>
+			</tarfileset>	
+
+			<tarfileset dir="${code.path}/GVCSMQueuedTasks/dist" mode="755" username="root" group="root">
+				<include name="GVCSMQueuedTasks.woa/GVCSMQueuedTasks"/>
+			</tarfileset>
+			<tarfileset dir="${code.path}/GVCSMQueuedTasks/dist" username="root" group="root">
+				<include name="GVCSMQueuedTasks.woa/**"/>
+				<exclude name="GVCSMQueuedTasks.woa/GVCSMQueuedTasks"/>
+			</tarfileset>	
+		</tar>
+
+		<!-- Tar up frameworks -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/GVCSiteMakerFrameworks.tar.gz"
+				compression="gzip">
+
+			<!-- GVC.SiteMaker frameworks -->
+			<tarfileset dir="${code.path}/GVCSMCore/dist" username="root" group="root">
+				<include name="GVCSMCore.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${code.path}/GVCSMEOPrototypes/dist" username="root" group="root">
+				<include name="GVCSMEOPrototypes.framework/**"/>
+			</tarfileset>
+			<!-- GVCSMCustom does not get added here, it is provided on a 
+			     per-installation basis                                      -->
+
+			<!-- GVCTools frameworks *except* GVCKerberos (see below) -->
+			<tarfileset dir="${gvc.frameworks.path}/GVCJars/dist" username="root" group="root">
+				<include name="GVCJars.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCFoundation/dist" username="root" group="root">
+				<include name="GVCFoundation.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCEOFExtensions/dist" username="root" group="root">
+				<include name="GVCEOFExtensions.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCJNDIAdditions/dist" username="root" group="root">
+				<include name="GVCJNDIAdditions.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCEOFValidation/dist" username="root" group="root">
+				<include name="GVCEOFValidation.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCGenericObjects/dist" username="root" group="root">
+				<include name="GVCGenericObjects.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCVirtualTables/dist" username="root" group="root">
+				<include name="GVCVirtualTables.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCMail/dist" username="root" group="root">
+				<include name="GVCMail.framework/**"/>
+				<exclude name="**/JavaMailDocs.zip"/>
+			</tarfileset>
+			<tarfileset dir="${gvc.frameworks.path}/GVCWOExtensions/dist" username="root" group="root">
+				<include name="GVCWOExtensions.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="Frameworks" username="root" group="root">
+				<include name="Ajax.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="Frameworks" username="root" group="root">
+				<include name="ERExtensions.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="Frameworks" username="root" group="root">
+				<include name="JavaWOExtensions.framework/**"/>
+			</tarfileset>
+			<tarfileset dir="Frameworks" username="root" group="root">
+				<include name="WOOgnl.framework/**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Pacakge Kerberos support seperately so that it can be included only 
+		     if needed                                                       -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/GVCKerberos.tar.gz"
+				compression="gzip">
+
+			<!-- GVC.SiteMaker frameworks -->
+			<tarfileset dir="${gvc.frameworks.path}/GVCKerberos/dist" username="root" group="root">
+				<include name="GVCKerberos.framework/**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Package DocumentRoot -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/GVCSiteMakerDocumentRoot.tar.gz"
+				compression="gzip">
+			<tarfileset dir="${GVCSiteMaker.path}/DocumentRoot" username="root" group="root">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Package Miscellaneous Files -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/GVCSiteMakerMisc.tar.gz"
+				compression="gzip">
+
+			<!--  Apache Configuration Changes -->
+			<tarfileset dir="${GVCSiteMaker.path}/Deployment" username="root" group="root">
+				<exclude name="ApacheExample.conf"/>
+				<include name="*.conf"/>
+				<include name="*.rules"/>
+			</tarfileset>
+
+			<!-- FrontBase stuff -->
+			<tarfileset dir="${deployment.path}" username="root" group="root">
+				<include name="FrontBaseSchema.sql"/>
+				<include name="CreateFrontBaseDB.sql"/>
+			</tarfileset>
+
+			<!-- GVC.SiteMaker Installation Notes -->
+			<tarfileset dir="${deployment.path}" username="root" group="root">
+				<include name="DeploymentInstructions.doc"/>
+				<include name="README.html"/>
+			</tarfileset>
+  
+			<!-- GVC.SiteMaker Configuration Notes -->
+			<tarfileset dir="${documentation.path}" username="root" group="root">
+				<include name="*.doc"/>
+			</tarfileset>
+  
+			<!-- Info.plist to patch FrontBase plugin Info.plist so it does not 
+				try to read external schema                                  -->
+			<tarfileset dir="${code.path}" username="root" group="root">
+				<include name="Misc/Info.plist"/>
+			</tarfileset>
+
+			<!-- Package Migration Files -->
+			<tarfileset dir="${GVCSiteMaker.path}/Deployment" username="root" group="root">
+				<include name="Migration/**"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Package Jass Runtime -->
+		<tar	longfile="gnu"
+				destfile="${archive.path}/jass-rt.tar.gz"
+				compression="gzip">
+
+			<tarfileset dir="${gvc.tools.path}/JassDistribution" username="root" group="root">
+				<include name="jass-rt.jar"/>
+			</tarfileset>
+		</tar>
+
+		<!-- Copy PDF Documentation -->
+		<copy todir="${installed.documentation.path}">
+			<fileset dir="${deployment.path}" includes="*.pdf"/>
+			<fileset dir="${documentation.path}" includes="*.pdf"/>
+			<fileset dir="${documentation.path}/UserManual" includes="*.pdf"/>	
+			<fileset dir="${custom.path}/OpenSource" includes="*.pdf"/>
+		</copy>
+		
+		<!-- Copy Read Me -->
+		<copy todir="${install.path}">
+			<fileset dir="${deployment.path}" includes="ReadMeFirst.html"/>
+		</copy>
+		
+		<!-- Copy Configuration Examples -->
+		<copy todir="${examples.path}">
+			<fileset dir="${deployment.path}" includes="GVCSiteMaker.rules"/>
+			<fileset dir="${deployment.path}" includes="GVCSiteMakerServerDown.rules"/>
+			<fileset dir="${deployment.path}" includes="index_ip.address_80_domain.conf"/>
+			<fileset dir="${deployment.path}" includes="index_ip.address_443_domain.conf"/>
+			<fileset dir="${deployment.path}" includes="FrontBaseSchema.sql"/>
+			<fileset dir="${custom.path}/OpenSource/GVCSMCustom" includes="GVCSiteMakerCustom.plist"/>
+			<fileset dir="${custom.path}/OpenSource/GVCSMCustom" includes="GVCSiteMakerBootstrap.plist"/>
+		</copy>
+		
+		<!-- Copy WOInstall stuff -->
+		<copy todir="${script.path}">
+			<fileset dir="${gvc.tools.path}/../WOInstall" includes="**"/>
+			<fileset dir="${deployment.path}" includes="*.list"/>
+			<fileset dir="${deployment.path}" includes="CreateDirectories.sh"/>
+			<fileset dir="${deployment.path}" includes="CreateUploadFolders.sh"/>
+		</copy>
+	</target>
+
+
+	<!-- Open Source Distribution Targets -->
+
+	<!-- Target to produce all Open Source tarballs of built versions -->
+	<target name="OpenSource">
+
+		<delete file="../GVCSiteMakerSourceCode*.*"/>
+		<replace file="../Code/build.xml" token="Development" value="OpenSource"/>
+		<tar	longfile="gnu"
+			destfile="../GVCSiteMaker_source_${version}.tar.gz"
+			compression="gzip">
+
+			<tarfileset dir=".." 
+				    excludes="**/bin/** **/ContractedSource/** **/*.eomodeld~/** **/*.woa/** **/*.framework/**"
+				    username="root" 
+				    group="root">
+				<include name="README.html"/>
+				<include name="Code/**"/>
+				<exclude name="Code/Workspace/"/>
+
+				<include name="Custom/CommonBuildInstallPackage.xml"/>
+				<include name="Custom/Generic/*"/>
+				<include name="Custom/Generic/**"/>
+				<include name="Custom/OpenSource/**"/>
+				<exclude name="Custom/OpenSource/*.tar.gz"/>
+
+				<include name="Deployment/**"/>
+				<exclude name="Deployment/*.zip"/>
+				<exclude name="Deployment/Install/Archive/"/>
+
+				<include name="Documentation/**"/>
+				<include name="DocumentRoot/GVCSiteMaker/**"/>
+				<exclude name="Documentation/Old/"/>
+				<exclude name="Documentation/Support/"/>
+
+				<include name="Tests/*"/>
+				<include name="Tests/TestPlan/**"/>
+				<exclude name="Tests/TestPlan/Files for Testing/"/>
+				<exclude name="Tests/TestPlan/Old/"/>
+				<exclude name="Tests/TestPlan/SMAdmin-Units/LargeFile.xls"/>
+				<exclude name="Tests/TestPlan/SMAdmin-Websites/LargeFile.xls"/>
+				<exclude name="Tests/TestPlan/SiteMaker-AccessGroupsFilesAndSecurity/*.xls"/>
+			</tarfileset>
+		</tar>
+		<replace file="../Code/build.xml" token="OpenSource" value="Development"/>
+		
+		<!-- Cleanup temporary file -->
+		<delete dir="temp"/>
+	</target>
+	
+
+</project>

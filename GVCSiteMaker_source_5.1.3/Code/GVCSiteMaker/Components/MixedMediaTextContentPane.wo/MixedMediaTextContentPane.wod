@@ -1,0 +1,151 @@
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = updateContainerID;
+    evalScripts = true;
+}
+
+// *** MODE STUFF ***
+
+Component: SMWOTextComponent {
+    value = componentObject.text;  // VALID
+    shouldUseRichTextEditor = shouldUseRichTextEditor;
+    editorCSS = componentObject.sectionUsedIn.activeSectionStyle.relatedCSSUrl;
+    index = 1;
+    wysiwygEditorMode = "Advanced";
+    website = website;
+    section = componentObject.sectionUsedIn;
+}
+
+DifferentVersionConditional: WOConditional {
+    condition = showEditADifferentVersionLink;
+}
+
+DisplayWithIFrameConditional: WOConditional {
+	condition = componentObject.displayInIFrame; //VALID
+	negate = false;
+}
+
+DisplayWithoutIFrameConditional: WOConditional {
+	condition = componentObject.displayInIFrame; //VALID
+	negate = true;
+}
+
+IFrameContainer: WOGenericContainer {
+	height = componentObject.height; //VALID
+	width = "100%";
+	elementName = "IFRAME";
+	src = contentURL;
+}
+
+Text: WOString {
+	value = componentObject.displayText; //VALID
+	escapeHTML = false;
+}
+
+DisplayMode: WOConditional {
+    condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+    condition = isInEditMode;
+}
+
+EditDiffVersionHyperlink: WOHyperlink {
+    href = viewVersionsUrl;
+    id = ~"editDifferentVersionLink_" + paneNumber();
+    title = application.properties.EditThisPageTitle;  // VALID
+}
+
+EditLinkConditional: WOConditional {
+    condition = showEditLink;
+}
+
+EditPageHyperlink : AjaxUpdateLink {
+    action = editPage;
+    title = application.properties.EditThisPageTitle;  // VALID
+    updateContainerID = updateContainerID;
+    id = ~"editPageLink_" + paneNumber();
+}
+
+EditPageHyperlinkContent: WOString {
+    value = application.properties.EditThisPageText;  // VALID
+    escapeHTML = false;
+}
+
+EditPageHyperlinkContent2: WOString {
+    value = application.properties.EditDifferentVersionText;  // VALID
+    escapeHTML = false;
+}
+
+NonCurrentVersionConditional: WOConditional {
+    condition = showNonCurrentVersionNote;
+}
+
+SaveEditsSubmit : AjaxSubmitButton {
+	onClickBefore = "tinymce.EditorManager.triggerSave() || true";  // Total hack as there is no onBeforeClick or willClick or whatever binding, yet...
+    value = "Save";
+    action = updateSettings;
+    //updateContainerID = updateContainerID;
+    evalScripts = true;
+    onComplete = ~"function(receiver, response) {Effect.Appear('" + changesSavedID() + "', {duration: 1, afterFinish: function() {Effect.Fade('" + changesSavedID() + "', {delay: 4})}})}";
+}
+
+CancelEditsSubmit : AjaxSubmitButton {
+    value = "Cancel";
+    action = resetPage;
+    updateContainerID = updateContainerID;
+}
+
+ManageFilesSubmitButton: WOSubmitButton {
+   action = configSiteFileMgmt;
+   value = "Upload New Files";
+}
+
+IsVersioningConditional: WOConditional {
+    condition = isVersioningEnabled;
+}
+
+CanBeAlteredConditional: WOConditional {
+    condition = canBeAltered;
+}
+
+CanCreateVersionConditional: WOConditional {
+    condition = canCreateANewVersion;
+}
+
+CanManuallyCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+  negate = true;
+}
+
+CreateNewVersionCheckBox: WOCheckBox {
+    checked = shouldCreateNewVersion;
+}
+
+CanAutoCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+}
+
+IsNotCurrentVersionConditional: WOConditional {
+    condition = version.isCurrent;
+    negate = true;
+}
+
+AlteringConditional: WOConditional {
+    condition = canBeAltered;
+    negate = true;
+}
+
+CustomJSEditorInitString: WOString {
+    value = customJSEditorInitString;
+    escapeHTML = false;
+}
+
+EditInPlaceForm : WOForm {
+    multipleSubmit = true;
+}
+
+ChangesSaved: WOGenericContainer {
+	elementName = "div";
+	id = changesSavedID;
+	style = "display: none; color:#4277aa; background-color:#E0EBF8; width:400px; font-weight:bold; border:1px solid #aaaaaa; text-align:center; padding:2px; font-size:1.2em;";
+}

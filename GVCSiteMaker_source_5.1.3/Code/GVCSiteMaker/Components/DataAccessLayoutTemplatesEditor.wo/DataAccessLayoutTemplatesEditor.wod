@@ -1,0 +1,24 @@
+AddForm: DataAccessModeTemplateEditor {
+    title = "Add<br>Form";
+    mode = addMode;
+}
+
+ImportForm: DataAccessModeTemplateEditor {
+    title = "Import<br>Form";
+    mode = importMode;
+}
+
+ListOfRecords: DataAccessModeTemplateEditor {
+    title = "List of<br>Records";
+    mode = listMode;
+}
+
+SearchForm: DataAccessModeTemplateEditor {
+    title = "Search<br>Form";
+    mode = searchMode;
+}
+
+SingleRecord: DataAccessModeTemplateEditor {
+    title = "Single<br>Record";
+    mode = singleMode;
+}

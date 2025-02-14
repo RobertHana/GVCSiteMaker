@@ -1,0 +1,58 @@
+<WEBOBJECT NAME="EmbeddedForm">
+	<table BORDER="0" CELLSPACING="2" CELLPADDING="2" class="content" style = "width: 100%">
+		<tr>
+			<td valign="bottom" align = "left">
+              <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+                Back to Website Sections
+              </webobject>
+			</td>
+			<td valign="top" align="right">	
+			  <WEBOBJECT NAME="CancelButton"></WEBOBJECT>
+			  <WEBOBJECT NAME="UpdateAndDoneButton"></WEBOBJECT>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table border="0" cellpadding="2" cellspacing="2" width="100%">
+					<tr><td><hr class="primaryBarStyle"/></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="2" cellpadding="2" class="content">
+		<tr>
+			<td valign="TOP" class="boldText">
+                Site ID:
+                <br />
+				<i class="requiredText">(required)</i>  
+            </td>
+			<td class="rightContentColumn">
+				<WEBOBJECT NAME="EmbeddedSiteNameField"></WEBOBJECT>&nbsp;&nbsp;<WEBOBJECT NAME=FindSiteButton></WEBOBJECT><WEBOBJECT NAME=ForceSubmitField></WEBOBJECT><!-- Hidden field needed so siteID submits when null --><br/>
+				<span class="descriptiveText"> Enter the ID of the site which contains the section you want to embed, then click
+				<span class="coloredBoldText">Find Site</span> to show the sections in this site. </span><br/>
+				<WEBOBJECT NAME=HasErrorConditional>
+					<SPAN CLASS=warningText><WEBOBJECT NAME=SiteErrorMessageString></WEBOBJECT></SPAN><BR/>
+				</WEBOBJECT>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<WEBOBJECT NAME=HasFoundWebsiteConditional>
+			<tr>
+				<td valign=TOP class="boldText">Section to<br/>
+					Embed:
+                    <br/>
+					<i class="requiredText">(required)</i>
+                </td>
+				<td class="rightContentColumn">
+					<WEBOBJECT NAME=EmbeddableSectionsPopUpButton></WEBOBJECT><br/>
+					<span class="descriptiveText"> Select the section that you want to embed (display as the contents of this section) and click
+					<span class="coloredBoldText">Update &amp; Done</span>.<WEBOBJECT NAME=IsMissingSelectedSectionConditional><br/><SPAN CLASS=warningText>ERROR: Please select a section.</SPAN></WEBOBJECT></span> </td>
+			</tr>
+		</WEBOBJECT>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+	</table>
+</WEBOBJECT>

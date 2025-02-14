@@ -1,0 +1,8 @@
+Hyperlink1: WOHyperlink {
+	action = loadStyleTemplates;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+

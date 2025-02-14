@@ -1,0 +1,82 @@
+AdminNotesString: WOString {
+	value = formattedAdminNotes;
+	escapeHTML = false;
+}
+
+DenyRequestHyperlink: WOHyperlink {
+	action = denyRequest;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Manage Pending Website Requests";
+	isAdmin = true;
+}
+
+GrantRequestHyperlink: WOHyperlink {
+	action = grantRequest;
+}
+
+HasPendingRequestsConditional: WOConditional {
+	condition = hasPendingRequests;
+}
+
+HasRequesterNoteConditional: WOConditional {
+	condition = hasRequestNote;
+}
+
+NoPendingRequestsConditional: WOConditional {
+	condition = hasPendingRequests;
+	negate = true;
+}
+
+OrgUnitNameString: WOString {
+	value = aWebsiteRequest.orgUnit.unitName;
+}
+
+QueryRequestHyperlink: WOHyperlink {
+	action = queryRequest;
+}
+
+ReferRequestHyperlink: WOHyperlink {
+	action = referRequest;
+}
+
+RequestDateString: WOString {
+	value = aWebsiteRequest.dateRequested;
+	formatter = application.properties.CompressedDateFormatter;
+}
+
+RequestNotesString: WOString {
+	value = aWebsiteRequest.requesterNote;
+}
+
+RequestedSiteIDString: WOString {
+	value = aWebsiteRequest.siteID;
+}
+
+RequesterUserIDString: WOString {
+	value = aWebsiteRequest.requester.userID;
+}
+
+ShowButtonForm: WOForm {
+}
+
+ShowCompletedRequestsSubmitButton: WOSubmitButton {
+	action = showCompletedRequests;
+	value = "Show Completed Requests";
+}
+
+SiteIDInUseConditional: WOConditional {
+	condition = aWebsiteRequest.isSiteIDInUse;
+}
+
+SiteIDNotInUseConditional: WOConditional {
+	condition = aWebsiteRequest.isSiteIDInUse;
+	negate = true;
+}
+
+WebsiteRequestRepetition: WORepetition {
+	item = aWebsiteRequest;
+	list = pendingRequests;
+}

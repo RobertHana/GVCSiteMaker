@@ -1,0 +1,16 @@
+package jass.examples;
+
+public class ProducerConsumer {
+
+	protected static Producer 	producer;
+	protected static Consumer 	consumer;
+	protected static Buffer 	buffer;
+	
+	public static void main (String[] args) {
+		buffer = new Buffer(7);
+		producer = new Producer(buffer);
+		consumer = new Consumer(buffer);
+		producer.start();
+		consumer.start();
+	}
+}

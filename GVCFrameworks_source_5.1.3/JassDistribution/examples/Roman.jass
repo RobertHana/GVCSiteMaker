@@ -1,0 +1,60 @@
+package jass.examples;
+
+/**
+ * A simple class to manage Roman style integer representation.
+ */
+public class Roman 
+{
+    private int value;
+    
+    /**
+     * Contructor. 
+     *
+     * @param value The value of this Roman integer - must be positiv.
+     */
+    Roman(int value)
+    {
+	/** require value > 0; 
+	    /# The romans didn't know negative numbers or zero #/ 
+	**/
+	this.value = value;
+    }
+    
+    /**
+     * Converts this class to Roman string.
+     */
+    public String toString() 
+    {
+	return toString(value);
+    }
+    
+    /**
+     * Converts any positive integer to Roman string.
+     *
+     * @param value The integer to be converted - must be positiv.
+     */
+    public static String toString(int value) 
+    {
+	/** require value > 0; **/
+	if(value>=1000)     return "M" + toString(value-1000);
+	else if(value>=900) return "CM" + toString(value-900);
+	else if(value>=800) return "D" + toString(value-500);
+	else if(value>=500) return "D" + toString(value-500);
+	else if(value>=400) return "CD" + toString(value-400);
+	else if(value>=100) return "C" + toString(value-100);
+	else if(value>=90)  return "XC" + toString(value-90);
+	else if(value>=50)  return "L" + toString(value-50);
+	else if(value>=40)  return "XL" + toString(value-40);
+	else if(value>=10)  return "X" + toString(value-10);
+	else if(value>=9)   return "IX" + toString(value-9);
+	else if(value>=5)   return "V" + toString(value-5);
+	else if(value>=4)   return "IV" + toString(value-4);
+	else if(value>=1)   return "I" + toString(value-1);
+	else return "";
+    }
+
+    /** invariant 
+	/# Kupo! #/
+	1 == 1;
+    **/
+}

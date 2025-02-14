@@ -1,0 +1,5 @@
+<project name="GVCSMCustom" default="full.build" basedir=".">
+
+	<import file="../../../../GVCTools/WO5.2Eclipse/Ant/common.xml"/>
+
+</project>

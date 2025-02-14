@@ -1,0 +1,41 @@
+
+<webobject name=DynamicBody><webobject name=FolderForm>
+		<table border=0 cellpadding=0 cellspacing=0 class=content>
+			<tr>
+				<td style="padding-left: 2px;"><h1><webobject name=IsNotModifyingFolder>
+							Create Folder
+						</webobject><webobject name=IsModifyingFolder>
+							Change Folder Properties</webobject></h1></td>
+			</tr>
+			<tr>
+				<td valign=top align=right style="padding-right: 2px;"><webobject name=IsNotModifyingFolder>
+						<webobject name=CancelAddButton></webobject>
+						<webobject name=CreateFolderButton></webobject>
+					</webobject><webobject name=IsModifyingFolder>
+						<webobject name=CancelModifyButton></webobject>
+						<webobject name=SaveChangesButton></webobject>
+					</webobject></td>
+			</tr>
+			<tr>
+				<td>
+					<table border=0 cellpadding=2 cellspacing=2 width=100%>
+						<tr>
+							<td>
+								<hr class=primaryBarStyle>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table border=0 cellpadding=2 cellspacing=2 class=content>
+			<tr>
+				<td valign=top align=left><b>Folder Name:</b><br /="">
+					<i class=requiredText>(required)</i></td>
+				<td><webobject name=FolderName></webobject><webobject name=HasErrorMessageConditional>
+						<p class=warningText><webobject name=ErrorMessage></webobject></p>
+					</webobject></td>
+			</tr>
+			
+		</table>
+	</webobject></webobject>

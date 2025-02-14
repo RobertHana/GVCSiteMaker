@@ -1,0 +1,6 @@
+{
+    EOModelVersion = 2.1; 
+    adaptorName = None; 
+    connectionDictionary = {}; 
+    entities = ({className = EOGenericRecord; name = EOJDBCPrototypes; }); 
+}

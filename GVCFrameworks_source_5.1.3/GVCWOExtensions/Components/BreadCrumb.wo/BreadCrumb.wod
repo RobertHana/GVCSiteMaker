@@ -1,0 +1,34 @@
+CrumbHyperlink: WOHyperlink {
+	action = doAction;
+}
+
+CrumbRepetition: WORepetition {
+	index = index;
+	list = trail;
+	item = crumb;
+}
+
+DoesNotHaveActionConditional: WOConditional {
+	condition = hasAction;
+	negate = true;
+}
+
+HasActionConditional: WOConditional {
+	condition = hasAction;
+}
+
+LinkedCrumbString: WOString {
+	value = crumb.title;
+}
+
+NonLinkedCrumbString: WOString {
+	value = crumb.title;
+}
+
+NotFirstConditional: WOConditional {
+	condition = notFirstCrumb;
+}
+
+SeparatorString: WOString {
+	value = separator;
+}

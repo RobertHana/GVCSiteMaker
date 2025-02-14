@@ -1,0 +1,3 @@
+<project name="GVCFoundation" default="build" basedir=".">
+	<import file="../Ant/common.xml"/>
+</project>

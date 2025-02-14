@@ -1,0 +1,89 @@
+This is a brief description of how to create a new GVC.SiteMaker installation.
+It does not describe configuration (see Configuration Instructions) nor all 
+customization possibilites (see Customization Guide).
+
+1. Go to the Custom folder in the GVCSiteMaker project in StarTeam and
+   check out the most recent version of the Generic folder 
+   (GVCSiteMaker\Custom\Generic).  Create all working folders.  
+
+2. Copy the Generic directory to a directory under Custom named for the 
+   installation.  Don't include spaces in this name.  The directory
+   GVCSiteMaker\Custom\<installation_name> will be referred to as <custom_dir> 
+   below.
+
+   NOTE
+   The contents of the Generic folder are a template for new installations and
+   should ONLY be altered to reflect changes in the application.  Do NOT 
+   change this when creating a new installation.
+
+3. Edit the script <custom_dir>\BuildInstallPackage.sh 
+   and change the line at the top that says
+   INSTALLATION_NAME= *** FILL THIS IN ! ***
+   to have the installation's name.  For example,
+   INSTALLATION_NAME=UMich
+   This name will be used when creating the deployment packages.  
+
+   Further down in the file, check that SOURCE_PATH has an appropriate value.
+
+   Change the line at the top that says
+   USES_KERBEROS=*** FILL THIS IN, 1 = YES, 0 = NO ***
+   to indicate if the installation will use Kerberos authentication 
+   or not.  For example,
+   USES_KERBEROS=1
+
+
+4. Rename the file 
+   <custom_dir>\GenericInstallConfigWorksheet.doc
+   to <installation_name>InstallConfigWorksheet.doc or just 
+   InstallConfigWorksheet.doc.  The configuration for this installation
+   should be noted in this document.
+
+5. Check <custom_dir> into StarTeam.
+
+6. Create one or more styles, and place the HTML here:
+   <custom_dir>\GVCSMCustom\StyleTemplates
+   and the images etc. (if any) here:
+   <custom_dir>\DocumentRoot\GVCSiteMaker\Styles\<style_id>
+
+7. If any of the standard application images from
+   GVCSiteMaker\DocumentRoot\GVCSiteMaker\Images
+   or
+   GVCSiteMaker\DocumentRoot\GVCSiteMaker\Application
+   will be replaced for this installation, then put the replacement images here
+   <custom_dir>\DocumentRoot\GVCSiteMaker\Images
+   <custom_dir>\DocumentRoot\GVCSiteMaker\Application
+
+8. If any custom images are needed for this installation (e.g. to support
+   custom pages), put them here:
+   <custom_dir>\DocumentRoot\GVCSiteMaker\Custom
+
+9. Once the configuation document (see 4 above is complete), open up the 
+   GVCSMCustom framework at <custom_dir>\GVCSMCustom
+   Update the GVCSiteMakerCustom.plist and GVCSiteMakerBootstrap.plist files 
+   in the resources suitcase to reflect the configuration in the
+   InstallConfigWorksheet.doc.  Refer to the Configuration Instructions
+   document if you are unsure of how to configure something.
+
+10. If Kerberos will be used, copy the jsci_license.jar file to
+    <custom_dir>\GVCSMCustom and edit 
+    <custom_dir>\GVCSMCustom\build.xml under the build.woframework target
+    to have this section:
+        <lib dir=".">
+          <include name="jcsi_license.jar"/>
+          <exclude name="**/*.woa/**"/>
+        </lib>
+
+The next step is often not needed and can probably only be done with an 
+in-depth knowledge of GVC.SiteMaker.  More detailed instructions are 
+forthcoming in the Customization Guide.
+
+11. If custom pages are needed, add them to the <custom_dir>\GVCSMCustom
+    framework.  You may need to alter GVCSiteMakerPageMap.plist or 
+    GVCSMAdminPageMap.plist for these pages to get used.
+
+12. Edit the /editlive/gvcsitemaker_editliveconfig.xml in the DocumentRoot.
+    This contains the configuration and license for EditLive.  The license in the
+    file is a development license.  It needs to be replaced.  See
+    http://www.ephox.com/product/editliveforjava/configuration/default.asp 
+    for an applet to edit / generate this file.
+    

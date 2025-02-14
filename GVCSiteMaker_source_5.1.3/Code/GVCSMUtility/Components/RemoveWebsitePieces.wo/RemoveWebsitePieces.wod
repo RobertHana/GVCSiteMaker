@@ -1,0 +1,50 @@
+Hyperlink1: WOHyperlink {
+	action = deleteOrphanedSections;
+}
+
+Hyperlink2: WOHyperlink {
+	action = deleteOrphanedFiles;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+Repetition1: WORepetition {
+	item = aSection;
+	list = orphanedSections;
+}
+
+Repetition2: WORepetition {
+	item = aFile;
+	list = orphanedFiles;
+}
+
+String1: WOString {
+	value = aSection.name;
+}
+
+String2: WOString {
+	value = aSection.details;
+}
+
+String3: WOString {
+	value = orphanedSections.@count;
+}
+
+String4: WOString {
+	value = aFile.uploadedFilename;
+}
+
+String5: WOString {
+	value = aFile.fileDescription;
+}
+
+String6: WOString {
+	value = aFile.uploadDate;
+}
+
+String7: WOString {
+	value = orphanedFiles.@count;
+}
+

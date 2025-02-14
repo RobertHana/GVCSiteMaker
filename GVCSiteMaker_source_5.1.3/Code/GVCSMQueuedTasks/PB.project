@@ -1,0 +1,93 @@
+
+{
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    LOCALIZABLE_FILES = 
+    {};
+    PROJECTNAME = GVCSMQueuedTasks;
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    PBPROJECTTYPEVERSION = 4.0;
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    LANGUAGE = English;
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+    DYNAMIC_CODE_GEN = YES;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    PROJECTTYPE = JavaWebObjectsApplication;
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    PROJECTVERSION = 2.8;
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+    FILESTABLE = 
+    {
+        OTHER_LINKED = 
+        ();
+        FRAMEWORKS = 
+        (
+           GVCSMCore.framework, 
+           FrontBasePlugIn.framework, 
+           GVCEOFExtensions.framework, 
+           GVCEOFValidation.framework, 
+           GVCFoundation.framework, 
+           GVCGenericObjects.framework, 
+           GVCJNDIAdditions.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCKerberos.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCMail.framework, 
+           GVCSMCustom.framework, 
+           GVCSMCustom.framework, 
+           GVCSMEOPrototypes.framework, 
+           GVCVirtualTables.framework, 
+           GVCWOExtensions.framework, 
+           WOOgnl.framework, 
+           WOOgnl.framework, 
+           JavaEOAccess.framework, 
+           JavaEOControl.framework, 
+           JavaFoundation.framework, 
+           JavaJDBCAdaptor.framework, 
+           JavaWOExtensions.framework, 
+           JavaWebObjects.framework, 
+           JavaXML.framework
+        );
+        CLASSES = 
+        (
+           src/com/gvcsitemaker/queuedtasks/appserver/Application.java, 
+           src/com/gvcsitemaker/queuedtasks/appserver/DirectAction.java, 
+           src/com/gvcsitemaker/queuedtasks/appserver/Main.java, 
+           src/com/gvcsitemaker/queuedtasks/appserver/Session.java, 
+           ContractedSource/com/gvcsitemaker/queuedtasks/appserver/Application.java, 
+           ContractedSource/com/gvcsitemaker/queuedtasks/appserver/DirectAction.java, 
+           ContractedSource/com/gvcsitemaker/queuedtasks/appserver/Main.java, 
+           ContractedSource/com/gvcsitemaker/queuedtasks/appserver/Session.java, 
+           ContractedSource/com/gvcsitemaker/queuedtasks/appserver/Task.java
+        );
+        WO_COMPONENTS = 
+        (
+           Main.wo
+        );
+        OTHER_SOURCES = 
+        (
+           Makefile.preamble, 
+           Makefile, 
+           Makefile.postamble, 
+           CustomInfo.plist
+        );
+        WOAPP_RESOURCES = 
+        (
+           Properties, 
+           Main.api
+        );
+    };
+}

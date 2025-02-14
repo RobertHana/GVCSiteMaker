@@ -1,0 +1,74 @@
+<webobject name="DynamicBody">
+	<WEBOBJECT NAME=ManageWebsitesForm>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+			<TR>
+				<td style="padding-left: 2px;">
+					<h1>Manage Websites </h1>
+				</TD>
+			</tr>
+
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;">
+					<WEBOBJECT NAME=CreateNewWebSiteSubmitButton></WEBOBJECT><WEBOBJECT NAME=DisplayEmailMarkedSitesButtonConditional>&nbsp;&nbsp;<WEBOBJECT NAME=EmailMarkedSitesSubmitButton></WEBOBJECT></WEBOBJECT>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr><td><hr class="primaryBarStyle"></td></tr>
+					</table>
+				</td>
+	    		</tr>
+				<WEBOBJECT NAME=NoMarksConditional>
+					<tr>
+						<td align="center" class="warningText">
+							Email Failed: No sites were selected!
+						</td>
+					</tr>
+				</WEBOBJECT>
+		</table>
+		<WEBOBJECT NAME=DisplayMarkAllSitesLinkAndDownloadTableLinkConditional>
+		<TABLE BORDER="0" CELLSPACING="2" cellpadding="2" align="center" width="96%">
+			<TR VALIGN="MIDDLE">
+				<TD width="150" align="left" VALIGN="middle"><WEBOBJECT NAME=SaveTableAsTextLink></WEBOBJECT></TD>
+				<TD align="right" VALIGN="middle"><WEBOBJECT NAME=MarkAllSitesHyperlink>Mark all Sites</WEBOBJECT></TD>
+	        </TR>
+	    </TABLE>
+		</WEBOBJECT>
+	
+		<TABLE BORDER="0" CELLSPACING="2" cellpadding="4" class="coloredTable" align="center" width="96%"><!-- 95% width is more dynamic in Netscape 4 -->
+			<TR>
+				<TH width="240" class="coloredTableHeading">Org. Unit</TH>
+				<TH class="coloredTableHeading">OwnerID&nbsp;/&nbsp;SiteID</TH>
+				<TH colspan="2" class="coloredTableHeading">Filespace Usage</TH>
+				<TH width="100" class="coloredTableHeading">Date<br>Created</TH>
+				<TH width="100" class="coloredTableHeading">Last<br>Configure</TH>
+				<TH class="coloredTableHeading">Published</TH>
+				<TH class="coloredTableHeading">Action</TH>
+				<TH class="coloredTableHeading">Mark</TH>
+			</TR>
+	
+			<WEBOBJECT NAME=WebsitesRepetition><TR VALIGN="MIDDLE">
+				<TD width="240" align="left" VALIGN="middle"><WEBOBJECT NAME=OrgUnitString></WEBOBJECT></TD>
+			    <TD align="left" VALIGN="middle"><b><WEBOBJECT NAME=OwnerIDString></WEBOBJECT></b><br><i><webobject name="SiteIDHyperlink"><WEBOBJECT NAME=SiteIDString></WEBOBJECT></webobject></i></TD>
+				<TD width="100" align="center" VALIGN="middle"><WEBOBJECT NAME=FileSizeUsageString></WEBOBJECT>&nbsp;Mb</TD>
+				<TD width="100" align="center" VALIGN="middle"><WEBOBJECT NAME=PercentQuotaString></WEBOBJECT>%</TD>
+				<TD width="100" align="center" VALIGN="middle"><WEBOBJECT NAME=DateCreatedString></WEBOBJECT></TD>
+				<TD width="100" align="center" VALIGN="middle"><WEBOBJECT NAME=DateLastModifiedString></WEBOBJECT></TD>
+				<TD VALIGN="middle" ALIGN="center">
+					<WEBOBJECT NAME=IsPublishedConditional>Yes</WEBOBJECT><WEBOBJECT NAME=IsNotPublishedConditional>No</WEBOBJECT>
+				</TD>
+				<TD VALIGN="middle" ALIGN="center">
+					<WEBOBJECT NAME=ManageWebsiteHyperlink>Manage</WEBOBJECT><br>
+					<WEBOBJECT NAME=ConfigureWebsiteHyperlink>Configure</WEBOBJECT>
+				</TD>
+				<TD VALIGN="middle" ALIGN="center"><WEBOBJECT NAME=MarkWebsiteCheckBox></WEBOBJECT></TD>
+			</TR></WEBOBJECT>
+	
+			<WEBOBJECT NAME=NoResultsConditional><tr><td colspan="9">
+				No websites were found matching the search criteria entered.
+			</td></tr></WEBOBJECT>
+		</TABLE>
+	</WEBOBJECT>
+
+</webobject name="DynamicBody">

@@ -1,0 +1,24 @@
+OwnerID: WOString {
+	value = currentWebsiteDictionary.ownerID;
+}
+
+Quota: WOString {
+	value = currentWebsiteDictionary.megQuota;
+}
+
+RedirectURL: WOString {
+	value = currentWebsiteDictionary.redirectURL;
+}
+
+WebsiteRepetition: WORepetition {
+	item = currentWebsiteDictionary;
+	list = validWebsiteArray;
+}
+
+SiteID: WOString {
+	value = currentWebsiteDictionary.siteID;
+}
+
+Unit: WOString {
+	value = currentWebsiteDictionary.associatedUnitName;
+}

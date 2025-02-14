@@ -1,0 +1,208 @@
+<webobject name = "DynamicBody">
+  <h2>Edit Contents: <span class = "coloredText"><webobject name = "SectionNameString" /></span></h2>
+
+  <webobject name = "PreviewJavaScript" />
+
+  <webobject name = "Form">
+    <!-- The editors due to componentization will not look identical to every other page that doesn't use an editor, but it will be close. -->
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;" align = "left">
+          <h3>Edit Pane Contents</h3>
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+            Back to Website Sections</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "Reset" />
+          <webobject name = "UpdateAndPreview" />
+          <webobject name = "Update" />
+          <webobject name = "Done" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2" class = "content">
+      <tr>
+        <td valign = "top" class = "leftContentColumn">
+          <span class = "boldText">Multimedia Type:</span>
+        </td>
+        <td align = "left" class = "rightContentColumn"> <webobject name = "TypeString" /></td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <span class = "boldText">Description:</span>
+          <br />
+          <span class = "descriptiveText">(for your use only,<br />not shown on the page)</span>
+        </td>
+        <td align = "left"> <webobject name = "DescriptionText" /></td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <span class = "boldText">Flexible pane height?</span>
+          <webobject name = "DisplayInFrameConditional">
+            <br />
+            <span class = "requiredText">(required)</span>
+          </webobject>
+        </td>
+        <td align = "left">
+          <webobject name = "DisplayInFrameConditional">Use a fixed height of <webobject name = "HeightTextField" /> pixels, with a scrollbar if necessary.</webobject>
+          <webobject name = "DoNotDisplayInFrameConditional">This content type cannot be displayed in a fixed height pane.</webobject>
+          <webobject name = "UsesIFrameConditional2">
+            <table border = "0" cellpadding = "0" cellspacing = "0" width = "100%">
+              <tr valign = "top">
+                <td><webobject name = "NoIFrameRadioButton" /></td>
+                <td>Yes - pane will expand to fit height of contents, without scrolling</td>
+              </tr>
+              <tr>
+                <td Colspan = "3">&nbsp;</td>
+              </tr>
+              <tr valign = "top">
+                <td><webobject name = "YesIFrameRadioButton" /></td>
+                <td>No - use a fixed height pane of <webobject name = "HeightTextField2" /> pixels.</td>
+              </tr>
+            </table>
+          </webobject>
+
+          <webobject name = "HeightErrorConditional">
+            <br />
+            <span class = "warningText"><webobject name = "WidthError2" /></span>
+          </webobject>
+        </td>
+      </tr>
+
+      <webobject name = "ConfigurableContentConditional">
+        <tr>
+          <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+        </tr>
+        <tr>
+          <td valign = "top">
+            <span class = "boldText">Source:</span>
+            <br />
+            <span class = "requiredText">(required)</span>
+          </td>
+          <td align = "left">
+            <table border = "0" cellpadding = "0" cellspacing = "0" width = "100%">
+              <tr>
+                <td><webobject name = "URLButton" /></td>
+                <td>URL:</td>
+                <td><webobject name = "Link" /></td>
+              </tr>
+              <tr>
+                <td Colspan = "3">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><webobject name = "FileButton" /></td>
+                <td>File:&nbsp;&nbsp;</td>
+                <td><webobject name = "FileList" /></td>
+              </tr>
+              <tr>
+                <td Colspan = "3">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><webobject name = "SectionButton" /></td>
+                <td>Section:&nbsp;&nbsp;</td>
+                <td><webobject name = "SectionList" /></td>
+              </tr>
+              <tr>
+                <td Colspan = "3">&nbsp;</td>
+              </tr>
+              <tr>
+                <td Colspan = "3"><webobject name = "ValidateSubmitButton" /> </td>
+              </tr>
+              <webobject name = "ValidationConditional">
+                <tr>
+                  <td Colspan = "3" class = "warningText"><webobject name = "ValidationString" /> </td>
+                </tr>
+              </webobject>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <webobject name = "InstructionsString" />
+            <br />
+            <webobject name = "ParameterRepetition2"><webobject name = "Parameters" /></webobject>
+          </td>
+        </tr>
+      </webobject>
+
+      <webobject name = "TextContentConditional">
+        <tr>
+          <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <webobject name = "IsExistingVersionConditional">
+              <webobject name = "IsVersioningConditional">
+                <webobject name = "CanBeAlteredConditional">
+                  <webobject name = "CanCreateVersionConditional">
+                    <webobject name = "CanManuallyCreateVersion"><webobject name = "CreateNewVersionCheckBox" /> Save as new version</webobject>
+                    <webobject name = "CanAutoCreateVersion">A new version will be automatically created when changes are saved.</webobject>
+                    <div class = "microText">This <span style = "color: red;">
+                      <b>is <webobject name = "IsNotCurrentVersionConditional">not </webobject></b>
+                    </span>the current version.</div>
+                    <div class = "microText">See below for more info on versions.</div>
+                  </webobject>
+                </webobject>
+                <webobject name = "AlteringConditional">
+                  <div class = "microText">This version can&iacute;t be altered.<br />A new version will be created when saved.</div>
+                </webobject>
+              </webobject>
+            </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td valign = "top">
+            <span class = "boldText">Contents:</span>
+          </td>
+          <td align = "left">
+
+
+            <webobject name = "Component" />
+
+
+		    <webobject name = "ShowVersionDetailsConditional">
+		      <tr>
+		        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+		      </tr>
+		      <tr>
+		        <td valign = "MIDDLE" class = "boldText">Version Name:</td>
+		        <td valign = "MIDDLE"> <webobject name = "VersionNameString" /></td>
+		      </tr>
+		      <tr>
+		        <td valign = "MIDDLE" class = "boldText">Description:</td>
+		        <td valign = "MIDDLE"> <webobject name = "DetailsString" /></td>
+		      </tr>
+		      <tr>
+		        <td valign = "MIDDLE" class = "boldText">Last Modified:</td>
+		        <td valign = "MIDDLE">
+		          by <webobject name = "LastModifiedByString" /> on <webobject name = "LastModifiedDateString" />
+		        </td>
+		      </tr>
+		      <webobject name = "ViewNonCurrentConditional">
+		        <tr align = "left">
+		          <td colspan = "2">
+		            <br />Click <webobject name = "VersionsHyperlink">here</webobject> to edit a different version<br />
+		            <webobject name = "PreviewMailToHyperlink">Send Email</webobject> with a link to preview this version.</td>
+		        </tr>
+		      </webobject>
+		    </webobject>
+          </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>

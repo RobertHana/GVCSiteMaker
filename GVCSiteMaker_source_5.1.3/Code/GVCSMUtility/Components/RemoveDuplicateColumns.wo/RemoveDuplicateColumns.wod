@@ -1,0 +1,43 @@
+FindSiteButton: WOSubmitButton {
+	action = findSite;
+	value = "Find Site";
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+}
+
+HasNoSiteConditional: WOConditional {
+	condition = hasSite;
+	negate = true;
+}
+
+HasSiteConditional: WOConditional {
+	condition = hasSite;
+}
+
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+PopUpButton1: WOPopUpButton {
+	displayString = aSection.name;
+	item = aSection;
+	list = dataAccessSections;
+	selection = selectedSection;
+}
+
+ProcessButton: WOSubmitButton {
+	action = processSection;
+	value = "Process";
+}
+
+ResultMessageString: WOString {
+	escapeHTML = false;
+	value = resultMessage;
+}
+
+SiteIDTextField: WOTextField {
+	size = 50;
+	value = siteID;
+}

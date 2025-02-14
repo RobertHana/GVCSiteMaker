@@ -1,0 +1,105 @@
+CanBeModifiedConditional: WOConditional {
+    condition = dataAccessColumn.isEditable;
+}
+
+DateInputFormatHintString: WOString {
+    value = application.properties.InputDateFormatHint;  // VALID
+}
+
+DeleteValidationFailureConditional: WOConditional {
+    condition = deleteValidationFailure;
+}
+
+DeleteValidationFailureString: WOString {
+    value = deleteValidationFailure;
+}
+
+DisplayMode: WOConditional {
+    condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+    condition = isInEditMode;
+}
+
+HasInputValidationFailureConditional: WOConditional {
+    condition = inputValidationFailure;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+    condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+    condition = isConfiguringSearchMode;
+}
+
+IsNotConfiguringAddModeConditional: WOConditional {
+    condition = isConfiguringAddMode;
+    negate = true;
+}
+
+IsReadOnlyConditional: WOConditional {
+    negate = true;
+    condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+    condition = isConfiguringSearchMode;
+    negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+    condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+    value = optimisticLockingFailure;
+}
+
+DefaultComparisonPopUpButton: WOPopUpButton {
+    displayString = formatExample;
+    item = aFormatPattern;
+    list = formatPatterns;
+    selection = dataAccessTimestampColumn.dateFormat;
+}
+
+PopUpButton2: WOPopUpButton {
+    item = aComparisonType;
+    list = comparisonTypes;
+    selection = componentObject.defaultComparison;  // VALID
+}
+
+TextField: WOTextField {
+    value = fieldValue;
+    size = dataAccessColumn.width;  // VALID
+    formatter = application.properties.InputDateFormatter;  // VALID
+}
+
+UseDefaultCheckBox: WOCheckBox {
+    checked = dataAccessTimestampColumn.useDefault;
+}
+
+ValidationFailureString: WOString {
+    value = inputValidationFailure;
+}
+
+ValueAsString: WOString {
+    value = fieldDisplayValue;
+    escapeHTML = false;
+}
+
+WidthTextField: WOTextField {
+    maxLength = "3";
+    size = "3";
+    value = dataAccessTimestampColumn.width;
+}
+
+WidthValidationMessageConditional: WOConditional {
+    condition = widthValidationFailure;
+}
+
+WidthValidationMessageString: WOString {
+    value = widthValidationFailure;
+}
+

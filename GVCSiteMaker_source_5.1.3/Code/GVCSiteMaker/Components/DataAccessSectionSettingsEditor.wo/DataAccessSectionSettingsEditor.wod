@@ -1,0 +1,61 @@
+AddRecordsCheckBox: WOCheckBox {
+	checked = section.component.canAddRecords;  // VALID
+}
+
+BrowseSearchCheckBox: WOCheckBox {
+	checked = section.component.canBrowseOrSearchRecords;  // VALID
+}
+
+CantBrowseOrSearchConditional: WOConditional {
+	condition = canBrowseOrSearchRecords;
+	negate = true;
+}
+
+DefaultModePopUpButton: WOPopUpButton {
+	list = defaultModeDisplayNames;
+	selection = defaultMode;
+}
+
+DeleteCheckBox: WOCheckBox {
+	checked = section.component.canDeleteRecords;  // VALID
+}
+
+ImportCheckBox: WOCheckBox {
+	checked = section.component.canImportRecords;  // VALID
+}
+
+IsAddModeInvalidConditional: WOConditional {
+	condition = isAddModeInvalid;
+}
+
+IsImportModeInvalidConditional: WOConditional {
+	condition = isImportModeInvalid;
+}
+
+IsSearchModeInvalidConditional: WOConditional {
+	condition = isSearchModeInvalid;
+}
+
+NotUseDefaultSearchRadio: WORadioButton {
+	name = "useDefaultSearch";
+	value = false;
+	selection = dataAccessComponent.useDefaultSearch;
+}
+ShowSearchConditional: WOConditional {
+	condition = canBrowseOrSearchRecords;
+}
+
+StoredSearchComponent: DataAccessSearchComponent {
+	searchMode = searchMode;
+	showSearchOptions = canBrowseOrSearchRecords;
+}
+
+UseDefaultSearchInvalidConditional: WOConditional {
+	condition = isUseDefaultSearchInvalid;
+}
+
+UseDefaultSearchRadio: WORadioButton {
+	name = "useDefaultSearch";
+	value = true;
+	selection = dataAccessComponent.useDefaultSearch;
+}

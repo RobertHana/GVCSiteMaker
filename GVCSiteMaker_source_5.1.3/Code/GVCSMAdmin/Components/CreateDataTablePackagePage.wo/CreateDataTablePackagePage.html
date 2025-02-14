@@ -1,0 +1,117 @@
+<webobject name="DynamicBody">
+    <webobject name="CreateTableForm">
+        <!-- cell padding removed except around HR -->
+        <table border="0" cellpadding="0" cellspacing="0" class="content">
+            <tr>
+                <td style="padding-left: 2px;">
+                    <h1>Create Data Table Package</h1>
+                </td>
+            </tr>
+            <tr>
+                <!-- All the extra tables and spacing is need to get it to work on IE 5.2 for Mac among others -->
+                <td valign="top" align="right" style="padding-right: 2px; text-align: right;">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="100%"><!-- spacer -->&nbsp;</td>
+                            <td>
+                                <webobject name="CancelButton"></webobject></td>
+                            <td><webobject name="ExportPackageButton"></webobject></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="2" cellspacing="2" width="100%">
+                        <tr>
+                            <td>
+                                <hr class="primaryBarStyle">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="2" cellpadding="2" class="content">
+            <tr>
+                <td class="boldText"> SiteID: </td>
+                <td class="rightContentColumn">
+                    <webobject name="String1"></webobject>
+                </td>
+            </tr>
+            <tr>
+                <td class="boldText"> Package Destination:
+                    <br/>
+                    <i class="requiredText">(required)</i>
+                </td>
+                <td class="rightContentColumn">
+                    <webobject name="SiteFoldersPopUpButton"></webobject>
+                </td>
+            </tr>
+			<webobject name="PackageConditional">
+            <tr>
+                <td>&nbsp;</td>
+                <td class="rightContentColumn">
+                   
+                <span class="warningText">Create Failed: Package Destination is required!</span></td>
+            </tr>
+			</webobject>
+            <tr>
+                <td class="boldText"> Select Main Data Table to Package:
+                    <br />
+                    <i class="requiredText">(required)</i>
+                </td>
+                <td class="rightContentColumn">
+                    <webobject name="TablePopUpButton"></webobject>
+                </td>
+            </tr>
+			<webobject name="MainTableConditional">
+            <tr>
+                <td>&nbsp;</td>
+                <td class="rightContentColumn">
+                   
+                <span class="warningText">Create Failed: Main Data Table is required!</span></td>
+            </tr>
+			</webobject>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <webobject name="ShowSetupConditional"><span class="boldText">Main and Related Tables to Export</span>
+                        <br />
+                        <webobject name="CheckAllTablesButton"></webobject><webobject name="UncheckAllButton"></webobject>
+						<table border="0" class="coloredTable" cellspacing="2" cellpadding="2" align="center" width="95%">
+						<tr>
+							<th class="coloredTableHeading" width="300">Table Name</th>
+							<th class="coloredTableHeading">Include Data?</th>
+						</tr>
+						<webobject name="TablesRepetition">
+						<tr>
+							<td align="Left"><webobject name="String2"></webobject><webobject name="MainTextConditional"> <em>(Main)</em></webobject>
+							</td>
+							<td align="Center"><webobject name="IncludeDataConditional"><webobject name="DataIncludedCheckBox"></webobject></webobject><webobject name="ShouldIncludeDataConditional">Yes</webobject>
+							</td>
+						</tr>
+						</webobject name="TablesRepetition">
+						</table>                        
+						<br/><webobject name="RelatedSectionsConditional">
+                        <span class="boldText">Related Sections to Export</span>
+                        <br /="">
+                        <webobject name="CheckAllSections"></webobject><webobject name="UncheckAllSections"></webobject>
+
+						<table border="0" class="coloredTable" cellspacing="2" cellpadding="2" align="center" width="95%">
+						<tr><th class="coloredTableHeading" width="300">Section
+                                    Name</th><th class="coloredTableHeading">Include in Package?</th></tr>
+						<webobject name="SectionRepetition">
+	                           <tr><td align="Left"><webobject name="SectionNameString"></webobject></td><td align="Center"><webobject name="ColumnIncludedCheckBox2"></webobject></td></tr>
+						</webobject>
+                            
+                        </table>
+					
+					</webobject></webobject>
+				</td>
+            </tr>
+        </table>
+    </webobject>
+</webobject>

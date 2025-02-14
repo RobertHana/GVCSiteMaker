@@ -1,0 +1,149 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "BANNER_COMP"; 
+            name = bannerComponent; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "DATE_CREATED"; 
+            name = dateCreated; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = "DATE_MODIFIED"; name = dateModified; prototypeName = dateTime; }, 
+        {
+            allowsNull = N; 
+            columnName = "DEFAULT_STYLE"; 
+            name = defaultStyle; 
+            prototypeName = charBoolean; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FOOTER_COMP"; 
+            name = footerComponent; 
+            prototypeName = shortString; 
+        }, 
+        {columnName = NAME; name = name; prototypeName = mediumString; }, 
+        {
+            allowsNull = N; 
+            columnName = "NAVBAR_COMP"; 
+            name = navBarComponent; 
+            prototypeName = shortString; 
+        }, 
+        {columnName = NOTES; name = notes; prototypeName = note; }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_CREATED_BY"; 
+            name = oidCreatedBy; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "OID_MODIFIED_BY"; name = oidModifiedBy; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "OID_OWN_UNIT"; 
+            name = oidOwningUnit; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PAGE_SCFLD_COMP"; 
+            name = pageScaffoldComponent; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = PUBLISHED; 
+            name = published; 
+            prototypeName = charBoolean; 
+        }, 
+        {
+            columnName = "RELATED_CSS_URL"; 
+            name = relatedCSSUrl; 
+            prototypeName = mediumString; 
+        }, 
+        {
+            columnName = "RESOURCE_DIR"; 
+            name = resourceDirectory; 
+            prototypeName = mediumString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECT_CONT_COMP"; 
+            name = sectionContentsComponent; 
+            prototypeName = shortString; 
+        }, 
+        {columnName = "STYLE_ID"; name = styleID; prototypeName = shortString; }, 
+        {columnName = TEMPLATE; name = template; prototypeName = largeText; }
+    ); 
+    attributesUsedForLocking = (
+        oid, 
+        styleID, 
+        oidCreatedBy, 
+        oidModifiedBy, 
+        oidOwningUnit, 
+        published, 
+        template, 
+        name, 
+        notes, 
+        bannerComponent, 
+        pageScaffoldComponent, 
+        footerComponent, 
+        navBarComponent, 
+        sectionContentsComponent, 
+        defaultStyle, 
+        resourceDirectory, 
+        relatedCSSUrl
+    ); 
+    className = "com.gvcsitemaker.core.SectionStyle"; 
+    classProperties = (
+        dateCreated, 
+        dateModified, 
+        published, 
+        name, 
+        notes, 
+        bannerComponent, 
+        pageScaffoldComponent, 
+        footerComponent, 
+        navBarComponent, 
+        sectionContentsComponent, 
+        createdBy, 
+        modifiedBy, 
+        owningOrgUnit, 
+        defaultStyle, 
+        resourceDirectory, 
+        template, 
+        styleID, 
+        relatedCSSUrl
+    ); 
+    externalName = "SM_SECTION_STYLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = SectionStyle; 
+    parent = Style; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidCreatedBy; }); 
+            name = createdBy; 
+        }, 
+        {
+            destination = User; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = oidModifiedBy; }); 
+            name = modifiedBy; 
+        }, 
+        {
+            destination = OrgUnit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOwningUnit; }); 
+            name = owningOrgUnit; 
+        }
+    ); 
+}

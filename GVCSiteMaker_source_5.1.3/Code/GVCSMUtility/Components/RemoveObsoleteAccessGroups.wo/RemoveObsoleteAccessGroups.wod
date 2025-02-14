@@ -1,0 +1,11 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = cleanup;
+}
+
+String1: WOString {
+	value = cleanupMessage;
+}

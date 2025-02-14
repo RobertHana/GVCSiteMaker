@@ -1,0 +1,3 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+HelloSite     sitemaker6@global-village.net     Physics     10     http://www.yahoo.com
+		

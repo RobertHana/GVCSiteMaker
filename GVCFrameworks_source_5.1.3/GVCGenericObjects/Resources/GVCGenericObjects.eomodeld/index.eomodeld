@@ -1,0 +1,53 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "net.global_village.genericobjects.KeyedLookup"; 
+            name = GVCKeyedLookup; 
+            parent = GVCLookup; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.Locale"; 
+            name = GVCLocale; 
+            parent = GVCLookup; 
+        }, 
+        {className = "net.global_village.genericobjects.Lookup"; name = GVCLookup; }, 
+        {
+            className = "net.global_village.genericobjects.LookupLocalization"; 
+            name = GVCLookupLocalization; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.OrderedKeyedLookup"; 
+            name = GVCOrderedKeyedLookup; 
+            parent = GVCKeyedLookup; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.OrderedLookup"; 
+            name = GVCOrderedLookup; 
+            parent = GVCLookup; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.VersionableArchivableKeyedLookup"; 
+            name = GVCVersionableArchivableKeyedLookup; 
+            parent = GVCVersionableArchivableLookup; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.VersionableArchivableLookup"; 
+            name = GVCVersionableArchivableLookup; 
+            parent = GVCVersionableArchivableObject; 
+        }, 
+        {
+            className = "net.global_village.genericobjects.VersionableArchivableObject"; 
+            name = GVCVersionableArchivableObject; 
+        }
+    ); 
+    userInfo = {
+        history = {
+            created = "2000-10-24 04:05:17 +0000 by chill"; 
+            lastSaved = "2000-10-24 04:05:17 +0000 by chill"; 
+        }; 
+        modificationDate = "2000-10-24 04:07:34 +0000"; 
+    }; 
+}

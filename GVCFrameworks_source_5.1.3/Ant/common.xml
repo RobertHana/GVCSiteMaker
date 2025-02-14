@@ -1,0 +1,11 @@
+<project name="common" default="common-init" basedir=".">
+
+    <!-- Include the other common files -->
+    <!-- See Import tasks docs http://ant.apache.org/manual/CoreTasks/import.html for how ant.file.common gets defined  -->
+    <dirname property="common.basedir" file="${ant.file.common}"/>
+    <import file="${common.basedir}/properties.xml"/>
+    <import file="${common.basedir}/targets.xml"/>
+       
+    <target name="common-init" depends=""/>
+    
+</project>

@@ -1,0 +1,69 @@
+<project name="BuildGVCSiteMaker" default="dist" basedir=".">
+
+	<!--
+	This build file allows all of the GVC frameworks to be built from the
+	command line.  The general form of the command (assuming that build.xml is
+	in the current directory) is:
+	ant <taskName>
+	
+	The tasks defined for use in this way are:
+	clean - removes all contracted source, compiled files, and built products
+	build - does a clean and full build of the uncontracted (no DBC) frameworks
+	        and copies the built frameworks amd applications to
+            ${wo.wolocalroot}\Local\Library\Frameworks
+	build_dbc - same as build but with contracted source
+	
+	For details on the build process and definition of properties not defined in
+	this file, see the build.xml file in the individual frameworks.  The
+	individual build.xml files can also be run from the command line. 
+	-->
+	
+
+	<!-- Main targets  -->
+
+	<!-- Build all products -->
+	<target name="build">
+		<mkdir dir="GVCSMEOPrototypes/src"/>
+		<antcall target="build.all" inheritAll="true">
+    			<param name="target" value="full.build"/>
+		</antcall>
+	</target>
+
+
+	<!-- Deep clean all products (removes build product, contracted source, 
+	     and compiled files.                                                 -->
+	<target name="clean">
+		<antcall target="build.all" inheritAll="true">
+    			<param name="target" value="clean"/>
+		</antcall>
+	</target>
+
+
+	<!-- Convenience targets  -->
+	
+	<!-- Build all products with DBC -->
+	<target name="build_dbc" depends="use.dbc, build"/>
+
+	<!-- Setup properties for building packages -->
+	<target name="init.properties">
+		<!-- Most of this should come from ~/Library/gvc.properties  -->
+	</target>
+
+	<!-- Define DBC activation flag -->
+	<target name="use.dbc">
+		<property name="use.dbc" value="true"/>
+	</target>
+
+
+	<!-- distributes out build target  -->
+	<target name="build.all">
+	    <ant dir="GVCSMEOPrototypes" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSMCore" target="${target}" inheritAll="true"/>
+	    <ant dir="../Custom/OpenSource/GVCSMCustom" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSiteMaker" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSMAdmin" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSMUtility" target="${target}" inheritAll="true"/>
+	    <ant dir="GVCSMQueuedTasks" target="${target}" inheritAll="true"/>
+	</target>
+
+</project>

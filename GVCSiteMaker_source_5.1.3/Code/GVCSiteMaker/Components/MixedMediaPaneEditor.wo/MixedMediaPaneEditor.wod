@@ -1,0 +1,268 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageTitle = "Edit Contents";
+    needsPreviewURLJavaScript = true;
+    isAdmin = false;
+    hasSite = true;
+    pageType = "MixedMediaPaneEditor";
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+Component: SMWOTextComponent {
+	value = pane.text;  // VALID
+	shouldUseRichTextEditor = true;
+	editorCSS = section.activeSectionStyle.relatedCSSUrl;
+	index = 0;
+	wysiwygEditorMode = "Advanced";
+	section = section;
+	website = section.website;
+}
+
+ConfigurableContentConditional: WOConditional {
+	condition = pane.isMixedMediaConfigurableContentPane;
+}
+
+DescriptionText: WOText {
+	value = pane.description;
+	cols = "50";
+	rows = "2";
+}
+
+DisplayInFrameConditional: WOConditional {
+	condition = pane.contentConfiguration.requiresIFrame;
+}
+
+DoNotDisplayInFrameConditional: WOConditional {
+	condition = pane.contentConfiguration.usesIFrame;
+	negate = true;
+}
+
+Done: WOSubmitButton {
+	action = updateAndClose;
+	value = "Done";
+	name = "DoneButton";
+}
+
+FileButton: WORadioButton {
+	name = "URLType";
+	value = "file";
+	selection = pane.sourceType;
+}
+
+FileList: WOPopUpButton {
+	list = pane.arrangement.section.website.uploadedFiles;
+	item = aFile;
+	name = "fileList";
+    displayString = aFile.displayName;
+	selection = pane.toRelatedFile;
+	noSelectionString = "Select a file ...";
+	onChange="\"this.form.URLType[1].checked=true;\"";
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+	name = "MixedMediaForm";
+	action = submitForm;  // VALID
+}
+
+HeightErrorConditional: WOConditional {
+    condition = heightValidationError;
+}
+
+HeightTextField: WOTextField {
+	size = 4;
+	value = pane.height;
+}
+
+HeightTextField2: WOTextField {
+	size = 4;
+	value = pane.height;
+}
+
+InstructionsString: WOString {
+	value = pane.contentConfiguration.parameterInstructions;
+}
+
+Link: WOTextField {
+	value = pane.uri;
+	size = "50";
+	onKeyDown="\"this.form.URLType[0].checked=true;\"";
+}
+
+NoIFrameRadioButton: WORadioButton {
+	name = "DisplayIFrame";
+	selection = pane.displayInIFrame;
+	value = false;
+}
+
+ParameterRepetition2: WORepetition {
+	list = pane.contentConfiguration.parameters;
+	item = aParameter;
+}
+
+Parameters: ContentParameter {
+	parameter = aParameter;
+	parameterValue = currentParameter;  // VALID
+	pane = pane;
+	unit = currentUnit;  // VALID
+}
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURL = previewURL;
+}
+
+Reset: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+SectionButton: WORadioButton {
+	name = "URLType";
+	value = "section";
+	selection = pane.sourceType;
+}
+
+SectionList: WOPopUpButton {
+	list = pane.arrangement.section.website.allowedMixedMediaSourceSections;
+	item = aSection;
+	name = "sectionList";
+    displayString = aSection.name;
+	selection = pane.relatedSection;  // VALID
+	noSelectionString = "Select a section ...";
+	onChange="\"this.form.URLType[2].checked=true;\"";
+}
+
+SectionNameString: WOString {
+	value = pane.arrangement.section.name;
+}
+
+TextContentConditional: WOConditional {
+	condition = pane.isMixedMediaTextContentPane;
+}
+
+TypeString: WOString {
+	value = pane.typeName;
+}
+
+URLButton: WORadioButton {
+	name = "URLType";
+	value = "url";
+	selection = pane.sourceType;
+}
+
+Update: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+	name = "SubmitButton";
+}
+
+UpdateAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Save & View";
+}
+
+UsesIFrameConditional2: WOConditional {
+	condition = displayIFrameOptions;
+	negate = false;
+}
+
+ValidateSubmitButton: WOSubmitButton {
+	action = validateSource;
+	value = "Validate Source";
+}
+
+ValidationConditional: WOConditional {
+	condition = hasSourceValidationMessage;
+}
+
+ValidationString: WOString {
+	value = sourceValidationMessage;
+}
+
+WidthError2: WOString {
+    value = heightValidationError;
+}
+
+YesIFrameRadioButton: WORadioButton {
+	name = "DisplayIFrame";
+	selection = pane.displayInIFrame;
+	value = true;
+}
+
+IsExistingVersionConditional: WOConditional {
+    condition = version.globalID.isTemporary;
+    negate = true;
+}
+
+IsNotCurrentVersionConditional: WOConditional {
+    condition = version.isCurrent;
+    negate = true;
+}
+
+IsVersioningConditional: WOConditional {
+    condition = isVersioningEnabled;
+}
+
+AlteringConditional: WOConditional {
+    condition = canBeAltered;
+    negate = true;
+}
+
+CanBeAlteredConditional: WOConditional {
+    condition = canBeAltered;
+}
+
+CanCreateVersionConditional: WOConditional {
+    condition = canCreateANewVersion;
+}
+
+VersionNameString: WOString {
+    value = version.name;
+}
+
+VersionsHyperlink: WOHyperlink {
+    action = viewVersions;
+}
+
+ViewNonCurrentConditional: WOConditional {
+    condition = canViewNonCurrentVersions;
+}
+
+CreateNewVersionCheckBox: WOCheckBox {
+    checked = shouldCreateNewVersion;
+}
+
+ShowVersionDetailsConditional: WOConditional {
+    condition = isVersioningEnabled;
+}
+
+DetailsString: WOString {
+    value = version.details;
+}
+
+LastModifiedDateString: WOString {
+    value = version.modifiedDate;
+    formatter = application.properties.DateAndTimeFormatter;  //VALID
+}
+
+LastModifiedByString: WOString {
+    value = version.modifiedBy.userID;
+}
+
+PreviewMailToHyperlink: WOHyperlink {
+    href = previewMailToHyperlink;
+}
+
+CanManuallyCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+  negate = true;
+}
+
+CanAutoCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+}

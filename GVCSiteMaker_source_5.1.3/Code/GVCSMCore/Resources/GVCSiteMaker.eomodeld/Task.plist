@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            columnName = "FAILURE_REASON"; 
+            name = failureReason; 
+            prototypeName = longString; 
+            width = 1999; 
+        }, 
+        {columnName = "STATUS_ID"; name = statusId; prototypeName = Key; }, 
+        {columnName = "TASK_ID"; name = taskId; prototypeName = Key; }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_TYPE"; 
+            name = taskType; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        bindings, 
+        createdDate, 
+        details, 
+        failureReason, 
+        statusId, 
+        taskId, 
+        taskType, 
+        userId
+    ); 
+    className = "com.gvcsitemaker.core.Task"; 
+    classProperties = (bindings, createdDate, details, failureReason, owner, status, taskType); 
+    externalName = TASK; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = Task; 
+    primaryKeyAttributes = (taskId); 
+    relationships = (
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userId; }); 
+            name = owner; 
+        }, 
+        {
+            destination = TaskStatus; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = statusId; }); 
+            name = status; 
+        }
+    ); 
+}

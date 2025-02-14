@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="DrillDownTable" wocomponentcontent="NO">
+
+		<binding name="attributeKeyPaths"/>
+		<binding name="attributesToAlwaysDisplay"/>
+		<binding name="comparators"/>
+		<binding name="evenColumnStyle"/>
+		<binding name="evenRowStyle"/>
+		<binding name="lastAttributeToExpand"/>
+		<binding name="objectsToReport"/>
+		<binding name="oddColumnStyle"/>
+		<binding name="oddRowStyle"/>
+		<binding name="onAttributeClick"/>
+		<binding name="onTitleClick"/>
+		<binding name="shouldExpandAll"/>
+		<binding name="titleStyle"/>
+		<binding name="titles"/>
+
+		<validation message="'objectsToReport' is a required binding">
+			<unbound name="objectsToReport"/>
+		</validation>
+
+		<validation message="'attributeKeyPaths' is a required binding">
+			<unbound name="attributeKeyPaths"/>
+		</validation>
+
+		<validation message="'titles' is a required binding">
+			<unbound name="titles"/>
+		</validation>
+
+		<validation message="'comparators' is a required binding">
+			<unbound name="comparators"/>
+		</validation>
+
+		<validation message="'attributesToAlwaysDisplay' is a required binding">
+			<unbound name="attributesToAlwaysDisplay"/>
+		</validation>
+
+		<validation message="'lastAttributeToExpand' is a required binding">
+			<unbound name="lastAttributeToExpand"/>
+		</validation>
+
+		<validation message="'onTitleClick' is a required binding">
+			<unbound name="onTitleClick"/>
+		</validation>
+
+		<validation message="'onAttributeClick' is a required binding">
+			<unbound name="onAttributeClick"/>
+		</validation>
+	</wo>
+</wodefinitions>

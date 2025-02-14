@@ -1,0 +1,60 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelButton: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+EmbeddableSectionsPopUpButton: WOPopUpButton {
+	displayString = aSection.nameAndType;
+	item = aSection;
+	list = embeddableSections;
+	noSelectionString = "Select a Section...";
+	selection = selectedSection;
+}
+
+EmbeddedForm: WOForm {
+	action = updateDoneAction;
+	  // is this needed we usually don't do this.
+	multipleSubmit = true;
+}
+
+EmbeddedSiteNameField: WOTextField {
+	size = "40";
+	value = embeddedSiteID;
+}
+
+FindSiteButton: WOSubmitButton {
+	action = findSite;
+	value = "Find Site";
+}
+
+ForceSubmitField: WOHiddenField {
+	value = dummyValue;
+}
+
+HasErrorConditional: WOConditional {
+	condition = isSiteIDValid;
+	negate = true;
+}
+
+HasFoundWebsiteConditional: WOConditional {
+	condition = hasFoundWebsite;
+}
+
+IsMissingSelectedSectionConditional: WOConditional {
+	condition = isMissingSelectedSection;
+}
+
+SiteErrorMessageString: WOString {
+	value = siteErrorMessage;
+}
+
+UpdateAndDoneButton: WOSubmitButton {
+	action = updateDoneAction;
+	value = "Save & Done";
+}
+

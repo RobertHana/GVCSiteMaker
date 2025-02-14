@@ -1,0 +1,222 @@
+<webobject name = "DynamicBody">
+  <webobject name = "ManagementForm">
+    <!-- cell padding removed except around HR -->
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h1>Website Management</h1>
+        </td>
+      </tr>
+      <tr>
+        <!-- All the extra tables and spacing is need to get it to work on IE 5.2 for Mac among others -->
+        <td valign = "top" align = "right" style = "padding-right: 2px; text-align: right;">
+          <table border = "0" cellpadding = "0" cellspacing = "0">
+            <tr>
+              <td width = "100%"><!-- spacer -->&nbsp;</td>
+              <td>
+                <webobject name = "CanDeleteWebsiteConditional"> <webobject name = "RemovalButton" /> </webobject>
+              </td>
+              <td><webobject name = "UpdateProperties" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td> <hr class = "primaryBarStyle" /> </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellspacing = "2" cellpadding = "2" class = "content">
+      <tr>
+        <td class = "boldText">
+          SiteID:<br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn">
+          <webobject name = "NewSiteID" />
+          <webobject name = "ConfigureLink">
+            <nobr>Configure this Site</nobr>
+          </webobject>
+          <webobject name = "ShowPackageConditional">&nbsp;&nbsp;<webobject name = "CreatePackageLink">
+              <nobr>Create Data Table Package</nobr>
+            </webobject>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText">
+          OwnerID:<br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn"> <webobject name = "NewOwnerID" /> </td>
+      </tr>
+      <tr>
+        <td class = "boldText"> Associated Unit: </td>
+        <td class = "rightContentColumn"> <webobject name = "NewAssociatedUnit" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top">
+          <b>Filespace Quota:</b>
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn">
+          <webobject name = "NewFilespaceQuota" />
+          <span>(MB)</span>
+          <!-- do not delete span's N4 needs them -->
+          <br />
+          <span class = "descriptiveText">
+            (must be greater than current usage) 
+            <br />
+            Current Usage: 
+            <b class = "coloredText">
+              <webobject name = "FilespaceUsage" />
+              (MB) (<webobject name = "FilespaceUsagePct" />%) 
+            </b>
+            <br />
+            Available Filespace is: 
+            <b class = "coloredBoldText"> <webobject name = "AvailableFilespaceString" /> (MB) </b>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "top"> Redirect to URL: </td>
+        <td class = "descriptiveText">
+          <webobject name = "RedirectURL" />
+          <br />
+          Redirecting a site will display the website indicated. This could be used as a placeholder while constructing your 
+          <webobject name = "InstallationNameString" />
+          site. 
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText"> Publication is permitted: </td>
+        <td>
+          <webobject name = "YesPublish" />
+          <span>Yes</span>
+          <webobject name = "NoPublish" />
+          <span>No</span>
+          <!-- don't delete superfulous spans... -->
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "TOP">
+          Replicate outside 
+          <span class = "coloredText"> <webobject name = "AssociatedUnit" /> </span>.<!-- this period is not a typo -->
+        </td>
+        <td class = "rightContentColumn">
+          <webobject name = "YesReplicate" />
+          <span>Yes</span>
+          <webobject name = "NoReplicate" />
+          <span>No</span>
+          <br />
+          <span class = "descriptiveText"> Permission to replicate will enable Administrators to copy the uploaded files and configuration settings of this site. </span>
+        </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top" class = "boldText">Add Note:</td>
+        <td align = "left" valign = "top" class = "rightContentColumn">
+          <webobject name = "AdminNotesTextArea" />
+          <br />
+          <span class = "descriptiveText">Notes cannot be edited after entering and are itemized in the Administrative Log.</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <!-- Errors Start -->
+          <webobject name = "ShowNullSiteIDErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "NullSiteIDErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidSiteIDErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "InvalidSiteIDErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowSiteIDExistsErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "SiteIDExistsErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowNullOwnerIDErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "NullOwnerIDErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidCharsInOwnerIDErrorMessage">
+            <p class = "warningText">Create failed: <webobject name = "String1" /></p>
+          </webobject>
+          <webobject name = "ShowInvalidFilespaceQuotaErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "InvalidFilespaceQuotaErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowNullAssociatedUnitErrorMessage">
+            <p class = "warningText"> Update failed: <webobject name = "NullAssociatedUnitErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidManageSiteIDErrorMessage">
+            <p class = "warningText"> <webobject name = "InvalidManageSiteIDErrorMessage" /> </p>
+          </webobject>
+          <webobject name = "ShowWebsiteOutOfAdminScopeErrorMessage">
+            <p class = "warningText"> <webobject name = "WebsiteOutOfAdminScopeErrorMessage" /> </p>
+          </webobject>
+          <webobject name = "DisplayDeleteFailureErrorMessagesConditional">
+            <p class = "warningText">
+              <webobject name = "DeleteFailureErrorMessagesRepetition">
+                Delete failed: 
+                <webobject name = "DeleteError" />
+                <br />
+              </webobject>
+            </p>
+          </webobject>
+          <webobject name = "DisplayInvalidRedirectURLErrorMessageConditional">
+            <p class = "warningText">
+              Update failed:<span class = "coloredText"><webobject name = "InvalidRedirectURLErrorMessageString" /></span>
+            </p>
+          </webobject>
+          <!-- Errors End -->
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2"> <hr class = "alternateBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top" class = "boldText">
+          <a name = "SendEmail" id = "SendEmail"></a>Email Owners/Co-owners: 
+        </td>
+        <td align = "centre" valign = "top" class = "rightContentColumn"><webobject name = "SendMessageSubmitButton" /> </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class = "requiredText">(required)</i>
+        </td>
+        <td align = "left" valign = "top" class = "rightContentColumn">
+          <webobject name = "MessageSubjectTextField" />
+          <webobject name = "Conditional3">
+            <p class = "warningText">Send Failed:
+              Subject is a required field.</p>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message:</td>
+        <td align = "left" valign = "top" class = "rightContentColumn"><webobject name = "MessageBodyTextArea" /> </td>
+      </tr>
+      <tr>
+        <td colspan = "2" align = "right" valign = "top"> <hr class = "primaryBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top" class = "boldText">Administrative Log:</td>
+        <td align = "left" valign = "top" class = "rightContentColumn">
+          <webobject name = "Repetition1">
+            <webobject name = "String2" />
+            (<webobject name = "String3" />):<br />
+            <webobject name = "String4" />
+            <webobject name = "Conditional1"><br /></webobject>
+            <webobject name = "String5" />
+            <webobject name = "Conditional2"><br /> </webobject>
+            <br />
+          </webobject>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>

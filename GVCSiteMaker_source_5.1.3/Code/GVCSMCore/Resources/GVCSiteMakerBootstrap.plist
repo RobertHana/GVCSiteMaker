@@ -1,0 +1,166 @@
+{
+//***************************************************************
+//
+// N O T E
+//
+// - This file contains default bootstrap values which are unlikely to be changed on a per installation basis.  
+//   They can be overridden by defining the same value in GVCSiteMakerBootstrap.plist in the GVCSMCustom framework for an installation.
+//
+// - All documentation for these items is in StarTeam as GVCSiteMaker\Documentation\ConfigurationGuide.doc.  If you change
+//   anything be certain to update the documentation.  Do not document in this file uless it is developer specific comments.
+//
+// - If you add required configuration items, add code in bootstrapDatabase() in SMApplication to check for them.
+//
+//***************************************************************
+
+
+
+
+
+
+// 
+// Section Types
+//
+SectionTypes = (
+    {  
+        name = "Text and/or Image";
+        order = 1;
+        key = "TextImage";
+        editorName = "TextImageEditor";
+        pageComponentEntity = "TextImageLayout";
+    },   
+    {  
+        name = "List of Links/Files";
+        order = 2;
+        key = "ListOfLinks";
+        editorName = "ListOfLinksEditor";
+        pageComponentEntity = "ListOfLinksLayout";
+    },   
+    {  
+        name = "Single Link or File";
+        order = 3;
+        key = "ExternalURL";
+        editorName = "ExternalURLEditor";
+        pageComponentEntity = "Hyperlink";
+    },
+    {  
+        name = "Embedded Section";
+        order = 4;
+        key = "EmbeddedSection";
+        editorName = "EmbeddedSectionEditor";
+        pageComponentEntity = "EmbeddedSection";
+    },   
+    {  
+        name = "Embedded Site";
+        order = 5;
+        key = "EmbeddedSite";
+        editorName = "EmbeddedSiteEditor";
+        pageComponentEntity = "EmbeddedSite";
+    },
+    {  
+        name = "Data Access";
+        order = 6;
+        key = "DataAccess";
+        editorName = "DataAccessEditor";
+        pageComponentEntity = "DataAccess";
+    },
+    {  
+        name = "Mixed Media";
+        order = 7;
+        key = "MixedMedia";
+        editorName = "MixedMediaSectionEditor";
+        pageComponentEntity = "MixedMediaPaneArrangement";
+    },
+    {  
+        name = "Copy an existing section...";
+        order = 8;
+        key = "SectionCopy";
+        editorName = "CopySectionEditor";
+        pageComponentEntity = "SectionCopy";
+    },
+    {  
+        name = "Temporary Section from Package";
+        order = 9;
+        key = "PackageSection";
+        editorName = "PackageSectionEditor";
+        pageComponentEntity = "SectionCopy";
+    });
+    
+
+// 
+// Database Table Column Types
+//
+ColumnTypes = (
+    {
+        name = "Number";
+        textDescription = "Number";
+        entityNameRestrictor = "";
+    },
+    {
+        name = "String";
+        textDescription = "Text";
+        entityNameRestrictor = "";
+    },
+    {
+        name = "Boolean";
+        textDescription = "Checkbox";
+        entityNameRestrictor = "";
+    },
+    {
+        name = "Timestamp";
+        textDescription = "Date/Time";
+        entityNameRestrictor = "";
+    },
+    {
+        name = "Lookup";
+        textDescription = "Lookup List";
+        entityNameRestrictor = "Lookup";
+    },
+    {
+        name = "User";
+        textDescription = "User";
+        entityNameRestrictor = "User";
+    },
+    {
+        name = "SiteFile";
+        textDescription = "File";
+        entityNameRestrictor = "SiteFile";
+    },
+    {
+        name = "Calculated";
+        textDescription = "Calculation";
+        entityNameRestrictor = "Calculated";
+    },
+    {
+        name = "RecordID";
+        textDescription = "Number";
+        entityNameRestrictor = "";
+    });
+    
+    
+// 
+// Task statuses for Queued Tasks
+//
+TaskStatuses = (
+    {
+        key = "inProgress";
+        name = "In Progress";
+    },
+    {
+        key = "completed";
+        name = "Completed";
+    }, 
+    {
+        key = "waiting";
+        name = "Waiting";
+    }, 
+    {
+        key = "failed";
+        name = "Failed";
+    }, 
+    {
+        key = "cancelled";
+        name = "Cancelled";
+    }
+ ); 
+}

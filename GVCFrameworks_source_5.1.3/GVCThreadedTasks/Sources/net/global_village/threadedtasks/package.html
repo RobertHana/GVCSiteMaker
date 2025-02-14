@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+
+    <head>
+        <title></title>
+    </head>
+    <body>
+Provides classes to manage threaded background tasks in a WebObjects application in a way that works nicely with JavaMonitor control of deployed applications.
+
+<h2>Overview</h2>
+This framework consists of these classes / interfaces:
+
+<h4>ITask</h4>
+This is the interface that you need to implement for your own tasks.  You can implement this in a plain Java object or in an EO.
+
+<h4>TaskThread</h4>
+This is the background thread that manages running the process in an object that implements ITask.  You should not need to sub-class this.
+
+
+<h4>ThreadManager</h4>
+This class manages TaskThreads.  It works with your Application class (see below) to integration thread managment into the JavaMonitor control of deployed applications.
+
+
+<h2>Integration with WOApplication</h2>
+
+<h4>Create and Start the Threads / Tasks</h4>
+You can create these any way that you want.  Below is an example reading task configuration from an plist file.  You could also read them in as EO definitions of the tasks or just create them manally in code.
+
+<h5>Example Task Creation</h5>
+The task definition comes from a plist file, here is the relevant snippet:
+<pre>
+...
+Tasks = (
+    {
+        taskClass = "net.foo.core.eo.Task";
+        frequency = 15;
+    }
+);
+...
+</pre>
+
+<pre>
+protected void startTasks() throws Exception {
+    threadManager = new ThreadManager();
+    NSArray definedTasks = tasksFromPListFile();
+    for (int i = 0; i < definedTasks.count(); i++) {
+        NSDictionary taskDefinition = (NSDictionary)definedTasks.objectAtIndex(i);
+        String taskClassName = (String)taskDefinition.valueForKey("taskClass");
+        String frequencyValue = (String) taskDefinition.valueForKey("frequency");
+        if (taskClassName == null || frequencyValue == null) {
+            throw new RuntimeException("Incomplete task definition: " + taskDefinition);
+        }
+
+        try {
+            Class taskClass = Class.forName(taskClassName);
+            ITask task = (ITask)taskClass.newInstance();
+            threadManager.startThread(task, Integer.parseInt(frequencyValue), 10, newEditingContext());
+        }
+        catch (Exception e) {
+            NSLog.out.appendln("Failed creating task: " + taskDefinition);
+            NSLog.out.appendln(e);
+            throw e;
+        }
+    }
+}
+</pre>
+
+<h4>Override refuseNewSessions</h4>
+When refusing new sessions is activated, all running threads are told to exit.  
+
+<pre>
+public void refuseNewSessions(boolean shouldRefuse) {
+    if (shouldRefuse) {
+        threadManager().shutdownThreads();
+    }
+    super.refuseNewSessions(shouldRefuse);
+}
+</pre>
+
+<h4>Override refuseNewSessions</h4>
+When JavaMonitor tells us to terminate, all running threads are told to exit.  The application won't actually terminate until they all stop.
+
+<pre>
+public void _terminateFromMonitor()
+{
+    threadManager().shutdownThreads();
+    super._terminateFromMonitor();
+}
+</pre>
+
+
+<h4>Override isTerminating</h4>
+We don't want to to return true if task threads are still running.  Termination is delayed until the last thread exits.  When the last thread exits, if the application is terminating, the ThreadManager will tell the Application to terminate.
+
+<pre>
+public boolean isTerminating() {
+        return (threadManager() == null || ! threadManager().hasRunningThreads()) ? super.isTerminating() : false;
+}
+</pre>
+
+
+
+<h2>Controlling Tasks</h2>
+The easiest way to control the tasks is just to set the app to refusing new sessions from JavaMonitor.  When all of the running tasks have finished (and sessions expired if you implemented it that way), the application will terminate.  
+
+<p>You can also make a Dashboard page using ThreadManager.  As a simple example showing each thread's status and allowing individual threads to be stopped:</p>
+
+<b>DashboardComponent.html:</b>
+<pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Process&lt;/th&gt;
+        &lt;th&gt;Last Run&lt;/th&gt;
+        &lt;th&gt;Status&lt;/th&gt;
+        &lt;th&gt;Action&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;webobject name = "ThreadRepetition"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;webobject name = "NameString"/&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;webobject name = "LastTime"/&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;webobject name = "LastStatus"/&gt;&lt;/td&gt; 
+            &lt;td&gt;
+                &lt;webobject name = "IsRunningConditional"&gt;&lt;webobject name = "StopThreadLink"/&gt;&lt;/webobject&gt;
+                &lt;webobject name = "IsEndingConditional"&gt;Shutdown in Progress&lt;/webobject&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/webobject&gt;
+&lt;/table&gt;
+</pre>
+
+
+<b>DashboardComponent.wod:</b>
+<pre>
+ThreadRepetition : WORepetition {
+    list = application.threadManager.threads;
+    item = aThread; 
+}
+
+NameString : WOString {
+    value = aThread.getName;
+}
+
+LastTime : WOString {
+    value = aThread.lastRun.runTime;
+}
+
+LastStatus : WOString {
+    value = aThread.lastRun.status;
+}
+
+StopThreadLink : WOHyperlink {
+    action = aThread.end;
+    string = "Stop Thread";
+}
+
+IsRunningConditional : WOConditional {
+    condition = aThread.shouldEnd;
+    negate = true;
+}
+
+IsEndingConditional : WOConditional {
+    condition = aThread.shouldEnd;
+}
+</pre>
+
+If you want to shut the application down from the dashboard, just call application().refuseNewSessions(true);
+    </body>
+</html>

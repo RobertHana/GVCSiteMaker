@@ -1,0 +1,40 @@
+AdminAreaHyperlink: WOHyperlink {
+	href = adminLoginUrl;
+}
+
+ChangePasswordHyperlink: WOHyperlink {
+	pageName = "ChangePasswordPage";
+	secure = true;
+}
+
+ConfigureSiteHyperlink: WOHyperlink {
+	pageName = "MultCSites";
+	secure = true;
+}
+
+DynamicBody: DynamicBodyComponent {
+	pageTitle = "Default Main Page";
+	pageType = "Main";
+	isConfigPage = false;
+	hasSite = false;
+	isAdmin = false;
+}
+
+ManageSiteStylesHyperlink: WOHyperlink {
+	pageName = "SectionStyleManagementPage";
+	secure = true;
+}
+
+RequestSiteHyperlink: WOHyperlink {
+	pageName = "RequestSite";
+	secure = true;
+}
+
+SearchForSiteHyperlink: WOHyperlink {
+	pageName = "DirOfSites";
+}
+
+ShowErrorLogHyperlink: WOHyperlink {
+	directActionName = "showErrorLog";
+	secure = true;
+}

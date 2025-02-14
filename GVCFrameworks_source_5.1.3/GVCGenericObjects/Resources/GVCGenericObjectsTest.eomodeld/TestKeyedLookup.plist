@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {columnName = key; name = key; prototypeName = String; width = 50; }, 
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, name, key); 
+    className = "net.global_village.genericobjects.tests.TestKeyedLookup"; 
+    classProperties = (name, key, localizations); 
+    externalName = "test_keyed_lookup"; 
+    fetchSpecificationDictionary = {}; 
+    name = TestKeyedLookup; 
+    parent = GVCKeyedLookup; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupID; sourceAttribute = theID; }); 
+            name = localizations; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+    userInfo = {defaultName = defaultTestKeyedLookup; }; 
+}

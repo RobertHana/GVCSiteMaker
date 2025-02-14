@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {columnName = ROOT_OID; name = rootOID; prototypeName = Key; }, 
+        {columnName = UNOWNED_OID; name = unOwnedOID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (unOwnedOID, rootOID); 
+    className = EOGenericRecord; 
+    classProperties = (unOwnedObject, rootObject); 
+    externalName = ROOT_UNOWNED_JOIN; 
+    fetchSpecificationDictionary = {}; 
+    name = RootUnOwnedJoin; 
+    primaryKeyAttributes = (unOwnedOID, rootOID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RootObject; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = rootOID; }); 
+            name = rootObject; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = UnOwnedObject; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = unOwnedOID; }); 
+            name = unOwnedObject; 
+        }
+    ); 
+}

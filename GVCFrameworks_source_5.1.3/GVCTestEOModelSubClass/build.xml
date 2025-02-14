@@ -1,0 +1,6 @@
+<project name="GVCTestEOModelSubClass" default="full.build" basedir=".">
+
+	<import file="../Ant/common.xml"/>
+
+</project>
+

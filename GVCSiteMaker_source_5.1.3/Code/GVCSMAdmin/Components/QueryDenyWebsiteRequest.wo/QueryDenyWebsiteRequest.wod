@@ -1,0 +1,58 @@
+CancelButton: WOSubmitButton {
+	action = cancel;
+	value = "Cancel";
+}
+
+DynamicBodyComponent: DynamicBodyComponent {
+	isAdmin = true;
+	pageTitle = pageTitle;
+	pageType = "QueryDenyWebsiteRequest";
+}
+
+InvalidToAddressesConditional: WOConditional {
+	condition = toAddressesErrorMessage;
+}
+
+MessageText: WOText {
+	rows = 12;
+	value = message;
+	class = "largeEntryBox";
+}
+
+PageTitleString: WOString {
+	value = pageTitle;
+}
+
+QueryDenyForm: WOForm {
+	action = processAction;
+	method = "post";
+	multipleSubmit = true;
+}
+
+SendButton: WOSubmitButton {
+	action = processAction;
+	value = "Send";
+}
+
+SubjectErrorMessageConditional: WOConditional {
+	condition = subjectErrorMessage;
+}
+
+SubjectErrorMessageString: WOString {
+	value = subjectErrorMessage;
+}
+
+SubjectTextField: WOTextField {
+	value = subject;
+	class = "largeEntryBox";
+}
+
+ToAddressesErrorMessageString: WOString {
+	value = toAddressesErrorMessage;
+}
+
+ToAddressesText: WOText {
+	rows = 5;
+	value = toAddresses;
+	class = "largeEntryBox";
+}

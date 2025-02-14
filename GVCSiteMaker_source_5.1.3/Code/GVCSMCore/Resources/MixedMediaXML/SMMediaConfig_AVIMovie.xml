@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>AVI Movie</title>
+    <usesIFrame>true</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>             
+    <parameterInstructions>The settings below apply to the AVI movie, not to the pane containing it.</parameterInstructions>
+        <!-- See http://www.apple.com/quicktime/tutorials/embed.html -->
+        <parameter>
+                <name>width</name>
+                <uiName>Width</uiName>
+                <type>integer</type>
+                <isRequired>false</isRequired>
+        </parameter>
+        <parameter>
+                <name>height</name>
+                <uiName>Height</uiName>
+                <type>integer</type>
+                <isRequired>false</isRequired>
+        </parameter>
+        <parameter>
+                <name>controller</name>
+                <uiName>Controller</uiName>
+                <type>boolean</type>
+        </parameter>
+        <parameter>
+                <name>autoplay</name>
+                <uiName>Auto-play</uiName>
+                <type>boolean</type>
+        </parameter>
+        <parameter>
+                <name>loop</name>
+                <uiName>Loop</uiName>
+                <type>boolean</type>
+        </parameter>
+    <template><![CDATA[
+<object width="<webobject name=width></webobject>" height="<webobject name=height></webobject>" type="video/avi" loop="<webobject name=loop></webobject>"
+  classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+  codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+  <param name="src" value="<webobject name=SourceURL></webobject>">
+  <param name="controller" value="<webobject name=controller></webobject>">
+  <param name="autoplay" value="<webobject name=autoplay></webobject>">
+  <embed src="<webobject name=SourceURL></webobject>" width="<webobject name=width></webobject>" height="<webobject name=height></webobject>"  type="video/avi"
+    loop="<webobject name=loop></webobject>" autoplay="<webobject name=autoplay></webobject>" controller="<webobject name=controller></webobject>" 
+    pluginspage="http://www.apple.com/quicktime/download/">
+  </embed>
+</object>
+    ]]></template>	
+</mediaComponent>

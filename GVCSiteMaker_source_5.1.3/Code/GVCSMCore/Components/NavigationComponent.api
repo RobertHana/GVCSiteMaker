@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="NavigationComponent.java" wocomponentcontent="false">
+
+        <binding name="website"/>
+        <binding name="pageType"/>
+        <validation message="'pageType' is a required binding.">
+            <unbound name="pageType"/>
+        </validation>
+        <binding name="inPlaceEditingMode"/>
+    </wo>
+</wodefinitions>

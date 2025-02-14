@@ -1,0 +1,133 @@
+package jass.examples.traceAssertion;
+
+public class Factorial
+{
+    final static int NO_VIOLATION = 0;
+    final static int VIOLATION_DECREASING = 1;
+    final static int VIOLATION_NOT_NEGATIVE = 2;
+	
+    final static String S_VIOLATION_DECREASING = "-decreasing";
+    final static String S_VIOLATION_NOT_NEGATIVE = "-negative";
+
+    static int violationFlag;
+	
+		
+    public int iterativ(int value)
+    {
+	/** require [positiveValue] value >= 1; **/
+
+	int result = 1;
+		
+	for(int i = value; i >= 1; --i)
+	    /** variant i **/
+	    {
+		result *= i;
+	    }
+		
+	return result;
+
+	/** ensure Result > 0; **/
+    }
+	
+	
+    public int recursiv(int value)
+    {
+	if(value == 1 && violationFlag != VIOLATION_NOT_NEGATIVE) {
+	    return 1;
+	}
+	else {
+	    int newValue;
+	    
+	    if(violationFlag == VIOLATION_DECREASING) {
+		newValue = value;
+	    }
+	    else {
+		newValue = value - 1;
+	    }
+	    return value * recursiv(newValue);
+	}
+	/** ensure Result > 0; **/
+    }
+
+
+
+    public static void invalidCall()
+    {
+	System.err.
+	    println("Syntax: Factorial <integer value> "
+		    + "[ " + S_VIOLATION_NOT_NEGATIVE 
+		    + " | " + S_VIOLATION_DECREASING + " ]"
+		    );
+	System.exit(1);
+    }
+	
+		
+    public static void main(String[] argv) {
+	int value = 0;
+	
+	try {
+	    value = new Integer(argv[0]).intValue();
+	    
+	    int numberOfArguments = argv.length;
+	    
+	    if(numberOfArguments > 1) {
+		if(numberOfArguments == 2) {
+		    String violation = argv[1];
+		    
+		    if(violation.equals(S_VIOLATION_NOT_NEGATIVE)) {
+			violationFlag = VIOLATION_NOT_NEGATIVE;
+		    }
+		    else if(violation.equals(S_VIOLATION_DECREASING)) {
+			violationFlag = VIOLATION_DECREASING;
+		    }
+		    else {
+			invalidCall();
+		    }
+		}
+		else {
+		    invalidCall();
+		}
+	    }
+	}
+	catch(Exception e) {
+	    invalidCall();
+	}
+		
+	Factorial test = new Factorial();
+		
+	System.out.println("Recursiv: " + value + 
+			   "! = " + test.recursiv(value));
+	System.out.println("Iterativ: " + value + 
+			   "! = " + test.iterativ(value));
+    }
+
+
+    /** invariant
+	[variant] trace
+	(
+	    MAIN()
+	    {
+	        int value;
+		
+		recursiv(?value).begin -> CALL Decrease(value)
+	    }
+	    
+	    Decrease(int variant)
+	    {
+	        int nextVariant;
+		
+		IF(variant < 0)
+		{
+		    EXECUTE(throw new RuntimeException ("method variant must not be negative");) 
+		    -> STOP
+		}
+		ELSE
+		{
+		    EXECUTE(System.out.println("VALUE:" + variant);) 
+		    -> recursiv(?nextVariant).begin WHERE(nextVariant < variant) 
+		    -> CALL Decrease(nextVariant)
+		}
+	    }
+	);
+    **/
+}

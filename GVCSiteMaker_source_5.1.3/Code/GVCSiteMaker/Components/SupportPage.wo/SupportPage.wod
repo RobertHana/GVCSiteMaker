@@ -1,0 +1,13 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageType = "Support";
+    pageTitle = "Support";
+    isAdmin = false;
+}
+
+FrameGenericContainer : WOGenericContainer {
+    elementName = "iframe";
+    src = application.properties.SupportURL;  // VALID
+    height = "1000px";
+    width = "100%";
+}

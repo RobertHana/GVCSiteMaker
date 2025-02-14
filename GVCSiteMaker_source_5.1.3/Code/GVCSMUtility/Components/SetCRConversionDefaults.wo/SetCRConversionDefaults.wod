@@ -1,0 +1,12 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+SetDefaultHyperlink: WOHyperlink {
+	action = setDefaultConversion;
+}
+
+String1: WOString {
+	value = conversionMessage;
+	escapeHTML = false;
+}

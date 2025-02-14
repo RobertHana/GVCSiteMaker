@@ -1,0 +1,69 @@
+{
+    attributes = (
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TIMESTAMP_VALUE"; 
+            externalType = TIMESTAMP; 
+            name = timestampValue; 
+            prototypeName = DateTime; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "VIRTUAL_COLUMN_ID"; 
+            name = virtualColumnID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "VIRTUAL_FIELD_ID"; name = virtualFieldID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (virtualFieldID, virtualRowID, virtualColumnID, restrictingValue); 
+    className = "net.global_village.virtualtables.VirtualTimestampField"; 
+    classProperties = (
+        virtualFieldID, 
+        row, 
+        column, 
+        timestampValue, 
+        restrictingValue, 
+        referringFields
+    ); 
+    externalName = "VIRTUAL_FIELD"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = VirtualTimestampField; 
+    parent = VirtualField; 
+    primaryKeyAttributes = (virtualFieldID); 
+    relationships = (
+        {
+            destination = VirtualColumn; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = virtualColumnID; }); 
+            name = column; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupValueID; sourceAttribute = virtualFieldID; }); 
+            name = referringFields; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = VirtualRow; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = row; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'Timestamp')"; 
+}

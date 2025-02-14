@@ -1,0 +1,19 @@
+AComponent: WOSwitchComponent {
+	componentObject = aComponent;
+	WOComponentName = aComponent.componentType;
+	currentMode = currentMode;
+}
+
+ComponentList: WORepetition {
+	item = aComponent;
+	list = orderedComponents;
+}
+
+SectionDetailsString: WOString {
+	value = componentObject.section.details;
+	escapeHTML = false;
+}
+
+SectionNameString: WOString {
+	value = componentObject.section.name;
+}

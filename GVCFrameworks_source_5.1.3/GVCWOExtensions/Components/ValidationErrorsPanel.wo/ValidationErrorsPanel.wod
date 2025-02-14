@@ -1,0 +1,34 @@
+ErrorString: WOString 
+{
+	value = anError;
+	escapeHTML = false;
+}
+ErrorsClassListItemString: WOString 
+{
+	value = ^errorsCSSClass;
+	valueWhenEmpty = "errors";
+}
+ErrorsClassListString: WOString 
+{
+	value = ^errorsCSSClass;
+	valueWhenEmpty = "errors";
+}
+ErrorsRepetition: WORepetition 
+{
+	item = anError;
+	list = errors;
+}
+ErrorsTitleClassString: WOString 
+{
+	value = ^errorsTitleCSSClass;
+	valueWhenEmpty = "errorsTitle";
+}
+ErrorsTitleString: WOString 
+{
+	value = ^errorsTitle;
+	escapeHTML = false;
+}
+HasErrorsConditional: WOConditional 
+{
+	condition = hasErrors;
+}

@@ -1,0 +1,118 @@
+Banner: WOSwitchComponent {
+	value = website.banner.bannerText;
+	escapeHTML = NO;
+	WOComponentName = activeSectionStyle.bannerComponent;
+}
+
+CurrentUser: WOString {
+	value = session.currentUser.userID;
+} 
+
+
+NavLinkListVertical: SiteNavigationComponent { 
+	navigationType = "verticalNavBar";
+} 
+
+NavLinkListBreadcrumb: SiteNavigationComponent {
+	navigationType = "breadCrumb";
+}
+
+NavLinkListHorizontal: SiteNavigationComponent {
+	navigationType = "horizontalNavBar";
+}
+
+CustomHeader: WOString {
+	value = website.customHeaderContent;
+	escapeHTML = NO;	
+}
+
+
+Footer: WOSwitchComponent {
+	website = website;
+	WOComponentName = activeSectionStyle.footerComponent;
+}
+
+GoPreviousSection: WOHyperlink {
+    disabled = isFirstSection;
+    href = previousSectionUrl;
+    class = "navigationLink";
+}
+
+GoNextSection: WOHyperlink {
+    disabled = isLastSection;
+    href = nextSectionUrl;
+    class = "navigationLink";
+}
+
+
+HasCurrentUser: WOConditional {
+	condition = session.isUserAuthenticated;
+}
+
+HasNoCurrentUser: WOConditional {
+	condition = session.isUserAuthenticated;
+	negate = true;
+}
+
+IsHomeSectionConditional: WOConditional {
+	condition = sectionToDisplay.isHomeSection;
+}
+
+IsNotHomeSectionConditional: WOConditional {
+	condition = sectionToDisplay.isHomeSection;
+ 	negate = YES;
+}
+
+Login: WOHyperlink {
+   href = loginUrl;
+}
+
+Logout: WOHyperlink {
+    href = logoutUrl;
+}
+
+NavBar: WOSwitchComponent {
+	WOComponentName = activeSectionStyle.navBarComponent;
+}
+
+NavigationPopup: NavigationPopup {
+}
+
+OrgUnitName: WOString {
+	value = website.parentOrgUnit.unitName;
+}
+
+OrgUnitPath: WOString {
+	value = website.parentOrgUnit.delimitedOrgUnitPath;
+}
+
+SectionContents: WOSwitchComponent {
+	currentSection = sectionToDisplay;
+	currentVersion = versionToDisplay;
+	WOComponentName = activeSectionStyle.sectionContentsComponent;
+}
+
+SectionName: WOString {
+	value = sectionToDisplay.name;
+}
+
+ShowBanner: WOConditional {
+	condition = website.isBannerVisible;
+}
+
+ShowFooter: WOConditional {
+	condition = website.isFooterVisible;
+}
+
+ShowNavBar: WOConditional {
+	condition = website.isNavbarVisible;
+}
+
+ShowLoginLogoutLinks: WOConditional {
+	condition = website.areLoginLogoutLinksVisible;
+}
+
+SiteID: WOString {
+	value = website.siteID;
+}
+

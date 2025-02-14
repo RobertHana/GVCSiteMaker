@@ -1,0 +1,111 @@
+ConfigureWebsiteHyperlink: WOHyperlink {
+	href = configureWebsiteURL;
+}
+
+CreateNewWebSiteSubmitButton: WOSubmitButton {
+	action = createWebsite;
+	value = "Create New Website";
+}
+
+DateCreatedString: WOString {
+	dateformat = "%m/%d/%Y";
+	value = aWebsite.dateCreated;
+}
+
+DateLastModifiedString: WOString {
+	dateformat = "%m/%d/%Y";
+	value = aWebsite.dateLastModified;
+}
+
+DisplayEmailMarkedSitesButtonConditional: WOConditional {
+	condition = hasResults;
+}
+
+DisplayMarkAllSitesLinkAndDownloadTableLinkConditional: WOConditional {
+	condition = hasResults;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Manage Websites";
+	isAdmin = true;
+}
+
+EmailMarkedSitesSubmitButton: WOSubmitButton {
+	action = emailMarkedSites;
+	value = "Email Marked Sites";
+}
+
+FileSizeUsageString: WOString {
+	value = aWebsite.fileSizeUsageInMegabytes;
+	numberformat = "0.0";
+}
+
+IsNotPublishedConditional: WOConditional {
+	condition = aWebsite.canBeDisplayed;
+	negate = true;
+}
+
+IsPublishedConditional: WOConditional {
+	condition = aWebsite.canBeDisplayed;
+}
+
+ManageWebsiteHyperlink: WOHyperlink {
+	action = manageWebsite;
+}
+
+ManageWebsitesForm: WOForm {
+	multipleSubmit = true;
+}
+
+MarkAllSitesHyperlink: WOHyperlink {
+	action = markAllSites;
+}
+
+MarkWebsiteCheckBox: WOCheckBox {
+	checked = websiteMarked;
+}
+
+NoMarksConditional: WOConditional {
+	condition = displayNoMarksErrorMessage;
+}
+
+NoResultsConditional: WOConditional {
+	condition = displayNoResultsErrorMessage;
+}
+
+OrgUnitString: WOString {
+	value = aWebsite.parentOrgUnit.unitName;
+}
+
+OwnerIDString: WOString {
+	value = aWebsite.owner.userID;
+}
+
+PercentQuotaString: WOString {
+	value = aWebsite.percentageOfQuotaUsed;
+	numberformat = "0.0";
+}
+
+SaveTableAsTextLink: net.global_village.woextensions.WOFileDownload {
+	displayAsButton = false;
+	downloadTitle = "Save Table as Text";
+	fileName = "website_list.txt";
+	action = downloadTable;
+	data = fileData;
+}
+
+SiteIDHyperlink: WOHyperlink {
+	href = previewURL;
+	target = "_preview";
+}
+
+SiteIDString: WOString {
+	value = aWebsite.siteID;
+}
+
+WebsitesRepetition: WORepetition {
+	item = aWebsite;
+	list = websitesToManage;
+	index = websiteIndex;
+}

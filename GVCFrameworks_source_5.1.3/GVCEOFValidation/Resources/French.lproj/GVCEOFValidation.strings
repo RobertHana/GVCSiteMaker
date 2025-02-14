@@ -1,0 +1,12 @@
+{
+	//
+	// Validation Tests
+	//
+
+	keyThatExists = "French Localized string for keyThatExists";
+	// Don't define this keyThatDoesNotExist
+	"AttributeValidationTestEntity.localizationTestProperty.fullyQualifiedBundleKeyTest" = "French Localization key for fully qualified bundle key";
+	"AttributeValidationTestEntity.partiallyQualifiedBundleKeyTest" = "French Localization key for partially qualified bundle key";
+	"Entity.genericBundleKeyTest" = "French Localization key for generic bundle key";
+	"AttributeValidationTestEntity.localizationTestProperty.onlyInFrenchLocalizationTest" = "French Localization only test";
+}

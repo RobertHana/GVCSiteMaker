@@ -1,0 +1,12 @@
+package jass.examples.traceAssertion;
+
+public class FrameTA extends java.awt.Frame
+{
+    public FrameTA() {
+	super();
+    }
+
+    public FrameTA(String title) {
+	super(title);
+    }
+}

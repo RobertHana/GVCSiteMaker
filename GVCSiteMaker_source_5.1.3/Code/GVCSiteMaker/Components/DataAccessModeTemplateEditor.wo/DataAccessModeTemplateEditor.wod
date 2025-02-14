@@ -1,0 +1,40 @@
+CustomRadioButton: WORadioButton {
+	checked = useCustomTemplate;
+	name = mode.mode;
+}
+
+DeleteTemplateHyperlink: WOHyperlink {
+	action = deleteTemplate;
+}
+
+DownloadTemplateHyperlink: WOFileDownload {
+	contentType = "application/octet-stream";
+	fileName = mode.templateFileName;
+	displayAsButton = false;
+	downloadTitle = "Download Template";
+	data = mode.customTemplateHtml;
+}
+
+HasTemplateValidationErrorConditional: WOConditional {
+	condition = templateValidationError;
+}
+
+StandardRadioButton: WORadioButton {
+	checked = useDefaultTemplate;
+	name = mode.mode;
+}
+
+TemplateValidationErrorString: WOString {
+	value = templateValidationError;
+}
+
+TitleString: WOString {
+	value = title;
+	escapeHTML = false;
+}
+
+UploadTemplate: WOFileUpload {
+	data = uploadedTemplate;
+	filePath = dummyTemplateFilePath;
+}
+

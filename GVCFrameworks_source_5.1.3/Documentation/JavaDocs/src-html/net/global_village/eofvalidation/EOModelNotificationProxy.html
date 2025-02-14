@@ -1,0 +1,482 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package net.global_village.eofvalidation;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.util.*;<a name="line.3"></a>
+<FONT color="green">004</FONT>    <a name="line.4"></a>
+<FONT color="green">005</FONT>    import com.webobjects.eoaccess.*;<a name="line.5"></a>
+<FONT color="green">006</FONT>    import com.webobjects.eocontrol.*;<a name="line.6"></a>
+<FONT color="green">007</FONT>    import com.webobjects.foundation.*;<a name="line.7"></a>
+<FONT color="green">008</FONT>    <a name="line.8"></a>
+<FONT color="green">009</FONT>    import er.extensions.appserver.*;<a name="line.9"></a>
+<FONT color="green">010</FONT>    <a name="line.10"></a>
+<FONT color="green">011</FONT>    import net.global_village.foundation.*;<a name="line.11"></a>
+<FONT color="green">012</FONT>    <a name="line.12"></a>
+<FONT color="green">013</FONT>    <a name="line.13"></a>
+<FONT color="green">014</FONT>    /**<a name="line.14"></a>
+<FONT color="green">015</FONT>     * EOModelNotificationProxy stands in for an EOModel to receive the EOClassDescription notifications<a name="line.15"></a>
+<FONT color="green">016</FONT>     * EOClassDescriptionNeededForClassNotification and EOClassDescriptionNeededForEntityNameNotification. The model itself<a name="line.16"></a>
+<FONT color="green">017</FONT>     * is disconnected from these notifications. This allows the proxy to register a special sub-class of EOClassDescription<a name="line.17"></a>
+<FONT color="green">018</FONT>     * in place of the EOEntityClassDescription that an EOModel returns by default. This appears to be the only way to get<a name="line.18"></a>
+<FONT color="green">019</FONT>     * EOF to use any other sub-class as there are no public methods that could be overridden nor any delegation methods on<a name="line.19"></a>
+<FONT color="green">020</FONT>     * either EOModelGroup or EOModel. The proxy also receives the EOModelGroup notification EOModelInvalidatedNotification<a name="line.20"></a>
+<FONT color="green">021</FONT>     * so that it can retire itself with the model.<a name="line.21"></a>
+<FONT color="green">022</FONT>     * &lt;p&gt;<a name="line.22"></a>
+<FONT color="green">023</FONT>     * &lt;b&gt;Notes&lt;/b&gt;<a name="line.23"></a>
+<FONT color="green">024</FONT>     * &lt;p&gt;<a name="line.24"></a>
+<FONT color="green">025</FONT>     * &lt;p&gt;<a name="line.25"></a>
+<FONT color="green">026</FONT>     * These notifications are broadcast to all models and could be handled by a single object if there was only ever a<a name="line.26"></a>
+<FONT color="green">027</FONT>     * single model group. As this is not guaranteed, the notifications are handled on a model by model basis so that no<a name="line.27"></a>
+<FONT color="green">028</FONT>     * model "slips between the cracks".<a name="line.28"></a>
+<FONT color="green">029</FONT>     * &lt;p&gt;<a name="line.29"></a>
+<FONT color="green">030</FONT>     * &lt;p&gt;<a name="line.30"></a>
+<FONT color="green">031</FONT>     * These notifications must be handled on an on going basis as the cache of class descriptions is invalidated each time<a name="line.31"></a>
+<FONT color="green">032</FONT>     * a model is loaded (from constructor of EOModel). That is, they can not just be registered once at startup due to<a name="line.32"></a>
+<FONT color="green">033</FONT>     * repeated invalidations of the cache.<a name="line.33"></a>
+<FONT color="green">034</FONT>     * &lt;p&gt;<a name="line.34"></a>
+<FONT color="green">035</FONT>     * &lt;p&gt;<a name="line.35"></a>
+<FONT color="green">036</FONT>     * EOClassDescriptionNeededForClassNotification is sent for EO objects implemented as their own class.<a name="line.36"></a>
+<FONT color="green">037</FONT>     * EOClassDescriptionNeededForEntityNameNotification is sent for EO objects implemented as EOGenericRecord (many<a name="line.37"></a>
+<FONT color="green">038</FONT>     * entities share the same EOGenericRecord class).<a name="line.38"></a>
+<FONT color="green">039</FONT>     *<a name="line.39"></a>
+<FONT color="green">040</FONT>     * @author Copyright (c) 2001-2005 Global Village Consulting, Inc. All rights reserved. This software is published under<a name="line.40"></a>
+<FONT color="green">041</FONT>     *         the terms of the Educational Community License (ECL) version 1.0, a copy of which has been included with this<a name="line.41"></a>
+<FONT color="green">042</FONT>     *         distribution in the LICENSE.TXT file.<a name="line.42"></a>
+<FONT color="green">043</FONT>     * @version $Revision: 6$<a name="line.43"></a>
+<FONT color="green">044</FONT>     */<a name="line.44"></a>
+<FONT color="green">045</FONT>    public class EOModelNotificationProxy extends Object<a name="line.45"></a>
+<FONT color="green">046</FONT>    {<a name="line.46"></a>
+<FONT color="green">047</FONT>        /**<a name="line.47"></a>
+<FONT color="green">048</FONT>         * This is needed to prevent the proxies from being garbage collected as notifications are referenced by the notification center through "weak" references, which don't show up on the garbage collection radar.<a name="line.48"></a>
+<FONT color="green">049</FONT>         */<a name="line.49"></a>
+<FONT color="green">050</FONT>        protected static Vector allProxies = new Vector();<a name="line.50"></a>
+<FONT color="green">051</FONT>    <a name="line.51"></a>
+<FONT color="green">052</FONT>        protected EOModel model;<a name="line.52"></a>
+<FONT color="green">053</FONT>        protected NSMutableDictionary cachedDescriptionsByEntityName;<a name="line.53"></a>
+<FONT color="green">054</FONT>        protected NSMutableDictionary cachedDescriptionsByClassName;<a name="line.54"></a>
+<FONT color="green">055</FONT>    <a name="line.55"></a>
+<FONT color="green">056</FONT>    <a name="line.56"></a>
+<FONT color="green">057</FONT>        /**<a name="line.57"></a>
+<FONT color="green">058</FONT>         * This method installs the EOFValidation "hook".  It is intended that it be called before any EOModels have been loaded (this is caused by EOF activity or direct references to EOModel or EOModelGroup).  The best place to call this is in the constructor of the main class in the system.  If this is called after EOModels have been loaded, all of those models will need to be invalidated and reloaded so that their notifications can be diconnected.<a name="line.58"></a>
+<FONT color="green">059</FONT>         */<a name="line.59"></a>
+<FONT color="green">060</FONT>        public static void listenForAddedModels()<a name="line.60"></a>
+<FONT color="green">061</FONT>        {<a name="line.61"></a>
+<FONT color="green">062</FONT>            // Listen for newly loaded models so that we can grab thier notifications.<a name="line.62"></a>
+<FONT color="green">063</FONT>            NSNotificationCenter defaultCenter = NSNotificationCenter.defaultCenter();<a name="line.63"></a>
+<FONT color="green">064</FONT>            NSSelector modelAddedNotification = new NSSelector("modelAddedNotification", new Class[] {NSNotification.class});<a name="line.64"></a>
+<FONT color="green">065</FONT>            defaultCenter.addObserver(EOModelNotificationProxy.class,<a name="line.65"></a>
+<FONT color="green">066</FONT>                                      modelAddedNotification,<a name="line.66"></a>
+<FONT color="green">067</FONT>                                      EOModelGroup.ModelAddedNotification,<a name="line.67"></a>
+<FONT color="green">068</FONT>                                      null);<a name="line.68"></a>
+<FONT color="green">069</FONT>            EOClassDescription.invalidateClassDescriptionCache();<a name="line.69"></a>
+<FONT color="green">070</FONT>    <a name="line.70"></a>
+<FONT color="green">071</FONT>            if (NSLog.debugLoggingAllowedForLevel(NSLog.DebugLevelDetailed))<a name="line.71"></a>
+<FONT color="green">072</FONT>            {<a name="line.72"></a>
+<FONT color="green">073</FONT>                new NotificationSquawker(EOModelGroup.ModelAddedNotification);<a name="line.73"></a>
+<FONT color="green">074</FONT>                new NotificationSquawker(EOClassDescription.ClassDescriptionNeededForClassNotification);<a name="line.74"></a>
+<FONT color="green">075</FONT>                new NotificationSquawker(EOClassDescription.ClassDescriptionNeededForEntityNameNotification);<a name="line.75"></a>
+<FONT color="green">076</FONT>                NSLog.debug.appendln("Installed notification squawker");<a name="line.76"></a>
+<FONT color="green">077</FONT>            }<a name="line.77"></a>
+<FONT color="green">078</FONT>        }<a name="line.78"></a>
+<FONT color="green">079</FONT>    <a name="line.79"></a>
+<FONT color="green">080</FONT>    <a name="line.80"></a>
+<FONT color="green">081</FONT>    <a name="line.81"></a>
+<FONT color="green">082</FONT>        /**<a name="line.82"></a>
+<FONT color="green">083</FONT>         * This notification is sent whenever a model is loaded or re-loaded (see EOModelGroup for details).  This is handled by creating a proxy to handle the notifications that this model would normally handle.<a name="line.83"></a>
+<FONT color="green">084</FONT>         *<a name="line.84"></a>
+<FONT color="green">085</FONT>         * @param notification notification of which model was added.<a name="line.85"></a>
+<FONT color="green">086</FONT>         * @see EOModelNotificationProxy#EOModelNotificationProxy<a name="line.86"></a>
+<FONT color="green">087</FONT>         */<a name="line.87"></a>
+<FONT color="green">088</FONT>        public static void modelAddedNotification(NSNotification notification)<a name="line.88"></a>
+<FONT color="green">089</FONT>        {<a name="line.89"></a>
+<FONT color="green">090</FONT>            JassAdditions.pre("EOModelNotificationProxy", "modelAddedNotification", EOModel.class.isAssignableFrom(notification.object().getClass()));<a name="line.90"></a>
+<FONT color="green">091</FONT>    <a name="line.91"></a>
+<FONT color="green">092</FONT>            EOModel model = (EOModel)notification.object();<a name="line.92"></a>
+<FONT color="green">093</FONT>            EOModelNotificationProxy proxy = new EOModelNotificationProxy(model);<a name="line.93"></a>
+<FONT color="green">094</FONT>    <a name="line.94"></a>
+<FONT color="green">095</FONT>            NSSelector selector = new NSSelector("setupEntity", new Class[] {NSNotification.class});<a name="line.95"></a>
+<FONT color="green">096</FONT>            NSNotificationCenter.defaultCenter().addObserver(proxy, selector, EOModel.EntityLoadedNotification, null);<a name="line.96"></a>
+<FONT color="green">097</FONT>        }<a name="line.97"></a>
+<FONT color="green">098</FONT>    <a name="line.98"></a>
+<FONT color="green">099</FONT>    <a name="line.99"></a>
+<FONT color="green">100</FONT>    <a name="line.100"></a>
+<FONT color="green">101</FONT>        /**<a name="line.101"></a>
+<FONT color="green">102</FONT>         * Creates cache(s) of class descriptions to speed up processing.<a name="line.102"></a>
+<FONT color="green">103</FONT>         *<a name="line.103"></a>
+<FONT color="green">104</FONT>         * @param proxy the proxy that we are setting up the caches for<a name="line.104"></a>
+<FONT color="green">105</FONT>         */<a name="line.105"></a>
+<FONT color="green">106</FONT>        protected static void createClassDescriptionCache(EOModelNotificationProxy proxy)<a name="line.106"></a>
+<FONT color="green">107</FONT>        {<a name="line.107"></a>
+<FONT color="green">108</FONT>            /** require [valid_param] proxy != null; **/<a name="line.108"></a>
+<FONT color="green">109</FONT>    <a name="line.109"></a>
+<FONT color="green">110</FONT>            synchronized (proxy)<a name="line.110"></a>
+<FONT color="green">111</FONT>            {<a name="line.111"></a>
+<FONT color="green">112</FONT>                proxy.cachedDescriptionsByEntityName = new NSMutableDictionary();<a name="line.112"></a>
+<FONT color="green">113</FONT>                proxy.cachedDescriptionsByClassName = new NSMutableDictionary();<a name="line.113"></a>
+<FONT color="green">114</FONT>    <a name="line.114"></a>
+<FONT color="green">115</FONT>                EOEntity thisEntity;<a name="line.115"></a>
+<FONT color="green">116</FONT>                Enumeration entityEnumerator = proxy.model().entities().objectEnumerator();<a name="line.116"></a>
+<FONT color="green">117</FONT>                while (entityEnumerator.hasMoreElements())<a name="line.117"></a>
+<FONT color="green">118</FONT>                {<a name="line.118"></a>
+<FONT color="green">119</FONT>                    thisEntity = (EOEntity)entityEnumerator.nextElement();<a name="line.119"></a>
+<FONT color="green">120</FONT>                    if (thisEntity.className() != null)     // Exclude prototypes and malformed entities<a name="line.120"></a>
+<FONT color="green">121</FONT>                    {<a name="line.121"></a>
+<FONT color="green">122</FONT>                        EOClassDescription descriptionForEntity = proxy.eoEntityClassDescriptionSubClassForEntity(thisEntity);<a name="line.122"></a>
+<FONT color="green">123</FONT>    <a name="line.123"></a>
+<FONT color="green">124</FONT>                        proxy.cachedDescriptionsByEntityName.setObjectForKey(descriptionForEntity,  thisEntity.name());<a name="line.124"></a>
+<FONT color="green">125</FONT>    <a name="line.125"></a>
+<FONT color="green">126</FONT>                        // No need to cache for EOGenericRecord as they are never requested by class<a name="line.126"></a>
+<FONT color="green">127</FONT>                        if ( ! thisEntity.className().equals("EOGenericRecord"))<a name="line.127"></a>
+<FONT color="green">128</FONT>                        {<a name="line.128"></a>
+<FONT color="green">129</FONT>                            proxy.cachedDescriptionsByClassName.setObjectForKey(descriptionForEntity,  thisEntity.className());<a name="line.129"></a>
+<FONT color="green">130</FONT>                        }<a name="line.130"></a>
+<FONT color="green">131</FONT>                    }<a name="line.131"></a>
+<FONT color="green">132</FONT>                }<a name="line.132"></a>
+<FONT color="green">133</FONT>            }<a name="line.133"></a>
+<FONT color="green">134</FONT>        }<a name="line.134"></a>
+<FONT color="green">135</FONT>    <a name="line.135"></a>
+<FONT color="green">136</FONT>    <a name="line.136"></a>
+<FONT color="green">137</FONT>    <a name="line.137"></a>
+<FONT color="green">138</FONT>        /**<a name="line.138"></a>
+<FONT color="green">139</FONT>         * Creates caches of class descriptions for all proxies to speed up processing.<a name="line.139"></a>
+<FONT color="green">140</FONT>         */<a name="line.140"></a>
+<FONT color="green">141</FONT>        protected static void createClassDescriptionCaches()<a name="line.141"></a>
+<FONT color="green">142</FONT>        {<a name="line.142"></a>
+<FONT color="green">143</FONT>            /** require [all_proxies_valid] allProxies != null; **/<a name="line.143"></a>
+<FONT color="green">144</FONT>    <a name="line.144"></a>
+<FONT color="green">145</FONT>            Enumeration proxyEnumeration = allProxies.elements();<a name="line.145"></a>
+<FONT color="green">146</FONT>            while (proxyEnumeration.hasMoreElements())<a name="line.146"></a>
+<FONT color="green">147</FONT>            {<a name="line.147"></a>
+<FONT color="green">148</FONT>                EOModelNotificationProxy proxy = (EOModelNotificationProxy)proxyEnumeration.nextElement();<a name="line.148"></a>
+<FONT color="green">149</FONT>                createClassDescriptionCache(proxy);<a name="line.149"></a>
+<FONT color="green">150</FONT>            }<a name="line.150"></a>
+<FONT color="green">151</FONT>        }<a name="line.151"></a>
+<FONT color="green">152</FONT>    <a name="line.152"></a>
+<FONT color="green">153</FONT>    <a name="line.153"></a>
+<FONT color="green">154</FONT>    <a name="line.154"></a>
+<FONT color="green">155</FONT>        /**<a name="line.155"></a>
+<FONT color="green">156</FONT>         * Initializes a proxy to stand in for the model.<a name="line.156"></a>
+<FONT color="green">157</FONT>         *<a name="line.157"></a>
+<FONT color="green">158</FONT>         * @param aModel model to stand in for.<a name="line.158"></a>
+<FONT color="green">159</FONT>         */<a name="line.159"></a>
+<FONT color="green">160</FONT>        public EOModelNotificationProxy(EOModel aModel)<a name="line.160"></a>
+<FONT color="green">161</FONT>        {<a name="line.161"></a>
+<FONT color="green">162</FONT>            super();<a name="line.162"></a>
+<FONT color="green">163</FONT>            /** require [valid_param] aModel != null; **/<a name="line.163"></a>
+<FONT color="green">164</FONT>    <a name="line.164"></a>
+<FONT color="green">165</FONT>            model = aModel;<a name="line.165"></a>
+<FONT color="green">166</FONT>            NSNotificationCenter defaultCenter = NSNotificationCenter.defaultCenter();<a name="line.166"></a>
+<FONT color="green">167</FONT>            // Warning: Do not call createClassDescriptionCache() here or it bungs up the linking of models when they load (inheritance is lost!).  This is too early to call methods on EOModel<a name="line.167"></a>
+<FONT color="green">168</FONT>    <a name="line.168"></a>
+<FONT color="green">169</FONT>            // In with the new...<a name="line.169"></a>
+<FONT color="green">170</FONT>            NSSelector classDescriptionNeededForClass =<a name="line.170"></a>
+<FONT color="green">171</FONT>                new NSSelector("classDescriptionNeededForClass", new Class[] { NSNotification.class } );<a name="line.171"></a>
+<FONT color="green">172</FONT>            defaultCenter.addObserver(this,<a name="line.172"></a>
+<FONT color="green">173</FONT>                                      classDescriptionNeededForClass,<a name="line.173"></a>
+<FONT color="green">174</FONT>                                      EOClassDescription.ClassDescriptionNeededForClassNotification,<a name="line.174"></a>
+<FONT color="green">175</FONT>                                      null);<a name="line.175"></a>
+<FONT color="green">176</FONT>    <a name="line.176"></a>
+<FONT color="green">177</FONT>            NSSelector classDescriptionNeededForEntityName =<a name="line.177"></a>
+<FONT color="green">178</FONT>                new NSSelector("classDescriptionNeededForEntityName", new Class[] { NSNotification.class } );<a name="line.178"></a>
+<FONT color="green">179</FONT>            defaultCenter.addObserver(this ,<a name="line.179"></a>
+<FONT color="green">180</FONT>                                      classDescriptionNeededForEntityName,<a name="line.180"></a>
+<FONT color="green">181</FONT>                                      EOClassDescription.ClassDescriptionNeededForEntityNameNotification,<a name="line.181"></a>
+<FONT color="green">182</FONT>                                      null);<a name="line.182"></a>
+<FONT color="green">183</FONT>    <a name="line.183"></a>
+<FONT color="green">184</FONT>            // Out with old...<a name="line.184"></a>
+<FONT color="green">185</FONT>            defaultCenter.removeObserver(model(), EOClassDescription.ClassDescriptionNeededForClassNotification, null);<a name="line.185"></a>
+<FONT color="green">186</FONT>            defaultCenter.removeObserver(model(), EOClassDescription.ClassDescriptionNeededForEntityNameNotification, null);<a name="line.186"></a>
+<FONT color="green">187</FONT>    <a name="line.187"></a>
+<FONT color="green">188</FONT>            // Watch for this so we know when to kill ourself.<a name="line.188"></a>
+<FONT color="green">189</FONT>            NSSelector modelInvalidatedNotification =<a name="line.189"></a>
+<FONT color="green">190</FONT>                new NSSelector("modelInvalidatedNotification", new Class[] { NSNotification.class } );<a name="line.190"></a>
+<FONT color="green">191</FONT>            defaultCenter.addObserver(this ,<a name="line.191"></a>
+<FONT color="green">192</FONT>                                      modelInvalidatedNotification,<a name="line.192"></a>
+<FONT color="green">193</FONT>                                      EOModelGroup.ModelInvalidatedNotification,<a name="line.193"></a>
+<FONT color="green">194</FONT>                                      null);<a name="line.194"></a>
+<FONT color="green">195</FONT>    <a name="line.195"></a>
+<FONT color="green">196</FONT>            // Prevent ourself from being garbage collected!<a name="line.196"></a>
+<FONT color="green">197</FONT>            allProxies.addElement(this);<a name="line.197"></a>
+<FONT color="green">198</FONT>    <a name="line.198"></a>
+<FONT color="green">199</FONT>            /** ensure [ivar_set] model() != null; **/<a name="line.199"></a>
+<FONT color="green">200</FONT>        }<a name="line.200"></a>
+<FONT color="green">201</FONT>    <a name="line.201"></a>
+<FONT color="green">202</FONT>    <a name="line.202"></a>
+<FONT color="green">203</FONT>    <a name="line.203"></a>
+<FONT color="green">204</FONT>        /**<a name="line.204"></a>
+<FONT color="green">205</FONT>         * Called by the EntityLoadedNotification.  Sets up the entity to have the correct class description, this one.<a name="line.205"></a>
+<FONT color="green">206</FONT>         *<a name="line.206"></a>
+<FONT color="green">207</FONT>         * @param notification the notification<a name="line.207"></a>
+<FONT color="green">208</FONT>         */<a name="line.208"></a>
+<FONT color="green">209</FONT>        public void setupEntity(NSNotification notification)<a name="line.209"></a>
+<FONT color="green">210</FONT>        {<a name="line.210"></a>
+<FONT color="green">211</FONT>            EOEntity anEntity = (EOEntity)notification.object();<a name="line.211"></a>
+<FONT color="green">212</FONT>            try<a name="line.212"></a>
+<FONT color="green">213</FONT>            {<a name="line.213"></a>
+<FONT color="green">214</FONT>                //HACK: We push the class description rather rudely into the entity to have it ready when classDescriptionForNewInstances() is called on it. We will have to add a com.webobjects.eoaccess.KVCProtectedAccessor to make this work<a name="line.214"></a>
+<FONT color="green">215</FONT>                synchronized (anEntity)<a name="line.215"></a>
+<FONT color="green">216</FONT>                {<a name="line.216"></a>
+<FONT color="green">217</FONT>                    NSKeyValueCoding.Utility.takeValueForKey(anEntity, this, "classDescription");<a name="line.217"></a>
+<FONT color="green">218</FONT>                }<a name="line.218"></a>
+<FONT color="green">219</FONT>            }<a name="line.219"></a>
+<FONT color="green">220</FONT>            catch (RuntimeException ex)<a name="line.220"></a>
+<FONT color="green">221</FONT>            {<a name="line.221"></a>
+<FONT color="green">222</FONT>                //Ignore entities without class definitions<a name="line.222"></a>
+<FONT color="green">223</FONT>            }<a name="line.223"></a>
+<FONT color="green">224</FONT>        }<a name="line.224"></a>
+<FONT color="green">225</FONT>    <a name="line.225"></a>
+<FONT color="green">226</FONT>    <a name="line.226"></a>
+<FONT color="green">227</FONT>    <a name="line.227"></a>
+<FONT color="green">228</FONT>        /**<a name="line.228"></a>
+<FONT color="green">229</FONT>         * Returns a new instance of an EOEntityClassDescription sub-class initialized with this entity.  The default implementation uses EOFValidationEOEntityClassDescription.  Sub-classes can override this so that different sub-classes are used.<a name="line.229"></a>
+<FONT color="green">230</FONT>         *<a name="line.230"></a>
+<FONT color="green">231</FONT>         * @param anEntity entity to create class description for.<a name="line.231"></a>
+<FONT color="green">232</FONT>         * @return EOClassDescription class description for this entity<a name="line.232"></a>
+<FONT color="green">233</FONT>         */<a name="line.233"></a>
+<FONT color="green">234</FONT>        protected EOClassDescription eoEntityClassDescriptionSubClassForEntity(EOEntity anEntity)<a name="line.234"></a>
+<FONT color="green">235</FONT>        {<a name="line.235"></a>
+<FONT color="green">236</FONT>            return new EOFValidationEOEntityClassDescription(anEntity);<a name="line.236"></a>
+<FONT color="green">237</FONT>            /** ensure [valid_result] Result != null; **/<a name="line.237"></a>
+<FONT color="green">238</FONT>        }<a name="line.238"></a>
+<FONT color="green">239</FONT>    <a name="line.239"></a>
+<FONT color="green">240</FONT>    <a name="line.240"></a>
+<FONT color="green">241</FONT>    <a name="line.241"></a>
+<FONT color="green">242</FONT>        /**<a name="line.242"></a>
+<FONT color="green">243</FONT>         * Tries to find a class description for the named entity.<a name="line.243"></a>
+<FONT color="green">244</FONT>         *<a name="line.244"></a>
+<FONT color="green">245</FONT>         * @param entityName name of entity to lookup class description for.<a name="line.245"></a>
+<FONT color="green">246</FONT>         * @return EOEntityClassDescription class description for this entity or null if the entity is not in the model.<a name="line.246"></a>
+<FONT color="green">247</FONT>         */<a name="line.247"></a>
+<FONT color="green">248</FONT>        public synchronized EOEntityClassDescription classDescriptionForEntityNamed(String entityName)<a name="line.248"></a>
+<FONT color="green">249</FONT>        {<a name="line.249"></a>
+<FONT color="green">250</FONT>            /** require [valid_param] entityName != null; **/<a name="line.250"></a>
+<FONT color="green">251</FONT>    <a name="line.251"></a>
+<FONT color="green">252</FONT>            if (cachedDescriptionsByEntityName == null)<a name="line.252"></a>
+<FONT color="green">253</FONT>            {<a name="line.253"></a>
+<FONT color="green">254</FONT>                createClassDescriptionCaches();<a name="line.254"></a>
+<FONT color="green">255</FONT>            }<a name="line.255"></a>
+<FONT color="green">256</FONT>            return (EOEntityClassDescription)cachedDescriptionsByEntityName.objectForKey(entityName);<a name="line.256"></a>
+<FONT color="green">257</FONT>        }<a name="line.257"></a>
+<FONT color="green">258</FONT>    <a name="line.258"></a>
+<FONT color="green">259</FONT>    <a name="line.259"></a>
+<FONT color="green">260</FONT>    <a name="line.260"></a>
+<FONT color="green">261</FONT>        /**<a name="line.261"></a>
+<FONT color="green">262</FONT>         * Tries to find a class description for the named class.<a name="line.262"></a>
+<FONT color="green">263</FONT>         *<a name="line.263"></a>
+<FONT color="green">264</FONT>         * @param className name of class to lookup class description for.<a name="line.264"></a>
+<FONT color="green">265</FONT>         * @return EOEntityClassDescription class description for this class or null if an entity with this className is not in the model<a name="line.265"></a>
+<FONT color="green">266</FONT>         */<a name="line.266"></a>
+<FONT color="green">267</FONT>        public synchronized EOEntityClassDescription classDescriptionForClassNamed(String className)<a name="line.267"></a>
+<FONT color="green">268</FONT>        {<a name="line.268"></a>
+<FONT color="green">269</FONT>            /** require [valid_param] className != null; **/<a name="line.269"></a>
+<FONT color="green">270</FONT>    <a name="line.270"></a>
+<FONT color="green">271</FONT>            if (cachedDescriptionsByClassName == null)<a name="line.271"></a>
+<FONT color="green">272</FONT>            {<a name="line.272"></a>
+<FONT color="green">273</FONT>                createClassDescriptionCaches();<a name="line.273"></a>
+<FONT color="green">274</FONT>            }<a name="line.274"></a>
+<FONT color="green">275</FONT>            return (EOEntityClassDescription)cachedDescriptionsByClassName.objectForKey(className);<a name="line.275"></a>
+<FONT color="green">276</FONT>        }<a name="line.276"></a>
+<FONT color="green">277</FONT>    <a name="line.277"></a>
+<FONT color="green">278</FONT>    <a name="line.278"></a>
+<FONT color="green">279</FONT>    <a name="line.279"></a>
+<FONT color="green">280</FONT>        /**<a name="line.280"></a>
+<FONT color="green">281</FONT>         * Returns the model that we are a proxy for.<a name="line.281"></a>
+<FONT color="green">282</FONT>         *<a name="line.282"></a>
+<FONT color="green">283</FONT>         * @return EOModel model we are a proxy for.<a name="line.283"></a>
+<FONT color="green">284</FONT>         */<a name="line.284"></a>
+<FONT color="green">285</FONT>        public EOModel model()<a name="line.285"></a>
+<FONT color="green">286</FONT>        {<a name="line.286"></a>
+<FONT color="green">287</FONT>            return model;<a name="line.287"></a>
+<FONT color="green">288</FONT>        }<a name="line.288"></a>
+<FONT color="green">289</FONT>    <a name="line.289"></a>
+<FONT color="green">290</FONT>    <a name="line.290"></a>
+<FONT color="green">291</FONT>    <a name="line.291"></a>
+<FONT color="green">292</FONT>        /**<a name="line.292"></a>
+<FONT color="green">293</FONT>         * Checks the model to see if it has an entity corresponding to this class and registers a class description for it if it does.  This is the most common notification.<a name="line.293"></a>
+<FONT color="green">294</FONT>         *<a name="line.294"></a>
+<FONT color="green">295</FONT>         * @param notification notification of which class a description is needed for.<a name="line.295"></a>
+<FONT color="green">296</FONT>         */<a name="line.296"></a>
+<FONT color="green">297</FONT>        public synchronized void classDescriptionNeededForClass(NSNotification notification)<a name="line.297"></a>
+<FONT color="green">298</FONT>        {<a name="line.298"></a>
+<FONT color="green">299</FONT>            /** require [valid_param] notification != null; **/<a name="line.299"></a>
+<FONT color="green">300</FONT>    <a name="line.300"></a>
+<FONT color="green">301</FONT>            // Try and find an entity in this model implemented by the class in the notification, or implemented by a superclass of the the class in the notification.<a name="line.301"></a>
+<FONT color="green">302</FONT>            Class classFromThisModel = (Class)notification.object();<a name="line.302"></a>
+<FONT color="green">303</FONT>            EOEntityClassDescription classDescriptionFromModel = null;<a name="line.303"></a>
+<FONT color="green">304</FONT>            while (classFromThisModel != null &amp;&amp; classDescriptionFromModel == null)<a name="line.304"></a>
+<FONT color="green">305</FONT>            {<a name="line.305"></a>
+<FONT color="green">306</FONT>                classDescriptionFromModel = classDescriptionForClassNamed(classFromThisModel.getName());<a name="line.306"></a>
+<FONT color="green">307</FONT>    <a name="line.307"></a>
+<FONT color="green">308</FONT>                if (classDescriptionFromModel == null)<a name="line.308"></a>
+<FONT color="green">309</FONT>                {<a name="line.309"></a>
+<FONT color="green">310</FONT>                    classFromThisModel = classFromThisModel.getSuperclass();<a name="line.310"></a>
+<FONT color="green">311</FONT>                }<a name="line.311"></a>
+<FONT color="green">312</FONT>            }<a name="line.312"></a>
+<FONT color="green">313</FONT>    <a name="line.313"></a>
+<FONT color="green">314</FONT>            // If the model does not contain the entity (class) requested, ask for it again.<a name="line.314"></a>
+<FONT color="green">315</FONT>            // Don't ask me why this works, but it prevents the "A class description of a generic record<a name="line.315"></a>
+<FONT color="green">316</FONT>            // cannot be null" exception.  I think there is a more efficient implementation for this, but<a name="line.316"></a>
+<FONT color="green">317</FONT>            // I am too tired now to see it and this works.<a name="line.317"></a>
+<FONT color="green">318</FONT>            if (classFromThisModel != (Class)notification.object())<a name="line.318"></a>
+<FONT color="green">319</FONT>            {<a name="line.319"></a>
+<FONT color="green">320</FONT>                // Voodoo.  Bug fixed in WO 5.4.2 (or at least causes a stack overflow error)<a name="line.320"></a>
+<FONT color="green">321</FONT>                if ( ! ERXApplication.isWO54())<a name="line.321"></a>
+<FONT color="green">322</FONT>                {<a name="line.322"></a>
+<FONT color="green">323</FONT>                    EOClassDescription.classDescriptionForClass(((Class)notification.object()));<a name="line.323"></a>
+<FONT color="green">324</FONT>                }<a name="line.324"></a>
+<FONT color="green">325</FONT>            }<a name="line.325"></a>
+<FONT color="green">326</FONT>            // Otherwise we have the right description so register it.<a name="line.326"></a>
+<FONT color="green">327</FONT>            else if (classDescriptionFromModel != null)<a name="line.327"></a>
+<FONT color="green">328</FONT>            {<a name="line.328"></a>
+<FONT color="green">329</FONT>                EOClassDescription.registerClassDescription(classDescriptionFromModel, (Class)notification.object());<a name="line.329"></a>
+<FONT color="green">330</FONT>    <a name="line.330"></a>
+<FONT color="green">331</FONT>                if (NSLog.debugLoggingAllowedForLevel(NSLog.DebugLevelDetailed))<a name="line.331"></a>
+<FONT color="green">332</FONT>                {<a name="line.332"></a>
+<FONT color="green">333</FONT>                    NSLog.debug.appendln("Request for class " + notification.object() + " satisfied by model " + model().name());<a name="line.333"></a>
+<FONT color="green">334</FONT>                }<a name="line.334"></a>
+<FONT color="green">335</FONT>            }<a name="line.335"></a>
+<FONT color="green">336</FONT>        }<a name="line.336"></a>
+<FONT color="green">337</FONT>    <a name="line.337"></a>
+<FONT color="green">338</FONT>    <a name="line.338"></a>
+<FONT color="green">339</FONT>    <a name="line.339"></a>
+<FONT color="green">340</FONT>        /**<a name="line.340"></a>
+<FONT color="green">341</FONT>         * Checks the model to see if it has an entity with ths name and registers a class description for it if it does.  This notification is used with entities implemented as EOGenericRecords.<a name="line.341"></a>
+<FONT color="green">342</FONT>         *<a name="line.342"></a>
+<FONT color="green">343</FONT>         * @param notification notification of which entity a description is needed for.<a name="line.343"></a>
+<FONT color="green">344</FONT>         * @exception ClassNotFoundException if the className for the entity can not be resolved into a class<a name="line.344"></a>
+<FONT color="green">345</FONT>         */<a name="line.345"></a>
+<FONT color="green">346</FONT>        public synchronized void classDescriptionNeededForEntityName(NSNotification notification) throws ClassNotFoundException<a name="line.346"></a>
+<FONT color="green">347</FONT>        {<a name="line.347"></a>
+<FONT color="green">348</FONT>            /** require [valid_param] notification != null; **/<a name="line.348"></a>
+<FONT color="green">349</FONT>    <a name="line.349"></a>
+<FONT color="green">350</FONT>            String entityName = (String)notification.object();<a name="line.350"></a>
+<FONT color="green">351</FONT>            EOEntityClassDescription classDescription = classDescriptionForEntityNamed(entityName);<a name="line.351"></a>
+<FONT color="green">352</FONT>            if (classDescription != null)<a name="line.352"></a>
+<FONT color="green">353</FONT>            {<a name="line.353"></a>
+<FONT color="green">354</FONT>                Class entityClass = Class.forName(classDescription.entity().className());<a name="line.354"></a>
+<FONT color="green">355</FONT>                EOClassDescription.registerClassDescription(classDescription, entityClass);<a name="line.355"></a>
+<FONT color="green">356</FONT>                /** check [class_description_registered] EOClassDescription.classDescriptionForEntityName(entityName) == classDescription; **/<a name="line.356"></a>
+<FONT color="green">357</FONT>    <a name="line.357"></a>
+<FONT color="green">358</FONT>                if (NSLog.debugLoggingAllowedForLevel(NSLog.DebugLevelDetailed))<a name="line.358"></a>
+<FONT color="green">359</FONT>                {<a name="line.359"></a>
+<FONT color="green">360</FONT>                    NSLog.debug.appendln("Request for entity " + notification.object() + " satisfied by model " + model().name());<a name="line.360"></a>
+<FONT color="green">361</FONT>                }<a name="line.361"></a>
+<FONT color="green">362</FONT>            }<a name="line.362"></a>
+<FONT color="green">363</FONT>        }<a name="line.363"></a>
+<FONT color="green">364</FONT>    <a name="line.364"></a>
+<FONT color="green">365</FONT>    <a name="line.365"></a>
+<FONT color="green">366</FONT>    <a name="line.366"></a>
+<FONT color="green">367</FONT>        /**<a name="line.367"></a>
+<FONT color="green">368</FONT>         * This notification indicates that this proxy is no longer needed and can be destroyed.<a name="line.368"></a>
+<FONT color="green">369</FONT>         *<a name="line.369"></a>
+<FONT color="green">370</FONT>         * @param notification notification of which model is being invalidated.<a name="line.370"></a>
+<FONT color="green">371</FONT>         */<a name="line.371"></a>
+<FONT color="green">372</FONT>        public void modelInvalidatedNotification(NSNotification notification)<a name="line.372"></a>
+<FONT color="green">373</FONT>        {<a name="line.373"></a>
+<FONT color="green">374</FONT>            if (model().equals(notification.object()))<a name="line.374"></a>
+<FONT color="green">375</FONT>            {<a name="line.375"></a>
+<FONT color="green">376</FONT>                if (NSLog.debugLoggingAllowedForLevel(NSLog.DebugLevelInformational))<a name="line.376"></a>
+<FONT color="green">377</FONT>                    NSLog.debug.appendln("GVCEOFValidation unhooking model " + ((EOModel)notification.object()).name());<a name="line.377"></a>
+<FONT color="green">378</FONT>                destroyProxy();<a name="line.378"></a>
+<FONT color="green">379</FONT>            }<a name="line.379"></a>
+<FONT color="green">380</FONT>        }<a name="line.380"></a>
+<FONT color="green">381</FONT>    <a name="line.381"></a>
+<FONT color="green">382</FONT>    <a name="line.382"></a>
+<FONT color="green">383</FONT>    <a name="line.383"></a>
+<FONT color="green">384</FONT>        /**<a name="line.384"></a>
+<FONT color="green">385</FONT>         * This method removes the proxy as an observer of events and releases any internal resources.<a name="line.385"></a>
+<FONT color="green">386</FONT>         */<a name="line.386"></a>
+<FONT color="green">387</FONT>        protected synchronized void destroyProxy()<a name="line.387"></a>
+<FONT color="green">388</FONT>        {<a name="line.388"></a>
+<FONT color="green">389</FONT>            NSNotificationCenter defaultCenter = NSNotificationCenter.defaultCenter();<a name="line.389"></a>
+<FONT color="green">390</FONT>            defaultCenter.removeObserver(this);<a name="line.390"></a>
+<FONT color="green">391</FONT>            model = null;<a name="line.391"></a>
+<FONT color="green">392</FONT>    <a name="line.392"></a>
+<FONT color="green">393</FONT>            if (cachedDescriptionsByEntityName != null)<a name="line.393"></a>
+<FONT color="green">394</FONT>            {<a name="line.394"></a>
+<FONT color="green">395</FONT>                cachedDescriptionsByEntityName.removeAllObjects();<a name="line.395"></a>
+<FONT color="green">396</FONT>                cachedDescriptionsByEntityName = null;<a name="line.396"></a>
+<FONT color="green">397</FONT>            }<a name="line.397"></a>
+<FONT color="green">398</FONT>    <a name="line.398"></a>
+<FONT color="green">399</FONT>            if (cachedDescriptionsByClassName != null)<a name="line.399"></a>
+<FONT color="green">400</FONT>            {<a name="line.400"></a>
+<FONT color="green">401</FONT>                cachedDescriptionsByClassName.removeAllObjects();<a name="line.401"></a>
+<FONT color="green">402</FONT>                cachedDescriptionsByClassName = null;<a name="line.402"></a>
+<FONT color="green">403</FONT>            }<a name="line.403"></a>
+<FONT color="green">404</FONT>    <a name="line.404"></a>
+<FONT color="green">405</FONT>            // Release ourself unto the garbage collector.<a name="line.405"></a>
+<FONT color="green">406</FONT>            allProxies.removeElement(this);<a name="line.406"></a>
+<FONT color="green">407</FONT>    <a name="line.407"></a>
+<FONT color="green">408</FONT>            /** ensure<a name="line.408"></a>
+<FONT color="green">409</FONT>            [model_reference_destroyed] model == null;<a name="line.409"></a>
+<FONT color="green">410</FONT>            [class_cache_destroyed] cachedDescriptionsByClassName == null;<a name="line.410"></a>
+<FONT color="green">411</FONT>            [entity_cache_destroyed] cachedDescriptionsByEntityName == null; **/<a name="line.411"></a>
+<FONT color="green">412</FONT>        }<a name="line.412"></a>
+<FONT color="green">413</FONT>    <a name="line.413"></a>
+<FONT color="green">414</FONT>    <a name="line.414"></a>
+<FONT color="green">415</FONT>    <a name="line.415"></a>
+<FONT color="green">416</FONT>    }<a name="line.416"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

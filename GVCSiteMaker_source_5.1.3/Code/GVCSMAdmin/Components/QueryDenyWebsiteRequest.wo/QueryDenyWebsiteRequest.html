@@ -1,0 +1,48 @@
+<webobject name=DynamicBodyComponent><WEBOBJECT NAME=QueryDenyForm><!-- cell padding removed except around HR -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="content">
+			<tr>
+				<td style="padding-left: 2px;">
+					<h1><WEBOBJECT NAME=PageTitleString></WEBOBJECT></h1>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="right" style="padding-right: 2px;"> <WEBOBJECT NAME=CancelButton></WEBOBJECT> <WEBOBJECT NAME=SendButton></WEBOBJECT> </td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="2" width="100%">
+						<tr>
+							<td>
+								<hr class="primaryBarStyle"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+		<table width="90%" border="0" cellspacing="4" cellpadding="4" class="contentTable">
+			<tr>
+				<td align="left" valign="top"><b>To:</b><br/>
+					<i class="requiredText">(required)</i> </td>
+				<td align="left" valign="top"><WEBOBJECT NAME=ToAddressesText></WEBOBJECT> </td>
+			</tr>
+			<WEBOBJECT NAME=InvalidToAddressesConditional><tr>
+				<td align="left" valign="top">&nbsp;</td>
+				<td align="left" valign="top"><span class="warningText"><WEBOBJECT NAME=ToAddressesErrorMessageString></WEBOBJECT></span></td>
+			</tr>
+			</WEBOBJECT><tr>
+				<td align="left" valign="top"><b>Subject:</b> <br/>
+					<i class="requiredText">(required)</i> </td>
+				<td align="left" valign="top"><WEBOBJECT NAME=SubjectTextField></WEBOBJECT> </td>
+			</tr>
+			<WEBOBJECT NAME=SubjectErrorMessageConditional><tr>
+				<td align="left" valign="top">&nbsp;</td>
+				<td align="left" valign="top"><span class="warningText"><WEBOBJECT NAME=SubjectErrorMessageString></WEBOBJECT></span></td>
+			</tr>
+			</WEBOBJECT><tr>
+				<td align="left" valign="top"><b>Message:</b> </td>
+				<td align="left" valign="top"><WEBOBJECT NAME=MessageText></WEBOBJECT> </td>
+			</tr>
+		</table></WEBOBJECT></webobject>

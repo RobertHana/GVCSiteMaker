@@ -1,0 +1,25 @@
+{
+    attributes = (
+        {
+            columnName = data_attribute; 
+            name = dataAttribute; 
+            prototypeName = Data; 
+            width = 12; 
+        }, 
+        {
+            columnName = subclass_data; 
+            name = subClassData; 
+            prototypeName = String; 
+            width = 10; 
+        }, 
+        {name = theDecimalPK; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (dataAttribute, theDecimalPK, subClassData); 
+    className = net.global_village.gvctesteomodelsubclass.DecimalPKSubclass; 
+    classProperties = (dataAttribute, theDecimalPK, subClassData); 
+    externalName = DECIMAL_PK_SUBCLASS; 
+    fetchSpecificationDictionary = {}; 
+    name = DecimalPKSubclass; 
+    parent = EntityWithDecimalPK; 
+    primaryKeyAttributes = (theDecimalPK); 
+}

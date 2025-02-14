@@ -1,0 +1,41 @@
+AccessGroupCheckBox: WOCheckBox {
+	checked = isGroupSelected;
+	onChange=onChangeScript;
+}
+AccessGroupsRadioButton: WORadioButton {
+	name = name;
+	selection = selectedButton;
+	value = "Internal";
+}
+
+Conditional1: WOConditional {
+	condition = true;
+}
+GroupNameString: WOString {
+	value = aGroup.name;
+}
+
+GroupsTable: WOTable {
+	item = aGroup;
+	list = allAccessGroups;
+	maxColumns = 2;
+	cellVAlign = "top";
+}
+
+MainLabelString: WOString {
+	value = mainLabel;
+}
+NoneRadioButton: WORadioButton {
+	name = name;
+	selection = selectedButton;
+	value = "None";
+}
+PublicAccessRadioButton: WORadioButton {
+	name = name;
+	selection = selectedButton;
+	value = "Public";
+}
+
+SubLabelString: WOString {
+	value = labelDescription;
+}

@@ -1,0 +1,116 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject Name = "EmailForm">
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" width = "100%">
+      <tr>
+        <td colspan = "2" style = "padding-left: 2px;">
+          <h2>Email Link to File</h2>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Manage Files" border = "0" style = "position:relative; top:3px;" />
+            Back to Manage Files</webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject Name = "CancelButton" />
+          <webobject Name = "SendEmailButton" />
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellspacing = "2" cellpadding = "2" class = "content">
+      <tr valign = "top">
+        <td align = "left" width = "80" class = "boldText">
+          Mail To: 
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td>
+
+          <table border = "0" cellspacing = "2" cellpadding = "0">
+            <tr valign = "top">
+              <td align = "left">
+                <webobject name = "AccessGroupRepetition">
+                  <webobject name = "AccessGroupSelectedCheckBox" />
+                  <webobject name = "AccessGroupNameString" />
+                  <br />
+                </webobject>
+              </td>
+            </tr>
+
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr valign = "top">
+              <td>Other recipients:<br />
+                <webobject name = "ToAddressesTextArea" />
+                <br />
+                <span class = "descriptiveText">Enter Email addresses</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">&nbsp;</td>
+      </tr>
+      <tr valign = "top">
+        <td align = "left" width = "80" class = "boldText"> Subject: </td>
+        <td align = "left"><webobject Name = "Subject" /></td>
+      </tr>
+      <tr>
+        <td colspan = "2">&nbsp;</td>
+      </tr>
+      <tr valign = "top">
+        <td align = "left" width = "80" class = "boldText">
+          Automated<br />
+          Message: 
+        </td>
+        <td> <webobject Name = "Message" /> </td>
+      </tr>
+      <tr>
+        <td colspan = "2">&nbsp;</td>
+      </tr>
+      <tr valign = "top">
+        <td width = "80" align = "left">
+          <span class = "boldText">
+            Additional<br />
+            Message: 
+          </span>
+        </td>
+        <td> <webobject Name = "AdditionalMessage" /> </td>
+      </tr>
+      <webobject Name = "IsFileNotPublic">
+        <tr valign = "top">
+          <td width = "80" align = "left" class = "warningText">
+            PLEASE<br />
+            NOTE: 
+          </td>
+          <td class = "warningText">
+            The URL contained in the automated message you are about to send (see 
+            above) contains coded information that will allow access to the file 
+            "<webobject Name = "UploadedFileName" />" by anyone who uses 
+            it, until
+            <webobject Name = "ExpirationDate" />, regardless of Access 
+            Group restrictions.
+          </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+  <!-- end of form... -->
+</webobject>

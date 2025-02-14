@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>QuickTime Movie</title>
+    <usesIFrame>false</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>               
+    <parameterInstructions>The settings below apply to the QuickTime movie, not to the pane containing it.</parameterInstructions>
+	<parameter>
+		<name>width</name>
+		<uiName>Width</uiName>
+		<type>string</type>
+		<isRequired>true</isRequired>
+	</parameter>
+	<parameter>
+		<name>height</name>
+		<uiName>Height</uiName>
+		<type>string</type>
+		<isRequired>true</isRequired>
+	</parameter>
+	<parameter>
+		<name>autoplay</name>
+		<uiName>Auto Play</uiName>
+		<type>boolean</type>
+	</parameter>
+	<parameter>
+		<name>controller</name>
+		<uiName>Controller</uiName>
+		<type>boolean</type>
+	</parameter>	
+    <template><![CDATA[
+<object width="<webobject name=width></webobject>" height="<webobject name=height></webobject>" 
+  classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+  codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+  <param name="src" value="<webobject name=SourceURL></webobject>">
+  <param name="controller" value="<webobject name=controller></webobject>">
+  <param name="autoplay" value="<webobject name=autoplay></webobject>">
+  <embed src="<webobject name=SourceURL></webobject>" width="<webobject name=width></webobject>" height="<webobject name=height></webobject>"  
+    autoplay="<webobject name=autoplay></webobject>" controller="<webobject name=controller></webobject>" 
+    pluginspage="http://www.apple.com/quicktime/download/">
+  </embed>
+</object>
+    ]]></template>	
+</mediaComponent>
+

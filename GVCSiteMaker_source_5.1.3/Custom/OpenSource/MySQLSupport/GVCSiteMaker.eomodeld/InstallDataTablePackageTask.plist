@@ -1,0 +1,131 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "CREATED_DATE"; 
+            name = createdDate; 
+            prototypeName = dateTime; 
+        }, 
+        {columnName = DETAILS; name = details; prototypeName = longString; }, 
+        {
+            columnName = "FAILURE_REASON"; 
+            name = failureReason; 
+            prototypeName = longString; 
+            width = 1999; 
+        }, 
+        {
+            columnName = "RELATED_SITE_FILE_ID"; 
+            name = relatedSiteFileId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "RELATED_TABLE_ID"; 
+            name = relatedTableId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STATUS_ID"; 
+            externalType = INTEGER; 
+            name = statusId; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_ID"; 
+            externalType = INTEGER; 
+            name = taskId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TASK_TYPE"; 
+            name = taskType; 
+            prototypeName = longString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userId; 
+            prototypeName = dbKey; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        taskId, 
+        statusId, 
+        userId, 
+        taskType, 
+        details, 
+        failureReason, 
+        relatedSiteFileId, 
+        bindings, 
+        relatedTableId
+    ); 
+    className = "com.gvcsitemaker.core.InstallDataTablePackageTask"; 
+    classProperties = (
+        status, 
+        owner, 
+        taskType, 
+        details, 
+        failureReason, 
+        createdDate, 
+        relatedSiteFile, 
+        bindings, 
+        sections, 
+        relatedTable
+    ); 
+    externalName = TASK; 
+    fetchSpecificationDictionary = {}; 
+    name = InstallDataTablePackageTask; 
+    parent = Task; 
+    primaryKeyAttributes = (taskId); 
+    relationships = (
+        {
+            destination = User; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userPKey; sourceAttribute = userId; }); 
+            name = owner; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = SiteFile; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filePKey; sourceAttribute = relatedSiteFileId; }); 
+            name = relatedSiteFile; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Table; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tableID; sourceAttribute = relatedTableId; }); 
+            name = relatedTable; 
+        }, 
+        {
+            definition = "taskSections.section"; 
+            deleteRule = EODeleteRuleNoAction; 
+            joinSemantic = EOInnerJoin; 
+            name = sections; 
+        }, 
+        {
+            destination = TaskStatus; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = statusId; }); 
+            name = status; 
+        }, 
+        {
+            destination = TaskSection; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = taskId; sourceAttribute = taskId; }); 
+            name = taskSections; 
+        }
+    ); 
+    restrictingQualifier = "(taskType = 'InstallDataTablePackage')"; 
+}

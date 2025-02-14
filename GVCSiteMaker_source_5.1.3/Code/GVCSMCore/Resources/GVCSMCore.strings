@@ -1,0 +1,3 @@
+{
+    VirtualUserColumn.value.noSuchUser = "User <<failedValue>> for column <<object.name>>, does not exist.";
+}

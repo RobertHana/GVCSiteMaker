@@ -1,0 +1,14 @@
+Form1: WOForm {
+}
+
+IAmFineString: WOString {
+	value = @localize.iAmFine;
+}
+
+PageSpecificString: WOString {
+	value = @localize.pageSpecificString;
+}
+
+TestTextField: WOTextField {
+	value = testChildField;
+}

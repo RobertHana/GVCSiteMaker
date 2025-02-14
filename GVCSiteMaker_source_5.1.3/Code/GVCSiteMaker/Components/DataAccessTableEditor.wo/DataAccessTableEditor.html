@@ -1,0 +1,63 @@
+<webobject name = "HasDatabaseTablesConditional">
+  <webobject name = "SelectTableForm">
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" width = "100%">
+      <tr>
+        <td colspan = "2" valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "SelectTableButton" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2"> <hr class = "primaryBarStyle" /> </td>
+      </tr>
+      <tr>
+        <td valign = "top" colspan = "2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left">
+          <b>Select Data Access Table:</b>
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td>
+          <webobject name = "PopUpButton1" />
+          <webobject name = "HasErrorMessageConditional">
+            <div class = "warningText"><webobject name = "ErrorMessageString" /></div>
+          </webobject>
+          <p class = "descriptiveText">Specify a Database Table to access using this section.<br />The list shows all Database Tables in this site.</p>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" colspan = "2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan = "2"> <hr class = "primaryBarStyle" /> </td>
+      </tr>
+    </table>
+  </webobject>
+</webobject>
+
+
+<webobject name = "HasNoDatabaseTablesConditional">
+  <table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+    <tr>
+      <td> <hr class = "primaryBarStyle" /> </td>
+    </tr>
+    <tr>
+      <td valign = "top" colspan = "2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "left">
+        <p class = "warningText">You must create a Database Table before creating a Data Access section for it.</p>
+        <br />
+        Click <webobject name = "AddTableHyperlink">here</webobject> to create a new Database Table. 
+      </td>
+    </tr>
+    <tr>
+      <td valign = "top" colspan = "2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan = "2"> <hr class = "primaryBarStyle" /> </td>
+    </tr>
+  </table>
+</webobject>

@@ -1,0 +1,113 @@
+{
+    attributes = (
+        {columnName = BINDINGS; name = bindings; prototypeName = largeText; }, 
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_ID"; 
+            name = componentId; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "COMPONENT_TYPE"; 
+            name = componentType; 
+            prototypeName = longString; 
+        }, 
+        {columnName = "DATE_MODIFIED"; name = dateModified; prototypeName = dateTime; }, 
+        {
+            columnName = "EMBED_SECTION_FKEY"; 
+            name = embeddedSectionFkey; 
+            prototypeName = dbKey; 
+        }, 
+        {
+            columnName = "EMBED_WEBSITE_FKEY"; 
+            name = embeddedWebsiteFkey; 
+            prototypeName = dbKey; 
+        }, 
+        {columnName = "PARENT_ID"; name = parentId; prototypeName = dbKey; }, 
+        {columnName = "RELATED_FILE_ID"; name = relatedFileId; prototypeName = dbKey; }, 
+        {columnName = "SUB_TYPE"; name = subType; prototypeName = shortString; }, 
+        {columnName = "TEMPLATE_OID"; name = templateOID; prototypeName = dbKey; }
+    ); 
+    attributesUsedForLocking = (
+        parentId, 
+        bindings, 
+        componentId, 
+        componentType, 
+        relatedFileId, 
+        subType, 
+        templateOID
+    ); 
+    className = "com.gvcsitemaker.core.pagecomponent.DataAccessDisplayMode"; 
+    classProperties = (
+        bindings, 
+        componentType, 
+        toRelatedFile, 
+        toChildren, 
+        toParent, 
+        dateModified, 
+        sections, 
+        componentId, 
+        relatedFileId, 
+        subType, 
+        customTemplate, 
+        versions
+    ); 
+    externalName = "SM_PAGE_COMP"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = DataAccessDisplayMode; 
+    parent = DataAccessMode; 
+    primaryKeyAttributes = (componentId); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = DataAccessModeTemplate; 
+            internalInfo = {"_nameInObjectStore" = template; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = templateOID; }); 
+            name = customTemplate; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Section; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = componentId; }); 
+            name = sections; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PageComponent; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentId; sourceAttribute = componentId; }); 
+            name = toChildren; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = PageComponent; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = componentId; sourceAttribute = parentId; }); 
+            name = toParent; 
+        }, 
+        {
+            destination = SiteFile; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = filePKey; sourceAttribute = relatedFileId; }); 
+            name = toRelatedFile; 
+        }, 
+        {
+            destination = SectionVersion; 
+            internalInfo = {"_nameInObjectStore" = sectionVersions; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidComponent; sourceAttribute = componentId; }); 
+            name = versions; 
+        }
+    ); 
+    restrictingQualifier = "(componentType = 'DataAccessDisplayMode')"; 
+}

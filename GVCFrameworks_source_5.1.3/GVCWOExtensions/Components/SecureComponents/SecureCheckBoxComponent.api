@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="SecureCheckBoxComponent" wocomponentcontent="NO">
+
+		<binding name="isPermissable"/>
+		<binding name="name"/>
+		<binding name="cssClassName"/>
+		<binding name="isChecked"/>
+
+		<validation message="&apos;isPermissable&apos; is a required binding">
+			<unbound name="isPermissable"/>
+		</validation>
+
+		<validation message="&apos;isChecked&apos; is a required binding">
+			<unbound name="isChecked"/>
+		</validation>
+	</wo>
+</wodefinitions>

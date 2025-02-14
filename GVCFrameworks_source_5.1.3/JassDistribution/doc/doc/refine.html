@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Documentation
+ / Refinement - Overview
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Documentation</h2>
+	  <h3 class="top">Refinement - Overview</h3>
+	
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+    <a href="../tour/index.html" target="_top">Tour</a>
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">Notion and motivation</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">Refinement</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">Refinement in Jass</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">Refinement in Eiffel</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Doc-Navigation</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              <table border="0">
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/index.html" target="_top">
+Overview</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/intro.html" target="_top">
+Introduction to Design by Contract</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+    Refinement - Overview<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/javadoc.html" target="_top">
+JavaDoc Support</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/handbook.html" target="_top">
+Jass Handbook</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/bib.html" target="_top">
+Bibliography</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/grammar.html" target="_top">
+Grammar of Jass</a>
+<br />
+  </td></tr>
+  <tr><td class="tocf">-</td>
+  <td class="toc">
+  <a href="../doc/buffer.html" target="_top">
+Buffer Example</a>
+<br />
+  </td></tr>
+</table>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+  prev: 
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+    next: 
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+  <hr size="1" noshade/>
+</div>
+  <h1><a name="refinement1"></a>
+  <a name="sect1">
+  1 Notion and motivation</a></h1>
+<p>With 'design by contract' a formal specification of a class can be
+expressed and checked at runtime. Finding a simple and abstract
+specification and cover all details of the implementation are contrary
+goals. A possible solution is to refine an abstract class step by
+step. Each <em>refinement</em> in this process reduces non determinism
+and makes the class more applicable. Technically such a refinement
+step may be done through inheritance.
+</p>
+<p> But what is the difference between refinement and inheritance?
+Refinement in Jass is a special form of inheritance with certain
+constraints introduced in the second section.
+</p>
+<p> 
+  
+
+<a name="idx1"><em></em></a>
+Java has certain constrains for inheritance. For example if a subclass
+overrides a method of the superclass the new defined method </p>
+<ol>
+<li>must be as accessible as the old method,</li>
+<li>must have the same return type and</li>
+<li>must declare the same formal parameters.</li>
+</ol>
+<p> Methods in the superclass are called <em>abstract</em> (This does
+not mean methods with abstract modifier!), in the subclass they are
+called concrete. The constrains guaranties that a subclass can appear
+where the superclass is expected. This property is very typically for
+object oriented programming. An assignment of the form
+</p>
+<p> <code>
+&nbsp;T x = E;
+</code>
+</p>
+<p> is for example type-correct if the type of the expression E is a
+subclass of the type T.
+</p>
+<p> For design by contract, the constrains given through the Java
+language specification for inheritance are not enough. A subclass must
+maintain the contract (or the specification) of the superclass. The
+next part describes how this can be guarantied.
+</p>
+  <h1><a name="refinement2"></a>
+  <a name="sect2">
+  2 Refinement</a></h1>
+<p>A subclass refines his superclass if for all overwritten methods hold:</p>
+<ol>
+<li>If the abstract method is applicable the concrete one can be invoked too.</li>
+<li>The concrete method is more deterministic then the abstract one.</li>
+<li>Whenever the invariant of the subclass holds the invariant of the superclass must be valid too.</li>
+</ol>
+<p> With other words: The precondition of the concrete method must be
+<em>weaker</em> than the precondition of the abstract method. This
+means a state that satisfies the abstract precondition must satisfies
+the concrete precondition too. On the other hand the postcondition of
+the concrete method must be <em>stronger</em> than the postcondition
+of the abstract method. This means (if the abstract method is
+applicable) the concrete method will only return in a state that
+satisfies the abstract postcondition too.
+</p>
+<p> Refinement does not only cover pre- and postconditions. The
+invariant must be considered too. The subclass should own a <em>no
+surprise requirement</em> (Wing). A state that holds for the invariant
+of the subclass must hold for the invariant of the superclass too.
+</p>
+<p> A subclass that is a refinement of his superclass can appear where
+the superclass is expected. The subclass maintains the contract of the
+superclass and perhaps makes it better.
+</p>
+<p> 
+  
+
+<a name="idx2"><em></em></a> Let us consider an
+example. The following (abstract) method adds an element in a limited
+buffer. The method can be invoked if the buffer is not full and the
+parameter <em>o</em> is not the null reference. After execution the
+counter <em>in</em> has been incremented.
+</p>
+<pre>
+public void addElement (Object o) {
+  /** require !isFull(); o != null; **/
+  buffer[in % buffer.length] = o;
+  in++;
+  /** ensure changeonly{in,buffer}; Old.in == in - 1; **/
+}
+</pre>
+<p> The concrete version of the buffer perhaps deals with null references. If the parameter is null the method generates a default element and adds it.
+</p>
+<pre>
+public void addElement (Object o) {
+  /** require !isFull(); **/
+  if (o==null) 
+    buffer[in % buffer.length] = new Default();
+  else 
+    buffer[in % buffer.length] = o;
+  in++;
+  /** ensure changeonly{in,buffer}; 
+             Old.in == in - 1; 
+             o!=null ? contains(o) : true; 
+   **/
+}
+</pre>
+<p> The concrete precondition is weaker than the abstract one. With
+other words: The abstract precondition <em>implies</em> the concrete
+precondition. The new postcondition is stronger than the old one. It
+guaranties that the element that should be inserted is contained after
+the execution of the method. Of course we have expected this, but it
+was not formally specified in the first example.
+</p>
+<p> A subclass inherits non private fields from the superclass. These
+fields can be overwritten through the subclass (Of course this is not
+a good technique!). Private fields are not inherited. In this context
+a problem arises: The subclass can have a different <em>state
+space</em> than the superclass. If we want to proof if a precondition
+of the subclass is weaker than a precondition of the superclass we
+need the values of all involved fields. But given a subclass we do not
+know the values of the superclass in generally (Remember the private
+fields.).
+</p>
+<p> The solution can be found in refinement theory. We can use an
+abstraction function that maps a concrete state of the subclass on a
+abstract state of the superclass. This is also know as <em>backwards
+simulation</em>.
+</p>
+<p> The next part explains how refinement and the abstraction function
+is realized in Jass.</p>
+  <h1><a name="refinement3"></a>
+  <a name="sect3">
+  3 Refinement in Jass</a></h1>
+<p>
+<a name="idx3"><em></em></a>
+<a name="idx4"><em></em></a>
+<a name="idx5"><em></em></a>
+<a name="idx6"><em></em></a>
+An important design decision was the question if the programmer must
+use refinement if he subclasses a class or if he can drop this
+concept. We have implemented the second possibility. The programmer
+can use refinement but he must not. Refinement requires a
+theoretically background and the search of an abstraction function is
+not easy. But Jass should be easy to use and improve correctness with
+minimal exertion.
+</p>
+<p> If the programmer wants a subclassing to be a refinement he must
+implement the interface
+<code><strong>jass.runtime.refinement</strong></code> (Which contains
+no methods.). This signals the precompiler to add extra refinement
+checks in the resulting Java code. The checks for the pre- and
+postconditions and invariant are done by runtime. For example the
+precompiler adds a check of the form
+</p>
+<p> <code>
+&nbsp;pre_a &amp;&amp; !pre_c
+</code>
+</p>
+<p> at the beginning of the method. This is equivalent to: <em>The
+abstract precondition does not imply the concrete precondition</em>.
+</p>
+<p> If this check is a success (This is not a success for the
+programmer!) a
+<code><strong>jass.runtime.RefinementException</strong></code> is
+thrown. This is a new type of an error in design by contract. Until
+this point we have had a <em>server fault</em> if the postcondition
+does not hold and a <em>client fault</em> if the precondition does not
+hold. The refinement fault covers the relationship between subclass
+and superclass. It is a <em>design fault</em>.
+</p>
+<p> The programmer must implement the abstraction function in form of
+a method <code><strong>jassGetSuperState</strong></code> which must
+return a reference of the type of the superclass. The returned
+instance must be in an abstract state that is mapped from the concrete
+state through the abstraction function.
+</p>
+<p> For example if the abstraction function is the identity the method
+will look like this:<br>
+</p>
+<pre>
+private theAbstractClass jassGetSuperState() {
+  return (theAbstractClass)this;
+}
+</pre>
+<p> The abstraction function is the identity if all fields are visible
+in the subclass and if they maintain their semantics.
+</p>
+<p> 
+  
+
+<a name="idx7"><em></em></a> 
+
+A more complex example is the <code>UnlimitedBuffer</code> in the
+examples package of the Jass precompiler. The
+<code>UnlimitedBuffer</code> is a subclass of the <code>Buffer</code>
+class that can contain an unlimited amount (theoretically) of
+elements. The data-structure of the subclass is not longer an
+array. The buffer is implemented through a
+<code>java.util.Vector</code>. You can view the complete code   <a href="../doc/buffer.html" target="_top">here</a>.
+</p>
+<pre>
+private Buffer jassGetSuperState() {
+    Buffer b = new Buffer(v.size()+1);
+    b.in = v.size();
+    b.out = 0;
+    for (int i = 0; i &lt; b.buffer.length-1; i++)
+        b.buffer[i] = v.elementAt(i);
+    return b;
+}
+</pre>
+<p> This method constructs a abstract buffer that represents the
+current state of the new one. This would be a buffer that can pick up
+one more element at every moment (It is unlimited somehow.).
+</p>
+<p> Remember if you want an inheritance to be an refinement:
+</p>
+<ol>
+<li>Add <code>jass.runtime.Refinement</code> to the interfaces of the
+  class.</li>
+<li>Implement the function <code>jassGetSuperState</code>. Perhaps you
+  can use the identity.</li>
+</ol>
+<p> Jass then generates code for refinement checks like code for the
+other assertions.</p>
+  <h1><a name="refinement4"></a>
+  <a name="sect4">
+  4 Refinement in Eiffel</a></h1>
+<p> 
+  
+
+<a name="idx8"><em></em></a>
+If a programmer uses inheritance in Eiffel he must add the
+precondition of the superclass to the precondition of the subclass
+with a logical <em>OR</em>. The postcondition of the superclass must
+be added to the postcondition of the subclass with a logical
+<em>AND</em>. Of course this will weaken the precondition and
+strengthen the postcondition automatically. An abstraction function
+can not be used, thus the state spaces are always identically.
+</p>
+<div class="toc">
+  <hr size="1" noshade/>
+  prev: 
+  <a href="../doc/assert.html" target="_top">
+Assertions</a>
+    next: 
+  <a href="../doc/traces.html" target="_top">
+Trace-Assertions</a>
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            columnName = "ENTITY_NAME_RESTRICTOR"; 
+            name = entityNameRestrictor; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {columnName = name; name = name; prototypeName = String; width = 50; }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEXT_DESCRIPTION"; 
+            name = textDescription; 
+            prototypeName = String; 
+            width = 1999; 
+        }, 
+        {columnName = "the_id"; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (name, theID, textDescription, entityNameRestrictor); 
+    cachesObjects = Y; 
+    className = "net.global_village.virtualtables.ColumnType"; 
+    classProperties = (name, textDescription, entityNameRestrictor, localizations); 
+    externalName = "COLUMN_TYPE"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 10; 
+    name = ColumnType; 
+    parent = GVCLookup; 
+    primaryKeyAttributes = (theID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = GVCLookupLocalization; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupID; sourceAttribute = theID; }); 
+            name = localizations; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,122 @@
+<webobject name = "DynamicBody">
+  <webobject name = "CurrentSiteInfoComponent"/>
+
+  <webobject name = "SectionForm">
+    <webobject name = "ShowCopyConditional">
+      <br />
+      <div class = "warningText" style = "text-align: center;">You do not have permission to edit the current version of this section.<br />To create a copy of the current version as a new version, click 
+        <webobject name = "CreateNewVersionHyperlink">here</webobject>.</div>
+    </webobject>
+
+
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;" colspan = "2">
+          <h2>Manage Versions: <span class = "coloredText"><webobject name = "SectionString" /></span></h2>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "left" style = "padding-right: 2px;">
+          <webobject name = "ShowBackToWebsiteSectionsHyperlinkConditional">
+            <webobject name = "BackToWebsiteSectionsHyperlink"><img src = "/GVCSiteMaker/Images/oneArrowBack.png" alt = "Back To Website Sections" border = "0" style = "position:relative; top:3px;" />
+            Back to Website Sections</webobject>
+          </webobject>
+        </td>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />
+          <webobject name = "CanDeleteVersionsConditional"><webobject name = "DeleteButton" /></webobject>
+        </td>
+      </tr>
+      <tr>
+        <td colspan = "2">
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellpadding = "2" cellspacing = "2" align = "center" width = "95%">
+      <!-- 95% width is more dynamic in Netscape 4 -->
+      <tr>
+        <td align = "left">Sort non-current versions by: <webobject name = "SortingsPopup" /></td>
+      </tr>
+    </table>
+
+    <table border = "0" class = "coloredTable" cellpadding = "2" cellspacing = "2" align = "center" width = "95%">
+      <!-- 95% width is more dynamic in Netscape 4 -->
+      <tr>
+        <th class = "coloredTableHeading" width = "10%">Version Number</th>
+        <th class = "coloredTableHeading" width = "60%">Name &amp; Details</th>
+        <th class = "coloredTableHeading" width = "10%">Locked?</th>
+        <th class = "coloredTableHeading" width = "10%">Modify</th>
+        <th class = "coloredTableHeading" width = "10%">Delete</th>
+      </tr>
+      <webobject name = "VersionRepetition">
+        <tr valign = "TOP">
+          <td align = "center">
+            <webobject name = "NumberString" />
+            <br />
+            <strong>
+              <span class = "requiredText">
+                <webobject name = "IsCurrentConditional">(Current)</webobject>
+              </span>
+            </strong>
+            <webobject name = "MakeCurrentConditional">
+              <webobject name = "MakeCurrentHyperlink">Make<br/>Current</webobject>
+            </webobject>
+          </td>
+
+          <td align = "left">
+            <webobject name = "Hyperlink4">
+              <strong><webobject name = "NameString" /></strong>
+            </webobject>&nbsp;<webobject name = "MailLink"><webobject name = "MailIconImage" /></webobject>
+            <br />
+            <webobject name = "HasDetailsConditional">
+              <webobject name = "DescriptionString" />
+              <br />
+            </webobject>
+            <span class = "descriptiveText">Created by 
+              <webobject name = "CreatedByString" />
+              on 
+            </span>
+            <span class = "descriptiveText"> <webobject name = "CreatedDateString" /></span>
+            <span class = "descriptiveText"><br />Modified by</span>
+            <span class = "descriptiveText"><webobject name = "ModifiedByString" /> on</span>
+            <span class = "descriptiveText"> <webobject name = "ModifiedDateString" /></span>
+          </td>
+          <td align = "center">
+            <webobject name = "IsLockedString" />
+            <br />
+            <webobject name = "CanChangeLockStatusConditional">
+              <webobject name = "VersionUnlockedConditional">
+                <webobject name = "Hyperlink1">Lock</webobject>
+              </webobject>
+              <webobject name = "LockedConditional">
+                <webobject name = "Hyperlink2">Unlock</webobject>
+              </webobject>
+            </webobject>
+            <br />
+          </td>
+          <td align = "center">
+            <nobr />
+            <webobject name = "CanAlterVersionConditional">
+              <webobject name = "EditHyperlink">Edit</webobject>
+              <br />
+            </webobject>
+            <webobject name = "EditNewVersionHyperlink">Edit&nbsp;As&nbsp;New&nbsp;Version</webobject>
+            <br />
+            <webobject name = "Hyperlink3">Properties</webobject>
+          </td>
+          <td align = "center">
+            <webobject name = "IsNotCurrentConditional"><webobject name = "DeleteCheckBox" /></webobject>
+            <webobject name = "CannotDeleteConditional">Can't Delete</webobject>
+          </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>

@@ -1,0 +1,186 @@
+DynamicBody: DynamicBodyComponent 
+{
+    hasSite = true;
+    pageTitle = pageTitle;
+    isAdmin = false;
+    pageType = "InstallDataTablePackage";
+}
+
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CancelButton: WOSubmitButton {
+	action = returnToConfigPage;
+	value = "Cancel";
+}
+
+CheckAllSections: WOSubmitButton {
+	action = checkAllSections;
+	value = "Check All";
+}
+
+ColumnIncludedCheckBox2: WOCheckBox {
+	checked = isSectionIncluded;
+}
+
+Conditional2: WOConditional {
+	condition = aTable.hasRowData;
+}
+
+Conditional3: WOConditional {
+	condition = aTable.hasRowData;
+	negate = true;
+}
+
+Conditional4: WOConditional {
+	condition = aTable.hasRowData;
+}
+
+Conditional5: WOConditional {
+	condition = aTable.hasRowData;
+	negate = true;
+}
+
+CustomInstallConditional: WOConditional {
+	condition = isCustomInstall;
+}
+
+CustomInstallConditional2: WOConditional {
+	condition = isCustomInstall;
+}
+
+CustomInstallRadioButton: WORadioButton {
+	checked = isCustomInstall;
+	name = "InstallType";
+	onClick = "this.form.submit();";
+}
+
+EasyInstallConditional: WOConditional {
+	condition = isRequiredToIncludeData;
+}
+
+EasyInstallConditional2: WOConditional {
+	condition = isEasyInstall;
+}
+
+EasyInstallConditional3: WOConditional {
+	condition = isEasyInstall;
+}
+
+EasyInstallRadioButton: WORadioButton {
+	checked = isEasyInstall;
+	name = "InstallType";
+	onClick = "this.form.submit();";
+}
+
+
+ErrorConditional: WOConditional {
+	condition = hasOtherErrors;
+}
+
+ErrorString: WOString {
+	value = errors;
+	escapeHTML = false;
+}
+
+ExistingTableString: WOString {
+	value = existingTableOption;
+}
+
+FileUploadHyperlink: WOHyperlink {
+	pageName = "FileUpload";
+}
+
+FileUploadHyperlink2: WOHyperlink {
+	pageName = "FileUpload";
+}
+
+ImportButton: WOSubmitButton {
+	action = performPackageInstallation;
+	value = "Install Package";
+}
+
+InstallConditional: WOConditional {
+	condition = displayMissingInstallType;
+}
+
+InstallOptionPopUpButton: WOPopUpButton {
+	list = tableInstallOptions;
+	selection = selectedInstallOption;
+	onChange = "this.form.submit();";
+}
+
+InstallPackageForm: WOForm {
+	multipleSubmit = true;
+}
+
+MainTextConditional: WOConditional {
+	condition = isMainTable;
+}
+
+MultipleOptionsConditional: WOConditional {
+	condition = showMultipleInstallOptions;
+}
+
+PackageConditional: WOConditional {
+	condition = displayMissingPackageToInstall;
+}
+
+PopUpButton1: WOPopUpButton {
+	noSelectionString = "Select a package...";
+	list = website.orderedUploadedXMLFiles;
+	selection = selectedPackage;
+	displayString = aPackage.listDisplayName;
+	item = aPackage;
+	onChange = "this.form.submit();";
+}
+
+RelatedSectionsConditional: WOConditional {
+	condition = packageContainer.hasSections;
+}
+
+SectionNameString: WOString {
+	value = aRelatedSection.name;
+}
+
+SectionRepetition: WORepetition {
+	item = aRelatedSection;
+	list = relatedSections;
+}
+
+SelectedPackageConditional: WOConditional {
+	condition = displayPackageContents;
+}
+
+SelectedPackageConditional2: WOConditional {
+	condition = selectedPackage;
+}
+
+ShowExistingConditional: WOConditional {
+	condition = showExistingTableOption;
+}
+
+String2: WOString {
+	value = aTable.name;
+}
+
+String3: WOString {
+	value = hasSelectedPackageChanged;
+}
+
+TablesRepetition: WORepetition {
+	item = aTable;
+	list = mainAndRelatedTables;
+}
+
+UncheckAllSections: WOSubmitButton {
+	action = uncheckAllSections;
+	value = "Uncheck All";
+}

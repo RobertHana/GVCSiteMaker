@@ -1,0 +1,81 @@
+FirstObjectIndexString: WOString {
+	value = searchResultManager.indexOfFirstObjectInCurrentGroup;
+}
+
+FrontPage: WOHyperlink {
+  href = application.mainPageURL;
+}
+
+HasMultipleGroupsConditional: WOConditional {
+	condition = searchResultManager.hasMultipleGroups;
+}
+
+HasSearchResultsConditional: WOConditional {
+
+	condition = searchResultManager.hasSearchResults;
+}
+
+IncludeContainedOrgUnitsCheckBox: WOCheckBox {
+	checked = shouldExcludeContainedOrgUnits;
+}
+
+IsDisplayingSearchResultsConditional: WOConditional {
+	condition = didPerformSearch;
+}
+
+LastObjectIndexString: WOString {
+	value = searchResultManager.indexOfLastObjectInCurrentGroup;
+}
+
+NumberOfResultsStringString: WOString {
+	value = searchResultManager.numberOfObjectsBeingManaged;
+}
+
+OrgUnitDescriptionString: WOString {
+	value = selectedOrgUnitDescription;
+}
+
+OrgUnitPopUp: UnitChooserWithDefault {
+	selectedUnit = selectedOrgUnit;
+	noSelectionString = "(any unit)";
+	excludeNonSystemWideUnits = true;
+	rootOrgUnits = rootOrgUnits;
+}
+
+PageFlipper: SearchResultPageFlipper {
+	searchResultManager = searchResultManager;
+}
+
+SearchForm: WOForm {
+	action = searchAction;
+}
+
+SearchResultsRepetition: WORepetition {
+	item = currentWebsite;
+	list = searchResultManager.currentGroup;
+}
+
+SearchStringField: WOTextField {
+	size = "25";
+	value = searchString;
+}
+
+SearchSubmit: WOSubmitButton {
+	action = searchAction;
+	value = "Search";
+}
+
+SearchTextDescriptionString: WOString {
+	value = searchStringDescription;
+}
+ShowNoResultsConditional: WOConditional {
+	condition = shouldShowNoResultsMessage;
+}
+
+ShowSearchResultsSummaryConditional: WOConditional {
+	condition = shouldDisplaySearchResultsSummary;
+}
+
+WebsiteDescriptionComponent: WebsiteDescriptionComponent {
+	website = currentWebsite;
+}

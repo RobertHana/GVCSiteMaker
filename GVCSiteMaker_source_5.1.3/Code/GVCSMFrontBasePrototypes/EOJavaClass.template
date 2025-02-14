@@ -1,0 +1,84 @@
+##// TEMPLATEVERSION 1.25
+##// You may customize this file to modify the templates generated in this project.
+// $entity.classNameWithoutPackage$.java
+// Created on $date$ by Apple $eomVersion$
+
+##loop $entity.classPackage$
+package $property$;
+
+##end
+import java.math.*;
+import java.util.*;
+import com.apple.yellow.foundation.*;
+import com.apple.yellow.eocontrol.*;
+
+public class $entity.classNameWithoutPackage$ extends $entity.javaParentClassName$ {
+
+    public $entity.classNameWithoutPackage$() {
+        super();
+    }
+
+/*
+    // If you implement the following constructor EOF will use it to
+    // create your objects, otherwise it will use the default
+    // constructor. For maximum performance, you should only
+    // implement this constructor if you depend on the arguments.
+    public $entity.classNameWithoutPackage$(EOEditingContext context, EOClassDescription classDesc, EOGlobalID gid) {
+        super(context, classDesc, gid);
+    }
+
+    // If you add instance variables to store property values you
+    // should add empty implementions of the Serialization methods
+    // to avoid unnecessary overhead (the properties will be
+    // serialized for you in the superclass).
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+    }
+*/
+##loop $entity.classAttributes$
+
+    public $property.javaValueClassName$ $property.name$() {
+        return ($property.javaValueClassName$)storedValueForKey("$property.name$");
+    }
+
+    public void set$property.name$($property.javaValueClassName$ value) {
+        takeStoredValueForKey(value, "$property.name$");
+    }
+##end
+##loop $entity.classToOneRelationships$
+
+    public $property.destinationEntity.referenceJavaClassName$ $property.name$() {
+        return ($property.destinationEntity.referenceJavaClassName$)storedValueForKey("$property.name$");
+    }
+
+    public void set$property.name$($property.destinationEntity.referenceJavaClassName$ value) {
+        takeStoredValueForKey(value, "$property.name$");
+    }
+##end
+##loop $entity.classToManyRelationships$
+
+    public NSArray $property.name$() {
+        return (NSArray)storedValueForKey("$property.name$");
+    }
+
+    public void set$property.name$(NSMutableArray value) {
+        takeStoredValueForKey(value, "$property.name$");
+    }
+
+    public void addTo$property.name$($property.destinationEntity.referenceJavaClassName$ object) {
+        NSMutableArray array = (NSMutableArray)$property.name$();
+
+        willChange();
+        array.addObject(object);
+    }
+
+    public void removeFrom$property.name$($property.destinationEntity.referenceJavaClassName$ object) {
+        NSMutableArray array = (NSMutableArray)$property.name$();
+
+        willChange();
+        array.removeObject(object);
+    }
+##end
+}

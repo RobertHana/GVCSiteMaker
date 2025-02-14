@@ -1,0 +1,18 @@
+ShowJSConditional: WOConditional {
+	condition = shouldIncludeJavascript;
+}
+
+TextArea: WOText {
+	rows = rows;
+    cols = cols; // for NN 4
+	class = editorSelector;
+	value = value;
+	name = name;
+}
+
+TinyMCEJavaScript : TinyMCEJavaScript {
+    website = website;
+    section = section;
+    editorCSS = editorCSS;
+    wysiwygEditorMode = wysiwygEditorMode;
+}

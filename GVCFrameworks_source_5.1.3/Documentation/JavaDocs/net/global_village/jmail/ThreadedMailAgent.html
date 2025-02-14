@@ -1,0 +1,1058 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+ThreadedMailAgent (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ThreadedMailAgent (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ThreadedMailAgent.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/jmail/ThreadedMailAgent.MessageWithRetries.html" title="class in net.global_village.jmail"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/jmail/ThreadedMailAgent.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ThreadedMailAgent.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.jmail</FONT>
+<BR>
+Class ThreadedMailAgent</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">java.lang.Thread</A>
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.jmail.ThreadedMailAgent</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.40"><B>ThreadedMailAgent</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></DL>
+</PRE>
+
+<P>
+This class is used to send mails in a threaded way.  This is useful as sending multiple messages
+ can be time consuming.
+
+ <p>Notifications are broadcast when messages are accepted by the SMTP server or when they fail to send.
+ </p>
+
+ <p>These properties should be set for better recovery and notification.  The default timeouts are <b>forever</b>.</p>
+ <pre>
+ mail.smtp.connectiontimeout=15000
+ mail.smtp.timeout=15000
+ </pre>
+
+ This code is adapted from ERMailSender from the ERJavaMail framework of Project Wonder.  This file
+ is protected under the GNU Lesser Public License.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Camille Troillard <tuscland@mac.com>, Tatsuya Kawano <tatsuyak@mac.com>, Max Muller <maxmuller@mac.com>, Sacha Mallais <sacha@global-village.net> DBC and clean up, Chuck Hill <chill@global-village.net> added failure recovery, notifications</DD>
+<DT><B>See Also:</B><DD><a href="http://java.sun.com/products/javamail/javadocs/com/sun/mail/smtp/package-summary.html">SMTP Package Summary</a></DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.MessageWithRetries.html" title="class in net.global_village.jmail">ThreadedMailAgent.MessageWithRetries</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Internal class used to associate a Message with the number of times an attempt has been made
+ to send it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception class for alerting about a stack overflow</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="nested_classes_inherited_from_class_java.lang.Thread"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Nested classes/interfaces inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.State.html?is-external=true" title="class or interface in java.lang">Thread.State</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.UncaughtExceptionHandler.html?is-external=true" title="class or interface in java.lang">Thread.UncaughtExceptionHandler</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#AbandonedMessageNotification">AbandonedMessageNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when .</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#ExceptionKey">ExceptionKey</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key into notification userInfo() dictionary.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#FailedToContactMailServerNotification">FailedToContactMailServerNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when the SMTP server can't be contacted.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#FailedToGetTransportNotification">FailedToGetTransportNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when the SMTP transport can't be obtained.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#FailedToSendMessageNotification">FailedToSendMessageNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when a message is rejected by the SMTP server.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#MAX_RETRIES">MAX_RETRIES</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#SendingMessagesNotification">SendingMessagesNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when this thread starts to send queued messages.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#SentMessageNotification">SentMessageNotification</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notification broadcast when a message is successfully accepted by the SMTP server.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#TRANSPORT_UNAVAILABLE_DELAY">TRANSPORT_UNAVAILABLE_DELAY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_java.lang.Thread"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#MAX_PRIORITY" title="class or interface in java.lang">MAX_PRIORITY</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#MIN_PRIORITY" title="class or interface in java.lang">MIN_PRIORITY</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#NORM_PRIORITY" title="class or interface in java.lang">NORM_PRIORITY</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#ThreadedMailAgent()">ThreadedMailAgent</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructs a ThreadedMailAgent based on the System properties with an unlimited queue size.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#ThreadedMailAgent(java.lang.String, int)">ThreadedMailAgent</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost,
+                                   int&nbsp;queueSize)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>use ThreadedMailAgent()</I></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#_sendMessageNow(com.sun.mail.smtp.SMTPMessage, javax.mail.Transport)">_sendMessageNow</A></B>(com.sun.mail.smtp.SMTPMessage&nbsp;message,
+                               javax.mail.Transport&nbsp;transport)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All messages are sent from this method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;javax.mail.Transport</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#connectedTransport()">connectedTransport</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility method that gets the SMTP Transport method for a session and connects the Transport
+ before returning it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#createInstance(java.lang.String)">createInstance</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>Use createInstance() instead</I></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#createInstance(java.lang.String, int)">createInstance</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost,
+                             int&nbsp;queueSize)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>Use createInstance() instead</I></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#end()">end</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call this to signal this tread to end as soon as it sends all of the messages in the queue.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html" title="class in net.global_village.jmail">ThreadedMailAgent</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#getInstance()">getInstance</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the shared instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#hasInstance()">hasInstance</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>Deprecated.</B>&nbsp;<I>Not needed if ThreadedMailAgent constructor is used</I></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.mail.Session</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#mailSession()">mailSession</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../net/global_village/jmail/FIFOQueue.html" title="class in net.global_village.jmail">FIFOQueue</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#messages()">messages</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#milliSecondsWaitRunLoop()">milliSecondsWaitRunLoop</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail">Message</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#newMessage()">newMessage</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to create a new net.global_village.jmail.Message with this agent's session.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail">Message</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#newMessage(java.io.InputStream)">newMessage</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;in)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience method to create a new net.global_village.jmail.Message with this agent's session.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#prettyPrintAddresses(javax.mail.Address[])">prettyPrintAddresses</A></B>(javax.mail.Address[]&nbsp;addresses)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Debugging support method to return a nice string from an array of InternetAddress.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#queueMessage(com.sun.mail.smtp.SMTPMessage)">queueMessage</A></B>(com.sun.mail.smtp.SMTPMessage&nbsp;message)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queues the message for later delivery.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#run()">run</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't call this method, this is the thread run loop and is automatically called.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#sendMessageDeferred(com.sun.mail.smtp.SMTPMessage)">sendMessageDeferred</A></B>(com.sun.mail.smtp.SMTPMessage&nbsp;message)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends a message in a non-blocking way.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#sendMessageNow(com.sun.mail.smtp.SMTPMessage)">sendMessageNow</A></B>(com.sun.mail.smtp.SMTPMessage&nbsp;message)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sends a message immediately.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#setMilliSecondsWaitRunLoop(int)">setMilliSecondsWaitRunLoop</A></B>(int&nbsp;milliSeconds)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the number of milliseconds to wait before checking for new messages to send.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#setThreadSuspended(boolean)">setThreadSuspended</A></B>(boolean&nbsp;suspended)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call to activate the mail sending function, or to suspend it if the thread was suspended due to an interrupt or
+ lack of messages to send.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#shouldEnd()">shouldEnd</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#threadSuspended()">threadSuspended</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the thread was suspended due to an interrupt or
+ lack of messages to send.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Thread"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#activeCount()" title="class or interface in java.lang">activeCount</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#checkAccess()" title="class or interface in java.lang">checkAccess</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#countStackFrames()" title="class or interface in java.lang">countStackFrames</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#currentThread()" title="class or interface in java.lang">currentThread</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#destroy()" title="class or interface in java.lang">destroy</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#dumpStack()" title="class or interface in java.lang">dumpStack</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#enumerate(java.lang.Thread[])" title="class or interface in java.lang">enumerate</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getAllStackTraces()" title="class or interface in java.lang">getAllStackTraces</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getContextClassLoader()" title="class or interface in java.lang">getContextClassLoader</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getDefaultUncaughtExceptionHandler()" title="class or interface in java.lang">getDefaultUncaughtExceptionHandler</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getId()" title="class or interface in java.lang">getId</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getName()" title="class or interface in java.lang">getName</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getPriority()" title="class or interface in java.lang">getPriority</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getStackTrace()" title="class or interface in java.lang">getStackTrace</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getState()" title="class or interface in java.lang">getState</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getThreadGroup()" title="class or interface in java.lang">getThreadGroup</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#getUncaughtExceptionHandler()" title="class or interface in java.lang">getUncaughtExceptionHandler</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#holdsLock(java.lang.Object)" title="class or interface in java.lang">holdsLock</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#interrupt()" title="class or interface in java.lang">interrupt</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#interrupted()" title="class or interface in java.lang">interrupted</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#isAlive()" title="class or interface in java.lang">isAlive</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#isDaemon()" title="class or interface in java.lang">isDaemon</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#isInterrupted()" title="class or interface in java.lang">isInterrupted</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#join()" title="class or interface in java.lang">join</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#join(long)" title="class or interface in java.lang">join</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#join(long, int)" title="class or interface in java.lang">join</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#resume()" title="class or interface in java.lang">resume</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setContextClassLoader(java.lang.ClassLoader)" title="class or interface in java.lang">setContextClassLoader</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setDaemon(boolean)" title="class or interface in java.lang">setDaemon</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setDefaultUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)" title="class or interface in java.lang">setDefaultUncaughtExceptionHandler</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setName(java.lang.String)" title="class or interface in java.lang">setName</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setPriority(int)" title="class or interface in java.lang">setPriority</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#setUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler)" title="class or interface in java.lang">setUncaughtExceptionHandler</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#sleep(long)" title="class or interface in java.lang">sleep</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#sleep(long, int)" title="class or interface in java.lang">sleep</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#start()" title="class or interface in java.lang">start</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#stop()" title="class or interface in java.lang">stop</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#stop(java.lang.Throwable)" title="class or interface in java.lang">stop</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#suspend()" title="class or interface in java.lang">suspend</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#yield()" title="class or interface in java.lang">yield</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="AbandonedMessageNotification"><!-- --></A><H3>
+AbandonedMessageNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.49"><B>AbandonedMessageNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when .
+ The notification object is the com.sun.mail.smtp.SMTPMessage that was abandoned.
+ The userInfo dictionary will have the exception that explains the latest failure under ExceptionKey
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#ExceptionKey"><CODE>ExceptionKey</CODE></A>, 
+<A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.AbandonedMessageNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SentMessageNotification"><!-- --></A><H3>
+SentMessageNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.56"><B>SentMessageNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when a message is successfully accepted by the SMTP server.
+ The notification object is the com.sun.mail.smtp.SMTPMessage that was sent.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.SentMessageNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToSendMessageNotification"><!-- --></A><H3>
+FailedToSendMessageNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.66"><B>FailedToSendMessageNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when a message is rejected by the SMTP server.
+ The notification object is the com.sun.mail.smtp.SMTPMessage that was rejected.
+ The userInfo dictionary will have the exception that explains the failure under ExceptionKey
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html#ExceptionKey"><CODE>ExceptionKey</CODE></A>, 
+<A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.FailedToSendMessageNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToContactMailServerNotification"><!-- --></A><H3>
+FailedToContactMailServerNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.73"><B>FailedToContactMailServerNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when the SMTP server can't be contacted.  This may be a transient failure due to network or SMTP
+ server load issues.  The notification object is this ThreadedMailAgent object.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.FailedToContactMailServerNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="FailedToGetTransportNotification"><!-- --></A><H3>
+FailedToGetTransportNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.80"><B>FailedToGetTransportNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when the SMTP transport can't be obtained.  This should mean an configuration or host name problem.
+ The notification object is this ThreadedMailAgent object.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.FailedToGetTransportNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SendingMessagesNotification"><!-- --></A><H3>
+SendingMessagesNotification</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.88"><B>SendingMessagesNotification</B></A></PRE>
+<DL>
+<DD>Notification broadcast when this thread starts to send queued messages.  If you are watching the FailedToContactMailServerNotification,
+ this should mean the problem has been resolved until the next time FailedToContactMailServerNotification is broadcast.
+ The notification object is this ThreadedMailAgent object.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.SendingMessagesNotification">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="ExceptionKey"><!-- --></A><H3>
+ExceptionKey</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.94"><B>ExceptionKey</B></A></PRE>
+<DL>
+<DD>Key into notification userInfo() dictionary.  This is used with the FailedToSendMessageNotification and AbandonedMessageNotification.
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.ExceptionKey">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="TRANSPORT_UNAVAILABLE_DELAY"><!-- --></A><H3>
+TRANSPORT_UNAVAILABLE_DELAY</H3>
+<PRE>
+protected static final long <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.97"><B>TRANSPORT_UNAVAILABLE_DELAY</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.TRANSPORT_UNAVAILABLE_DELAY">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="MAX_RETRIES"><!-- --></A><H3>
+MAX_RETRIES</H3>
+<PRE>
+protected static final int <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.98"><B>MAX_RETRIES</B></A></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#net.global_village.jmail.ThreadedMailAgent.MAX_RETRIES">Constant Field Values</A></DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ThreadedMailAgent()"><!-- --></A><H3>
+ThreadedMailAgent</H3>
+<PRE>
+protected <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.256"><B>ThreadedMailAgent</B></A>()</PRE>
+<DL>
+<DD>Constructs a ThreadedMailAgent based on the System properties with an unlimited queue size.  Some of the relevant properties are:
+ <ul>
+ <li>mail.smtp.host</li>
+ <li>mail.transport.protocol</li>
+ <li>mail.smtp.connectiontimeout</li>
+ <li>mail.smtp.connectiontimeout</li>
+ <li>mail.smtp.timeout</li>
+ </ul>
+<P>
+</DL>
+<HR>
+
+<A NAME="ThreadedMailAgent(java.lang.String, int)"><!-- --></A><H3>
+ThreadedMailAgent</H3>
+<PRE>
+protected <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.276"><B>ThreadedMailAgent</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost,
+                            int&nbsp;queueSize)</PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>use ThreadedMailAgent()</I>
+<P>
+<DD>Constructs a ThreadedMailAgent that sends mail to the indicated host using SMTP.
+ The message queue size is limited to queueSize.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>smtpHost</CODE> - the name of the SMTP mail server to use<DD><CODE>queueSize</CODE> - the size of the mail queue</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="hasInstance()"><!-- --></A><H3>
+hasInstance</H3>
+<PRE>
+public static boolean <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.178"><B>hasInstance</B></A>()</PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>Not needed if ThreadedMailAgent constructor is used</I>
+<P>
+<DD>Returns <code>true</code> if there is a shared instance, <code>false</code> otherwise.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if there is a shared instance, <code>false</code> otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createInstance(java.lang.String, int)"><!-- --></A><H3>
+createInstance</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.194"><B>createInstance</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost,
+                                  int&nbsp;queueSize)</PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>Use createInstance() instead</I>
+<P>
+<DD>Creates an instance of ThreadedMailAgent that sends mail to the indicated host using SMTP.  The message queue
+ size is limited to queueSize.  This instance can be accessed from getInstance().  The ThreadedMailAgent is effectively a singleton, though it
+ can't be created without parameters to the constructor.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>smtpHost</CODE> - the name of the SMTP mail server to use<DD><CODE>queueSize</CODE> - the size of the mail queue</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createInstance(java.lang.String)"><!-- --></A><H3>
+createInstance</H3>
+<PRE>
+public static void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.216"><B>createInstance</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;smtpHost)</PRE>
+<DL>
+<DD><B>Deprecated.</B>&nbsp;<I>Use createInstance() instead</I>
+<P>
+<DD>Creates an instance of ThreadedMailAgent that sends mail to the indicated host using SMTP.  The message queue
+ size is unlimited.  This instance can be accessed from getInstance().  The ThreadedMailAgent is effectively a singleton, though it
+ can't be created without parameters to the constructor.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>smtpHost</CODE> - the name of the SMTP mail server to use</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getInstance()"><!-- --></A><H3>
+getInstance</H3>
+<PRE>
+public static <A HREF="../../../net/global_village/jmail/ThreadedMailAgent.html" title="class in net.global_village.jmail">ThreadedMailAgent</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.234"><B>getInstance</B></A>()</PRE>
+<DL>
+<DD>Returns the shared instance.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the shared instance of the singleton ThreadedMailAgent object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newMessage()"><!-- --></A><H3>
+newMessage</H3>
+<PRE>
+public <A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail">Message</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.298"><B>newMessage</B></A>()</PRE>
+<DL>
+<DD>Convenience method to create a new net.global_village.jmail.Message with this agent's session.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new message with this agent's session<DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail"><CODE>Message</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newMessage(java.io.InputStream)"><!-- --></A><H3>
+newMessage</H3>
+<PRE>
+public <A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail">Message</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.312"><B>newMessage</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;in)
+                   throws javax.mail.MessagingException</PRE>
+<DL>
+<DD>Convenience method to create a new net.global_village.jmail.Message with this agent's session.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>in</CODE> - the data of the message
+<DT><B>Returns:</B><DD>a new message with this agent's session
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.MessagingException</CODE><DT><B>See Also:</B><DD><A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail"><CODE>Message</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sendMessageDeferred(com.sun.mail.smtp.SMTPMessage)"><!-- --></A><H3>
+sendMessageDeferred</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.328"><B>sendMessageDeferred</B></A>(com.sun.mail.smtp.SMTPMessage&nbsp;message)
+                         throws <A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></PRE>
+<DL>
+<DD>Sends a message in a non-blocking way.<br>
+ This means that the thread won't be blocked.  Instead the message will be queued for later delivery.
+
+ <p>When the message is accepted by the transport without exception, the SentMessageNotification will be
+ broadcast for message.</p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>message</CODE> - the message to send
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="queueMessage(com.sun.mail.smtp.SMTPMessage)"><!-- --></A><H3>
+queueMessage</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.350"><B>queueMessage</B></A>(com.sun.mail.smtp.SMTPMessage&nbsp;message)
+                     throws <A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></PRE>
+<DL>
+<DD>Queues the message for later delivery.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>message</CODE> - the message to queue
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></CODE> - if the mail queue size is exceeded</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sendMessageNow(com.sun.mail.smtp.SMTPMessage)"><!-- --></A><H3>
+sendMessageNow</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.388"><B>sendMessageNow</B></A>(com.sun.mail.smtp.SMTPMessage&nbsp;message)
+                    throws <A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></PRE>
+<DL>
+<DD>Sends a message immediately.<br> This means that the thread could be blocked if the message
+ takes time to be delivered.  If the mail server can't be contacted the message is queued for
+ future delivery attempts.
+
+ <p>When the message is accepted by the transport without exception, the SentMessageNotification will be
+ broadcast for message.</p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>message</CODE> - the message to send
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../net/global_village/jmail/ThreadedMailAgent.SizeOverflowException.html" title="class in net.global_village.jmail">ThreadedMailAgent.SizeOverflowException</A></CODE> - if the message can't be sent immediately and the mail queue size is exceeded</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="_sendMessageNow(com.sun.mail.smtp.SMTPMessage, javax.mail.Transport)"><!-- --></A><H3>
+_sendMessageNow</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.439"><B>_sendMessageNow</B></A>(com.sun.mail.smtp.SMTPMessage&nbsp;message,
+                               javax.mail.Transport&nbsp;transport)
+                        throws javax.mail.MessagingException</PRE>
+<DL>
+<DD>All messages are sent from this method.  It is used by 'sendMessageNow' and 'sendMessageDeffered' and
+ is the meat of the 'run' method when the thread is running.<br> If an exception occurs while
+ sending the mail, it is logged and thrown.
+
+ <p>If the message is accepted by the transport without exception, the SentMessageNotification will be
+ broadcast for message.</p>
+ <p>If the message is rejected by the transport or sending fails for any reason, the FailedToSendMessageNotification will be
+ broadcast for message.</p>
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>javax.mail.MessagingException</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="connectedTransport()"><!-- --></A><H3>
+connectedTransport</H3>
+<PRE>
+protected javax.mail.Transport <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.489"><B>connectedTransport</B></A>()</PRE>
+<DL>
+<DD>Utility method that gets the SMTP Transport method for a session and connects the Transport
+ before returning it. Returns null if the transport can NOT be connected!  Can be retried later
+ if null is returned.
+
+ <p>If the transport for SMTP is not found, the SendingMessagesNotification will be  broadcast for this ThreadedMailAgent.</p>
+ <p>If the transport can't be connected to, the FailedToContactMailServer will be  broadcast for this ThreadedMailAgent.</p>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>null or connected mail transport.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="run()"><!-- --></A><H3>
+run</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.530"><B>run</B></A>()</PRE>
+<DL>
+<DD>Don't call this method, this is the thread run loop and is automatically called.
+
+ <p>When transport is established and a cycle of sending queued messages is started, the SendingMessagesNotification will be
+ broadcast for this ThreadedMailAgent.</p>
+ <p>If a SocketException occurs while sending messages, the FailedToContactMailServer will be broadcast for this ThreadedMailAgent.</p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true#run()" title="class or interface in java.lang">run</A></CODE> in interface <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang">Runnable</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true#run()" title="class or interface in java.lang">run</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="end()"><!-- --></A><H3>
+end</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.656"><B>end</B></A>()</PRE>
+<DL>
+<DD>Call this to signal this tread to end as soon as it sends all of the messages in the queue.
+ Depending on what is in the queue, the thread might run for while
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shouldEnd()"><!-- --></A><H3>
+shouldEnd</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.669"><B>shouldEnd</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if end() has been called</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="prettyPrintAddresses(javax.mail.Address[])"><!-- --></A><H3>
+prettyPrintAddresses</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.682"><B>prettyPrintAddresses</B></A>(javax.mail.Address[]&nbsp;addresses)</PRE>
+<DL>
+<DD>Debugging support method to return a nice string from an array of InternetAddress.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>addresses</CODE> - the addresses to pretty print
+<DT><B>Returns:</B><DD>nicely formatted display string of addresses</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="mailSession()"><!-- --></A><H3>
+mailSession</H3>
+<PRE>
+public javax.mail.Session <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.697"><B>mailSession</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>session used for all mail activities</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="messages()"><!-- --></A><H3>
+messages</H3>
+<PRE>
+protected <A HREF="../../../net/global_village/jmail/FIFOQueue.html" title="class in net.global_village.jmail">FIFOQueue</A> <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.707"><B>messages</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>FIFOQueue holding messages waiting to be sent</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="threadSuspended()"><!-- --></A><H3>
+threadSuspended</H3>
+<PRE>
+protected boolean <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.720"><B>threadSuspended</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if the thread was suspended due to an interrupt or
+ lack of messages to send.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if the thread was suspended</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setThreadSuspended(boolean)"><!-- --></A><H3>
+setThreadSuspended</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.733"><B>setThreadSuspended</B></A>(boolean&nbsp;suspended)</PRE>
+<DL>
+<DD>Call to activate the mail sending function, or to suspend it if the thread was suspended due to an interrupt or
+ lack of messages to send.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>suspended</CODE> - <code>true</code> if the thread should be suspended</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="milliSecondsWaitRunLoop()"><!-- --></A><H3>
+milliSecondsWaitRunLoop</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.743"><B>milliSecondsWaitRunLoop</B></A>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>number of milliseconds to wait before checking for new messages to send</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setMilliSecondsWaitRunLoop(int)"><!-- --></A><H3>
+setMilliSecondsWaitRunLoop</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/jmail/ThreadedMailAgent.html#line.755"><B>setMilliSecondsWaitRunLoop</B></A>(int&nbsp;milliSeconds)</PRE>
+<DL>
+<DD>Sets the number of milliseconds to wait before checking for new messages to send.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>milliSeconds</CODE> - number of milliseconds to wait before checking for new messages to send</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ThreadedMailAgent.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/jmail/Message.html" title="class in net.global_village.jmail"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/jmail/ThreadedMailAgent.MessageWithRetries.html" title="class in net.global_village.jmail"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/jmail/ThreadedMailAgent.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ThreadedMailAgent.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

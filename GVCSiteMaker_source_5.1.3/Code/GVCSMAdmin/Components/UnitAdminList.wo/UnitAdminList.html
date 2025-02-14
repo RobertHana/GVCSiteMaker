@@ -1,0 +1,25 @@
+<table border="0" cellspacing="2" cellpadding="2" class="coloredTable" align="center" width="95%"><!-- width set to 95% for Netscape 4 -->
+	<tr>
+		<th class="coloredTableHeading">
+			Administrator UserID
+		</th>
+		<th class="coloredTableHeading">
+			Action
+		</th>
+	</tr>
+	<WEBOBJECT NAME=UserListRep>
+		<tr valign="middle">
+		   <td align="left" valign="middle">
+			   <WEBOBJECT NAME=ManageUserHyperlink><WEBOBJECT NAME=UserID></WEBOBJECT></WEBOBJECT>
+		   </td>
+		   <td align="center" valign="middle">
+			  <WEBOBJECT NAME=IsNotSystemAdminConditional>
+				<WEBOBJECT NAME=RemoveLink>
+					Remove
+				</WEBOBJECT>
+			  </WEBOBJECT>
+			  <WEBOBJECT NAME=IsSystemAdministratorConditional>Cannot be removed. </WEBOBJECT>
+		    </td>
+	</tr>
+	</WEBOBJECT>
+</table>

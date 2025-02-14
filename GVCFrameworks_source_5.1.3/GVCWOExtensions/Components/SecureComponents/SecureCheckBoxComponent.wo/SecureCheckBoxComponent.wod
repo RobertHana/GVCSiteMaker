@@ -1,0 +1,28 @@
+CheckBox: WOCheckBox 
+{
+	class = cssClassName;
+	checked = ^isChecked;
+}
+
+
+ShowModifiable: WOConditional 
+{
+	condition = isPermissable;
+}
+
+ShowUnmodifiable: WOConditional 
+{
+	negate = YES;
+	condition = isPermissable;
+}
+
+SpanTag: WOGenericContainer 
+{
+	class = cssClassName;
+	elementName = "span";
+}
+
+StringValue: WOString 
+{
+	value = stringValue;
+}

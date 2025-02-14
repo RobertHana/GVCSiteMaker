@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+MultiECLockManager (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="MultiECLockManager (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/MultiECLockManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/ModelConnector.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/MultiECLockManager.Session.html" title="interface in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/MultiECLockManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="MultiECLockManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class MultiECLockManager</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.MultiECLockManager</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.101"><B>MultiECLockManager</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+<p>This class handles locking of EOEditingContexts local to a session.  Each WOSession should have 
+ one of these MultiECLockManager objects. The session should call lock() on it in awake() and 
+ unlock() in sleep().</p>
+ 
+ <p>The preferred way to create new editing contexts is to use either <code>newEditingContext()</code> 
+ or <code>newEditingContext(EOEditingContext parentEC)</code>.  If you want to create 
+ your own then you must call registerEditingContext(EOEditingContext) before using the editing
+ context.  Registering an editing context will ensure that it is locked if the session's default 
+ editing context has been locked.  Unregistering????</p>
+ 
+ <p>A particular thread can call lock() multiple times, as long it calls unlock() the same number 
+ of times to relinquish all locks---that is, lock() functions recursively.</p>
+ 
+ <p>If a particular thread has outstanding lock() calls not undone with unlock(), only that thread 
+ may call unlock() or registerEditingContext(). If any other thread calls these methods in this 
+ state, an exception will be raised. But in the intended design, this shouldn't be possible anyway. 
+ Any thread may call unregisterEditingContext at any time---ECs are queued up for unregistering at
+ an appropriate time and in an appropriate thread, if neccesary.<p>
+ 
+ <p>Suggested implementation of WOSession sub-class using the MultiECLockManager:</p>
+ <pre>
+ public class Session extends WOSession implements MultiECLockManager.Session
+ {
+     protected MultiECLockManager ecLockManager;
+ 
+ public Session()
+     {
+         super();
+         ecLockManager = new MultiECLockManager(EOEditingContext.class);
+     }
+ 
+     public void awake()
+     {
+         super.awake();
+         ecLockManager().lock();
+     }
+ 
+     public void sleep()
+     {
+         // Need to check as this gets called after terminate() when logging out
+         if (ecLockManager().isLocked())
+         {
+             ecLockManager().unlock();
+         }
+         super.sleep();
+     }
+ 
+     public void terminate()
+     {
+         // Need to make sure this is unlocked so that editing contexts nested 
+        // in the defaultEditingContext don't hold locks on it when it gets disposed 
+         if (ecLockManager().isLocked())
+         {
+             ecLockManager().unlock();
+        }
+         
+        super.terminate();
+     }
+ 
+     public EOEditingContext newEditingContext()
+     {
+         return ecLockManager().newEditingContext();
+     }
+ 
+     public EOEditingContext newEditingContext(EOEditingContext parentEC)
+     {
+         return ecLockManager().newEditingContext(parentEC);
+     }
+ 
+     public void discard(EOEditingContext ec)
+     {
+         ecLockManager().unregisterEditingContext(ec);
+     }
+ 
+     public MultiECLockManager ecLockManager() {
+         return ecLockManager;
+     }
+ 
+ }
+ </pre>
+ <p>Original code from Jonathan Rochkind (j-rochkind at northwestern.edu) taken from 
+ http://wocode.com/cgi-bin/WebObjects/WOCode.woa/1/wa/ShareCodeItem?itemId=301
+ Nov, 2003 - added DBC, modified to create and return registered editing contexts, Chuck Hill
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Jonathan Rochkind</DD>
+</DL>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;interface</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.Session.html" title="interface in net.global_village.eofextensions">MultiECLockManager.Session</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface for a session to advertise that it has a MultiECLockManager used for locking all 
+ 'local' ECs within that session.</TD>
+</TR>
+</TABLE>
+&nbsp;<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#editingContextClass">editingContextClass</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#lockCount">lockCount</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#lockerThread">lockerThread</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#strongReferences">strongReferences</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#unregisterQueue">unregisterQueue</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSMutableSet</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#weakReferences">weakReferences</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#MultiECLockManager()">MultiECLockManager</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience constructor for an MultiECLockManager that creates editing contexts of class
+ EOEditingContext.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#MultiECLockManager(java.lang.Class)">MultiECLockManager</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&nbsp;classOfEditingContexts)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#editingContextClass()">editingContextClass</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns EOEditingContext.class or the subclass that this  MultiECLockManager returns when 
+ asked for a new instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#emptyUnregisterQueue()">emptyUnregisterQueue</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Any ECs that had unregistration requested with outstanding locks, just get added to the 
+ unregisterQueue.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ref/WeakReference.html?is-external=true" title="class or interface in java.lang.ref">WeakReference</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#findReference(com.webobjects.eocontrol.EOEditingContext)">findReference</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;argEC)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since we often are only holding onto a WeakReference to our registered ECs, to allow ECs to 
+ be GC'd even though they are registerd, this is a convenience method to find the appropriate 
+ WeakReference given an EC that's registered.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#isLocked()">isLocked</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if this MultiECLockManager is currently locked.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#lock()">lock</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Locks all registered ECs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#makeStrongReferences()">makeStrongReferences</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Makes strong references to all registered ECs, by putting them in a dictionary keyed by their 
+ weak reference.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#newEditingContext()">newEditingContext</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a new peer editing context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eocontrol.EOEditingContext</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#newEditingContext(com.webobjects.eocontrol.EOObjectStore)">newEditingContext</A></B>(com.webobjects.eocontrol.EOObjectStore&nbsp;parentStore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a new child editing context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#registerEditingContext(com.webobjects.eocontrol.EOEditingContext)">registerEditingContext</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registers EC.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#unlock()">unlock</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unlocks all registered ECs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html#unregisterEditingContext(com.webobjects.eocontrol.EOEditingContext)">unregisterEditingContext</A></B>(com.webobjects.eocontrol.EOEditingContext&nbsp;argEC)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unregisters EC from receiver.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="weakReferences"><!-- --></A><H3>
+weakReferences</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableSet <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.103"><B>weakReferences</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="strongReferences"><!-- --></A><H3>
+strongReferences</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableDictionary <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.104"><B>strongReferences</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="unregisterQueue"><!-- --></A><H3>
+unregisterQueue</H3>
+<PRE>
+protected com.webobjects.foundation.NSMutableArray <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.105"><B>unregisterQueue</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="lockCount"><!-- --></A><H3>
+lockCount</H3>
+<PRE>
+protected int <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.106"><B>lockCount</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="lockerThread"><!-- --></A><H3>
+lockerThread</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Thread.html?is-external=true" title="class or interface in java.lang">Thread</A> <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.107"><B>lockerThread</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="editingContextClass"><!-- --></A><H3>
+editingContextClass</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A> <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.108"><B>editingContextClass</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="MultiECLockManager(java.lang.Class)"><!-- --></A><H3>
+MultiECLockManager</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.119"><B>MultiECLockManager</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&nbsp;classOfEditingContexts)</PRE>
+<DL>
+<DD>Designated constructor.  The paramter is useful to create a manager that creates non-standard
+ editing contexts such as the LockScreamerEditingContext.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>classOfEditingContexts</CODE> - the class for this MultiECLockManager to create new editing 
+ context instances from.</DL>
+</DL>
+<HR>
+
+<A NAME="MultiECLockManager()"><!-- --></A><H3>
+MultiECLockManager</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.132"><B>MultiECLockManager</B></A>()</PRE>
+<DL>
+<DD>Convenience constructor for an MultiECLockManager that creates editing contexts of class
+ EOEditingContext.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="lock()"><!-- --></A><H3>
+lock</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.143"><B>lock</B></A>()</PRE>
+<DL>
+<DD>Locks all registered ECs. Creates strong references to registered ECs, to ensure they don't 
+ get garbage collected with outstanding locks.  Records which thread has requested the lock.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="unlock()"><!-- --></A><H3>
+unlock</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.189"><B>unlock</B></A>()</PRE>
+<DL>
+<DD>Unlocks all registered ECs.  If unlock() has been called as many times as lock(),all strong 
+ references are removed, the locking thread discarded, and any ECs previously put in the queue 
+ to unregister are unregistered.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</A></CODE> - if no locks are outstanding, or if a thread other than the one 
+ which locked tries to unlock.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newEditingContext()"><!-- --></A><H3>
+newEditingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.233"><B>newEditingContext</B></A>()</PRE>
+<DL>
+<DD>Returns a new peer editing context.  All editing contexts should be created with this method 
+ or it's parent version, below.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new peer editing context</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="newEditingContext(com.webobjects.eocontrol.EOObjectStore)"><!-- --></A><H3>
+newEditingContext</H3>
+<PRE>
+public com.webobjects.eocontrol.EOEditingContext <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.250"><B>newEditingContext</B></A>(com.webobjects.eocontrol.EOObjectStore&nbsp;parentStore)</PRE>
+<DL>
+<DD>Returns a new child editing context.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>parentStore</CODE> - the new editing context's parent EOObjectStore
+<DT><B>Returns:</B><DD>a new child editing context</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="registerEditingContext(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+registerEditingContext</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.281"><B>registerEditingContext</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;ec)</PRE>
+<DL>
+<DD>Registers EC. If other registered ECs are currently locked, locks the newly registered EC the 
+ same number of times to match the outstanding locks on other registered ECs. If there are 
+ locks outstanding, and a thread other than the one which locked is attempting to register an 
+ EC, throw an exception.  If the EC argument is ALREADY registered, do nothing.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>ec</CODE> - </DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="unregisterEditingContext(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+unregisterEditingContext</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.324"><B>unregisterEditingContext</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;argEC)</PRE>
+<DL>
+<DD>Unregisters EC from receiver. If the EC is not currently registered, does nothing.  If there 
+ are outstanding locks, does not unregister the EC immediately, instead puts it in a queue to 
+ unregister. The queue will be handled when there are no longer outstanding locks. This means 
+ it should be safe to unregister an EC in some other objects finalize() method, even though 
+ that will be in an unpredictable thread.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="makeStrongReferences()"><!-- --></A><H3>
+makeStrongReferences</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.362"><B>makeStrongReferences</B></A>()</PRE>
+<DL>
+<DD>Makes strong references to all registered ECs, by putting them in a dictionary keyed by their 
+ weak reference. This is the method that will remove stale EC WeakReferences, if they're 
+ referent has been garbage collected.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="findReference(com.webobjects.eocontrol.EOEditingContext)"><!-- --></A><H3>
+findReference</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/ref/WeakReference.html?is-external=true" title="class or interface in java.lang.ref">WeakReference</A> <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.394"><B>findReference</B></A>(com.webobjects.eocontrol.EOEditingContext&nbsp;argEC)</PRE>
+<DL>
+<DD>Since we often are only holding onto a WeakReference to our registered ECs, to allow ECs to 
+ be GC'd even though they are registerd, this is a convenience method to find the appropriate 
+ WeakReference given an EC that's registered.  If the argument is NOT a registered EC, will 
+ return null.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>argEC</CODE> - the <code>EOEditingContext</code> to return a <code>WeakReference</code> for
+<DT><B>Returns:</B><DD><code>WeakReference</code> for <code>argEC</code> or null if none found</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="emptyUnregisterQueue()"><!-- --></A><H3>
+emptyUnregisterQueue</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.420"><B>emptyUnregisterQueue</B></A>()</PRE>
+<DL>
+<DD>Any ECs that had unregistration requested with outstanding locks, just get added to the 
+ unregisterQueue. When there are no longer outstanding locks, this method is called to 
+ unregister all those ECs.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="editingContextClass()"><!-- --></A><H3>
+editingContextClass</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A> <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.469"><B>editingContextClass</B></A>()</PRE>
+<DL>
+<DD>Returns EOEditingContext.class or the subclass that this  MultiECLockManager returns when 
+ asked for a new instance.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>EOEditingContext.class or the subclass that this  MultiECLockManager returns</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isLocked()"><!-- --></A><H3>
+isLocked</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/MultiECLockManager.html#line.482"><B>isLocked</B></A>()</PRE>
+<DL>
+<DD>Returns <code>true</code> if this MultiECLockManager is currently locked.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if this MultiECLockManager is currently locked</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/MultiECLockManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/ModelConnector.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/MultiECLockManager.Session.html" title="interface in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/MultiECLockManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="MultiECLockManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

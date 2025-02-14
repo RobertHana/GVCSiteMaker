@@ -1,0 +1,101 @@
+<tr>
+  <td valign = "Top">
+    <b>Visitors to this section will be allowed to perform the following actions on the table:</b>
+    <table border = "0" width = "100%">
+      <tbody>
+        <tr>
+          <td>
+            <img src = "/GVCSiteMaker/Images/spacer.gif" height = "2" width = "10" />
+            <webobject name = "BrowseSearchCheckBox" />
+            Browse/Search for Records</td>
+          <td><webobject name = "AddRecordsCheckBox" /> Add Records</td>
+          <td><webobject name = "DeleteCheckBox" /> Delete Records</td>
+          <td><webobject name = "ImportCheckBox" /> Import Records</td>
+        </tr>
+        <webobject name = "IsAddModeInvalidConditional">
+          <tr>
+            <td colspan = "4">
+              <span class = "warningText">You must grant permission to Add Records if you want to use the "Add Record" Form as the first thing visitors see in this Section.</span>
+            </td>
+          </tr>
+        </webobject>
+        <webobject name = "IsSearchModeInvalidConditional">
+          <tr>
+            <td colspan = "4">
+              <span class = "warningText">You must grant permission to Browse/Search for Records if you want to use the "Search Record" Form
+                as the first thing visitors see in this Section.</span>
+            </td>
+          </tr>
+        </webobject>
+      </tbody>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td valign = "Top">&nbsp;</td>
+</tr>
+<webobject name = "ShowSearchConditional">
+  <tr>
+    <td valign = "Top">
+      <b>When visitors first enter this section, the set of records found will be:</b>
+      <br />
+      <img src = "/GVCSiteMaker/Images/spacer.gif" height = "10" width = "10" />
+      <webobject name = "NotUseDefaultSearchRadio" />
+      All records in the table<br />
+      <img src = "/GVCSiteMaker/Images/spacer.gif" height = "10" width = "10" />
+      <webobject name = "UseDefaultSearchRadio" />
+      Records found by the &quot;<b>Default Search</b>&quot;, defined below</td>
+  </tr>
+  <webobject name = "UseDefaultSearchInvalidConditional">
+    <tr>
+      <td>
+        <span class = "warningText">A default search must be defined if you choose this option.</span>
+      </td>
+    </tr>
+  </webobject>
+</webobject>
+<webobject name = "CantBrowseOrSearchConditional">
+  <tr>
+    <td valign = "Top">
+      <span class = "warningText">When Browse/Search for Records is unchecked, no records can be found in this section.</span>
+    </td>
+  </tr>
+</webobject>
+<tr>
+  <td valign = "Top">&nbsp;</td>
+</tr>
+<tr>
+  <td><webobject name = "StoredSearchComponent" /></td>
+</tr>
+<tr>
+  <td valign = "Top">&nbsp;</td>
+</tr>
+<tr>
+  <td valign = "Top">
+    <b>When visitors first enter this section, they should see:</b>
+    <webobject name = "DefaultModePopUpButton" />
+  </td>
+</tr>
+<webobject name = "IsAddModeInvalidConditional">
+  <tr>
+    <td>
+      <span class = "warningText">If you want to use the "Add Record" Form as the first thing visitors see in this Section then you must grant
+        permission to Add Records (above).</span>
+    </td>
+  </tr>
+</webobject>
+<webobject name = "IsSearchModeInvalidConditional">
+  <tr>
+    <td>
+      <span class = "warningText">If you want to use the "Search Records" Form as the first thing visitors see in this Section then you must grant
+        permission to Browse/Search for Records (above).</span>
+    </td>
+  </tr>
+</webobject>
+<webobject name = "IsImportModeInvalidConditional">
+  <tr>
+    <td>
+      <span class = "warningText">If you want to use the &quot;Import Records&quot; Form as the first thing visitors see in this Section then you must grant permission to Import Records (above).</span>
+    </td>
+  </tr>
+</webobject>

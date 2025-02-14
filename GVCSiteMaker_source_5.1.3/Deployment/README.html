@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Installing and Configuring GVC.SiteMaker Open Source Distribution</title>
+</head>
+
+<body>
+
+
+<h1>Introduction</h1>
+<p>
+This document describes how to configure and install the GVC.SiteMaker Open Source 
+distribution
+<br />
+<br />
+<font color="red"><b>Note:</b></font> this installation process is designed for
+use on OS X and other UNIX systems.  You will have some manual work to do on 
+Windows.
+</p>
+
+
+<h1>Requirements</h1>
+GVC.SiteMaker has the following requirements:
+
+<h2>Java <a target="_new" href="http://java.sun.com/j2se/1.5.0/download.html">1.5.0</a> Runtime</h2>
+GVC.SiteMaker will not run with earlier versions and has not been tested against later versions.
+
+<h2>Licensed version of <a target="_new" href="http://www.webobjects.com">WebObjects</a> 5.4.3</h2>
+A deployment installation of WebObjects will work for Ant builds (and for Eclipse builds, 
+but you won't have any of the other development tools such as WOBuilder and EOModeler).
+You can get a licensed version of WebObjects from these sources
+<ul>
+<li><a target="_new" href="http://store.apple.com">Apple Store</a></li>
+<li><a target="_new" href="http://store.apple.com">Purchase of an X Serve</a></li>
+<li><a target="_new" href="http://developer.apple.com">ADC, register for developers evaluation copy for OS X</a></li>
+<li><a href="mailto:webobjects@apple.com">Request developers evaluation copy for Windows</a></li>
+</ul>
+
+<h2>SQL Database with JDBC connectivity</h2>
+GVC.SiteMaker has been most often tested with <a target="_new" href="http://www.FrontBase.com">FrontBase</a>
+and only SQL scripts for that database are provided.
+<a target="_new" href="http://developer.apple.com/documentation/WebObjects/UsingEOModeler/4WorkingWithAttributes/chapter_4_section_4.html">EOPrototypes</a>
+are also provided for Oracle and MySQL.  These may not be fully up to 
+date and / or tested.  If not using FrontBase, you will need to generate your
+own SQL scripts to use in place of the FrontBase ones.  Other databases can be supported by
+the addition of a database specific set of EOPrototypes to the GVCEOPrototypes project.
+Contact GVC at info@global-village.net for help porting GVC.SiteMaker to a different database.
+
+<h2>GVC Frameworks</h2>
+GVC.SiteMaker makes extensive use of the <a target="_new" href="http://sourceforge.net/project/showfiles.php?group_id=138889">GVC Frameworks</a>. 
+These frameworks are included in this distribution bundle.
+
+<h1>Contents</h1>
+<b>The Open Source distribution is arranged into these directories:</b><br/><br/>
+<a target="_new" href="Install/Archive">Install/Archive/</a> - the packages to be installed:
+<ul>
+<li><b>GVCSiteMakerFrameworks.tar.gz</b> - the Open Source GVC Frameworks and GVCSMCore</li>
+<li><b>GVCSiteMakerCustomFrameworks.tar.gz</b> - usually contains only GVCSMCustom framework for a specific installation</li>
+<li><b>GVCKerberos.tar.gz</b> - this framework is needed only when Kerberos authentication is in use</li>
+<li><b>GVCSiteMakerApplications.tar.gz</b> - the GVCSiteMaker, GVCSMAdmin, and GVCSMUtility applications</li>
+<li><b>GVCSiteMakerDocumentRoot.tar.gz</b> - the core document root resources to be installed for the web server</li>
+<li><b>GVCSiteMakerCustomDocumentRoot.tar.gz</b> - document root resources unique to this installation to be installed for the web server</li>
+<li><b>GVCSiteMakerMisc.tar.gz</b> - contains seldom needed functionality to repair data and assist in data conversions between versions</li>
+</ul>
+<a target="_new" href="Install/Script">Install/Script/</a> - Installation script and resources<br/>
+
+
+<h1>Installation</h1>
+As you are reading this, it is assumed that you have unpacked the installation bundle.
+You may now need to move it.  See the next section.
+
+<h2>Install the Bundles</h2>
+<p>
+We use an installation script to automate the install. First, you should do is to read the
+<a target="_new" href="Install/Script/README">instructions</a>
+on how this installation process works. The installation script is 
+<a target="_new" href="Install/Script/WOInstall.sh">Install/Script/WOInstall.sh</a>.<br/><br/>
+
+<b>To make a fresh installation from scratch without backups:</b>
+<pre>
+cd Install/Script
+sudo ./WOInstall.sh &lt;Installation Directory&gt;
+</pre>
+e.g. <code>sudo ./WOInstall.sh /Users/sitemaker</code><br/><br/>
+</p>
+
+<h2>Configure GVCSMCustom Framework</h2>
+<p>
+The GVCSMCustom framework contains configuration settings, and optionally code and 
+components, that are unique to each installation.  Unless  you are installing a
+previously customized version, you are going to need to setup the configuration.
+You will find this framework in ~/Frameworks.  
+<a target="_blank" href="Install/Misc/ConfigurationGuide.doc">Instructions</a> are provided on configuration options.
+</p>
+
+<h2>Follow the Installation Guide</h2>
+<p>
+The <a target="_blank" href="Install/Misc/Deployment Instructions.doc">Deployment Instructions</a> 
+will guide you through the rest of the installation process.  By following the instructions here,
+you will have already performed some of the steps in the Deployment Instructions.
+</body>
+</html>

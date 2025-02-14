@@ -1,0 +1,183 @@
+<webobject name = "DynamicBody">
+  <webobject name = "UnitCreationForm">
+    <!-- cell padding removed except around HR -->
+    <table border = "0" cellpadding = "0" cellspacing = "0" class = "content" style = "width: 100%">
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h1>Website Creation</h1>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top" align = "right" style = "padding-right: 2px;">
+          <webobject name = "CancelButton" />&nbsp;<webobject name = "AddWebsite" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border = "0" cellpadding = "2" cellspacing = "2" width = "100%">
+            <tr>
+              <td> <hr class = "primaryBarStyle" /> </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <table border = "0" cellspacing = "2" cellpadding = "2" class = "content">
+      <tr>
+        <td class = "boldText">
+          SiteID: 
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn"> <webobject name = "NewSiteID" /> </td>
+      </tr>
+      <tr>
+        <td class = "boldText">
+          OwnerID: 
+          <br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn"> <webobject name = "NewOwnerID" /> </td>
+      </tr>
+      <tr>
+        <td class = "boldText"> Associated Unit: </td>
+        <td class = "rightContentColumn"> <webobject name = "AssociatedUnit" /> </td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "top">
+          Filespace Quota:<br />
+          <i class = "requiredText">(required)</i>
+        </td>
+        <td class = "rightContentColumn">
+          <webobject name = "FilespaceQuota" />
+          <span>(MB)</span>
+          <!-- superfulous span to help Netscape 4 out some... -->
+          <br />
+          <span class = "descriptiveText">
+            (defaults to system value, currently 
+            <span class = "coloredText"> <webobject name = "DefaultQuotaString" /> </span>
+            MB) 
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText"> Redirect to this URL: </td>
+        <td class = "rightContentColumn"> <webobject name = "RedirectURL" /> </td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "top"> Based on SiteID: </td>
+        <td class = "rightContentColumn">
+          <webobject name = "ExampleSiteID" />
+          <br />
+          <span class = "descriptiveText">
+            Copy the current configuration settings, files, and database tables from the entered SiteID to this
+            website.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td valign = "top">&nbsp;</td>
+        <td valign = "top">
+          <!-- Errors -->
+          <webobject name = "ShowNullSiteIDErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "NullSiteIDErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidSiteIDErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "InvalidSiteIDErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowSiteIDExistsErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "SiteIDExistsErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowNullOwnerIDErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "NullOwnerErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidCharsInOwnerIDErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "String1" /> </p>
+          </webobject>
+          <webobject name = "ShowNullAssociatedUnitErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "NullAssociatedUnitErrorString" /> </p>
+          </webobject>
+          <webobject name = "ShowInvalidFilespaceQuotaErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "InvalidFilespaceQuotaErrorString" /> </p>
+          </webobject>
+          <webobject name = "InsufficientFilespaceQuotaErrorMessageConditional">
+            <p class = "warningText"> Create failed: <webobject name = "InsufficientFilespaceQuotaErrorMessage" /> </p>
+          </webobject>
+          <webobject name = "ShowExampleSiteIDNotFoundErrorMessage">
+            <p class = "warningText"> Create failed: <webobject name = "ExampleSiteIDNotFoundErrorString" /> </p>
+          </webobject>
+          <webobject name = "SiteCanNotBeReplicatedErrorConditional">
+            <p class = "warningText"> Create failed: <webobject name = "SiteCanNotBeReplicatedErrorString" /> </p>
+          </webobject>
+          <webobject name = "DisplayInvalidRedirectURLErrorMessageConditional">
+            <p class = "warningText"> Create failed: <webobject name = "InvalidRedirectURLErrorMessageString" /> </p>
+          </webobject>
+          <webobject name = "SaveFailureMessageConditional">
+            <p class = "warningText"> Create failed: <webobject name = "SaveFailureMessageString" /> </p>
+          </webobject>
+          <!-- End of Errors -->
+        </td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "top">Email Owner:</td>
+        <td valign = "top" class = "rightContentColumn">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class = "requiredText">(required)</i>
+        </td>
+        <td valign = "top" class = "rightContentColumn">
+          <webobject name = "MessageSubjectTextField" />
+          <webobject name = "MissingRequiredSubjectConditional">
+            <p class = "warningText">Create failed: The message subject is required unless &quot;Don't send message&quot; is selected.</p>
+          </webobject>
+        </td>
+      </tr>
+      <tr>
+        <td align = "left" valign = "top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Message:</td>
+        <td valign = "top" class = "rightContentColumn">
+          <webobject name = "MessageBodyTextArea" />
+          <webobject name = "HasTemplateErrorConditional">
+            <p class = "warningText">Create failed: <webobject name = "TemplateErrorString" /></p>
+          </webobject>
+          <br />
+          <webobject name = "DontSendMessageCheckBox" />
+          Don't send message</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class = "boldText" valign = "top">Add Note:</td>
+        <td class = "rightContentColumn">
+          <webobject name = "AdminNoteTextArea" />
+          <br />
+          <span class = "descriptiveText"> Note is added to the website creation Administrative Log for this website. </span>
+        </td>
+      </tr>
+      <webobject name = "HasWebsiteRequestConditional">
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td class = "boldText" valign = "top">Site Request Notes:</td>
+          <td class = "rightContentColumn">
+            <webobject name = "HasAdminNotesConditional">
+              <span class = "descriptiveText"><webobject name = "RequestAdminNotesString" /></span>
+              <br />
+              <br />
+            </webobject>
+            <span class = "descriptiveText">
+              <i><webobject name = "RequestNotesString" /></i>
+            </span>
+          </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>

@@ -1,0 +1,75 @@
+// *** MODE STUFF ***
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+
+
+// *** EDIT MODE ***
+
+
+FileImageType: WORadioButton {
+	value = "file";
+	name = "linkType";
+	selection = componentObject.linkType;  // VALID
+}
+
+HasSelectedFileConditional: WOConditional {
+	condition = shouldShowReplaceLink;
+}
+
+
+
+// *** DISPLAY MODE ***
+
+Hyperlink: WORedirect {
+	url = url;
+}
+
+ImageURL: WOTextField {
+	value = componentObject.href;  // VALID
+	size = 60;
+	onKeyDown="\"this.form.linkType[0].checked=true;\"";
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}
+
+SectionImageList: WOPopUpButton {
+	list = website.uploadedFiles;
+	item = aFile;
+	value = aFile.displayName;
+	selection = componentObject.relatedFile;
+	noSelectionString = "Select a file ...";
+	onChange="\"this.form.linkType[1].checked=true;\"";
+}
+
+TARGET_BLANK: WORadioButton {
+	name = "target";
+	selection = componentObject.target;  // VALID
+	value = "_blank";
+}
+
+TARGET_SELF: WORadioButton {
+	name = "target";
+	selection = componentObject.target;  // VALID
+	value = "_self";
+}
+
+
+URLImageType: WORadioButton {
+	value = "url";
+	name = "linkType";
+	selection = componentObject.linkType;  // VALID
+}
+
+UploadFileHyperlink: WOHyperlink {
+	pageName = "FileUpload";
+}
+

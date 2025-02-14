@@ -1,0 +1,70 @@
+<webobject name="ShowSearchOptionsConditional">
+<table width="90%" border="0" align="center" cellpadding="4" class="coloredTable"><tbody>
+	<tr>
+		<th class="coloredTableHeading">Combine Criteria</th>
+		<th class="coloredTableHeading">Field Name</th>
+		<th class="coloredTableHeading">Comparison</th>
+		<th class="coloredTableHeading">
+			Value<br>
+			<div class="microText">
+				Enter dates as<br><WEBOBJECT NAME=ValueDateHintString></WEBOBJECT>
+			</div>
+		</th>
+	</tr>
+	<WEBOBJECT NAME=DataAccessColumnSearchValueRepetition>
+	<tr>
+		<td align="center" valign="middle">
+			<WEBOBJECT NAME=ShouldDisplayJoinConditionConditional><WEBOBJECT NAME=JoinConditionsPopUp></WEBOBJECT></WEBOBJECT>
+		</td>
+		<td align="center" valign="middle"><WEBOBJECT NAME=FieldNamePopup></WEBOBJECT></td>
+		<td valign="Middle"><WEBOBJECT NAME=ComparisonTypesPopup></WEBOBJECT></td>
+		<td> 
+		<WEBOBJECT NAME=ValueField></WEBOBJECT> </td>
+	</tr>
+	<WEBOBJECT NAME=ColumnSearchValueInvalidationConditional><tr>
+		<td align="center" valign="middle" colspan="4">
+			<span class="warningText"><WEBOBJECT NAME=ColumnSearchValueValidationFailureString></WEBOBJECT></span>
+		</td>
+	</tr></WEBOBJECT>
+	</WEBOBJECT>
+</tbody></table>
+
+<WEBOBJECT NAME=AddMoreCriteriaButton></WEBOBJECT>
+
+<table border="0" cellpadding="0" cellspacing="0" class="content">
+	<tr>
+		<td valign="Top">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="/GVCSiteMaker/Images/spacer.gif" height="10" width="10"><WEBOBJECT NAME=RestrictToDefaultResultsCheckBox></WEBOBJECT>Visitors will only be able to find records contained within the Default Search results set.</td>
+	</tr>
+	<WEBOBJECT NAME=RestrictToDefaultResultsInvalidConditional><tr>
+		<td><span class="warningText">A default search must be defined if you choose this option.</span></td>
+	</tr></WEBOBJECT>
+	<WEBOBJECT NAME=IsRestrictSetWithUseDefaultNotSetConditional><tr>
+		<td><span class="warningText">The default search must be selected if you choose this option.</span></td>
+	</tr></WEBOBJECT>
+	<tr>
+		<td valign="Top">&nbsp;</td>
+	</tr>
+</table>
+</webobject>
+<table border="0" cellpadding="0" cellspacing="0" class="content">
+	<tr>
+		<td> <b>When displayed as a list:</b><br>
+			<img src="/GVCSiteMaker/Images/spacer.gif" height="10" width="10">records will be sorted:<br>
+			<WEBOBJECT NAME=SortOrderingRepetition>
+				<WEBOBJECT NAME=IsFirstSortColumnConditional>first by</WEBOBJECT>
+				<WEBOBJECT NAME=IsNotFirstSortColumnConditional>then by</WEBOBJECT>
+				<WEBOBJECT NAME=SortByColumnsPopUp></WEBOBJECT>&nbsp;&nbsp;in: <WEBOBJECT NAME=SortDirectionPopUp></WEBOBJECT> order<br>
+			</WEBOBJECT>
+
+			<WEBOBJECT NAME=SortOrderSameColumnTwiceInvalidConditional>
+				<span class="warningText">You cannot choose the same column twice for sorting.</span><br>
+			</WEBOBJECT>
+
+			<WEBOBJECT NAME=AdditionalSortSubmitButton></WEBOBJECT><br>
+
+			<img src="/GVCSiteMaker/Images/spacer.gif" height="10" width="10">and will be shown in groups of <WEBOBJECT NAME=GroupCountPopUp></WEBOBJECT> record(s) per page. </td>
+	</tr>
+</table>

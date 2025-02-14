@@ -1,0 +1,23 @@
+ALocalizedString: WOString {
+	value = "~session().localizedString(\"My name is \", \"GVCWOExtensions\", \"GVCWOExtensions\")";
+}
+
+ALocalizedString2: WOString {
+	value = "~session().localizedString(\"Hello World!\", \"GVCWOExtensions\", \"GVCWOExtensions\")";
+}
+
+Language: WOString {
+	value = @localize.language;
+}
+
+String1: WOString {
+	value = @localize.howAreYou;
+}
+
+TestSubcomponent: TestSubcomponent {
+	testChildField = testParentField;
+}
+
+Undefined:  WOString {
+	value = @localize.undefined;
+}

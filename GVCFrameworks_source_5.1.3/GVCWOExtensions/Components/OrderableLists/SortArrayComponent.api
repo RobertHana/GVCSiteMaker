@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="SortArrayComponent" wocomponentcontent="true">
+
+		<binding name="array"/>
+		<binding name="comparator"/>
+		<binding defaults="Boolean" name="sortAscending"/>
+		<binding name="sortKey"/>
+		<binding defaults="Boolean" name="toggleAscendingDescending"/>
+
+		<validation message="'array' is a required binding">
+			<unbound name="array"/>
+		</validation>
+
+		<validation message="'array' must be bound to a settable value">
+			<unsettable name="array"/>
+		</validation>
+
+		<validation message="'sortAscending' must be bound to a settable value">
+			<unsettable name="sortAscending"/>
+		</validation>
+
+		<validation message="if 'comparator' is bound, none of 'sortAscending', 'sortKey', or 'toggleAscendingDescending' must be bound and vice versa">
+			<and>
+				<bound name="comparator"/>
+				<or>
+					<bound name="sortAscending"/>
+					<bound name="sortKey"/>
+					<bound name="toggleAscendingDescending"/>
+				</or>
+			</and>
+		</validation>
+
+		<validation message="one of 'comparator' or 'sortKey' must be bound">
+			<and>
+				<unbound name="comparator"/>
+				<unbound name="sortKey"/>
+			</and>
+		</validation>
+	
+        
+    </wo>
+</wodefinitions>

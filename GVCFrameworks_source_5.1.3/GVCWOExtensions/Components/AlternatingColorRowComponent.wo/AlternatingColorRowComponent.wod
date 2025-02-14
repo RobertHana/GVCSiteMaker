@@ -1,0 +1,7 @@
+AlternatingColoredRow: WOGenericContainer 
+{ 
+    class = backgroundCSSClass;
+    elementName = "TR"; 
+    valign = valign;
+}
+Content: WOComponentContent { }

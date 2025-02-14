@@ -1,0 +1,61 @@
+<webobject name = "CalculatedColumnForm">
+  <table border = "0" cellpadding = "0" cellspacing = "0" class = "content">
+    <tr>
+      <td valign = "top" align = "left">
+        <b>Formula:</b>
+      </td>
+      <td>
+        <webobject name = "Expression" />
+        <webobject name = "HasInvalidExpressionConditional">
+          <p class = "warningText"><webobject name = "InvalidExpressionErrorString" /></p>
+          Check for these common errors: 
+          <ul class = "descriptiveText">
+            <li>Field name doesn't exist, or is misspelled (field names are case sensitive and must appear 
+              <em>exactly</em>
+              as shown below)</li>
+            <li>Numeric operators (+, -, *, /) can only be used with fields that have numeric values (not text, dates or checkboxes)</li>
+          </ul>
+        </webobject>
+        <br />
+        <webobject name = "TestFormulaButton" />
+        <webobject name = "SaveChangesButton" />
+        <webobject name = "CancelButton" />
+        <webobject name = "HasTestedConditional">
+          <br />
+          <br />
+          <span class = "successText">The formula can be calculated.</span>
+          <br />
+          <span class = "descriptiveText">Example Result:</span>
+          <webobject name = "TestResult" />
+          <br />
+          <span class = "descriptiveText">Result Data Type:</span>
+          <webobject name = "TestResultType" />
+        </webobject>
+      </td>
+    </tr>
+    <tr>
+      <td valign = "top" colspan = "2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "left">
+        <b>Formula Fields:</b>
+      </td>
+      <td>
+        <span class = "descriptiveText">These field names can be used in the formula above:</span>
+        <webobject name = "TableOfFields">
+          <webobject name = "ColumnNameForCalculation" />
+          <br />
+        </webobject>
+      </td>
+    </tr>
+    <tr>
+      <td valign = "top" colspan = "2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign = "top" align = "left">
+        <b>Formula Hints:</b>
+      </td>
+      <td> <webobject name = "DACalculatedColumnMessage" /> </td>
+    </tr>
+  </table>
+</webobject>

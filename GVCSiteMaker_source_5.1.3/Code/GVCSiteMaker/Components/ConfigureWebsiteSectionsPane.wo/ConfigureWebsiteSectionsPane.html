@@ -1,0 +1,193 @@
+<table class = "screenTitleTable" cellpadding = "0" cellspacing = "0">
+  <tr>
+    <td class = "screenTitleContainer">Website Sections
+      <div>
+        <div class = "createNewItemLinkContainer">
+          <webobject name = "AddSectionHyperlink">
+            <img src = "/GVCSiteMaker/Images/add.png" alt = "Add Website Section" border = "0" style = "position:relative; top:3px;" />
+            <b>Create New Section</b>
+          </webobject>
+        </div>
+      </div>
+    </td>
+    <td align = "right" valign = "top" class = "helpButtonContainer">
+      <webobject name = "HelpComponent"><img src = "/GVCSiteMaker/Images/help-browser.png" border = "0" /></webobject>
+    </td>
+  </tr>
+</table>
+
+<p>
+  <span style = "color: grey">Grey</span> sections are hidden.
+</p>
+<webobject name = "ConfigPageForm">
+  <webobject name = "AjaxUpdateArea">
+    <table class = "sectionListHeadingsTable" border = "0" cellpadding = "0" cellspacing = "0" style = "clear:both;">
+      <tr>
+        <td valign = "bottom" class = "sectionOrderHeading">Order</td>
+
+        <td valign = "bottom" class = "sectionIndentHeading">Indent</td>
+        <td valign = "bottom" class = "sectionTwistyHeading">
+          <webobject name = "ToggleExpandCollapseSectionsHyperlink">
+            <webobject name = "ShowCollapseConditional"><img src = "/GVCSiteMaker/Images/double-collapse.gif" border = "0" /></webobject>
+            <webobject name = "ShowExpandConditional"><img src = "/GVCSiteMaker/Images/double-expand.gif" border = "0" /></webobject>
+          </webobject>
+        </td>
+
+        <td class = "sectionNameHeading" valign = "bottom">Name</td>
+
+        <td class = "sectionTypeHeading" valign = "bottom">Type</td>
+
+        <td class = "sectionAccessGroupsHeading" valign = "bottom">
+          <webobject name = "ToggleExpandCollapseGroupsHyperlink">
+            <webobject name = "ShowCollapseGroupsConditional"><img src = "/GVCSiteMaker/Images/double-collapse.gif" border = "0" /></webobject>
+            <webobject name = "ShowExpandGroupsConditional"><img src = "/GVCSiteMaker/Images/double-expand.gif" border = "0" /></webobject>
+          </webobject>&nbsp;Access
+        </td>
+
+        <td class = "sectionActionsHeading" valign = "bottom">Actions</td>
+
+        <td class = "sectionMarkHeading" valign = "bottom">
+          <webobject name = "SelectedSectionsPopup" />
+          <webobject name = "SelectedSectionsPopupObserveField" />
+        </td>
+      </tr>
+    </table>
+
+    <div class = "sectionListContainer">
+      <ul id = "listOfSections">
+        <webobject Name = "SectionRepetition">
+          <webobject name = "ShouldDisplaySection">
+            <webobject name = "LIGenericContainer">
+              <table border = "0" cellpadding = "0" cellspacing = "0">
+                <tr valign = "middle">
+                  <td class = "sectionOrder">
+                    <webobject name = "IsntHomeSectionConditional2">
+                      <webobject name = "CanReOrderConditional"><webobject name = "OrderField" /></webobject>
+                      <webobject name = "CannotReOrderConditional"><webobject name = "OrderString" /></webobject>
+                    </webobject>
+                    <webobject name = "HomePageConditional">
+                      <strong>Home</strong>
+                    </webobject>
+                  </td>
+
+                  <webobject name = "IsNotCopyingResourcesConditional">
+                    <td class = "sectionIndent">
+                      <strong>
+                        <webobject name = "OutdentHyperlink"><webobject name = "OutDentImage"/></webobject>&nbsp; 
+                        <webobject name = "IndentHyperlink"><webobject name = "IndentImage" /></webobject>
+                      </strong>
+                    </td>
+
+                    <td class = "sectionTwisty">
+                      <strong>
+                        <webobject name = "NextSectionIsIndentedConditional">
+                          <webobject name = "IsNextSectionHiddenConditional">
+                            <webobject name = "ExpandSectionsHyperlink"><webobject name = "ShowIndentedNextSectionImage" /></webobject>
+                          </webobject>
+                          <webobject name = "IsNextSectionDisplayedConditional">
+                            <webobject name = "CollapseSectionsHyperlink"><webobject name = "HideIndentedNextSectionImage" /></webobject>
+                          </webobject>
+                        </webobject>
+                      </strong>
+                    </td>
+
+                    <webobject name = "IndentTD">
+                      <strong>
+                        <webobject name = "ViewSectionHyperlink">
+                          <webobject name = "SectionNameString" />
+                        </webobject>
+                      </strong>
+                    </webobject>
+
+                    <td class = "sectionType">
+                      <webobject name = "SectionTypeString" />
+                      <webobject name = "DataAccessHasNotificationConditional"> <webobject name = "MailImage" /> </webobject>
+                    </td>
+
+                    <td class = "sectionAccessGroups">
+                      <webobject name = "HasAtMostOneGroupConditional">
+                        <webobject name = "GroupsRepetition">
+                          <webobject name = "ManageGroupHyperlink"><webobject name = "GroupName" /></webobject>
+                        </webobject>
+                      </webobject>
+                      <webobject name = "HasAtLeastTwoGroupsConditional">
+                        <webobject name = "GroupSummaryHyperlink">
+                          <webobject name = "IsGroupHiddenConditional">
+                            <webobject name = "ShowGroupsImage" />
+                          </webobject>
+                          <webobject name = "IsGroupDisplayedConditional">
+                            <webobject name = "HideGroupsImage" />
+                          </webobject>
+                          <b><webobject name = "GroupCountString"/> Groups</b>
+                        </webobject><br/>
+                        <webobject name = "GroupsShownConditional">
+                            <webobject name = "GroupsRepetition">
+                              <webobject name = "ManageGroupHyperlink"><webobject name = "GroupName" /></webobject>
+                              <webobject name = "GroupSeperatorString" />
+                            </webobject>
+                        </webobject>
+                      </webobject>
+                    </td>
+
+                    <td class = "sectionActions"><webobject name = "ObserveActionPopupContainer"><webobject name = "ActionSelectPopup" /></webobject></td>
+
+                    <td class = "sectionMark">
+                      <span class = "sectionCheckbox"><webobject name = "ObserveSelectedSectionCheckboxContainer"><webobject name = "SelectedSectionCheckbox" /></webobject></span>
+                    </td>
+                  </webobject>
+
+                  <webobject name = "CopyingResourcesConditional">
+                    <td class = "sectionIndent"></td>
+                    <td class = "sectionTwisty"></td>
+                    <webobject name = "IndentTD">
+                        <span class = "boldText"><webobject name = "SectionNameString2" /></span>
+                        <webobject name = "IsCopyingConditional">
+                          <span class = "inProgressTask">
+                            <em>Copying...</em>
+                          </span>
+                        </webobject>
+                        <webobject name = "InstallingPackageConditional">
+                          <span class = "inProgressTask">
+                            <em>Installing section  <webobject name = "SectionString" /> from Data Table Package</em>
+                          </span>
+                        </webobject>
+                    </webobject>
+                  </webobject>
+                </tr>
+
+                <webobject name = "TRGenericContainer">
+                  <td colspan = "2"></td>
+                  <td colspan = "6">
+                    <webobject name = "BusyImage" />&nbsp;Processing...
+                  </td>
+                </webobject>
+              </table>
+            </webobject>
+          </webobject>
+        </webobject>
+      </ul>
+    </div>
+    
+  </webobject>
+</webobject>
+<br />
+
+
+
+<webobject name = "ConfirmDeleteSectionsModalDialog">
+  Are you sure you want to delete the selected section(s)?<br />
+  <webobject name = "CantDeleteHomeSectionString"/>
+  <span style="float:left"><webobject name = "ConfirmDeleteSectionsModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteSectionsModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "ConfirmDeleteSectionModalDialog">
+  Are you sure you want to delete the section?<br />
+  <span style="float:left"><webobject name = "ConfirmDeleteSectionModalDialogYesLink">Yes</webobject></span>
+  <span style="float:right"><webobject name = "ConfirmDeleteSectionModalDialogNoLink">No</webobject></span>
+</webobject>
+
+<webobject name = "ToggleShowHideSectionsModalDialog">
+  The Home section will not be hidden.<br />
+  <span style="float:right"><webobject name = "Ok">OK</webobject></span>
+</webobject>

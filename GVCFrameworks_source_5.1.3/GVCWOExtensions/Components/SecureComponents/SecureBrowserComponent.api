@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" standalone="yes"?>
+<wodefinitions>
+	<wo class="SecureBrowserComponent" wocomponentcontent="NO">
+
+		<binding name="list"/>
+		<binding name="formatter"/>
+		<binding name="selections"/>
+		<binding name="name"/>
+		<binding name="cssClassName"/>
+		<binding name="displayStringPath"/>
+		<binding name="isPermissable"/>
+		<binding name="isMultiple"/>
+		<binding name="noSelectionString"/>
+
+		<validation message="&apos;selections&apos; is a required binding">
+			<unbound name="selections"/>
+		</validation>
+
+		<validation message="&apos;isPermissable&apos; is a required binding">
+			<unbound name="isPermissable"/>
+		</validation>
+	</wo>
+</wodefinitions>

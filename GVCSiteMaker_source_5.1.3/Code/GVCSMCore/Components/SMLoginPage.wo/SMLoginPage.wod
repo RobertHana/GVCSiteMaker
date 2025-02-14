@@ -1,0 +1,24 @@
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = pageTitle;
+    // neither purely admin or configuration.  Does not matter as far as HeaderSub is concerned.
+    pageType = "com.gvcsitemaker.core.components.SMLoginPage";
+}
+
+HasLoginMessageConditional: WOConditional {
+	condition = message.length;
+}
+
+LoginMessageString: WOString {
+	value = message;
+	escapeHTML = false;
+}
+
+LoginPanel: LoginPanel {
+	destination = destination;
+	subTitle = application.properties.LoginPageMessage;  // VALID
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;  // VALID
+}

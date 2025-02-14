@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ReorderTextField.java" wocomponentcontent="false">
+
+        <binding name="container"/>
+        <validation message="'container' is a required binding.">
+            <unbound name="container"/>
+        </validation>
+        <binding name="object"/>
+        <validation message="'object' is a required binding.">
+            <unbound name="object"/>
+        </validation>
+    </wo>
+</wodefinitions>

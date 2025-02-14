@@ -1,0 +1,749 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+ModelConnector (Global Village Consulting Open Source Frameworks)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ModelConnector (Global Village Consulting Open Source Frameworks)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ModelConnector.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/LockErrorScreamerEditingContext.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/ModelConnector.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ModelConnector.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+net.global_village.eofextensions</FONT>
+<BR>
+Class ModelConnector</H2>
+<PRE>
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>net.global_village.eofextensions.ModelConnector</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.29"><B>ModelConnector</B></A><DT>extends <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+<p>ModelConnector handles configuring the connection dictionary and adaptor name
+ in EOModels at runtime.  It can ignore some models if they are not needed or if
+ they need different connection information. Note that this class updates the
+ connection dictionary <em>as the models are loaded</em>.  This means that if a model gets
+ loaded before you instantiate this class, it's connection dictionary will not be
+ updated.</p>
+
+ <p>If an EOModel already has a set adaptor type (e.g. JDBC, JDNI) and that type
+ is not the same as our <code>adaptorType()</code> then the model will also be
+ ignored.  This prevents one connector (e.g. JDBC) from trashing models
+ (e.g. JDNI) models.</p>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>$Revision: 16$</DD>
+<DT><B>Author:</B></DT>
+  <DD>Copyright (c) 2001-2006  Global Village Consulting, Inc.  All rights reserved.
+ This software is published under the terms of the Educational Community License (ECL) version 1.0,
+ a copy of which has been included with this distribution in the LICENSE.TXT file.</DD>
+</DL>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#adaptorName">adaptorName</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#connectionDictionary">connectionDictionary</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.eoaccess.EOModelGroup</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#modelGroup">modelGroup</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#modelNamesToIgnore">modelNamesToIgnore</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#ModelConnector(com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSArray)">ModelConnector</A></B>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                             com.webobjects.foundation.NSArray&nbsp;ignoredModels)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience constructor for JDBC connections in the default model group.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#ModelConnector(com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSArray, com.webobjects.eoaccess.EOModelGroup)">ModelConnector</A></B>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                             com.webobjects.foundation.NSArray&nbsp;ignoredModels,
+                             com.webobjects.eoaccess.EOModelGroup&nbsp;theModelGroup)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience constructor for JDBC connections.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#ModelConnector(com.webobjects.foundation.NSDictionary, java.lang.String, com.webobjects.foundation.NSArray)">ModelConnector</A></B>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theAdaptorName,
+                             com.webobjects.foundation.NSArray&nbsp;theModelNamesToIgnore)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor for the default model group, creates a ModelConnector to use
+ the indicated connection dictionary and adaptor name when updating all models not named
+ in <code>ingoredModels</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#ModelConnector(com.webobjects.foundation.NSDictionary, java.lang.String, com.webobjects.foundation.NSArray, com.webobjects.eoaccess.EOModelGroup)">ModelConnector</A></B>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                             <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theAdaptorName,
+                             com.webobjects.foundation.NSArray&nbsp;theModelNamesToIgnore,
+                             com.webobjects.eoaccess.EOModelGroup&nbsp;theModelGroup)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designated constructor for custom model groups, creates a ModelConnector to use the
+ indicated connection dictionary and adaptor name when updating all models not named in
+ <code>ingoredModels</code>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#adaptorName()">adaptorName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the adaptor type matching <code>connectionDictionary()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#addObserver(java.lang.String)">addObserver</A></B>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;methodName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register for notifications.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSDictionary</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#connectionDictionary()">connectionDictionary</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the connection dictionary for all EOModels handled by this ModelConnector instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#connectModel(com.webobjects.eoaccess.EOModel)">connectModel</A></B>(com.webobjects.eoaccess.EOModel&nbsp;theModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connect the passed in model using this object's connection dictionary and adaptor name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#finalize()">finalize</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unregister us from notifications so that we are not messaged.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#handleModelAddedInCustomGroupNotification(com.webobjects.foundation.NSNotification)">handleModelAddedInCustomGroupNotification</A></B>(com.webobjects.foundation.NSNotification&nbsp;aNotification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The object in the notification is the model being added.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#handleModelAddedInDefaultGroupNotification(com.webobjects.foundation.NSNotification)">handleModelAddedInDefaultGroupNotification</A></B>(com.webobjects.foundation.NSNotification&nbsp;aNotification)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The object in the notification is the model being added.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#isIgnoringModel(com.webobjects.eoaccess.EOModel)">isIgnoringModel</A></B>(com.webobjects.eoaccess.EOModel&nbsp;aModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if <code>aModel</code> will be ignored by this
+ EOModelConnector instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOModelGroup</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#modelGroup()">modelGroup</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the adaptor type matching <code>connectionDictionary()</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.foundation.NSArray</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#modelNamesToIgnore()">modelNamesToIgnore</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of EOModel names to be ignored by this ModelConnector instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;com.webobjects.eoaccess.EOModel</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#modelWithEntities()">modelWithEntities</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get an eo model from the model group that contains at least one entity.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#registerModels()">registerModels</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registers all of the EOModels that we have switched connection dictionaries for with their
+ EODatabase provided that the model's name is not in modelNamesToIgnore().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../net/global_village/eofextensions/ModelConnector.html#removeObserver()">removeObserver</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unregister us from notifications so that we are not messaged.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="connectionDictionary"><!-- --></A><H3>
+connectionDictionary</H3>
+<PRE>
+protected com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.32"><B>connectionDictionary</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="modelNamesToIgnore"><!-- --></A><H3>
+modelNamesToIgnore</H3>
+<PRE>
+protected com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.33"><B>modelNamesToIgnore</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="adaptorName"><!-- --></A><H3>
+adaptorName</H3>
+<PRE>
+protected <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.34"><B>adaptorName</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="modelGroup"><!-- --></A><H3>
+modelGroup</H3>
+<PRE>
+protected com.webobjects.eoaccess.EOModelGroup <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.35"><B>modelGroup</B></A></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ModelConnector(com.webobjects.foundation.NSDictionary, java.lang.String, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+ModelConnector</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.48"><B>ModelConnector</B></A>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                      <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theAdaptorName,
+                      com.webobjects.foundation.NSArray&nbsp;theModelNamesToIgnore)</PRE>
+<DL>
+<DD>Designated constructor for the default model group, creates a ModelConnector to use
+ the indicated connection dictionary and adaptor name when updating all models not named
+ in <code>ingoredModels</code>.  Only models with an adaptorType of <code>theAdaptorName</code>
+ or with no adaptorName, in the default model group are updated.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aConnectionDictionary</CODE> - the connection dictionary to connect all the EOModels with<DD><CODE>theAdaptorName</CODE> - the name of the EOAdaptor that aConnectionDictionary is for<DD><CODE>theModelNamesToIgnore</CODE> - NSArray of the names of models to <b>not</b> update with connectionDictionary()</DL>
+</DL>
+<HR>
+
+<A NAME="ModelConnector(com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSArray)"><!-- --></A><H3>
+ModelConnector</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.87"><B>ModelConnector</B></A>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                      com.webobjects.foundation.NSArray&nbsp;ignoredModels)</PRE>
+<DL>
+<DD>Convenience constructor for JDBC connections in the default model group.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aConnectionDictionary</CODE> - the connection information to use<DD><CODE>ignoredModels</CODE> - list of names of models that should no be processed</DL>
+</DL>
+<HR>
+
+<A NAME="ModelConnector(com.webobjects.foundation.NSDictionary, java.lang.String, com.webobjects.foundation.NSArray, com.webobjects.eoaccess.EOModelGroup)"><!-- --></A><H3>
+ModelConnector</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.118"><B>ModelConnector</B></A>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                      <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;theAdaptorName,
+                      com.webobjects.foundation.NSArray&nbsp;theModelNamesToIgnore,
+                      com.webobjects.eoaccess.EOModelGroup&nbsp;theModelGroup)</PRE>
+<DL>
+<DD>Designated constructor for custom model groups, creates a ModelConnector to use the
+ indicated connection dictionary and adaptor name when updating all models not named in
+ <code>ingoredModels</code>.  Only models with an adaptorType of <code>theAdaptorName</code>
+ or with no adaptorName, and in the given model group, are updated.
+
+ <p><b>Using a custom model group</b><br>
+ Since this class sets the connection dictionary of models <em>as they are loaded</em>, you need
+ to order your code carefully when using a custom model group:<br>
+ <code>
+ EOModelGroup myModelGroup = new EOModelGroup();
+ new ModelConnector(dict, adaptor, ignore, myModelGroup);
+ myModelGroup.addModel(myModel);
+ </code></p>
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aConnectionDictionary</CODE> - the connection dictionary to connect all the EOModels with<DD><CODE>theAdaptorName</CODE> - the name of the EOAdaptor that aConnectionDictionary is for<DD><CODE>theModelNamesToIgnore</CODE> - NSArray of the names of models to <b>not</b> update with connectionDictionary()<DD><CODE>theModelGroup</CODE> - restricts connections to models in this model group, <code>null</code> indicates the default model group, do <b>not</b> pass in EOModelGroup.defaultGroup()</DL>
+</DL>
+<HR>
+
+<A NAME="ModelConnector(com.webobjects.foundation.NSDictionary, com.webobjects.foundation.NSArray, com.webobjects.eoaccess.EOModelGroup)"><!-- --></A><H3>
+ModelConnector</H3>
+<PRE>
+public <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.154"><B>ModelConnector</B></A>(com.webobjects.foundation.NSDictionary&nbsp;aConnectionDictionary,
+                      com.webobjects.foundation.NSArray&nbsp;ignoredModels,
+                      com.webobjects.eoaccess.EOModelGroup&nbsp;theModelGroup)</PRE>
+<DL>
+<DD>Convenience constructor for JDBC connections.  See the designated constructor above
+ for instructions on how to use this class with a custom model group.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>aConnectionDictionary</CODE> - the connection information to use<DD><CODE>ignoredModels</CODE> - list of names of models that should no be processed<DD><CODE>theModelGroup</CODE> - restricts connections to models in this model group, <code>null</code> indicates the default model group, do <b>not</b> pass in EOModelGroup.defaultGroup()</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="addObserver(java.lang.String)"><!-- --></A><H3>
+addObserver</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.172"><B>addObserver</B></A>(<A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;methodName)</PRE>
+<DL>
+<DD>Register for notifications.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>methodName</CODE> - the method name that will handle the notifications</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeObserver()"><!-- --></A><H3>
+removeObserver</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.182"><B>removeObserver</B></A>()</PRE>
+<DL>
+<DD>Unregister us from notifications so that we are not messaged.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="finalize()"><!-- --></A><H3>
+finalize</H3>
+<PRE>
+protected void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.198"><B>finalize</B></A>()</PRE>
+<DL>
+<DD>Unregister us from notifications so that we are not messaged.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A></CODE> in class <CODE><A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="registerModels()"><!-- --></A><H3>
+registerModels</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.223"><B>registerModels</B></A>()</PRE>
+<DL>
+<DD>Registers all of the EOModels that we have switched connection dictionaries for with their
+ EODatabase provided that the model's name is not in modelNamesToIgnore().  This was done to
+ work around a bug in this situation: two EOModels, an EOEntity in one is a sub-class of an
+ EOEntity in the other, and an instance of the sub-class is created before any entities in the
+ model containing the superclass are created.  This results in this exception:<br>
+ <br>
+ java.lang.NullPointerException<br>
+ at com.webobjects.jdbcadaptor.FrontbasePlugIn._newPrimaryKey(FrontbasePlugIn.java:215)<br>
+ at com.webobjects.jdbcadaptor.FrontbasePlugIn.newPrimaryKeys(FrontbasePlugIn.java:205)<br>
+ at com.webobjects.jdbcadaptor.JDBCChannel.primaryKeysForNewRowsWithEntity(JDBCChannel.java:544)<br>
+ at com.webobjects.eoaccess.EODatabaseContext._batchNewPrimaryKeysWithEntity(EODatabaseContext.java:5697)<br>
+ at com.webobjects.eoaccess.EODatabaseContext.prepareForSaveWithCoordinator(EODatabaseContext.java:5676)<br>
+ at com.webobjects.eocontrol.EOObjectStoreCoordinator.saveChangesInEditingContext(EOObjectStoreCoordinator.java:389)<br>
+ at com.webobjects.eocontrol.EOEditingContext.saveChanges(EOEditingContext.java:2486)<br>
+ <br>
+ It appears that when the sub-class referred to its parent that it was not found in the database.  This code just registeres each EOModel with it's database.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelWithEntities()"><!-- --></A><H3>
+modelWithEntities</H3>
+<PRE>
+public com.webobjects.eoaccess.EOModel <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.275"><B>modelWithEntities</B></A>()</PRE>
+<DL>
+<DD>Get an eo model from the model group that contains at least one entity.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>an eo model with at least one entity</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="connectModel(com.webobjects.eoaccess.EOModel)"><!-- --></A><H3>
+connectModel</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.303"><B>connectModel</B></A>(com.webobjects.eoaccess.EOModel&nbsp;theModel)</PRE>
+<DL>
+<DD>Connect the passed in model using this object's connection dictionary and adaptor name.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>theModel</CODE> - the model we are connecting</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleModelAddedInDefaultGroupNotification(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+handleModelAddedInDefaultGroupNotification</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.328"><B>handleModelAddedInDefaultGroupNotification</B></A>(com.webobjects.foundation.NSNotification&nbsp;aNotification)</PRE>
+<DL>
+<DD>The object in the notification is the model being added.  If this model's name is not in modelNamesToIgnore(), overrides the connection dictionary in the loaded model with connectionDictionary().
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aNotification</CODE> - notification of which EOModel is being added</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleModelAddedInCustomGroupNotification(com.webobjects.foundation.NSNotification)"><!-- --></A><H3>
+handleModelAddedInCustomGroupNotification</H3>
+<PRE>
+public void <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.354"><B>handleModelAddedInCustomGroupNotification</B></A>(com.webobjects.foundation.NSNotification&nbsp;aNotification)</PRE>
+<DL>
+<DD>The object in the notification is the model being added.  If this model's name is not in modelNamesToIgnore(), overrides the connection dictionary in the loaded model with connectionDictionary().
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aNotification</CODE> - notification of which EOModel is being added</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isIgnoringModel(com.webobjects.eoaccess.EOModel)"><!-- --></A><H3>
+isIgnoringModel</H3>
+<PRE>
+public boolean <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.386"><B>isIgnoringModel</B></A>(com.webobjects.eoaccess.EOModel&nbsp;aModel)</PRE>
+<DL>
+<DD>Returns <code>true</code> if <code>aModel</code> will be ignored by this
+ EOModelConnector instance.  The model will be ignored if it is in the list
+ of models to ignore, if it has an adaptor type which is not compatible
+ (not null and not our adaptor type), or if it does not belong to the model
+ group that we are connecting.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>aModel</CODE> - the EOModel to check
+<DT><B>Returns:</B><DD><code>true</code> if <code>aModel</code> will be ignored by this
+ EOModelConnector instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="connectionDictionary()"><!-- --></A><H3>
+connectionDictionary</H3>
+<PRE>
+public com.webobjects.foundation.NSDictionary <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.409"><B>connectionDictionary</B></A>()</PRE>
+<DL>
+<DD>Returns the connection dictionary for all EOModels handled by this ModelConnector instance.  A connection dictionary looks like this;
+ <br><br>
+ <pre>
+ connectionDictionary = {
+          URL = "jdbc:oracle:thin:@OTTAWA:1521:GVC";
+          driver = "";
+          password = smaker2;
+          plugin = "";
+          username = smaker2;
+ };
+ </pre>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelNamesToIgnore()"><!-- --></A><H3>
+modelNamesToIgnore</H3>
+<PRE>
+public com.webobjects.foundation.NSArray <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.423"><B>modelNamesToIgnore</B></A>()</PRE>
+<DL>
+<DD>Returns the list of EOModel names to be ignored by this ModelConnector instance.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="adaptorName()"><!-- --></A><H3>
+adaptorName</H3>
+<PRE>
+public <A HREF="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.437"><B>adaptorName</B></A>()</PRE>
+<DL>
+<DD>Returns the adaptor type matching <code>connectionDictionary()</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the adaptor type matching <code>connectionDictionary()</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="modelGroup()"><!-- --></A><H3>
+modelGroup</H3>
+<PRE>
+public com.webobjects.eoaccess.EOModelGroup <A HREF="../../../src-html/net/global_village/eofextensions/ModelConnector.html#line.449"><B>modelGroup</B></A>()</PRE>
+<DL>
+<DD>Returns the adaptor type matching <code>connectionDictionary()</code>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the adaptor type matching <code>connectionDictionary()</code></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ModelConnector.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<b>Global Village Consulting Open Source Frameworks</b></EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../net/global_village/eofextensions/LockErrorScreamerEditingContext.html" title="class in net.global_village.eofextensions"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../net/global_village/eofextensions/MultiECLockManager.html" title="class in net.global_village.eofextensions"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?net/global_village/eofextensions/ModelConnector.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ModelConnector.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

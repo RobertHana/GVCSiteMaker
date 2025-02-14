@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {columnName = bare_id; name = bareID; prototypeName = Key; }, 
+        {columnName = relationship_ID; name = relationshipID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (bareID, relationshipID); 
+    className = EOGenericRecord; 
+    classProperties = (relationshipEntity, bareEntity); 
+    externalName = REL_TO_BARE; 
+    fetchSpecificationDictionary = {}; 
+    name = RelationshipToBare; 
+    primaryKeyAttributes = (bareID, relationshipID); 
+    relationships = (
+        {
+            destination = ValidationBareEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = bareID; }); 
+            name = bareEntity; 
+        }, 
+        {
+            destination = RelationshipValidationTestEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = theID; sourceAttribute = relationshipID; }); 
+            name = relationshipEntity; 
+        }
+    ); 
+}

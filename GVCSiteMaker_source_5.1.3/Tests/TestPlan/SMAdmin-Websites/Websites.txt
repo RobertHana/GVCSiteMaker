@@ -1,0 +1,7 @@
+Site ID	Owner ID	Associated Unit Name	Filespace Quota	RedirectURL	ExampleSiteID
+Math100	sitemaker3@global-village.net	Mathematics	10		
+Math200	sitemaker3@global-village.net	Mathematics	10		
+Math300	sitemaker3@global-village.net	Mathematics	10		
+Math	sitemaker3@global-village.net	Mathematics	10		
+DrGeller	sitemaker1@global-village.net	Professors	10		
+DrWho	sitemaker1@global-village.net	Professors	100		

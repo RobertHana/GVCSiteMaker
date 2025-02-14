@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Image (GIF, JPG, or PNG)</title>
+    <usesIFrame>true</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>            
+    <parameterInstructions>The settings below apply to the image, not to the pane containing it.</parameterInstructions>
+	<parameter>
+		<name>width</name>
+		<uiName>Width</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+	<parameter>
+		<name>height</name>
+		<uiName>Height</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+	<parameter>
+		<name>alt</name>
+		<uiName>Alternate Text</uiName>
+		<type>string</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+	<parameter>
+		<name>border</name>
+		<uiName>Border</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+	<parameter>
+		<name>align</name>
+		<uiName>Alignment</uiName>
+		<type>valueList</type>
+		<paramValue>
+			<value>Left</value>
+		</paramValue>
+		<paramValue>
+			<value>Center</value>
+		</paramValue>	
+		<paramValue>
+			<value>Right</value>
+		</paramValue>
+	</parameter>
+	<parameter>
+		<name>margin-top</name>
+		<uiName>Top Margin</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+	<parameter>
+		<name>margin-bottom</name>
+		<uiName>Bottom Margin</uiName>
+		<type>integer</type>
+		<isRequired>false</isRequired>		
+	</parameter>
+    <!-- Missing quotes around height and width in template are hack to support IE when height and width are unspecified.  -->
+    <template><![CDATA[
+		<div style="text-align:<webobject name=align></webobject>"><IMG SRC="<webobject name=SourceURL></webobject>" ALT="<webobject name=alt></webobject>" BORDER="<webobject name=border></webobject>" STYLE="width:<webobject name=width></webobject>; height:<webobject name=height></webobject>; margin-top:<webobject name=margin-top></webobject>; margin-bottom:<webobject name=margin-bottom></webobject>"></div>
+    ]]></template>	
+</mediaComponent>

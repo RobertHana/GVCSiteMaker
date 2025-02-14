@@ -1,0 +1,192 @@
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+AlteringConditional: WOConditional {
+    condition = canBeAltered;
+    negate = true;
+}
+
+CanBeAlteredConditional: WOConditional {
+	condition = canBeAltered;
+}
+
+CanCreateVersionConditional: WOConditional {
+	condition = canCreateANewVersion;
+}
+
+ConvertCRCheckBox: WOCheckBox {
+	checked = layout.textComponent.shouldConvertCR;
+}
+
+CreateNewVersionCheckBox: WOCheckBox {
+	checked = shouldCreateNewVersion;
+}
+
+DetailsString: WOString {
+	value = version.details;
+}
+
+EditorModeRepetition: WORepetition {
+	item = anEditorMode;
+	list = editorModes;
+}
+
+Form: WOForm {
+	multipleSubmit = true;
+	name = "TextImageForm";
+	action = switchMode;
+}
+
+HTMLDescriptionConditional: WOConditional {
+	negate = true;
+	condition = shouldDisplayInRichTextMode;
+}
+
+ImagePrimitve: Image {
+	componentObject = layout.imageComponent;
+	currentMode = "edit";
+}
+
+IsExistingVersionConditional: WOConditional {
+	condition = version.globalID.isTemporary;
+	negate = true;
+}
+
+IsNotCurrentVersionConditional: WOConditional {
+	condition = version.isCurrent;
+	negate = true;
+}
+
+IsRTEAvailableConditional: WOConditional {
+	condition = isDisabled;
+	negate = true;
+}
+
+IsRTEDisabledConditional: WOConditional {
+	condition = isDisabled;
+	negate = false;
+}
+
+IsVersioningConditional: WOConditional {
+	condition = isVersioningEnabled;
+}
+
+ModeRadioButton: WORadioButton {
+	name = "mode";
+	selection = currentEditorMode;
+	value = anEditorMode;
+	onClick = "this.form.submit(); return false;";
+	disabled = isDisabled;
+}
+
+ModeString: WOString {
+	value = anEditorMode;
+}
+
+PlainTextConditional: WOConditional {
+	condition = shouldDisplayInRichTextMode;
+	negate = true;
+}
+
+PreviewJavaScript: PreviewJavaScript 
+{
+	previewURL = previewURL;
+}
+
+PreviewMailToHyperlink: WOHyperlink {
+	href = PreviewMailToHyperlink;
+}
+
+RTEEditorInsructions: WOSwitchComponent {
+	WOComponentName = application.properties.RichTextEditorInstructions;  //VALID
+}
+
+RTEInstuctionsConditional: WOConditional {
+	condition = shouldDisplayInRichTextMode;
+}
+
+Reset: WOSubmitButton {
+	action = resetPage;
+	value = "Cancel";
+}
+
+SectionSubtype: WOString {
+	value = aLayout;
+}
+
+SectionTypeImage: WOImage {
+	src = imageURLForLayout;
+}
+
+SectionTypeRadioButton: WORadioButton {
+	name = "subType";
+	selection = layout.subType;
+	value = aLayout;
+}
+
+SectionTypeRep: WORepetition {
+	item = aLayout;
+	list = layouts;
+}
+
+ShowVersionDetailsConditional: WOConditional {
+	condition = isVersioningEnabled;
+}
+
+LastModifiedDateString: WOString {
+	value = version.modifiedDate;
+	formatter = application.properties.DateAndTimeFormatter;  //VALID
+}
+
+LastModifiedByString: WOString {
+	value = version.modifiedBy.userID;
+}
+
+TextPrimitive: SMWOTextComponent {
+    value = layout.textComponent.text;  //VALID
+	shouldUseRichTextEditor = shouldDisplayInRichTextMode;
+    editorCSS = layout.textComponent.sectionUsedIn.activeSectionStyle.relatedCSSUrl;
+    index = 0;
+    wysiwygEditorMode = "Advanced";
+    website = website;
+    section = layout.textComponent.sectionUsedIn;
+}
+
+Update: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+	name = "SubmitButton";
+}
+
+UpdateAndPreview: WOSubmitButton {
+	action = updateSettingsAndPreview;
+	value = "Save & View";
+}
+
+UploadFilesSubmitButton: WOSubmitButton {
+	action = uploadFile;
+	value = "Upload Files";
+}
+
+VersionNameString: WOString {
+	value = version.name;
+}
+
+VersionsHyperlink: WOHyperlink {
+	action = viewVersions;
+}
+
+ViewNonCurrentConditional: WOConditional {
+	condition = canViewNonCurrentVersions;
+}
+
+CanManuallyCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+  negate = true;
+}
+
+CanAutoCreateVersion : WOConditional {
+  condition = section.isAutoVersioning.booleanValue;
+}

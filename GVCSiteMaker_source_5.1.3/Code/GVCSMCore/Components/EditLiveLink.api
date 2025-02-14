@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="EditLiveLink" wocomponentcontent="false">
+
+		<binding name="textAreaName"/>
+		<binding name="formName"/>
+		<binding name="saveButtonName"/>
+		<binding name="saveParentFormOnClose" defaults="Boolean"/>
+
+		<validation message="&apos;textAreaName&apos; is a required binding">
+			<unbound name="textAreaName"/>
+		</validation>
+
+		<validation message="&apos;formName&apos; is a required binding">
+			<unbound name="formName"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,21 @@
+<webobject name=WYSIWYGEnabledConditional><script language="javascript">
+	<!-- // Opens a new window and launches EditLive! for Java 
+	function openEditLiveforJava(formName, textAreaName, saveButtonName, saveParentFormOnClose) { 
+       var params = '?formName=' + formName + '&textAreaName=' + textAreaName
+
+       if ((saveButtonName != null) && (saveButtonName.length > 0)) {
+           params = params + '&saveButtonName=' + saveButtonName;
+       }
+
+       if ((saveParentFormOnClose != null) && (saveParentFormOnClose.length > 0)) {
+           params = params + '&saveParentFormOnClose=' + saveParentFormOnClose;
+       }
+
+		var editLiveWindow = null;
+		editLiveWindow = window.open('<WebObject name="EditLiveUrl"></WebObject>' + params, 'EditLive','width=' + 750 + ',height=' + 550 +
+			 ',status=yes,resizable=yes,scrollbars=yes,location=no,toolbar=no'); 
+		editLiveWindow.focus();
+	} 
+	//openEditLiveJava --> 
+</script>
+<input type="button" value = "Use Editor" onClick="javascript:openEditLiveforJava('<webobject name="FormName"></webobject>', '<webobject name="TextAreaName"></webobject>', '<webobject name="SaveButtonName"></webobject>', '<webobject name="SaveParentFormOnClose"></webobject>');"></webobject name=WYSIWYGEnabledConditional>

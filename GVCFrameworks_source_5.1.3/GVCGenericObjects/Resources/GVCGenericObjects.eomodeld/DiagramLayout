@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layouts</key>
+	<dict>
+		<key>Default</key>
+		<dict>
+			<key>EntityOption</key>
+			<string>All</string>
+			<key>RelationshipOption</key>
+			<string>Propagates Key</string>
+			<key>ViewPositions</key>
+			<dict>
+				<key>GVCLocale</key>
+				<array>
+					<string>530.000000</string>
+					<string>464.000000</string>
+					<string>209.000000</string>
+					<string>96.000000</string>
+				</array>
+				<key>GVCLookup</key>
+				<array>
+					<string>369.000000</string>
+					<string>471.000000</string>
+					<string>209.000000</string>
+					<string>96.000000</string>
+				</array>
+				<key>GVCLookupLocalization</key>
+				<array>
+					<string>522.000000</string>
+					<string>350.000000</string>
+					<string>141.347656</string>
+					<string>96.000000</string>
+				</array>
+			</dict>
+			<key>orthoLines</key>
+			<string>Y</string>
+		</dict>
+	</dict>
+	<key>Version</key>
+	<string>1</string>
+</dict>
+</plist>

@@ -1,0 +1,130 @@
+CanBeModifiedConditional: WOConditional {
+	condition = dataAccessColumn.isEditable;
+}
+
+DefaultValuePopUpButton: WOPopUpButton {
+	list = dataAccessLookupColumn.column.allLookupValues;  // VALID
+	noSelectionString = "(no default value)";
+	selection = dataAccessLookupColumn.defaultField;
+	item = aVirtualField;
+	displayString = formattedDefaultValue;
+    name = ~"DefaultValue_" + dataAccessLookupColumn.normalizedFieldName();
+}
+
+DispalyAsPopUpConditional: WOConditional {
+	condition = dataAccessLookupColumn.shouldDisplayAsPopUp;
+}
+
+DisplayAsRadioButtonsConditional: WOConditional {
+	condition = dataAccessLookupColumn.shouldDisplayAsPopUp;
+	negate = true;
+}
+
+DisplayMode: WOConditional {
+	condition = isInDisplayMode;
+}
+
+EditMode: WOConditional {
+	condition = isInEditMode;
+}
+
+FieldNameString: WOString {
+	value = dataAccessLookupColumn.column.lookupColumn.name;  // VALID
+}
+
+FieldValuePopUpButton: WOPopUpButton {
+	list = lookupValues;
+	noSelectionString = "(none)";
+	selection = fieldValue;
+	item = aVirtualField;
+	displayString = formattedLookupValue;
+}
+
+FieldValueString: WOString {
+	value = fieldDisplayValue;
+	escapeHTML = false;
+}
+
+FormatPopUpButton: WOPopUpButton {
+	displayString = formatExample;
+	item = aFormatPattern;
+	list = formatPatterns;
+	selection = dataAccessLookupColumn.format;
+    name = ~"Format_" + dataAccessLookupColumn.normalizedFieldName();
+}
+
+GridColumnTextField: WOTextField {
+	maxLength = 3;
+	size = 5;
+	value = dataAccessLookupColumn.gridColumns;
+    name = ~"GridColumns_" + dataAccessLookupColumn.normalizedFieldName();
+}
+
+InvalidGridColumnsConditional: WOConditional {
+	condition = gridColumnsValidationMessage;
+}
+
+InvalidGridColumnsMessageString: WOString {
+	value = gridColumnsValidationMessage;
+}
+
+IsConfiguringAddModeConditional: WOConditional {
+	condition = isConfiguringAddMode;
+}
+
+IsConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+}
+
+IsReadOnlyConditional: WOConditional {
+	negate = true;
+	condition = dataAccessColumn.isEditable;
+}
+
+IsntConfiguringSearchModeConditional: WOConditional {
+	condition = isConfiguringSearchMode;
+	negate = true;
+}
+
+MappedListPopUp: MappedListPopUp {
+	displayFrom = uiDisplayModes;
+	selectFrom = internalDisplayModes;
+	selection = dataAccessLookupColumn.displayType;
+    name = ~"DisplayMode_" + dataAccessLookupColumn.normalizedFieldName();
+}
+
+NeedsFormatterConditional: WOConditional {
+	condition = dataAccessLookupColumn.isStringLookup;
+	negate = true;
+}
+
+OptimisticLockingFailureConditional: WOConditional {
+	condition = optimisticLockingFailure;
+}
+
+OptimisticLockingFailureMessage: WOString {
+	value = optimisticLockingFailure;
+}
+
+DefaultComparisonPopUpButton: WOPopUpButton {
+	item = aComparisonType;
+	list = comparisonTypes;
+	selection = componentObject.defaultComparison;  // VALID
+    name = ~"DefaultComparison_" + dataAccessLookupColumn.normalizedFieldName();
+}
+
+RadioButtonMatrix: WORadioButtonMatrix {
+	item = aVirtualField;
+	list = lookupValues;
+	maxColumns = numberOfColumns;
+	selection = fieldValue;
+}
+
+String1: WOString {
+	value = formattedLookupValue;
+}
+
+TableNameString: WOString {
+	value = dataAccessLookupColumn.column.lookupColumn.table.name;  // VALID
+}
+

@@ -1,0 +1,14 @@
+{
+    attributes = (
+        {columnName = flag; name = flag; prototypeName = JavaBoolean; }, 
+        {columnName = the_name; name = name; prototypeName = String; width = 50; }, 
+        {columnName = the_id; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (theID, name, flag); 
+    className = net.global_village.testeomodelbase.EntityWithJavaBooleanAttribute; 
+    classProperties = (name, flag); 
+    externalName = ENTITY_WITH_JBOOLEAN; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityWithJavaBooleanAttribute; 
+    primaryKeyAttributes = (theID); 
+}

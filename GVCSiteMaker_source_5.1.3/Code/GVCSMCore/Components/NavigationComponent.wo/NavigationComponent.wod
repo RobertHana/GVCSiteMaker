@@ -1,0 +1,89 @@
+MyWebsitesHyperlink : WOHyperlink {
+    href = returnToMainConfigurationPage;
+}
+
+AdministrationHyperlink : WOHyperlink {
+    action = adminMainPage;
+}
+
+UserInfoHyperlink : WOHyperlink {
+    action = myUserInfoPage;
+}
+
+WebsiteRequestHyperlink : WOHyperlink {
+    action = websiteRequestPage;
+}
+
+SupportHyperlink : WOHyperlink {
+    action = supportPage;
+}
+
+IsAdminConditional : WOConditional {
+    condition = isAdminUser;
+}
+
+ShowWebsiteRequestsLinkConditional : WOConditional {
+    condition = showWebsiteRequestsLink;
+}
+
+UserIsLoggedInConditional : WOConditional {
+    condition = session.isUserAuthenticated;
+}
+
+MyWebsitesNotSelectedConditional : WOConditional {
+    condition = myWebsiteSelected;
+    negate = true;
+}
+
+MyWebsitesSelectedConditional : WOConditional {
+    condition = myWebsiteSelected;
+}
+
+AdministrationNotSelectedConditional : WOConditional {
+    condition = administrationSelected;
+    negate = true;
+}
+
+AdministrationSelectedConditional : WOConditional {
+    condition = administrationSelected;
+}
+
+UserInfoNotSelectedConditional : WOConditional {
+    condition = userInfoSelected;
+    negate = true;
+}
+
+WebsiteRequestsSelectedConditional : WOConditional {
+    condition = websiteRequestSelected;
+}
+
+WebsiteRequestsNotSelectedConditional : WOConditional {
+    condition = websiteRequestSelected;
+    negate = true;
+}
+
+UserInfoSelectedConditional : WOConditional {
+    condition = userInfoSelected;
+}
+
+SupportNotSelectedConditional : WOConditional {
+    condition = supportSelected;
+    negate = true;
+}
+
+SupportSelectedConditional : WOConditional {
+    condition = supportSelected;
+}
+
+UserNameString: WOString {
+    value = session.currentUser.userID;
+}
+
+IsLoggedInConditional : WOConditional {
+  condition = session.currentUser.isPublicUser;
+  negate = true;
+}
+
+LogoutHyperlink : WOHyperlink {
+    action = logoutPage;
+}

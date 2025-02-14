@@ -1,0 +1,14 @@
+RichTextComponent: WOSwitchComponent {
+	WOComponentName = richTextComponentName;
+	value = value;
+	editorCSS = editorCSS;
+	cols = cols;
+	rows = rows;
+	name = name;
+	index = index;
+	wysiwygEditorMode = wysiwygEditorMode;
+	section = section;
+	website = website;
+	columnName = columnName;
+	currentDataAccessMode = currentDataAccessMode;
+}

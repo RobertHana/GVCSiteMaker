@@ -1,0 +1,12 @@
+InternalUserDesignatorString: WOString {
+	value = application.properties.InternalUserDesignatorName;
+}
+
+InternalUsersNameString: WOString {
+	value = internalUsersGroup.name;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+

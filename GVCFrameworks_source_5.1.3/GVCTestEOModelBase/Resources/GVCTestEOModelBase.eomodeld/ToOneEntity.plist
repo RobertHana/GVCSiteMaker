@@ -1,0 +1,13 @@
+{
+    attributes = (
+        {columnName = id; name = id; prototypeName = Key; }, 
+        {columnName = the_name; name = name; prototypeName = String; width = 50; }
+    ); 
+    attributesUsedForLocking = (id, name); 
+    className = net.global_village.testeomodelbase.ToOneEntity; 
+    classProperties = (name); 
+    externalName = TO_ONE_ENTITY; 
+    fetchSpecificationDictionary = {}; 
+    name = ToOneEntity; 
+    primaryKeyAttributes = (id); 
+}

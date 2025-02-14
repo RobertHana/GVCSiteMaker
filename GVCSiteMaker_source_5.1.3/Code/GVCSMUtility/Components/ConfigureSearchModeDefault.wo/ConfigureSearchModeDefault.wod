@@ -1,0 +1,11 @@
+MainPageHyperlink: WOHyperlink {
+	pageName = "Main";
+}
+
+RefreshHyperlink: WOHyperlink {
+	action = configureSearchMode;
+}
+
+String1: WOString {
+	value = searchModeMessage;
+}

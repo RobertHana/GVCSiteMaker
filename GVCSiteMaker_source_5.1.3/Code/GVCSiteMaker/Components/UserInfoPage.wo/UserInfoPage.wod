@@ -1,0 +1,117 @@
+DynamicBody: DynamicBodyComponent 
+{
+    pageType = "My User Info";
+    pageTitle = "My User Info";
+    isAdmin = false;
+}
+
+UserInfoForm : WOForm {
+}
+
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "UserInfoPageAjaxUpdateContainer";
+    evalScripts = true;
+}
+
+CanEditUserIDConditional : WOConditional {
+    condition = application.properties.CanEditUserID;  // VALID
+}
+
+CanNotEditUserIDConditional : WOConditional {
+    condition = application.properties.CanEditUserID;  // VALID
+    negate = true;
+}
+
+UserIDEditor : AjaxInPlace {
+    id = "UserIDEditor";
+    manualControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+    saveUpdateContainerID = "UserInfoPageAjaxUpdateContainer";
+}
+
+EditUserIDView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditUserIDAction : WOGenericContainer {
+    elementName = "div";
+    onclick = "UserIDEditorEdit();";
+    class = "editableInPlaceField";
+    title = "Click to edit";
+}
+
+UserIDString: WOString {
+    value = session.currentUser.userID;
+}
+
+EditUserIDEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+UserIDTextField : WOTextField {
+    value = session.currentUser.userID;
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = "UserIDEditorSave();";
+    id = "UserIDTextField";
+}
+
+UserIDTextFieldID: WOString {
+    value = "UserIDEditor";
+}
+
+InPlaceEditorSimple : AjaxInPlaceEditor {
+    value = session.currentUser.userID;
+    class = "editableInPlaceField";
+    submitOnBlur = true;
+    action = saveChanges;
+    size = "36";
+    okButton = false;
+    cancelLink = false;
+}
+
+ErrorMessageString : WOString {
+    value = errorMessage;
+    escapeHTML = false;
+}
+
+ChangePasswordHyperlink : WOHyperlink {
+    action = changePasswordPage;
+}
+
+ShowChangePasswordHyperlinkConditional : WOConditional {
+    condition = session.currentUser.isInternalUser;
+    negate = true;
+}
+
+UnitRepetition : WORepetition {
+    list = session.currentUser.orderedAdminableUnits;
+    item = aUnit;
+}
+
+UnitNameString : WOString {
+    value = aUnit.unitName;
+}
+
+IsUnitAdminConditional : WOConditional {
+  condition = session.currentUser.isUnitAdmin;
+}
+
+StyleNameString : WOString {
+    value = session.currentUser.orgUnitToAdminStylesFor.unitName;
+}
+
+IsStyleAdminConditional : WOConditional {
+  condition = session.currentUser.canAdminStyles;
+}
+
+IsSystemAdmin : WOConditional {
+  condition = session.currentUser.isSystemAdmin;
+}
+
+IsNotSystemAdmin : WOConditional {
+  condition = session.currentUser.isSystemAdmin;
+  negate = true;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediaComponent>
+    <title>Downloadable File</title>
+    <usesIFrame>false</usesIFrame>
+    <requiresIFrame>false</requiresIFrame>    
+    <requiresSource>true</requiresSource>
+    <urlPrefix>
+        <prefix>http://</prefix>
+    </urlPrefix>            
+    <urlPrefix>
+        <prefix>https://</prefix>
+    </urlPrefix>   
+    <parameterInstructions>
+        Enter the text that will be clicked on to download this file.
+    </parameterInstructions>
+	<parameter>
+		<name>linkText</name>
+		<uiName>Text for Download Link</uiName>
+		<type>string</type>
+		<isRequired>true</isRequired>
+	</parameter>  
+	<parameter>
+		<name>target</name>
+		<uiName>Target</uiName>
+		<type>valueList</type>
+		<paramValue>
+			<value>_blank</value>
+		</paramValue>	
+		<paramValue>
+			<value>_parent</value>
+		</paramValue>
+		<paramValue>
+			<value>_self</value>
+		</paramValue>			
+		<paramValue>
+			<value>_top</value>
+		</paramValue>	
+	</parameter>
+    <template><![CDATA[
+        <a target="<webobject name=target></webobject>" href="<webobject name=SourceURLAsDownload></webobject>">
+          <webobject name=linkText></webobject>
+        </a>
+    ]]></template>	    
+</mediaComponent>

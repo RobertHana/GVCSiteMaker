@@ -1,0 +1,146 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = optional_boolean; 
+            name = optionalBoolean; 
+            prototypeName = JavaBoolean; 
+            valueFactoryMethodName = objectWithArchiveData; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_decimal_number; 
+            name = optionalDecimalNumber; 
+            precision = 10; 
+            prototypeName = Float; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_double; 
+            name = optionalDouble; 
+            prototypeName = Float; 
+            valueClassName = NSNumber; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_integer; 
+            name = optionalInteger; 
+            prototypeName = Integer; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_memo; 
+            name = optionalMemo; 
+            prototypeName = Memo; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_string; 
+            name = optionalString; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = optional_timestamp; 
+            name = optionalTimestamp; 
+            prototypeName = DateTimeWithTimeZone; 
+        }, 
+        {
+            columnName = required_boolean; 
+            name = requiredBoolean; 
+            prototypeName = JavaBoolean; 
+            valueFactoryMethodName = objectWithArchiveData; 
+        }, 
+        {
+            columnName = required_data; 
+            name = requiredData; 
+            prototypeName = Data; 
+            width = 10000; 
+        }, 
+        {
+            columnName = required_decimal_number; 
+            name = requiredDecimalNumber; 
+            precision = 10; 
+            prototypeName = Float; 
+        }, 
+        {
+            columnName = required_double; 
+            name = requiredDouble; 
+            prototypeName = Float; 
+            valueClassName = NSNumber; 
+        }, 
+        {
+            columnName = required_integer; 
+            name = requiredInteger; 
+            prototypeName = Integer; 
+        }, 
+        {
+            columnName = required_memo; 
+            name = requiredMemo; 
+            prototypeName = Memo; 
+            width = 2000; 
+        }, 
+        {
+            columnName = required_string; 
+            name = requiredString; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            columnName = required_timestamp; 
+            name = requiredTimestamp; 
+            prototypeName = DateTimeWithTimeZone; 
+        }, 
+        {columnName = short_data; name = shortData; prototypeName = Data; width = 10; }, 
+        {
+            columnName = short_string; 
+            name = shortString; 
+            prototypeName = String; 
+            width = 10; 
+        }, 
+        {columnName = the_id; name = theID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (
+        theID, 
+        requiredString, 
+        requiredMemo, 
+        requiredTimestamp, 
+        requiredInteger, 
+        optionalString, 
+        optionalMemo, 
+        optionalTimestamp, 
+        requiredData, 
+        optionalInteger, 
+        requiredBoolean, 
+        optionalBoolean, 
+        shortData, 
+        shortString
+    ); 
+    className = net.global_village.testeomodelbase.AttributeValidationTestEntity; 
+    classProperties = (
+        requiredString, 
+        requiredMemo, 
+        requiredTimestamp, 
+        requiredInteger, 
+        requiredDecimalNumber, 
+        optionalString, 
+        optionalMemo, 
+        optionalTimestamp, 
+        requiredData, 
+        requiredDouble, 
+        optionalDouble, 
+        optionalDecimalNumber, 
+        optionalInteger, 
+        requiredBoolean, 
+        optionalBoolean, 
+        theID, 
+        shortData, 
+        shortString
+    ); 
+    externalName = ATTR_VALID_TEST_ENTITY; 
+    fetchSpecificationDictionary = {}; 
+    name = AttributeValidationTestEntity; 
+    primaryKeyAttributes = (theID); 
+}

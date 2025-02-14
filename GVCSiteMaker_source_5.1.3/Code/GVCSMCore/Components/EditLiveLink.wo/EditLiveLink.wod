@@ -1,0 +1,28 @@
+EditLiveUrl: WOString {
+	value = editLiveUrl;
+	escapeHTML = false;
+}
+
+FormName: WOString {
+	value = formName;
+	escapeHTML = false;
+}
+
+SaveButtonName: WOString {
+	value = saveButtonName;
+	escapeHTML = false;
+}
+
+SaveParentFormOnClose: WOString {
+	value = saveParentFormOnClose;
+	escapeHTML = false;
+}
+
+TextAreaName: WOString {
+	value = textAreaName;
+	escapeHTML = false;
+}
+
+WYSIWYGEnabledConditional: WOConditional {
+	condition = isWYSIWYGEnabled;
+}

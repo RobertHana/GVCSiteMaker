@@ -1,0 +1,486 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<head>
+   <link rel="shortcut icon" href="../jass.ico">   
+   <link rel="stylesheet" type="text/css" href="../jass.css">   
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <meta name="author" content="Detlef Bartetzko, Michael M&ouml;ller">
+  <meta name="keywords" content="Design by Contract,assertion,assertions,runtime check,JaWA,jawa,jass,java language extension,interference,refinement,parallelism,Clemens Fischer,trace, Trace Assertion">
+   <title>Jass - Tour - Introduction to Jass
+</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#000077" vlink="#660077" alink="#cc3333">
+<a NAME="top"></a>
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tr>
+  <td bgcolor="#ffffcc">
+  <table border="0" width="100%" cellpadding="15">
+  <tr>
+    <td class="top" align="center" width="150">
+      <img src="../pic/jasslogo.png" alt="logo" WIDTH="82" HEIGHT="142"></td>
+    <td class="top">
+      <h1 class="top">The Jass Page</h1>
+      <h2 class="top">Tour - Introduction to Jass</h2>
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+<tr>
+  <td bgcolor="#aa88ff"> |
+    <a href="../index.html" target="_top">Home</a>
+ |
+    <a href="../download/index.html" target="_top">Download</a>
+ |
+  Tour
+ |
+    <a href="../doc/index.html" target="_top">Documentation</a>
+ |
+    <a href="../jassda/index.html" target="_top">jassda</a>
+ |
+    <a href="http://semantik.informatik.uni-oldenburg.de/~jass/news/index.html" target="_top">News</a>
+ |
+    <a href="../index/index.html" target="_top">Index</a>
+ |
+  </td>
+</tr>
+<tr>
+<td bgcolor="#ffffff">
+<div class="langref">
+  [English]
+</div>
+<hr size="1" noshade/>
+<br />
+<table border="0" width="100%">
+<tr>
+<td width="20%" valign="top">
+<table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">On this page:</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+    <div class="toc">
+<table>
+  <tr>
+  <td class="tocf">1</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect1">The Example: Buffer</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">2</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect2">General Layout of the Language</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">3</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect3">Pre- and Postconditions of Methods</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">4</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect4">Class Invariant</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">5</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect5">Loop Variant and Invariant</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">6</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect6">Check Statement</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">7</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect7">Rescue and Retry</a>
+  </td>
+  </tr>
+  <tr>
+  <td class="tocf">8</td>
+  <td colspan="2" class="toc"> 
+    <a href="#sect8">The jass precompiler</a>
+  </td>
+  </tr>
+</table>
+</div>
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+    <table class="sidetable" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+  <td class="sidetable">Tour</td>
+</tr>
+<tr><td>
+  <table class="sidetable-main" width="100%" cellpadding="3" cellspacing="0">
+  <tr><td class="sidetable-main">
+              The <b>Tour</b> will give you a brief introduction to the Jass assertion 
+language and the precompiler. For detailed information please consult the
+  <a href="../doc/" target="_top">Documentation</a>.
+  </td></tr>
+  </table>
+</td></tr>
+</table>
+<br />
+</td>
+<!-- main page -->
+<td valign="top">
+<div class="toc">
+</div>
+  <h1>
+  <a name="sect1">
+  1 The Example: Buffer</a></h1>
+<p> The following pages refer to an examples called <em>Buffer</em> which 
+is included in the Jass examples directory. You can view a 
+  <a href="../doc/buffer.html" target="_top">HTML version</a> of the code. Note that the 
+examples of the tour contain more assertions than the buffer example. 
+This Tour does not cover the <em>Trace-Assertion</em> feature of 
+Jass 2.x, which are described in the documentation only. </p>
+  <h1>
+  <a name="sect2">
+  2 General Layout of the Language</a></h1>
+<p> Jass supports different kind of assertions which are used to
+specify different properties of a java class. All assertions must
+appear in formal comments and have a introducing keyword which
+specifies the kind of the assertion. In the most cases the keyword is
+followed by a list of boolean expressions which describe the allowed
+states. The boolean expressions can contain variables and method
+calls. The expression must be pure declarative, so no side effects
+like assignment and instance creation can be used. Called methods must
+be free of side effects too. Quantifed expressions like forall and
+exists can used to make statements about sets.<p>
+<p> 
+  
+
+<a name="idx1"><em><strong>Example</strong></em></a> of a
+simple precondition: </p>
+<p><code>/** require !isFull(); o != null; **/</code></p>
+<p><strong>Attention</strong>: A semicolon must appear after the last
+boolean expression and the comment must be closed through '**/'.</p>
+<p> 
+  
+
+<a name="idx2"><em></em></a>For the most kind of
+assertions there can be declared a label that identifies the assertion
+in error messages:</p>
+<p><code>/** require [buffer_not_full] !isFull();
+[object_is_valid] o != null; **/</code></p>
+<p> The next sections of the tour describes the different kind of
+assertions with code examples. The tour is ended with an introduction
+in the commandline syntax of the precompiler.
+</p>
+  <h1>
+  <a name="sect3">
+  3 Pre- and Postconditions of Methods</a></h1>
+<p> With a 
+  
+
+<a name="idx3"><em>precondition</em></a> the
+developer can specify the states in which a method may be invoked. To
+satisfy the precondition is the duty of the caller. The precondition
+is checked at the begin of the methods body. The precondition must be
+declared at the begin of the method body with the introducing keyword
+<code>
+<a name="idx4"><em>require</em></a></code>.</p>
+<p>
+<a name="idx5"><em><strong>Example</strong></em></a> 
+for a precondition:</p>
+<p><code>public void addElement (Object o) {<BR>
+/** require !isFull(); o != null; **/<BR>
+...
+}
+</code></p>
+<p> The called methods and used variables in the precondition must be
+as visible as the method they appear in. This <em>availability</em>
+rule introduced by Bertrand Meyer ensures that the caller can
+understand the conditions under which the method can be invoked. This
+implies that local and private variables can not be used. </p>
+<p>A 
+  
+
+<a name="idx6"><em>postcondition</em></a> specifies the
+states in which the method should return. To satisfy the postcondition
+is the duty of the developer of the method. The postcondition is
+checked at all <em>normal</em> return points. These are all return
+statements and the end of the method body. The postcondition must be
+declared at the end of the method body with the introducing keyword
+<code>
+<a name="idx7"><em>ensure</em></a></code>.</p>
+<p>
+<a name="idx8"><em><strong>Example</strong></em></a> 
+for a postcondition:</p>
+<p><code>public void addElement (Object o) {<BR>
+...<BR>
+/** ensure !isEmpty() &amp;&amp; contains(o); **/<BR>
+}
+</code></p>
+<p>In a postcondition the return value of the method can be accessed
+with the special variable 
+  
+
+<a name="idx9"><em><code>Result</code></em></a>. The object state
+at the begin of the method is stored in the special variable 
+  
+
+<a name="idx10"><em><code>Old</code></em></a>. With this variable the
+developer can specify relations between entry and exit states. For
+example the monotony of a counter.</p>
+<p>
+<a name="idx11"><em><strong>Example</strong></em></a> for the
+use of <code>Old</code>:</p>
+<p><code>public void addElement (Object o) {<BR>
+...<BR>
+/** ensure !isEmpty() &amp;&amp; contains(o); count == Old.count+1; **/<BR>
+}
+</code></p>
+<p>To store a copy of the object at the begin of the method the
+developer must implement the method <code>clone</code> without
+throwing any exception (The interface 
+  
+
+<a name="idx12"><em>java.lang.Cloneable</em></a> must
+implemented!). Thus the developer decides how a copy is
+generated. This is a feature not a bug! Objects may reference complex
+data structures. Only the developer can decide which parts must be
+copied and which can be shared. If java.lang.Cloneable is not
+implemented, <code>Old</code> can not be used.</p>
+<p> Another special construct is the 
+  
+
+<a name="idx13"><em><code>changeonly</code></em></a> keyword
+followed by a list a attributes. If such a list is specified in a
+postcondition only the declared attributes are allowed to change there
+values. Not listed attributes must remain constant. The empty list
+stands for: <em>change nothing</em>. To check this a copy of the
+object is generated with the <em>clone</em> method analogously to the
+<code>Old</code> construct. The attributes are compared with the
+method 
+  
+
+<a name="idx14"><em><em>equals</em></em></a>
+which can be overwritten through the developer. This is a feature too!
+Attributes of array type are handled differently. Look at the [Link
+Name="assert2">complete description of the postcondition[/Link] to
+learn about this.</p>
+<p> 
+  
+
+<a name="idx15"><em><strong>Example</strong></em></a>
+for the use of <code>changeonly</code>:</p>
+<p><code>public void addElement (Object o) {<BR>
+...<BR>
+/** ensure !isEmpty() &amp;&amp; contains(o); Old.count == count-1; changeonly{count,buffer}; **/<BR>
+}
+</code></p>
+  <h1>
+  <a name="sect4">
+  4 Class Invariant</a></h1>
+<p> A class invariant specifies the global state of a class. It
+expresses restrictions and relationships of the attributs.  The class
+invariant is declared with the introducing keyword 
+  
+
+<a name="idx16"><em><code>invariant</code></em></a> and
+stands at the end of the class body. The class invariant is checked
+whenever a method of the class is called or ended. Analogous to the
+postcondition the end of a method are the return statements and the
+end of the body.</p>
+<p>
+<a name="idx17"><em><strong>Example</strong>
+</em></a> for a class invariant:</p>
+<p><code>public class Buffer {<BR>
+...<BR>
+/** invariant 0 <= in - out &amp;&amp; in - out <=buffer.length; **/<BR>
+}
+</code></p>
+<p>No local variables and formal parameters can be used in the class
+invariant!</p>
+  <h1>
+  <a name="sect5">
+  5 Loop Variant and Invariant</a></h1>
+<a name="idx18"><em></em></a>
+<p>Some kinds of errors are typical for loops:</p>
+<ul>
+<li> The loop does not terminate </li>
+<li> The loop body is execute once too often or to less </li>
+<li> Special cases like zero iterations are not handled </li>
+</ul>
+<a name="idx19"><em></em></a>
+<a name="idx20"><em></em></a>
+<a name="idx21"><em></em></a>
+<a name="idx22"><em></em></a>
+<p> To take the edge off the loops the loop invariant and the loop 
+variant are introduced. Both are declared after the head and 
+before the body of a loop.</p>
+<p> The loop invariant starts with the keyword 
+  
+
+<a name="idx23"><em><code>invariant</code></em></a> and
+specifies a condition that must be satisfied at the begin of the loop,
+after every iteration and when the loop has terminated. This is used
+to express global properties of the loop like the range of the loop
+variable.</p>
+<p> The loop variant has the introducing keyword <code>variant</code>
+and declares an integer expression that is decreased with every loop
+iteration but never below zero. Thus the loop variant guaranties the
+termination of the loop.</p>
+<p>
+<a name="idx24"><em></em></a>
+<a name="idx25"><em></em></a>
+<a name="idx26"><em></em></a>
+<strong>Example</strong>:</p>
+<pre>
+public boolean contains(Object o) {
+/** require o != null; **/
+    for (int i = 0; i &lt; buffer.length; i++) 
+    /** invariant 0 &lt;= i && i &lt;= buffer.length; **/
+    /** variant buffer.length - i **/
+       if (buffer[i].equals(o)) return true;
+    return false;
+/** ensure changeonly{}; **/    
+}
+</pre>
+<p> If both constructs are used the loop invariant must declared before
+the loop variant. The expression of the variant must be of type
+<em>int</em> and can not be decorated with a label. There is
+<strong>no semicolon</strong> at the end of the variant!</p>
+  <h1>
+  <a name="sect6">
+  6 Check Statement</a></h1>
+      <p> The check statement is introduced by the keyword 
+  
+
+<a name="idx27"><em><code>check</code></em></a> and can appear
+wherever a normal statement can stand.  When the execution reaches the
+check statement the condition is checked and if its not valid an
+exception is thrown.</p>
+<p>
+<a name="idx28"><em><strong>Example</strong></em></a>:</p>
+<p><code>/** check x >= 0; **/</code></p>
+<p> The next section explains how assertion violation can be handled
+to improve the robustness of the software. </p>
+  <h1>
+  <a name="sect7">
+  7 Rescue and Retry</a></h1>
+<a name="idx29"><em></em></a>
+<p> To handle assertion exceptions jass supports a special construct
+the rescue block. At the end of the method body (behind the
+postcondition) the user can specify assertion exceptions that should
+be caught and code blocks that should be executed then. The indicating
+keyword is 
+  
+
+<a name="idx30"><em><code>rescue</code></em></a>. A special keyword
+<a name="idx31"><em><code>retry</code></em></a> can be used in
+the rescue blocks to reinitiate the method call. </p>
+<p>
+<a name="idx32"><em></em></a>
+<a name="idx33"><em></em></a>
+<a name="idx34"><em></em></a>
+<strong>Example</strong>:</p>
+<pre>   
+public void add(Object o) {
+  /** require [valid_object] o != null; 
+              [buffer_not_full] !full(); **/  ...
+
+  /** ensure ... **/
+
+  /** rescue catch (PreconditionException e) {
+    if (e.label.equals("valid_object")) {
+      o = new DefaultObject(); retry;
+    } else { 
+      throw e; 
+    }
+  } **/
+}</pre>
+<p>This example catches a precondition exception and reinitiates the
+method call with a reassigned formal parameter. A default object is
+created and inserted in the buffer if the formal parameter was
+null. The assertion label is used to distinct between the two possible
+exceptions.</p>
+<p>The rescue construct can only be applied to exception of (sub)type of AssertionException. If no retry statement appears in the block the exception is throw again at the end of the code block.</p>
+  <h1>
+  <a name="sect8">
+  8 The jass precompiler</a></h1>
+<a name="idx35"><em></em></a>
+<p> Jass supports a bunch of options to allow a flexible integration
+of the 'design by contract' into new or existing projects. A class
+annotated with Jass assertions must be contained in a file with
+extension '.jass' (or with extension '.java' if a destination directory 
+was specified). The precompiler produces a valid Java class source file
+with the extension '.java' from the Jass file . This file must be compiled 
+with a Java compiler to get the runtime behaviour specified through design
+by contract. </p>
+<p> The following example demonstrates the simplest invocation of the
+precompiler (from the Jass main directory): </p>
+<p><code>java jass.Jass jass/examples/Buffer.jass</code></p>
+<p> This produces a file <code>Buffer.java</code> with can be compiled 
+through:</p>
+<p> <code>javac examples\Buffer.jass</code></p>
+<p> There are four 
+  
+
+<a name="idx36"><em>compilation modes</em></a>:
+<dl>
+<dt>
+<a name="idx37"><em><b>contract</b></em></a> (default mode)</dt>
+<dd>The produced java file behaves like specified through design by contract. An assertion violation triggers an exception.</dd>
+<dt>
+<a name="idx38"><em><b>warning</b></em></a></dt>
+<dd> An assertion violation triggers not an exception but produces an error message on the terminal (via System.out!). This mode is for a first integration in an existing project with minimal side effects.</dd>
+<dt>
+<a name="idx39"><em><b>nothing</b></em></a></dt>
+<dd>The Jass file is converted to a Java file with no changes in runtime behaviour. This is only a copy process.</dd>
+<dt>
+<a name="idx40"><em><b>interference</b></em></a></dt>
+<dd>This initiates an interference check and does not produce any files.</dd>
+</dl>
+<p>With the commandline</p>
+<p><code>java jass.Jass -warning jass/examples/Buffer.jass</code></p>
+<p>Jass generates a Java file that produces an error message not an
+exception when an assertion is violated.</p>
+<p>The compilation modes <em>contract</em> and <em>warning</em> can be
+annotated with compilation controls. The compilation controls decide
+which kind of assertions are handled and if optimizations should be
+done. The commandline</p>
+<p><code>java jass.Jass -contract[pre,post,forall]
+jass/examples/Buffer.jass</code></p>
+<p>produces an output that contains only code for pre- and
+postcondition checks. The forall and exists expressions are checked
+trough loops. If the <em>forall</em> control is dropped this
+expressions are assumed to be true. See the   <a href="../doc/handbook.html" target="_top">complete documentation</a> for a full
+description of the controls.</p>
+<div class="toc">
+</div>
+<!-- end of main page -->
+</td>
+</table>
+</td></tr>
+<tr><td height="5" bgcolor="#aa88ff"><font size=1>&nbsp;</font></td></tr>
+<tr><td bgcolor="#ffffcc">
+<div class="footer">
+  <a href="http://semantik.informatik.uni-oldenburg.de/~jass"><em>Jass</em></a>
+, last update 02/25/02
+- &copy; 2001   <a href="http://semantik.informatik.uni-oldenburg.de/eindex.html" target="_top">Semantics Group</a>
+, University of Oldenburg, Germany<br />
+Please send your comments to <a href="mailto:jass@informatik.uni-oldenburg.de">jass@informatik.uni-oldenburg.de</a>
+.<br />
+HTML coding powered by   <a href="http://htp.sourceforge.net/" target="_top">htp</a>
+</div>
+</td>
+</tr>
+</table>
+<!-- HTML pre-processed by htp 1.12 RELEASE -->
+</body>
+</html>

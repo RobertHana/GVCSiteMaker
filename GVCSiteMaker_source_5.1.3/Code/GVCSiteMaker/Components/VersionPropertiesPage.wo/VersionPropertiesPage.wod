@@ -1,0 +1,92 @@
+CurrentSiteInfoComponent: CurrentSiteInfoComponent 
+{
+    website = website;
+}
+
+SectionString: WOString {
+    value = section.name;
+}
+
+BackToWebsiteSectionsHyperlink: WOHyperlink {
+    action = backToWebsiteSections;
+    id = "BackHyperlink";
+}
+
+CurrentVersionCheckBox2: WOCheckBox {
+	checked = shouldMakeCurrentVersion;
+}
+
+DeleteButton: WOSubmitButton {
+	action = delete;
+	value = "Delete";
+}
+
+DeleteConditional: WOConditional {
+	condition = canDelete;
+}
+
+Details: WOText { 
+  value = version.details;
+  rows = 2;
+  cols = 40;
+}
+
+DynamicBody: DynamicBodyComponent 
+{
+	pageTitle = "Version";
+	isAdmin = false;
+	hasSite = true;
+	inPlaceEditingMode = inPlaceEditingMode;
+	pageType = "VersionPropertiesPage";
+}
+
+EditSectionButton: WOSubmitButton {
+	action = updateSettings;
+	value = "Save";
+}
+
+InAddModeConditional: WOConditional {
+	condition = addMode;
+}
+
+IsCurrentConditional: WOConditional {
+	condition = version.isCurrent;
+	negate = true;
+}
+
+IsNotCurrentConditional: WOConditional {
+	condition = version.isCurrent;
+}
+
+LockConditional: WOConditional {
+	condition = canChangeLockStatus;
+}
+
+LockedCheckBox: WOCheckBox {
+	checked = isLocked;
+}
+
+MakeCurrentConditional: WOConditional {
+	condition = canMakeVersionCurrent;
+}
+
+NotInAddModeConditional: WOConditional {
+	condition = addMode;
+	negate = true;
+}
+
+SaveChangesButton: WOSubmitButton {
+	action = goBack;
+	value = "Cancel and go back";
+}
+
+SaveChangesButton3: WOSubmitButton {
+	action = goBack;
+	value = "Cancel";
+}
+
+SectionForm: WOForm { 
+	multipleSubmit = true;
+}
+
+SectionName: WOTextField { size = "40"; value = version.name; maxLength = 50;}

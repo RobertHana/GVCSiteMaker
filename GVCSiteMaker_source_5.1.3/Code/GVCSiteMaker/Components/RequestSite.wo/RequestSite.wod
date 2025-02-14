@@ -1,0 +1,64 @@
+DynamicBody: DynamicBodyComponent 
+{
+	hasSite = false;
+	isConfigPage = false;
+	pageTitle = pageTitle;
+	isAdmin = false;
+}
+
+IsDuplicateSiteIDConditional: WOConditional {
+	condition = isDuplicateSiteID;
+}
+
+IsIllegalSiteIDConditional: WOConditional {
+	condition = isIllegalSiteID;
+}
+
+IsRequestPendingContional: WOConditional {
+	condition = isConfirmingRequest;
+	negate = true;
+}
+
+IsRequestSuccessfulConditional: WOConditional {
+	condition = isConfirmingRequest;
+}
+
+IsSiteIDMissingConditional: WOConditional {
+	condition = isNewSiteIDMissing;
+}
+
+OrgUnitMissingConditional: WOConditional {
+	condition = isOrgUnitMissing;
+}
+
+ProductNameString: WOString {
+	value = application.properties.ProductName;
+}
+
+RequestForm: WOForm {
+	action = sendRequest;
+}
+
+RequestorCommentTextArea: WOText {
+	value = requestorComments;
+	cols = 60;
+	rows = 5;
+}
+
+SiteIDTextField: WOTextField {
+	maxLength = 50;
+	size = 30;
+	value = newSiteID;
+}
+
+SiteRequestAddressHyperlink: WOHyperlink {
+	href = newSiteRequestURL;
+	string = newSiteRequestAddress;
+}
+
+TargetOrgUnit: UnitChooserWithDefault {
+	noSelectionString = "(choose a unit)";
+	selectedUnit = selectedUnit;
+	excludeNonSystemWideUnits = true;
+	rootOrgUnits = rootUnits;
+}

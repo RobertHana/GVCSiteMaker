@@ -1,0 +1,97 @@
+{
+	// 
+    // WebObjects Default Configuration
+    //
+	CachingEnabled = "true";
+	DebugRequestResponseLoop = "false";
+    PageCacheSize = "30";
+    PermanentPageCacheSize = "10";
+    SessionTimeOutInMinutes = "10";
+    SessionTerminateTimeOutInSeconds = "3";
+    DispatchRequestsConcurrently = false;
+    
+    // 
+    // Editing Context Configuration
+    //
+    EditingContextClassName = "com.webobjects.eocontrol.EOEditingContext";
+    DebuggingEditingContextClassName = "com.webobjects.eocontrol.EOEditingContext";
+    DefaultFetchTimestampLag = 3600000; // One hour in milliseconds
+    DebugEditingContextLocking = "false";
+    
+	// 
+    // Database Configuration
+    //
+    JDBCUrl = "";
+    JDBCDriver = "";
+    DBPassword = "";
+    EOFPlugin = "";
+    DBUserName = "";
+
+    LogSlowQueries = false;
+    LogSlowQueryThesholdInMilliseconds = 10000;
+    LogFetchedRows = false;
+    LogSQLSource = false;
+    
+
+    //
+    // Display Configuration
+    //
+    DateFormat = "%Y-%m-%d";
+    TimeFormat = "%H:%M:%S";
+    DateTimeFormat = "%Y-%m-%d %H:%M:%S";
+    IntegerFormat = "#,##0;#,##0;-#,##0";
+    NumberFormat = "#,##0.##;#,##0.##;-#,##0.##";
+    CurrencyFormat = "#,##0.##;#,##0.##;-#,##0.##";
+
+    //
+    // Development Mode Configuration
+    //
+	DevelopmentMode = "false";
+    DeveloperID = "";
+    DeveloperPassword = "";
+    DeveloperEmail = "";
+
+    //
+    // Page Name defaults
+    //
+	// DefaultPageName = "Main";
+	// ExceptionPageName = "";
+
+	//
+	// Misc Configuration
+  	DocumentRootPath = "/";
+	ErrorsTitle = "Errors Encountered: ";
+
+
+    Application =
+    {
+		changePasswordPage =
+		{
+			newPasswordMustBeNew = "Your new password must be different than your existing password.";
+			passwordAndConfirmationDoNotMatch = "The password and the confirmation do not match.";
+		};
+
+        loginPage = {
+            loginFailed = "Login Failed.";
+         };
+    };
+
+    RequestUtilities =
+    {
+        browsers =
+        {
+           msie = "ie";
+           mozilla = "netscape";
+           opera = "opera";
+           safari = "safari";
+           firefox = "firefox";           
+           default = "default";
+        };
+        operatingSystems =
+        {
+           mac = "mac";
+           win = "win";
+           default = "default";
+        };
+    };
+}

@@ -1,0 +1,67 @@
+<webobject name = "DynamicBody">
+  <webobject name = "QueuedTasksForm">
+    <table class = "content" cellspacing = "0" border = "0" cellpadding = "0" style = "width: 100%">
+      <!-- BEGIN ROW WITH TITLE AND BUTTONS -->
+      <tr>
+        <td style = "padding-left: 2px;">
+          <h1>Queued Tasks</h1>
+        </td>
+      </tr>
+      <tr>
+        <td align = "right" style = "padding-right: 2px;" valign = "top"><webobject name = "UploadNewFileButton" /></td>
+      </tr>
+      <tr>
+        <td>
+          <table cellspacing = "2" border = "0" cellpadding = "2" width = "100%">
+            <tr>
+              <td><hr class = "primaryBarStyle" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+    <webobject name = "Conditional1">
+      <span class = "boldText">Request Submitted:</span>
+      <webobject name = "DetailsString" />
+      <br />
+      <br />
+    </webobject>
+    <table cellspacing = "2" class = "coloredTable" border = "0" cellpadding = "2" align = "center" width = "95%">
+      <!-- 95% width is more dynamic in Netscape 4 -->
+      <tr>
+        <th class = "coloredTableHeading" width = "24%">Date</th>
+        <th class = "coloredTableHeading" width = "51%">Details</th>
+        <th class = "coloredTableHeading" width = "12%">Status</th>
+        <th class = "coloredTableHeading" width = "13%">Action</th>
+      </tr>
+      <webobject name = "TaskRepetition">
+        <tr>
+          <td><webobject name = "DateString" /></td>
+          <td>
+            <webobject name = "IsInProgressConditional">
+              <span class = "inProgressTask"><webobject name = "Details" /></span>
+            </webobject>
+            <webobject name = "IsInWaitingConditional">
+              <span class = "waitingTask"><webobject name = "Details" /></span>
+            </webobject>
+            <webobject name = "RegularDisplayConditional">
+              <span class = "activeTask"><webobject name = "Details" /></span>
+            </webobject>
+          </td>
+          <td><webobject name = "Status" /></td>
+          <td align = "CENTER">
+            <webobject name = "CanDelete">
+              <webobject name = "DeleteSectionHyperlink"> Delete </webobject>
+            </webobject>
+            <webobject name = "CanCancel">
+              <webobject name = "CancelTaskHyperlink"> Cancel </webobject>
+            </webobject>
+            <webobject name = "CannotDelete">Can't delete</webobject>
+          </td>
+        </tr>
+      </webobject>
+    </table>
+  </webobject>
+</webobject>

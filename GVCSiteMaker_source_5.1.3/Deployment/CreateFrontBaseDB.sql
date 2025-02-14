@@ -1,0 +1,15 @@
+connect to GVCSiteMaker user _system;
+stop database;
+delete database GVCSiteMaker;
+create database GVCSiteMaker;
+connect to GVCSiteMaker user _system;
+autostart;
+#add GVCSiteMaker;
+save;
+quit;
+create user SiteMaker;
+set password SiteMaker user SiteMaker;
+disconnect all;
+connect to GVCSiteMaker user SiteMaker password SiteMaker;
+script FrontBaseSchema.sql;
+disconnect all;

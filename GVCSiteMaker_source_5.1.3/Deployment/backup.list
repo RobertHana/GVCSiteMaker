@@ -1,0 +1,10 @@
+Frameworks/GVCSMCustom.framework/Resources/MixedMediaXML
+Frameworks/GVCSMCustom.framework/Resources/GVCSiteMakerCustom.plist
+Frameworks/GVCSMCustom.framework/Resources/GVCSiteMakerPageMap.plist
+Frameworks/GVCSMCustom.framework/Resources/GVCSMAdminPageMap.plist
+Frameworks/GVCSMCustom.framework/Resources/tinymce-init-configappearance.js
+Frameworks/GVCSMCustom.framework/Resources/tinymce-init-inlinemixedmedia.js
+Frameworks/GVCSMCustom.framework/Resources/tinymce-init-inlinetext.js
+Frameworks/GVCSMCustom.framework/Resources/Java/jcsi_license.jar
+DocumentRoot/tiny_mce/editorSelectors/tinymce-init-simple.js
+DocumentRoot/tiny_mce/editorSelectors/tinymce-init-advanced.js

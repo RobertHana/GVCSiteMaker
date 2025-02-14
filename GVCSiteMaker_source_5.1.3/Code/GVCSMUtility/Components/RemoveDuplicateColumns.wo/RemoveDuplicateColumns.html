@@ -1,0 +1,32 @@
+<!DOCTYPE HTML="" PUBLIC="" -//W3C//DTD HTML 3.2//EN="">
+<html>
+	<head>
+		<meta name=generator content="WebObjects 5">
+		<title>Remove Duplicate DataAccess Columns</title>
+	</head>
+	<body bgcolor=#FFFFFF>
+		<font color=#0000ff size=4><b>Remove Duplicate DataAccess Columns</b></font><br>
+		Removes duplicate columns from a DataAccess section. While these should never occur, they somehow do.
+		<p></p>
+		<webobject name=Form>
+			<table cellpadding=2 cellspacing=2 width=100%% border=0>
+				<tr>
+					<td><b>Website ID:</b></td>
+					<td><webobject name=SiteIDTextField></webobject>
+						<webobject name=HasNoSiteConditional><webobject name=FindSiteButton></webobject></webobject></td>
+				</tr>
+				<webobject name=HasSiteConditional>
+					<tr>
+						<td><b>Section:</b></td>
+						<td><webobject name=PopUpButton1></webobject></td>
+					</tr>
+				</webobject>
+			</table>
+			<webobject name=ProcessButton></webobject>
+			<p></p>
+		</webobject>
+		<p></p>
+		<p><webobject name=ResultMessageString></webobject></p><p align=CENTER><webobject name=MainPageHyperlink><b><font size=4><font color=#01b01e>Back
+				to Main Page</font></font></b></webobject></p>
+	</body>
+</html>

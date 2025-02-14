@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="OptionalGroupPicker" wocomponentcontent="false">
+
+		<binding name="labelDescription"/>
+		<binding name="mainLabel"/>
+		<binding name="name"/>
+		<binding name="eo"/>
+		<binding name="groupsKeyPath"/>
+
+		<validation message="&apos;labelDescription&apos; is a required binding">
+			<unbound name="labelDescription"/>
+		</validation>
+
+		<validation message="&apos;mainLabel&apos; is a required binding">
+			<unbound name="mainLabel"/>
+		</validation>
+
+		<validation message="&apos;name&apos; is a required binding">
+			<unbound name="name"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Installing and Configuring GVC.SiteMaker Open Source Distribution</title>
+</head>
+
+<body>
+
+
+<h1>Introduction</h1>
+<p>
+This document describes the requirements for installing the GVC.SiteMaker Open
+  Source distribution, and gives initial instructions to prepare for the main
+  part of the installation process, which is described in detail in accompanying
+documents.</p>
+<p><b>If you have problems, please don't hesitate to ask for help at our <a href="http://sourceforge.net/forum/forum.php?forum_id=466640">SourceForge
+  forum</a>.</b><br />
+  <br />
+  <font color="red"><b>Note:</b></font> this installation process is designed
+      for use on OS X and other UNIX systems. You will have some additional work
+    to do on Windows.</p>
+<p>Here is an overview of the process for a new, bootstrap installation (i.e.,
+  not an update):</p>
+<ol>
+  <li> Verify that  your server software meets technical requirements</li>
+  <li> Perform pre-installation tasks (account and directory creation)</li>
+  <li> Install and/or prepare a SQL database with JDBC connectivity</li>
+  <li>Main installation tasks:
+    <ul>
+      <li>Run install script to unpack archives</li>
+      <li>Configure Apache</li>
+      <li>Install FrontBase plug-in for WebObjects (if using FrontBase as your
+        database) </li>
+      <li>Configure classpath files </li>
+      <li>Configure application settings (plist files) </li>
+      <li> Bootstrap database</li>
+      <li>Test applications from command line</li>
+      <li>Configure Java Monitor to run the applications automatically</li>
+    </ul>
+  </li>
+</ol>
+<p>This will produce a GVC.SiteMaker service with authentication done by the
+  application itself. If you want to use other authentication schemes (e.g.,
+  Kerberos, Cosign, WebAuth), get this working first and then see the included
+  documentation to learn how to implement a different scheme. </p>
+<h1>Server Requirements</h1>
+GVC.SiteMaker has the following requirements:
+
+<h2>Java <a target="_new" href="http://java.sun.com/j2se/1.4.2/download.html">1.4.2</a> Runtime</h2>
+<p>GVC.SiteMaker will not run with JDK 1.3 and has not been tested against JDK
+1.5.</p>
+<h2>Apache Version 1 (1.3.26 or higher)</h2>
+<p>This must include  functioning installations of mod_rewrite and mod_ssl, and
+  an installed SSL certificate for the domain to be used by GVC.SiteMaker.</p>
+<p>GVC.SiteMaker has not been tested with Apache 2. However, we believe that
+  it should work. The biggest issue will be that Apple does not yet distribute
+  a WebObjects adaptor for Apache 2. An open-source (unsupported) adaptor for
+  Apache 2 is available at <a href="http://wonder.sourceforge.net/">Project Wonder</a>. </p>
+<h2>Licensed version of <a target="_new" href="http://www.webobjects.com">WebObjects</a> (5.2.3
+  or higher) </h2>
+<p>If you are installing on MacOS X Server 10.3.x or higher, then a suitable
+  WebObjects deployment environment should already be in place, although you
+may need to activate it by using the ServerAdmin program. </p>
+<p>Also, a deployment installation of WebObjects will work for Ant
+  builds (and for Eclipse builds, but you won't have any of the other development
+  tools such as WOBuilder and EOModeler). You can get a licensed version of WebObjects
+  from these sources
+</p>
+<ul>
+<li><a target="_new" href="http://store.apple.com">Apple Store</a></li>
+<li><a target="_new" href="http://store.apple.com">Purchase of an X Serve</a></li>
+<li><a target="_new" href="http://developer.apple.com">ADC, register for developers evaluation copy for OS X</a></li>
+<li><a href="mailto:webobjects@apple.com">Request developers evaluation copy for Windows</a></li>
+</ul>
+
+<h2>GVC Frameworks</h2>
+GVC.SiteMaker makes extensive use of the <a target="_new" href="http://sourceforge.net/project/showfiles.php?group_id=138889">GVC
+Frameworks</a>. These frameworks are included in this distribution bundle.
+<h1>Pre-Installation Tasks</h1>
+<p>As you are reading this, it is assumed that you have sucessfully unpacked
+  the installation bundle, containing these items:</p>
+<ul>
+  <li><b>ReadMeFirst.html</b> (this document) </li>
+  <li><b>Install </b>directory<b>:</b></li>
+  <ul>
+    <li><b>Archive </b>directory<b>:</b>
+      <ul>
+        <li><b>GVCSiteMakerFrameworks.tar.gz</b> - the Open Source GVC Frameworks
+          and GVCSMCore</li>
+        <li><b>GVCSiteMakerCustomFrameworks.tar.gz</b> - usually contains only
+            GVCSMCustom framework for a specific installation</li>
+        <li><b>GVCKerberos.tar.gz</b> - this framework is needed only when
+            Kerberos authentication is in use</li>
+        <li><b>GVCSiteMakerApplications.tar.gz</b> - the GVCSiteMaker, GVCSMAdmin,
+            GVCSMQueuedTasks, and GVCSMUtility applications</li>
+        <li><b>GVCSiteMakerDocumentRoot.tar.gz</b> - the core document root
+            resources to be installed for the web server</li>
+        <li><b>GVCSiteMakerCustomDocumentRoot.tar.gz</b> - document root resources
+            unique to this installation to be installed for the web server</li>
+        <li><b>GVCSiteMakerMisc.tar.gz</b> - contains  functionality
+                                          to set up the database, repair data
+          and assist in data conversions between versions</li>
+      </ul>
+    </li>
+    <li><b>ConfigurationExamples </b>directory
+      <ul>
+        <li><b>GVCSiteMakerBootstrap.plist</b> - bootstrap configuration file <font color="#FF0000">(must
+            be edited and copied into the GVCSMCustom framework)</font></li>
+        <li><b>GVCSiteMakerCustom.plist</b> - application configuration file <font color="#FF0000">(must
+            be edited and copied into the GVCSMCustom framework)</font></li>
+        <li><b>GVCSiteMaker.rules</b> - rewrite rules used for Apache configuration <font color="#FF0000">(must
+            be edited and copied into the Apache config directory)</font></li>
+        <li><b>GVCSiteMakerServerDown.rules</b> - rewrite rules used during application
+          maintenance <font color="#FF0000">(must be edited and copied into the
+          Apache config directory)</font></li>
+        <li><b>index_ip.address_443_domain.conf</b> - domain configuration <font color="#FF0000">(must
+            be edited and copied into the Apache config directory)</font></li>
+        <li><b>index_ip.address_80_domain.conf</b> - domain configuration <font color="#FF0000">(must
+            be edited and copied into the Apache config directory)</font></li>
+        <li><b>FrontBaseSchema.sql</b> - SQL script used to set up your database,
+        if using FrontBase </li>
+      </ul>
+    </li>
+    <li><b>Documentation </b>directory<b>:</b>
+      <ul>
+        <li><b>DeploymentInstructions.pdf</b> - this is the main reference document
+          for installation</li>
+        <li><b>InstallationConfigurationWorksheet.pdf</b> - 
+
+
+use this to organize the configuration parameters needed for your initial setup</li>
+        <li><b>ConfigurationGuide.pdf</b> - 
+
+
+contains more details about configuration parameters than are given in the worksheet</li>
+        <li><b>FrontBaseSetup-OSX.pdf</b> - complete instructions to prepare
+          FrontBase for GVCSiteMaker on OS X </li>
+        <li><b>InternalAndExternalUsers.pdf</b> - after completing a basic installation,
+          use this information to customize the authentication environment</li>
+        <li><b>SiteMakerVirtualHosts.pdf</b> - instructions for allowing a GVCSiteMaker
+          site to use its own domain name</li>
+        <li><b>CustomizationGuide.pdf</b> - mainly used by WebObjects developers
+        who want to extend GVCSiteMaker </li>
+      </ul>
+    </li>
+    <li><b>Script </b>directory
+      <ul>
+        <li><b>CreateDirectories.sh</b> - used during pre-installation (see below) </li>
+        <li><b>CreateUploadFolders.sh</b> - used during pre-installation (see
+          below) </li>
+        <li><b>WOInstall.sh</b> - used during main installation </li>
+        <li><b>archive.list</b> - used for advanced installations </li>
+        <li><b>backup.list</b> - used for advanced installations </li>
+        <li><b>mkwodirs.sh</b>
+ - used for advanced installations </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+<p>Create an account on the server that will be used by the GVCSiteMaker
+  application (e.g., &quot;sitemaker&quot;), then move the Install hierarchy
+  into the home directory for that user account.</p>
+<p>From the command line (as the root user), run these two scripts to set up
+  the necessary directory structure:</p>
+<pre>root# cd ~sitemaker/Install/Script
+root# ./CreateDirectories.sh ~sitemaker
+root# ./CreateUploadFolders.sh ~sitemaker/UploadedFiles
+</pre>
+<h1>SQL Database with JDBC connectivity</h1>
+  <p>GVC.SiteMaker has been most often tested with <a target="_new" href="http://www.FrontBase.com">FrontBase</a> (which
+    is available without cost) and SQL scripts for that database, only, are provided.
+    If you do not already have a database prepared for use with GVC.SiteMaker,
+    the easiest course of action is to use FrontBase. Instructions for obtaining
+    and setting up FrontBase for GVC.SiteMaker on OS X Server are in <a href="Install/Documentation/FrontBaseSetup-OSX.pdf">Install/Documentation/FrontBaseSetup-OSX.pdf</a></p>
+  <p> <a target="_new" href="http://developer.apple.com/documentation/WebObjects/UsingEOModeler/4WorkingWithAttributes/chapter_4_section_4.html"> EOPrototypes</a> are
+    also provided for Oracle. These may not be fully up to date and / or tested.
+    If not using FrontBase, you will need to generate your own SQL scripts to
+    use in place of the FrontBase ones. Other databases can be supported by the
+    addition of a database specific set of EOPrototypes to the GVCEOPrototypes
+    project.</p>
+  <h1>Main Installation Procedure </h1>
+  The <a target="_blank" href="Install/Documentation/DeploymentInstructions.pdf">Deployment Instructions</a> 
+  will guide you through the rest of the installation process.
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            adaptorValueConversionMethodName = toString; 
+            allowsNull = Y; 
+            columnName = "BOOLEAN_VALUE"; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            name = booleanValue; 
+            prototypeName = String; 
+            valueClassName = "java.lang.Boolean"; 
+            valueFactoryMethodName = valueOf; 
+            width = 5; 
+        }, 
+        {
+            columnName = "RESTRICTING_VALUE"; 
+            name = restrictingValue; 
+            prototypeName = String; 
+            width = 50; 
+        }, 
+        {
+            columnName = "VIRTUAL_COLUMN_ID"; 
+            name = virtualColumnID; 
+            prototypeName = Key; 
+        }, 
+        {columnName = "VIRTUAL_FIELD_ID"; name = virtualFieldID; prototypeName = Key; }, 
+        {columnName = "VIRTUAL_ROW_ID"; name = virtualRowID; prototypeName = Key; }
+    ); 
+    attributesUsedForLocking = (virtualFieldID, virtualRowID, virtualColumnID, restrictingValue, booleanValue); 
+    className = "net.global_village.virtualtables.VirtualBooleanField"; 
+    classProperties = (virtualFieldID, row, column, restrictingValue, referringFields, booleanValue); 
+    externalName = "VIRTUAL_FIELD"; 
+    fetchSpecificationDictionary = {}; 
+    maxNumberOfInstancesToBatchFetch = 20; 
+    name = VirtualBooleanField; 
+    parent = VirtualField; 
+    primaryKeyAttributes = (virtualFieldID); 
+    relationships = (
+        {
+            destination = VirtualColumn; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = columnID; sourceAttribute = virtualColumnID; }); 
+            name = column; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VirtualLookupField; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lookupValueID; sourceAttribute = virtualFieldID; }); 
+            name = referringFields; 
+            numberOfToManyFaultsToBatchFetch = 10; 
+        }, 
+        {
+            destination = VirtualRow; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = virtualRowID; sourceAttribute = virtualRowID; }); 
+            name = row; 
+        }
+    ); 
+    restrictingQualifier = "(restrictingValue = 'Boolean')"; 
+}

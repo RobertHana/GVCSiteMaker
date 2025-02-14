@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "EDITOR_NAME"; 
+            name = editorName; 
+            prototypeName = mediumString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_TYPE"; 
+            name = key; 
+            prototypeName = shortString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = NAME; 
+            name = name; 
+            prototypeName = mediumString; 
+        }, 
+        {allowsNull = N; columnName = OID; name = oid; prototypeName = dbKey; }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_ORDER"; 
+            name = order; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PAGE_COMP_ENTITY"; 
+            name = pageComponentEntity; 
+            prototypeName = mediumString; 
+        }
+    ); 
+    attributesUsedForLocking = (editorName, name, order, pageComponentEntity, key); 
+    className = "com.gvcsitemaker.core.ListOfLinksSectionType"; 
+    classProperties = (editorName, name, oid, order, pageComponentEntity, key); 
+    externalName = "SM_SECTION_TYPE"; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = ListOfLinksSectionType; 
+    parent = SectionType; 
+    primaryKeyAttributes = (oid); 
+    restrictingQualifier = "(key = 'ListOfLinks')"; 
+}

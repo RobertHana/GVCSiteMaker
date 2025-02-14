@@ -1,0 +1,206 @@
+AjaxUpdateArea : AjaxUpdateContainer {
+    id = "ManageAccessGroups";
+}
+
+AddLocalAccessGroupHyperlink : AjaxUpdateLink {
+    updateContainerID = "ManageAccessGroups";
+    action = createLocalGroup;
+    onComplete = "function(receiver, response) {Effect.Appear('AccessGroupAdded', {duration: 1, afterFinish: function() {Effect.Fade('AccessGroupAdded', {delay: 4})}})}";
+//    disabled = atLeastOneGroupBeingEdited;
+}
+
+HasLDAPGroupsConditional : WOConditional {
+    condition = hasLDAPGroups;
+}
+
+AddDirectoryAccessGroupHyperlink : AjaxUpdateLink {
+    updateContainerID = "ManageAccessGroups";
+    action = createDirectoryGroup;
+    onComplete = "function(receiver, response) {Effect.Appear('AccessGroupAdded', {duration: 1, afterFinish: function() {Effect.Fade('AccessGroupAdded', {delay: 4})}})}";
+//    disabled = atLeastOneGroupBeingEdited;
+}
+
+HasRemoteParticipantsGroup : WOConditional {
+    condition = website.hasRemoteParticipantGroup;
+}
+
+ConfigureRemoteParticipantsGroupHyperlink : WOHyperlink {
+    action = configureRemoteParticipantsGroup;
+//    disabled = atLeastOneGroupBeingEdited;
+}
+
+CanGroupBeDeletedConditional: WOConditional {
+	condition = selectedGroup.canBeDeleted;
+}
+
+CantDeleteConditional: WOConditional {
+	negate = true;
+	condition = selectedGroup.canBeDeleted;
+}
+
+GroupTypeString: WOString {
+    value = @@localize.selectedGroup.typeDescription;
+}
+
+ConfigurationForm: WOForm {
+	multipleSubmit = true;
+}
+
+DeleteGroupLink : AjaxUpdateLink {
+    updateContainerID = "ManageAccessGroups";
+    action = confirmDeleteGroup;
+    class = "coloredTableLink";  // NN 4 needs this
+}
+
+GroupInUseConditional: WOConditional {
+	condition = selectedGroup.isInUse;
+}
+
+GroupRepetition: WORepetition {
+	item = selectedGroup;
+	list = orderedGroups;
+	index = selectedGroupIndex;
+}
+
+HelpComponent : HelpComponent {
+    pageClass = "com.gvcsitemaker.pages.ManageAccessGroups";
+}
+
+HasValidationErrorConditional: WOConditional {
+    condition = hasValidationError;
+}
+
+IsOwnerGroupConditional: WOConditional {
+    condition = canEditGroupName;
+    negate = true;
+}
+
+IsNotOwnerGroupConditional: WOConditional {
+    condition = canEditGroupName;
+}
+
+GroupNameString : WOString {
+    value = selectedGroup.name;
+}
+
+GroupNameEditor : AjaxInPlaceEditor {
+    value = selectedGroup.name;
+    class = "editableInPlaceField";
+    submitOnBlur = true;
+    action = saveNameChange;
+    size = "32";
+    okButton = false;
+    cancelLink = false;
+}
+
+EditMembersInPlace : AjaxInPlace {
+    id = editInPlaceID;
+    manualEditControl = true;
+    cancelAction = revertChanges;
+    saveAction = saveChanges;
+    saveUpdateContainerID = "ManageAccessGroups";
+    cancelUpdateContainerID = "ManageAccessGroups";
+    editing = isEditingGroup;
+    canEdit = canEditGroup;
+//    onEditClick = "ManageAccessGroupsUpdate();";
+//    onSaveFailure = editInPlaceEdit;
+    // onSaveSuccess = "alert('hello!')";
+}
+
+EditMembersView : ERXWOTemplate {
+    templateName = "view";
+}
+
+EditInPlaceDivContainer : WOGenericContainer {
+    elementName = "div";
+    class = "editableInPlaceField";
+    title = "Click to edit";
+    //onClick = onClickMembershipEditInPlace;
+}
+
+MembershipViewString: WOString {
+    value = membershipViewString;
+    escapeHTML = false;
+}
+
+EditMembersEdit : ERXWOTemplate {
+    templateName = "edit";
+}
+
+IsLDAPGroupConditional: WOConditional {
+    condition = isLDAPGroup;
+}
+
+LDAPGroupNameField : WOTextField {
+    value = selectedGroup.ldapGroupName;  //VALID
+    class = "editableInPlaceField";
+    maxLength = 50;
+    style = "width: 100%";
+    onBlur = editInPlaceSave;
+    id = editLDAPGroupNameInPlaceFieldID;
+}
+
+ConditionallyEditAccessGroupOnOpenJS: WOJavaScript {
+    scriptString = conditionallyEditAccessGroupOnOpen;
+}
+
+LDAPGroupNameFieldID: WOString {
+    value = editLDAPGroupNameInPlaceFieldID;
+}
+
+IsNotLDAPGroupConditional: WOConditional {
+    condition = isLDAPGroup;
+    negate = true;
+}
+
+GroupMembersText: WOText {
+    value = groupMembersString;
+    rows = 5;
+    cols = 32;
+}
+
+EditMembersSave : AjaxSubmitButton {
+    value = "Save";
+    onClick = editInPlaceSave;
+    //action = saveChanges;
+    //onSuccess = editInPlaceCancel;
+}
+
+EditMembersCancel : AjaxSubmitButton {
+    value = "Cancel";
+    onClick = editInPlaceCancel;
+}
+
+ValidationErrorMessageString: WOString {
+    value = validationErrorMessage;
+}
+
+ConfirmDeleteAccessGroupModalDialog: AjaxModalDialog {
+    id = "ConfirmDeleteAccessGroupModalDialog";
+    title = "Confirm Deletion";
+    label = "Delete Access Group";
+    showOpener = false;
+    locked = true;
+    overlayClose = false;  // locked = true should mean overlayClose = false, but doesn't seem to work that way
+    overlayOpacity = "0.4";
+    overlayDuration = "0.1";
+    slideDownDuration = "0.2";
+    slideUpDuration = "0.2";
+    width = 300;
+    clickOnReturnId = "ConfirmDeleteAccessGroupModalDialogYesLink";
+    clickOnEscId = "ConfirmDeleteAccessGroupModalDialogNoLink";
+    closeUpdateContainerID = "ManageAccessGroups";
+}
+
+ConfirmDeleteAccessGroupModalDialogYesLink: AjaxHyperlink {
+    action = deleteGroup;
+    onSuccess = "function() { Modalbox.hide(); }";
+    id = "ConfirmDeleteAccessGroupModalDialogYesLink";
+    evalScripts = true;
+}
+
+ConfirmDeleteAccessGroupModalDialogNoLink: WOHyperlink {
+    href = "javascript:void(0);";
+    onClick = "Modalbox.hide();";
+    id = "ConfirmDeleteAccessGroupModalDialogNoLink";
+}
